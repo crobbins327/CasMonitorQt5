@@ -1,2 +1,2 @@
 # CasMonitor
-PyQt GUI and python functions for fluid control 
+PyQt GUI and python functions for cassette fluid control monitor
