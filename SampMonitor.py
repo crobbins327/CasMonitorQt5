@@ -7,10 +7,15 @@ Created on Sat Mar 28 16:25:42 2020
 """
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from setupUI import *
 
 class SampMonitor(QtWidgets.QStackedWidget):
     def __init__(self, casNumber):
         QtWidgets.QStackedWidget.__init__(self)
+        
+        # self.UiWindow = UiWindow
+        
+        
         self.monWidget = QtWidgets.QStackedWidget()
         self.monWidget.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Minimum)
@@ -56,21 +61,23 @@ class SampMonitor(QtWidgets.QStackedWidget):
         sizePolicy.setHeightForWidth(self.progressBar.sizePolicy().hasHeightForWidth())
         self.progressBar.setSizePolicy(sizePolicy)
         self.progressBar.setProperty("value", 19)
+        self.progressBar.setMinimumSize(QtCore.QSize(0, 30))
         self.progressBar.setTextVisible(True)
         self.progressBar.setObjectName("progressBar_" + str(casNumber))
         self.progressBar.setFormat("%p%")
         self.gridLayout_xp1.addWidget(self.progressBar, 9, 0, 1, 2)
         
         self.stopB = QtWidgets.QPushButton(self.SxPage1)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.stopB.sizePolicy().hasHeightForWidth())
         self.stopB.setSizePolicy(sizePolicy)
+        self.stopB.setMinimumSize(QtCore.QSize(50, 50))
         self.stopB.setObjectName("stopB_" + str(casNumber))
         self.stopB.setText("Stop Run")
-        self.gridLayout_xp1.addWidget(self.stopB, 10, 0, 1, 2)
-        
+        self.gridLayout_xp1.addWidget(self.stopB, 10, 0, 1, 1)
+   
         self.protName = QtWidgets.QLabel(self.SxPage1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -88,12 +95,13 @@ class SampMonitor(QtWidgets.QStackedWidget):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.runDetB.sizePolicy().hasHeightForWidth())
         self.runDetB.setSizePolicy(sizePolicy)
+        self.runDetB.setMinimumSize(QtCore.QSize(0, 50))
         self.runDetB.setAutoDefault(False)
         self.runDetB.setDefault(False)
         self.runDetB.setFlat(False)
         self.runDetB.setObjectName("runDetB_" + str(casNumber))
         self.runDetB.setText("Run Details")
-        self.gridLayout_xp1.addWidget(self.runDetB, 2, 0, 1, 2)
+        self.gridLayout_xp1.addWidget(self.runDetB, 10, 1, 1, 1)
         
         self.casN_x1 = QtWidgets.QLabel(self.SxPage1)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
@@ -151,9 +159,11 @@ class SampMonitor(QtWidgets.QStackedWidget):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.setupB.sizePolicy().hasHeightForWidth())
         self.setupB.setSizePolicy(sizePolicy)
+        self.setupB.setMinimumSize(QtCore.QSize(0, 50))
         self.setupB.setBaseSize(QtCore.QSize(0, 0))
         self.setupB.setObjectName("setupB_" + str(casNumber))
         self.setupB.setText("Setup Run")
+        # self.setupB.clicked.connect.(lambda: self.UiWindow.mainStack.setCurrentIndex(0))
         self.gridLayout_xp2.addWidget(self.setupB, 2, 0, 1, 1)
         
         self.runDefault = QtWidgets.QPushButton(self.SxPage2)
@@ -162,6 +172,7 @@ class SampMonitor(QtWidgets.QStackedWidget):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.runDefault.sizePolicy().hasHeightForWidth())
         self.runDefault.setSizePolicy(sizePolicy)
+        self.runDefault.setMinimumSize(QtCore.QSize(0, 50))
         self.runDefault.setSizeIncrement(QtCore.QSize(0, 0))
         self.runDefault.setBaseSize(QtCore.QSize(0, 0))
         self.runDefault.setObjectName("runDefault_" + str(casNumber))
@@ -215,6 +226,14 @@ class SampMonitor(QtWidgets.QStackedWidget):
         spacerItem3 = QtWidgets.QSpacerItem(0, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_xp3.addItem(spacerItem3, 3, 0, 1, 1)
         self.monWidget.addWidget(self.SxPage3)
+        
+    # def detectCassette(self):
+        #Code to detect when cassette is inserted in fluid machine
+    # def setupRun(self, casNumber):
+    #     lambda: self.mainStack.setCurrentIndex(0)
+    
+    def print_test(self, casNumber):
+        print("testing"+casNumber)
         
         
     def setTime(self, tRun):
