@@ -1,6 +1,6 @@
 import sys
 import os
-# os.chdir("/home/jackr/SampleMonitor/Git/CasMonitor")
+os.chdir("/home/jackr/SampleMonitor/Git/CasMonitor")
 from PyQt5 import QtCore, QtGui, QtWidgets
 from SampMonitor import *
 from ProtEditor import *
@@ -11,7 +11,8 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setWindowTitle("MainWindow")
         MainWindow.resize(800, 480)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        MainWindow.setFixedSize(MainWindow.size())
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
@@ -36,7 +37,7 @@ class Ui_MainWindow(object):
         self.mainStack.addWidget(self.protEditor)
         
         self.mainMonitor()
-        self.mainStack.setCurrentIndex(2)
+        self.mainStack.setCurrentIndex(1)
         
         
 
