@@ -1,9 +1,9 @@
 import sys
 import os
-# os.chdir("/home/jackr/SampleMonitor/Wd")
+# os.chdir("/home/jackr/SampleMonitor/Git/CasMonitor")
 from PyQt5 import QtCore, QtGui, QtWidgets
 from SampMonitor import *
-import inspect
+from ProtEditor import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -30,8 +30,11 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.mainStack.sizePolicy().hasHeightForWidth())
         self.mainStack.setSizePolicy(sizePolicy)
         self.mainStack.setObjectName("mainStack")
+        
         self.protSel(casNumber = 0)
-        self.protEditor()
+        self.protEditor = ProtEditor()
+        self.mainStack.addWidget(self.protEditor)
+        
         self.mainMonitor()
         self.mainStack.setCurrentIndex(2)
         
@@ -70,6 +73,9 @@ class Ui_MainWindow(object):
         
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         
+    def print_test(self):
+        print("testing")
+        
     def protSel(self, casNumber = 0):
         self.protSel = QtWidgets.QWidget()
         self.protSel.setObjectName("protSel")
@@ -78,6 +84,7 @@ class Ui_MainWindow(object):
         self.selButton.setGeometry(QtCore.QRect(40, 290, 89, 25))
         self.selButton.setObjectName("selButton")
         self.selButton.setText("Select")
+        self.selButton.clicked.connect(self.print_test)
         
         self.loadButton = QtWidgets.QPushButton(self.protSel)
         self.loadButton.setGeometry(QtCore.QRect(220, 290, 89, 25))
@@ -120,10 +127,6 @@ class Ui_MainWindow(object):
         
         self.mainStack.addWidget(self.protSel)
     
-    def protEditor(self):    
-        self.protEdit = QtWidgets.QWidget()
-        self.protEdit.setObjectName("protEdit")
-        self.mainStack.addWidget(self.protEdit)
     
     def mainMonitor(self):
         self.mainMonitor = QtWidgets.QWidget()
@@ -133,15 +136,16 @@ class Ui_MainWindow(object):
         
         #Initializing sample monitors for each cassette
         self.monWidget1 = SampMonitor(casNumber = 1)
-        self.monWidget1.monWidget.setCurrentIndex(0)
+        self.monWidget1.monWidget.setCurrentIndex(1)
+        # self.monWidget1.setupB.clicked.connect(MainWindow.monWidget1.monWidget.hide)
         self.gridLayout_2.addWidget(self.monWidget1.monWidget, 0, 0, 1, 1)
                 
         self.monWidget2 = SampMonitor(casNumber = 2)
-        self.monWidget2.monWidget.setCurrentIndex(2)
+        self.monWidget2.monWidget.setCurrentIndex(1)
         self.gridLayout_2.addWidget(self.monWidget2.monWidget, 0, 1, 1, 1)
         
         self.monWidget3 = SampMonitor(casNumber = 3)
-        self.monWidget3.monWidget.setCurrentIndex(2)
+        self.monWidget3.monWidget.setCurrentIndex(1)
         self.gridLayout_2.addWidget(self.monWidget3.monWidget, 0, 2, 1, 1)
                 
         self.monWidget4 = SampMonitor(casNumber = 4)
@@ -160,7 +164,7 @@ class Ui_MainWindow(object):
         self.mainStack.addWidget(self.mainMonitor)
         self.gridLayout.addWidget(self.mainStack, 1, 0, 1, 1)
         
-    def updateMonitor(self):
+    # def updateMonitor(self):
         #Check if cassette is in position
         #Coordinate between active runs and when run finishes
         
