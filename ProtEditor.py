@@ -8,6 +8,13 @@ Created on Sun Mar 29 14:56:31 2020
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class ProtEditor(QtWidgets.QWidget):
+    
+    #Emitted signals by buttons
+    home_ProtEdit = QtCore.pyqtSignal()
+    back_ProtEdit = QtCore.pyqtSignal()
+    next_ProtEdit = QtCore.pyqtSignal()
+    
+    
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         
@@ -94,6 +101,7 @@ class ProtEditor(QtWidgets.QWidget):
         self.homeButton.setSizePolicy(sizePolicy)
         self.homeButton.setObjectName("homeButton")
         self.homeButton.setText( "Home")
+        self.homeButton.clicked.connect(self.goHome)
         
         
         self.operationList = QtWidgets.QListWidget(self)
@@ -128,6 +136,7 @@ class ProtEditor(QtWidgets.QWidget):
         self.backButton.setMinimumSize(QtCore.QSize(50, 50))
         self.backButton.setObjectName("backButton")
         self.backButton.setText("Back")
+        self.backButton.clicked.connect(self.goBack)
         
         self.nextButton = QtWidgets.QPushButton(self)
         self.nextButton.setGeometry(QtCore.QRect(702, 368, 80, 50))
@@ -139,6 +148,23 @@ class ProtEditor(QtWidgets.QWidget):
         self.nextButton.setMinimumSize(QtCore.QSize(0, 50))
         self.nextButton.setObjectName("nextButton")
         self.nextButton.setText("Next")
+        self.nextButton.clicked.connect(self.goNext)
+        
+        
+    def goHome(self):
+        #Save check dialog
+        
+        self.home_ProtEdit.emit()
+    
+    def goBack(self):
+        #Save check dialog
+        
+        self.back_ProtEdit.emit()
+    
+    def goNext(self):
+        #Save as check dialog
+        
+        self.next_ProtEdit.emit()
         
         
     

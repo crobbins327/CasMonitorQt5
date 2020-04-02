@@ -9,14 +9,18 @@ Created on Sat Mar 28 16:25:42 2020
 from PyQt5 import QtCore, QtGui, QtWidgets
 from setupUI import *
 
-class SampMonitor(QtWidgets.QStackedWidget):
-    def __init__(self, casNumber):
-        QtWidgets.QStackedWidget.__init__(self)
-        
-        # self.UiWindow = UiWindow
+class SampMonitor(QtWidgets.QWidget):
+    
+    #Emitted signals by buttons
+    switchproSel_SampMon = QtCore.pyqtSignal()
+    
+    def __init__(self, casNumber, casDetected = True):
+        QtWidgets.QWidget.__init__(self)
         
         
         self.monWidget = QtWidgets.QStackedWidget()
+        self.casNumber = casNumber
+        self.casDetected = casDetected
         self.monWidget.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
@@ -60,7 +64,7 @@ class SampMonitor(QtWidgets.QStackedWidget):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.progressBar.sizePolicy().hasHeightForWidth())
         self.progressBar.setSizePolicy(sizePolicy)
-        self.progressBar.setProperty("value", 19)
+        self.progressBar.setProperty("value", 0)
         self.progressBar.setMinimumSize(QtCore.QSize(0, 30))
         self.progressBar.setTextVisible(True)
         self.progressBar.setObjectName("progressBar_" + str(casNumber))
@@ -76,6 +80,7 @@ class SampMonitor(QtWidgets.QStackedWidget):
         self.stopB.setMinimumSize(QtCore.QSize(50, 50))
         self.stopB.setObjectName("stopB_" + str(casNumber))
         self.stopB.setText("Stop Run")
+        self.stopB.clicked.connect(self.stopRun)
         self.gridLayout_xp1.addWidget(self.stopB, 10, 0, 1, 1)
    
         self.protName = QtWidgets.QLabel(self.SxPage1)
@@ -163,7 +168,7 @@ class SampMonitor(QtWidgets.QStackedWidget):
         self.setupB.setBaseSize(QtCore.QSize(0, 0))
         self.setupB.setObjectName("setupB_" + str(casNumber))
         self.setupB.setText("Setup Run")
-        # self.setupB.clicked.connect.(lambda: self.UiWindow.mainStack.setCurrentIndex(0))
+        self.setupB.clicked.connect(self.setupRun)
         self.gridLayout_xp2.addWidget(self.setupB, 2, 0, 1, 1)
         
         self.runDefault = QtWidgets.QPushButton(self.SxPage2)
@@ -177,6 +182,7 @@ class SampMonitor(QtWidgets.QStackedWidget):
         self.runDefault.setBaseSize(QtCore.QSize(0, 0))
         self.runDefault.setObjectName("runDefault_" + str(casNumber))
         self.runDefault.setText("Run Default")
+        self.runDefault.clicked.connect(self.runDefRun)
         self.gridLayout_xp2.addWidget(self.runDefault, 2, 1, 1, 1)
         
         spacerItem = QtWidgets.QSpacerItem(0, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
@@ -226,17 +232,59 @@ class SampMonitor(QtWidgets.QStackedWidget):
         spacerItem3 = QtWidgets.QSpacerItem(0, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_xp3.addItem(spacerItem3, 3, 0, 1, 1)
         self.monWidget.addWidget(self.SxPage3)
+        self.monWidget.setCurrentIndex(2)
+        self.runStatus = "None"
         
-    # def detectCassette(self):
+        #Widget functions
+        #Update every 5 seconds with QTimer to detect cassette?
+        self.detectCassette()
+        
+        
+    def detectCassette(self):
         #Code to detect when cassette is inserted in fluid machine
-    # def setupRun(self, casNumber):
-    #     lambda: self.mainStack.setCurrentIndex(0)
-    
-    def print_test(self, casNumber):
-        print("testing"+casNumber)
+        #get sensor status and switch page if cassette read
+        #How to handle stopping a run if a cassette is manually ejected....
+        if self.casDetected == False:
+            self.monWidget.setCurrentIndex(2)
+            
+        else:
+            self.monWidget.setCurrentIndex(1)
+                
+        
+    def setupRun(self):
+        #Switch to protocol selection menu
+        self.switchproSel_SampMon.emit()
+        #Send the casNumber/ID information to update the protocol selector text
+        #Protocol selector will initialize function to run pumps/operations for a specific cassette depending on the casNumber sent
         
         
-    def setTime(self, tRun):
-        self.time.setText(tRun)
+        
+    def runDefRun(self):
+        self.monWidget.setCurrentIndex(0)
+        self.runStatus = "Running"
+        #Define default protocol
+        #Coordinate with syringe pumping functions
+        
+        
+        
+    def stopRun(self):
+        #Popup dialog box to confirm
+        stopRBox = QtWidgets.QMessageBox.question(self, "Stopping run on Cassette "+str(self.casNumber),
+                                                  "Are you sure you want to stop run on Cassette " +str(self.casNumber)+"?",
+                                                  QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.Cancel)
+        if stopRBox == QtWidgets.QMessageBox.Yes:
+            print("Stopping run on Cassette "+str(self.casNumber)+".")
+            self.monWidget.setCurrentIndex(1)
+            self.runStatus = "None"
+        else:
+            print('Canceled.')
+        self.progressBar.setValue(0)
+        
+        
+        
+        
+        
+        
+        
         
         

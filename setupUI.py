@@ -1,9 +1,12 @@
 import sys
 import os
+import time
+import datetime
 os.chdir("/home/jackr/SampleMonitor/Git/CasMonitor")
 from PyQt5 import QtCore, QtGui, QtWidgets
 from SampMonitor import *
 from ProtEditor import *
+from ProtSelector import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -32,15 +35,22 @@ class Ui_MainWindow(object):
         self.mainStack.setSizePolicy(sizePolicy)
         self.mainStack.setObjectName("mainStack")
         
-        self.protSel(casNumber = 0)
+        #Initialize widgets and pages
+        #mainStack indexes
+        #0
+        self.protSel = ProtSelector(casNumber=0)
+        self.mainStack.addWidget(self.protSel)
+        self.protSelNav()
+        #1
         self.protEditor = ProtEditor()
         self.mainStack.addWidget(self.protEditor)
-        
+        self.protEditorNav()
+        #2
         self.mainMonitor()
-        self.mainStack.setCurrentIndex(1)
+        self.mainStack.setCurrentIndex(2)
         
         
-
+        #Menubar....
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
@@ -74,97 +84,115 @@ class Ui_MainWindow(object):
         
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         
-    def print_test(self):
-        print("testing")
-        
-    def protSel(self, casNumber = 0):
-        self.protSel = QtWidgets.QWidget()
-        self.protSel.setObjectName("protSel")
-        
-        self.selButton = QtWidgets.QPushButton(self.protSel)
-        self.selButton.setGeometry(QtCore.QRect(40, 290, 89, 25))
-        self.selButton.setObjectName("selButton")
-        self.selButton.setText("Select")
-        self.selButton.clicked.connect(self.print_test)
-        
-        self.loadButton = QtWidgets.QPushButton(self.protSel)
-        self.loadButton.setGeometry(QtCore.QRect(220, 290, 89, 25))
-        self.loadButton.setObjectName("loadButton")
-        self.loadButton.setText("Load")
-        
-        self.backButton = QtWidgets.QPushButton(self.protSel)
-        self.backButton.setGeometry(QtCore.QRect(50, 370, 89, 25))
-        self.backButton.setObjectName("backButton")
-        self.backButton.setText("Back")
-        
-        self.editButton = QtWidgets.QPushButton(self.protSel)
-        self.editButton.setGeometry(QtCore.QRect(410, 260, 89, 25))
-        self.editButton.setObjectName("editButton")
-        self.editButton.setText("Edit")
-        
-        self.savePtitle = QtWidgets.QLabel(self.protSel)
-        self.savePtitle.setGeometry(QtCore.QRect(50, 40, 121, 17))
-        self.savePtitle.setObjectName("savePtitle")
-        self.savePtitle.setText("Saved Protocols")
-        
-        self.prevLab = QtWidgets.QLabel(self.protSel)
-        self.prevLab.setGeometry(QtCore.QRect(410, 30, 67, 17))
-        self.prevLab.setObjectName("prevLab")
-        self.prevLab.setText("Preview Protocol Selected")
-        
-        self.casLab = QtWidgets.QLabel(self.protSel)
-        self.casLab.setGeometry(QtCore.QRect(50, 10, 201, 17))
-        self.casLab.setObjectName("casLab")
-        self.casLab.setText("Cassette " + str(casNumber) + " -- Select Protocol")
-        
-        self.newButton = QtWidgets.QPushButton(self.protSel)
-        self.newButton.setGeometry(QtCore.QRect(130, 290, 89, 25))
-        self.newButton.setObjectName("newButton")
-        self.newButton.setText("New")
-        
-        self.previewPList = QtWidgets.QListWidget(self.protSel)
-        self.previewPList.setGeometry(QtCore.QRect(30, 80, 291, 192))
-        self.previewPList.setObjectName("previewPList")
-        
-        self.mainStack.addWidget(self.protSel)
+    def protSelNav(self):
+        self.protSel.back_ProtSel.connect(lambda: self.mainStack.setCurrentIndex(2))
+        self.protSel.new_ProtSel.connect(lambda: self.mainStack.setCurrentIndex(1))
+        #After selecting the protocol from the list, run the protocol....
+        self.protSel.select_ProtSel.connect(self.runSelProt)
     
+    def protEditorNav(self):
+        self.protEditor.back_ProtEdit.connect(lambda: self.mainStack.setCurrentIndex(0))
+        self.protEditor.home_ProtEdit.connect(lambda: self.mainStack.setCurrentIndex(2))
+        #I need to update the protocol selector with the edited program and select it....
+        #Break this out into separate function
+        self.protEditor.next_ProtEdit.connect(self.nextPEdit)
     
+    def nextPEdit(self):
+        #Make the protocol selector select and preview protocol from editor
+        self.mainStack.setCurrentIndex(0)
+        
+    def runSelProt(self):
+        self.mainStack.setCurrentIndex(2)
+        #Update the sample monitor
+        print(self.protSel.casNumber)
+        monW = self.sampMons[self.protSel.casNumber-1]
+        monW.monWidget.setCurrentIndex(0)
+        
+        #Set protocol and sample name based on last Protocol Selector screen
+        # monW.sampName = self.protSel.sampName
+        # monW.protName = self.protSel.protName
+        
+        #Get list of steps and time to complete each step?
+        #Print to hidden dialog file the progress of each from the fluid functions
+        
+        monW.step.setText("Running!")
+        start = datetime.datetime.now()
+    #     self.timer = QtCore.QTimer()        
+    #     self.timer.start(1000)
+    #     self.timer.timeout.connect(lambda: self.handleTimer(monW))
+        
+    # def handleTimer(self, monW):
+    #         value = monW.progressBar.value()
+    #         if value <= 100:
+    #             value = value + 1
+    #             monW.progressBar.setValue(value)
+    #         else:
+    #             self.timer.stop()     
+        # if self.completed < 100:
+        #     self.completed += 0.0001
+        #     # now = datetime.datetime.now()
+        #     # td = now-start
+        #     # diffstring = ":".join(str(td).split(":")[:2])+":"+str(round(float(str(td).split(":")[2:3][0])))
+        #     # monW.time.setText(diffstring)
+        #     monW.progressBar.setValue(self.completed)
+ 
+        
     def mainMonitor(self):
         self.mainMonitor = QtWidgets.QWidget()
         self.mainMonitor.setObjectName("mainMonitor")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.mainMonitor)
         self.gridLayout_2.setObjectName("gridLayout_2")
         
+        self.sampMons = []
+        
         #Initializing sample monitors for each cassette
-        self.monWidget1 = SampMonitor(casNumber = 1)
-        self.monWidget1.monWidget.setCurrentIndex(1)
-        # self.monWidget1.setupB.clicked.connect(MainWindow.monWidget1.monWidget.hide)
+        self.monWidget1 = SampMonitor(casNumber = 1, casDetected = True)
+        self.sampMons.append(self.monWidget1)
+        self.sampMons[0].switchproSel_SampMon.connect(lambda: self.protSelObj(self.sampMons[0]))
         self.gridLayout_2.addWidget(self.monWidget1.monWidget, 0, 0, 1, 1)
                 
         self.monWidget2 = SampMonitor(casNumber = 2)
-        self.monWidget2.monWidget.setCurrentIndex(1)
+        self.sampMons.append(self.monWidget2)
+        self.sampMons[1].switchproSel_SampMon.connect(lambda: self.protSelObj(self.sampMons[1]))
         self.gridLayout_2.addWidget(self.monWidget2.monWidget, 0, 1, 1, 1)
         
         self.monWidget3 = SampMonitor(casNumber = 3)
-        self.monWidget3.monWidget.setCurrentIndex(1)
+        self.sampMons.append(self.monWidget3)
+        self.sampMons[2].switchproSel_SampMon.connect(lambda: self.protSelObj(self.sampMons[2]))
         self.gridLayout_2.addWidget(self.monWidget3.monWidget, 0, 2, 1, 1)
                 
         self.monWidget4 = SampMonitor(casNumber = 4)
-        self.monWidget4.monWidget.setCurrentIndex(0)
+        self.sampMons.append(self.monWidget4)
+        self.sampMons[3].switchproSel_SampMon.connect(lambda: self.protSelObj(self.sampMons[3]))
         self.gridLayout_2.addWidget(self.monWidget4.monWidget, 1, 0, 1, 1)
                 
         self.monWidget5 = SampMonitor(casNumber = 5)
-        self.monWidget5.monWidget.setCurrentIndex(0)
+        self.sampMons.append(self.monWidget5)
+        self.sampMons[4].switchproSel_SampMon.connect(lambda: self.protSelObj(self.sampMons[4]))
         self.gridLayout_2.addWidget(self.monWidget5.monWidget, 1, 1, 1, 1)
                 
         self.monWidget6 = SampMonitor(casNumber = 6)
-        self.monWidget6.monWidget.setCurrentIndex(0)
+        self.sampMons.append(self.monWidget6)
+        self.sampMons[5].switchproSel_SampMon.connect(lambda: self.protSelObj(self.sampMons[5]))
         self.gridLayout_2.addWidget(self.monWidget6.monWidget, 1, 2, 1, 1)
-        
         
         self.mainStack.addWidget(self.mainMonitor)
         self.gridLayout.addWidget(self.mainStack, 1, 0, 1, 1)
         
+        # Connect monitor slots
+        # for i in range(0,6):
+        #     self.sampMons[i].switchproSel_SampMon.connect(lambda: self.protSelObj(self.sampMons[i]))
+            # print(self.sampMons[i].casNumber)
+        
+    #Why is it only sending the last connected monW casNumber....?
+    @QtCore.pyqtSlot(QtWidgets.QStackedWidget)    
+    def protSelObj(self, monW):
+        print("This is monWidget"+str(monW.casNumber)+"!")
+        self.mainStack.setCurrentIndex(0)
+        self.protSel.casLab.setText("Cassette " + str(monW.casNumber) + " -- Select Protocol")
+        self.protSel.casNumber = monW.casNumber
+
+
     # def updateMonitor(self):
         #Check if cassette is in position
         #Coordinate between active runs and when run finishes

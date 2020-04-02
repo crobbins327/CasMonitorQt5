@@ -446,7 +446,7 @@
            <number>1</number>
           </property>
           <widget class="QWidget" name="S1Page1">
-           <layout class="QGridLayout" name="gridLayout_29" columnstretch="0,0,0">
+           <layout class="QGridLayout" name="gridLayout_29" columnstretch="0,0">
             <item row="9" column="0" colspan="2">
              <widget class="QProgressBar" name="progressBar_1">
               <property name="enabled">
