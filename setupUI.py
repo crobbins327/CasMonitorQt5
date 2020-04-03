@@ -45,6 +45,9 @@ class Ui_MainWindow(object):
         self.protEditor = ProtEditor()
         self.mainStack.addWidget(self.protEditor)
         self.protEditorNav()
+        print("height: " + str(self.protEditor.stepList.height()))
+        print("width: " + str(self.protEditor.stepList.width()))
+        
         #2
         self.mainMonitor()
         self.mainStack.setCurrentIndex(2)

@@ -92,17 +92,20 @@ if __name__ == "__main__":
 
     w = QtWidgets.QMainWindow()
     w.setCentralWidget(QtWidgets.QWidget())
-    dock = QtWidgets.QDockWidget("Collapsible Demo")
-    w.addDockWidget(QtCore.Qt.LeftDockWidgetArea, dock)
-    scroll = QtWidgets.QScrollArea()
-    w.setWidget(scroll)
-    content = QtWidgets.QWidget()
-    scroll.setWidget(content)
-    scroll.setWidgetResizable(True)
-    vlay = QtWidgets.QVBoxLayout(content)
+    dock = QtWidgets.QListWidget(w)
+    dock.setGeometry(QtCore.QRect(111, 50, 590, 368))
+    # scroll = QtWidgets.QScrollArea()
+    # dock.setWidget(scroll)
+    # content = QtWidgets.QWidget()
+    # scroll.setWidget(content)
+    # scroll.setWidgetResizable(True)
+
     for i in range(10):
         box = CollapsibleBox("Collapsible Box Header-{}".format(i))
-        vlay.addWidget(box)
+        itemN = QtWidgets.QListWidgetItem() 
+        itemN.setSizeHint(box.sizeHint()) 
+        dock.addItem(itemN)
+        dock.setItemWidget(itemN, box)
         lay = QtWidgets.QVBoxLayout()
         for j in range(8):
             label = QtWidgets.QLabel("{}".format(j))
@@ -114,7 +117,8 @@ if __name__ == "__main__":
             lay.addWidget(label)
 
         box.setContentLayout(lay)
-    vlay.addStretch()
-    w.resize(640, 480)
+        
+    # vlay.addStretch()
+    w.resize(800, 480)
     w.show()
     sys.exit(app.exec_())

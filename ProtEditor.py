@@ -99,8 +99,8 @@ class ProtEditor(QtWidgets.QWidget):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.homeButton.sizePolicy().hasHeightForWidth())
         self.homeButton.setSizePolicy(sizePolicy)
-        self.homeButton.setObjectName("homeButton")
         self.homeButton.setText( "Home")
+        self.homeButton.setObjectName("homeButton")
         self.homeButton.clicked.connect(self.goHome)
         
         
@@ -165,6 +165,32 @@ class ProtEditor(QtWidgets.QWidget):
         #Save as check dialog
         
         self.next_ProtEdit.emit()
+        
+#Define the collapsable widget class and then inherit the layout for the individual operations
+#Get the order of the operations in the list
+    #Get the parameters of each operation in the list
+    #Estimate the time to completion based on parameters
+    #Display completion time on the right
+#Add completion time
+#Save as protocol file....
+        
+
+class CollapsableWidget(QtWidgets.QWidget):
+   
+    def __init__(self):
+        
+        self.toggle_button = QtWidgets.QToolButton(
+            text=title, checkable=True, checked=False
+        )
+        self.toggle_button.setStyleSheet("QToolButton { border: none; }")
+        self.toggle_button.setToolButtonStyle(
+            QtCore.Qt.ToolButtonTextBesideIcon
+        )
+        self.toggle_button.setArrowType(QtCore.Qt.RightArrow)
+        #Drop down widget
+        #Hide and unhide portions of widget?
+        self.toggle_button.pressed.connect(self.on_pressed)
+    
         
         
     
