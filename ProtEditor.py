@@ -6,6 +6,7 @@ Created on Sun Mar 29 14:56:31 2020
 @author: jackr
 """
 from PyQt5 import QtCore, QtGui, QtWidgets
+from IncubateOp import *
 
 class ProtEditor(QtWidgets.QWidget):
     
@@ -124,6 +125,27 @@ class ProtEditor(QtWidgets.QWidget):
         self.stepList.setObjectName("stepList")
         self.stepList.setDragDropMode(QtWidgets.QAbstractItemView.DragDrop)
         self.stepList.setDefaultDropAction(QtCore.Qt.MoveAction)
+        # self.stepList.dropEvent()
+        #Add some test incubation operation steps
+        self.makeIncuOperator(self.stepList)
+        self.makeIncuOperator(self.stepList)
+        
+                  
+        
+        
+        # incub2 = IncubateOp()
+        # itemN2 = QtWidgets.QListWidgetItem() 
+        # itemN2.setSizeHint(QtCore.QSize(0,incub2.centralwidget.frameGeometry().height())) 
+        # self.stepList.addItem(itemN2)
+        # self.stepList.setItemWidget(itemN2, incub2.centralwidget)
+        # incub2.incButton.clicked.connect(lambda: self.updateItemSize(itemN2, incub2))
+        
+        
+        
+        
+        
+        
+        
         
         
         self.backButton = QtWidgets.QPushButton(self)
@@ -150,7 +172,36 @@ class ProtEditor(QtWidgets.QWidget):
         self.nextButton.setText("Next")
         self.nextButton.clicked.connect(self.goNext)
         
+    
+    def dropEvent(self):
         
+        self.makeIncuOperator(self.stepList)
+    
+    
+    
+    def makeIncuOperator(self, listWid):
+        incub = IncubateOp()
+        itemN = QtWidgets.QListWidgetItem() 
+        itemN.setSizeHint(QtCore.QSize(0,incub.centralwidget.frameGeometry().height())) 
+        
+        listWid.addItem(itemN)
+        listWid.setItemWidget(itemN, incub.centralwidget)
+        incub.incButton.clicked.connect(lambda: self.updateItemSize(itemN, incub))
+        incub.removeButton.clicked.connect(lambda: self.removeItem(itemN, listWid))
+    
+    
+    def removeItem(self, item, listWid):
+        listWid.takeItem(listWid.row(item))
+        listWid.removeItemWidget(item)
+        item = None
+        
+    
+    def updateItemSize(self, item, operator):
+        item.setSizeHint(QtCore.QSize(0,operator.centralwidget.frameGeometry().height()))
+        
+    
+    
+    
     def goHome(self):
         #Save check dialog
         
@@ -175,21 +226,21 @@ class ProtEditor(QtWidgets.QWidget):
 #Save as protocol file....
         
 
-class CollapsableWidget(QtWidgets.QWidget):
+# class CollapsableWidget(QtWidgets.QWidget):
    
-    def __init__(self):
+#     def __init__(self):
         
-        self.toggle_button = QtWidgets.QToolButton(
-            text=title, checkable=True, checked=False
-        )
-        self.toggle_button.setStyleSheet("QToolButton { border: none; }")
-        self.toggle_button.setToolButtonStyle(
-            QtCore.Qt.ToolButtonTextBesideIcon
-        )
-        self.toggle_button.setArrowType(QtCore.Qt.RightArrow)
-        #Drop down widget
-        #Hide and unhide portions of widget?
-        self.toggle_button.pressed.connect(self.on_pressed)
+#         self.toggle_button = QtWidgets.QToolButton(
+#             text=title, checkable=True, checked=False
+#         )
+#         self.toggle_button.setStyleSheet("QToolButton { border: none; }")
+#         self.toggle_button.setToolButtonStyle(
+#             QtCore.Qt.ToolButtonTextBesideIcon
+#         )
+#         self.toggle_button.setArrowType(QtCore.Qt.RightArrow)
+#         #Drop down widget
+#         #Hide and unhide portions of widget?
+#         self.toggle_button.pressed.connect(self.on_pressed)
     
         
         

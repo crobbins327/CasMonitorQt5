@@ -92,10 +92,10 @@ if __name__ == "__main__":
 
     w = QtWidgets.QMainWindow()
     w.setCentralWidget(QtWidgets.QWidget())
-    dock = QtWidgets.QDockWidget("Collapsible Demo")
-    w.addDockWidget(QtCore.Qt.LeftDockWidgetArea, dock)
+    dock = QtWidgets.QListWidget(w)
+    dock.setGeometry(QtCore.QRect(111, 50, 590, 368))
     scroll = QtWidgets.QScrollArea()
-    w.setWidget(scroll)
+    dock.setWidget(scroll)
     content = QtWidgets.QWidget()
     scroll.setWidget(content)
     scroll.setWidgetResizable(True)
@@ -115,6 +115,6 @@ if __name__ == "__main__":
 
         box.setContentLayout(lay)
     vlay.addStretch()
-    w.resize(640, 480)
+    w.resize(800, 480)
     w.show()
     sys.exit(app.exec_())
