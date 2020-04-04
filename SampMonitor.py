@@ -25,7 +25,8 @@ class SampMonitor(QtWidgets.QWidget):
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.monWidget.sizePolicy().hasHeightForWidth())
+        # sizePolicy.setHeightForWidth(self.monWidget.sizePolicy().hasHeightForWidth())
+        
         self.monWidget.setSizePolicy(sizePolicy)
         self.monWidget.setAcceptDrops(False)
         self.monWidget.setObjectName("monWidget"+str(casNumber))

@@ -11,7 +11,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class IncubateOp(QtWidgets.QStackedWidget):
     def __init__(self, typeParamWid = False):
-        QtWidgets.QStackedWidget().__init__()
+        super(IncubateOp, self).__init__()
+        self.setAcceptDrops(True)
         # Form.setObjectName("Form")
         # Form.resize(700, 700)
         # sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
@@ -27,13 +28,13 @@ class IncubateOp(QtWidgets.QStackedWidget):
         
         # self.stack = QtWidgets.QStackedWidget(Form)
         
-        self.stack = QtWidgets.QStackedWidget()
+        # self.stack = QtWidgets.QStackedWidget()
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.stack.sizePolicy().hasHeightForWidth())
-        self.stack.setSizePolicy(sizePolicy)
-        self.stack.setObjectName("stack")
+        # sizePolicy.setHeightForWidth(self.stack.sizePolicy().hasHeightForWidth())
+        self.setSizePolicy(sizePolicy)
+        self.setObjectName("stack")
         
         
         #Front side of widget
@@ -47,14 +48,14 @@ class IncubateOp(QtWidgets.QStackedWidget):
         self.frontLabel.setFont(font)
         self.frontLabel.setObjectName("frontLabel")
         self.frontLabel.setText("Incubate")
-        self.stack.addWidget(self.labelWidget)
+        self.addWidget(self.labelWidget)
         
         #Main parameter widget
         #1
         # self.paramWidget = QtWidgets.QWidget(Form)
         self.paramWidget = QtWidgets.QWidget()
         self.paramWidget.resize(590, 32)
-        self.stack.addWidget(self.paramWidget)
+        self.addWidget(self.paramWidget)
         
         #Specify widget type to display
         self.switchWidget(typeParamWid)
@@ -88,22 +89,43 @@ class IncubateOp(QtWidgets.QStackedWidget):
         self.incButton.setObjectName("incButton")
         
         self.dispTimeLab = QtWidgets.QLabel(self.topFrame)
-        self.dispTimeLab.setGeometry(QtCore.QRect(430, 0, 101, 32))
+        self.dispTimeLab.setGeometry(QtCore.QRect(470, 0, 101, 32))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.dispTimeLab.setFont(font)
         self.dispTimeLab.setObjectName("dispTimeLab")
-        self.dispTimeLab.setText("(hh:mm:ss)")
+        self.dispTimeLab.setText("")
+        
+        self.dispTempLab = QtWidgets.QLabel(self.topFrame)
+        self.dispTempLab.setGeometry(QtCore.QRect(350, 0, 101, 32))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.dispTempLab.setFont(font)
+        self.dispTempLab.setObjectName("dispTempLab")
+        self.dispTempLab.setText("")
         
         self.removeButton = QtWidgets.QPushButton(self.topFrame)
         self.removeButton.setEnabled(True)
-        self.removeButton.setGeometry(QtCore.QRect(550, 0, 32, 32))
+        self.removeButton.setGeometry(QtCore.QRect(550, 4, 24, 24))
         self.removeButton.setStyleSheet("border: None")
-        self.removeButton.setText("")
+        # self.removeButton.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("Icons/close.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.removeButton.setIcon(icon)
-        self.removeButton.setIconSize(QtCore.QSize(10, 10))
+        self.removeButton.setIconSize(QtCore.QSize(12, 12))
+        self.removeButton.setStyleSheet(""" 
+                                      QPushButton{
+                                      border: 1px solid black; 
+                                      border-radius: 12px;
+                                      background-color: none;
+                                      }
+                                      QPushButton:pressed{
+                                      border: 1px solid black; 
+                                      border-radius: 12px;
+                                      background-color: rgb(255,51,51);
+                                      }
+                                      """
+                                      )
         self.removeButton.setObjectName("removeButton")
         
         
@@ -132,13 +154,15 @@ class IncubateOp(QtWidgets.QStackedWidget):
         self.tempLab.setObjectName("tempLab")
         self.tempLab.setText("Temperature (°C):")
         
-        self.tempEdit = QtWidgets.QLineEdit(self.botFrame)
+        self.tempEdit = LineEdit(self.botFrame)
         self.tempEdit.setGeometry(QtCore.QRect(20, 25, 120, 20))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.tempEdit.setFont(font)
         self.tempEdit.setObjectName("tempEdit")
         self.tempEdit.setInputMask("999")
+        self.tempEdit.textEdited.connect(lambda: self.dispTempLab.setText(self.tempEdit.text()+" °C"))
+        
         
         self.timeLab = QtWidgets.QLabel(self.botFrame)
         self.timeLab.setGeometry(QtCore.QRect(190, 5, 140, 15))
@@ -146,17 +170,21 @@ class IncubateOp(QtWidgets.QStackedWidget):
         font.setPointSize(10)
         self.timeLab.setFont(font)
         self.timeLab.setObjectName("timeLab")
-        self.timeLab.setText("Time (hh:mm:ss):")
+        self.timeLab.setText("Time (h:mm:ss):")
         
-        self.timeEdit = QtWidgets.QLineEdit(self.botFrame)
+        self.timeEdit = LineEdit(self.botFrame)
         self.timeEdit.setGeometry(QtCore.QRect(190, 25, 120, 20))
         self.timeEdit.setInputMethodHints(QtCore.Qt.ImhTime)
         self.timeEdit.setObjectName("timeEdit")
-        self.timeEdit.setInputMask("99:99:99")
-        self.timeEdit.setText("::")
+        self.timeEdit.setInputMask("9:99:99")
+        # self.timeEdit.setPlaceholderText("0:00:00")
+        self.timeEdit.home(False)
         font = QtGui.QFont()
         font.setPointSize(10)
-        self.timeEdit.setFont(font)
+        self.timeEdit.textEdited.connect(lambda: self.dispTimeLab.setText("("+self.timeEdit.text()+")"))
+
+        
+        self.dispTimeLab.setText("("+str(self.timeEdit.text())+")")
         
         self.shakBox = QtWidgets.QCheckBox(self.botFrame)
         self.shakBox.setGeometry(QtCore.QRect(370, 10, 91, 23))
@@ -178,7 +206,8 @@ class IncubateOp(QtWidgets.QStackedWidget):
         self.removeButton.clicked.connect(self.paramWidget.hide)
         # print(self.incButton.isChecked())
 
-        
+    
+
     @QtCore.pyqtSlot()
     def onClick(self):
         
@@ -187,46 +216,66 @@ class IncubateOp(QtWidgets.QStackedWidget):
         if checked:    
             self.botFrame.show()
             self.paramWidget.resize(590,82)
-            self.stack.resize(590,82)            
+            self.resize(590,82)            
             # Form.resize(590,92)
             self.incButton.setArrowType(QtCore.Qt.DownArrow)
         else:
             self.botFrame.hide()
             self.paramWidget.resize(590,32)
-            self.stack.resize(590,32)
+            self.resize(590,32)
             # Form.resize(590,32)
             self.incButton.setArrowType(QtCore.Qt.RightArrow)
-            
-    def switchWidget(self, typeParamWidget):
-        if typeParamWidget:
-            self.stack.resize(590,32)
-            self.stack.setCurrentIndex(1)
-        else:
-            self.stack.resize(110,50)
-            self.stack.setCurrentIndex(0)
+    
+    
+    
     
     def dropEvent(self, event):
+        if event == True:
+            print("I have been dropped")
+    
+    
+    def switchWidget(self, typeParamWidget):
+        if typeParamWidget:
+            self.resize(590,32)
+            self.setCurrentIndex(1)
+        else:
+            self.resize(110,50)
+            self.setCurrentIndex(0)
         
+
+
+class LineEdit(QtWidgets.QLineEdit):
+    def __init__(self, parent):
+        super(LineEdit, self).__init__(parent)
         
+    def mousePressEvent(self, event):
+        if event.button() == QtCore.Qt.LeftButton:
+            print("Click")
+            self.home(False)
         
+# class Form(QtWidgets.QMainWindow):
+#     def __init__():
+#         self.Form = QtWidgets.QMainWindow()
+#         self.Form.setObjectName("Form")
+#         self.Form.resize(700, 700)
+#         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+#         sizePolicy.setHorizontalStretch(0)
+#         sizePolicy.setVerticalStretch(0)
+#         sizePolicy.setHeightForWidth(self.Form.sizePolicy().hasHeightForWidth())
+#         self.Form.setSizePolicy(sizePolicy)
+#         self.Form.setMinimumSize(QtCore.QSize(0, 30)
+#         incup = IncubateOp()
+        
+#         self.Form.addWidget(IncubateOp)
         
         
 
 # def main():
 #     app = QtWidgets.QApplication(sys.argv)
-#     MainWindow = QtWidgets.QMainWindow()
-#     IncOp = IncubateOp(MainWindow)
+#     F = Form()
 #     # IncOp.setupUi(MainWindow)
-#     MainWindow.show()
+#     F.show()
 #     sys.exit(app.exec_())
     
 # if __name__ == '__main__':
 #     main()
-        
-        
-        
-        
-        
-        
-       
-

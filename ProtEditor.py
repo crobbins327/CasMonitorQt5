@@ -6,7 +6,7 @@ Created on Sun Mar 29 14:56:31 2020
 @author: jackr
 """
 from PyQt5 import QtCore, QtGui, QtWidgets
-from IncubateOp import *
+from IncubateOpTest import *
 
 class ProtEditor(QtWidgets.QWidget):
     
@@ -19,17 +19,17 @@ class ProtEditor(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
         
-        self.setObjectName("protEditor")
-        self.remButton = QtWidgets.QPushButton(self)
-        self.remButton.setGeometry(QtCore.QRect(702, 50, 80, 50))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.remButton.sizePolicy().hasHeightForWidth())
-        self.remButton.setSizePolicy(sizePolicy)
-        self.remButton.setMinimumSize(QtCore.QSize(0, 50))
-        self.remButton.setObjectName("remButton")
-        self.remButton.setText("Remove")
+        # self.setObjectName("protEditor")
+        # self.remButton = QtWidgets.QPushButton(self)
+        # self.remButton.setGeometry(QtCore.QRect(702, 50, 80, 50))
+        # sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        # sizePolicy.setHorizontalStretch(0)
+        # sizePolicy.setVerticalStretch(0)
+        # sizePolicy.setHeightForWidth(self.remButton.sizePolicy().hasHeightForWidth())
+        # self.remButton.setSizePolicy(sizePolicy)
+        # self.remButton.setMinimumSize(QtCore.QSize(0, 50))
+        # self.remButton.setObjectName("remButton")
+        # self.remButton.setText("Remove")
         
         self.saveButton = QtWidgets.QPushButton(self)
         self.saveButton.setGeometry(QtCore.QRect(702, 300, 80, 50))
@@ -42,16 +42,16 @@ class ProtEditor(QtWidgets.QWidget):
         self.saveButton.setObjectName("saveButton")
         self.saveButton.setText("Save")
         
-        self.editButton = QtWidgets.QPushButton(self)
-        self.editButton.setGeometry(QtCore.QRect(702, 110, 80, 50))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.editButton.sizePolicy().hasHeightForWidth())
-        self.editButton.setSizePolicy(sizePolicy)
-        self.editButton.setMinimumSize(QtCore.QSize(0, 50))
-        self.editButton.setObjectName("editButton")
-        self.editButton.setText("Edit")
+        # self.editButton = QtWidgets.QPushButton(self)
+        # self.editButton.setGeometry(QtCore.QRect(702, 110, 80, 50))
+        # sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        # sizePolicy.setHorizontalStretch(0)
+        # sizePolicy.setVerticalStretch(0)
+        # sizePolicy.setHeightForWidth(self.editButton.sizePolicy().hasHeightForWidth())
+        # self.editButton.setSizePolicy(sizePolicy)
+        # self.editButton.setMinimumSize(QtCore.QSize(0, 50))
+        # self.editButton.setObjectName("editButton")
+        # self.editButton.setText("Edit")
         
         self.saveAsButton = QtWidgets.QPushButton(self)
         self.saveAsButton.setGeometry(QtCore.QRect(702, 250, 80, 50))
@@ -100,7 +100,23 @@ class ProtEditor(QtWidgets.QWidget):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.homeButton.sizePolicy().hasHeightForWidth())
         self.homeButton.setSizePolicy(sizePolicy)
-        self.homeButton.setText( "Home")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("Icons/home-run.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.homeButton.setIcon(icon)
+        self.homeButton.setIconSize(QtCore.QSize(32, 32))
+        self.homeButton.setStyleSheet(""" 
+                                      QPushButton{
+                                      border: none;
+                                      background-color: none;
+                                      }
+                                      QPushButton:pressed{
+                                      border: 1px solid black; 
+                                      border-radius: 15px;
+                                      background-color: none;
+                                      }
+                                      """
+                                      )
+        # self.homeButton.setText("")
         self.homeButton.setObjectName("homeButton")
         self.homeButton.clicked.connect(self.goHome)
         
@@ -118,7 +134,9 @@ class ProtEditor(QtWidgets.QWidget):
         self.operationList.setDefaultDropAction(QtCore.Qt.IgnoreAction)
         self.operationList.setAlternatingRowColors(True)
         self.operationList.setObjectName("operationList")
+        
         self.operationList.addItems(["Wash","Clearing Solution","Stain","Incubation"])
+        
         
         self.stepList = QtWidgets.QListWidget(self)
         self.stepList.setGeometry(QtCore.QRect(111, 50, 590, 368))
@@ -135,19 +153,12 @@ class ProtEditor(QtWidgets.QWidget):
         
         # incub2 = IncubateOp()
         # itemN2 = QtWidgets.QListWidgetItem() 
-        # itemN2.setSizeHint(QtCore.QSize(0,incub2.centralwidget.frameGeometry().height())) 
+        # itemN2.setSizeHint(QtCore.QSize(0,incub2.paramWidget.frameGeometry().height())) 
         # self.stepList.addItem(itemN2)
-        # self.stepList.setItemWidget(itemN2, incub2.centralwidget)
+        # self.stepList.setItemWidget(itemN2, incub2.paramWidget)
         # incub2.incButton.clicked.connect(lambda: self.updateItemSize(itemN2, incub2))
         
-        
-        
-        
-        
-        
-        
-        
-        
+
         self.backButton = QtWidgets.QPushButton(self)
         self.backButton.setGeometry(QtCore.QRect(80, 0, 75, 50))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -157,7 +168,23 @@ class ProtEditor(QtWidgets.QWidget):
         self.backButton.setSizePolicy(sizePolicy)
         self.backButton.setMinimumSize(QtCore.QSize(50, 50))
         self.backButton.setObjectName("backButton")
-        self.backButton.setText("Back")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("Icons/back.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.backButton.setIcon(icon)
+        self.backButton.setIconSize(QtCore.QSize(32, 32))
+        self.backButton.setStyleSheet(""" 
+                                      QPushButton{
+                                      border: none;
+                                      background-color: none;
+                                      }
+                                      QPushButton:pressed{
+                                      border: 1px solid black; 
+                                      border-radius: 15px;
+                                      background-color: none;
+                                      }
+                                      """
+                                      )
+        # self.backButton.setText("Back")
         self.backButton.clicked.connect(self.goBack)
         
         self.nextButton = QtWidgets.QPushButton(self)
@@ -177,15 +204,18 @@ class ProtEditor(QtWidgets.QWidget):
         
         self.makeIncuOperator(self.stepList)
     
-    
+    # def makeWashOperator(self, listWid):
+        
+    # def makeStainOperator(self, listWid):
+        
     
     def makeIncuOperator(self, listWid):
-        incub = IncubateOp()
+        incub = IncubateOp(typeParamWid = True)
         itemN = QtWidgets.QListWidgetItem() 
-        itemN.setSizeHint(QtCore.QSize(0,incub.centralwidget.frameGeometry().height())) 
+        itemN.setSizeHint(QtCore.QSize(0,incub.frameGeometry().height())) 
         
         listWid.addItem(itemN)
-        listWid.setItemWidget(itemN, incub.centralwidget)
+        listWid.setItemWidget(itemN, incub)
         incub.incButton.clicked.connect(lambda: self.updateItemSize(itemN, incub))
         incub.removeButton.clicked.connect(lambda: self.removeItem(itemN, listWid))
     
@@ -197,7 +227,7 @@ class ProtEditor(QtWidgets.QWidget):
         
     
     def updateItemSize(self, item, operator):
-        item.setSizeHint(QtCore.QSize(0,operator.centralwidget.frameGeometry().height()))
+        item.setSizeHint(QtCore.QSize(0,operator.frameGeometry().height()))
         
     
     

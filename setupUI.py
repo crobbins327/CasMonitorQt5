@@ -7,7 +7,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from SampMonitor import *
 from ProtEditor import *
 from ProtSelector import *
-from IncubateOp import *
+from IncubateOpTest import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -47,11 +47,11 @@ class Ui_MainWindow(object):
         self.mainStack.addWidget(self.protEditor)
         self.protEditorNav()
         
-        for i in range(0,2):
-            print(self.protEditor.stepList.item(i).text())
+        # for i in range(0,2):
+        #     print(str(self.protEditor.stepList.item(i).text()))
         
-        print("height: " + str(self.protEditor.stepList.height()))
-        print("width: " + str(self.protEditor.stepList.width()))
+        # print("height: " + str(self.protEditor.stepList.height()))
+        # print("width: " + str(self.protEditor.stepList.width()))
         
         #2
         self.mainMonitor()
