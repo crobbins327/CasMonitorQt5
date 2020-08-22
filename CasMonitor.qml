@@ -1,5 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
+import QtQuick.Window 2.14
 import Qt.labs.qmlmodels 1.0
 import QtQml.Models 2.12
 import QtQuick.Dialogs 1.3
@@ -16,6 +17,12 @@ ApplicationWindow {
     visible: true
     width: 800
     height: 480
+    maximumWidth: 801
+    maximumHeight: 481
+    minimumWidth: 780
+    minimumHeight: 410
+    flags: Qt.Qindow|Qt.FramelessWindowHint
+    visibility: Window.FullScreen
 
     StackView {
         id: mainStack

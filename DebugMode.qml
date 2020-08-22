@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQml.Models 2.12
@@ -162,7 +162,7 @@ Item {
                 width: 173
                 height: 25
                 color: "#ffffff"
-                text: qsTr("Debug Mode")
+                text: qsTr("Prepbot Control")
                 font.weight: Font.Medium
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -176,6 +176,7 @@ Item {
             id: rootTangle
             height: 405
             color: "transparent"
+            border.color: "#a69d9d"
             anchors.right: parent.right
             anchors.rightMargin: 10
             anchors.left: parent.left
@@ -183,151 +184,190 @@ Item {
             anchors.top: menuRect.bottom
             anchors.topMargin: 10
 
-            Button {
+            BevButton {
                 id: homeSyrB
-                x: 58
-                y: 119
+                width: 75
+                height: 40
                 text: qsTr("Home")
-                anchors.bottom: meohB.top
-                anchors.bottomMargin: 50
+                anchors.top: casSelectLab.bottom
+                anchors.topMargin: 38
+                anchors.left: casSelectLab.left
+                anchors.leftMargin: 0
+                palette {
+                    button: 'white'
+                }
 
-                onClicked: {root.syrHome(); console.log("Home")}
+                onClicked: {ExecPrepbot.home()}
             }
 
-            Button {
-                id: findVialB
+            BevButton {
+                id: connectB
                 y: 119
-                text: qsTr("Find Vial")
+                width: 85
+                height: 40
+                text: qsTr("Connect")
+                anchors.verticalCenterOffset: 0
                 anchors.left: homeSyrB.right
                 anchors.leftMargin: 30
                 anchors.verticalCenter: homeSyrB.verticalCenter
+                palette {
+                    button: 'white'
+                }
 
                 onClicked: {root.findVial(); console.log("Find Vial")}
             }
 
-            Button {
-                id: engageVialB
+            BevButton {
+                id: engageSaB
                 y: 119
-                text: qsTr("Engage Vial")
-                anchors.left: findVialB.right
-                anchors.leftMargin: 30
-                anchors.verticalCenter: homeSyrB.verticalCenter
+                height: 40
+                text: qsTr("Engage Sample")
+                anchors.left: haltB.right
+                anchors.leftMargin: 50
+                anchors.verticalCenterOffset: 0
+                anchors.verticalCenter: haltB.verticalCenter
+                palette {
+                    button: 'white'
+                }
 
-                onClicked: {root.engageVial(); console.log("Engage Vial")}
+                onClicked: {ExecPrepbot.engageSampleD; console.log("Engage Sample "+casNumber)}
             }
 
-            Button {
-                id: dropVialB
+            BevButton {
+                id: disengageSaB
                 y: 119
-                text: qsTr("Drop Vial")
-                anchors.left: engageVialB.right
+                height: 40
+                text: qsTr("Disengage Sample")
+                anchors.left: engageSaB.right
                 anchors.leftMargin: 30
                 anchors.verticalCenter: homeSyrB.verticalCenter
+                palette {
+                    button: 'white'
+                }
 
                 onClicked: {root.dropVial(); console.log("Drop Vial")}
             }
 
-            Button {
+            BevButton {
                 id: meohB
-                x: 58
-                y: 212
+                y: 188
+                width: 75
+                height: 40
                 text: qsTr("MeOH")
+                anchors.left: formalinB.right
+                anchors.leftMargin: 30
+                anchors.verticalCenter: formalinB.verticalCenter
                 anchors.bottom: neInB.top
                 anchors.bottomMargin: 50
+                palette {
+                    button: 'white'
+                }
 
                 onClicked: {root.syrMeOH(); console.log("MeOH")}
             }
 
-            Button {
+            BevButton {
                 id: babbB
-                y: 212
+                y: 188
+                width: 75
+                height: 40
                 text: qsTr("BABB")
+                anchors.verticalCenter: meohB.verticalCenter
                 anchors.left: meohB.right
                 anchors.leftMargin: 30
-                anchors.verticalCenter: meohB.verticalCenter
+                palette {
+                    button: 'white'
+                }
 
                 onClicked: {root.syrBABB(); console.log("BABB")}
             }
 
-            Button {
+            BevButton {
                 id: formalinB
-                y: 212
+                y: 188
+                width: 85
+                height: 40
                 text: qsTr("Formalin")
-                anchors.left: babbB.right
+                anchors.left: wasteB.right
                 anchors.leftMargin: 30
-                anchors.verticalCenter: meohB.verticalCenter
+                anchors.verticalCenter: wasteB.verticalCenter
+                palette {
+                    button: 'white'
+                }
 
                 onClicked: {root.syrFormalin(); console.log("Formalin")}
             }
 
-            Button {
+            BevButton {
                 id: wasteB
-                y: 212
+                width: 75
+                height: 40
                 text: qsTr("Waste")
-                anchors.left: formalinB.right
-                anchors.leftMargin: 30
-                anchors.verticalCenter: meohB.verticalCenter
+                anchors.top: homeSyrB.bottom
+                anchors.topMargin: 45
+                anchors.left: homeSyrB.left
+                anchors.leftMargin: 0
+                palette {
+                    button: 'white'
+                }
 
                 onClicked: {root.syrWaste(); console.log("Waste")}
             }
 
-            Button {
+            BevButton {
                 id: sampleB
-                y: 212
+                y: 188
+                width: 75
+                height: 40
                 text: qsTr("Sample")
-                anchors.left: wasteB.right
+                anchors.left: babbB.right
                 anchors.leftMargin: 30
-                anchors.verticalCenter: meohB.verticalCenter
+                anchors.verticalCenter: babbB.verticalCenter
+                palette {
+                    button: 'white'
+                }
 
                 onClicked: {root.syrSample(); console.log("Sample")}
             }
 
-            Button {
-                id: neInB
-                x: 58
-                y: 293
-                text: qsTr("Needle In")
-
-                onClicked: {root.needleIn(); console.log("Needle In")}
-            }
-
-            Button {
-                id: neOutB
-                y: 293
-                text: qsTr("Needle Out")
-                anchors.left: neInB.right
-                anchors.leftMargin: 30
-                anchors.verticalCenter: neInB.verticalCenter
-
-                onClicked: {root.needleOut(); console.log("Needle Out")}
-            }
-
-            Button {
+            BevButton {
                 id: pumpInB
-                y: 293
+                height: 50
                 text: qsTr("Pump in")
-                anchors.left: neOutB.right
-                anchors.leftMargin: 30
+                anchors.top: wasteB.bottom
+                anchors.topMargin: 35
+                anchors.left: wasteB.left
+                anchors.leftMargin: 0
                 anchors.verticalCenter: neInB.verticalCenter
+                palette {
+                    button: 'white'
+                }
 
                 onClicked: {root.pumpIn(); console.log("Pump In")}
             }
 
-            Button {
+            BevButton {
                 id: pumpOutB
                 y: 293
+                height: 50
                 text: qsTr("Pump Out")
                 anchors.left: pumpInB.right
-                anchors.leftMargin: 30
-                anchors.verticalCenter: neInB.verticalCenter
+                anchors.leftMargin: 45
+                anchors.verticalCenter: pumpInB.verticalCenter
+                palette {
+                    button: 'white'
+                }
 
                 onClicked: {root.pumpOut(); console.log("Pump Out")}
             }
 
             SpinBox {
                 id: casBox
-                x: 58
-                y: 29
+                //y: 8
+                //x: 350
+                anchors.verticalCenter: casSelectLab.verticalCenter
+                anchors.left: casSelectLab.right
+                anchors.leftMargin: 100
                 to: 6
                 from: 1
                 value: casNumber
@@ -335,14 +375,154 @@ Item {
 
             Text {
                 id: casSelectLab
-                x: 58
-                y: 0
-                width: 156
+                y: 16
+                width: 223
                 height: 23
                 color: "#ffffff"
                 text: qsTr("Select Cassette Number:")
+                font.bold: true
+                anchors.left: parent.left
+                anchors.leftMargin: 55
                 font.pointSize: 14
             }
+
+            BevButton {
+                id: parkB
+                y: 203
+                height: 40
+                text: qsTr("Park")
+                anchors.left: sampleB.right
+                anchors.leftMargin: 30
+                anchors.verticalCenter: sampleB.verticalCenter
+                palette {
+                    button: 'white'
+                }
+            }
+
+            BevButton {
+                id: takeDyeB
+                width: 120
+                height: 40
+                text: qsTr("Take up Dye")
+                anchors.top: pumpInB.bottom
+                anchors.topMargin: 35
+                anchors.left: pumpInB.left
+                anchors.leftMargin: 0
+                palette {
+                    button: 'white'
+                }
+            }
+
+            BevButton {
+                id: purgeB
+                y: 295
+                width: 140
+                height: 40
+                text: qsTr("Purge Syringe")
+                anchors.verticalCenter: takeDyeB.verticalCenter
+                anchors.left: takeDyeB.right
+                anchors.leftMargin: 25
+                palette {
+                    button: 'white'
+                }
+            }
+
+            BevButton {
+                id: haltB
+                y: 98
+                width: 75
+                height: 40
+                text: qsTr("Halt")
+                anchors.left: connectB.right
+                anchors.leftMargin: 30
+                anchors.verticalCenter: connectB.verticalCenter
+
+                palette {
+                    button: 'red'
+                    buttonText: 'white'
+                }
+
+
+            }
+
+            Slider {
+                id: volSlider
+                y: 225
+                anchors.left: pumpOutB.right
+                anchors.leftMargin: 50
+                anchors.verticalCenter: pumpOutB.verticalCenter
+                value: 3
+                to: 25
+                stepSize: 0.01
+            }
+
+            Text {
+                id: volSLab
+                x: 0
+                y: 234
+                width: 74
+                height: 23
+                color: "#ffffff"
+                text: qsTr("Volume:")
+                font.bold: true
+                anchors.verticalCenter: volSlider.verticalCenter
+                font.pointSize: 14
+                anchors.left: volSlider.right
+                anchors.leftMargin: 15
+            }
+
+            Rectangle{
+                id:rectInput
+                color: "#848484"
+                border.color: "#515151"
+                border.width: 2
+                width: 70
+                height: 30
+                anchors.left: volSLab.right
+                anchors.leftMargin: 20
+                anchors.verticalCenter: volSLab.verticalCenter
+                y: 233
+
+                TextInput {
+                    id: volInput
+                    color: "#ffffff"
+                    font.bold: true
+                    font.pointSize: 14
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignLeft
+                    validator: DoubleValidator {
+                           }
+                    maximumLength: 5
+                    text: volSlider.value
+                    anchors.rightMargin: 5
+                    anchors.leftMargin: 10
+                    anchors.fill: parent
+                    font.underline: false
+                    selectionColor: "#66000080"
+                    selectedTextColor: "#ffffff"
+                    clip: True
+                    onEditingFinished: {
+                        volSlider.value = volInput.text
+                    }
+
+
+                }
+            }
+
+            Text {
+                id: volSLab1
+                y: 239
+                width: 32
+                height: 22
+                color: "#ffffff"
+                text: qsTr("mL")
+                anchors.left: rectInput.right
+                anchors.leftMargin: 5
+                font.pointSize: 14
+                anchors.verticalCenter: rectInput.verticalCenter
+                font.bold: true
+            }
+
 
 
 
