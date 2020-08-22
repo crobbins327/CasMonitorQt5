@@ -1,0 +1,26 @@
+[
+	{
+		"opName": "Incubation",
+		"opTime": "00:00:00",
+		"mixVol": "undefined",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Mixing",
+		"opTime": "00:00:00",
+		"mixVol": "1",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Purge",
+		"opTime": "00:05:00",
+		"mixVol": "undefined",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Load Stain",
+		"opTime": "00:05:00",
+		"mixVol": "undefined",
+		"loadType": "Stain"
+	}
+]
