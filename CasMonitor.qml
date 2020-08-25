@@ -17,7 +17,7 @@ ApplicationWindow {
     property string visMode: 'windowed'
     visible: true
     width: 800
-    height: 480
+    height: 415
     maximumWidth: 801
     maximumHeight: 481
     minimumWidth: 780

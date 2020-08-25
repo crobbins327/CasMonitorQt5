@@ -6,7 +6,7 @@ import QtQuick.Dialogs 1.3
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 2
+    property int stackIndex: 1
     property double runProgVal: 0
     property string firstRunTime : "01:31:55"
     property int firstRunSecs : get_sec(root.firstRunTime)
@@ -274,6 +274,7 @@ Item {
                 x: 152
                 y: 157
                 text: qsTr("Run Details")
+                font.pointSize: 11
                 anchors.right: parent.right
                 anchors.rightMargin: 10
                 anchors.verticalCenter: stopRunB.verticalCenter

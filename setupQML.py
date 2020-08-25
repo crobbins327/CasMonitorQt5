@@ -9,14 +9,14 @@ import sys
 import os
 import logging
 # os.chdir("~CasQML/")
-os.chdir("/home/jackr/SampleMonitor/Git/CasQML/")
+#os.chdir("~/CasMonitor")
 # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 import jsonHelper as jh
 import protHandler as ph
 from PyQt5 import QtCore, QtGui, QtQml, QtQuick, QtWidgets
 import sys
 # insert at 1, 0 is the script path (or '' in REPL)
-sys.path.insert(1, '/home/jackr/SampleMonitor/Git/CasQML/prepbot')
+sys.path.insert(1, './prepbot')
 import machine
 import controller
 from colorlog import ColoredFormatter

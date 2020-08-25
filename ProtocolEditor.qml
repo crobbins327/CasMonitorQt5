@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQml.Models 2.12
@@ -731,10 +731,12 @@ Item {
 
     function estRunTime(model){
         var tally = "00:00:00"
-        for(var i = 0; i < model.count; i++){
-            //console.log(i," time ", model.get(i).opTime)
-            tally = addTimes(tally, model.get(i).opTime)
-            //console.log(tally)
+        if (model.count != 0){
+            for(var i = 0; i < model.count; i++){
+                //console.log(i," time ", model.get(i).opTime)
+                tally = addTimes(tally, model.get(i).opTime)
+                //console.log(tally)
+            }
         }
         return tally
     }

@@ -1,0 +1,10 @@
+[
+	{
+		"opName": "Load Formalin",
+		"opTime": "00:01:30",
+		"volume": "600uL",
+		"pSpeed": "1",
+		"numCycles": "undefined",
+		"loadType": "Formalin"
+	}
+]
