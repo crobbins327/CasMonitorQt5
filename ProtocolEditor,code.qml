@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQml.Models 2.12
@@ -11,17 +11,16 @@ Item {
     id: root
     property int casNumber: 0
     property variant stepModel: ListModel{}
-    property string mainDir: ''
+    property string mainDir: ""
     property string sampleName: ''
     property string protocolName: 'Protocol Name'
     property string savedPath: ''
-    property string runTime: estRunTime(root.stepModel)
-
+    
     signal reNextModel(string jsondata, string protName, string pathSaved)
     Component.onCompleted: JSONHelper.nextModel.connect(reNextModel)
-
-    //width: parent.width
-    //height: parent.height
+    
+    width: 800
+    height: 480
     
     Connections {
         target: root
@@ -43,8 +42,6 @@ Item {
     
     Rectangle {
         id: rootBG
-//        width: 780
-//        height: 460
         anchors.right: parent.right
         anchors.rightMargin: 0
         anchors.left: parent.left
@@ -58,13 +55,8 @@ Item {
 
         Rectangle{
             id: menuRect
+            width: 800
             height: 60
-            anchors.right: parent.right
-            anchors.rightMargin: 0
-            anchors.left: parent.left
-            anchors.leftMargin: 0
-            anchors.top: parent.top
-            anchors.topMargin: 0
             gradient: Gradient {
                 GradientStop {
                     position: 0
@@ -76,9 +68,11 @@ Item {
                     color: "#000000"
                 }
             }
+            x: 0; y: 0
+
             Button {
                 id: homeB
-//                y: 8
+                y: 8
                 width: 50
                 height: 50
                 anchors.left: parent.left
@@ -111,7 +105,7 @@ Item {
 
             Button {
                 id: backB
-//                y: 8
+                y: 8
                 width: 50
                 height: 50
                 display: AbstractButton.IconOnly
@@ -144,6 +138,8 @@ Item {
 
             Button {
                 id: settingsB
+                x: 692
+                y: 8
                 width: 50
                 height: 50
                 display: AbstractButton.IconOnly
@@ -180,7 +176,7 @@ Item {
                 width: 450
                 height: 25
                 color: "white"
-                text: root.protocolName + ' (' + root.runTime +')'
+                text: protocolName + ' (' + estRunTime(stepModel) +')'
                 elide: Text.ElideMiddle
                 wrapMode: Text.NoWrap
                 anchors.verticalCenter: parent.verticalCenter
@@ -197,15 +193,11 @@ Item {
 
         Rectangle {
             id: rootTangle
+            width: rootOperations.width + rootList.width
+            height: 405
+            x: 5
+            y: 70
             color: "transparent"
-            anchors.right: editorButtons.left
-            anchors.rightMargin: 4
-            anchors.left: parent.left
-            anchors.leftMargin: 5
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 5
-            anchors.top: menuRect.bottom
-            anchors.topMargin: 10
 
             Rectangle {
                 id: rootOperations
@@ -217,15 +209,12 @@ Item {
 
                 BevelRect {
                     id: opTab
+                    x: 0
+                    y: 0
+                    width: 120
                     height: 40
                     color: "#242424"
                     radius: 20
-                    anchors.right: parent.right
-                    anchors.rightMargin: 0
-                    anchors.left: parent.left
-                    anchors.leftMargin: 0
-                    anchors.top: parent.top
-                    anchors.topMargin: 0
 
                     Text {
                         id: opLabel
@@ -245,9 +234,6 @@ Item {
                     delegate: OperTypeDel {
                         draggedItemParent: rootList
                         _listView: stepLView
-                        //Where 7 is the number of operation delegates in the model
-                        contHeight: (rootTangle.height-typeView.spacing*operationsModDel.count-opTab.height)/operationsModDel.count
-
                     }
                 }
 
@@ -273,19 +259,17 @@ Item {
                     left: rootOperations.right; top: rootTangle.top; bottom: rootTangle.bottom
                     leftMargin: 5
                 }
+                width: 550
                 height: rootTangle.height
                 color: "whitesmoke"
                 radius: 5
-                anchors.right: parent.right
-                anchors.rightMargin: 0
 
                 BevelRect {
                     id: protInfo
+                    width: rootList.width
                     height: 40
                     color: "#242424"
                     radius: 20
-                    anchors.right: parent.right
-                    anchors.rightMargin: 0
                     anchors.top: rootList.top
                     anchors.topMargin: 0
                     anchors.left: rootList.left
@@ -297,17 +281,16 @@ Item {
                         text: "Cassette " + casNumber
                         font.weight: Font.Medium
                         anchors.left: stepLab.right
-                        anchors.leftMargin: 50
+                        anchors.leftMargin: 60
                         anchors.verticalCenter: parent.verticalCenter
                         font.pointSize: 14
                     }
 
                     Rectangle {
                         id: sampRec
+                        width: 269
                         height: 31
                         color: "#808080"
-                        anchors.right: parent.right
-                        anchors.rightMargin: 20
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: casNum.right
                         anchors.leftMargin: 30
@@ -490,13 +473,13 @@ Item {
                     id: stepLView
 
                     property var operDict: {
-                        'Incubation':{'opName':'Incubation','opTime':'00:00:00', 'volume': 'undefined', 'pSpeed':'undefined', 'numCycles': 'undefined', 'loadType': 'undefined'},
-                        'Mixing':{'opName':'Mixing','opTime':'00:05:00','volume': '1mL', 'pSpeed':'1', 'numCycles': '3', 'loadType': 'undefined'},
-                        'Purge':{'opName':'Purge', 'opTime':'00:05:00', 'volume': '3mL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType': 'undefined'},
-                        'Load Formalin':{'opName':'Load Formalin', 'opTime':'00:01:30', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType':'Formalin'},
-                        'Load Dehydrant':{'opName':'Load Dehydrant', 'opTime':'00:01:30', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType':'Dehydrant'},
-                        'Load Stain':{'opName':'Load Stain', 'opTime':'00:01:30', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType':'Stain'},
-                        'Load BABB':{'opName':'Load BABB', 'opTime':'00:01:30', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType':'BABB'}
+                        'Incubation':{'opName':'Incubation','opTime':'00:00:00', 'volume': 'undefined', 'numCycles': 'undefined', 'loadType': 'undefined'},
+                        'Mixing':{'opName':'Mixing','opTime':'00:05:00','volume': '1mL', 'numCycles': '3', 'loadType': 'undefined'},
+                        'Purge':{'opName':'Purge', 'opTime':'00:05:00', 'volume': '3mL', 'numCycles': 'undefined', 'loadType': 'undefined'},
+                        'Load Formalin':{'opName':'Load Formalin', 'opTime':'00:05:00', 'volume': '600uL', 'numCycles': 'undefined', 'loadType':'Formalin'},
+                        'Load Dehydrant':{'opName':'Load Dehydrant', 'opTime':'00:05:00', 'volume': '600uL', 'numCycles': 'undefined', 'loadType':'Dehydrant'},
+                        'Load Stain':{'opName':'Load Stain', 'opTime':'00:05:00', 'volume': '600uL', 'numCycles': 'undefined', 'loadType':'Stain'},
+                        'Load BABB':{'opName':'Load BABB', 'opTime':'00:05:00', 'volume': '600uL', 'numCycles': 'undefined', 'loadType':'BABB'}
                     }
 
                     anchors {
@@ -523,18 +506,18 @@ Item {
 
                         onDropped: {
                             stepListModDel.model.append(stepLView.operDict[drag.source.opName])
-//                            console.log(JSON.stringify(stepLView.operDict[drag.source.opName]))
-//                                                        var dIndex = stepLView.indexAt(drop.x, drop.y)
-//                                                        console.log("Index?: ", dIndex)
-//                                                        if(dIndex == -1){
-//                                                            stepListModDel.model.append(stepLView.operDict[drag.source.opName])
-//                                                        } else if(dIndex == (stepListModDel.items.count-1)){
-//                                                            stepListModDel.model.append(stepLView.operDict[drag.source.opName])
-//                                                            console.log("End append: ", dIndex)
-//                                                        }
-//                                                        else {
-//                                                            stepListModDel.model.insert(dIndex + 1, stepLView.operDict[drag.source.opName])
-//                                                        }
+                            //console.log(JSON.stringify(stepLView.operDict[drag.source.opName]))
+                            //                            var dIndex = stepLView.indexAt(drop.x, drop.y)
+                            //                            console.log("Index?: ", dIndex)
+                            //                            if(dIndex == -1){
+                            //                                stepListModDel.model.append(stepLView.operDict[drag.source.opName])
+                            //                            } else if(dIndex == (stepListModDel.items.count-1)){
+                            //                                stepListModDel.model.append(stepLView.operDict[drag.source.opName])
+                            //                                console.log("End append: ", dIndex)
+                            //                            }
+                            //                            else {
+                            //                                stepListModDel.model.insert(dIndex + 1, stepLView.operDict[drag.source.opName])
+                            //                            }
                         }
                     }
 
@@ -596,12 +579,7 @@ Item {
 
                 onClicked: {
                     //Validate that mixing and incubation operations are non-zero
-                    if(stepListModDel.model.count===0){
-                        dataDi.open()
-                    } else {
-                        saveDialog.open()
-                    }
-                    
+                    saveDialog.open()
                 }
             }
 
@@ -656,31 +634,10 @@ Item {
                 icon.height: 15
 
                 onClicked: {
-                    //Confirm/ask for sampleName in dialog box?
-                    if (!/\S/.test(root.sampleName)){
-                        sampleNameDi.open()
-                    //Check if model data is empty
-                    } else if (stepListModDel.model.count===0){
-                        dataDi.open()
-                    //check if saved path is empty, and ask if user wants to save protocol
-                    } else if (!/\S/.test(root.savedPath)){
-                        saveDi.open()
-                    } else {
-                        //save before starting run
-                        var datamodel = []
-                        for (var i = 0; i < stepListModDel.model.count; ++i) datamodel.push(stepListModDel.model.get(i))
-                        var datastring = JSON.stringify(datamodel, null, "\t")
-                        JSONHelper.saveProtocol(root.savedPath, datastring)
-                        console.log("SavedP: ", root.savedPath)
-                        //return to sample monitor
-                        mainStack.pop(null)
-                        //Initialize start protocol with casNumber, model path, runtime, sampleName, protocolName
-                        ProtHandler.startProtocol(root.casNumber, root.savedPath, root.runTime, root.sampleName, root.protocolName)
-
-                    
-                    }
-                    
-                   
+                    //Confirm/ask for sample name in dialog box?
+                    //Initialize start protocol with model and casNumber
+                    //return to sample monitor
+                    mainStack.pop(null)
                 }
             }
 
@@ -721,7 +678,7 @@ Item {
             hours += h
             minutes -= 60 * h
         }
-
+        
         if (hours < 10){
             hours = ('0' + hours).slice(-2)
         }
@@ -738,42 +695,7 @@ Item {
         }
         return tally
     }
-    
-    MessageDialog {
-        id: sampleNameDi
-        standardButtons: StandardButton.Ok
-        icon: StandardIcon.Critical
-        text: "Enter a sample name to start the run."
-        title: "Sample name is missing."
-        modality: Qt.WindowModal
-        onAccepted: {}
-    }
-    MessageDialog {
-        id: dataDi
-        standardButtons: StandardButton.Ok
-        icon: StandardIcon.Critical
-        text: "Model data from protocol is empty. Enter or open a valid protocol!"
-        title: "Protocol empty."
-        modality: Qt.WindowModal
-        onAccepted: {}
-    }
-    
-    MessageDialog {
-        id: saveDi
-        standardButtons: StandardButton.No | StandardButton.Yes
-        icon: StandardIcon.Warning
-        text: "Do you want to save protocol before starting run?"
-        title: "Saved protocol path empty."
-        modality: Qt.WindowModal
-        onYes: {
-                saveDialog.open()
-            }
-        onNo: {
-                //run without saving protocol....
-            
-            }
-    }
-    
+
     FileDialog {
         id:saveDialog
         selectExisting: false
@@ -791,7 +713,7 @@ Item {
             // remove prefixed "file:///"
             path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
             path = path.replace(/^(file:)|(qrc:)|(http:)/,"");
-
+            
             // if path is not actually a path but just a name
             // make it a path by appending it to folder
             console.log("Slash? ", path.includes("/"))
@@ -800,9 +722,9 @@ Item {
                 folder = folder.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
                 path = folder + "/" + path
             }
-
+            
             // unescape html codes like '%23' for '#'
-            var cleanPath = decodeURIComponent(path);
+            var cleanPath = decodeURIComponent(path);            
 
             //Get protocol name
             var protName = cleanPath.split('/').pop()
@@ -821,7 +743,7 @@ Item {
         }
 
     }
-
+    
     FileDialog {
         id:openDialog
         selectExisting: true
@@ -849,5 +771,4 @@ Item {
 
     }
 }
-
 

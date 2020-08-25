@@ -9,6 +9,10 @@ import "./Icons/"
 Item {
     id: rootCol
     property int itemIndex : DelegateModel.itemsIndex
+//    property string opTime: '00:05:00'
+//    property string numCycles : '3'
+//    property string volume : '3000uL'
+//    property string pSpeed : '1'
     width: parent.width
     height: ribbon.height
 
@@ -39,25 +43,56 @@ Item {
             text: opTime == null ? "00:05:00" : opTime
             anchors.verticalCenter: ribbon.verticalCenter
             anchors.left: toolButton.right
-            anchors.leftMargin: 15
+            anchors.leftMargin: 10
 
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
-            font.pointSize: 14
+            font.pointSize: 12
             renderType: Text.QtRendering
         }
 
         Text {
-            id: mixVolText
+            id: speedText
             y: 4
             color: "#000000"
-            text: mixVol == 'undefined' ? null : mixVol + " mL"
+            text: pSpeed == 'undefined' | numCycles != 'undefined' ? null : pSpeed+' Spd.'
             anchors.left: opTimeText.right
             anchors.verticalCenter: parent.verticalCenter
-            font.pointSize: 14
+            font.pointSize: 12
             font.weight: Font.Medium
             renderType: Text.QtRendering
-            anchors.leftMargin: 50
+            anchors.leftMargin: 10
+            font.capitalization: Font.MixedCase
+        }
+
+        Text {
+            id: cycleText
+            y: 4
+            color: "#000000"
+            text: numCycles == 'undefined' ? null : numCycles+' Cyc.'
+            anchors.left: opTimeText.right
+            anchors.verticalCenter: parent.verticalCenter
+            font.pointSize: 12
+            font.weight: Font.Medium
+            renderType: Text.QtRendering
+            anchors.leftMargin: 10
+            font.capitalization: Font.MixedCase
+        }
+
+        Text {
+            id: volumeText
+            y: 4
+            color: "#000000"
+            text: volume == 'undefined' ? null : volume
+            anchors.right: parent.right
+            anchors.rightMargin: 10
+//            anchors.left: numCycles == 'undefined' ? speedText.right : cycleText.right
+//            anchors.leftMargin: 20
+            anchors.verticalCenter: parent.verticalCenter
+            font.pointSize: 12
+            font.weight: Font.Medium
+            renderType: Text.QtRendering
+
 
             font.capitalization: Font.MixedCase
         }
@@ -70,9 +105,6 @@ Item {
             opacity: 1
             leftPadding: 6
             topPadding: 6
-            font.weight: Font.Thin
-            font.bold: false
-            font.pointSize: 14
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.bottom: parent.bottom
@@ -86,7 +118,7 @@ Item {
                 text: toolButton.text
                 font.weight: Font.Thin
                 font.bold: false
-                font.pointSize: 14
+                font.pointSize: 12
                 anchors.left: parent.left
                 anchors.leftMargin: 15
                 horizontalAlignment: Text.AlignLeft

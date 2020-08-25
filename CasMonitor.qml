@@ -1,6 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
-import QtQuick.Window 2.14
+import QtQuick.Window 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQml.Models 2.12
 import QtQuick.Dialogs 1.3
@@ -14,6 +14,7 @@ ApplicationWindow {
     id: root
     signal settings_CasMonitor()
     property string mainDir: "/home/jackr/testprotocols"
+    property string visMode: 'windowed'
     visible: true
     width: 800
     height: 480
@@ -21,8 +22,8 @@ ApplicationWindow {
     maximumHeight: 481
     minimumWidth: 780
     minimumHeight: 410
-    flags: Qt.Qindow|Qt.FramelessWindowHint
-    visibility: Window.FullScreen
+    flags: root.visMode === 'windowed' ? Qt.WindowMinimized :  Qt.FramelessWindowHint
+    visibility: root.visMode === 'windowed' ? Window.Windowed : Window.FullScreen
 
     StackView {
         id: mainStack
@@ -172,11 +173,9 @@ ApplicationWindow {
                     height: (root.height-menuRect.height)/2.1
                     width: root.width/3.4
                     casNumber: 1
-                    runStep: "Testing!"
+//                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                    stackIndex: 1
-
-                    onSetupRun: {}
+//                    stackIndex: 1
 
                     onDefaultRun: {
                         console.log("Default run: ", casNumber)
@@ -198,11 +197,9 @@ ApplicationWindow {
                     height: (root.height-menuRect.height)/2.1
                     width: root.width/3.4
                     casNumber: 2
-                    runStep: "Testing!"
+//                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                    stackIndex: 1
-
-                    onSetupRun: {}
+//                    stackIndex: 1
 
                     onDefaultRun: {
                         console.log("Default run: ", casNumber)
@@ -224,11 +221,9 @@ ApplicationWindow {
                     height: (root.height-menuRect.height)/2.1
                     width: root.width/3.4
                     casNumber: 3
-                    runStep: "Testing!"
+//                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                    stackIndex: 1
-
-                    onSetupRun: {}
+//                    stackIndex: 1
 
                     onDefaultRun: {
                         console.log("Default run: ", casNumber)
@@ -263,11 +258,9 @@ ApplicationWindow {
                     height: (root.height-menuRect.height)/2.1
                     width: root.width/3.4
                     casNumber: 4
-                    runStep: "Testing!"
+//                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-                    stackIndex: 1
-
-                    onSetupRun: {}
+//                    stackIndex: 1
 
                     onDefaultRun: {
                         console.log("Default run: ", casNumber)
@@ -289,11 +282,9 @@ ApplicationWindow {
                     height: (root.height-menuRect.height)/2.1
                     width: root.width/3.4
                     casNumber: 5
-                    runStep: "Testing!"
+//                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-                    stackIndex: 1
-
-                    onSetupRun: {}
+//                    stackIndex: 1
 
                     onDefaultRun: {
                         console.log("Default run: ", casNumber)
@@ -315,11 +306,9 @@ ApplicationWindow {
                     height: (root.height-menuRect.height)/2.1
                     width: root.width/3.4
                     casNumber: 6
-                    runStep: "Testing!"
+//                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-                    stackIndex: 1
-
-                    onSetupRun: {}
+//                    stackIndex: 1
 
                     onDefaultRun: {
                         console.log("Default run: ", casNumber)

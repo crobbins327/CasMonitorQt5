@@ -58,6 +58,10 @@ Item {
             background: Rectangle {
                 implicitWidth: 30
                 implicitHeight: 30
+//                border.width: 0.5
+//                border.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "black" : "transparent"
+//                radius: 8
+//                opacity: closeButton.down ? 0.75 : 1
                 color: "transparent"
             }
 
@@ -74,23 +78,26 @@ Item {
 //                text: "12:59:59"
             anchors.verticalCenter: toolButton.verticalCenter
             anchors.left: toolButton.right
-            anchors.leftMargin: 10
+            anchors.leftMargin: 15
 
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
-            font.pointSize: 12
+            font.pointSize: 14
             renderType: Text.QtRendering
         }
 
         ToolButton {
             id: toolButton
-            width: 180
+//            property bool tCheck: false
+            width: 170
             text: (itemIndex+1) + ". Incubation"
-//            text: "99. Incubation"
             opacity: 1
             leftPadding: 6
-            rightPadding: 43
+            rightPadding: 26
             topPadding: 6
+            font.weight: Font.Thin
+            font.bold: true
+            font.pointSize: 14
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.bottom: parent.bottom
@@ -99,35 +106,11 @@ Item {
             anchors.leftMargin: 0
             display: AbstractButton.TextBesideIcon
 
-            contentItem: Item {
-                id: element
-//                Row {
-//                    id: row
-//                    anchors.verticalCenter: parent.verticalCenter
-//                    layoutDirection: Qt.LeftToRight
-////                    anchors.horizontalCenter: parent.horizontalCenter
-//                    spacing: 5
-                    Image {
-                        source: rootCol.minimize ? "Icons/rightArrow-black.png" : "Icons/downArrow-black.png"
-                        width: 8
-                        height: 8
-                        anchors.left: parent.left
-                        anchors.leftMargin: 2
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-                    Text {
-                        text: toolButton.text
-                        anchors.left: parent.left
-                        anchors.leftMargin: 18
-                        anchors.verticalCenter: parent.verticalCenter
-                        font.weight: Font.Thin
-                        font.bold: true
-                        font.pointSize: 13
-                        horizontalAlignment: Text.AlignLeft
-                        verticalAlignment: Text.AlignVCenter
-                    }
-//                }
-            }
+            icon.name: "arrow"
+            icon.source: rootCol.minimize ? "Icons/rightArrow-black.png" : "Icons/downArrow-black.png"
+//            icon.source: toolButton.tCheck ? "Icons/downArrow-black.png" : "Icons/rightArrow-black.png"
+            icon.width: 8
+            icon.height: 8
 
             background: Rectangle {
                     opacity: toolButton.down ? 1.0 : 0.5
@@ -136,7 +119,13 @@ Item {
 
 
             onClicked: {
+//                container.height = container.height ? 0 : 100
+//                container.visible = container.visible ? false : true
                 rootCol.minimize = rootCol.minimize ? false : true
+//                    dragArea.height = dragArea.height ? ribbon.height + container.height : ribbon.height
+//                console.log(rootCol.minimize)
+//                toolButton.tCheck = toolButton.tCheck ? false : true
+//                    console.log("dragAreaH: ", dragArea.height, " and rootColH: ", rootCol.height)
             }
         }
     }
@@ -161,7 +150,7 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.leftMargin: 25
-            font.pointSize: 12
+            font.pointSize: 14
             font.weight: Font.Medium
             renderType: Text.QtRendering
             font.capitalization: Font.MixedCase

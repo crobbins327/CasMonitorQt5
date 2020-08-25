@@ -8,13 +8,12 @@ import "./Icons/"
 
 Item {
     id: rootCol
-//    property string opName: model.opName
-//    property string opTime: model.opTime
-//    property string mixVol: model.mixVol
     property DelegateModel modDel: null
     property int itemIndex : DelegateModel.itemsIndex
     property bool minimize: true
-
+//    property int numCycles: 3
+//    property string opTime: "00:05:00"
+//    property string volume: "3mL"
     property string type: "step"
 
     width: 540
@@ -68,34 +67,29 @@ Item {
 
         Text {
             id: opTimeText
-            property string opHour: opTime.substring(0,2)
-            property string opMin: opTime.substring(3,5)
-            property string opSec: opTime.substring(6,8)
             y: 7
             color: "#000000"
             text: opTime
             anchors.verticalCenter: toolButton.verticalCenter
             anchors.left: toolButton.right
-            anchors.leftMargin: 15
+            anchors.leftMargin: 10
 
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
-            font.pointSize: 14
+            font.pointSize: 12
             renderType: Text.QtRendering
         }
 
         ToolButton {
             id: toolButton
-            width: 170
+            width: 180
             text: (itemIndex+1) + ". Mixing"
+//            text: "99. Mixing"
             font.italic: false
-            rightPadding: 58
+            rightPadding: 75
             opacity: 1
             leftPadding: 6
             topPadding: 6
-            font.weight: Font.Thin
-            font.bold: false
-            font.pointSize: 14
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.bottom: parent.bottom
@@ -104,10 +98,35 @@ Item {
             anchors.leftMargin: 0
             display: AbstractButton.TextBesideIcon
 
-            icon.name: "arrow"
-            icon.source: rootCol.minimize ? "Icons/rightArrow-black.png" : "Icons/downArrow-black.png"
-            icon.width: 8
-            icon.height: 8
+            contentItem: Item {
+                id: element
+//                Row {
+//                    id: row
+//                    anchors.verticalCenter: parent.verticalCenter
+//                    layoutDirection: Qt.LeftToRight
+//                    //anchors.horizontalCenter: parent.horizontalCenter
+//                    spacing: 5
+                    Image {
+                        source: rootCol.minimize ? "Icons/rightArrow-black.png" : "Icons/downArrow-black.png"
+                        width: 8
+                        height: 8
+                        anchors.left: parent.left
+                        anchors.leftMargin: 2
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    Text {
+                        text: toolButton.text
+                        anchors.left: parent.left
+                        anchors.leftMargin: 18
+                        anchors.verticalCenter: parent.verticalCenter
+                        font.weight: Font.Thin
+                        font.bold: true
+                        font.pointSize: 13
+                        horizontalAlignment: Text.AlignLeft
+                        verticalAlignment: Text.AlignVCenter
+                    }
+//                }
+            }
 
 
             background: Rectangle {
@@ -124,13 +143,34 @@ Item {
             id: mixVolText
             y: 4
             color: "#000000"
-            text: mixVol + " mL"
-            anchors.left: opTimeText.right
+            text: volume
+            anchors.right: closeButton.left
+            anchors.rightMargin: 15
             anchors.verticalCenter: parent.verticalCenter
-            font.pointSize: 14
+            font.pointSize: 12
             font.weight: Font.Medium
             renderType: Text.QtRendering
-            anchors.leftMargin: 150
+            font.capitalization: Font.MixedCase
+        }
+
+        Text {
+            id: numCycleText
+            x: 306
+            y: 7
+            color: "#000000"
+            text: {
+                if(numCycles==1){
+                    return(numCycles+' Cycle')
+                }else{
+                 return(numCycles+' Cycles')
+                }
+            }
+            anchors.left: opTimeText.right
+            anchors.verticalCenter: toolButton.verticalCenter
+            font.weight: Font.Medium
+            font.pointSize: 12
+            anchors.leftMargin: 15
+            renderType: Text.QtRendering
             font.capitalization: Font.MixedCase
         }
     }
@@ -148,201 +188,143 @@ Item {
         visible: rootCol.minimize ? false : true
 
         Text {
-            id: runTimeLabel
+            id: mixCLab
             color: "#000000"
-            text: "Run Time:"
-            anchors.verticalCenterOffset: -14
+            text: "# Cycles:"
+            anchors.verticalCenterOffset: -36
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            anchors.leftMargin: 20
-            font.pointSize: 14
+            anchors.leftMargin: 8
+            font.pointSize: 12
             font.weight: Font.Medium
             renderType: Text.QtRendering
             font.capitalization: Font.MixedCase
         }
 
         Tumbler {
-            id: hoursTumbler
-            width: 70
-            anchors.left: runTimeLabel.right
-            anchors.leftMargin: 18
+            id: cycleTumbler
+            width: 45
+            anchors.left: mixCLab.right
+            anchors.leftMargin: 100
+            anchors.verticalCenter: mixCLab.verticalCenter
             font.pointSize: 14
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 8
-            anchors.top: parent.top
-            anchors.topMargin: 10
             transformOrigin: Item.Center
-            model: 12
+            rotation: -90 // <---- Rotate there
+            model: 99
+            delegate: Rectangle{
+                rotation: 90
+                height: parent.width
+//                anchors.centerIn: parent
+                color: "transparent"
+                opacity: 0.4 + Math.max(0, 1 - Math.abs(Tumbler.displacement)) * 0.6
+                Text {
+                    anchors.centerIn: parent
+                    text: index+1
+                    font.pointSize: 14
+                }
+            }
 
-            currentIndex: getHour(opTime)
+            currentIndex: numCycles-1
 
 
 
             onMovingChanged: {
-                if(hoursTumbler.currentIndex < 10){
-                    opTimeText.opHour = "0"+hoursTumbler.currentIndex
-                    opTime = opTimeText.opHour+":"+opTimeText.opMin+":"+opTimeText.opSec
-                } else {
-                    opTimeText.opHour = hoursTumbler.currentIndex
-                    opTime = opTimeText.opHour+":"+opTimeText.opMin+":"+opTimeText.opSec
-                }
-                console.log("Hours: ", hoursTumbler.currentIndex)
+                numCycles = cycleTumbler.currentIndex+1
             }
 
         }
 
-        Tumbler {
-            id: minutesTumbler
-            width: 70
-            anchors.left: hoursTumbler.right
-            anchors.leftMargin: 0
-            font.pointSize: 14
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 8
-            anchors.top: parent.top
-            anchors.topMargin: 10
-            transformOrigin: Item.Center
-            scale: 1
-            rotation: 0
-            model: 60
+        Slider {
+            id: volSlider
+            x: 8
+            anchors.top: cycleTumbler.verticalCenter
+            anchors.topMargin: 50
+            value: parseInt(volume.slice(0,-2))
+            from: 0.25
+            to: 10
+            stepSize: 0.25
 
-            currentIndex: getMin(opTime)
-
-            onMovingChanged: {
-                if(minutesTumbler.currentIndex < 10){
-                    opTimeText.opMin = "0"+minutesTumbler.currentIndex
-                    opTime = opTimeText.opHour+":"+opTimeText.opMin+":"+opTimeText.opSec
-                } else {
-                    opTimeText.opMin = minutesTumbler.currentIndex
-                    opTime = opTimeText.opHour+":"+opTimeText.opMin+":"+opTimeText.opSec
-                }
-                console.log("Minutes: ", minutesTumbler.currentIndex)
-            }
-        }
-
-        Tumbler {
-            id: secondsTumbler
-            width: 70
-            anchors.left: minutesTumbler.right
-            anchors.leftMargin: 0
-            font.pointSize: 14
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 8
-            anchors.top: parent.top
-            anchors.topMargin: 10
-            transformOrigin: Item.Center
-            model: 60
-
-            currentIndex: getSec(opTime)
-
-            onMovingChanged: {
-                if(secondsTumbler.currentIndex < 10){
-                    opTimeText.opSec = "0"+secondsTumbler.currentIndex
-                    opTime = opTimeText.opHour+":"+opTimeText.opMin+":"+opTimeText.opSec
-                } else {
-                    opTimeText.opSec = secondsTumbler.currentIndex
-                    opTime = opTimeText.opHour+":"+opTimeText.opMin+":"+opTimeText.opSec
-                }
-                console.log("Secs: ", secondsTumbler.currentIndex)
-            }
-        }
-
-        Text {
-            id: runTimeUnitsLabel
-            x: 9
-            color: "#000000"
-            text: "(hh:mm:ss)"
-            anchors.horizontalCenter: runTimeLabel.horizontalCenter
-            anchors.top: runTimeLabel.bottom
-            anchors.topMargin: 2
-            font.pointSize: 11
-            font.weight: Font.Medium
-            renderType: Text.QtRendering
-            font.capitalization: Font.MixedCase
-        }
-
-        SpinBox {
-            id: mixVolVal
-            anchors.left: secondsTumbler.right
-            anchors.leftMargin: 33
-            anchors.top: mixVolLabel.bottom
-            anchors.topMargin: 18
-            value: parseInt(mixVol)
-
-
-            onValueModified: {
+            onMoved: {
                 // If value below or above amount, convert to mL or uL
                 //Depends on what mixing values are desired..
-//                mixVolText.mixVol = mixVolVal.value
-                mixVol = mixVolVal.value.toString()
+                var volumeVal = volSlider.value.toString()
+                volInput.text = volSlider.value
+                volSlider.value = volInput.text
+                volume = volumeVal + 'mL'
             }
-
-
-
         }
 
         Text {
-            id: mixVolLabel
-            x: -9
-            y: -8
+            id: volSLab
+            x: 0
+            y: 234
+            width: 74
+            height: 19
             color: "#000000"
-            text: "Mixing Volume:"
-            anchors.right: parent.right
-            anchors.rightMargin: 30
-            font.pointSize: 14
-            anchors.left: secondsTumbler.right
-            anchors.verticalCenter: parent.verticalCenter
-            font.weight: Font.Medium
-            anchors.verticalCenterOffset: -30
-            renderType: Text.QtRendering
-            anchors.leftMargin: 35
-            font.capitalization: Font.MixedCase
+            text: qsTr("Volume:")
+            font.bold: true
+            anchors.verticalCenter: volSlider.verticalCenter
+            font.pointSize: 12
+            anchors.left: volSlider.right
+            anchors.leftMargin: 15
+        }
+
+        Rectangle{
+            id:rectInput
+            border.color: "#515151"
+            border.width: 1
+            width: 70
+            height: 30
+            color: "#00000000"
+            anchors.left: volSLab.right
+            anchors.leftMargin: 10
+            anchors.verticalCenter: volSLab.verticalCenter
+            y: 233
+
+            TextInput {
+                id: volInput
+                color: "#000000"
+                font.bold: true
+                font.pointSize: 12
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignLeft
+                validator: DoubleValidator {
+                       }
+                maximumLength: 5
+                text: volSlider.value
+                anchors.rightMargin: 5
+                anchors.leftMargin: 10
+                anchors.fill: parent
+                font.underline: false
+                selectionColor: "#66000080"
+                selectedTextColor: "#ffffff"
+                clip: true
+                onEditingFinished: {
+                    volSlider.value = volInput.text
+                    volInput.text = volSlider.value
+                    volume = volSlider.value + 'mL'
+                }
 
 
+            }
+        }
 
-
-
-
+        Text {
+            id: volSLab1
+            y: 239
+            width: 32
+            height: 19
+            color: "#000000"
+            text: qsTr("mL")
+            anchors.left: rectInput.right
+            anchors.leftMargin: 5
+            font.pointSize: 12
+            anchors.verticalCenter: rectInput.verticalCenter
+            font.bold: true
         }
 
 
-
-    }
-
-    function getHour(opTime){
-        var hour = opTime.substring(0,2)
-        if(parseInt(hour.substring(0,1)) == 0){
-            return parseInt(hour.substring(1,2))
-        } else {
-            return parseInt(hour)
-        }
-    }
-
-    function getMin(opTime){
-        var mn = opTime.substring(3,5)
-        if(parseInt(mn.substring(0,1)) == 0){
-            return parseInt(mn.substring(1,2))
-        } else {
-            return parseInt(mn)
-        }
-    }
-
-    function getSec(opTime){
-        var sec = opTime.substring(6,8)
-        if(parseInt(sec.substring(0,1)) == 0){
-            return parseInt(sec.substring(1,2))
-        } else {
-            return parseInt(sec)
-        }
     }
 
 }
 
-
-
-
-/*##^##
-Designer {
-    D{i:9;anchors_x:290}D{i:16;anchors_x:368;anchors_y:49}
-}
-##^##*/

@@ -8,17 +8,16 @@ import "./Icons/"
 
 Item {
     id: rootCol
-
 //    property string opName: model.opName
 //    property string opTime: model.opTime
+//    property string volume: model.volume
     property DelegateModel modDel: null
     property int itemIndex : DelegateModel.itemsIndex
-    property bool minimize: true
+    property bool minimize: false
 
     property string type: "step"
 
-
-    width: parent.width
+    width: 540
     height: ribbon.height + container.height
 
     Rectangle {
@@ -58,6 +57,10 @@ Item {
             background: Rectangle {
                 implicitWidth: 30
                 implicitHeight: 30
+//                border.width: 0.5
+//                border.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "black" : "transparent"
+//                radius: 8
+//                opacity: closeButton.down ? 0.75 : 1
                 color: "transparent"
             }
 
@@ -71,26 +74,28 @@ Item {
             y: 7
             color: "#000000"
             text: opTime
-//                text: "12:59:59"
             anchors.verticalCenter: toolButton.verticalCenter
             anchors.left: toolButton.right
-            anchors.leftMargin: 10
+            anchors.leftMargin: 15
 
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
-            font.pointSize: 12
+            font.pointSize: 14
             renderType: Text.QtRendering
         }
 
         ToolButton {
             id: toolButton
-            width: 180
-            text: (itemIndex+1) + ". Incubation"
-//            text: "99. Incubation"
+            width: 170
+            text: (itemIndex+1) + ". Mixing"
+            font.italic: false
+            rightPadding: 58
             opacity: 1
             leftPadding: 6
-            rightPadding: 43
             topPadding: 6
+            font.weight: Font.Thin
+            font.bold: false
+            font.pointSize: 14
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.bottom: parent.bottom
@@ -99,35 +104,11 @@ Item {
             anchors.leftMargin: 0
             display: AbstractButton.TextBesideIcon
 
-            contentItem: Item {
-                id: element
-//                Row {
-//                    id: row
-//                    anchors.verticalCenter: parent.verticalCenter
-//                    layoutDirection: Qt.LeftToRight
-////                    anchors.horizontalCenter: parent.horizontalCenter
-//                    spacing: 5
-                    Image {
-                        source: rootCol.minimize ? "Icons/rightArrow-black.png" : "Icons/downArrow-black.png"
-                        width: 8
-                        height: 8
-                        anchors.left: parent.left
-                        anchors.leftMargin: 2
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-                    Text {
-                        text: toolButton.text
-                        anchors.left: parent.left
-                        anchors.leftMargin: 18
-                        anchors.verticalCenter: parent.verticalCenter
-                        font.weight: Font.Thin
-                        font.bold: true
-                        font.pointSize: 13
-                        horizontalAlignment: Text.AlignLeft
-                        verticalAlignment: Text.AlignVCenter
-                    }
-//                }
-            }
+            icon.name: "arrow"
+            icon.source: rootCol.minimize ? "Icons/rightArrow-black.png" : "Icons/downArrow-black.png"
+            icon.width: 8
+            icon.height: 8
+
 
             background: Rectangle {
                     opacity: toolButton.down ? 1.0 : 0.5
@@ -135,9 +116,22 @@ Item {
                 }
 
 
-            onClicked: {
-                rootCol.minimize = rootCol.minimize ? false : true
-            }
+            onClicked: {rootCol.minimize = rootCol.minimize ? false : true}
+
+        }
+
+        Text {
+            id: mixVolText
+            y: 4
+            color: "#000000"
+            text: volume
+            anchors.left: opTimeText.right
+            anchors.verticalCenter: parent.verticalCenter
+            font.pointSize: 14
+            font.weight: Font.Medium
+            renderType: Text.QtRendering
+            anchors.leftMargin: 150
+            font.capitalization: Font.MixedCase
         }
     }
     Rectangle {
@@ -160,8 +154,8 @@ Item {
             anchors.verticalCenterOffset: -14
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            anchors.leftMargin: 25
-            font.pointSize: 12
+            anchors.leftMargin: 20
+            font.pointSize: 14
             font.weight: Font.Medium
             renderType: Text.QtRendering
             font.capitalization: Font.MixedCase
@@ -254,7 +248,7 @@ Item {
         }
 
         Text {
-            id: runTimeLabel1
+            id: runTimeUnitsLabel
             x: 9
             color: "#000000"
             text: "(hh:mm:ss)"
@@ -265,6 +259,54 @@ Item {
             font.weight: Font.Medium
             renderType: Text.QtRendering
             font.capitalization: Font.MixedCase
+        }
+
+        SpinBox {
+            id: mixVolVal
+            anchors.left: secondsTumbler.right
+            anchors.leftMargin: 33
+            anchors.top: mixVolLabel.bottom
+            anchors.topMargin: 18
+            from: 0
+            stepSize: 1
+            to: 10
+            value: parseInt(volume.slice(0,-2))
+
+
+            onValueModified: {
+                // If value below or above amount, convert to mL or uL
+                //Depends on what mixing values are desired..
+//                mixVolText.mixVol = mixVolVal.value
+                var volumeVal = mixVolVal.value.toString()
+                volume = volumeVal + 'mL'
+            }
+
+
+
+        }
+
+        Text {
+            id: mixVolLabel
+            x: -9
+            y: -8
+            color: "#000000"
+            text: "Mixing Volume:"
+            anchors.right: parent.right
+            anchors.rightMargin: 30
+            font.pointSize: 14
+            anchors.left: secondsTumbler.right
+            anchors.verticalCenter: parent.verticalCenter
+            font.weight: Font.Medium
+            anchors.verticalCenterOffset: -30
+            renderType: Text.QtRendering
+            anchors.leftMargin: 35
+            font.capitalization: Font.MixedCase
+
+
+
+
+
+
         }
 
 
@@ -302,3 +344,9 @@ Item {
 
 
 
+
+/*##^##
+Designer {
+    D{i:9;anchors_x:290}D{i:16;anchors_x:368;anchors_y:49}
+}
+##^##*/

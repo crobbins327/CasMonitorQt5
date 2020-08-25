@@ -6,24 +6,55 @@ import QtQuick.Dialogs 1.3
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 0
-    property int runProgVal: 10
+    property int stackIndex: 2
+    property double runProgVal: 0
+    property string firstRunTime : "01:31:55"
+    property int firstRunSecs : get_sec(root.firstRunTime)
     property string runSampleName: "SampleName"
     property string runProtocolName: "ProtocolName"
     property string runStep: "Running!"
-    property string runTime: "hh:mm:ss"
+    property string runTime: "01:31:55"
+    property int runSecs: get_sec(root.runTime)
+    property bool isRunning: false
+    property variant progStrings: []
+
+    signal reSetupProt(string casNum, variant protS, variant progS, string runtime, string samplen, string protocoln)
+    Component.onCompleted: ProtHandler.setupProt.connect(reSetupProt)
 
     signal setupRun(int casNumber)
     signal defaultRun(int casNumber)
     signal stopRun(int casNumber)
     signal runDetails(int casNumber)
-//    signal startRun(int castNumber)
+    //    signal startRun(int casNumber)
 
     // Need a listener for whether a cassette is in the slot.... this will switch the current index.
     // Need a listener for premature ejection of cassette during run or during run setup...
 
     width: 240
     height: 200
+
+    Connections {
+        target: root
+        onReSetupProt: {
+            //Check if casNumber corresponds with this casNumber
+            if (root.casNumber==casNum){
+                //setup run
+                console.log(progS)
+                console.log(protS)
+                root.runTime = runtime
+                root.firstRunTime = runtime
+                root.runSampleName = samplen
+                root.runProtocolName = protocoln
+                root.stackIndex = 2
+                root.runStep = progS[0]
+                root.progStrings = progS
+                root.isRunning = true
+            } else {
+                console.log('Not me! ', root.casNumber)
+            }
+        }
+    }
+
 
     StackLayout {
         id: sampStack
@@ -125,16 +156,70 @@ Item {
             border.color: "black"
             border.width: 0.5
 
+            Timer {
+                interval: 1000; running: isRunning; repeat: true
+                onTriggered: {
+                    root.runSecs = root.runSecs - 1
+                    root.runProgVal = root.runProgVal + 100/root.firstRunSecs
+                    if(root.runSecs === 0){
+                        root.isRunning = false
+                    }
+                    root.runTime = get_time(root.runSecs)
+                }
 
+            }
 
-            Text {
-                id: casNum2
-                text: casNumber
+            ColumnLayout{
+                id: column
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 128
+                anchors.right: parent.right
+                anchors.rightMargin: 0
+                anchors.left: parent.left
+                anchors.leftMargin: 0
                 anchors.top: parent.top
-                anchors.topMargin: 5
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.weight: Font.Medium
-                font.pointSize: 18
+                anchors.topMargin: 0
+                spacing: 1
+                Layout.preferredHeight: 70
+                Layout.minimumHeight: 50
+
+                Text {
+                    id: casNum2
+                    text: casNumber
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                    fontSizeMode: Text.Fit
+//                    anchors.horizontalCenter: parent.horizontalCenter
+                    font.weight: Font.Medium
+                    font.pointSize: 18
+                    minimumPointSize: 16
+                }
+
+                Text {
+                    id: sampNameL
+                    text: runSampleName
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+//                    anchors.horizontalCenter: parent.horizontalCenter
+                    fontSizeMode: Text.Fit
+                    style: Text.Normal
+                    font.weight: Font.Medium
+                    font.pointSize: 11
+                    minimumPointSize: 11
+                }
+
+                Text {
+                    id: protNameL
+                    text: runProtocolName
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+//                    anchors.horizontalCenter: parent.horizontalCenter
+                    fontSizeMode: Text.Fit
+//                    anchors.bottom: runStepL.top
+//                    anchors.bottomMargin: 10
+                    style: Text.Normal
+                    font.weight: Font.Medium
+                    font.pointSize: 11
+                    minimumPointSize: 11
+                }
+
             }
 
             ProgressBar {
@@ -145,7 +230,7 @@ Item {
                 anchors.left: parent.left
                 anchors.leftMargin: 10
                 anchors.bottom: stopRunB.top
-                anchors.bottomMargin: 10
+                anchors.bottomMargin: 7
                 to: 100
                 background: Rectangle {
                     color: "#e6e6e6"
@@ -175,6 +260,7 @@ Item {
                 y: 157
                 width: 100
                 text: qsTr("Stop Run")
+                font.pointSize: 11
                 anchors.left: parent.left
                 anchors.leftMargin: 10
                 anchors.bottom: parent.bottom
@@ -199,52 +285,32 @@ Item {
             Text {
                 id: runStepL
                 text: runStep
+                style: Text.Normal
+                anchors.verticalCenterOffset: -22
+                anchors.verticalCenter: runProgBar.verticalCenter
+                fontSizeMode: Text.VerticalFit
                 anchors.left: runProgBar.left
                 anchors.leftMargin: 0
-                anchors.bottom: runProgBar.top
-                anchors.bottomMargin: 7
                 font.pointSize: 12
-                font.weight: Font.Normal
+                font.weight: Font.Thin
+                minimumPointSize: 10
             }
 
-            Text {
-                id: sampNameL
-                text: runSampleName
-                anchors.bottom: protNameL.top
-                anchors.bottomMargin: 7
-                style: Text.Normal
-                anchors.topMargin: 5
-                anchors.top: casNum2.bottom
-                font.pointSize: 14
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.weight: Font.Medium
-                anchors.horizontalCenterOffset: 0
-            }
-
-            Text {
-                id: protNameL
-                text: runProtocolName
-                anchors.bottom: runStepL.top
-                anchors.bottomMargin: 10
-                style: Text.Normal
-                font.pointSize: 14
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.weight: Font.Medium
-                anchors.horizontalCenterOffset: 0
-            }
 
             Text {
                 id: runTimeL
-                x: 1
+                x: 161
                 y: 1
-                width: 65
+                width: 69
                 height: 19
                 text: runTime
+                fontSizeMode: Text.VerticalFit
                 anchors.right: runProgBar.right
                 anchors.rightMargin: 0
                 anchors.verticalCenter: runStepL.verticalCenter
-                font.pointSize: 12
+                font.pointSize: 11
                 font.weight: Font.Normal
+                minimumPointSize: 10
             }
 
 
@@ -264,12 +330,39 @@ Item {
             console.log("Stop run on Cassette " + casNumber + ".")
             stackIndex = 1
             root.stopRun(root.casNumber)
+            root.isRunning = false
+            root.runTime = "00:00:00"
         }
         onRejected: {
             console.log("Canceled.")
             this.close
         }
     }
+function get_sec(runtime){
+    var timesplit = (runtime || '').split(':')
+    var secs = 0
+    for (var i = 0; i < timesplit.length; i++) {
+        secs += isNaN(parseInt(timesplit[i])) ? 0 : parseInt(timesplit[i])*Math.pow(60,2-i);
+    }
+
+    return(secs)
+}
+function get_first_time(runtime){
+
+}
+
+function get_time(runSecs){
+    var rtime = new Date(runSecs * 1000).toISOString().substr(11, 8);
+    return(rtime)
+}
 
 
 }
+
+
+
+/*##^##
+Designer {
+    D{i:12;anchors_width:240}D{i:23;anchors_y:1}
+}
+##^##*/

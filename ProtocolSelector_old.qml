@@ -21,8 +21,8 @@ Item {
     signal reNextModel(string jsondata, string protName, string pathSaved)
     Component.onCompleted: JSONHelper.nextModel.connect(reNextModel)
     
-    //width: parent.width
-    //height: parent.height
+    width: 800
+    height: 480
     
     Connections {
         target: root
@@ -57,13 +57,8 @@ Item {
 
         Rectangle{
             id: menuRect
+            width: 800
             height: 60
-            anchors.right: parent.right
-            anchors.rightMargin: 0
-            anchors.left: parent.left
-            anchors.leftMargin: 0
-            anchors.top: parent.top
-            anchors.topMargin: 0
             gradient: Gradient {
                 GradientStop {
                     position: 0
@@ -75,6 +70,8 @@ Item {
                     color: "#000000"
                 }
             }
+            x: 0; y: 0
+
             Button {
                 id: homeB
                 y: 8
@@ -189,9 +186,8 @@ Item {
 
         Rectangle {
             id: rootTangle
+            height: 405
             color: "transparent"
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 0
             anchors.right: parent.right
             anchors.rightMargin: 10
             anchors.left: parent.left
@@ -201,7 +197,7 @@ Item {
 
             Rectangle {
                 id: recFileSel
-                width: 300
+                width: 330
                 height: parent.height
                 anchors {left: rootTangle.left; top: rootTangle.top; bottom: rootTangle.bottom}
                 color: "silver"
@@ -556,8 +552,6 @@ Item {
                         height: 25
                         color: "#ffffff"
                         text: stepModel.count > 0 ?  estRunTime(stepModel) : "- - : - - : - -"
-                        anchors.right: parent.right
-                        anchors.rightMargin: 23
                         anchors.bottom: parent.bottom
                         anchors.bottomMargin: 8
                         anchors.horizontalCenter: casNum.horizontalCenter

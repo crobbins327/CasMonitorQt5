@@ -8,8 +8,10 @@ import "./Icons/"
 
 Item {
     id: rootCol
+
 //    property string opName: model.opName
 //    property string opTime: model.opTime
+//    property string loadType: model.loadType
     property DelegateModel modDel: null
     property int itemIndex : DelegateModel.itemsIndex
 
@@ -62,21 +64,21 @@ Item {
 //                opacity: closeButton.down ? 0.75 : 1
                 color: "transparent"
             }
-
         }
 
         Text {
             id: opTimeText
             y: 7
             color: "#000000"
+            //            text: {return opTimeText.opHour+":"+opTimeText.opMin+":"+opTimeText.opSec}
             text: opTime == null ? "00:05:00" : opTime
             anchors.verticalCenter: ribbon.verticalCenter
             anchors.left: toolButton.right
-            anchors.leftMargin: 10
+            anchors.leftMargin: 15
 
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
-            font.pointSize: 12
+            font.pointSize: 14
             renderType: Text.QtRendering
         }
 
@@ -84,11 +86,14 @@ Item {
             id: toolButton
 //            property bool tCheck: false
             width: 180
-            text: (itemIndex+1) + ". " + opName
+            text: (itemIndex+1) + ". " + model.loadType
             rightPadding: 38
             opacity: 1
             leftPadding: 6
             topPadding: 6
+            font.weight: Font.Thin
+            font.bold: false
+            font.pointSize: 14
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.bottom: parent.bottom
@@ -96,13 +101,12 @@ Item {
             anchors.left: parent.left
             anchors.leftMargin: 0
 
-            flat: false
 
             contentItem: Text{
                 text: toolButton.text
                 font.weight: Font.Thin
-                font.bold: true
-                font.pointSize: 13
+                font.bold: false
+                font.pointSize: 14
                 anchors.left: parent.left
                 anchors.leftMargin: 25
                 horizontalAlignment: Text.AlignLeft
@@ -113,6 +117,7 @@ Item {
                     opacity: 1.0
                     color: toolButton.palette.button
                 }
+
         }
 
         }

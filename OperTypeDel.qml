@@ -6,6 +6,7 @@ import "./Icons/"
 
 Item{
     id:root
+    property int contHeight: 35
     property Item draggedItemParent
     // Internal: shortcut to access the attached ListView from everywhere. Shorter than root.ListView.view
     property ListView _listView: null
@@ -53,7 +54,7 @@ Item{
                 verticalCenter: parent.verticalCenter
             }
             width: dragArea.width
-            height: 40
+            height: contHeight
 
             border.width: 1
             border.color: "lightgray"
@@ -74,7 +75,7 @@ Item{
                 //            text: "Load Dehydrant"
                 text: model.opName
                 font.weight: Font.Thin
-                font.pointSize: 11.5
+                font.pointSize: 11
                 anchors.fill: parent
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter

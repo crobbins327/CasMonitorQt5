@@ -37,14 +37,18 @@ DISTFILES += \
     DebugMode.qml \
     DraggableItem.qml \
     IncubationContent.qml \
+    IncubationContent_old.qml \
     LoadContent.qml \
+    LoadContent_old.qml \
     MixingContent.qml \
+    MixingContent_old.qml \
     OperTypeDel.qml \
     OperationTypes.qml \
     PSelContent.qml \
-    ProtocolEditor,design.qml \
+    ProtocolEditor,code.qml \
     ProtocolEditor.qml \
     ProtocolSelector.qml \
+    ProtocolSelector_old.qml \
     PurgeContent.qml \ \
     SampleStack.qml \
     StepListModel.qml
