@@ -11,13 +11,17 @@ import json
 import jsonschema
 from time import sleep
 
+import asyncio
+
+from autobahn.asyncio.wamp import ApplicationRunner, ApplicationSession
+from autobahn.wamp.types import PublishOptions
+from autobahn.wamp.exception import TransportLost
+from autobahn import wamp
 
 
-
-
-
-class protHandler(QtCore.QObject):
+class protHandler(ApplicationSession, QtCore.QObject):
     
+    #Globals...
     jHelper = jh.JSONHelper()
     convCas = {1:'A',2:'B',3:'C',4:'D',5:'E',6:'F'}
     #CasNumber, protStrings, progstrings, runtime, sampleName, protocolName
@@ -26,6 +30,17 @@ class protHandler(QtCore.QObject):
     decrement = QtCore.pyqtSignal(str)
     deadspace = 1000 
     
+    def __init__(self, cfg=None):
+        ApplicationSession.__init__(self, cfg)
+        QtCore.QObject.__init__(self)    
+    
+    async def onJoin(self, details):
+        try:
+            res = await self.subscribe(self)
+            print("Subscribed to {0} procedure(s)".format(len(res)))
+        except Exception as e:
+            print("could not subscribe to procedure: {0}".format(e))
+
     
     # def __init__(self, DEADSPACE = 1000):
     #     self.deadspace = DEADSPACE
@@ -45,6 +60,7 @@ class protHandler(QtCore.QObject):
         self.setupProt.emit(casNumber,protStrings,progStrings,runtime,sampleName,protocolName)
         # #Send list to a Q or execute all at once....
         
+        self.publish('com.prepbot.prothandler.start', casNumber, protStrings, progStrings, protPath)
         # #Send to Q or add to event loop....
         # # self.Q.append(protStrings)
         # #Event loop executes....
@@ -56,6 +72,10 @@ class protHandler(QtCore.QObject):
         #     print(protStrings[i])            
         #     sleep(2)
         
+    @wamp.subscribe('com.prepbot.prothandler.progress')
+    def update_progress(self, n):
+        # print("I know! {}".format(n))
+        pass
         
     def interpret(self, casNumber, protPath):
         #Convert casNumber to sample letter...

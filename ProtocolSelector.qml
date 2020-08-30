@@ -13,10 +13,11 @@ Item {
     id: root
     property int casNumber: 0
     property variant stepModel: ListModel{}
-    property string mainDir: "/home/jackr/testprotocols"
+    property string mainDir: ''
     property string sampleName: ''
     property string protocolName: 'Protocol Name'
     property string savedPath: ''
+    property string runTime: estRunTime(root.stepModel)
 
     signal reNextModel(string jsondata, string protName, string pathSaved)
     Component.onCompleted: JSONHelper.nextModel.connect(reNextModel)
@@ -26,7 +27,7 @@ Item {
     
     Connections {
         target: root
-        onReNextModel: {
+        function onReNextModel(jsondata, protName, pathSaved) {
             stepModel.clear()
             //console.log(jsondata)
             var datamodel = JSON.parse(jsondata)
@@ -229,7 +230,7 @@ Item {
 
                     delegate: Button {
                         id: fileButton
-                        width: parent.width
+                        width: fileSelector.width
                         height: 40
                         text: fileName
                         onClicked: {
@@ -410,9 +411,25 @@ Item {
                         icon.height: 15
 
                         onClicked: {
-                            //console.log(casNumber)
-                            mainStack.pop()
-                            //console.log(casNumber)
+                            //Confirm/ask for sampleName in dialog box?
+                            if (!/\S/.test(root.sampleName)){
+                                sampleNameDi.open()
+                            //Check if model data is empty
+                            } else if (stepListModDel.model.count===0){
+                                dataDi.open()
+                            } else {
+                                //return to sample monitor
+                                mainStack.pop(null)
+                                //Initialize start protocol with casNumber, model path, runtime, sampleName, protocolName
+                                console.log(root.casNumber)
+                                console.log(root.savedPath)
+                                console.log(root.runTime)
+                                console.log(root.sampleName)
+                                console.log(root.protocolName)
+                                WAMPHandler.startProtocol(root.casNumber, root.savedPath, root.runTime, root.sampleName, root.protocolName)
+
+
+                            }
                         }
                     }
 
@@ -555,7 +572,7 @@ Item {
                         width: 83
                         height: 25
                         color: "#ffffff"
-                        text: stepModel.count > 0 ?  estRunTime(stepModel) : "- - : - - : - -"
+                        text: stepModel.count > 0 ?  root.runTime : "- - : - - : - -"
                         anchors.right: parent.right
                         anchors.rightMargin: 23
                         anchors.bottom: parent.bottom
@@ -614,19 +631,43 @@ Item {
 
     function estRunTime(model){
         var tally = "00:00:00"
-        for(var i = 0; i < model.count; i++){
-            //console.log(i," time ", model.get(i).opTime)
-            tally = addTimes(tally, model.get(i).opTime)
-            //console.log(tally)
+        if (model === null){
+            return tally
+        }
+        if (model.count !== 0){
+            for(var i = 0; i < model.count; i++){
+                //console.log(i," time ", model.get(i).opTime)
+                tally = addTimes(tally, model.get(i).opTime)
+                //console.log(tally)
+            }
         }
         return tally
     }
 
+    MessageDialog {
+        id: sampleNameDi
+        standardButtons: StandardButton.Ok
+        icon: StandardIcon.Critical
+        text: "Enter a sample name to start the run."
+        title: "Sample name is missing."
+        modality: Qt.WindowModal
+        onAccepted: {}
+    }
+    MessageDialog {
+        id: dataDi
+        standardButtons: StandardButton.Ok
+        icon: StandardIcon.Critical
+        text: "Model data from protocol is empty. Enter or open a valid protocol!"
+        title: "Protocol empty."
+        modality: Qt.WindowModal
+        onAccepted: {}
+    }
 
     FileDialog {
         id: openDialog
-        selectFolder: true
+        selectFolder: false
         folder: mainDir
+        nameFilters: ["Protocol Files (*.json)", "All files (*)"]
         modality: Qt.WindowModal
         onAccepted: {
             //if file, check validity, load content to model preview, change protocol name, calculate run time
@@ -635,7 +676,7 @@ Item {
                 console.log(folder)
                 console.log(fileUrl)
             }
-            //if folder, change the directory
+            //if selected, change the directory folder
             folderListModel.folder = openDialog.folder
         }
 

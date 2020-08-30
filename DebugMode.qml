@@ -197,7 +197,7 @@ Item {
                     button: 'white'
                 }
 
-                onClicked: {ExecPrepbot.home()}
+                onClicked: {ManualPrepbot.home()}
             }
 
             BevButton {
@@ -230,7 +230,7 @@ Item {
                     button: 'white'
                 }
 
-                onClicked: {ExecPrepbot.engageSampleD; console.log("Engage Sample "+casNumber)}
+                onClicked: {ManualPrepbot.engageSampleD; console.log("Engage Sample "+casNumber)}
             }
 
             BevButton {

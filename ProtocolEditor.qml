@@ -25,7 +25,7 @@ Item {
     
     Connections {
         target: root
-        onReNextModel: {
+        function onReNextModel(jsondata, protName, pathSaved) {
             stepModel.clear()
             //console.log(jsondata)
             var datamodel = JSON.parse(jsondata)
@@ -675,7 +675,7 @@ Item {
                         //return to sample monitor
                         mainStack.pop(null)
                         //Initialize start protocol with casNumber, model path, runtime, sampleName, protocolName
-                        ProtHandler.startProtocol(root.casNumber, root.savedPath, root.runTime, root.sampleName, root.protocolName)
+                        WAMPHandler.startProtocol(root.casNumber, root.savedPath, root.runTime, root.sampleName, root.protocolName)
 
                     
                     }
@@ -731,7 +731,10 @@ Item {
 
     function estRunTime(model){
         var tally = "00:00:00"
-        if (model.count != 0){
+        if (model === null){
+            return tally
+        }
+        if (model.count !== 0){
             for(var i = 0; i < model.count; i++){
                 //console.log(i," time ", model.get(i).opTime)
                 tally = addTimes(tally, model.get(i).opTime)

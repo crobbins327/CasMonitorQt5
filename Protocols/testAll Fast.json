@@ -1,18 +1,10 @@
 [
 	{
 		"opName": "Incubation",
-		"opTime": "00:05:00",
+		"opTime": "00:00:05",
 		"volume": "undefined",
 		"pSpeed": "undefined",
 		"numCycles": "undefined",
-		"loadType": "undefined"
-	},
-	{
-		"opName": "Mixing",
-		"opTime": "00:05:00",
-		"volume": "7mL",
-		"pSpeed": "1",
-		"numCycles": "9",
 		"loadType": "undefined"
 	},
 	{
@@ -24,10 +16,18 @@
 		"loadType": "undefined"
 	},
 	{
+		"opName": "Mixing",
+		"opTime": "00:05:00",
+		"volume": "1mL",
+		"pSpeed": "1",
+		"numCycles": "3",
+		"loadType": "undefined"
+	},
+	{
 		"opName": "Load Formalin",
 		"opTime": "00:01:30",
-		"volume": "3000uL",
-		"pSpeed": "7",
+		"volume": "600uL",
+		"pSpeed": "1",
 		"numCycles": "undefined",
 		"loadType": "Formalin"
 	},
@@ -46,5 +46,13 @@
 		"pSpeed": "1",
 		"numCycles": "undefined",
 		"loadType": "Stain"
+	},
+	{
+		"opName": "Load BABB",
+		"opTime": "00:01:30",
+		"volume": "600uL",
+		"pSpeed": "1",
+		"numCycles": "undefined",
+		"loadType": "BABB"
 	}
 ]

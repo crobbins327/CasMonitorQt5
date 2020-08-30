@@ -12,14 +12,79 @@ Item {
     property int firstRunSecs : get_sec(root.firstRunTime)
     property string runSampleName: "SampleName"
     property string runProtocolName: "ProtocolName"
-    property string runStep: "Running!"
+    property string runStep: "Testing..."
     property string runTime: "01:31:55"
     property int runSecs: get_sec(root.runTime)
     property bool isRunning: false
+    property bool isHanging: false
+    property int hangSecs: 0
     property variant progStrings: []
+    property variant stepRunTimes: []
+    property int totalSteps: root.progStrings.length
+    property int stepIndex: 0
 
-    signal reSetupProt(string casNum, variant protS, variant progS, string runtime, string samplen, string protocoln)
-    Component.onCompleted: ProtHandler.setupProt.connect(reSetupProt)
+    signal reSetupProt(string casNum, variant progS, variant stepTimes, string runtime, string samplen, string protocoln)
+    signal reUpdateProg(string casNum)
+    Component.onCompleted: {
+        WAMPHandler.setupProt.connect(reSetupProt)
+        WAMPHandler.updateProg.connect(reUpdateProg)
+    }
+    Connections {
+        target: root
+        function onReSetupProt(casNum, progS, stepTimes, runtime, samplen, protocoln) {
+            //Check if casNumber corresponds with this casNumber
+            if (root.casNumber==casNum && !root.isRunning){
+                //setup run
+                console.log(progS)
+                console.log(stepTimes)
+                root.runTime = runtime
+                root.runSecs = get_sec(runtime)
+                root.firstRunTime = runtime
+                root.firstRunSecs = get_sec(runtime)
+                root.runSampleName = samplen
+                root.runProtocolName = protocoln
+                root.stackIndex = 2
+                root.stepIndex = 0
+                root.progStrings = progS
+                root.runStep = root.progStrings[root.stepIndex]
+                root.stepRunTimes = stepTimes
+                root.hangSecs = parseInt(root.stepRunTimes[root.stepIndex])
+                root.runProgVal = 0
+                root.isRunning = true
+                root.isHanging = false
+            } else {
+                console.log('Not me! ', root.casNumber)
+            }
+        }
+        function onReUpdateProg(casNum) {
+            //Check if casNumber corresponds with this casNumber
+            if (root.casNumber==casNum && root.isRunning){
+                if (root.stepIndex < root.totalSteps-1){
+                    //setup run
+                    root.stepIndex += 1
+                    root.runStep = root.progStrings[root.stepIndex]
+                    //Set runSecs to where hangSecs should be (just incase step finished sooner than what was estimated)
+                    root.runSecs = root.firstRunSecs - root.hangSecs
+                    print('New run secs: ', root.runSecs)
+                    print('New index: ', root.stepIndex)
+                    root.runTime = get_time(root.runSecs)
+                    //Get new progress bar value
+                    root.runProgVal = 100*(root.firstRunSecs - root.runSecs)/root.firstRunSecs
+                    //Sum next stepRunTimes for the current stepIndex to find next hangSecs
+                    root.hangSecs = root.hangSecs + parseInt(root.stepRunTimes[root.stepIndex])
+
+                    root.isRunning = true
+                    root.isHanging = false
+                } else {
+                    console.log('Protocol Finished! ', root.casNumber)
+                }
+            } else {
+                console.log('Not me! ', root.casNumber)
+            }
+        }
+    }
+
+
 
     signal setupRun(int casNumber)
     signal defaultRun(int casNumber)
@@ -32,28 +97,6 @@ Item {
 
     width: 240
     height: 200
-
-    Connections {
-        target: root
-        onReSetupProt: {
-            //Check if casNumber corresponds with this casNumber
-            if (root.casNumber==casNum){
-                //setup run
-                console.log(progS)
-                console.log(protS)
-                root.runTime = runtime
-                root.firstRunTime = runtime
-                root.runSampleName = samplen
-                root.runProtocolName = protocoln
-                root.stackIndex = 2
-                root.runStep = progS[0]
-                root.progStrings = progS
-                root.isRunning = true
-            } else {
-                console.log('Not me! ', root.casNumber)
-            }
-        }
-    }
 
 
     StackLayout {
@@ -142,7 +185,7 @@ Item {
                     onClicked: {
                         root.setupRun(root.casNumber)
                         console.log("Setup run: ", casNumber)
-//                        push protocol selector screen and populate with casNumber info
+                        //                        push protocol selector screen and populate with casNumber info
                         mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
                     }
                 }
@@ -157,14 +200,24 @@ Item {
             border.width: 0.5
 
             Timer {
-                interval: 1000; running: isRunning; repeat: true
+                interval: 100
+                running: {root.isRunning && !root.isHanging}
+                repeat: true
                 onTriggered: {
-                    root.runSecs = root.runSecs - 1
-                    root.runProgVal = root.runProgVal + 100/root.firstRunSecs
-                    if(root.runSecs === 0){
-                        root.isRunning = false
+                    var timeElap = root.firstRunSecs - root.runSecs
+
+
+                    if(timeElap >= root.hangSecs){
+                        root.isHanging = true
+                        console.log(root.casNumber,' Hanging: ',timeElap)
+                    } else {
+                        root.runSecs = root.runSecs - 1
+                        root.runProgVal = root.runProgVal + 100/root.firstRunSecs
+                        if(root.runSecs === 0){
+                            root.isRunning = false
+                        }
+                        root.runTime = get_time(root.runSecs)
                     }
-                    root.runTime = get_time(root.runSecs)
                 }
 
             }
@@ -188,7 +241,7 @@ Item {
                     text: casNumber
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     fontSizeMode: Text.Fit
-//                    anchors.horizontalCenter: parent.horizontalCenter
+                    //                    anchors.horizontalCenter: parent.horizontalCenter
                     font.weight: Font.Medium
                     font.pointSize: 18
                     minimumPointSize: 16
@@ -198,7 +251,7 @@ Item {
                     id: sampNameL
                     text: runSampleName
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-//                    anchors.horizontalCenter: parent.horizontalCenter
+                    //                    anchors.horizontalCenter: parent.horizontalCenter
                     fontSizeMode: Text.Fit
                     style: Text.Normal
                     font.weight: Font.Medium
@@ -210,10 +263,10 @@ Item {
                     id: protNameL
                     text: runProtocolName
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-//                    anchors.horizontalCenter: parent.horizontalCenter
+                    //                    anchors.horizontalCenter: parent.horizontalCenter
                     fontSizeMode: Text.Fit
-//                    anchors.bottom: runStepL.top
-//                    anchors.bottomMargin: 10
+                    //                    anchors.bottom: runStepL.top
+                    //                    anchors.bottomMargin: 10
                     style: Text.Normal
                     font.weight: Font.Medium
                     font.pointSize: 11
@@ -299,6 +352,23 @@ Item {
 
 
             Text {
+                id: runStepNum
+                x: 58
+                y: 119
+                text: (stepIndex+1).toString() + '/' + totalSteps.toString()
+                anchors.horizontalCenterOffset: 0
+                font.bold: false
+                anchors.horizontalCenter: runProgBar.horizontalCenter
+                style: Text.Normal
+                minimumPointSize: 10
+                font.weight: Font.Normal
+                font.pointSize: 11
+                anchors.verticalCenterOffset: 0
+                anchors.verticalCenter: runProgBar.verticalCenter
+                fontSizeMode: Text.VerticalFit
+            }
+
+            Text {
                 id: runTimeL
                 x: 161
                 y: 1
@@ -313,8 +383,6 @@ Item {
                 font.weight: Font.Normal
                 minimumPointSize: 10
             }
-
-
 
         }
 
@@ -333,29 +401,38 @@ Item {
             root.stopRun(root.casNumber)
             root.isRunning = false
             root.runTime = "00:00:00"
+            root.runSecs = get_sec(root.runTime)
+            root.firstRunTime = root.runTime
+            root.firstRunSecs = get_sec(root.runTime)
+            root.runSampleName = 'SampleName'
+            root.runProtocolName = 'ProtocolName'
+            root.runStep = 'Testing...'
+            root.progStrings = []
+            root.runProgVal = 0
+            root.stepIndex = 0
+            root.isRunning = false
+            root.isHanging = false
+            WAMPHandler.stopProtocol(root.casNumber)
         }
         onRejected: {
             console.log("Canceled.")
             this.close
         }
     }
-function get_sec(runtime){
-    var timesplit = (runtime || '').split(':')
-    var secs = 0
-    for (var i = 0; i < timesplit.length; i++) {
-        secs += isNaN(parseInt(timesplit[i])) ? 0 : parseInt(timesplit[i])*Math.pow(60,2-i);
+    function get_sec(runtime){
+        var timesplit = (runtime || '').split(':')
+        var secs = 0
+        for (var i = 0; i < timesplit.length; i++) {
+            secs += isNaN(parseInt(timesplit[i])) ? 0 : parseInt(timesplit[i])*Math.pow(60,2-i);
+        }
+
+        return(secs)
     }
 
-    return(secs)
-}
-function get_first_time(runtime){
-
-}
-
-function get_time(runSecs){
-    var rtime = new Date(runSecs * 1000).toISOString().substr(11, 8);
-    return(rtime)
-}
+    function get_time(runSecs){
+        var rtime = new Date(runSecs * 1000).toISOString().substr(11, 8);
+        return(rtime)
+    }
 
 
 }
@@ -364,6 +441,6 @@ function get_time(runSecs){
 
 /*##^##
 Designer {
-    D{i:12;anchors_width:240}D{i:23;anchors_y:1}
+    D{i:12;anchors_width:240}D{i:23;anchors_y:1}D{i:24;anchors_y:1}
 }
 ##^##*/
