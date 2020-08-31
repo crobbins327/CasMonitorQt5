@@ -8,7 +8,7 @@ Created on Sun May 10 21:30:01 2020
 import sys
 import os
 import logging
-os.chdir("/home/jackr/SampleMonitor/Git/CasQML")
+os.chdir("/home/eben/CasQML")
 # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 import jsonHelper as jh
 import wampHandler as wh
@@ -16,13 +16,14 @@ import manualMachine as mM
 from PyQt5 import QtCore, QtGui, QtQml, QtQuick, QtWidgets
 import sys
 # insert at 1, 0 is the script path (or '' in REPL)
-sys.path.insert(1, '/home/jackr/SampleMonitor/Git/CasQML/prepbot')
+sys.path.insert(1, '/home/eben/CasQML/prepbot')
 import machine
 # import controller
 
 import asyncio
 
-from autobahn.asyncio.wamp import ApplicationRunner, ApplicationSession
+from autobahn.asyncio.wamp import ApplicationSession, ApplicationRunner
+#from autobahn_autoreconnect import ApplicationRunner
 from autobahn.wamp.types import PublishOptions
 from autobahn.wamp.exception import TransportLost
 from autobahn import wamp

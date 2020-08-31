@@ -3560,3 +3560,1865 @@ Stopping event loop...
 Stopped event loop
 Qt event loop ended with result 0
 Future <Task finished name='Task-1' coro=<BaseEventLoop.create_connection() done, defined at /home/jackr/anaconda3/envs/QML/lib/python3.8/asyncio/base_events.py:936> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f7809d7ec10>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fe69e07ea98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fe69e1ca7b8> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fe69e1ca7b8>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fe69e27a378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe69e074eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe69e074eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe69e08bc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe69e08bc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fe69e074e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 41088), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fe69e08bc18>}, <PyQt5.QtCore...x7fe69e08bc18>, 23, <bound method... debug=False>>, (<Future pendi...69e074e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fe69e074e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe69e08bc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe69e08bc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 41088), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe69e074e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fe69e1ca7b8>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fe69e315840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fe69e08bc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fe69e099c18>>, 6105000) to be invoked with arguments () after 1.619141486999979 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fe69e0a7b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...69e074ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe69e074ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe69e074ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fe69e0a7840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe69e1ca7b8>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fe69e1ca7b8>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe69e1ca7b8>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7efe61ff4a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7efe62140828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7efe62140828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7efe621f0378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7efe61feaeb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7efe61feaeb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7efe62001c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7efe62001c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7efe61feae88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 42950), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7efe62001c18>}, <PyQt5.QtCore...x7efe62001c18>, 23, <bound method... debug=False>>, (<Future pendi...e61feae88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7efe61feae88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7efe62001c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7efe62001c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 42950), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7efe61feae88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7efe62140828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7efe6228b840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7efe62001c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7efe6200fc50>>, 8189000) to be invoked with arguments () after 1.5093313799998214 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7efe6201db70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...e61feaee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7efe61feaee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7efe61feaee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7efe6201d840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7efe62140828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...efe62140828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7efe62140828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7ff3ada82a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7ff3adbce828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7ff3adbce828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7ff3adc7e378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7ff3ada78eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7ff3ada78eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7ff3ada8fc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7ff3ada8fc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7ff3ada78e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43356), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7ff3ada8fc18>}, <PyQt5.QtCore...x7ff3ada8fc18>, 23, <bound method... debug=False>>, (<Future pendi...3ada78e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7ff3ada78e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7ff3ada8fc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7ff3ada8fc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43356), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7ff3ada78e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7ff3adbce828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7ff3add19840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7ff3ada8fc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7ff3ada9dc50>>, 8721000) to be invoked with arguments () after 2.2303356070005975 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7ff3adaabb70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...3ada78ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7ff3ada78ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7ff3ada78ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7ff3adaab840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7ff3adbce828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...ff3adbce828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7ff3adbce828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f25f4dfda98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f25f4f49828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f25f4f49828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f25f4ff9378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f25f4df3eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f25f4df3eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f25f4e0ac18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f25f4e0ac18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f25f4df3e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43590), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f25f4e0ac18>}, <PyQt5.QtCore...x7f25f4e0ac18>, 23, <bound method... debug=False>>, (<Future pendi...5f4df3e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f25f4df3e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f25f4e0ac18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f25f4e0ac18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43590), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f25f4df3e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f25f4f49828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f25f5094840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f25f4e0ac18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f25f4e18c88>>, 8954000) to be invoked with arguments () after 1.6791924709996238 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f25f4e26b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...5f4df3ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f25f4df3ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f25f4df3ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f25f4e26840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f25f4f49828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f25f4f49828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f25f4f49828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f12b3890a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f12b39dc828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f12b39dc828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f12b3a8c378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f12b3886eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f12b3886eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f12b389dc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f12b389dc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f12b3886e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43666), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f12b389dc18>}, <PyQt5.QtCore...x7f12b389dc18>, 23, <bound method... debug=False>>, (<Future pendi...2b3886e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f12b3886e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f12b389dc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f12b389dc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43666), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f12b3886e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f12b39dc828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f12b3b27840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f12b389dc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f12b38abc88>>, 9050000) to be invoked with arguments () after 1.8509749519998877 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f12b38b9b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...2b3886ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f12b3886ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f12b3886ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f12b38b9840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f12b39dc828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f12b39dc828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f12b39dc828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f9877240a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f987738c828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f987738c828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f987743c378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f9877236eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f9877236eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f987724dc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f987724dc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f9877236e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43728), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f987724dc18>}, <PyQt5.QtCore...x7f987724dc18>, 23, <bound method... debug=False>>, (<Future pendi...877236e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f9877236e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f987724dc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f987724dc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43728), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f9877236e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f987738c828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f98774d7840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f987724dc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f987725bc50>>, 9162000) to be invoked with arguments () after 2.2646618929993565 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f9877269b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...877236ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f9877236ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f9877236ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f9877269840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f987738c828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f987738c828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f987738c828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fe04a973a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fe04aabf828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fe04aabf828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fe04ab6f378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe04a969eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe04a969eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe04a980c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe04a980c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fe04a969e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43778), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fe04a980c18>}, <PyQt5.QtCore...x7fe04a980c18>, 23, <bound method... debug=False>>, (<Future pendi...04a969e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fe04a969e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe04a980c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe04a980c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43778), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe04a969e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fe04aabf828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fe04ac0a840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fe04a980c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fe04a98ec88>>, 9218000) to be invoked with arguments () after 2.2341303270004573 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fe04a99cb70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...04a969ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe04a969ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe04a969ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fe04a99c840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe04aabf828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fe04aabf828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe04aabf828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f0370ae0a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f0370c2c828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f0370c2c828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f0370cdc378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f0370ad5eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f0370ad5eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f0370aedc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f0370aedc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f0370ad5e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43920), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f0370aedc18>}, <PyQt5.QtCore...x7f0370aedc18>, 23, <bound method... debug=False>>, (<Future pendi...370ad5e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f0370ad5e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f0370aedc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f0370aedc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 43920), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f0370ad5e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f0370c2c828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f0370d77840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f0370aedc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f0370afbc88>>, 9383000) to be invoked with arguments () after 1.9374590360002912 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f0370b09b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...370ad5ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f0370ad5ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f0370ad5ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f0370b09840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f0370c2c828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f0370c2c828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f0370c2c828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f123aa43a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f123ab8f828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f123ab8f828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f123ac3e378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f123aa39eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f123aa39eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f123aa50c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f123aa50c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f123aa39e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 44006), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f123aa50c18>}, <PyQt5.QtCore...x7f123aa50c18>, 23, <bound method... debug=False>>, (<Future pendi...23aa39e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f123aa39e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f123aa50c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f123aa50c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 44006), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f123aa39e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f123ab8f828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f123acda840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f123aa50c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f123aa5ec50>>, 9465000) to be invoked with arguments () after 1.5759367310001835 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f123aa6cb70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...23aa39ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f123aa39ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f123aa39ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f123aa6c840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f123ab8f828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f123ab8f828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f123ab8f828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f4b07067a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f4b071b37b8> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f4b071b37b8>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f4b07263378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f4b0705deb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f4b0705deb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f4b07074c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f4b07074c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f4b0705de88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 44038), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f4b07074c18>}, <PyQt5.QtCore...x7f4b07074c18>, 23, <bound method... debug=False>>, (<Future pendi...b0705de88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f4b0705de88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f4b07074c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f4b07074c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 44038), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f4b0705de88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f4b071b37b8>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f4b072fe840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f4b07074c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f4b07082c18>>, 9496000) to be invoked with arguments () after 1.5624052540006232 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f4b07090b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...b0705dee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f4b0705dee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f4b0705dee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f4b07090840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f4b071b37b8>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f4b071b37b8>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f4b071b37b8>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f98561fca98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f9856348828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f9856348828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f98563f8378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f98561f2eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f98561f2eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f9856209c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f9856209c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f98561f2e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 44074), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f9856209c18>}, <PyQt5.QtCore...x7f9856209c18>, 23, <bound method... debug=False>>, (<Future pendi...8561f2e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f98561f2e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f9856209c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f9856209c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 44074), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f98561f2e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f9856348828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f9856493840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f9856209c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f9856217c88>>, 9536000) to be invoked with arguments () after 1.6353671319993737 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f9856225b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...8561f2ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f98561f2ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f98561f2ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f9856225840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f9856348828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f9856348828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f9856348828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fea79ffba98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fea7a147828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fea7a147828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fea7a1f7378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fea79ff1eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fea79ff1eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fea7a008c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fea7a008c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fea79ff1e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 46120), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fea7a008c18>}, <PyQt5.QtCore...x7fea7a008c18>, 23, <bound method... debug=False>>, (<Future pendi...a79ff1e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fea79ff1e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fea7a008c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fea7a008c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 46120), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fea79ff1e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fea7a147828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fea7a292840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fea7a008c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fea7a016c88>>, 10831000) to be invoked with arguments () after 1.5968621659994824 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fea7a024b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...a79ff1ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fea79ff1ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fea79ff1ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fea7a024840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fea7a147828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fea7a147828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fea7a147828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f9afe711a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f9afe85d828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f9afe85d828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f9afe90d378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f9afe707eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f9afe707eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f9afe71ec18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f9afe71ec18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f9afe707e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 46314), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f9afe71ec18>}, <PyQt5.QtCore...x7f9afe71ec18>, 23, <bound method... debug=False>>, (<Future pendi...afe707e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f9afe707e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f9afe71ec18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f9afe71ec18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 46314), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f9afe707e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f9afe85d828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f9afe9a8840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f9afe71ec18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f9afe72cc50>>, 10979000) to be invoked with arguments () after 2.457811580999987 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f9afe73ab70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...afe707ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f9afe707ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f9afe707ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f9afe73a840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f9afe85d828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f9afe85d828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f9afe85d828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fe701204a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fe701350828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fe701350828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fe701400378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe7011faeb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe7011faeb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe701211c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe701211c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fe7011fae88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 46552), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fe701211c18>}, <PyQt5.QtCore...x7fe701211c18>, 23, <bound method... debug=False>>, (<Future pendi...7011fae88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fe7011fae88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe701211c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe701211c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 46552), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe7011fae88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fe701350828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fe70149b840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fe701211c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fe70121fc88>>, 11302000) to be invoked with arguments () after 1.9589931600003183 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fe70122db70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...7011faee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe7011faee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe7011faee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fe70122d840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe701350828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fe701350828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe701350828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7ff71232fa98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7ff71247b828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7ff71247b828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7ff71252a378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7ff712325eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7ff712325eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7ff71233cc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7ff71233cc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7ff712325e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 49994), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7ff71233cc18>}, <PyQt5.QtCore...x7ff71233cc18>, 23, <bound method... debug=False>>, (<Future pendi...712325e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7ff712325e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7ff71233cc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7ff71233cc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 49994), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7ff712325e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7ff71247b828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7ff7125c6840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7ff71233cc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7ff71234ac88>>, 13542000) to be invoked with arguments () after 1.7774582630008808 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7ff712358b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...712325ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7ff712325ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7ff712325ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7ff712358840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7ff71247b828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...ff71247b828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7ff71247b828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f8cea839a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f8cea985828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f8cea985828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f8ceaa35378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f8cea82feb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f8cea82feb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f8cea846c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f8cea846c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f8cea82fe88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 50670), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f8cea846c18>}, <PyQt5.QtCore...x7f8cea846c18>, 23, <bound method... debug=False>>, (<Future pendi...cea82fe88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f8cea82fe88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f8cea846c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f8cea846c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 50670), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f8cea82fe88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f8cea985828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f8ceaad0840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f8cea846c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f8cea854c88>>, 13868000) to be invoked with arguments () after 2.047778837999431 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f8cea862b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...cea82fee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f8cea82fee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f8cea82fee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f8cea862840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f8cea985828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f8cea985828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f8cea985828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f8796e60a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f8796fac828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f8796fac828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f879705b378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f8796e56eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f8796e56eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f8796e6dc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f8796e6dc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f8796e56e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 51368), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f8796e6dc18>}, <PyQt5.QtCore...x7f8796e6dc18>, 23, <bound method... debug=False>>, (<Future pendi...796e56e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f8796e56e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f8796e6dc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f8796e6dc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 51368), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f8796e56e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f8796e630b8>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f87970f7840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f8796e6dc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f8796e7bc88>>, 14114000) to be invoked with arguments () after 1.928088344000571 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f8796e89b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...796e56ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f8796e56ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f8796e56ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f8796e89840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f8796e630b8>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f8796e630b8>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f8796e630b8>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f564823aa98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f5648386828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f5648386828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f5648436378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f5648230eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f5648230eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f5648247c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f5648247c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f5648230e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 53354), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f5648247c18>}, <PyQt5.QtCore...x7f5648247c18>, 23, <bound method... debug=False>>, (<Future pendi...648230e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f5648230e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f5648247c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f5648247c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 53354), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f5648230e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f5648386828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f56484d1840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f5648247c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f5648255c50>>, 15526000) to be invoked with arguments () after 2.0838066439991962 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f5648263b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...648230ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f5648230ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f5648230ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f5648263840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f5648386828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f5648386828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f5648386828>)> finished running
+Using selector: _Selector
+Registering callback <TaskStepMethWrapper object at 0x7f2a460299b0> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f2a460299b0>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f2a46201378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f2a45ffdf78> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f2a45ffdf78>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f2a46019708>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f2a46019708>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f2a460340a8>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 55612), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f2a46019708>}, <PyQt5.QtCore...x7f2a46019708>, 23, <bound method... debug=False>>, (<Future pendi...a460340a8>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f2a460340a8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f2a46019708>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f2a46019708>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 55612), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f2a460340a8>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f2a460299b0>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f2a4629d840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f2a46019708>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f2a46029908>>, 17645000) to be invoked with arguments () after 29.438427019998926 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f2a24091488> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...a45ffdf78>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f2a45ffdf78> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f2a45ffdf78>(<Future finished result=None>)>
+File 23 ready to read
+Processing event with key SelectorKey(fileobj=23, fd=23, events=1, data=(<Handle _SelectorSocketTransport._read_ready()>, None)) and mask 1
+Invoking reader callback: <Handle _SelectorSocketTransport._read_ready()>
+Registering callback <function WebSocketAdapterProtocol._consume.<locals>.process at 0x7f2a24091268> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 5
+Calling handle <Handle WebSocketAdapterProtocol._consume.<locals>.process(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/autobahn/asyncio/websocket.py:95>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f2a46029908>>, 17625000) to be invoked with arguments () after 9.436811430001399 second(s)
+Registering timer id 4
+Stopping event loop...
+Stopped event loop
+Traceback (most recent call last):
+  File "/home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/autobahn/wamp/websocket.py", line 59, in onOpen
+    self._session = self.factory._factory()
+  File "/home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/autobahn_autoreconnect/__init__.py", line 162, in _create_app_session
+    raise e
+  File "/home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/autobahn_autoreconnect/__init__.py", line 158, in _create_app_session
+    session = make(cfg)
+TypeError: 'wampHandler' object is not callable
+
+failing WebSocket connection (code=1011): "WAMP Internal Error ('wampHandler' object is not callable)"
+dropping connection to peer tcp4:127.0.0.1:8080 with abort=True: I dropped the WebSocket TCP connection: WAMP Internal Error ('wampHandler' object is not callable)
+Registering callback <bound method ApplicationRunner._reconnect of <autobahn_autoreconnect.ApplicationRunner object at 0x7f2a46029080>> to be invoked with arguments (<Future finished result=<autobahn.asy...x7f2a460299b0>>,) after 0 second(s)
+Registering timer id 6
+Registering callback <bound method _SelectorTransport._call_connection_lost of <_SelectorSocketTransport closing fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (None,) after 0 second(s)
+Registering timer id 3
+Qt event loop ended with result 0
+Closing event loop...
+Closing
+Stopping timers
+Using selector: _Selector
+Registering callback <TaskStepMethWrapper object at 0x7ffa7f89d9b0> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7ffa7f89d9b0>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7ffa7fa76378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7ffa7f871f78> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7ffa7f871f78>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7ffa7f88d708>}, <PyQt5.QtCore.QSocketNotifier object at 0x7ffa7f88d708>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7ffa7f8a80a8>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 55632), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7ffa7f88d708>}, <PyQt5.QtCore...x7ffa7f88d708>, 23, <bound method... debug=False>>, (<Future pendi...a7f8a80a8>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7ffa7f8a80a8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7ffa7f88d708>}, <PyQt5.QtCore.QSocketNotifier object at 0x7ffa7f88d708>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 55632), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7ffa7f8a80a8>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7ffa7f89d9b0>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7ffa7fb11840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7ffa7f88d708>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7ffa7f89d908>>, 17668000) to be invoked with arguments () after 29.90927314000146 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7ffa5c0cd488> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...a7f871f78>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7ffa7f871f78> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7ffa7f871f78>(<Future finished result=None>)>
+File 23 ready to read
+Processing event with key SelectorKey(fileobj=23, fd=23, events=1, data=(<Handle _SelectorSocketTransport._read_ready()>, None)) and mask 1
+Invoking reader callback: <Handle _SelectorSocketTransport._read_ready()>
+Registering callback <function WebSocketAdapterProtocol._consume.<locals>.process at 0x7ffa5c0cd268> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 5
+Calling handle <Handle WebSocketAdapterProtocol._consume.<locals>.process(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/autobahn/asyncio/websocket.py:95>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7ffa7f89d908>>, 17648000) to be invoked with arguments () after 9.907304476000718 second(s)
+Registering timer id 4
+Stopping event loop...
+Stopped event loop
+Traceback (most recent call last):
+  File "/home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/autobahn/wamp/websocket.py", line 59, in onOpen
+    self._session = self.factory._factory()
+  File "/home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/autobahn_autoreconnect/__init__.py", line 162, in _create_app_session
+    raise e
+  File "/home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/autobahn_autoreconnect/__init__.py", line 158, in _create_app_session
+    session = make(cfg)
+TypeError: 'wampHandler' object is not callable
+
+failing WebSocket connection (code=1011): "WAMP Internal Error ('wampHandler' object is not callable)"
+dropping connection to peer tcp4:127.0.0.1:8080 with abort=True: I dropped the WebSocket TCP connection: WAMP Internal Error ('wampHandler' object is not callable)
+Registering callback <bound method ApplicationRunner._reconnect of <autobahn_autoreconnect.ApplicationRunner object at 0x7ffa7f89d080>> to be invoked with arguments (<Future finished result=<autobahn.asy...x7ffa7f89d9b0>>,) after 0 second(s)
+Registering timer id 6
+Registering callback <bound method _SelectorTransport._call_connection_lost of <_SelectorSocketTransport closing fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (None,) after 0 second(s)
+Registering timer id 3
+Qt event loop ended with result 0
+Closing event loop...
+Closing
+Stopping timers
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f66df26faf0> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f66df3bc828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f66df3bc828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f66df46c378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f66df265eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f66df265eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f66df27dc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f66df27dc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f66df265e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 55652), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f66df27dc18>}, <PyQt5.QtCore...x7f66df27dc18>, 23, <bound method... debug=False>>, (<Future pendi...6df265e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f66df265e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f66df27dc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f66df27dc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 55652), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f66df265e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f66df3bc828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f66df507840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f66df27dc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f66df28bc50>>, 17663000) to be invoked with arguments () after 2.308444927999517 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f66df299b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...6df265ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f66df265ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f66df265ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f66df299840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f66df3bc828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f66df3bc828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f66df3bc828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fe0bce2eaf0> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fe0bcf7a7b8> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fe0bcf7a7b8>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fe0bd029378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe0bce24eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe0bce24eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe0bce3bc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe0bce3bc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fe0bce24e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 55704), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fe0bce3bc18>}, <PyQt5.QtCore...x7fe0bce3bc18>, 23, <bound method... debug=False>>, (<Future pendi...0bce24e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fe0bce24e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe0bce3bc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe0bce3bc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 55704), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe0bce24e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fe0bcf7a7b8>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fe0bd0c5840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fe0bce3bc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fe0bce49c18>>, 17762000) to be invoked with arguments () after 1.9645443209992663 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fe0bce57b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...0bce24ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe0bce24ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe0bce24ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fe0bce57840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe0bcf7a7b8>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fe0bcf7a7b8>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe0bcf7a7b8>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fe26da5baf0> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fe26dba7828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fe26dba7828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fe26dc57378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe26da51eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe26da51eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe26da68c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe26da68c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fe26da51e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 56476), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fe26da68c18>}, <PyQt5.QtCore...x7fe26da68c18>, 23, <bound method... debug=False>>, (<Future pendi...26da51e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fe26da51e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe26da68c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe26da68c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 56476), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe26da51e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fe26dba7828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fe26dcf2840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fe26da68c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fe26da76c50>>, 18718000) to be invoked with arguments () after 1.6433018610005092 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fe26da84b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...26da51ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe26da51ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe26da51ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fe26da84840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe26dba7828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fe26dba7828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe26dba7828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fb2ed7dcaf0> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fb2ed928828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fb2ed928828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fb2ed9d8378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fb2ed7d2eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fb2ed7d2eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fb2ed7e9c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fb2ed7e9c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fb2ed7d2e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 56492), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fb2ed7e9c18>}, <PyQt5.QtCore...x7fb2ed7e9c18>, 23, <bound method... debug=False>>, (<Future pendi...2ed7d2e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fb2ed7d2e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fb2ed7e9c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fb2ed7e9c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 56492), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fb2ed7d2e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fb2ed928828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fb2eda73840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fb2ed7e9c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fb2ed7f7c50>>, 18821000) to be invoked with arguments () after 1.947133155001211 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fb2ed805b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...2ed7d2ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fb2ed7d2ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fb2ed7d2ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fb2ed805840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fb2ed928828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fb2ed928828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fb2ed928828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fcf5b1f2af0> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fcf5b33e828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fcf5b33e828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fcf5b3ee378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fcf5b1e8eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fcf5b1e8eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fcf5b1ffc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fcf5b1ffc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fcf5b1e8e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 57390), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fcf5b1ffc18>}, <PyQt5.QtCore...x7fcf5b1ffc18>, 23, <bound method... debug=False>>, (<Future pendi...f5b1e8e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fcf5b1e8e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fcf5b1ffc18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fcf5b1ffc18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 57390), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fcf5b1e8e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fcf5b33e828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fcf5b489840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fcf5b1ffc18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fcf5b20dc50>>, 20086000) to be invoked with arguments () after 1.5483705939986976 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fcf5b21bb70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...f5b1e8ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fcf5b1e8ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fcf5b1e8ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fcf5b21b840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fcf5b33e828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fcf5b33e828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fcf5b33e828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7f3992eb6af0> until complete
+Registering callback <TaskStepMethWrapper object at 0x7f3993002828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7f3993002828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7f39930b1378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7f3992eaceb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f3992eaceb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f3992ec3c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f3992ec3c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7f3992eace88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 57712), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7f3992ec3c18>}, <PyQt5.QtCore...x7f3992ec3c18>, 23, <bound method... debug=False>>, (<Future pendi...992eace88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7f3992eace88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7f3992ec3c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7f3992ec3c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 57712), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f3992eace88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7f3993002828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7f399314d840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7f3992ec3c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7f3992ed1c88>>, 20378000) to be invoked with arguments () after 1.9757137099986721 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7f3992edfb70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...992eacee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7f3992eacee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7f3992eacee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7f3992edf840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f3993002828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...f3993002828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7f3993002828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fa8f1894af0> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fa8f19e0828> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fa8f19e0828>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fa8f1a90378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fa8f1889eb8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fa8f1889eb8>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fa8f18a1c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fa8f18a1c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fa8f1889e88>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 58220), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fa8f18a1c18>}, <PyQt5.QtCore...x7fa8f18a1c18>, 23, <bound method... debug=False>>, (<Future pendi...8f1889e88>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fa8f1889e88> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fa8f18a1c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fa8f18a1c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 58220), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fa8f1889e88>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fa8f19e0828>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fa8f1b2b840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fa8f18a1c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fa8f18afc88>>, 20861000) to be invoked with arguments () after 1.7614060199994128 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fa8f18bdb70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...8f1889ee8>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fa8f1889ee8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fa8f1889ee8>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fa8f18bd840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fa8f19e0828>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fa8f19e0828>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fa8f19e0828>)> finished running
+Using selector: _Selector
+Running <generator object BaseEventLoop.create_connection at 0x7fe5f43e9a98> until complete
+Registering callback <TaskStepMethWrapper object at 0x7fe5f440ca58> to be invoked with arguments () after 0 second(s)
+Registering timer id 1
+Starting Qt event loop
+Timer event on id 1
+Calling handle <Handle <TaskStepMethWrapper object at 0x7fe5f440ca58>()>
+Registering callback <function _wait.<locals>._on_completion at 0x7fe5f45e5378> to be invoked with arguments (<Future finished result=[(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 8080))]>,) after 0 second(s)
+Registering timer id 3
+Timer event on id 3
+Calling handle <Handle _wait.<locals>._on_completion(<Future finis...0.1', 8080))]>) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/tasks.py:380>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe5f43dfe28> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe5f43dfe28>(<Future finished result=None>)>
+Adding writer callback for file descriptor 23
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe5f43f6c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe5f43f6c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(23)(), <TaskWakeupMethWrapper object at 0x7fe5f43dfdf8>()]>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 58892), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({23: <PyQt5.QtCore...x7fe5f43f6c18>}, <PyQt5.QtCore...x7fe5f43f6c18>, 23, <bound method... debug=False>>, (<Future pendi...5f43dfdf8>()]>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Registering callback functools.partial(<bound method BaseSelectorEventLoop._sock_connect_done of <QSelectorEventLoop running=True closed=False debug=False>>, 23) to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 3
+Registering callback <TaskWakeupMethWrapper object at 0x7fe5f43dfdf8> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Socket notifier for fd 23 is ready
+Registering callback <bound method _QEventLoop.__notifier_cb_wrapper of <QSelectorEventLoop running=True closed=False debug=False>> to be invoked with arguments ({23: <PyQt5.QtCore.QSocketNotifier object at 0x7fe5f43f6c18>}, <PyQt5.QtCore.QSocketNotifier object at 0x7fe5f43f6c18>, 23, <bound method BaseSelectorEventLoop._sock_connect_cb of <QSelectorEventLoop running=True closed=False debug=False>>, (<Future finished result=None>, <socket.socket fd=23, family=AddressFamily.AF_INET, type=2049, proto=6, laddr=('127.0.0.1', 58892), raddr=('127.0.0.1', 8080)>, ('127.0.0.1', 8080))) after 0 second(s)
+Registering timer id 1
+Timer event on id 3
+Calling handle <Handle BaseSelectorEventLoop._sock_connect_done(23)(<Future finished result=None>)>
+Removing writer callback for file descriptor 23
+Timer event on id 4
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe5f43dfdf8>(<Future finished result=None>)>
+Registering callback <bound method WebSocketAdapterProtocol.connection_made of <autobahn.asyncio.websocket.WampWebSocketClientProtocol object at 0x7fe5f45e08d0>> to be invoked with arguments (<_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>,) after 0 second(s)
+Registering timer id 3
+Registering callback <bound method _SelectorTransport._add_reader of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>> to be invoked with arguments (23, <bound method _SelectorSocketTransport._read_ready of <_SelectorSocketTransport fd=23 read=idle write=<idle, bufsize=0>>>) after 0 second(s)
+Registering timer id 5
+Registering callback <function _set_result_unless_cancelled at 0x7fe5f4718840> to be invoked with arguments (<Future pending>, None) after 0 second(s)
+Registering timer id 6
+Timer event on id 1
+Calling handle <Handle _QEventLoop.__notifier_cb_wrapper({}, <PyQt5.QtCore...x7fe5f43f6c18>, 23, <bound method... debug=False>>, (<Future finished result=None>, <socket.socke...0.0.1', 8080)>, ('127.0.0.1', 8080)))>
+Timer event on id 3
+Calling handle <Handle WebSocketAdapterProtocol.connection_made(<_SelectorSoc...e, bufsize=0>>)>
+Registering callback functools.partial(<bound method _BatchedTimer._notify_bucket of <txaio._common._BatchedTimer object at 0x7fe5f4405dd8>>, 21518000) to be invoked with arguments () after 2.011823621000076 second(s)
+Registering timer id 1
+Registering callback <function _AsyncioApi.add_callbacks.<locals>.done at 0x7fe5f4412b70> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 5
+Calling handle <Handle _SelectorTransport._add_reader(23, <bound method..., bufsize=0>>>)>
+Timer event on id 6
+Calling handle <Handle _set_result_unless_cancelled(<Future pendi...5f43dfe58>()]>, None) at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/futures.py:339>
+Registering callback <TaskWakeupMethWrapper object at 0x7fe5f43dfe58> to be invoked with arguments (<Future finished result=None>,) after 0 second(s)
+Registering timer id 5
+Timer event on id 4
+Calling handle <Handle _AsyncioApi.add_callbacks.<locals>.done(<Future finished result=None>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/txaio/aio.py:482>
+Timer event on id 5
+Calling handle <Handle <TaskWakeupMethWrapper object at 0x7fe5f43dfe58>(<Future finished result=None>)>
+Registering callback <function _QEventLoop.run_until_complete.<locals>.stop at 0x7fe5f4412840> to be invoked with arguments (<Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe5f45e08d0>)>,) after 0 second(s)
+Registering timer id 4
+Timer event on id 4
+Calling handle <Handle _QEventLoop.run_until_complete.<locals>.stop(<Task finishe...fe5f45e08d0>)>) at /home/eben/miniconda3/envs/py36/lib/python3.6/site-packages/quamash/__init__.py:278>
+Stopping event loop...
+Stopped event loop
+Qt event loop ended with result 0
+Future <Task finished coro=<BaseEventLoop.create_connection() done, defined at /home/eben/miniconda3/envs/py36/lib/python3.6/asyncio/base_events.py:701> result=(<_SelectorSoc...e, bufsize=0>>, <autobahn.asy...x7fe5f45e08d0>)> finished running

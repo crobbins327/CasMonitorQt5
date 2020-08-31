@@ -1,19 +1,28 @@
 from os import environ
 import asyncio
-from autobahn.asyncio.wamp import ApplicationSession, ApplicationRunner
+from autobahn.asyncio.wamp import ApplicationSession
+from autobahn_autoreconnect import ApplicationRunner
 from autobahn import wamp
 import time
 import datetime
 import machine
+import itertools
+import namedTask as nTask
 
 
 class Component(ApplicationSession):
+    
+    '''protFuncs = {
+    'self.incubate': self.incubate,
+    'self.mix': self.mix,
+    'self.'}'''
+
     def __init__(self, config):
         ApplicationSession.__init__(self, config)
         self.halted = True
         self.homed = False
-        self.allTasks = [task.get_name() for task in asyncio.all_tasks()]
-        self.activeTasks = [task.get_name() for task in asyncio.all_tasks() if not task.done()]
+        self.allTasks = [task.get_name() for task in nTask.namedTask.all_tasks()]
+        self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
 
     async def update(self):
         while True:
@@ -42,25 +51,33 @@ class Component(ApplicationSession):
         print(progStrings)
         # print(protPath)
         #Check if a task with that CasL name already exists
-        self.allTasks = [task.get_name() for task in asyncio.all_tasks()]
-        self.activeTasks = [task.get_name() for task in asyncio.all_tasks() if not task.done()]
-        print(self.activeTasks)
-                
+        self.allTasks = [task.get_name() for task in nTask.namedTask.all_tasks()]
+        self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
         #Create task with CasL as the name
         if casName in self.activeTasks:
+            print(self.activeTasks)
             print('Already running task on {}!'.format(casName))
             pass
         else:
-            exec('self.{} = asyncio.create_task(self.evalProtocol(casL, protStrings), name="{}")'.format(casName,casName))
+            exec('self.{} = nTask.create_task(self.evalProtocol(casL, protStrings), name="{}")'.format(casName,casName))
+            self.allTasks = [task.get_name() for task in nTask.namedTask.all_tasks()]
+            self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
+            print(self.activeTasks)
             print('Starting task on {}'.format(casName))
         
     
     async def evalProtocol(self, casL, protStrings):
         for i in range(len(protStrings)):
             #Break up blocks of code, exec cannot be used because it does not return values
+            #Eval() has poor security!!!! Should at least filter protStrings before evaluating...
             toEval = protStrings[i].split('\n')
-            for func in toEval:
-                await eval(func)
+            print(toEval)
+            if len(toEval) > 1:
+                #Need to gather functions so that the protocol step is completed synchronously
+                #Important for synchronous sample purging then loading
+                await asyncio.gather(eval(toEval[0]),eval(toEval[1]))
+            else:
+                await eval(protStrings[i])
             #Once step has been evaluated, publish to update progress bar
             #wampHandler will send a corresponding signal to QML to update the progress bar
             self.publish('com.prepbot.prothandler.progress', casL)
@@ -70,7 +87,7 @@ class Component(ApplicationSession):
     async def stopProtocol(self, casL):
         casName = 'cas{}'.format(casL)
         print('Trying to cancel {}, getting active tasks...'.format(casName))
-        self.activeTasks = [task.get_name() for task in asyncio.all_tasks() if not task.done()]
+        self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
         print(self.activeTasks)
         if casName in self.activeTasks:
             eval('self.{}.cancel()'.format(casName))
@@ -111,7 +128,8 @@ class Component(ApplicationSession):
             if ((i % 2) == 0):
                 await asyncio.sleep(0.01)
                 print('Mixing {}...'.format(casL))
-                # goto sample...?
+                #Goto last fluidtype???
+                # eval('machine.goto_sample{}()'.format(casL))
                 # machine.pump_in(0.5)
                 time.sleep(2)
                 # machine.pump_out(0.5)
@@ -119,18 +137,31 @@ class Component(ApplicationSession):
     async def mix(self, casL, numCycles, volume):
         await asyncio.sleep(0.01)
         print("MIXING Cas{}, {} TIMES, {} VOLUME".format(casL, numCycles, volume))
-        time.sleep(5)
+        # eval('machine.goto_sample{}()'.format(casL))
+        for i in range(int(numCycles)):
+            await asyncio.sleep(0.01)
+            print('Mixing {}, #{} of {} cycles...'.format(casL,i+1,int(numCycles)))
+                # machine.pump_in(volume)
+                time.sleep(2)
+                # machine.pump_out(volume)
     
     async def purge(self, casL, deadvol):
+        await asyncio.sleep(0.01)
+        print('PURGING CHAMBER, Cas{}'.format(casL))
+        # Goto last fluidtype???
+        # eval('machine.goto_sample{}()'.format(casL))
+        # machine.pump_in(deadvol)
+        time.sleep(5)
+        #machine.empty_syringe()
+    
+    async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol):
         await asyncio.sleep(0.01)
         print('PURGING CHAMBER, Cas{}'.format(casL))
         # eval('machine.goto_sample{}()'.format(casL))
         # machine.pump_in(deadvol)
         time.sleep(5)
-        # machine.empty_syringe()
-    
-    async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol):
-        await asyncio.sleep(0.01)
+        #machine.empty_syringe()
+
         print('ADDING {} TO Cas{}'.format(loadstr, casL))
         # eval('machine.goto_{}()'.format(reagent))
         # machine.pump_in(vol,speed)

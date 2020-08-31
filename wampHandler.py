@@ -115,30 +115,34 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
             elif oper['opName'] == 'Load Formalin':
-                rem = self.__purge(casL, oper['volume'], mL=mL)
+#                rem = self.__purge(casL, oper['volume'], mL=mL)
                 load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], mL=mL)
-                protstrings.append(rem+'\n'+load)
+#                protstrings.append(rem+'\n'+load)
+                protstrings.append(load)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
                 fluidType = oper['loadType']
             elif oper['opName'] == 'Load Stain':
-                rem = self.__purge(casL, oper['volume'], mL=mL)
+#                rem = self.__purge(casL, oper['volume'], mL=mL)
                 load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], mL=mL)
-                protstrings.append(rem+'\n'+load)
+#                protstrings.append(rem+'\n'+load)
+                protstrings.append(load)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
                 fluidType = oper['loadType']
             elif oper['opName'] == 'Load BABB':
-                rem = self.__purge(casL, oper['volume'], mL=mL)
+#                rem = self.__purge(casL, oper['volume'], mL=mL)
                 load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], mL=mL)
-                protstrings.append(rem+'\n'+load)
+#                protstrings.append(rem+'\n'+load)
+                protstrings.append(load)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
                 fluidType = oper['loadType']
             elif oper['opName'] == 'Load Dehydrant':
-                rem = self.__purge(casL, oper['volume'], mL=mL)
+#                rem = self.__purge(casL, oper['volume'], mL=mL)
                 load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], mL=mL)
-                protstrings.append(rem+'\n'+load)
+#                protstrings.append(rem+'\n'+load)
+                protstrings.append(load)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
                 fluidType = oper['loadType']

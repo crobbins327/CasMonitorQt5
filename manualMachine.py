@@ -7,7 +7,7 @@ Created on Thu Aug 27 21:17:52 2020
 """
 import sys
 from PyQt5 import QtCore
-sys.path.insert(1, '/home/jackr/SampleMonitor/Git/CasQML/prepbot')
+sys.path.insert(1, '/home/eben/CasQML/prepbot')
 import machine
 import logging
 from colorlog import ColoredFormatter
