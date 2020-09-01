@@ -141,9 +141,10 @@ class Component(ApplicationSession):
         for i in range(int(numCycles)):
             await asyncio.sleep(0.01)
             print('Mixing {}, #{} of {} cycles...'.format(casL,i+1,int(numCycles)))
-                # machine.pump_in(volume)
-                time.sleep(2)
-                # machine.pump_out(volume)
+            # Goto last fluidtype???
+            # machine.pump_in(volume)
+            time.sleep(2)
+            # machine.pump_out(volume)
     
     async def purge(self, casL, deadvol):
         await asyncio.sleep(0.01)

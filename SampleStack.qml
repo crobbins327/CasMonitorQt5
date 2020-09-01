@@ -52,6 +52,8 @@ Item {
                 root.runProgVal = 0
                 root.isRunning = true
                 root.isHanging = false
+                stopRunB.visible = true
+                nextRunB.visible = false
             } else {
                 console.log('Not me! ', root.casNumber)
             }
@@ -76,7 +78,13 @@ Item {
                     root.isRunning = true
                     root.isHanging = false
                 } else {
-                    console.log('Protocol Finished! ', root.casNumber)
+                    console.log('Protocol Finished! Cas', root.casNumber)
+                    root.isHanging = true
+                    root.runTime = "00:00:00"
+                    root.runSecs = get_sec(root.runTime)
+                    root.runProgVal = 100
+                    stopRunB.visible = false
+                    nextRunB.visible = true
                 }
             } else {
                 console.log('Not me! ', root.casNumber)
@@ -125,14 +133,14 @@ Item {
                 font.pointSize: 18
             }
 
-            Text {
-                id: noCasLab
-                text: qsTr("No Cassette Detected")
+            Button {
+                id: engageCasB
+                height: 40
+                text: qsTr("Engage")
+                anchors.top: casNum0.bottom
+                anchors.topMargin: 40
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                font.bold: false
-                font.weight: Font.Medium
-                font.pointSize: 16
+                font.pointSize: 11
             }
 
         }
@@ -154,8 +162,9 @@ Item {
             }
 
 
-            GridLayout {
+            Grid {
                 id: gridLayout
+                anchors.topMargin: 10
                 anchors.top: casNum1.bottom
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
@@ -163,23 +172,30 @@ Item {
                 anchors.margins: 10
                 rowSpacing: 10
                 columnSpacing: 10
-                flow:  parent.width > parent.height ? GridLayout.LeftToRight : GridLayout.TopToBottom
+//                flow:  parent.width > parent.height ? GridLayout.LeftToRight : GridLayout.TopToBottom
+                flow: GridLayout.TopToBottom
+                columns: 2
 
                 Button {
                     id: defRunB
+                    width: (gridLayout.width - gridLayout.columnSpacing)/2
                     text: qsTr("Default Run")
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                    width: parent.width/2
                     height: 40
 
                     onClicked: {root.defaultRun(root.casNumber)}
                 }
 
                 Button {
+                    id: disengageCasB
+                    width: (gridLayout.width - gridLayout.columnSpacing)/2
+                    height: 40
+                    text: qsTr("Disengage")
+                }
+
+                Button {
                     id: setupRunB
+                    width: (gridLayout.width - gridLayout.columnSpacing)/2
                     text: qsTr("Setup Run")
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                    width: parent.width/2
                     height: 40
 
                     onClicked: {
@@ -189,6 +205,8 @@ Item {
                         mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
                     }
                 }
+
+
             }
 
         }
@@ -214,7 +232,7 @@ Item {
                         root.runSecs = root.runSecs - 1
                         root.runProgVal = root.runProgVal + 100/root.firstRunSecs
                         if(root.runSecs === 0){
-                            root.isRunning = false
+                            root.isHanging = true
                         }
                         root.runTime = get_time(root.runSecs)
                     }
@@ -384,6 +402,44 @@ Item {
                 minimumPointSize: 10
             }
 
+            Button {
+                id: nextRunB
+                y: 157
+                visible: false
+                width: 100
+                text: qsTr("Next")
+                anchors.bottom: parent.bottom
+                font.pointSize: 11
+                anchors.leftMargin: 10
+                anchors.left: parent.left
+                anchors.bottomMargin: 15
+
+                onClicked: {
+                    //Erase all info from progress bar
+                    //Make sure run is stopped
+                    root.stopRun(root.casNumber)
+                    root.isRunning = false
+                    root.runTime = "00:00:00"
+                    root.runSecs = get_sec(root.runTime)
+                    root.firstRunTime = root.runTime
+                    root.firstRunSecs = get_sec(root.runTime)
+                    root.runSampleName = 'SampleName'
+                    root.runProtocolName = 'ProtocolName'
+                    root.runStep = 'Testing...'
+                    root.progStrings = []
+                    root.runProgVal = 0
+                    root.stepIndex = 0
+                    root.isRunning = false
+                    root.isHanging = false
+                    stopRunB.visible = true
+                    nextRunB.visible = false
+                    WAMPHandler.stopProtocol(root.casNumber)
+
+                    //switch index
+                    stackIndex = 1
+                }
+            }
+
         }
 
     }
@@ -412,6 +468,8 @@ Item {
             root.stepIndex = 0
             root.isRunning = false
             root.isHanging = false
+            stopRunB.visible = true
+            nextRunB.visible = false
             WAMPHandler.stopProtocol(root.casNumber)
         }
         onRejected: {
@@ -441,6 +499,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:12;anchors_width:240}D{i:23;anchors_y:1}D{i:24;anchors_y:1}
+    D{i:5;anchors_y:110}D{i:13;anchors_width:240}D{i:24;anchors_y:1}D{i:25;anchors_y:1}
 }
 ##^##*/
