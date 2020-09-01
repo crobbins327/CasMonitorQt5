@@ -21,8 +21,8 @@ Button {
     background: Rectangle {
             implicitWidth: 100
             implicitHeight: 40
-            border.color: control.palette.highlight
-            border.width: control.visualFocus ? 2 : 0
+            border.color: bevButton.palette.highlight
+            border.width: bevButton.visualFocus ? 2 : 0
             radius: 4
 
             color: Color.blend(bevButton.checked || bevButton.highlighted ? bevButton.palette.dark : bevButton.palette.button,

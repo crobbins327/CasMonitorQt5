@@ -6,7 +6,7 @@ import QtQuick.Dialogs 1.3
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 1
+    property int stackIndex: 0
     property double runProgVal: 0
     property string firstRunTime : "01:31:55"
     property int firstRunSecs : get_sec(root.firstRunTime)
@@ -133,16 +133,32 @@ Item {
                 font.pointSize: 18
             }
 
-            Button {
-                id: engageCasB
-                height: 40
-                text: qsTr("Engage")
+            ColumnLayout {
+                id:engCol
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 0
                 anchors.top: casNum0.bottom
-                anchors.topMargin: 40
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.pointSize: 11
-            }
+                anchors.topMargin: 10
+                anchors.left: parent.left
+                anchors.leftMargin: 0
+                anchors.right: parent.right
+                anchors.rightMargin: 0
 
+                BevButton {
+                    id: engageCasB
+                    Layout.preferredHeight: 40
+                    Layout.minimumHeight: 30
+                    text: qsTr("Engage")
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                    font.pointSize: 11
+                    palette {
+                        button: 'green'
+                        buttonText: 'white'
+                    }
+
+                    onClicked: {root.stackIndex = 1}
+                }
+           }
         }
         Rectangle {
             id: setupRun
@@ -162,48 +178,62 @@ Item {
             }
 
 
-            Grid {
-                id: gridLayout
+            ColumnLayout {
+                id: colLayout
                 anchors.topMargin: 10
                 anchors.top: casNum1.bottom
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
                 anchors.margins: 10
-                rowSpacing: 10
-                columnSpacing: 10
+                spacing: 5
 //                flow:  parent.width > parent.height ? GridLayout.LeftToRight : GridLayout.TopToBottom
-                flow: GridLayout.TopToBottom
-                columns: 2
+//                flow: GridLayout.TopToBottom
+                RowLayout {
+                    id: rowLayout
+//                    anchors.right: parent.right
+//                    anchors.left: parent.left
+                    spacing: 10
 
-                Button {
-                    id: defRunB
-                    width: (gridLayout.width - gridLayout.columnSpacing)/2
-                    text: qsTr("Default Run")
-                    height: 40
+                    BevButton {
+                        id: defRunB
+                        Layout.preferredWidth: (colLayout.width - rowLayout.spacing)/2
+                        text: qsTr("Default Run")
+                        Layout.preferredHeight: 40
+                        Layout.minimumHeight: 20
 
-                    onClicked: {root.defaultRun(root.casNumber)}
-                }
-
-                Button {
-                    id: disengageCasB
-                    width: (gridLayout.width - gridLayout.columnSpacing)/2
-                    height: 40
-                    text: qsTr("Disengage")
-                }
-
-                Button {
-                    id: setupRunB
-                    width: (gridLayout.width - gridLayout.columnSpacing)/2
-                    text: qsTr("Setup Run")
-                    height: 40
-
-                    onClicked: {
-                        root.setupRun(root.casNumber)
-                        console.log("Setup run: ", casNumber)
-                        //                        push protocol selector screen and populate with casNumber info
-                        mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
+                        onClicked: {root.defaultRun(root.casNumber)}
                     }
+
+                    BevButton {
+                        id: setupRunB
+                        Layout.preferredWidth: (colLayout.width - rowLayout.spacing)/2
+                        text: qsTr("Setup Run")
+                        Layout.preferredHeight: 40
+                        Layout.minimumHeight: 20
+
+                        onClicked: {
+                            root.setupRun(root.casNumber)
+                            console.log("Setup run: ", casNumber)
+                            //                        push protocol selector screen and populate with casNumber info
+                            mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
+                        }
+                    }
+                }
+
+                BevButton {
+                    id: disengageCasB
+                    Layout.preferredWidth: (colLayout.width - rowLayout.spacing)/2
+                    Layout.preferredHeight: 40
+                    Layout.minimumHeight: 20
+                    text: qsTr("Disengage")
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                    palette {
+                        button: 'darkred'
+                        buttonText: 'white'
+                    }
+
+                    onClicked: {root.stackIndex = 0}
                 }
 
 
@@ -251,8 +281,8 @@ Item {
                 anchors.top: parent.top
                 anchors.topMargin: 0
                 spacing: 1
-                Layout.preferredHeight: 70
-                Layout.minimumHeight: 50
+//                Layout.preferredHeight: 70
+//                Layout.minimumHeight: 50
 
                 Text {
                     id: casNum2
@@ -268,13 +298,16 @@ Item {
                 Text {
                     id: sampNameL
                     text: runSampleName
+                    font.bold: false
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     //                    anchors.horizontalCenter: parent.horizontalCenter
+                    elide: Text.ElideMiddle
                     fontSizeMode: Text.Fit
                     style: Text.Normal
-                    font.weight: Font.Medium
+                    font.weight: Font.Normal
                     font.pointSize: 11
                     minimumPointSize: 11
+                    Layout.maximumWidth: parent.width-40
                 }
 
                 Text {
@@ -282,13 +315,15 @@ Item {
                     text: runProtocolName
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     //                    anchors.horizontalCenter: parent.horizontalCenter
+                    elide: Text.ElideMiddle
                     fontSizeMode: Text.Fit
                     //                    anchors.bottom: runStepL.top
                     //                    anchors.bottomMargin: 10
                     style: Text.Normal
-                    font.weight: Font.Medium
+                    font.weight: Font.Normal
                     font.pointSize: 11
                     minimumPointSize: 11
+                    Layout.maximumWidth: parent.width-40
                 }
 
             }
@@ -326,7 +361,7 @@ Item {
                 // Update prog value and step on change
             }
 
-            Button {
+            BevButton {
                 id: stopRunB
                 y: 157
                 width: 100
@@ -336,11 +371,15 @@ Item {
                 anchors.leftMargin: 10
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 15
+                palette {
+                    button: 'darkred'
+                    buttonText: 'white'
+                }
 
                 onClicked: {stopDialog.open()}
             }
 
-            Button {
+            BevButton {
                 id: runDetB
                 x: 152
                 y: 157
@@ -402,7 +441,7 @@ Item {
                 minimumPointSize: 10
             }
 
-            Button {
+            BevButton {
                 id: nextRunB
                 y: 157
                 visible: false
@@ -413,6 +452,7 @@ Item {
                 anchors.leftMargin: 10
                 anchors.left: parent.left
                 anchors.bottomMargin: 15
+
 
                 onClicked: {
                     //Erase all info from progress bar
@@ -499,6 +539,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:5;anchors_y:110}D{i:13;anchors_width:240}D{i:24;anchors_y:1}D{i:25;anchors_y:1}
+    D{i:15;anchors_width:240}D{i:26;anchors_y:1}D{i:27;anchors_y:1}
 }
 ##^##*/
