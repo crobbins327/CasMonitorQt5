@@ -10,10 +10,6 @@ import itertools
 import namedTask as nTask
 
 import pandas as pd
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.width', None)
-pd.set_option('display.max_colwidth', -1)
 import numpy as np
 import re
 
@@ -66,6 +62,9 @@ class Component(ApplicationSession):
         except Exception as e:
             print("could not subscribe to procedure: {0}".format(e))
         asyncio.ensure_future(self.update())
+        #After connecting, home the machine and make sure it's connected
+        
+        
         if len(dcTask):
             #Convert strings back to lists...
             if pd.notna(dcTask.status).sum() > 0 or dcTask.engaged.sum() > 0:
@@ -289,7 +288,7 @@ class Component(ApplicationSession):
                 # machine.pump_out(0.5)
     
     async def mix(self, casL, numCycles, volume):
-        await asyncio.sleep(0.01)
+        await asyncio.sleep(0.05)
         print("MIXING Cas{}, {} TIMES, {} VOLUME".format(casL, numCycles, volume))
         # eval('machine.goto_sample{}()'.format(casL))
         for i in range(int(numCycles)):
@@ -301,7 +300,7 @@ class Component(ApplicationSession):
             # machine.pump_out(volume)
     
     async def purge(self, casL, deadvol):
-        await asyncio.sleep(0.01)
+        await asyncio.sleep(0.05)
         print('PURGING CHAMBER, Cas{}'.format(casL))
         # Goto last fluidtype???
         # eval('machine.goto_sample{}()'.format(casL))
@@ -310,7 +309,7 @@ class Component(ApplicationSession):
         #machine.empty_syringe()
     
     async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol):
-        await asyncio.sleep(0.01)
+        await asyncio.sleep(0.05)
         print('PURGING CHAMBER, Cas{}'.format(casL))
         # eval('machine.goto_sample{}()'.format(casL))
         # machine.pump_in(deadvol)
