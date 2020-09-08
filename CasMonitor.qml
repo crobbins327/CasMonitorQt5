@@ -11,10 +11,38 @@ import "./Icons/"
 
 
 ApplicationWindow {
-    id: root
-    signal settings_CasMonitor()
-    property string mainDir: "/home/jackr/testprotocols"
-    property string visMode: 'windowed'
+    id: rootApWin
+    property string mainDir: './Protocols/'
+    property string visMode: 'Windowed'
+    property string otherMode: 'FullScreen'
+    property string defPath: ''
+    property string defProtName: ''
+    property bool isDisconnected: true
+    property bool guiJoined: false
+    property string waitPopupTxt: 'Connecting....'
+    signal exit()
+    signal reJoined()
+    signal reDCController()
+
+    Component.onCompleted: {
+        waitPopup.open()
+        WAMPHandler.joined.connect(reJoined)
+        WAMPHandler.controllerDCed.connect(reDCController)
+    }
+    Connections {
+        target: rootApWin
+        function onReJoined() {
+            rootApWin.isDisconnected = false
+            rootApWin.guiJoined = true
+            waitPopup.close()
+        }
+        function onReDCController() {
+            rootApWin.isDisconnected = true
+            rootApWin.waitPopupTxt = 'Controller disconnected.  Waiting on reconnection...'
+            waitPopup.open()
+        }
+    }
+
     visible: true
     width: 800
     height: 415
@@ -22,13 +50,69 @@ ApplicationWindow {
     maximumHeight: 481
     minimumWidth: 780
     minimumHeight: 410
-    flags: root.visMode === 'windowed' ? Qt.WindowMinimized :  Qt.FramelessWindowHint
-    visibility: root.visMode === 'windowed' ? Window.Windowed : Window.FullScreen
+    flags: rootApWin.visMode === 'Windowed' ? Qt.WindowMinimized :  Qt.FramelessWindowHint
+    visibility: rootApWin.visMode === 'Windowed' ? Window.Windowed : Window.FullScreen
+
+    onClosing: {
+        close.accepted = exitDialog.closeStatus
+        exitDialog.open()
+    }
+
+    Popup {
+        id: waitPopup
+        parent: Overlay.overlay
+        x: Math.round((parent.width - waitPopup.width) / 2)
+        y: Math.round((parent.height - waitPopup.height) / 2)
+//        width: 150
+//        height: 150
+        dim: true
+        focus: true
+        closePolicy: Popup.CloseOnEscape | Popup.NoAutoClose
+        modal: true
+        opacity: 0.8
+
+        background: Rectangle {
+                implicitWidth: 300
+                implicitHeight: 150
+                color: 'silver'
+//                border.color: "#444"
+            }
+
+        contentItem: ColumnLayout {
+            spacing: 10
+            anchors.fill: parent
+            BusyIndicator {
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                running: true
+            }
+            Text {
+                text: rootApWin.waitPopupTxt
+                minimumPointSize: 12
+                font.pointSize: 14
+                Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
+            }
+
+        }
+
+    }
+
 
     StackView {
         id: mainStack
         initialItem: casMonitor
         anchors.fill: parent
+        Component.onCompleted:{
+//            currentItem.setVisMode.connect(setVisMode)
+            console.log('Completed!')
+        }
+//        Connections {
+//            target:rootApWin
+//            function onSetVisMode(){
+//                console.log('Setting Vis Mode!')
+//            }
+
+//        }
 
     }
 
@@ -68,7 +152,7 @@ ApplicationWindow {
                         color: "#000000"
                     }
                 }
-                //            layer.effect: menuRect
+//                layer.effect: menuRect
 
                 Button {
                     id: settingsB
@@ -97,7 +181,45 @@ ApplicationWindow {
                         color: "transparent"
                     }
 
-                    onClicked: {root.settings_CasMonitor()}
+                    onClicked: {
+                        settingsMenu.open()
+                    }
+
+                    Menu {
+                            id: settingsMenu
+                            y: settingsB.height+3
+
+                            MenuItem {
+                                text: "Set Default Protocol"
+                                onClicked: {
+                                    defProtSelector.open()
+                                }
+                            }
+                            MenuItem {
+                                text: otherMode + " mode"
+                                onClicked: {
+                                    if(otherMode=='FullScreen'){
+                                        visMode = 'FullScreen'
+                                        otherMode = 'Windowed'
+                                    } else {
+                                        visMode = 'Windowed'
+                                        otherMode = 'FullScreen'
+                                    }
+                                }
+                            }
+                            MenuItem {
+                                text: "Test Busy"
+                                onClicked: {
+                                    waitPopup.open()
+                                }
+                            }
+                            MenuItem {
+                                text: "Exit"
+                                onClicked: {
+                                    exitDialog.open()
+                                }
+                            }
+                        }
 
                 }
 
@@ -145,7 +267,7 @@ ApplicationWindow {
                         color: "#ffffff"
                     }
 
-                    onClicked: {mainStack.push("DebugMode.qml")}
+                    onClicked: {mainStack.push("DebugMode.qml", {visMode, otherMode})}
 
 
                 }
@@ -170,8 +292,8 @@ ApplicationWindow {
 
                 SampleStack {
                     id: cas1
-                    height: (root.height-menuRect.height)/2.1
-                    width: root.width/3.4
+                    height: (rootApWin.height-menuRect.height)/2.1
+                    width: rootApWin.width/3.4
                     casNumber: 1
 //                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
@@ -194,8 +316,8 @@ ApplicationWindow {
 
                 SampleStack {
                     id: cas2
-                    height: (root.height-menuRect.height)/2.1
-                    width: root.width/3.4
+                    height: (rootApWin.height-menuRect.height)/2.1
+                    width: rootApWin.width/3.4
                     casNumber: 2
 //                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
@@ -218,8 +340,8 @@ ApplicationWindow {
 
                 SampleStack {
                     id: cas3
-                    height: (root.height-menuRect.height)/2.1
-                    width: root.width/3.4
+                    height: (rootApWin.height-menuRect.height)/2.1
+                    width: rootApWin.width/3.4
                     casNumber: 3
 //                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
@@ -255,8 +377,8 @@ ApplicationWindow {
 
                 SampleStack {
                     id: cas4
-                    height: (root.height-menuRect.height)/2.1
-                    width: root.width/3.4
+                    height: (rootApWin.height-menuRect.height)/2.1
+                    width: rootApWin.width/3.4
                     casNumber: 4
 //                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
@@ -279,8 +401,8 @@ ApplicationWindow {
 
                 SampleStack {
                     id: cas5
-                    height: (root.height-menuRect.height)/2.1
-                    width: root.width/3.4
+                    height: (rootApWin.height-menuRect.height)/2.1
+                    width: rootApWin.width/3.4
                     casNumber: 5
 //                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
@@ -303,8 +425,8 @@ ApplicationWindow {
 
                 SampleStack {
                     id: cas6
-                    height: (root.height-menuRect.height)/2.1
-                    width: root.width/3.4
+                    height: (rootApWin.height-menuRect.height)/2.1
+                    width: rootApWin.width/3.4
                     casNumber: 6
 //                    runStep: "Testing!"
                     Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
@@ -328,6 +450,50 @@ ApplicationWindow {
 
 
         }
+    }
+
+    MessageDialog {
+        property bool closeStatus: false
+        id: exitDialog
+        standardButtons: StandardButton.Cancel | StandardButton.Yes
+        icon: StandardIcon.Critical
+        text: "Are you sure you want to exit? This WILL NOT stop any ongoing runs."
+        title: "Exit Application"
+        modality: Qt.WindowModal
+        onYes: {
+            closeStatus = true
+            //sends another close signal, this time with closeStatus = true
+            rootApWin.close()
+        }
+        onRejected: {
+            console.log("Canceled Exit.")
+            this.close
+        }
+    }
+
+    FileDialog {
+        id:defProtSelector
+        selectExisting: true
+        folder: mainDir
+        nameFilters: [ "Protocol Files (*.json)", "All files (*)" ]
+        //nameFilters: [ "*.json", "All files (*)" ]
+        defaultSuffix: ".json"
+        modality: Qt.WindowModal
+        onAccepted: {
+            var path = defProtSelector.fileUrl.toString();
+            // remove prefixed "file:///"
+            path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+            // unescape html codes like '%23' for '#'
+            var cleanPath = decodeURIComponent(path);
+
+            //Get protocol name
+            var protName = cleanPath.split('/').pop().split('.')[0]
+
+            rootApWin.defPath = cleanPath
+            rootApWin.defProtName = protName
+
+        }
+
     }
 }
 

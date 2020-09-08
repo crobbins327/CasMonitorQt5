@@ -210,7 +210,7 @@ Item {
             font.pointSize: 14
             transformOrigin: Item.Center
             rotation: -90 // <---- Rotate there
-            model: 99
+            model: 20
             delegate: Rectangle{
                 rotation: 90
                 height: parent.width
@@ -241,7 +241,7 @@ Item {
             anchors.topMargin: 50
             value: parseInt(volume.slice(0,-2))
             from: 0.25
-            to: 10
+            to: 3
             stepSize: 0.25
 
             onMoved: {

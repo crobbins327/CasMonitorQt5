@@ -24,10 +24,18 @@ Item {
     property int stepIndex: 0
 
     signal reSetupProt(string casNum, variant progS, variant stepTimes, string runtime, string samplen, string protocoln)
-    signal reUpdateProg(string casNum)
+    signal reUpdateProg(int casNum)
+//    signal reRepopulate(string casNum, variant progS, variant stepTimes, int stepInd, int secsRem, int totalRemaining, int totalRunSecs, string samplen, string protocoln, string status)
+    signal reRepopulate(int casNum, variant progS, variant stepTimes, variant otherVars)
+    signal reEngaged(int casNum)
+    signal reDisengaged(int casNum)
+
     Component.onCompleted: {
         WAMPHandler.setupProt.connect(reSetupProt)
         WAMPHandler.updateProg.connect(reUpdateProg)
+        WAMPHandler.repopulateProt.connect(reRepopulate)
+        WAMPHandler.casEngaged.connect(reEngaged)
+        WAMPHandler.casDisengaged.connect(reDisengaged)
     }
     Connections {
         target: root
@@ -89,6 +97,83 @@ Item {
             } else {
                 console.log('Not me! ', root.casNumber)
             }
+        }
+        //['stepNum','secsRemaining','sampleName','protocolName','status']
+        function onReRepopulate(casNum, progS, stepTimes, otherVars) {
+            //Check if casNumber corresponds with this casNumber
+            if (root.casNumber==casNum){
+                console.log('trying to repopulate... Cas', casNumber)
+                var stepInd = otherVars[0]
+                var secsRem = otherVars[1]
+                var samplen = otherVars[2]
+                var protocoln = otherVars[3]
+                var status = otherVars[4]
+                console.log(status)
+                console.log(stepTimes.slice(stepInd,))
+                console.log(sum_arr(stepTimes.slice(stepInd,)))
+                console.log(sum_arr(stepTimes.slice(0,stepInd)))
+                console.log(sum_arr(stepTimes))
+                if (status == 'running'){
+                    //setup run
+                    console.log(progS)
+                    console.log(stepTimes)
+                    root.stepIndex = stepInd-1
+                    root.firstRunSecs = sum_arr(stepTimes)
+                    root.firstRunTime = get_time(root.firstRunSecs)
+                    root.runSecs = secsRem + sum_arr(stepTimes.slice(stepInd,))
+                    root.runTime = get_time(runSecs)
+
+                    root.runSampleName = samplen
+                    root.runProtocolName = protocoln
+                    root.stackIndex = 2
+
+                    root.progStrings = progS
+                    root.runStep = root.progStrings[root.stepIndex]
+                    root.stepRunTimes = stepTimes
+                    root.hangSecs = sum_arr(stepTimes.slice(0,stepInd))
+                    root.runProgVal = 100*(root.firstRunSecs - root.runSecs)/root.firstRunSecs
+                    root.isRunning = true
+                    root.isHanging = false
+                    stopRunB.visible = true
+                    nextRunB.visible = false
+                } else if(status == 'finished'){
+                    console.log('Protocol Finished! Cas', root.casNumber)
+                    root.isHanging = true
+                    root.runTime = "00:00:00"
+                    root.runSecs = get_sec(root.runTime)
+                    root.runSampleName = samplen
+                    root.runProtocolName = protocoln
+                    root.stackIndex = 2
+                    root.stepIndex = stepInd-1
+                    root.progStrings = progS
+                    root.runStep = root.progStrings[root.stepIndex]
+                    root.runProgVal = 100
+                    root.stepRunTimes = stepTimes
+                    stopRunB.visible = false
+                    nextRunB.visible = true
+                }
+            } else {
+                console.log('Not repopulating! Cas', casNumber)
+            }
+        }
+
+        function onReEngaged(casNum) {
+                    //Check if casNumber corresponds with this casNumber
+                    if (root.casNumber==casNum){
+                        root.stackIndex = 1
+                        engageCasB.enabled = true
+                        engageCasB.checked = false
+                        console.log('Engaged Cas', casNumber)
+                    }
+        }
+        function onReDisengaged(casNum) {
+                    //Check if casNumber corresponds with this casNumber
+                    if (root.casNumber==casNum){
+                        root.stackIndex = 0
+                        engageCasB.enabled = true
+                        engageCasB.checked = false
+                        console.log('Disengaged Cas', casNumber)
+                    }
         }
     }
 
@@ -156,7 +241,11 @@ Item {
                         buttonText: 'white'
                     }
 
-                    onClicked: {root.stackIndex = 1}
+                    onClicked: {
+                        WAMPHandler.engageCas(root.casNumber)
+                        engageCasB.enabled = false
+                        engageCasB.checked = true
+                    }
                 }
            }
         }
@@ -202,7 +291,12 @@ Item {
                         Layout.preferredHeight: 40
                         Layout.minimumHeight: 20
 
-                        onClicked: {root.defaultRun(root.casNumber)}
+                        onClicked: {
+                            root.setupRun(root.casNumber)
+                            console.log("Setup run: ", casNumber)
+                            //                        push protocol selector screen and populate with casNumber info
+                            mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
+                            root.defaultRun(root.casNumber)}
                     }
 
                     BevButton {
@@ -233,7 +327,12 @@ Item {
                         buttonText: 'white'
                     }
 
-                    onClicked: {root.stackIndex = 0}
+                    onClicked: {
+                        root.stackIndex = 0
+                        WAMPHandler.disengageCas(root.casNumber)
+                        engageCasB.enabled = false
+                        engageCasB.checked = true
+                    }
                 }
 
 
@@ -357,6 +456,7 @@ Item {
                 }
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 value: runProgVal
+                indeterminate: root.isHanging || rootApWin.isDisconnected
 
                 // Update prog value and step on change
             }
@@ -532,7 +632,14 @@ Item {
         return(rtime)
     }
 
-
+    function sum_arr(array){
+        var s = 0
+        for (var i = 0; i < array.length; i++)
+           {
+            s += array[i];
+        }
+        return(s)
+    }
 }
 
 

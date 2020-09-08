@@ -13,7 +13,7 @@ Item {
 //    property string numCycles : '3'
 //    property string volume : '3000uL'
 //    property string pSpeed : '1'
-    width: parent.width
+    width: recStepList.width
     height: ribbon.height
 
     Rectangle {

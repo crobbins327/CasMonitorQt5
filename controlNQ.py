@@ -9,6 +9,9 @@ import machine
 import itertools
 import namedTask as nTask
 
+import pandas as pd
+import numpy as np
+
 
 class Component(ApplicationSession):
     
@@ -21,7 +24,8 @@ class Component(ApplicationSession):
         ApplicationSession.__init__(self, config)
         self.halted = True
         self.homed = False
-        self.allTasks = [task.get_name() for task in nTask.namedTask.all_tasks()]
+        self.taskDF = pd.DataFrame(columns = ['stepNum','timeRemaining','engaged','protocolList','stepNames'] ,
+                                   index=['CasA','CasB','CasC','CasD','CasE','CasF'])
         self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
 
     async def update(self):
@@ -33,11 +37,24 @@ class Component(ApplicationSession):
         try:
             res = await self.subscribe(self)
             print("Subscribed to {0} procedure(s)".format(len(res)))
+            #publish a request to get protocol array
+            
         except Exception as e:
             print("could not subscribe to procedure: {0}".format(e))
         asyncio.ensure_future(self.update())
+    
+    # def onLeave(self, details):
+    #     print("Left, {}".format(self.activeTasks))
+    
+    def onDisconnect(self):
+        print("Disconnected, {}".format(self.activeTasks))
         
-        
+    
+    @wamp.subscribe('com.prepbot.prothandler.request-tasks-gui')
+    def sendTasks(self):
+        self.publish('com.prepbot.prothandler.tasks-to-gui', self.taskDF)
+    
+    
     @wamp.subscribe('com.prepbot.prothandler.start')
     async def startProtocol(self, casL, protStrings, progStrings, protPath):
         if self.halted:

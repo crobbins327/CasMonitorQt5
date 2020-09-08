@@ -8,14 +8,14 @@ import QtQuick.Dialogs 1.3
 import "./Icons/"
 
 Item {
-    id: root
+    id: rootEd
     property int casNumber: 0
     property variant stepModel: ListModel{}
     property string mainDir: ''
     property string sampleName: ''
     property string protocolName: 'Protocol Name'
     property string savedPath: ''
-    property string runTime: estRunTime(root.stepModel)
+    property string runTime: estRunTime(rootEd.stepModel)
 
     signal reNextModel(string jsondata, string protName, string pathSaved)
     Component.onCompleted: JSONHelper.nextModel.connect(reNextModel)
@@ -24,7 +24,7 @@ Item {
     //height: parent.height
     
     Connections {
-        target: root
+        target: rootEd
         function onReNextModel(jsondata, protName, pathSaved) {
             stepModel.clear()
             //console.log(jsondata)
@@ -33,16 +33,16 @@ Item {
             for (var i = 0; i < datamodel.length; ++i) stepModel.append(datamodel[i])
             
             //Set protocol name
-            root.protocolName = protName
+            rootEd.protocolName = protName
 
             //update savedPath
-            root.savedPath = pathSaved
-            console.log("SavedP: ", root.savedPath)
+            rootEd.savedPath = pathSaved
+            console.log("SavedP: ", rootEd.savedPath)
         }
     }
     
     Rectangle {
-        id: rootBG
+        id: rootEdBG
 //        width: 780
 //        height: 460
         anchors.right: parent.right
@@ -169,10 +169,39 @@ Item {
                     color: "transparent"
                 }
 
-                onClicked: {}
+                onClicked: {
+                    settingsMenu.open()
+                }
 
+                Menu {
+                        id: settingsMenu
+                        y: settingsB.height+3
 
-
+                        MenuItem {
+                            text: "Set Default Protocol"
+                            onClicked: {
+                                defProtSelector.open()
+                            }
+                        }
+                        MenuItem {
+                            text: rootApWin.otherMode + " mode"
+                            onClicked: {
+                                if(rootApWin.otherMode==='FullScreen'){
+                                    rootApWin.visMode = 'FullScreen'
+                                    rootApWin.otherMode = 'Windowed'
+                                } else {
+                                    rootApWin.visMode = 'Windowed'
+                                    rootApWin.otherMode = 'FullScreen'
+                                }
+                            }
+                        }
+                        MenuItem {
+                            text: "Exit"
+                            onClicked: {
+                                exitDialog.open()
+                            }
+                        }
+                    }
             }
 
             Text {
@@ -180,7 +209,7 @@ Item {
                 width: 450
                 height: 25
                 color: "white"
-                text: root.protocolName + ' (' + root.runTime +')'
+                text: rootEd.protocolName + ' (' + rootEd.runTime +')'
                 elide: Text.ElideMiddle
                 wrapMode: Text.NoWrap
                 anchors.verticalCenter: parent.verticalCenter
@@ -196,7 +225,7 @@ Item {
 
 
         Rectangle {
-            id: rootTangle
+            id: rootEdTangle
             color: "transparent"
             anchors.right: editorButtons.left
             anchors.rightMargin: 4
@@ -210,8 +239,8 @@ Item {
             Rectangle {
                 id: rootOperations
                 width: 120
-                height: rootTangle.height
-                anchors {left: rootTangle.left; top: rootTangle.top; bottom: rootTangle.bottom}
+                height: rootEdTangle.height
+                anchors {left: rootEdTangle.left; top: rootEdTangle.top; bottom: rootEdTangle.bottom}
                 color: "silver"
                 radius: 5
 
@@ -246,7 +275,7 @@ Item {
                         draggedItemParent: rootList
                         _listView: stepLView
                         //Where 7 is the number of operation delegates in the model
-                        contHeight: (rootTangle.height-typeView.spacing*operationsModDel.count-opTab.height)/operationsModDel.count
+                        contHeight: (rootEdTangle.height-typeView.spacing*operationsModDel.count-opTab.height)/operationsModDel.count
 
                     }
                 }
@@ -270,10 +299,10 @@ Item {
             Rectangle {
                 id: rootList
                 anchors {
-                    left: rootOperations.right; top: rootTangle.top; bottom: rootTangle.bottom
+                    left: rootOperations.right; top: rootEdTangle.top; bottom: rootEdTangle.bottom
                     leftMargin: 5
                 }
-                height: rootTangle.height
+                height: rootEdTangle.height
                 color: "whitesmoke"
                 radius: 5
                 anchors.right: parent.right
@@ -619,7 +648,7 @@ Item {
                 anchors.leftMargin: 5
 
                 // When the file has an existing directory + name, set enabled to true. Save under current file directory.
-                enabled: root.savedPath === '' ? false : true
+                enabled: rootEd.savedPath === '' ? false : true
                 
                 onClicked: {
                     //Validate protocol
@@ -627,8 +656,8 @@ Item {
                     var datamodel = []
                     for (var i = 0; i < stepListModDel.model.count; ++i) datamodel.push(stepListModDel.model.get(i))
                     var datastring = JSON.stringify(datamodel, null, "\t")
-                    JSONHelper.saveProtocol(root.savedPath, datastring)
-                    console.log("SavedP: ", root.savedPath)
+                    JSONHelper.saveProtocol(rootEd.savedPath, datastring)
+                    console.log("SavedP: ", rootEd.savedPath)
                 }
             }
 
@@ -651,31 +680,33 @@ Item {
                 anchors.left: parent.left
                 anchors.leftMargin: 5
 
+                enabled: !rootApWin.isDisconnected
+
                 icon.source: "Icons/rightArrow-black.png"
                 icon.color: "green"
                 icon.height: 15
 
                 onClicked: {
                     //Confirm/ask for sampleName in dialog box?
-                    if (!/\S/.test(root.sampleName)){
+                    if (!/\S/.test(rootEd.sampleName)){
                         sampleNameDi.open()
                     //Check if model data is empty
                     } else if (stepListModDel.model.count===0){
                         dataDi.open()
                     //check if saved path is empty, and ask if user wants to save protocol
-                    } else if (!/\S/.test(root.savedPath)){
+                    } else if (!/\S/.test(rootEd.savedPath)){
                         saveDi.open()
                     } else {
                         //save before starting run
                         var datamodel = []
                         for (var i = 0; i < stepListModDel.model.count; ++i) datamodel.push(stepListModDel.model.get(i))
                         var datastring = JSON.stringify(datamodel, null, "\t")
-                        JSONHelper.saveProtocol(root.savedPath, datastring)
-                        console.log("SavedP: ", root.savedPath)
+                        JSONHelper.saveProtocol(rootEd.savedPath, datastring)
+                        console.log("SavedP: ", rootEd.savedPath)
                         //return to sample monitor
                         mainStack.pop(null)
                         //Initialize start protocol with casNumber, model path, runtime, sampleName, protocolName
-                        WAMPHandler.startProtocol(root.casNumber, root.savedPath, root.runTime, root.sampleName, root.protocolName)
+                        WAMPHandler.startProtocol(rootEd.casNumber, rootEd.savedPath, rootEd.runTime, rootEd.sampleName, rootEd.protocolName)
 
                     
                     }
@@ -811,7 +842,7 @@ Item {
 
             //Get protocol name
             var protName = cleanPath.split('/').pop()
-            root.protocolName = protName.split('.')[0]
+            rootEd.protocolName = protName.split('.')[0]
 
             //Check if user saved the file as a .json file
             if(cleanPath.slice(-5) !== ".json"){
@@ -821,8 +852,8 @@ Item {
 
             //Send and update savePath
             JSONHelper.saveProtocol(cleanPath, datastring)
-            root.savedPath = cleanPath
-            console.log("SavedP: ", root.savedPath)
+            rootEd.savedPath = cleanPath
+            console.log("SavedP: ", rootEd.savedPath)
         }
 
     }

@@ -5,28 +5,34 @@ import QtQml.Models 2.12
 //import Qt.labs.platform 1.1
 import QtQuick.Dialogs 1.3
 import Qt.labs.folderlistmodel 2.12
+import QtQuick.Layouts 1.15
 //import QtQuick.VirtualKeyboard 2.12
 
 import "./Icons/"
 
 Item {
-    id: root
+    id: rootSel
     property int casNumber: 0
     property variant stepModel: ListModel{}
-    property string mainDir: ''
+    property string mainDir: rootApWin.mainDir
     property string sampleName: ''
     property string protocolName: 'Protocol Name'
     property string savedPath: ''
-    property string runTime: estRunTime(root.stepModel)
+    property string runTime: estRunTime(rootSel.stepModel)
+    property string defPath: rootApWin.defPath
+    property string defProtName: rootApWin.defProtName
 
     signal reNextModel(string jsondata, string protName, string pathSaved)
-    Component.onCompleted: JSONHelper.nextModel.connect(reNextModel)
-    
+    Component.onCompleted: {
+        console.log('completed Selector!')
+        JSONHelper.nextModel.connect(reNextModel)
+        checkDefaultProt()
+    }
     //width: parent.width
     //height: parent.height
     
     Connections {
-        target: root
+        target: rootSel
         function onReNextModel(jsondata, protName, pathSaved) {
             stepModel.clear()
             //console.log(jsondata)
@@ -35,16 +41,16 @@ Item {
             for (var i = 0; i < datamodel.length; ++i) stepModel.append(datamodel[i])
             
             //Set protocol name
-            root.protocolName = protName
+            rootSel.protocolName = protName
             
             //update savedPath
-            root.savedPath = pathSaved
-            console.log("SavedP: ", root.savedPath)
+            rootSel.savedPath = pathSaved
+//            console.log("SavedP: ", rootSel.savedPath)
         }
     }
 
     Rectangle {
-        id: rootBG
+        id: rootSelBG
         anchors.right: parent.right
         anchors.rightMargin: 0
         anchors.left: parent.left
@@ -165,8 +171,39 @@ Item {
                     color: "transparent"
                 }
 
-                onClicked: {}
+                onClicked: {
+                    settingsMenu.open()
+                }
 
+                Menu {
+                        id: settingsMenu
+                        y: settingsB.height+3
+
+                        MenuItem {
+                            text: "Set Default Protocol"
+                            onClicked: {
+                                defProtSelector.open()
+                            }
+                        }
+                        MenuItem {
+                            text: rootApWin.otherMode + " mode"
+                            onClicked: {
+                                if(rootApWin.otherMode==='FullScreen'){
+                                    rootApWin.visMode = 'FullScreen'
+                                    rootApWin.otherMode = 'Windowed'
+                                } else {
+                                    rootApWin.visMode = 'Windowed'
+                                    rootApWin.otherMode = 'FullScreen'
+                                }
+                            }
+                        }
+                        MenuItem {
+                            text: "Exit"
+                            onClicked: {
+                                exitDialog.open()
+                            }
+                        }
+                    }
             }
 
             Text {
@@ -189,7 +226,7 @@ Item {
 
 
         Rectangle {
-            id: rootTangle
+            id: rootSelTangle
             color: "transparent"
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 0
@@ -204,7 +241,7 @@ Item {
                 id: recFileSel
                 width: 300
                 height: parent.height
-                anchors {left: rootTangle.left; top: rootTangle.top; bottom: rootTangle.bottom}
+                anchors {left: rootSelTangle.left; top: rootSelTangle.top; bottom: rootSelTangle.bottom}
                 color: "silver"
                 radius: 5
 
@@ -223,7 +260,7 @@ Item {
                         showDirsFirst: true
                         showDirs: true
                         showFiles: true
-                        rootFolder: "file:///home/jackr/"
+//                        rootFolder: "file:///home/jackr/"
                         folder: mainDir
                         nameFilters: ["*.json"]
                     }
@@ -245,7 +282,7 @@ Item {
                                 var cleanPath = decodeURIComponent(path);
                                 
                                 //change protocol name with file name less .json
-                                console.log("path ", cleanPath)
+//                                console.log("path ", cleanPath)
                                 var protName = fileName.split('.')[0]
                                 
                                 //change savedPath location
@@ -255,8 +292,39 @@ Item {
                                 //change data model on preview screen using reNextModel
                             }
                         }
+
+                        contentItem: Item {
+                            id: element
+                            RowLayout{
+                                id: elementRow
+                                spacing: 5
+                                Image {
+                                    source: fileIsDir ? "Icons/color-folder-240.png" : "Icons/color-document-240.png"
+                                    Layout.preferredHeight: 30
+                                    Layout.preferredWidth: 30
+                                    Layout.maximumHeight: 30
+                                    Layout.maximumWidth: 30
+                                    Layout.minimumHeight: 15
+                                    Layout.minimumWidth: 15
+                                    Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
+                                }
+                                Text {
+                                    text: fileButton.text
+                                    elide: Text.ElideRight
+                                    fontSizeMode: Text.Fit
+                                    font.pointSize: 11
+                                    horizontalAlignment: Text.AlignLeft
+                                    verticalAlignment: Text.AlignVCenter
+                                    Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
+                                    Layout.maximumWidth: fileButton.width-60
+                                    Layout.maximumHeight: 40
+                                }
+                            }
+
+                        }
+
                         background: Rectangle {
-                            color: fileIsDir ? "yellow" : "whitesmoke"
+                            color: fileIsDir ? "whitesmoke" : "whitesmoke"
                             border.color: "black"
                         }
                     }
@@ -279,7 +347,7 @@ Item {
                         id: openDirB
                         y: 3
                         height: 40
-                        text: qsTr("Open Directory")
+                        text: qsTr("Open Protocol")
                         anchors.left: backFileB.right
                         anchors.leftMargin: 30
                         anchors.verticalCenter: parent.verticalCenter
@@ -309,7 +377,7 @@ Item {
             Rectangle {
                 id: recStepList
                 anchors {
-                    left: recFileSel.right; top: rootTangle.top; bottom: rootTangle.bottom
+                    left: recFileSel.right; top: rootSelTangle.top; bottom: rootSelTangle.bottom
                     leftMargin: 10
                 }
                 height: parent.height
@@ -410,9 +478,11 @@ Item {
                         icon.color: "green"
                         icon.height: 15
 
+                        enabled: !rootApWin.isDisconnected
+
                         onClicked: {
                             //Confirm/ask for sampleName in dialog box?
-                            if (!/\S/.test(root.sampleName)){
+                            if (!/\S/.test(rootSel.sampleName)){
                                 sampleNameDi.open()
                             //Check if model data is empty
                             } else if (stepListModDel.model.count===0){
@@ -421,12 +491,12 @@ Item {
                                 //return to sample monitor
                                 mainStack.pop(null)
                                 //Initialize start protocol with casNumber, model path, runtime, sampleName, protocolName
-                                console.log(root.casNumber)
-                                console.log(root.savedPath)
-                                console.log(root.runTime)
-                                console.log(root.sampleName)
-                                console.log(root.protocolName)
-                                WAMPHandler.startProtocol(root.casNumber, root.savedPath, root.runTime, root.sampleName, root.protocolName)
+                                console.log(rootSel.casNumber)
+                                console.log(rootSel.savedPath)
+                                console.log(rootSel.runTime)
+                                console.log(rootSel.sampleName)
+                                console.log(rootSel.protocolName)
+                                WAMPHandler.startProtocol(rootSel.casNumber, rootSel.savedPath, rootSel.runTime, rootSel.sampleName, rootSel.protocolName)
 
 
                             }
@@ -572,7 +642,7 @@ Item {
                         width: 83
                         height: 25
                         color: "#ffffff"
-                        text: stepModel.count > 0 ?  root.runTime : "- - : - - : - -"
+                        text: stepModel.count > 0 ?  rootSel.runTime : "- - : - - : - -"
                         anchors.right: parent.right
                         anchors.rightMargin: 23
                         anchors.bottom: parent.bottom
@@ -591,6 +661,13 @@ Item {
 
     }
     
+
+    function checkDefaultProt(){
+        if (/\S/.test(rootSel.defPath)){
+            JSONHelper.openProtocol(rootSel.defPath, rootSel.defProtName, rootSel.defPath)
+        }
+    }
+
     function addTimes(time1, time2){
 
         var times = [ 0, 0, 0 ]
@@ -670,14 +747,23 @@ Item {
         nameFilters: ["Protocol Files (*.json)", "All files (*)"]
         modality: Qt.WindowModal
         onAccepted: {
-            //if file, check validity, load content to model preview, change protocol name, calculate run time
-            //dont know how to do both.....
-            if(fileUrl.toString().slice(-5) == '.json'){
-                console.log(folder)
-                console.log(fileUrl)
-            }
             //if selected, change the directory folder
             folderListModel.folder = openDialog.folder
+
+            //open protocol
+            var path = openDialog.fileUrl.toString();
+            // remove prefixed "file:///"
+            path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+            // unescape html codes like '%23' for '#'
+            var cleanPath = decodeURIComponent(path);
+
+            //Get protocol name
+            var protName = cleanPath.split('/').pop().split('.')[0]
+
+            //update savedPath
+            var pathSaved = cleanPath
+
+            JSONHelper.openProtocol(cleanPath, protName, pathSaved)
         }
 
     }

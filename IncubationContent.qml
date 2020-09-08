@@ -13,7 +13,7 @@ Item {
 //    property string opTime: model.opTime
     property DelegateModel modDel: null
     property int itemIndex : DelegateModel.itemsIndex
-    property bool minimize: true
+    property bool minimize: false
 
     property string type: "step"
 

@@ -10,7 +10,12 @@ import jsonHelper as jh
 import json
 import jsonschema
 from time import sleep
-
+import pandas as pd
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', -1)
+import numpy as np
 import asyncio
 
 from autobahn.asyncio.wamp import ApplicationRunner, ApplicationSession
@@ -26,25 +31,76 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     convCas = {1:'A',2:'B',3:'C',4:'D',5:'E',6:'F'}
     #CasNumber, protStrings, progstrings, runtime, sampleName, protocolName
     setupProt = QtCore.pyqtSignal(str,'QVariantList','QVariantList',str,str,str)
+    # To repopulate the progress bars when there is a GUI disconnection and rejoin
+    # repopulateProt = QtCore.pyqtSignal(str,'QVariantList','QVariantList',int,int,int,int,str,str,str)
+    repopulateProt = QtCore.pyqtSignal(int, 'QVariantList','QVariantList', 'QVariantList')
+    #To update GUI that cassette is engaged and ready
+    casEngaged = QtCore.pyqtSignal(int)
+    casDisengaged = QtCore.pyqtSignal(int)
     #To update progress bar. CasNumber of current sample to decrement.
     updateProg = QtCore.pyqtSignal(int)
     deadspace = 1000 
     
     def __init__(self, cfg=None):
         ApplicationSession.__init__(self, cfg)
-        QtCore.QObject.__init__(self)    
+        QtCore.QObject.__init__(self)
+        self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','engaged','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName'] ,
+                                   index=['casA','casB','casC','casD','casE','casF'], dtype=object)
+        self.taskDF.engaged = False
+        self.taskDF.engaged = self.taskDF.engaged.astype(object)
     
+    
+    async def update(self):
+        while True:
+    #            self.publish('com.prepbot.window.progress', self.progress)
+            await asyncio.sleep(0.1)
+        
     async def onJoin(self, details):
+        print("Getting controller task dataframe..")
+        # self.publish('com.prepbot.prothandler.request-tasks-gui')
+        try:
+            taskJSON = await self.call('com.prepbot.prothandler.controller-tasks')
+            # print(taskJSON)
+        except Exception as e:
+            print("Waiting until controller is connected...")
+            print(e)
+            await asyncio.sleep(5)
+            self.disconnect()
+            self.leave()
+            
+        self.set_tasks_repopulate(taskJSON)
+        print('\nFinished setting tasks and repopulating GUI!\n')
+        
         try:
             res = await self.subscribe(self)
             print("Subscribed to {0} procedure(s)".format(len(res)))
         except Exception as e:
             print("could not subscribe to procedure: {0}".format(e))
-
+        
+        print('\nFINISHED JOIN!\n')
     
-    # def __init__(self, DEADSPACE = 1000):
-    #     self.deadspace = DEADSPACE
-    #     self.Q = list()
+    @wamp.subscribe('com.prepbot.prothandler.tasks-to-gui')
+    def set_tasks_repopulate(self, taskJSON):
+        cTasks = pd.read_json(taskJSON, typ='frame', dtype=object)
+        if cTasks.equals(self.taskDF):
+            print('Controller has same taskDF as GUI')
+            #Repopulate anyways??
+            self.repopulateGUI()
+        else:
+            print('Repopulating GUI with controller procedures!')
+            # print(cTasks)
+            self.taskDF = cTasks
+            self.repopulateGUI()
+     
+        
+    # def onLeave(self, details):
+    #     print("Left")
+    #     print(self.taskDF)
+    
+    def onDisconnect(self):
+        print("Disconnected")
+        print(self.taskDF)
+    
     
     #Takes casNumber and protocol.json
     @QtCore.pyqtSlot(str, str, str, str, str)
@@ -58,19 +114,103 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         #Start progress bar and track steps completed in protocol for current sample...
         #Setup run by sending info to progress bar and sending protStrings
         self.setupProt.emit(casNumber,progStrings,stepTimes, runtime, sampleName, protocolName)
+        #update taskDF
+        print(protStrings)
+        print(progStrings)
+        print(stepTimes)
+        self.taskDF.loc['cas{}'.format(casL)] = np.array(['running',0,np.nan,True,protStrings, progStrings, stepTimes, sampleName,protPath,protocolName],dtype=object)
+        print(self.taskDF)
         #Send protocol to controller to add to Q
-        self.publish('com.prepbot.prothandler.start', casL, protStrings, progStrings, protPath)
-        
+        self.publish('com.prepbot.prothandler.start', casL, self.taskDF.loc['cas{}'.format(casL)].to_json())
+    
+    #Separate start of gui when protocol is actually started on controller???
+    #Hang until the start signal is actually received?
+    
     @QtCore.pyqtSlot(str)
     def stopProtocol(self, casNumber):
         casL = self.convCas[int(casNumber)]
         self.publish('com.prepbot.prothandler.stop', casL)
     
+    #GUI waits until cassette is actually engaged before able to start a protocol
+    @QtCore.pyqtSlot(str)
+    def engageCas(self, casNumber):
+        casL = self.convCas[int(casNumber)]
+        self.publish('com.prepbot.prothandler.engage', casL)
+    
+    @wamp.subscribe('com.prepbot.prothandler.ready')
+    def casReady(self, casL, engageBool):
+        casNumber = int(self.__get_key(casL, self.convCas))
+        if engageBool:
+            self.casEngaged.emit(casNumber)
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = True
+            print('Cas{} engage complete'.format(casNumber))
+        else:
+            self.casDisengaged.emit(casNumber)
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+            print('Cas{} disengage complete'.format(casNumber))
+    
+    #When the disengage button is hit, the GUI immediately switches away from the engaged screen
+    #Deactivate the engage button until disengage is completed
+    @QtCore.pyqtSlot(str)
+    def disengageCas(self, casNumber):
+        casL = self.convCas[int(casNumber)]
+        self.publish('com.prepbot.prothandler.disengage', casL)
+        
+    @wamp.subscribe('com.com.prepbot.prothandler.secs-remaining')
+    async def update_runtime(self, casL, secsRem):
+        await asyncio.sleep(1)
+        self.taskDF.loc['cas{}'.format(casL), 'secsRemaining'] = secsRem
+        print(self.taskDF.loc['cas{}'.format(casL)])
     
     @wamp.subscribe('com.prepbot.prothandler.progress')
-    def update_progress(self, casL):
+    async def update_progress(self, casL, taskJSON):
+        await asyncio.sleep(1)
         casNumber = int(self.__get_key(casL, self.convCas))
         self.updateProg.emit(casNumber)
+        #Replace entry in taskDF
+        self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
+        print(self.taskDF.loc['cas{}'.format(casL)])
+    
+    
+    def repopulateGUI(self):
+        runfin = self.taskDF[self.taskDF.status.isin(['running','finished'])].index
+        engagedCas = self.taskDF[self.taskDF.engaged==True & ~self.taskDF.status.isin(['running','finished'])].index
+        
+        for i in self.taskDF.index:
+            print(i)
+            print(i in runfin)
+            if i in runfin:
+                casNumber = int(self.__get_key(i[-1], self.convCas))
+                # stepNum = self.taskDF.loc[i,'stepNum']
+                # secsRem = self.taskDF.loc[i,'secsRemaining']
+                # totalSecs = sum(self.taskDF.loc[i,'stepTimes'])
+                # tremSecs = sum(self.taskDF.loc[i,'stepTimes'][stepNum:]) + secsRem
+                otherVars = self.taskDF.loc[i,['stepNum','secsRemaining','sampleName','protocolName','status']].tolist()
+                # otherVars.append(totalSecs)
+                # otherVars.append(tremSecs)
+                print('\npre-Emitted???')
+                print(i, casNumber)
+                print(self.taskDF.loc[i])
+                print(self.taskDF.loc[i,'progressNames'])
+                print(self.taskDF.loc[i,'stepTimes'])
+                print(otherVars)
+                self.repopulateProt.emit(casNumber,
+                                      self.taskDF.loc[i,'progressNames'],
+                                      self.taskDF.loc[i,'stepTimes'],
+                                      otherVars)
+                print('Emitted???')
+            elif i in engagedCas:
+                print('Emitting engages! {}'.format(i))
+                self.casEngaged.emit(int(self.__get_key(i[-1], self.convCas)))
+        
+        print("Restore connection with logger(s)......NOT IMPLEMENTED YET...")
+        
+        #restore connection with logger + rundetails.....
+    
+    
+    # @wamp.subscribe('com.prepbot.prothandler.updateguitasks')
+    # def update_tasks(self):
+        
     
     def interpret(self, casNumber, protPath):
         #Convert casNumber to sample letter...
