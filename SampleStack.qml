@@ -678,7 +678,9 @@ Item {
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
 
                 onClicked: {
+                    runDetWin.close()
                     runDetWin.show()
+                    runDetWin.raise()
                     if (!root.isLogRefreshed){
                         WAMPHandler.refreshRunDet(root.casNumber, root.currentEnd)
                         root.isLogRefreshed = true
@@ -788,17 +790,20 @@ Item {
         minimumWidth: 220
         minimumHeight: 110
         visible: false
+        title: "Cas"+casNumber+" Log"
         flags: Qt.WindowMinimized
         color:'silver'
 
         Component.onCompleted: {runDetWin.close()}
-
-//        onClosing: {
+        
+        onClosing: {
+            root.isLogRefreshed = false
 //            close.accepted = false
 //            runDetWin.width = 550
 //            runDetWin.height = 300
 //            runDetWin.hide()
-//        }
+
+        }
 
         LogDisplay {
             id:logDisplay
