@@ -52,6 +52,31 @@ Item {
         }
 
         Text {
+            id: mixAfterText
+            y: 4
+            color: "#000000"
+            text: {
+                if(mixAfterSecs=='undefined'){
+                    return(null)
+                } else if(mixAfterSecs==0){
+                    return('no mixing')
+                } else if(mixAfterSecs>0){
+                    return('mix every '+mixAfterSecs+'s')
+                } else{
+                    console.log('Error in protocol file? No mixAfterSecs field..')
+                    return(null)
+                }
+            }
+            anchors.left: opTimeText.right
+            anchors.verticalCenter: parent.verticalCenter
+            font.pointSize: 12
+            font.weight: Font.Medium
+            renderType: Text.QtRendering
+            anchors.leftMargin: 10
+            font.capitalization: Font.MixedCase
+        }
+
+        Text {
             id: speedText
             y: 4
             color: "#000000"

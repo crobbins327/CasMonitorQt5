@@ -11,11 +11,14 @@ import json
 import jsonschema
 from time import sleep
 import pandas as pd
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.width', None)
-pd.set_option('display.max_colwidth', -1)
+# pd.set_option('display.max_rows', None)
+# pd.set_option('display.max_columns', None)
+# pd.set_option('display.width', None)
+# pd.set_option('display.max_colwidth', -1)
 import numpy as np
+import logging
+import logging.config
+from colorlog import ColoredFormatter
 import asyncio
 
 from autobahn.asyncio.wamp import ApplicationRunner, ApplicationSession
@@ -24,6 +27,28 @@ from autobahn.wamp.exception import TransportLost
 from autobahn import wamp
 
 
+#Import logger config
+logging.config.fileConfig(fname='./Log/init/gui-loggers.ini')
+guilog = logging.getLogger('gui')
+# rootlog = logging.getLogger('')
+colorFormat = ColoredFormatter(
+    '%(name)-13s: %(log_color)s%(levelname)-8s%(reset)s %(blue)s%(message)s',
+    datefmt=None,
+    reset=True,
+    log_colors={
+        'DEBUG':    'cyan',
+        'INFO':     'green',
+        'WARNING':  'yellow',
+        'ERROR':    'red',
+        'CRITICAL': 'red,bg_white',
+    },
+    secondary_log_colors={},
+    style='%'
+)
+#Replace on each
+guilog.handlers[0].setFormatter(colorFormat)
+# rootlog.handlers[0].setFormatter(colorFormat)
+
 class wampHandler(ApplicationSession, QtCore.QObject):
     
     #Globals...
@@ -31,66 +56,107 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     convCas = {1:'A',2:'B',3:'C',4:'D',5:'E',6:'F'}
     #CasNumber, protStrings, progstrings, runtime, sampleName, protocolName
     setupProt = QtCore.pyqtSignal(str,'QVariantList','QVariantList',str,str,str)
+    startedProt = QtCore.pyqtSignal(int, str, int, int)
     # To repopulate the progress bars when there is a GUI disconnection and rejoin
     # repopulateProt = QtCore.pyqtSignal(str,'QVariantList','QVariantList',int,int,int,int,str,str,str)
+    guiJoined = QtCore.pyqtSignal()
+    toWaitPopup = QtCore.pyqtSignal(str)
+    controllerDCed = QtCore.pyqtSignal()
+    controllerJoined = QtCore.pyqtSignal()
     repopulateProt = QtCore.pyqtSignal(int, 'QVariantList','QVariantList', 'QVariantList')
     #To update GUI that cassette is engaged and ready
     casEngaged = QtCore.pyqtSignal(int)
     casDisengaged = QtCore.pyqtSignal(int)
     #To update progress bar. CasNumber of current sample to decrement.
     updateProg = QtCore.pyqtSignal(int)
+    upLogChunk = QtCore.pyqtSignal(int, str, int)
+    reqLogChunk = QtCore.pyqtSignal(int, str, int)
+    #Send shutdown is started
+    shutdownStart = QtCore.pyqtSignal(int)
+    #Send shutdown is finished
+    shutdownDone = QtCore.pyqtSignal(int)
     deadspace = 1000 
     
     def __init__(self, cfg=None):
         ApplicationSession.__init__(self, cfg)
         QtCore.QObject.__init__(self)
-        self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','engaged','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName'] ,
+        self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','engaged','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName','startlog','endlog'] ,
                                    index=['casA','casB','casC','casD','casE','casF'], dtype=object)
         self.taskDF.engaged = False
         self.taskDF.engaged = self.taskDF.engaged.astype(object)
+        self.controllerStatus = 'disconnected'
+        # self.logsOpen = pd.DataFrame(columns = ['isLogOpen'] ,
+        #                            index=['casA','casB','casC','casD','casE','casF','ctrl','machine'], dtype=object)
     
     
+    # @wamp.subscribe('com.prepbot.prothandler.heartbeat-gui')
+    async def heartbeat(self):
+        if self.controllerStatus == 'disconnected':
+            self.controllerStatus = 'connected'
+            await self.conJoined()
+        
     async def update(self):
         while True:
-    #            self.publish('com.prepbot.window.progress', self.progress)
-            await asyncio.sleep(0.1)
+            #Manual heartbeating to the controller...
+            try:
+                await self.call('com.prepbot.prothandler.heartbeat-ctrl')
+                # guilog.info('Are you there?')
+                if self.controllerStatus == 'disconnected':
+                    self.controllerStatus = 'connected'
+                    guilog.info('Sending controller joined to GUI!')
+                    await self.conJoined()
+            except Exception as e:
+                guilog.warning(e)
+                guilog.warning('Controller disconnected...')
+                if self.controllerStatus == 'connected':
+                    self.controllerStatus = 'disconnected'
+                    guilog.warning('Sending disconnect to GUI!')
+                    await self.conDCed()
+            await asyncio.sleep(1)
         
     async def onJoin(self, details):
-        print("Getting controller task dataframe..")
+        guilog.info("Getting controller task dataframe...")
+        self.toWaitPopup.emit('Getting controller task dataframe...')
         # self.publish('com.prepbot.prothandler.request-tasks-gui')
         try:
-            taskJSON = await self.call('com.prepbot.prothandler.controller-tasks')
-            # print(taskJSON)
+            taskDFJSON = await self.call('com.prepbot.prothandler.controller-tasks')
+            # guilog.info(taskDFJSON)
         except Exception as e:
-            print("Waiting until controller is connected...")
-            print(e)
+            guilog.warning("Waiting until controller is connected...")
+            guilog.warning(e)
             await asyncio.sleep(5)
             self.disconnect()
             self.leave()
-            
-        self.set_tasks_repopulate(taskJSON)
-        print('\nFinished setting tasks and repopulating GUI!\n')
+        
+        self.toWaitPopup.emit('Repopulating GUI with tasks...')
+        self.set_tasks_repopulate_all(taskDFJSON)
+        self.toWaitPopup.emit('Finished setting tasks and repopulating GUI!')
+        guilog.info('Finished setting tasks and repopulating GUI!')
+        
+        self.toWaitPopup.emit('Reconnecting sample loggers and system logger...')
+        # self.reconnect_loggers()
+        self.toWaitPopup.emit('Finished reconnecting loggers!')
+        guilog.info('Finished reconnecting loggers!')
         
         try:
             res = await self.subscribe(self)
-            print("Subscribed to {0} procedure(s)".format(len(res)))
+            guilog.info("Subscribed to {0} procedure(s)".format(len(res)))
+            self.toWaitPopup.emit('Subscribed to procedures!')
         except Exception as e:
-            print("could not subscribe to procedure: {0}".format(e))
-        
-        print('\nFINISHED JOIN!\n')
+            guilog.warning("could not subscribe to procedure: {0}".format(e))
+            self.toWaitPopup.emit('Could not subscribe to procedures....')
+        asyncio.ensure_future(self.update())
+        self.guiJoined.emit()
+        self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-gui')
+        guilog.info('FINISHED JOIN!')
     
-    @wamp.subscribe('com.prepbot.prothandler.tasks-to-gui')
-    def set_tasks_repopulate(self, taskJSON):
-        cTasks = pd.read_json(taskJSON, typ='frame', dtype=object)
-        if cTasks.equals(self.taskDF):
-            print('Controller has same taskDF as GUI')
-            #Repopulate anyways??
-            self.repopulateGUI()
-        else:
-            print('Repopulating GUI with controller procedures!')
-            # print(cTasks)
-            self.taskDF = cTasks
-            self.repopulateGUI()
+    # @wamp.subscribe('com.prepbot.prothandler.controller-joined')
+    async def conJoined(self):
+        self.controllerJoined.emit()
+    
+    # @wamp.subscribe('com.prepbot.prothandler.controller-dced')
+    async def conDCed(self):
+        self.controllerDCed.emit()
      
         
     # def onLeave(self, details):
@@ -98,9 +164,8 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     #     print(self.taskDF)
     
     def onDisconnect(self):
-        print("Disconnected")
-        print(self.taskDF)
-    
+        guilog.info("Disconnected GUI")
+        guilog.info(self.taskDF)
     
     #Takes casNumber and protocol.json
     @QtCore.pyqtSlot(str, str, str, str, str)
@@ -115,21 +180,101 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         #Setup run by sending info to progress bar and sending protStrings
         self.setupProt.emit(casNumber,progStrings,stepTimes, runtime, sampleName, protocolName)
         #update taskDF
-        print(protStrings)
-        print(progStrings)
-        print(stepTimes)
-        self.taskDF.loc['cas{}'.format(casL)] = np.array(['running',0,np.nan,True,protStrings, progStrings, stepTimes, sampleName,protPath,protocolName],dtype=object)
-        print(self.taskDF)
+        self.taskDF.loc['cas{}'.format(casL)] = np.array(['running',0,np.nan,True,protStrings, progStrings, stepTimes, sampleName,protPath,protocolName,np.nan,np.nan],dtype=object)
+        guilog.debug(self.taskDF)
         #Send protocol to controller to add to Q
         self.publish('com.prepbot.prothandler.start', casL, self.taskDF.loc['cas{}'.format(casL)].to_json())
+        #update log
+        guilog.info('cas{}: Starting protocol:\n{}\n{}\n{}'.format(casL,protStrings,progStrings,stepTimes))
     
     #Separate start of gui when protocol is actually started on controller???
     #Hang until the start signal is actually received?
+    @wamp.subscribe('com.prepbot.prothandler.started')
+    async def startedGUIProtocol(self, casName, taskJSON, samplelog, currentEnd):
+        self.taskDF.loc[casName] = pd.read_json(taskJSON, typ='series', dtype=object)
+        #prepare run details chunk
+        start = int(self.taskDF.loc[casName,'startlog'])
+        # samplelog, currentEnd = await self.call('com.prepbot.prothandler.caslog-chunk', casL=casName[-1], start=start, end=0)
+        #emit start signal
+        casNumber = int(self.__get_key(casName[-1], self.convCas))
+        # guilog.debug(currentEnd,'Testing end getter')
+        guilog.info('{}: Confirmed protocol and sending sample log.'.format(casName))
+        self.startedProt.emit(casNumber, samplelog, start, int(currentEnd))
+        
+    
+    #It may be faster to load the log into chunks rather than requesting all of the log from start to end line
+    #The GUI is prone to sending too many calls to refreshRunDet and this causes there to be too many update chunks
+    #Also, the current code in the controller has blocking elements that cause the log to propogate slower than the runstep progress...
+    #Try adding an asyncio.sleep at the end/beg of each controller protocol step to hope that the updateLogChunk function can be called more often?
+    
+    @QtCore.pyqtSlot(str, int)
+    def refreshRunDet(self, casNumber, currentEnd):
+        casL = self.convCas[int(casNumber)]
+        casName = 'cas{}'.format(casL)
+        start = int(self.taskDF.loc[casName,'startlog'])
+        print(start)
+        end = int(self.taskDF.loc[casName,'endlog'])
+        print(end)
+        guilog.info('{}: Requesting a refresh on run details log.'.format(casName))
+        # print(self.taskDF.loc[casName])
+        #Request next lines (limit=1000) in the log at the current end
+        # asyncio.ensure_future(self.updateLogChunk(casL, start=currentEnd+1, end=0))
+        asyncio.ensure_future(self.requestLogChunk(casL, start=start, end=end))
+        
+    
+    async def requestLogChunk(self, casL, start, end):
+        samplelog, currentEnd = await self.call('com.prepbot.prothandler.caslog-chunk', casL, start, end)
+        if len(samplelog) > 0:
+            guilog.info('cas{}: Request run details log'.format(casL))
+            guilog.debug('\n{}'.format(samplelog))
+            casNumber = int(self.__get_key(casL, self.convCas))
+            self.reqLogChunk.emit(casNumber, samplelog, int(currentEnd))
+        else:
+            guilog.info('cas{}: Nothing more to request for run details log'.format(casL))
+            pass
+    
+    @wamp.subscribe('com.prepbot.prothandler.update-cas-log')
+    async def updateLogChunk(self, casL, samplelog, currentEnd):
+        #Receive log chunk
+        if len(samplelog) > 0:
+            guilog.info('cas{}: Update run details log'.format(casL))
+            guilog.debug('\n{}'.format(samplelog))
+            casNumber = int(self.__get_key(casL, self.convCas))
+            self.upLogChunk.emit(casNumber, samplelog, int(currentEnd))
+        else:
+            guilog.info('cas{}: Nothing to update for run details log'.format(casL))
+            pass
+    
     
     @QtCore.pyqtSlot(str)
     def stopProtocol(self, casNumber):
         casL = self.convCas[int(casNumber)]
         self.publish('com.prepbot.prothandler.stop', casL)
+        #mark as stopped in taskDF
+        guilog.info('cas{}: Requesting to stop run...'.format(casL))
+        self.taskDF.loc['cas{}'.format(casL),'status'] = 'stopped'
+    
+    @QtCore.pyqtSlot(str)
+    def nextProtocol(self, casNumber):
+        casL = self.convCas[int(casNumber)]
+        #Trust the GUI for speed.... if it reached the next button by mistake startProtocol will catch the error
+        # self.publish('com.prepbot.prothandler.next', casL)
+        self.taskDF.loc['cas{}'.format(casL),'status'] = 'idle'
+    
+    @wamp.subscribe('com.prepbot.prothandler.start-shutdown')
+    async def start_shutown(self, casL):
+        await asyncio.sleep(1)
+        guilog.info('\nSHUTTING DOWN cas{}!!!\n'.format(casL))
+        casNumber = int(self.__get_key(casL, self.convCas))
+        self.shutdownStart.emit(casNumber)
+        
+    @wamp.subscribe('com.prepbot.prothandler.finish-shutdown')
+    async def finish_shutown(self, casL, taskJSON, isNext=False):
+        await asyncio.sleep(1)
+        casNumber = int(self.__get_key(casL, self.convCas))
+        self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
+        if not isNext:
+            self.shutdownDone.emit(casNumber)
     
     #GUI waits until cassette is actually engaged before able to start a protocol
     @QtCore.pyqtSlot(str)
@@ -140,14 +285,15 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     @wamp.subscribe('com.prepbot.prothandler.ready')
     def casReady(self, casL, engageBool):
         casNumber = int(self.__get_key(casL, self.convCas))
+        print(casNumber)
         if engageBool:
             self.casEngaged.emit(casNumber)
             self.taskDF.loc['cas{}'.format(casL),'engaged'] = True
-            print('Cas{} engage complete'.format(casNumber))
+            guilog.info('Cas{} engage complete'.format(casL))
         else:
             self.casDisengaged.emit(casNumber)
             self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
-            print('Cas{} disengage complete'.format(casNumber))
+            guilog.info('Cas{} disengage complete'.format(casL))
     
     #When the disengage button is hit, the GUI immediately switches away from the engaged screen
     #Deactivate the engage button until disengage is completed
@@ -160,25 +306,73 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     async def update_runtime(self, casL, secsRem):
         await asyncio.sleep(1)
         self.taskDF.loc['cas{}'.format(casL), 'secsRemaining'] = secsRem
-        print(self.taskDF.loc['cas{}'.format(casL)])
+        guilog.info("cas{}: Getting seconds remaining for current step.... {}secs".format(casL,secsRem))
+        guilog.debug('\n{}'.format(self.taskDF.loc['cas{}'.format(casL)]))
     
     @wamp.subscribe('com.prepbot.prothandler.progress')
     async def update_progress(self, casL, taskJSON):
+        #Prevent stopped or shutdown runs from updating???
         await asyncio.sleep(1)
         casNumber = int(self.__get_key(casL, self.convCas))
+        guilog.info('cas{}: Updating progress to next step'.format(casL))
         self.updateProg.emit(casNumber)
         #Replace entry in taskDF
         self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
-        print(self.taskDF.loc['cas{}'.format(casL)])
+        guilog.debug("\n{}".format(self.taskDF.loc['cas{}'.format(casL)]))
     
     
-    def repopulateGUI(self):
-        runfin = self.taskDF[self.taskDF.status.isin(['running','finished'])].index
-        engagedCas = self.taskDF[self.taskDF.engaged==True & ~self.taskDF.status.isin(['running','finished'])].index
+    @wamp.subscribe('com.prepbot.prothandler.one-task-to-gui')
+    def set_tasks_repopulate_one(self, casName, taskJSON):
+        self.taskDF.loc[casName] = pd.read_json(taskJSON, typ='series', dtype=object)
+        self.repopulate_one_GUI(casName)
+        #Repopulate logs?
+    
+    def repopulate_one_GUI(self, casName):
+        casNumber = int(self.__get_key(casName[-1], self.convCas))
+        
+        if self.taskDF.loc[casName,'status'].isin(['running','finished','stopping','shutdown']):
+            otherVars = self.taskDF.loc[casName,['stepNum','secsRemaining','sampleName','protocolName','status']].tolist()
+            # otherVars.append(totalSecs)
+            # otherVars.append(tremSecs)
+            # print('\npre-Emitted???')
+            guilog.info("{}: Repopulating GUI task".format(casName))
+            guilog.debug("\n{}".format(self.taskDF.loc[casName]))
+            # print(self.taskDF.loc[casName,'progressNames'])
+            # print(self.taskDF.loc[casName,'stepTimes'])
+            # print(otherVars)
+            self.repopulateProt.emit(casNumber,
+                                  self.taskDF.loc[casName,'progressNames'],
+                                  self.taskDF.loc[casName,'stepTimes'],
+                                  otherVars)
+            # print('Emitted???')
+            
+        elif self.taskDF.loc[casName,'engaged']:
+            guilog.info('Emitting engages! {}'.format(casName))
+            self.casEngaged.emit(casNumber)
+    
+    
+    @wamp.subscribe('com.prepbot.prothandler.tasks-to-gui')
+    def set_tasks_repopulate_all(self, taskDFJSON):
+        cTasks = pd.read_json(taskDFJSON, typ='frame', dtype=object)
+        if cTasks.equals(self.taskDF):
+            guilog.info('Controller has same taskDF as GUI')
+            #Repopulate anyways??
+            self.repopulate_all_GUI()
+            #Repopulate logs
+        else:
+            guilog.info('Repopulating GUI with controller procedures!')
+            # print(cTasks)
+            self.taskDF = cTasks
+            self.repopulate_all_GUI()
+            #Repopulate logs
+    
+    def repopulate_all_GUI(self):
+        runfin = self.taskDF[self.taskDF.status.isin(['running','finished','stopping','shutdown'])].index
+        engagedCas = self.taskDF[self.taskDF.engaged==True & ~self.taskDF.status.isin(['running','finished','stopping','shutdown'])].index
         
         for i in self.taskDF.index:
-            print(i)
-            print(i in runfin)
+            # print(i)
+            # print(i in runfin)
             if i in runfin:
                 casNumber = int(self.__get_key(i[-1], self.convCas))
                 # stepNum = self.taskDF.loc[i,'stepNum']
@@ -188,22 +382,24 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 otherVars = self.taskDF.loc[i,['stepNum','secsRemaining','sampleName','protocolName','status']].tolist()
                 # otherVars.append(totalSecs)
                 # otherVars.append(tremSecs)
-                print('\npre-Emitted???')
-                print(i, casNumber)
-                print(self.taskDF.loc[i])
-                print(self.taskDF.loc[i,'progressNames'])
-                print(self.taskDF.loc[i,'stepTimes'])
-                print(otherVars)
+                guilog.info("{}: Repopulating GUI task".format(i))
+                guilog.debug("\n{}".format(self.taskDF.loc[i]))
+                # print('\npre-Emitted???')
+                # print(i, casNumber)
+                # print(self.taskDF.loc[i])
+                # print(self.taskDF.loc[i,'progressNames'])
+                # print(self.taskDF.loc[i,'stepTimes'])
+                # print(otherVars)
                 self.repopulateProt.emit(casNumber,
                                       self.taskDF.loc[i,'progressNames'],
                                       self.taskDF.loc[i,'stepTimes'],
                                       otherVars)
-                print('Emitted???')
+                # print('Emitted???')
             elif i in engagedCas:
-                print('Emitting engages! {}'.format(i))
+                guilog.info('Emitting engages! {}'.format(i))
                 self.casEngaged.emit(int(self.__get_key(i[-1], self.convCas)))
         
-        print("Restore connection with logger(s)......NOT IMPLEMENTED YET...")
+        guilog.debug("Restore connection with logger(s)......NOT IMPLEMENTED YET...")
         
         #restore connection with logger + rundetails.....
     
@@ -234,13 +430,13 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             elif oper['volume'][-2:].lower() == 'ml':
                 mL = True
             else:
-                print('Volume in protocol step {} is not defined ({})! Use "undefined", mL, or uL for volume'.format(i,oper['volume']))
+                guilog.error('Volume in protocol step {} is not defined ({})! Use "undefined", mL, or uL for volume'.format(i,oper['volume']))
                 break
                     
             fluidType = 'undefined'
             # print(oper)
             if oper['opName'] == 'Incubation':
-                inc = self.__incubate(casL, oper['opTime'])
+                inc = self.__incubate(casL, oper['opTime'], oper['mixAfterSecs'])
                 protstrings.append(inc)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
@@ -292,7 +488,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 stepTimes.append(self.__get_sec(oper['opTime']))
                 fluidType = oper['loadType']
             else:
-                print('Operation "{}" not in protocol operations!'.format(oper['opName']))
+                guilog.error('Operation "{}" not in protocol operations!'.format(oper['opName']))
         return(casL, protstrings, progstrings, stepTimes)
             
     
@@ -312,12 +508,15 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         h, m, s = time_str.split(':')
         return int(h) * 3600 + int(m) * 60 + int(s)
 
-    def __incubate(self, casL, runtime):
+    def __incubate(self, casL, runtime, mixAfter):
         #Convert runtime hh:mm:ss into seconds
         incubateTime = self.__get_sec(runtime)
+        
+        if mixAfter == 'undefined':
+            mixAfter = 0
         # incubate_time_sec =  10
         #Mix every 2x seconds
-        wash_interval = 2
+        # wash_interval = mixAfter
         # washF = int(incubateTime/wash_interval)
         # incStr = '''
         # print('INCUBATING DYE')
@@ -332,7 +531,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         #         sleep(2)
         #         machine.pump_out(0.5)
         # '''.format(washF,wash_interval,casL,incubateTime,wash_interval)
-        incStr = 'self.incubate(casL="{}",incTime={},mixAfter={})'.format(casL,incubateTime,wash_interval)
+        incStr = 'self.incubate(casL="{}",incTime={},mixAfter={})'.format(casL,incubateTime,mixAfter)
         return(incStr)
                 
     def __mix(self, casL, numCycles, volume, mL=False):

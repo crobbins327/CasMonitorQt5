@@ -8,6 +8,8 @@ Created on Sun May 10 21:30:01 2020
 import sys
 import os
 import logging
+import logging.config
+from colorlog import ColoredFormatter
 # os.chdir("/home/eben/CasQML")
 # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 import jsonHelper as jh
@@ -30,18 +32,22 @@ from autobahn import wamp
 
 from quamash import QEventLoop
 
+guilog = logging.getLogger('gui')
+quamashlog = logging.getLogger('quamash')
+quamashlog.setLevel(logging.INFO)
+guilog.setLevel(logging.DEBUG)
 
 if __name__ == '__main__':    
     #Setup logging
     # Global definitions:
-    workspace_path = os.getcwd()
-    log_path = os.path.join(workspace_path, 'test.log')
+    # workspace_path = os.getcwd()
+    # log_path = os.path.join(workspace_path, 'test.log')
     
     # Logger configuration:
-    log_level = logging.DEBUG 
-    log_format = '%(message)s'
-    logger = logging.root
-    logger.basicConfig = logging.basicConfig(format=log_format, filename=log_path, level=log_level)
+    # log_level = logging.DEBUG 
+    # log_format = '%(message)s'
+    # logger = logging.root
+    # logger.basicConfig = logging.basicConfig(format=log_format, filename=log_path, level=log_level)
     #logger.basicConfig = logging.basicConfig(format=log_format, level=log_level)
     
     #Setup QML application with asynchronous event loop

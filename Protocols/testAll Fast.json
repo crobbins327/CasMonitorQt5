@@ -2,6 +2,7 @@
 	{
 		"opName": "Incubation",
 		"opTime": "00:00:05",
+		"mixAfterSecs": "0",
 		"volume": "undefined",
 		"pSpeed": "undefined",
 		"numCycles": "undefined",
@@ -10,6 +11,7 @@
 	{
 		"opName": "Purge",
 		"opTime": "00:05:00",
+		"mixAfterSecs": "undefined",
 		"volume": "3mL",
 		"pSpeed": "1",
 		"numCycles": "undefined",
@@ -18,6 +20,7 @@
 	{
 		"opName": "Mixing",
 		"opTime": "00:05:00",
+		"mixAfterSecs": "undefined",
 		"volume": "1mL",
 		"pSpeed": "1",
 		"numCycles": "3",
@@ -26,6 +29,7 @@
 	{
 		"opName": "Load Formalin",
 		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
 		"volume": "600uL",
 		"pSpeed": "1",
 		"numCycles": "undefined",
@@ -34,6 +38,7 @@
 	{
 		"opName": "Load Dehydrant",
 		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
 		"volume": "600uL",
 		"pSpeed": "1",
 		"numCycles": "undefined",
@@ -42,6 +47,7 @@
 	{
 		"opName": "Load Stain",
 		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
 		"volume": "600uL",
 		"pSpeed": "1",
 		"numCycles": "undefined",
@@ -50,6 +56,7 @@
 	{
 		"opName": "Load BABB",
 		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
 		"volume": "600uL",
 		"pSpeed": "1",
 		"numCycles": "undefined",

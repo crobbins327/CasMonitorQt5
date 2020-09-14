@@ -2,6 +2,8 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Dialogs 1.3
+import QtQuick.Window 2.12
+import "./Icons/"
 
 Item {
     id: root
@@ -17,25 +19,45 @@ Item {
     property int runSecs: get_sec(root.runTime)
     property bool isRunning: false
     property bool isHanging: false
+    property bool isFinished: false
     property int hangSecs: 0
     property variant progStrings: []
     property variant stepRunTimes: []
     property int totalSteps: root.progStrings.length
     property int stepIndex: 0
+    property string logText: ''
+    property int startlog: 0
+    property int endlog: 0
+    property int currentEnd: 0
+    property bool isLogRefreshed: false
 
     signal reSetupProt(string casNum, variant progS, variant stepTimes, string runtime, string samplen, string protocoln)
+    signal reStartedProt(int casNum, string newLog, int start, int currentEnd)
     signal reUpdateProg(int casNum)
+    signal reReqLogChunk(int casNum, string logChunk, int currentEnd)
+    signal reUpLogChunk(int casNum, string logChunk, int currentEnd)
 //    signal reRepopulate(string casNum, variant progS, variant stepTimes, int stepInd, int secsRem, int totalRemaining, int totalRunSecs, string samplen, string protocoln, string status)
     signal reRepopulate(int casNum, variant progS, variant stepTimes, variant otherVars)
+    signal reShutdownStart(int casNum)
+    signal reShutdownFinished(int casNum)
     signal reEngaged(int casNum)
     signal reDisengaged(int casNum)
+    signal reDCController()
+    signal reJoinController()
 
     Component.onCompleted: {
         WAMPHandler.setupProt.connect(reSetupProt)
+        WAMPHandler.startedProt.connect(reStartedProt)
         WAMPHandler.updateProg.connect(reUpdateProg)
+        WAMPHandler.reqLogChunk.connect(reReqLogChunk)
+        WAMPHandler.upLogChunk.connect(reUpLogChunk)
         WAMPHandler.repopulateProt.connect(reRepopulate)
+        WAMPHandler.shutdownStart.connect(reShutdownStart)
+        WAMPHandler.shutdownDone.connect(reShutdownFinished)
         WAMPHandler.casEngaged.connect(reEngaged)
         WAMPHandler.casDisengaged.connect(reDisengaged)
+        WAMPHandler.controllerDCed.connect(reDCController)
+        WAMPHandler.controllerJoined.connect(reJoinController)
     }
     Connections {
         target: root
@@ -43,8 +65,9 @@ Item {
             //Check if casNumber corresponds with this casNumber
             if (root.casNumber==casNum && !root.isRunning){
                 //setup run
-                console.log(progS)
-                console.log(stepTimes)
+//                console.log(progS)
+//                console.log(stepTimes)
+                runProgBar.progColor = "#17a81a"
                 root.runTime = runtime
                 root.runSecs = get_sec(runtime)
                 root.firstRunTime = runtime
@@ -54,16 +77,27 @@ Item {
                 root.stackIndex = 2
                 root.stepIndex = 0
                 root.progStrings = progS
-                root.runStep = root.progStrings[root.stepIndex]
+                root.runStep = 'Setting up run....'
                 root.stepRunTimes = stepTimes
                 root.hangSecs = parseInt(root.stepRunTimes[root.stepIndex])
                 root.runProgVal = 0
                 root.isRunning = true
-                root.isHanging = false
+                root.isHanging = true
                 stopRunB.visible = true
                 nextRunB.visible = false
-            } else {
-                console.log('Not me! ', root.casNumber)
+                runDetB.enabled = false
+            }
+        }
+        function onReStartedProt(casNum, newLog, start, currentEnd) {
+            if (root.casNumber==casNum && root.isHanging){
+                console.log('Starting Run, Cas', casNumber)
+                //start run
+                root.runStep = root.progStrings[root.stepIndex]
+                root.isHanging = false
+                runDetB.enabled = true
+                root.startlog = start
+                root.currentEnd = currentEnd
+                root.logText = newLog
             }
         }
         function onReUpdateProg(casNum) {
@@ -88,14 +122,34 @@ Item {
                 } else {
                     console.log('Protocol Finished! Cas', root.casNumber)
                     root.isHanging = true
+                    root.isFinished = true
+                    root.isRunning = false
                     root.runTime = "00:00:00"
                     root.runSecs = get_sec(root.runTime)
                     root.runProgVal = 100
                     stopRunB.visible = false
                     nextRunB.visible = true
                 }
-            } else {
-                console.log('Not me! ', root.casNumber)
+            }
+        }
+        function onReReqLogChunk(casNum, logChunk, currentEnd){
+            if (root.casNumber==casNum){
+                console.log('Refreshed Cas', root.casNumber)
+                //Replaces entire log chunk
+                root.logText = logChunk
+                root.currentEnd = currentEnd
+                //Finish refresh, prepare for next one
+                root.isLogRefreshed = false
+            }
+        }
+        function onReUpLogChunk(casNum, logChunk, currentEnd){
+            if (root.casNumber==casNum){
+                console.log('Refreshed Cas', root.casNumber)
+                //updates current log text with a new chunk
+                root.logText = root.logText + logChunk
+                root.currentEnd = currentEnd
+                //Finish refresh, prepare for next one
+                root.isLogRefreshed = false
             }
         }
         //['stepNum','secsRemaining','sampleName','protocolName','status']
@@ -103,18 +157,15 @@ Item {
             //Check if casNumber corresponds with this casNumber
             if (root.casNumber==casNum){
                 console.log('trying to repopulate... Cas', casNumber)
-                var stepInd = otherVars[0]
-                var secsRem = otherVars[1]
-                var samplen = otherVars[2]
-                var protocoln = otherVars[3]
-                var status = otherVars[4]
+                var status = otherVars[otherVars.length-1]
                 console.log(status)
-                console.log(stepTimes.slice(stepInd,))
-                console.log(sum_arr(stepTimes.slice(stepInd,)))
-                console.log(sum_arr(stepTimes.slice(0,stepInd)))
-                console.log(sum_arr(stepTimes))
                 if (status == 'running'){
                     //setup run
+                    var stepInd = otherVars[0]
+                    var secsRem = otherVars[1]
+                    var samplen = otherVars[2]
+                    var protocoln = otherVars[3]
+                    runProgBar.progColor = "#17a81a"
                     console.log(progS)
                     console.log(stepTimes)
                     root.stepIndex = stepInd-1
@@ -136,9 +187,46 @@ Item {
                     root.isHanging = false
                     stopRunB.visible = true
                     nextRunB.visible = false
+                } else if (status == 'stopping'){
+                    //setup run
+                    var stepInd = otherVars[0]
+                    var secsRem = otherVars[1]
+                    var samplen = otherVars[2]
+                    var protocoln = otherVars[3]
+                    runProgBar.progColor = "darkred"
+//                    console.log(progS)
+//                    console.log(stepTimes)
+                    root.stepIndex = stepInd-1
+                    root.firstRunSecs = sum_arr(stepTimes)
+                    root.firstRunTime = get_time(root.firstRunSecs)
+                    root.runSecs = secsRem + sum_arr(stepTimes.slice(stepInd,))
+                    root.runTime = get_time(runSecs)
+
+                    root.runSampleName = samplen
+                    root.runProtocolName = protocoln
+                    root.stackIndex = 2
+
+                    root.progStrings = progS
+                    root.runStep = 'Shutting down...'
+                    root.stepRunTimes = stepTimes
+                    root.hangSecs = sum_arr(stepTimes.slice(0,stepInd))
+                    root.runProgVal = 100*(root.firstRunSecs - root.runSecs)/root.firstRunSecs
+                    root.isRunning = true
+                    root.isHanging = true
+                    stopRunB.visible = true
+                    nextRunB.visible = false
+                    stopRunB.enabled = false
+                    stopRunB.checked = true
                 } else if(status == 'finished'){
                     console.log('Protocol Finished! Cas', root.casNumber)
+                    var stepInd = otherVars[0]
+                    var secsRem = otherVars[1]
+                    var samplen = otherVars[2]
+                    var protocoln = otherVars[3]
+                    runProgBar.progColor = "#17a81a"
+                    root.isRunning = false
                     root.isHanging = true
+                    root.isFinished = true
                     root.runTime = "00:00:00"
                     root.runSecs = get_sec(root.runTime)
                     root.runSampleName = samplen
@@ -151,12 +239,54 @@ Item {
                     root.stepRunTimes = stepTimes
                     stopRunB.visible = false
                     nextRunB.visible = true
+                } else if(status == 'shutdown'){
+                    var stepInd = otherVars[0]
+                    var secsRem = otherVars[1]
+                    var samplen = otherVars[2]
+                    var protocoln = otherVars[3]
+                    runProgBar.progColor = "darkred"
+                    root.stepIndex = 0
+                    root.firstRunSecs = sum_arr(stepTimes)
+                    root.firstRunTime = get_time(root.firstRunSecs)
+                    root.runSecs = secsRem + sum_arr(stepTimes.slice(stepInd,))
+                    root.runTime = get_time(runSecs)
+                    root.runSampleName = samplen
+                    root.runProtocolName = protocoln
+                    root.stackIndex = 2
+                    root.progStrings = progS
+                    root.runStep = 'Shutdown finished.'
+                    root.stepRunTimes = stepTimes
+                    root.hangSecs = sum_arr(stepTimes.slice(0,stepInd))
+                    root.runProgVal = 100*(root.firstRunSecs - root.runSecs)/root.firstRunSecs
+                    root.isRunning = false
+                    root.isHanging = true
+                    stopRunB.visible = false
+                    stopRunB.enabled = true
+                    stopRunB.checked = false
+                    nextRunB.visible = true
                 }
             } else {
                 console.log('Not repopulating! Cas', casNumber)
             }
         }
-
+        function onReShutdownStart(casNum){
+            if (root.casNumber==casNum){
+                //Start a separate shutdown protocol???
+                root.runStep = 'Shutting down...'
+                stopRunB.enabled = false
+                stopRunB.checked = true
+            }
+        }
+        function onReShutdownFinished(casNum){
+            if (root.casNumber==casNum){
+                root.runStep = 'Shutdown finished.'
+                root.isRunning = false
+                stopRunB.visible = false
+                stopRunB.enabled = true
+                stopRunB.checked = false
+                nextRunB.visible = true
+            }
+        }
         function onReEngaged(casNum) {
                     //Check if casNumber corresponds with this casNumber
                     if (root.casNumber==casNum){
@@ -175,14 +305,56 @@ Item {
                         console.log('Disengaged Cas', casNumber)
                     }
         }
+        function onReDCController() {
+            //hang the controller progress and disable the buttons that advance the sample stack
+            root.isHanging = true
+            engageCasB.enabled = false
+//            engageCasB.checked = true
+
+            disengageCasB.enabled = false
+//            disengageCasB.checked = true
+
+            stopRunB.enabled = false
+//            stopRunB.checked = true
+
+            nextRunB.enabled = false
+//            nextRunB.checked = true
+
+            setupRunB.enabled = false
+//            setupRunB.checked = true
+
+            defRunB.enabled = false
+//            defRunB.checked = true
+        }
+        function onReJoinController() {
+            //hang the controller progress and disable the buttons that advance the sample stack
+//            root.isHanging = false
+            engageCasB.enabled = true
+//            engageCasB.checked = false
+
+            disengageCasB.enabled = true
+//            disengageCasB.checked = false
+
+            stopRunB.enabled = true
+//            stopRunB.checked = false
+
+            nextRunB.enabled = true
+//            nextRunB.checked = false
+
+            setupRunB.enabled = true
+//            setupRunB.checked = false
+
+            defRunB.enabled = true
+//            defRunB.checked = false
+        }
     }
 
 
 
-    signal setupRun(int casNumber)
-    signal defaultRun(int casNumber)
-    signal stopRun(int casNumber)
-    signal runDetails(int casNumber)
+//    signal setupRun(int casNumber)
+//    signal defaultRun(int casNumber)
+//    signal stopRun(int casNumber)
+//    signal runDetails(int casNumber)
     //    signal startRun(int casNumber)
 
     // Need a listener for whether a cassette is in the slot.... this will switch the current index.
@@ -292,7 +464,6 @@ Item {
                         Layout.minimumHeight: 20
 
                         onClicked: {
-                            root.setupRun(root.casNumber)
                             console.log("Setup run: ", casNumber)
                             //                        push protocol selector screen and populate with casNumber info
                             mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
@@ -307,7 +478,6 @@ Item {
                         Layout.minimumHeight: 20
 
                         onClicked: {
-                            root.setupRun(root.casNumber)
                             console.log("Setup run: ", casNumber)
                             //                        push protocol selector screen and populate with casNumber info
                             mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
@@ -347,7 +517,8 @@ Item {
             border.width: 0.5
 
             Timer {
-                interval: 100
+                id: progTimer
+                interval: 1000
                 running: {root.isRunning && !root.isHanging}
                 repeat: true
                 onTriggered: {
@@ -368,6 +539,19 @@ Item {
                 }
 
             }
+//            Timer {
+//                id: logTimer
+//                interval: 10000
+//                running: {runDetWin.visible && root.isRunning && !root.isLogRefreshed}
+//                repeat: true
+//                onTriggered: {
+//                    console.log('Updating log on Cas',root.casNumber)
+//                    WAMPHandler.refreshRunDet(root.casNumber, root.currentEnd)
+//                    //Turn off timer until the refresh has been processed
+//                    root.isLogRefreshed = true
+//                }
+
+//            }
 
             ColumnLayout{
                 id: column
@@ -428,8 +612,8 @@ Item {
             }
 
             ProgressBar {
+                property string progColor: "#17a81a"
                 id: runProgBar
-                height: 20
                 anchors.right: parent.right
                 anchors.rightMargin: 10
                 anchors.left: parent.left
@@ -437,26 +621,29 @@ Item {
                 anchors.bottom: stopRunB.top
                 anchors.bottomMargin: 7
                 to: 100
+
                 background: Rectangle {
                     color: "#e6e6e6"
                     radius: 3
-                    implicitHeight: 4
+                    implicitHeight: 12
                     implicitWidth: 200
                 }
                 contentItem: Item {
                     anchors.fill: parent
-                    implicitHeight: 4
+                    implicitHeight: 12
+                    implicitWidth: 200
                     Rectangle {
                         width: runProgBar.visualPosition * parent.width
                         height: parent.height
-                        color: "#17a81a"
+                        color: runProgBar.progColor
                         radius: 2
                     }
-                    implicitWidth: 200
+
                 }
+
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 value: runProgVal
-                indeterminate: root.isHanging || rootApWin.isDisconnected
+//                indeterminate: (root.isHanging | rootApWin.isDisconnected) && !root.isFinished
 
                 // Update prog value and step on change
             }
@@ -490,7 +677,13 @@ Item {
                 anchors.verticalCenter: stopRunB.verticalCenter
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
 
-                onClicked: {root.runDetails(root.casNumber)}
+                onClicked: {
+                    runDetWin.show()
+                    if (!root.isLogRefreshed){
+                        WAMPHandler.refreshRunDet(root.casNumber, root.currentEnd)
+                        root.isLogRefreshed = true
+                    }
+                }
             }
 
             Text {
@@ -557,7 +750,7 @@ Item {
                 onClicked: {
                     //Erase all info from progress bar
                     //Make sure run is stopped
-                    root.stopRun(root.casNumber)
+                    runProgBar.progColor = "#17a81a"
                     root.isRunning = false
                     root.runTime = "00:00:00"
                     root.runSecs = get_sec(root.runTime)
@@ -569,17 +762,57 @@ Item {
                     root.progStrings = []
                     root.runProgVal = 0
                     root.stepIndex = 0
-                    root.isRunning = false
+                    root.isFinished = false
                     root.isHanging = false
                     stopRunB.visible = true
+                    stopRunB.enabled = true
+                    stopRunB.checked = false
                     nextRunB.visible = false
-                    WAMPHandler.stopProtocol(root.casNumber)
+                    WAMPHandler.nextProtocol(root.casNumber)
 
                     //switch index
                     stackIndex = 1
                 }
             }
 
+        }
+
+    }
+
+    Window{
+        id:runDetWin
+        y: menuRect.height + runDetWin.height/2
+        x: 100+(casNumber-1)*50
+        width: 550
+        height: 300
+        minimumWidth: 220
+        minimumHeight: 110
+        visible: false
+        flags: Qt.WindowMinimized
+        color:'silver'
+
+        Component.onCompleted: {runDetWin.close()}
+
+//        onClosing: {
+//            close.accepted = false
+//            runDetWin.width = 550
+//            runDetWin.height = 300
+//            runDetWin.hide()
+//        }
+
+        LogDisplay {
+            id:logDisplay
+            colorBG:'silver'
+            casNumber: root.casNumber
+            sampleName: root.runSampleName
+            protocolName: root.runProtocolName
+            logText: root.logText
+            onRefresh: {
+                if (!root.isLogRefreshed){
+                    WAMPHandler.refreshRunDet(root.casNumber, root.currentEnd)
+                    root.isLogRefreshed = true
+                }
+            }
         }
 
     }
@@ -592,22 +825,11 @@ Item {
         title: "Stop Cassette " + casNumber + " run?"
         modality: Qt.WindowModal
         onYes: {
-            console.log("Stop run on Cassette " + casNumber + ".")
-            stackIndex = 1
-            root.stopRun(root.casNumber)
-            root.isRunning = false
-            root.runTime = "00:00:00"
-            root.runSecs = get_sec(root.runTime)
-            root.firstRunTime = root.runTime
-            root.firstRunSecs = get_sec(root.runTime)
-            root.runSampleName = 'SampleName'
-            root.runProtocolName = 'ProtocolName'
-            root.runStep = 'Testing...'
-            root.progStrings = []
-            root.runProgVal = 0
-            root.stepIndex = 0
-            root.isRunning = false
-            root.isHanging = false
+            console.log("Stoping run on Cassette " + casNumber + ".")
+            root.runStep = 'Stopping run...'
+            runProgBar.progColor = 'darkred'
+            root.isRunning = true
+            root.isHanging = true
             stopRunB.visible = true
             nextRunB.visible = false
             WAMPHandler.stopProtocol(root.casNumber)

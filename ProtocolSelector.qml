@@ -421,15 +421,15 @@ Item {
                 ListView {
                     id: stepListView
 
-                    property var operDict: {
-                        'Incubation':{'opName':'Incubation','opTime':'00:00:00'},
-                        'Mixing':{'opName':'Mixing','opTime':'00:00:00','mixVol': '1'},
-                        'Purge':{'opName':'Purge'},
-                        'Load Formalin':{'opName':'Load Formalin','loadType':'Formalin'},
-                        'Load Dehydrant':{'opName':'Load Dehydrant','loadType':'Dehydrant'},
-                        'Load Stain':{'opName':'Load Stain','loadType':'Stain'},
-                        'Load BABB':{'opName':'Load BABB','loadType':'BABB'}
-                    }
+//                    property var operDict: {
+//                        'Incubation':{'opName':'Incubation','opTime':'00:00:00', 'mixAfterSecs':'0'},
+//                        'Mixing':{'opName':'Mixing','opTime':'00:00:00','mixVol': '1'},
+//                        'Purge':{'opName':'Purge'},
+//                        'Load Formalin':{'opName':'Load Formalin','loadType':'Formalin'},
+//                        'Load Dehydrant':{'opName':'Load Dehydrant','loadType':'Dehydrant'},
+//                        'Load Stain':{'opName':'Load Stain','loadType':'Stain'},
+//                        'Load BABB':{'opName':'Load BABB','loadType':'BABB'}
+//                    }
 
                     anchors.margins: 5
                     anchors.bottomMargin: 0

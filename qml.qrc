@@ -35,5 +35,6 @@
         <file>main.cpp</file>
         <file>DraggableItem.qml</file>
         <file>BevButton.qml</file>
+        <file>LogDisplay.qml</file>
     </qresource>
 </RCC>

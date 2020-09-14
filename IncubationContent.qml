@@ -9,16 +9,18 @@ import "./Icons/"
 Item {
     id: rootCol
 
-//    property string opName: model.opName
-//    property string opTime: model.opTime
+    //    property string opName: model.opName
+    //    property string opTime: model.opTime
     property DelegateModel modDel: null
     property int itemIndex : DelegateModel.itemsIndex
-    property bool minimize: false
+    property bool minimize: true
+//    property string mixAfterSecs: '600'
+    property string mixAfterTime: get_time(parseInt(mixAfterSecs))
 
     property string type: "step"
 
 
-    width: parent.width
+    width: 540
     height: ribbon.height + container.height
 
     Rectangle {
@@ -71,7 +73,7 @@ Item {
             y: 7
             color: "#000000"
             text: opTime
-//                text: "12:59:59"
+            //                text: "12:59:59"
             anchors.verticalCenter: toolButton.verticalCenter
             anchors.left: toolButton.right
             anchors.leftMargin: 10
@@ -86,7 +88,7 @@ Item {
             id: toolButton
             width: 180
             text: (itemIndex+1) + ". Incubation"
-//            text: "99. Incubation"
+            //            text: "99. Incubation"
             opacity: 1
             leftPadding: 6
             rightPadding: 43
@@ -101,43 +103,70 @@ Item {
 
             contentItem: Item {
                 id: element
-//                Row {
-//                    id: row
-//                    anchors.verticalCenter: parent.verticalCenter
-//                    layoutDirection: Qt.LeftToRight
-////                    anchors.horizontalCenter: parent.horizontalCenter
-//                    spacing: 5
-                    Image {
-                        source: rootCol.minimize ? "Icons/rightArrow-black.png" : "Icons/downArrow-black.png"
-                        width: 8
-                        height: 8
-                        anchors.left: parent.left
-                        anchors.leftMargin: 2
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-                    Text {
-                        text: toolButton.text
-                        anchors.left: parent.left
-                        anchors.leftMargin: 18
-                        anchors.verticalCenter: parent.verticalCenter
-                        font.weight: Font.Thin
-                        font.bold: true
-                        font.pointSize: 13
-                        horizontalAlignment: Text.AlignLeft
-                        verticalAlignment: Text.AlignVCenter
-                    }
-//                }
+                //                Row {
+                //                    id: row
+                //                    anchors.verticalCenter: parent.verticalCenter
+                //                    layoutDirection: Qt.LeftToRight
+                ////                    anchors.horizontalCenter: parent.horizontalCenter
+                //                    spacing: 5
+                Image {
+                    source: rootCol.minimize ? "Icons/rightArrow-black.png" : "Icons/downArrow-black.png"
+                    width: 8
+                    height: 8
+                    anchors.left: parent.left
+                    anchors.leftMargin: 2
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+                Text {
+                    text: toolButton.text
+                    anchors.left: parent.left
+                    anchors.leftMargin: 18
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.weight: Font.Thin
+                    font.bold: true
+                    font.pointSize: 13
+                    horizontalAlignment: Text.AlignLeft
+                    verticalAlignment: Text.AlignVCenter
+                }
+                //                }
             }
 
             background: Rectangle {
-                    opacity: toolButton.down ? 1.0 : 0.5
-                    color: toolButton.down || toolButton.checked || toolButton.highlighted ? toolButton.palette.mid : toolButton.palette.button
-                }
+                opacity: toolButton.down ? 1.0 : 0.5
+                color: toolButton.down || toolButton.checked || toolButton.highlighted ? toolButton.palette.mid : toolButton.palette.button
+            }
 
 
             onClicked: {
                 rootCol.minimize = rootCol.minimize ? false : true
             }
+        }
+
+        Text {
+            id: mixAfterTText
+            x: -6
+            y: 7
+            color: "#000000"
+            text: {
+                if(!mixSwitch.checked){
+                    return('no mixing')
+                } else if(mixAfterSecs==0){
+                    return('no mixing')
+                } else if(mixAfterSecs > 0){
+                    return('mix every '+ mixAfterSecs + 's')
+                } else{
+                    console.log(mixAfterSecs, ', value error for mixAfterSecs')
+                    mixAfterSecs = '0'
+                    return('no mixing')
+                }
+            }
+            font.capitalization: Font.MixedCase
+            font.pointSize: 12
+            anchors.left: opTimeText.right
+            font.weight: Font.Medium
+            renderType: Text.QtRendering
+            anchors.leftMargin: 15
+            anchors.verticalCenter: toolButton.verticalCenter
         }
     }
     Rectangle {
@@ -157,10 +186,10 @@ Item {
             id: runTimeLabel
             color: "#000000"
             text: "Run Time:"
-            anchors.verticalCenterOffset: -14
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 30
             anchors.left: parent.left
-            anchors.leftMargin: 25
+            anchors.leftMargin: 15
             font.pointSize: 12
             font.weight: Font.Medium
             renderType: Text.QtRendering
@@ -169,9 +198,9 @@ Item {
 
         Tumbler {
             id: hoursTumbler
-            width: 70
+            width: 60
             anchors.left: runTimeLabel.right
-            anchors.leftMargin: 18
+            anchors.leftMargin: 10
             font.pointSize: 14
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 8
@@ -199,7 +228,7 @@ Item {
 
         Tumbler {
             id: minutesTumbler
-            width: 70
+            width: 60
             anchors.left: hoursTumbler.right
             anchors.leftMargin: 0
             font.pointSize: 14
@@ -228,7 +257,7 @@ Item {
 
         Tumbler {
             id: secondsTumbler
-            width: 70
+            width: 60
             anchors.left: minutesTumbler.right
             anchors.leftMargin: 0
             font.pointSize: 14
@@ -267,9 +296,104 @@ Item {
             font.capitalization: Font.MixedCase
         }
 
+        Text {
+            id: mixAfterLabel
+            color: "#000000"
+            text: "Mix after:"
+            font.pointSize: 12
+            font.capitalization: Font.MixedCase
+            anchors.left: secondsTumbler.right
+            anchors.verticalCenterOffset: 0
+            font.weight: Font.Medium
+            renderType: Text.QtRendering
+            anchors.leftMargin: 15
+            anchors.verticalCenter: runTimeLabel.verticalCenter
+        }
+
+        Text {
+            id: mixAfterUnits
+            color: mixSwitch.checked ? "#000000" : 'red'
+            text: mixSwitch.checked ? "(min:sec)" : "No mixing"
+            anchors.left: mixAfterLabel.left
+            anchors.leftMargin: 0
+            anchors.topMargin: 2
+            font.pointSize: mixSwitch.checked ? 11 : 12
+            font.capitalization: Font.MixedCase
+            font.weight: Font.Medium
+            renderType: Text.QtRendering
+            anchors.top: mixAfterLabel.bottom
+        }
+
+        Tumbler {
+            id: minMix
+            visible: mixSwitch.checked
+            width: 60
+            anchors.topMargin: 10
+            anchors.bottomMargin: 8
+            anchors.bottom: parent.bottom
+            font.pointSize: 14
+            anchors.left: mixAfterLabel.right
+            model: 60
+            scale: 1
+            anchors.leftMargin: 10
+            rotation: 0
+            anchors.top: parent.top
+            transformOrigin: Item.Center
+
+            currentIndex: getMin(mixAfterTime)
+
+            onMovingChanged: {
+                mixAfterSecs = (minMix.currentIndex*60 + secMix.currentIndex).toString()
+//                console.log(mixAfterSecs)
+//                console.log(mixAfterTime)
+            }
+
+        }
+
+        Tumbler {
+            id: secMix
+            visible: mixSwitch.checked
+            width: 60
+            anchors.left: minMix.right
+            anchors.leftMargin: 0
+            anchors.topMargin: 10
+            anchors.bottomMargin: 8
+            anchors.bottom: parent.bottom
+            font.pointSize: 14
+            model: 60
+            anchors.top: parent.top
+            transformOrigin: Item.Center
+
+            currentIndex: getSec(mixAfterTime)
+
+            onMovingChanged: {
+                mixAfterSecs = (minMix.currentIndex*60 + secMix.currentIndex).toString()
+//                console.log(mixAfterTime)
+//                console.log(mixAfterSecs)
+            }
+        }
+
+        Switch {
+            id: mixSwitch
+            display: AbstractButton.TextBesideIcon
+            checked: true
+            anchors.top: mixAfterUnits.bottom
+            anchors.topMargin: 15
+            anchors.horizontalCenter: mixAfterLabel.horizontalCenter
+            onClicked: {
+                if(!mixSwitch.checked){
+                    mixAfterSecs = '0'
+                    minMix.currentIndex = 0
+                    secMix.currentIndex = 0
+                }
+            }
+        }
+
+
 
 
     }
+
 
     function getHour(opTime){
         var hour = opTime.substring(0,2)
@@ -296,6 +420,11 @@ Item {
         } else {
             return parseInt(sec)
         }
+    }
+
+    function get_time(runSecs){
+        var rtime = new Date(runSecs * 1000).toISOString().substr(11, 8);
+        return(rtime)
     }
 
 }

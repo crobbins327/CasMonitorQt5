@@ -41,6 +41,7 @@ DISTFILES += \
     IncubationContent_old.qml \
     LoadContent.qml \
     LoadContent_old.qml \
+    LogDisplay.qml \
     MixingContent.qml \
     MixingContent_old.qml \
     OperTypeDel.qml \
@@ -52,4 +53,5 @@ DISTFILES += \
     ProtocolSelector_old.qml \
     PurgeContent.qml \ \
     SampleStack.qml \
+    SampleStack_new.qml \
     StepListModel.qml

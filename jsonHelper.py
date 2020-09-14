@@ -38,6 +38,7 @@ class JSONHelper(QtCore.QObject):
         # validate .json object?
         # check if json object has the propper keys for all elements?
         isValid = self.validateJson(jsondata)
+        print('Is the jsondata valid: {}'.format(isValid))
         if not isValid:
             print('JSON has key value error. opName, opTime, volume, pSpeed, numCycles, and loadType are the only keys accepted.')
             return
@@ -59,6 +60,7 @@ class JSONHelper(QtCore.QObject):
         # validate .json object?
         # check if json object has the propper keys for all elements?
         isValid = self.validateJson(jsondata)
+        print('Is the jsondata valid: {}'.format(isValid))
         if not isValid:
             print('JSON has key value error. opName, opTime, volume, pSpeed, numCycles, and loadType are the only keys accepted.')
             return
@@ -72,17 +74,23 @@ class JSONHelper(QtCore.QObject):
         # Need to make this more functional with filter masks or regex
         protocolSchema = {
             "type": "array",
-            "properties": {
-                "opName": {"type": "string"},
-                "opTime": {"type": "string"},
-                "volume": {"type": "string"},
-                "pSpeed": {"type": "string"},
-                "numCycles": {"type": "string"},
-                "loadType": {"type": "string"},
-            },
+            "items": {
+                "type": "object",
+                "properties": {
+                    "opName": {"type": "string"},
+                    "opTime": {"type": "string"},
+                    "mixAfterSecs" : {"type": "string"},
+                    "volume": {"type": "string"},
+                    "pSpeed": {"type": "string"},
+                    "numCycles": {"type": "string"},
+                    "loadType": {"type": "string"},
+                },
+                "required": ["opName", "opTime","mixAfterSecs","volume","pSpeed","numCycles","loadType"]
+            }
         }
         try:
             jsonschema.validate(instance=jsonData, schema=protocolSchema)
+            return True
         except jsonschema.exceptions.ValidationError as err:
             return False
-        return True
+        

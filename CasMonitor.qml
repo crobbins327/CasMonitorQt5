@@ -21,17 +21,26 @@ ApplicationWindow {
     property bool guiJoined: false
     property string waitPopupTxt: 'Connecting....'
     signal exit()
-    signal reJoined()
+    signal reGUIJoined()
     signal reDCController()
+    signal reJoinController()
+    signal rePopupTxt(string msg)
 
     Component.onCompleted: {
-        waitPopup.open()
-        WAMPHandler.joined.connect(reJoined)
+        WAMPHandler.guiJoined.connect(reGUIJoined)
         WAMPHandler.controllerDCed.connect(reDCController)
+        WAMPHandler.controllerJoined.connect(reJoinController)
+        WAMPHandler.toWaitPopup.connect(rePopupTxt)
+        waitPopup.open()
     }
     Connections {
         target: rootApWin
-        function onReJoined() {
+        function onRePopupTxt(msg){
+            rootApWin.waitPopupTxt = msg
+
+        }
+        function onReGUIJoined() {
+            rootApWin.waitPopupTxt = 'GUI and controller are connected!'
             rootApWin.isDisconnected = false
             rootApWin.guiJoined = true
             waitPopup.close()
@@ -40,6 +49,11 @@ ApplicationWindow {
             rootApWin.isDisconnected = true
             rootApWin.waitPopupTxt = 'Controller disconnected.  Waiting on reconnection...'
             waitPopup.open()
+        }
+        function onReJoinController() {
+            rootApWin.isDisconnected = false
+            rootApWin.waitPopupTxt = 'Controller joined!'
+            waitPopup.close()
         }
     }
 
@@ -72,7 +86,7 @@ ApplicationWindow {
         opacity: 0.8
 
         background: Rectangle {
-                implicitWidth: 300
+                implicitWidth: 500
                 implicitHeight: 150
                 color: 'silver'
 //                border.color: "#444"
@@ -84,6 +98,7 @@ ApplicationWindow {
             BusyIndicator {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+                Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 running: true
             }
             Text {
@@ -190,6 +205,12 @@ ApplicationWindow {
                             y: settingsB.height+3
 
                             MenuItem {
+                                text: "Goto Protocol Editor"
+                                onClicked: {
+                                    mainStack.push("ProtocolEditor.qml", {casNumber: 0})
+                                }
+                            }
+                            MenuItem {
                                 text: "Set Default Protocol"
                                 onClicked: {
                                     defProtSelector.open()
@@ -205,12 +226,6 @@ ApplicationWindow {
                                         visMode = 'Windowed'
                                         otherMode = 'FullScreen'
                                     }
-                                }
-                            }
-                            MenuItem {
-                                text: "Test Busy"
-                                onClicked: {
-                                    waitPopup.open()
                                 }
                             }
                             MenuItem {
@@ -299,17 +314,7 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
 //                    stackIndex: 1
 
-                    onDefaultRun: {
-                        console.log("Default run: ", casNumber)
-                        stackIndex = 2
-                        //Check for the default protocol and main directory for saving logs (from settings)
-                        //If empty, dialog box error to choose default protocol in settings menu
-                        //Else, send the default protocol information and signal to startRun
-                    }
-
-                    onStopRun: {}
-
-                    onRunDetails: {console.log("Run details: ", casNumber)}
+//                    onRunDetails: {console.log("Run details: ", casNumber)}
 
 
                 }
@@ -323,17 +328,8 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
 //                    stackIndex: 1
 
-                    onDefaultRun: {
-                        console.log("Default run: ", casNumber)
-                        stackIndex = 2
-                        //Check for the default protocol and main directory for saving logs (from settings)
-                        //If empty, dialog box error to choose default protocol in settings menu
-                        //Else, send the default protocol information and signal to startRun
-                    }
 
-                    onStopRun: {}
-
-                    onRunDetails: {console.log("Run details: ", casNumber)}
+//                    onRunDetails: {console.log("Run details: ", casNumber)}
 
 
                 }
@@ -347,17 +343,8 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignLeft | Qt.AlignTop
 //                    stackIndex: 1
 
-                    onDefaultRun: {
-                        console.log("Default run: ", casNumber)
-                        stackIndex = 2
-                        //Check for the default protocol and main directory for saving logs (from settings)
-                        //If empty, dialog box error to choose default protocol in settings menu
-                        //Else, send the default protocol information and signal to startRun
-                    }
 
-                    onStopRun: {}
-
-                    onRunDetails: {console.log("Run details: ", casNumber)}
+//                    onRunDetails: {console.log("Run details: ", casNumber)}
 
 
                 }
@@ -384,17 +371,8 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
 //                    stackIndex: 1
 
-                    onDefaultRun: {
-                        console.log("Default run: ", casNumber)
-                        stackIndex = 2
-                        //Check for the default protocol and main directory for saving logs (from settings)
-                        //If empty, dialog box error to choose default protocol in settings menu
-                        //Else, send the default protocol information and signal to startRun
-                    }
 
-                    onStopRun: {}
-
-                    onRunDetails: {console.log("Run details: ", casNumber)}
+//                    onRunDetails: {console.log("Run details: ", casNumber)}
 
 
                 }
@@ -408,17 +386,8 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
 //                    stackIndex: 1
 
-                    onDefaultRun: {
-                        console.log("Default run: ", casNumber)
-                        stackIndex = 2
-                        //Check for the default protocol and main directory for saving logs (from settings)
-                        //If empty, dialog box error to choose default protocol in settings menu
-                        //Else, send the default protocol information and signal to startRun
-                    }
 
-                    onStopRun: {}
-
-                    onRunDetails: {console.log("Run details: ", casNumber)}
+//                    onRunDetails: {console.log("Run details: ", casNumber)}
 
 
                 }
@@ -432,17 +401,8 @@ ApplicationWindow {
                     Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
 //                    stackIndex: 1
 
-                    onDefaultRun: {
-                        console.log("Default run: ", casNumber)
-                        stackIndex = 2
-                        //Check for the default protocol and main directory for saving logs (from settings)
-                        //If empty, dialog box error to choose default protocol in settings menu
-                        //Else, send the default protocol information and signal to startRun
-                    }
 
-                    onStopRun: {}
-
-                    onRunDetails: {console.log("Run details: ", casNumber)}
+//                    onRunDetails: {console.log("Run details: ", casNumber)}
 
 
                 }
