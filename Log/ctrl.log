@@ -13643,3 +13643,665 @@ Name: casE, dtype: object
 2020-09-13 04:06:59 ctrl.casE    INFO     Updating progress on casE...
 2020-09-13 04:07:11 ctrl         WARNING  Disconnected, ['casB', 'casC', 'casE', 'casA', 'casF']
 2020-09-13 04:07:11 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 12:01:36 ctrl         INFO     9000
+2020-09-14 12:01:36 ctrl         INFO     Loading last controller state...
+2020-09-14 12:01:58 ctrl         WARNING  Disconnected, []
+2020-09-14 12:01:58 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 12:02:05 ctrl         INFO     9000
+2020-09-14 12:02:05 ctrl         INFO     Loading last controller state...
+2020-09-14 12:02:05 ctrl         INFO     Registered to all procedures!
+2020-09-14 12:02:05 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 12:02:05 ctrl         INFO     No dcTask file was found, starting controller in null state.
+2020-09-14 12:02:15 ctrl.casA    INFO     Engage CasA...
+2020-09-14 12:06:20 ctrl         WARNING  GUI is disconnected!
+2020-09-14 12:06:20 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-14 12:06:34 ctrl.casA    INFO     
+
+
+
+2020-09-14 12:06:34 ctrl.casA    INFO     Starting Run!
+sampleName                                         ddada
+protocolName                                       bluah
+protocolPath    /home/pi/CasMonitor/Protocols/bluah.json
+startlog                                            2374
+Name: casA, dtype: object
+2020-09-14 12:06:34 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:06:34 ctrl.casA    INFO     ['casA']
+2020-09-14 12:06:34 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:06:34 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=180,mixAfter=30)']
+2020-09-14 12:06:34 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:06:43 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:06:44 ctrl         DEBUG    CasA Incubation Seconds remaining: 169
+2020-09-14 12:06:54 ctrl         DEBUG    CasA Incubation Seconds remaining: 159
+2020-09-14 12:06:55 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:07:04 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:07:07 ctrl         DEBUG    CasA Incubation Seconds remaining: 147
+2020-09-14 12:07:07 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:07:14 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:07:17 ctrl         DEBUG    CasA Incubation Seconds remaining: 137
+2020-09-14 12:07:17 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:07:24 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:07:29 ctrl         DEBUG    CasA Incubation Seconds remaining: 125
+2020-09-14 12:07:39 ctrl         DEBUG    CasA Incubation Seconds remaining: 115
+2020-09-14 12:07:39 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:07:39 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:07:44 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:07:51 ctrl         DEBUG    CasA Incubation Seconds remaining: 103
+2020-09-14 12:08:01 ctrl         DEBUG    CasA Incubation Seconds remaining: 93
+2020-09-14 12:08:01 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:08:04 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:08:13 ctrl         DEBUG    CasA Incubation Seconds remaining: 81
+2020-09-14 12:08:13 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:08:14 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:08:23 ctrl         DEBUG    CasA Incubation Seconds remaining: 71
+2020-09-14 12:08:23 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:08:25 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:08:35 ctrl         DEBUG    CasA Incubation Seconds remaining: 59
+2020-09-14 12:08:35 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:08:35 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:08:45 ctrl         DEBUG    CasA Incubation Seconds remaining: 49
+2020-09-14 12:08:45 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:08:47 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:08:47 ctrl.casA    INFO     casA: Evaluating step 1
+2020-09-14 12:08:47 ctrl.casA    INFO     ['self.mix(casL="A", numCycles=9, volume=7.0)']
+2020-09-14 12:08:47 ctrl.casA    INFO     MIXING CasA, 9 TIMES, 7.0 VOLUME
+2020-09-14 12:08:47 ctrl.casA    INFO     Mixing A, #1 of 9 cycles...
+2020-09-14 12:08:49 ctrl.casA    INFO     Mixing A, #2 of 9 cycles...
+2020-09-14 12:08:51 ctrl.casA    INFO     Mixing A, #3 of 9 cycles...
+2020-09-14 12:08:53 ctrl.casA    INFO     Mixing A, #4 of 9 cycles...
+2020-09-14 12:08:55 ctrl.casA    INFO     Mixing A, #5 of 9 cycles...
+2020-09-14 12:08:57 ctrl.casA    INFO     Mixing A, #6 of 9 cycles...
+2020-09-14 12:08:59 ctrl.casA    INFO     Mixing A, #7 of 9 cycles...
+2020-09-14 12:09:01 ctrl.casA    INFO     Mixing A, #8 of 9 cycles...
+2020-09-14 12:09:03 ctrl.casA    INFO     Mixing A, #9 of 9 cycles...
+2020-09-14 12:09:05 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:09:05 ctrl.casB    INFO     Engage CasB...
+2020-09-14 12:09:06 ctrl.casC    INFO     Engage CasC...
+2020-09-14 12:09:07 ctrl.casA    INFO     casA: Evaluating step 2
+2020-09-14 12:09:07 ctrl.casA    INFO     ['self.purge(casL="A",deadvol=4.0)']
+2020-09-14 12:09:07 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:09:08 ctrl.casA    INFO     PURGING CHAMBER, CasA
+2020-09-14 12:09:13 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:09:13 ctrl.casA    INFO     casA: Evaluating step 3
+2020-09-14 12:09:13 ctrl.casA    INFO     ['self.loadReagent(casL="A",loadstr="Formalin",reagent="formalin",vol=3.0,speed=7,deadvol=4.0)']
+2020-09-14 12:09:13 ctrl.casA    INFO     PURGING CHAMBER, CasA
+2020-09-14 12:09:17 ctrl.casB    INFO     
+
+
+
+2020-09-14 12:09:17 ctrl.casB    INFO     Starting Run!
+sampleName                                               aaaaaa
+protocolName                                       testAll Fast
+protocolPath    /home/pi/CasMonitor/Protocols/testAll Fast.json
+startlog                                                   1535
+Name: casB, dtype: object
+2020-09-14 12:09:17 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:09:17 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-14 12:09:17 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:09:17 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=5,mixAfter=0)']
+2020-09-14 12:09:17 ctrl.casB    INFO     INCUBATING CasB
+2020-09-14 12:09:17 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:09:17 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-14 12:09:17 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 12:09:17 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:09:17 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:09:17 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:09:18 ctrl.casA    INFO     ADDING Formalin TO CasA
+2020-09-14 12:09:21 ctrl.casC    INFO     
+
+
+
+2020-09-14 12:09:21 ctrl.casC    INFO     Starting Run!
+sampleName                                               ssssss
+protocolName                                       testAll Fast
+protocolPath    /home/pi/CasMonitor/Protocols/testAll Fast.json
+startlog                                                   1007
+Name: casC, dtype: object
+2020-09-14 12:09:21 ctrl.casC    INFO     Starting task on casC
+2020-09-14 12:09:21 ctrl.casC    INFO     ['casB', 'casA', 'casC']
+2020-09-14 12:09:21 ctrl.casC    INFO     casC: Evaluating step 0
+2020-09-14 12:09:21 ctrl.casC    INFO     ['self.incubate(casL="C",incTime=5,mixAfter=0)']
+2020-09-14 12:09:21 ctrl.casC    INFO     INCUBATING CasC
+2020-09-14 12:09:21 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:09:21 ctrl.casC    INFO     casC: Evaluating step 1
+2020-09-14 12:09:21 ctrl.casC    INFO     ['self.purge(casL="C",deadvol=4.0)']
+2020-09-14 12:09:21 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:09:22 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:09:22 ctrl.casB    INFO     casB: Evaluating step 2
+2020-09-14 12:09:22 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-14 12:09:22 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-14 12:09:22 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-14 12:09:24 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-14 12:09:26 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-14 12:09:28 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:09:28 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:09:28 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:09:28 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2020-09-14 12:09:28 ctrl.casB    INFO     ['casB', 'casA', 'casC']
+2020-09-14 12:09:28 ctrl.casB    INFO     SHUTDOWN CasB
+2020-09-14 12:09:28 ctrl.casA    INFO     casA: Evaluating step 4
+2020-09-14 12:09:28 ctrl.casA    INFO     ['self.loadReagent(casL="A",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:09:28 ctrl.casC    INFO     casC: Evaluating step 2
+2020-09-14 12:09:28 ctrl.casC    INFO     ['self.mix(casL="C", numCycles=3, volume=1.0)']
+2020-09-14 12:09:28 ctrl.casA    INFO     PURGING CHAMBER, CasA
+2020-09-14 12:09:28 ctrl.casC    INFO     MIXING CasC, 3 TIMES, 1.0 VOLUME
+2020-09-14 12:09:28 ctrl.casC    INFO     Mixing C, #1 of 3 cycles...
+2020-09-14 12:09:30 ctrl.casC    INFO     Mixing C, #2 of 3 cycles...
+2020-09-14 12:09:32 ctrl.casC    INFO     Mixing C, #3 of 3 cycles...
+2020-09-14 12:09:34 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:09:34 ctrl.casA    INFO     ADDING Dehydrant TO CasA
+2020-09-14 12:09:34 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:09:34 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:09:34 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:09:34 ctrl.casC    INFO     casC: Evaluating step 3
+2020-09-14 12:09:34 ctrl.casC    INFO     ['self.loadReagent(casL="C",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:09:34 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:09:39 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:09:39 ctrl.casA    INFO     casA: Evaluating step 5
+2020-09-14 12:09:39 ctrl.casA    INFO     ['self.loadReagent(casL="A",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:09:39 ctrl.casC    INFO     ADDING Formalin TO CasC
+2020-09-14 12:09:39 ctrl.casA    INFO     PURGING CHAMBER, CasA
+2020-09-14 12:09:44 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:09:44 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:09:44 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:09:44 ctrl.casA    INFO     ADDING Stain TO CasA
+2020-09-14 12:09:44 ctrl.casC    INFO     casC: Evaluating step 4
+2020-09-14 12:09:44 ctrl.casC    INFO     ['self.loadReagent(casL="C",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:09:45 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:09:47 ctrl.casC    INFO     Trying to cancel casC, getting active tasks...
+2020-09-14 12:09:47 ctrl.casC    INFO     ['casA', 'casC']
+2020-09-14 12:09:47 ctrl.casC    INFO     SHUTDOWN CasC
+2020-09-14 12:09:49 ctrl.casA    INFO     Finished casA task!
+2020-09-14 12:09:49 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:09:54 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:09:55 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:10:15 ctrl         WARNING  GUI is disconnected!
+2020-09-14 12:10:15 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-14 12:10:39 ctrl         WARNING  GUI is disconnected!
+2020-09-14 12:10:39 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-14 12:13:12 ctrl.casB    INFO     
+
+
+
+2020-09-14 12:13:12 ctrl.casB    INFO     Starting Run!
+sampleName                                                 aaaaa
+protocolName                                       lots of loads
+protocolPath    /home/pi/CasMonitor/Protocols/lots of loads.json
+startlog                                                    1565
+Name: casB, dtype: object
+2020-09-14 12:13:12 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:13:12 ctrl.casB    INFO     ['casB']
+2020-09-14 12:13:12 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:13:12 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 12:13:12 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:13 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:13:17 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:17 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-14 12:13:17 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-14 12:13:18 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-14 12:13:18 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-14 12:13:20 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-14 12:13:22 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-14 12:13:24 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:24 ctrl.casB    INFO     casB: Evaluating step 2
+2020-09-14 12:13:24 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 12:13:24 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:24 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:13:29 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:29 ctrl.casB    INFO     casB: Evaluating step 3
+2020-09-14 12:13:29 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:13:29 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:33 ctrl.casC    INFO     
+
+
+
+2020-09-14 12:13:33 ctrl.casC    INFO     Starting Run!
+sampleName                                      asdasdas
+protocolName                                       bluah
+protocolPath    /home/pi/CasMonitor/Protocols/bluah.json
+startlog                                            1045
+Name: casC, dtype: object
+2020-09-14 12:13:33 ctrl.casC    INFO     Starting task on casC
+2020-09-14 12:13:33 ctrl.casC    INFO     ['casB', 'casC']
+2020-09-14 12:13:33 ctrl.casC    INFO     casC: Evaluating step 0
+2020-09-14 12:13:33 ctrl.casC    INFO     ['self.incubate(casL="C",incTime=180,mixAfter=30)']
+2020-09-14 12:13:33 ctrl.casC    INFO     INCUBATING CasC
+2020-09-14 12:13:34 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:13:35 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:13:35 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:13:39 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:39 ctrl.casB    INFO     casB: Evaluating step 4
+2020-09-14 12:13:39 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 12:13:39 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:43 ctrl         DEBUG    CasC Incubation Seconds remaining: 169
+2020-09-14 12:13:44 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:44 ctrl.casB    INFO     casB: Evaluating step 5
+2020-09-14 12:13:44 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:13:45 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:46 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:13:50 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 12:13:53 ctrl         DEBUG    CasC Incubation Seconds remaining: 159
+2020-09-14 12:13:53 ctrl.casC    INFO     Mixing CasC...
+2020-09-14 12:13:55 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:55 ctrl.casB    INFO     casB: Evaluating step 6
+2020-09-14 12:13:55 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:13:55 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:56 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:13:56 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:14:00 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 12:14:05 ctrl         DEBUG    CasC Incubation Seconds remaining: 147
+2020-09-14 12:14:05 ctrl.casC    INFO     CasC publishing secs-remaining!
+2020-09-14 12:14:05 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:05 ctrl.casB    INFO     casB: Evaluating step 7
+2020-09-14 12:14:05 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:05 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:06 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:14:06 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:14:10 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:14:15 ctrl         DEBUG    CasC Incubation Seconds remaining: 137
+2020-09-14 12:14:15 ctrl.casC    INFO     Mixing CasC...
+2020-09-14 12:14:17 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:17 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:14:17 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:14:17 ctrl.casB    INFO     casB: Evaluating step 8
+2020-09-14 12:14:17 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:17 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:14:27 ctrl         DEBUG    CasC Incubation Seconds remaining: 125
+2020-09-14 12:14:27 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:14:27 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:27 ctrl.casB    INFO     casB: Evaluating step 9
+2020-09-14 12:14:27 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:27 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:32 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:14:37 ctrl         DEBUG    CasC Incubation Seconds remaining: 115
+2020-09-14 12:14:37 ctrl.casC    INFO     CasC publishing secs-remaining!
+2020-09-14 12:14:37 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:14:37 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:14:37 ctrl.casC    INFO     Mixing CasC...
+2020-09-14 12:14:39 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:39 ctrl.casB    INFO     casB: Evaluating step 10
+2020-09-14 12:14:39 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:39 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:44 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 12:14:47 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:14:47 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:14:49 ctrl         DEBUG    CasC Incubation Seconds remaining: 103
+2020-09-14 12:14:49 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:49 ctrl.casB    INFO     casB: Evaluating step 11
+2020-09-14 12:14:49 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:50 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:55 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:14:57 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:14:59 ctrl         DEBUG    CasC Incubation Seconds remaining: 93
+2020-09-14 12:14:59 ctrl.casC    INFO     Mixing CasC...
+2020-09-14 12:15:01 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:15:01 ctrl.casB    INFO     casB: Evaluating step 12
+2020-09-14 12:15:01 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:15:02 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:15:07 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 12:15:08 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:15:08 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:15:11 ctrl         DEBUG    CasC Incubation Seconds remaining: 81
+2020-09-14 12:15:11 ctrl.casC    INFO     CasC publishing secs-remaining!
+2020-09-14 12:15:12 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:15:12 ctrl.casB    INFO     casB: Evaluating step 13
+2020-09-14 12:15:12 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:15:12 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:15:17 ctrl.casB    INFO     ADDING Stain TO CasB
+2020-09-14 12:15:18 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:15:18 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:15:21 ctrl         DEBUG    CasC Incubation Seconds remaining: 71
+2020-09-14 12:15:21 ctrl.casC    INFO     Mixing CasC...
+2020-09-14 12:15:23 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:15:24 ctrl.casB    INFO     casB: Evaluating step 14
+2020-09-14 12:15:24 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="BABB",reagent="babb",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:15:24 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:15:28 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:15:28 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:15:29 ctrl.casB    INFO     ADDING BABB TO CasB
+2020-09-14 12:15:33 ctrl         DEBUG    CasC Incubation Seconds remaining: 59
+2020-09-14 12:15:33 ctrl.casC    INFO     CasC publishing secs-remaining!
+2020-09-14 12:15:34 ctrl.casB    INFO     Finished casB task!
+2020-09-14 12:15:34 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:15:38 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:15:38 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:15:43 ctrl         DEBUG    CasC Incubation Seconds remaining: 49
+2020-09-14 12:15:44 ctrl.casC    INFO     Mixing CasC...
+2020-09-14 12:15:46 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:15:46 ctrl.casC    INFO     casC: Evaluating step 1
+2020-09-14 12:15:46 ctrl.casC    INFO     ['self.mix(casL="C", numCycles=9, volume=7.0)']
+2020-09-14 12:15:46 ctrl.casC    INFO     MIXING CasC, 9 TIMES, 7.0 VOLUME
+2020-09-14 12:15:46 ctrl.casC    INFO     Mixing C, #1 of 9 cycles...
+2020-09-14 12:15:48 ctrl.casC    INFO     Mixing C, #2 of 9 cycles...
+2020-09-14 12:15:50 ctrl.casC    INFO     Mixing C, #3 of 9 cycles...
+2020-09-14 12:15:52 ctrl.casC    INFO     Mixing C, #4 of 9 cycles...
+2020-09-14 12:15:54 ctrl.casC    INFO     Mixing C, #5 of 9 cycles...
+2020-09-14 12:15:56 ctrl.casC    INFO     Mixing C, #6 of 9 cycles...
+2020-09-14 12:15:58 ctrl.casC    INFO     Mixing C, #7 of 9 cycles...
+2020-09-14 12:16:00 ctrl.casC    INFO     Mixing C, #8 of 9 cycles...
+2020-09-14 12:16:02 ctrl.casC    INFO     Mixing C, #9 of 9 cycles...
+2020-09-14 12:16:04 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:16:04 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:16:04 ctrl.casC    INFO     casC: Evaluating step 2
+2020-09-14 12:16:04 ctrl.casC    INFO     ['self.purge(casL="C",deadvol=4.0)']
+2020-09-14 12:16:04 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:16:09 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:16:09 ctrl.casC    INFO     casC: Evaluating step 3
+2020-09-14 12:16:09 ctrl.casC    INFO     ['self.loadReagent(casL="C",loadstr="Formalin",reagent="formalin",vol=3.0,speed=7,deadvol=4.0)']
+2020-09-14 12:16:09 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:16:14 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:16:14 ctrl.casC    INFO     ADDING Formalin TO CasC
+2020-09-14 12:16:19 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:16:19 ctrl.casC    INFO     casC: Evaluating step 4
+2020-09-14 12:16:19 ctrl.casC    INFO     ['self.loadReagent(casL="C",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:16:19 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:16:24 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:16:24 ctrl.casC    INFO     ADDING Dehydrant TO CasC
+2020-09-14 12:16:29 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:16:29 ctrl.casC    INFO     casC: Evaluating step 5
+2020-09-14 12:16:29 ctrl.casC    INFO     ['self.loadReagent(casL="C",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:16:30 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:16:34 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:16:35 ctrl.casC    INFO     ADDING Stain TO CasC
+2020-09-14 12:16:40 ctrl.casC    INFO     Finished casC task!
+2020-09-14 12:16:40 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:16:44 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:22:55 ctrl         WARNING  GUI is disconnected!
+2020-09-14 12:22:55 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-14 12:31:32 ctrl         WARNING  GUI is disconnected!
+2020-09-14 12:31:32 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-14 12:31:56 ctrl         WARNING  GUI is disconnected!
+2020-09-14 12:31:56 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-14 12:33:55 ctrl.casA    INFO     
+
+
+
+2020-09-14 12:33:55 ctrl.casA    INFO     Starting Run!
+sampleName                                          asdasd
+protocolName                                       qweqweq
+protocolPath    /home/pi/CasMonitor/Protocols/qweqweq.json
+startlog                                              2433
+Name: casA, dtype: object
+2020-09-14 12:33:55 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:33:55 ctrl.casA    INFO     ['casA']
+2020-09-14 12:33:55 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:33:55 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=3780,mixAfter=30)']
+2020-09-14 12:33:55 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:33:55 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:33:59 ctrl.casB    INFO     
+
+
+
+2020-09-14 12:33:59 ctrl.casB    INFO     Starting Run!
+sampleName                                         sssss
+protocolName                                       bluah
+protocolPath    /home/pi/CasMonitor/Protocols/bluah.json
+startlog                                            1652
+Name: casB, dtype: object
+2020-09-14 12:33:59 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:33:59 ctrl.casB    INFO     ['casA', 'casB']
+2020-09-14 12:33:59 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:33:59 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=180,mixAfter=30)']
+2020-09-14 12:33:59 ctrl.casB    INFO     INCUBATING CasB
+2020-09-14 12:34:05 ctrl         DEBUG    CasA Incubation Seconds remaining: 3769
+2020-09-14 12:34:05 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:34:07 ctrl.casC    INFO     
+
+
+
+2020-09-14 12:34:07 ctrl.casC    INFO     Starting Run!
+sampleName                                               gdfgdsf
+protocolName                                       lots of loads
+protocolPath    /home/pi/CasMonitor/Protocols/lots of loads.json
+startlog                                                    1104
+Name: casC, dtype: object
+2020-09-14 12:34:07 ctrl.casC    INFO     Starting task on casC
+2020-09-14 12:34:07 ctrl.casC    INFO     ['casA', 'casC', 'casB']
+2020-09-14 12:34:07 ctrl.casC    INFO     casC: Evaluating step 0
+2020-09-14 12:34:07 ctrl.casC    INFO     ['self.purge(casL="C",deadvol=4.0)']
+2020-09-14 12:34:07 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:34:09 ctrl         DEBUG    CasB Incubation Seconds remaining: 169
+2020-09-14 12:34:11 ctrl         WARNING  Disconnected, ['casA', 'casC', 'casB']
+2020-09-14 12:34:11 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 12:34:19 ctrl         INFO     9000
+2020-09-14 12:34:19 ctrl         INFO     Loading last controller state...
+2020-09-14 12:34:19 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 12:34:19 ctrl         DEBUG    
+       status stepNum secsRemaining  ...     protocolName startlog endlog
+casA  running       1          3769  ...          qweqweq     2433   2444
+casB  running       1           169  ...            bluah     1652   1663
+casC  running       1           300  ...    lots of loads     1104   1104
+casD      NaN     NaN           NaN  ...              NaN      NaN    NaN
+casE      NaN     NaN           NaN  ...              NaN      NaN    NaN
+casF      NaN     NaN           NaN  ...              NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 12:34:19 ctrl         INFO     Registered to all procedures!
+2020-09-14 12:34:19 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 12:34:19 ctrl         INFO     Repopulating controller tasks from contoller state...
+2020-09-14 12:34:19 ctrl         DEBUG    casA
+2020-09-14 12:34:19 ctrl         INFO     casA, Restarting run!
+2020-09-14 12:34:19 ctrl         DEBUG    casB
+2020-09-14 12:34:19 ctrl         INFO     casB, Restarting run!
+2020-09-14 12:34:19 ctrl         DEBUG    casC
+2020-09-14 12:34:19 ctrl         INFO     casC, Restarting run!
+2020-09-14 12:34:19 ctrl         DEBUG    casD
+2020-09-14 12:34:19 ctrl         DEBUG    casE
+2020-09-14 12:34:19 ctrl         DEBUG    casF
+2020-09-14 12:34:19 ctrl         INFO     Restore connection with logger(s)......NOT IMPLEMENTED YET...
+2020-09-14 12:34:19 ctrl         INFO     Sending tasks to GUI to repopulate it...
+2020-09-14 12:34:19 ctrl.casA    WARNING  Restarting Run...
+sampleName                                          asdasd
+protocolName                                       qweqweq
+protocolPath    /home/pi/CasMonitor/Protocols/qweqweq.json
+Name: casA, dtype: object
+2020-09-14 12:34:19 ctrl.casA    INFO     casA: Restarting at step # 1...
+2020-09-14 12:34:19 ctrl.casA    INFO     casA: Restarting incubate timer
+2020-09-14 12:34:19 ctrl.casA    DEBUG    ['casL="A"', 'incTime=3780', 'mixAfter=30']
+2020-09-14 12:34:19 ctrl.casA    DEBUG    1
+2020-09-14 12:34:19 ctrl.casA    DEBUG    self.incubate(casL="A",incTime=3769,mixAfter=30)
+2020-09-14 12:34:19 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:34:19 ctrl.casA    INFO     ['casA']
+2020-09-14 12:34:19 ctrl.casB    WARNING  Restarting Run...
+sampleName                                         sssss
+protocolName                                       bluah
+protocolPath    /home/pi/CasMonitor/Protocols/bluah.json
+Name: casB, dtype: object
+2020-09-14 12:34:19 ctrl.casB    INFO     casB: Restarting at step # 1...
+2020-09-14 12:34:19 ctrl.casB    INFO     casB: Restarting incubate timer
+2020-09-14 12:34:19 ctrl.casB    DEBUG    ['casL="B"', 'incTime=180', 'mixAfter=30']
+2020-09-14 12:34:19 ctrl.casB    DEBUG    1
+2020-09-14 12:34:19 ctrl.casB    DEBUG    self.incubate(casL="B",incTime=169,mixAfter=30)
+2020-09-14 12:34:19 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:34:19 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-14 12:34:19 ctrl.casC    WARNING  Restarting Run...
+sampleName                                               gdfgdsf
+protocolName                                       lots of loads
+protocolPath    /home/pi/CasMonitor/Protocols/lots of loads.json
+Name: casC, dtype: object
+2020-09-14 12:34:19 ctrl.casC    INFO     casC: Restarting at step # 1...
+2020-09-14 12:34:19 ctrl.casC    INFO     Starting task on casC
+2020-09-14 12:34:19 ctrl.casC    INFO     ['casC', 'casB', 'casA']
+2020-09-14 12:34:19 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:34:19 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=3769,mixAfter=30)']
+2020-09-14 12:34:19 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:34:19 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:34:19 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=169,mixAfter=30)']
+2020-09-14 12:34:19 ctrl.casB    INFO     INCUBATING CasB
+2020-09-14 12:34:19 ctrl.casC    INFO     casC: Evaluating step 0
+2020-09-14 12:34:19 ctrl.casC    INFO     ['self.purge(casL="C",deadvol=4.0)']
+2020-09-14 12:34:19 ctrl         INFO     GUI is connected!
+2020-09-14 12:34:19 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:34:19 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:34:19 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:34:19 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:34:24 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:34:24 ctrl.casC    INFO     casC: Evaluating step 1
+2020-09-14 12:34:24 ctrl.casC    INFO     ['self.mix(casL="C", numCycles=3, volume=1.0)']
+2020-09-14 12:34:25 ctrl.casC    INFO     MIXING CasC, 3 TIMES, 1.0 VOLUME
+2020-09-14 12:34:25 ctrl.casC    INFO     Mixing C, #1 of 3 cycles...
+2020-09-14 12:34:27 ctrl.casC    INFO     Mixing C, #2 of 3 cycles...
+2020-09-14 12:34:29 ctrl.casC    INFO     Mixing C, #3 of 3 cycles...
+2020-09-14 12:34:31 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:34:31 ctrl         DEBUG    CasA Incubation Seconds remaining: 3757
+2020-09-14 12:34:31 ctrl         DEBUG    CasB Incubation Seconds remaining: 157
+2020-09-14 12:34:31 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:34:31 ctrl.casC    INFO     casC: Evaluating step 2
+2020-09-14 12:34:31 ctrl.casC    INFO     ['self.purge(casL="C",deadvol=4.0)']
+2020-09-14 12:34:31 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:34:36 ctrl.casC    INFO     Updating progress on casC...
+2020-09-14 12:34:36 ctrl.casC    INFO     casC: Evaluating step 3
+2020-09-14 12:34:36 ctrl.casC    INFO     ['self.loadReagent(casL="C",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:34:36 ctrl.casC    INFO     PURGING CHAMBER, CasC
+2020-09-14 12:34:41 ctrl         DEBUG    CasA Incubation Seconds remaining: 3747
+2020-09-14 12:34:41 ctrl         DEBUG    CasB Incubation Seconds remaining: 147
+2020-09-14 12:34:41 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:34:41 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:34:43 ctrl.casB    INFO     Mixing CasB...
+2020-09-14 12:34:45 ctrl.casC    INFO     ADDING Formalin TO CasC
+2020-09-14 12:34:48 ctrl.casC    INFO     Trying to cancel casC, getting active tasks...
+2020-09-14 12:34:48 ctrl.casC    INFO     ['casC', 'casB', 'casA']
+2020-09-14 12:34:48 ctrl.casC    INFO     SHUTDOWN CasC
+2020-09-14 12:34:51 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 12:34:51 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:34:51 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:34:51 ctrl         WARNING  Disconnected, ['casC', 'casB', 'casA']
+2020-09-14 12:34:51 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 12:35:01 ctrl         INFO     9000
+2020-09-14 12:35:01 ctrl         INFO     Loading last controller state...
+2020-09-14 12:35:01 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 12:35:01 ctrl         DEBUG    
+        status stepNum secsRemaining  ...     protocolName startlog endlog
+casA   running       1          3747  ...          qweqweq     2433   2460
+casB   running       1           147  ...            bluah     1652   1679
+casC  stopping       4            90  ...    lots of loads     1104   1145
+casD       NaN     NaN           NaN  ...              NaN      NaN    NaN
+casE       NaN     NaN           NaN  ...              NaN      NaN    NaN
+casF       NaN     NaN           NaN  ...              NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 12:35:01 ctrl         INFO     Registered to all procedures!
+2020-09-14 12:35:01 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 12:35:01 ctrl         INFO     Repopulating controller tasks from contoller state...
+2020-09-14 12:35:01 ctrl         DEBUG    casA
+2020-09-14 12:35:01 ctrl         INFO     casA, Restarting run!
+2020-09-14 12:35:01 ctrl         DEBUG    casB
+2020-09-14 12:35:01 ctrl         INFO     casB, Restarting run!
+2020-09-14 12:35:01 ctrl         DEBUG    casC
+2020-09-14 12:35:01 ctrl.casC    INFO     Engage CasC...
+2020-09-14 12:35:02 ctrl         DEBUG    casD
+2020-09-14 12:35:02 ctrl         DEBUG    casE
+2020-09-14 12:35:02 ctrl         DEBUG    casF
+2020-09-14 12:35:02 ctrl         INFO     Restore connection with logger(s)......NOT IMPLEMENTED YET...
+2020-09-14 12:35:02 ctrl         INFO     Sending tasks to GUI to repopulate it...
+2020-09-14 12:35:02 ctrl.casA    WARNING  Restarting Run...
+sampleName                                          asdasd
+protocolName                                       qweqweq
+protocolPath    /home/pi/CasMonitor/Protocols/qweqweq.json
+Name: casA, dtype: object
+2020-09-14 12:35:02 ctrl.casA    INFO     casA: Restarting at step # 1...
+2020-09-14 12:35:02 ctrl.casA    INFO     casA: Restarting incubate timer
+2020-09-14 12:35:02 ctrl.casA    DEBUG    ['casL="A"', 'incTime=3769', 'mixAfter=30']
+2020-09-14 12:35:02 ctrl.casA    DEBUG    1
+2020-09-14 12:35:02 ctrl.casA    DEBUG    self.incubate(casL="A",incTime=3747,mixAfter=30)
+2020-09-14 12:35:02 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:35:02 ctrl.casA    INFO     ['casA']
+2020-09-14 12:35:02 ctrl.casB    WARNING  Restarting Run...
+sampleName                                         sssss
+protocolName                                       bluah
+protocolPath    /home/pi/CasMonitor/Protocols/bluah.json
+Name: casB, dtype: object
+2020-09-14 12:35:02 ctrl.casB    INFO     casB: Restarting at step # 1...
+2020-09-14 12:35:02 ctrl.casB    INFO     casB: Restarting incubate timer
+2020-09-14 12:35:02 ctrl.casB    DEBUG    ['casL="B"', 'incTime=169', 'mixAfter=30']
+2020-09-14 12:35:02 ctrl.casB    DEBUG    1
+2020-09-14 12:35:02 ctrl.casB    DEBUG    self.incubate(casL="B",incTime=147,mixAfter=30)
+2020-09-14 12:35:02 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:35:02 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-14 12:35:02 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:35:02 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=3747,mixAfter=30)']
+2020-09-14 12:35:02 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:35:02 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:35:02 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=147,mixAfter=30)']
+2020-09-14 12:35:02 ctrl.casB    INFO     INCUBATING CasB
+2020-09-14 12:35:02 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:35:02 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:35:12 ctrl         DEBUG    CasA Incubation Seconds remaining: 3736
+2020-09-14 12:35:12 ctrl         DEBUG    CasB Incubation Seconds remaining: 136
+2020-09-14 12:35:22 ctrl         DEBUG    CasA Incubation Seconds remaining: 3726
+2020-09-14 12:35:22 ctrl         DEBUG    CasB Incubation Seconds remaining: 126
+2020-09-14 12:35:22 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:35:24 ctrl.casB    INFO     Mixing CasB...
+2020-09-14 12:35:26 ctrl.casC    INFO     Trying to cancel casC, getting active tasks...
+2020-09-14 12:35:26 ctrl.casC    INFO     ['casB', 'casA']
+2020-09-14 12:35:26 ctrl.casC    WARNING  casC is not running a protocol...
+2020-09-14 12:35:26 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:35:26 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:35:34 ctrl         DEBUG    CasA Incubation Seconds remaining: 3714
+2020-09-14 12:35:34 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:35:36 ctrl         DEBUG    CasB Incubation Seconds remaining: 112
+2020-09-14 12:35:36 ctrl.casB    INFO     CasB publishing secs-remaining!
+2020-09-14 12:35:36 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 12:35:36 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:35:38 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2020-09-14 12:35:38 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-14 12:35:38 ctrl.casB    INFO     SHUTDOWN CasB
+2020-09-14 12:35:41 ctrl         WARNING  Disconnected, ['casB', 'casA']
+2020-09-14 12:35:41 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 12:35:49 ctrl         INFO     9000
+2020-09-14 12:35:49 ctrl         INFO     Loading last controller state...
+2020-09-14 12:35:49 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 12:35:49 ctrl         DEBUG    
+        status stepNum secsRemaining  ...   protocolName startlog endlog
+casA   running       1          3714  ...        qweqweq     2433   2477
+casB  stopping       1           112  ...          bluah     1652   1696
+casC      idle     NaN           NaN  ...            NaN     1104   1145
+casD       NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE       NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF       NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 12:35:49 ctrl         INFO     Registered to all procedures!
+2020-09-14 12:35:49 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 12:35:49 ctrl         INFO     Repopulating controller tasks from contoller state...
+2020-09-14 12:35:49 ctrl         DEBUG    casA
+2020-09-14 12:35:49 ctrl         INFO     casA, Restarting run!
+2020-09-14 12:35:49 ctrl         DEBUG    casB
+2020-09-14 12:35:49 ctrl.casB    INFO     Engage CasB...
+2020-09-14 12:35:50 ctrl         DEBUG    casC
+2020-09-14 12:35:50 ctrl.casC    INFO     Engage CasC...
+2020-09-14 12:35:51 ctrl         DEBUG    casD
+2020-09-14 12:35:51 ctrl         DEBUG    casE
+2020-09-14 12:35:51 ctrl         DEBUG    casF
+2020-09-14 12:35:51 ctrl         INFO     Restore connection with logger(s)......NOT IMPLEMENTED YET...
+2020-09-14 12:35:51 ctrl         INFO     Sending tasks to GUI to repopulate it...
+2020-09-14 12:35:51 ctrl.casA    WARNING  Restarting Run...
+sampleName                                          asdasd
+protocolName                                       qweqweq
+protocolPath    /home/pi/CasMonitor/Protocols/qweqweq.json
+Name: casA, dtype: object
+2020-09-14 12:35:51 ctrl.casA    INFO     casA: Restarting at step # 1...
+2020-09-14 12:35:51 ctrl.casA    INFO     casA: Restarting incubate timer
+2020-09-14 12:35:51 ctrl.casA    DEBUG    ['casL="A"', 'incTime=3747', 'mixAfter=30']
+2020-09-14 12:35:51 ctrl.casA    DEBUG    1
+2020-09-14 12:35:51 ctrl.casA    DEBUG    self.incubate(casL="A",incTime=3714,mixAfter=30)
+2020-09-14 12:35:51 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:35:51 ctrl.casA    INFO     ['casA']
+2020-09-14 12:35:51 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:35:51 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=3714,mixAfter=30)']
+2020-09-14 12:35:51 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:35:51 ctrl         DEBUG    Sent updated casA cassette log!
+2020-09-14 12:35:54 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2020-09-14 12:35:54 ctrl.casB    INFO     ['casA']
+2020-09-14 12:35:54 ctrl.casB    WARNING  casB is not running a protocol...
+2020-09-14 12:35:55 ctrl.casA    INFO     Trying to cancel casA, getting active tasks...
+2020-09-14 12:35:55 ctrl.casA    INFO     ['casA']
+2020-09-14 12:35:55 ctrl.casA    INFO     SHUTDOWN CasA
+2020-09-14 12:35:56 ctrl.casA    INFO     Trying to cancel casA, getting active tasks...
+2020-09-14 12:35:56 ctrl.casA    INFO     []
+2020-09-14 12:35:56 ctrl.casA    WARNING  casA is not running a protocol...
+2020-09-14 12:36:51 ctrl         WARNING  GUI is disconnected!
+2020-09-14 12:36:51 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-14 12:40:40 ctrl         WARNING  Disconnected, []
+2020-09-14 12:40:40 ctrl         INFO     Writing disconnect-state to file...

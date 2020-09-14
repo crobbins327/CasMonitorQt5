@@ -254,7 +254,7 @@ Item {
                     root.runProtocolName = protocoln
                     root.stackIndex = 2
                     root.progStrings = progS
-                    root.runStep = 'Shutdown finished.'
+                    root.runStep = 'Shutdown.'
                     root.stepRunTimes = stepTimes
                     root.hangSecs = sum_arr(stepTimes.slice(0,stepInd))
                     root.runProgVal = 100*(root.firstRunSecs - root.runSecs)/root.firstRunSecs
@@ -279,7 +279,7 @@ Item {
         }
         function onReShutdownFinished(casNum){
             if (root.casNumber==casNum){
-                root.runStep = 'Shutdown finished.'
+                root.runStep = 'Shutdown.'
                 root.isRunning = false
                 stopRunB.visible = false
                 stopRunB.enabled = true

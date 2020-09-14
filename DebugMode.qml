@@ -203,7 +203,7 @@ Item {
             SwipeView {
                 id: view
                 anchors.fill: parent
-                currentIndex: 1
+                currentIndex: 0
 
                 Item{
                     id: manualPg
@@ -767,7 +767,7 @@ Item {
                     Rectangle{
                         id:incRect
                         y: 13
-                        width: 82
+                        width: 85
                         height: 30
                         color: "#808080"
                         anchors.verticalCenter: incubateBtn.verticalCenter
@@ -820,7 +820,7 @@ Item {
                     Rectangle{
                         id:mixAfRect
                         y: 13
-                        width: 82
+                        width: 85
                         height: 30
                         color: "#808080"
                         anchors.verticalCenter: incRect.verticalCenter
@@ -869,12 +869,12 @@ Item {
                     Rectangle{
                         id:mixVolRect
                         y: 13
-                        width: 92
+                        width: 100
                         height: 30
                         color: "#808080"
                         anchors.verticalCenter: mixBtn.verticalCenter
                         anchors.left: mixCycles.right
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: 15
                         TextInput {
                             property string placeholderText: "volume (mL)"
                             id: mixVolIn
@@ -932,11 +932,11 @@ Item {
                     Rectangle{
                         id:loadVolRect
                         y: 188
-                        width: 92
+                        width: 100
                         height: 30
                         color: "#808080"
                         anchors.left: pSpeed.right
-                        anchors.leftMargin: 20
+                        anchors.leftMargin: 15
                         anchors.verticalCenter: pSpeed.verticalCenter
                         TextInput {
                             property string placeholderText: "volume (uL)"
@@ -1091,7 +1091,10 @@ Item {
 
         TabBar {
             id: casBar
-            y: -5
+            anchors.verticalCenter: casSelectLab.verticalCenter
+            anchors.left: casSelectLab.right
+            font.pointSize: 10
+            anchors.leftMargin: 40
             width: 300
             height: 40
             TabButton {
@@ -1147,10 +1150,6 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 0
             }
-            anchors.verticalCenter: casSelectLab.verticalCenter
-            anchors.left: casSelectLab.right
-            font.pointSize: 10
-            anchors.leftMargin: 20
         }
 
         Text {

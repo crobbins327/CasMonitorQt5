@@ -1529,3 +1529,176 @@ Name: casB, dtype: object
 2020-09-13 04:06:44 ctrl.casB    INFO     ADDING BABB TO CasB
 2020-09-13 04:06:49 ctrl.casB    INFO     Finished casB task!
 2020-09-13 04:06:49 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:09:05 ctrl.casB    INFO     Engage CasB...
+2020-09-14 12:09:17 ctrl.casB    INFO     
+
+
+
+2020-09-14 12:09:17 ctrl.casB    INFO     Starting Run!
+sampleName                                               aaaaaa
+protocolName                                       testAll Fast
+protocolPath    /home/pi/CasMonitor/Protocols/testAll Fast.json
+startlog                                                   1535
+Name: casB, dtype: object
+2020-09-14 12:09:17 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:09:17 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-14 12:09:17 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:09:17 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=5,mixAfter=0)']
+2020-09-14 12:09:17 ctrl.casB    INFO     INCUBATING CasB
+2020-09-14 12:09:17 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:09:17 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-14 12:09:17 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 12:09:17 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:09:22 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:09:22 ctrl.casB    INFO     casB: Evaluating step 2
+2020-09-14 12:09:22 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-14 12:09:22 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-14 12:09:22 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-14 12:09:24 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-14 12:09:26 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-14 12:09:28 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:09:28 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2020-09-14 12:09:28 ctrl.casB    INFO     ['casB', 'casA', 'casC']
+2020-09-14 12:09:28 ctrl.casB    INFO     SHUTDOWN CasB
+2020-09-14 12:13:12 ctrl.casB    INFO     
+
+
+
+2020-09-14 12:13:12 ctrl.casB    INFO     Starting Run!
+sampleName                                                 aaaaa
+protocolName                                       lots of loads
+protocolPath    /home/pi/CasMonitor/Protocols/lots of loads.json
+startlog                                                    1565
+Name: casB, dtype: object
+2020-09-14 12:13:12 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:13:12 ctrl.casB    INFO     ['casB']
+2020-09-14 12:13:12 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:13:12 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 12:13:12 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:17 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:17 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-14 12:13:17 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-14 12:13:18 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-14 12:13:18 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-14 12:13:20 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-14 12:13:22 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-14 12:13:24 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:24 ctrl.casB    INFO     casB: Evaluating step 2
+2020-09-14 12:13:24 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 12:13:24 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:29 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:29 ctrl.casB    INFO     casB: Evaluating step 3
+2020-09-14 12:13:29 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:13:29 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:34 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:13:39 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:39 ctrl.casB    INFO     casB: Evaluating step 4
+2020-09-14 12:13:39 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 12:13:39 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:44 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:44 ctrl.casB    INFO     casB: Evaluating step 5
+2020-09-14 12:13:44 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:13:45 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:13:50 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 12:13:55 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:13:55 ctrl.casB    INFO     casB: Evaluating step 6
+2020-09-14 12:13:55 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:13:55 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:00 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 12:14:05 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:05 ctrl.casB    INFO     casB: Evaluating step 7
+2020-09-14 12:14:05 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:05 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:10 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:14:17 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:17 ctrl.casB    INFO     casB: Evaluating step 8
+2020-09-14 12:14:17 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:17 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:14:27 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:27 ctrl.casB    INFO     casB: Evaluating step 9
+2020-09-14 12:14:27 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:27 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:32 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:14:39 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:39 ctrl.casB    INFO     casB: Evaluating step 10
+2020-09-14 12:14:39 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:39 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:44 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 12:14:49 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:14:49 ctrl.casB    INFO     casB: Evaluating step 11
+2020-09-14 12:14:49 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:14:50 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:14:55 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 12:15:01 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:15:01 ctrl.casB    INFO     casB: Evaluating step 12
+2020-09-14 12:15:01 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:15:02 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:15:07 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 12:15:12 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:15:12 ctrl.casB    INFO     casB: Evaluating step 13
+2020-09-14 12:15:12 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:15:12 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:15:17 ctrl.casB    INFO     ADDING Stain TO CasB
+2020-09-14 12:15:23 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:15:24 ctrl.casB    INFO     casB: Evaluating step 14
+2020-09-14 12:15:24 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="BABB",reagent="babb",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:15:24 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 12:15:29 ctrl.casB    INFO     ADDING BABB TO CasB
+2020-09-14 12:15:34 ctrl.casB    INFO     Finished casB task!
+2020-09-14 12:15:34 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 12:33:59 ctrl.casB    INFO     
+
+
+
+2020-09-14 12:33:59 ctrl.casB    INFO     Starting Run!
+sampleName                                         sssss
+protocolName                                       bluah
+protocolPath    /home/pi/CasMonitor/Protocols/bluah.json
+startlog                                            1652
+Name: casB, dtype: object
+2020-09-14 12:33:59 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:33:59 ctrl.casB    INFO     ['casA', 'casB']
+2020-09-14 12:33:59 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:33:59 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=180,mixAfter=30)']
+2020-09-14 12:33:59 ctrl.casB    INFO     INCUBATING CasB
+2020-09-14 12:34:19 ctrl.casB    WARNING  Restarting Run...
+sampleName                                         sssss
+protocolName                                       bluah
+protocolPath    /home/pi/CasMonitor/Protocols/bluah.json
+Name: casB, dtype: object
+2020-09-14 12:34:19 ctrl.casB    INFO     casB: Restarting at step # 1...
+2020-09-14 12:34:19 ctrl.casB    INFO     casB: Restarting incubate timer
+2020-09-14 12:34:19 ctrl.casB    DEBUG    ['casL="B"', 'incTime=180', 'mixAfter=30']
+2020-09-14 12:34:19 ctrl.casB    DEBUG    1
+2020-09-14 12:34:19 ctrl.casB    DEBUG    self.incubate(casL="B",incTime=169,mixAfter=30)
+2020-09-14 12:34:19 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:34:19 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-14 12:34:19 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:34:19 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=169,mixAfter=30)']
+2020-09-14 12:34:19 ctrl.casB    INFO     INCUBATING CasB
+2020-09-14 12:34:43 ctrl.casB    INFO     Mixing CasB...
+2020-09-14 12:35:02 ctrl.casB    WARNING  Restarting Run...
+sampleName                                         sssss
+protocolName                                       bluah
+protocolPath    /home/pi/CasMonitor/Protocols/bluah.json
+Name: casB, dtype: object
+2020-09-14 12:35:02 ctrl.casB    INFO     casB: Restarting at step # 1...
+2020-09-14 12:35:02 ctrl.casB    INFO     casB: Restarting incubate timer
+2020-09-14 12:35:02 ctrl.casB    DEBUG    ['casL="B"', 'incTime=169', 'mixAfter=30']
+2020-09-14 12:35:02 ctrl.casB    DEBUG    1
+2020-09-14 12:35:02 ctrl.casB    DEBUG    self.incubate(casL="B",incTime=147,mixAfter=30)
+2020-09-14 12:35:02 ctrl.casB    INFO     Starting task on casB
+2020-09-14 12:35:02 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-14 12:35:02 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 12:35:02 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=147,mixAfter=30)']
+2020-09-14 12:35:02 ctrl.casB    INFO     INCUBATING CasB
+2020-09-14 12:35:24 ctrl.casB    INFO     Mixing CasB...
+2020-09-14 12:35:36 ctrl.casB    INFO     CasB publishing secs-remaining!
+2020-09-14 12:35:38 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2020-09-14 12:35:38 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-14 12:35:38 ctrl.casB    INFO     SHUTDOWN CasB
+2020-09-14 12:35:49 ctrl.casB    INFO     Engage CasB...
+2020-09-14 12:35:54 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2020-09-14 12:35:54 ctrl.casB    INFO     ['casA']
+2020-09-14 12:35:54 ctrl.casB    WARNING  casB is not running a protocol...

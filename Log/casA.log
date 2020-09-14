@@ -2368,3 +2368,132 @@ Name: casA, dtype: object
 2020-09-13 04:06:39 ctrl.casA    INFO     ADDING BABB TO CasA
 2020-09-13 04:06:44 ctrl.casA    INFO     Finished casA task!
 2020-09-13 04:06:44 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:02:15 ctrl.casA    INFO     Engage CasA...
+2020-09-14 12:06:34 ctrl.casA    INFO     
+
+
+
+2020-09-14 12:06:34 ctrl.casA    INFO     Starting Run!
+sampleName                                         ddada
+protocolName                                       bluah
+protocolPath    /home/pi/CasMonitor/Protocols/bluah.json
+startlog                                            2374
+Name: casA, dtype: object
+2020-09-14 12:06:34 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:06:34 ctrl.casA    INFO     ['casA']
+2020-09-14 12:06:34 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:06:34 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=180,mixAfter=30)']
+2020-09-14 12:06:34 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:06:55 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:07:07 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:07:17 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:07:39 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:07:39 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:08:01 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:08:13 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:08:23 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:08:35 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:08:45 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:08:47 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:08:47 ctrl.casA    INFO     casA: Evaluating step 1
+2020-09-14 12:08:47 ctrl.casA    INFO     ['self.mix(casL="A", numCycles=9, volume=7.0)']
+2020-09-14 12:08:47 ctrl.casA    INFO     MIXING CasA, 9 TIMES, 7.0 VOLUME
+2020-09-14 12:08:47 ctrl.casA    INFO     Mixing A, #1 of 9 cycles...
+2020-09-14 12:08:49 ctrl.casA    INFO     Mixing A, #2 of 9 cycles...
+2020-09-14 12:08:51 ctrl.casA    INFO     Mixing A, #3 of 9 cycles...
+2020-09-14 12:08:53 ctrl.casA    INFO     Mixing A, #4 of 9 cycles...
+2020-09-14 12:08:55 ctrl.casA    INFO     Mixing A, #5 of 9 cycles...
+2020-09-14 12:08:57 ctrl.casA    INFO     Mixing A, #6 of 9 cycles...
+2020-09-14 12:08:59 ctrl.casA    INFO     Mixing A, #7 of 9 cycles...
+2020-09-14 12:09:01 ctrl.casA    INFO     Mixing A, #8 of 9 cycles...
+2020-09-14 12:09:03 ctrl.casA    INFO     Mixing A, #9 of 9 cycles...
+2020-09-14 12:09:05 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:09:07 ctrl.casA    INFO     casA: Evaluating step 2
+2020-09-14 12:09:07 ctrl.casA    INFO     ['self.purge(casL="A",deadvol=4.0)']
+2020-09-14 12:09:08 ctrl.casA    INFO     PURGING CHAMBER, CasA
+2020-09-14 12:09:13 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:09:13 ctrl.casA    INFO     casA: Evaluating step 3
+2020-09-14 12:09:13 ctrl.casA    INFO     ['self.loadReagent(casL="A",loadstr="Formalin",reagent="formalin",vol=3.0,speed=7,deadvol=4.0)']
+2020-09-14 12:09:13 ctrl.casA    INFO     PURGING CHAMBER, CasA
+2020-09-14 12:09:18 ctrl.casA    INFO     ADDING Formalin TO CasA
+2020-09-14 12:09:28 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:09:28 ctrl.casA    INFO     casA: Evaluating step 4
+2020-09-14 12:09:28 ctrl.casA    INFO     ['self.loadReagent(casL="A",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:09:28 ctrl.casA    INFO     PURGING CHAMBER, CasA
+2020-09-14 12:09:34 ctrl.casA    INFO     ADDING Dehydrant TO CasA
+2020-09-14 12:09:39 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:09:39 ctrl.casA    INFO     casA: Evaluating step 5
+2020-09-14 12:09:39 ctrl.casA    INFO     ['self.loadReagent(casL="A",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 12:09:39 ctrl.casA    INFO     PURGING CHAMBER, CasA
+2020-09-14 12:09:44 ctrl.casA    INFO     ADDING Stain TO CasA
+2020-09-14 12:09:49 ctrl.casA    INFO     Finished casA task!
+2020-09-14 12:09:49 ctrl.casA    INFO     Updating progress on casA...
+2020-09-14 12:33:55 ctrl.casA    INFO     
+
+
+
+2020-09-14 12:33:55 ctrl.casA    INFO     Starting Run!
+sampleName                                          asdasd
+protocolName                                       qweqweq
+protocolPath    /home/pi/CasMonitor/Protocols/qweqweq.json
+startlog                                              2433
+Name: casA, dtype: object
+2020-09-14 12:33:55 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:33:55 ctrl.casA    INFO     ['casA']
+2020-09-14 12:33:55 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:33:55 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=3780,mixAfter=30)']
+2020-09-14 12:33:55 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:34:19 ctrl.casA    WARNING  Restarting Run...
+sampleName                                          asdasd
+protocolName                                       qweqweq
+protocolPath    /home/pi/CasMonitor/Protocols/qweqweq.json
+Name: casA, dtype: object
+2020-09-14 12:34:19 ctrl.casA    INFO     casA: Restarting at step # 1...
+2020-09-14 12:34:19 ctrl.casA    INFO     casA: Restarting incubate timer
+2020-09-14 12:34:19 ctrl.casA    DEBUG    ['casL="A"', 'incTime=3780', 'mixAfter=30']
+2020-09-14 12:34:19 ctrl.casA    DEBUG    1
+2020-09-14 12:34:19 ctrl.casA    DEBUG    self.incubate(casL="A",incTime=3769,mixAfter=30)
+2020-09-14 12:34:19 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:34:19 ctrl.casA    INFO     ['casA']
+2020-09-14 12:34:19 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:34:19 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=3769,mixAfter=30)']
+2020-09-14 12:34:19 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:34:41 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:35:02 ctrl.casA    WARNING  Restarting Run...
+sampleName                                          asdasd
+protocolName                                       qweqweq
+protocolPath    /home/pi/CasMonitor/Protocols/qweqweq.json
+Name: casA, dtype: object
+2020-09-14 12:35:02 ctrl.casA    INFO     casA: Restarting at step # 1...
+2020-09-14 12:35:02 ctrl.casA    INFO     casA: Restarting incubate timer
+2020-09-14 12:35:02 ctrl.casA    DEBUG    ['casL="A"', 'incTime=3769', 'mixAfter=30']
+2020-09-14 12:35:02 ctrl.casA    DEBUG    1
+2020-09-14 12:35:02 ctrl.casA    DEBUG    self.incubate(casL="A",incTime=3747,mixAfter=30)
+2020-09-14 12:35:02 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:35:02 ctrl.casA    INFO     ['casA']
+2020-09-14 12:35:02 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:35:02 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=3747,mixAfter=30)']
+2020-09-14 12:35:02 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:35:22 ctrl.casA    INFO     Mixing CasA...
+2020-09-14 12:35:34 ctrl.casA    INFO     CasA publishing secs-remaining!
+2020-09-14 12:35:51 ctrl.casA    WARNING  Restarting Run...
+sampleName                                          asdasd
+protocolName                                       qweqweq
+protocolPath    /home/pi/CasMonitor/Protocols/qweqweq.json
+Name: casA, dtype: object
+2020-09-14 12:35:51 ctrl.casA    INFO     casA: Restarting at step # 1...
+2020-09-14 12:35:51 ctrl.casA    INFO     casA: Restarting incubate timer
+2020-09-14 12:35:51 ctrl.casA    DEBUG    ['casL="A"', 'incTime=3747', 'mixAfter=30']
+2020-09-14 12:35:51 ctrl.casA    DEBUG    1
+2020-09-14 12:35:51 ctrl.casA    DEBUG    self.incubate(casL="A",incTime=3714,mixAfter=30)
+2020-09-14 12:35:51 ctrl.casA    INFO     Starting task on casA
+2020-09-14 12:35:51 ctrl.casA    INFO     ['casA']
+2020-09-14 12:35:51 ctrl.casA    INFO     casA: Evaluating step 0
+2020-09-14 12:35:51 ctrl.casA    INFO     ['self.incubate(casL="A",incTime=3714,mixAfter=30)']
+2020-09-14 12:35:51 ctrl.casA    INFO     INCUBATING CasA
+2020-09-14 12:35:55 ctrl.casA    INFO     Trying to cancel casA, getting active tasks...
+2020-09-14 12:35:55 ctrl.casA    INFO     ['casA']
+2020-09-14 12:35:55 ctrl.casA    INFO     SHUTDOWN CasA
+2020-09-14 12:35:56 ctrl.casA    INFO     Trying to cancel casA, getting active tasks...
+2020-09-14 12:35:56 ctrl.casA    INFO     []
+2020-09-14 12:35:56 ctrl.casA    WARNING  casA is not running a protocol...
