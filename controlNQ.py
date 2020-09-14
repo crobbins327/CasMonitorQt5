@@ -401,7 +401,7 @@ class Component(ApplicationSession):
         else:
             casLogs[casL].warning('{} is not running a protocol...'.format(casName))
             self.taskDF.loc[casName,'status'] = 'idle'
-            self.taskDF.loc[casName, ['stepNum','secsRemaining','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName']] = np.nan
+            #self.taskDF.loc[casName, ['stepNum','secsRemaining','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName']] = np.nan
             self.publish('com.prepbot.prothandler.finish-shutdown', casL, self.taskDF.loc[casName].to_json())
             
             
