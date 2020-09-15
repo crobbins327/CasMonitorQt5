@@ -75,7 +75,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     shutdownStart = QtCore.pyqtSignal(int)
     #Send shutdown is finished
     shutdownDone = QtCore.pyqtSignal(int)
-    deadspace = 1000 
+    deadspace = 1500 
     
     def __init__(self, cfg=None):
         ApplicationSession.__init__(self, cfg)

@@ -123,3 +123,853 @@ Name: casA, dtype: object
 2020-09-14 13:05:13 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
 2020-09-14 13:05:15 ctrl         WARNING  Disconnected, ['casA']
 2020-09-14 13:05:15 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 14:15:17 ctrl         INFO     9000
+2020-09-14 14:15:17 ctrl         INFO     Loading last controller state...
+2020-09-14 14:15:17 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 14:15:17 ctrl         DEBUG    
+        status stepNum secsRemaining  ...    protocolName startlog endlog
+casA  shutdown       1          6651  ...    anotherprot2        4     40
+casB       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casC       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casD       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casE       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casF       NaN     NaN           NaN  ...             NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 14:15:17 ctrl         INFO     Registered to all procedures!
+2020-09-14 14:15:17 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 14:15:17 ctrl         INFO     Repopulating controller tasks from contoller state...
+2020-09-14 14:15:17 ctrl         DEBUG    casA
+2020-09-14 14:15:17 ctrl.casA    INFO     Engage CasA...
+2020-09-14 14:15:18 ctrl         DEBUG    casB
+2020-09-14 14:15:18 ctrl         DEBUG    casC
+2020-09-14 14:15:18 ctrl         DEBUG    casD
+2020-09-14 14:15:18 ctrl         DEBUG    casE
+2020-09-14 14:15:18 ctrl         DEBUG    casF
+2020-09-14 14:15:18 ctrl         INFO     Restore connection with logger(s)......NOT IMPLEMENTED YET...
+2020-09-14 14:15:18 ctrl         INFO     Sending tasks to GUI to repopulate it...
+2020-09-14 14:16:03 ctrl         WARNING  Disconnected, []
+2020-09-14 14:16:03 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 14:16:09 ctrl         INFO     9000
+2020-09-14 14:16:09 ctrl         INFO     Loading last controller state...
+2020-09-14 14:16:09 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 14:16:09 ctrl         DEBUG    
+        status stepNum secsRemaining  ...    protocolName startlog endlog
+casA  shutdown       1          6651  ...    anotherprot2        4     40
+casB       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casC       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casD       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casE       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casF       NaN     NaN           NaN  ...             NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 14:16:09 ctrl         INFO     Registered to all procedures!
+2020-09-14 14:16:09 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 14:16:09 ctrl         INFO     Repopulating controller tasks from contoller state...
+2020-09-14 14:16:09 ctrl         DEBUG    casA
+2020-09-14 14:16:09 ctrl.casA    INFO     Engage CasA...
+2020-09-14 14:16:10 ctrl         DEBUG    casB
+2020-09-14 14:16:10 ctrl         DEBUG    casC
+2020-09-14 14:16:10 ctrl         DEBUG    casD
+2020-09-14 14:16:10 ctrl         DEBUG    casE
+2020-09-14 14:16:10 ctrl         DEBUG    casF
+2020-09-14 14:16:10 ctrl         INFO     Restore connection with logger(s)......NOT IMPLEMENTED YET...
+2020-09-14 14:16:10 ctrl         INFO     Sending tasks to GUI to repopulate it...
+2020-09-14 14:16:59 ctrl.casB    INFO     Engage CasB...
+2020-09-14 14:17:01 ctrl.casC    INFO     Engage CasC...
+2020-09-14 14:17:02 ctrl.casF    INFO     Engage CasF...
+2020-09-14 14:17:09 ctrl.casB    INFO     
+
+
+
+2020-09-14 14:17:09 ctrl.casB    INFO     Starting Run!
+sampleName                                               dsgfdsg
+protocolName                                       lots of loads
+protocolPath    /home/pi/CasMonitor/Protocols/lots of loads.json
+startlog                                                       4
+Name: casB, dtype: object
+2020-09-14 14:17:09 ctrl.casB    INFO     Starting task on casB
+2020-09-14 14:17:09 ctrl.casB    INFO     ['casB']
+2020-09-14 14:17:09 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 14:17:09 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 14:17:09 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:11 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 14:17:14 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:14 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-14 14:17:14 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-14 14:17:14 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-14 14:17:14 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-14 14:17:16 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-14 14:17:18 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-14 14:17:20 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:20 ctrl.casB    INFO     casB: Evaluating step 2
+2020-09-14 14:17:20 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 14:17:21 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:21 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 14:17:26 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:26 ctrl.casB    INFO     casB: Evaluating step 3
+2020-09-14 14:17:26 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:17:26 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:31 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 14:17:31 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 14:17:36 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:36 ctrl.casB    INFO     casB: Evaluating step 4
+2020-09-14 14:17:36 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 14:17:36 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:41 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 14:17:41 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:41 ctrl.casB    INFO     casB: Evaluating step 5
+2020-09-14 14:17:41 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:17:41 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:44 ctrl.casC    INFO     
+
+
+
+2020-09-14 14:17:44 ctrl.casC    INFO     Starting Run!
+sampleName                                               Newone
+protocolName                                       newProtAgain
+protocolPath    /home/pi/CasMonitor/Protocols/newProtAgain.json
+startlog                                                      4
+Name: casC, dtype: object
+2020-09-14 14:17:44 ctrl.casC    INFO     Starting task on casC
+2020-09-14 14:17:44 ctrl.casC    INFO     ['casB', 'casC']
+2020-09-14 14:17:44 ctrl.casC    INFO     casC: Evaluating step 0
+2020-09-14 14:17:44 ctrl.casC    INFO     ['self.incubate(casL="C",incTime=360,mixAfter=390)']
+2020-09-14 14:17:44 ctrl.casC    INFO     INCUBATING CasC
+2020-09-14 14:17:46 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 14:17:51 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 14:17:51 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 14:17:51 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:51 ctrl.casB    INFO     casB: Evaluating step 6
+2020-09-14 14:17:51 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:17:51 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:54 ctrl         DEBUG    CasC Incubation Seconds remaining: 349
+2020-09-14 14:17:56 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 14:18:01 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 14:18:01 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:18:01 ctrl.casB    INFO     casB: Evaluating step 7
+2020-09-14 14:18:01 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:18:01 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:18:04 ctrl         DEBUG    CasC Incubation Seconds remaining: 339
+2020-09-14 14:18:06 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 14:18:11 ctrl         DEBUG    Sent updated casB cassette log!
+2020-09-14 14:18:11 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:18:11 ctrl.casB    INFO     casB: Evaluating step 8
+2020-09-14 14:18:11 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:18:12 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:18:13 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2020-09-14 14:18:13 ctrl.casB    INFO     ['casB', 'casC']
+2020-09-14 14:18:13 ctrl.casB    INFO     SHUTDOWN CasB
+2020-09-14 14:18:14 ctrl.casC    INFO     Trying to cancel casC, getting active tasks...
+2020-09-14 14:18:14 ctrl.casC    INFO     ['casC']
+2020-09-14 14:18:14 ctrl.casC    INFO     SHUTDOWN CasC
+2020-09-14 14:18:21 ctrl         DEBUG    Sent updated casC cassette log!
+2020-09-14 15:12:25 ctrl         INFO     9000
+2020-09-14 15:12:25 ctrl         INFO     Loading last controller state...
+2020-09-14 15:12:25 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 15:12:25 ctrl         DEBUG    
+        status stepNum secsRemaining  ...    protocolName startlog endlog
+casA  shutdown       1          6651  ...    anotherprot2        4     40
+casB       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casC       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casD       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casE       NaN     NaN           NaN  ...             NaN      NaN    NaN
+casF       NaN     NaN           NaN  ...             NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 15:12:25 ctrl         INFO     Registered to all procedures!
+2020-09-14 15:12:25 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 15:13:36 ctrl         INFO     Repopulating controller tasks from contoller state...
+2020-09-14 15:13:36 ctrl         DEBUG    casA
+2020-09-14 15:13:36 ctrl.casA    INFO     Engage CasA...
+2020-09-14 15:13:36 ctrl         CRITICAL Machine could not engage casA. Does it exist?
+2020-09-14 15:13:36 ctrl         CRITICAL module 'machine' has no attribute 'engage_sampleA'
+2020-09-14 15:13:36 ctrl         DEBUG    casB
+2020-09-14 15:13:36 ctrl         DEBUG    casC
+2020-09-14 15:13:36 ctrl         DEBUG    casD
+2020-09-14 15:13:36 ctrl         DEBUG    casE
+2020-09-14 15:13:36 ctrl         DEBUG    casF
+2020-09-14 15:13:36 ctrl         INFO     Restore connection with logger(s)......NOT IMPLEMENTED YET...
+2020-09-14 15:13:36 ctrl         INFO     Sending tasks to GUI to repopulate it...
+2020-09-14 15:14:13 ctrl.casA    INFO     Engage CasA...
+2020-09-14 15:14:13 ctrl         CRITICAL Machine could not engage casA. Does it exist?
+2020-09-14 15:14:13 ctrl         CRITICAL module 'machine' has no attribute 'engage_sampleA'
+2020-09-14 15:14:16 ctrl.casB    INFO     Engage CasB...
+2020-09-14 15:14:16 ctrl         CRITICAL Machine could not engage casB. Does it exist?
+2020-09-14 15:14:16 ctrl         CRITICAL module 'machine' has no attribute 'engage_sampleB'
+2020-09-14 15:14:20 ctrl.casC    INFO     Engage CasC...
+2020-09-14 15:14:20 ctrl         CRITICAL Machine could not engage casC. Does it exist?
+2020-09-14 15:14:20 ctrl         CRITICAL module 'machine' has no attribute 'engage_sampleC'
+2020-09-14 15:14:29 ctrl.casD    INFO     Engage CasD...
+2020-09-14 15:14:36 ctrl.casE    INFO     Engage CasE...
+2020-09-14 15:14:39 ctrl.casF    INFO     Engage CasF...
+2020-09-14 15:17:09 ctrl.casF    INFO     
+
+
+
+2020-09-14 15:17:09 ctrl.casF    INFO     Starting Run!
+sampleName                                         incubate
+protocolName                                       incubate
+protocolPath    /home/pi/CasMonitor/Protocols/incubate.json
+startlog                                                 14
+Name: casF, dtype: object
+2020-09-14 15:17:09 ctrl.casF    INFO     Starting task on casF
+2020-09-14 15:17:09 ctrl.casF    INFO     ['casF']
+2020-09-14 15:17:09 ctrl.casF    INFO     casF: Evaluating step 0
+2020-09-14 15:17:09 ctrl.casF    INFO     ['self.incubate(casL="F",incTime=300,mixAfter=5)']
+2020-09-14 15:17:09 ctrl.casF    INFO     INCUBATING CasF
+2020-09-14 15:17:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:09 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:09 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:09 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:09 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:09 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:09 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:09 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:09 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:10 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:10 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:10 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:10 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:10 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:10 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:10 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:10 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:10 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:10 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:11 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:11 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:12 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:12 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:13 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:13 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:13 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 15:17:13 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:13 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:13 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:13 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:13 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:13 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:13 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:13 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:13 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:13 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:13 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:13 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:13 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:13 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:13 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:13 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:14 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:14 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:15 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:15 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:16 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:16 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:16 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:16 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:16 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:16 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:16 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:16 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:16 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:16 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:16 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:16 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:16 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:16 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:16 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:17:16 ctrl         CRITICAL module 'machine' has no attribute 'goto_sampleF'
+2020-09-14 15:17:16 ctrl.casF    INFO     Finished casF task!
+2020-09-14 15:17:16 ctrl.casF    INFO     Updating progress on casF...
+2020-09-14 15:17:23 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 15:20:19 ctrl.casD    INFO     
+
+
+
+2020-09-14 15:20:19 ctrl.casD    INFO     Starting Run!
+sampleName                                                d
+protocolName                                       incubate
+protocolPath    /home/pi/CasMonitor/Protocols/incubate.json
+startlog                                                 13
+Name: casD, dtype: object
+2020-09-14 15:20:19 ctrl.casD    INFO     Starting task on casD
+2020-09-14 15:20:19 ctrl.casD    INFO     ['casD']
+2020-09-14 15:20:19 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-14 15:20:19 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=300,mixAfter=5)']
+2020-09-14 15:20:19 ctrl.casD    INFO     INCUBATING CasD
+2020-09-14 15:20:19 ctrl.casD    INFO     Mixing CasD...
+2020-09-14 15:20:42 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 15:20:42 ctrl.casD    INFO     Mixing CasD...
+2020-09-14 15:21:02 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-09-14 15:21:02 ctrl.casD    INFO     ['casD']
+2020-09-14 15:21:02 ctrl.casD    INFO     SHUTDOWN CasD
+2020-09-14 15:21:03 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 15:22:40 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 15:22:42 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 15:22:43 ctrl.casF    INFO     Disengage CasF...
+2020-09-14 15:24:15 ctrl         WARNING  GUI is disconnected!
+2020-09-14 15:24:15 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-14 15:29:13 ctrl         WARNING  Disconnected, ['casD']
+2020-09-14 15:29:13 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 15:46:05 ctrl         INFO     9000
+2020-09-14 15:46:05 ctrl         INFO     Loading last controller state...
+2020-09-14 15:46:05 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 15:46:05 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 15:46:05 ctrl         INFO     Registered to all procedures!
+2020-09-14 15:46:05 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 15:47:16 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-14 15:47:30 ctrl.casA    INFO     Engage CasA...
+2020-09-14 15:47:30 ctrl         CRITICAL Machine could not engage casA. Does it exist?
+2020-09-14 15:47:30 ctrl         CRITICAL module 'machine' has no attribute 'engage_sampleA'
+2020-09-14 15:47:34 ctrl.casD    INFO     Engage CasD...
+2020-09-14 15:47:37 ctrl.casE    INFO     Engage CasE...
+2020-09-14 15:47:39 ctrl.casF    INFO     Engage CasF...
+2020-09-14 15:48:25 ctrl.casD    INFO     
+
+
+
+2020-09-14 15:48:25 ctrl.casD    INFO     Starting Run!
+sampleName                                             DInc
+protocolName                                       incubate
+protocolPath    /home/pi/CasMonitor/Protocols/incubate.json
+startlog                                                203
+Name: casD, dtype: object
+2020-09-14 15:48:25 ctrl.casD    INFO     Starting task on casD
+2020-09-14 15:48:25 ctrl.casD    INFO     ['casD']
+2020-09-14 15:48:25 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-14 15:48:25 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=300,mixAfter=20)']
+2020-09-14 15:48:25 ctrl.casD    INFO     INCUBATING CasD
+2020-09-14 15:48:32 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 15:48:33 ctrl.casE    INFO     
+
+
+
+2020-09-14 15:48:33 ctrl.casE    INFO     Starting Run!
+sampleName                                             EInc
+protocolName                                       incubate
+protocolPath    /home/pi/CasMonitor/Protocols/incubate.json
+startlog                                                 33
+Name: casE, dtype: object
+2020-09-14 15:48:33 ctrl.casE    INFO     Starting task on casE
+2020-09-14 15:48:33 ctrl.casE    INFO     ['casE', 'casD']
+2020-09-14 15:48:33 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-14 15:48:33 ctrl.casE    INFO     ['self.incubate(casL="E",incTime=300,mixAfter=20)']
+2020-09-14 15:48:33 ctrl.casE    INFO     INCUBATING CasE
+2020-09-14 15:48:35 ctrl         DEBUG    CasD Incubation Seconds remaining: 289
+2020-09-14 15:48:42 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 15:48:43 ctrl         DEBUG    CasE Incubation Seconds remaining: 289
+2020-09-14 15:48:45 ctrl         DEBUG    CasD Incubation Seconds remaining: 279
+2020-09-14 15:48:45 ctrl.casD    INFO     Mixing CasD...
+2020-09-14 15:49:09 ctrl         DEBUG    CasE Incubation Seconds remaining: 263
+2020-09-14 15:49:09 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:49:09 ctrl.casF    INFO     
+
+
+
+2020-09-14 15:49:09 ctrl.casF    INFO     Starting Run!
+sampleName                                             FInc
+protocolName                                       incubate
+protocolPath    /home/pi/CasMonitor/Protocols/incubate.json
+startlog                                                126
+Name: casF, dtype: object
+2020-09-14 15:49:10 ctrl.casF    INFO     Starting task on casF
+2020-09-14 15:49:10 ctrl.casF    INFO     ['casE', 'casF', 'casD']
+2020-09-14 15:49:10 ctrl.casF    INFO     casF: Evaluating step 0
+2020-09-14 15:49:10 ctrl.casF    INFO     ['self.incubate(casL="F",incTime=300,mixAfter=20)']
+2020-09-14 15:49:10 ctrl.casF    INFO     INCUBATING CasF
+2020-09-14 15:49:10 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 15:49:10 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 15:49:10 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 15:49:10 ctrl.casE    INFO     Mixing CasE...
+2020-09-14 15:49:30 ctrl         DEBUG    CasD Incubation Seconds remaining: 235
+2020-09-14 15:49:30 ctrl.casD    INFO     CasD publishing secs-remaining!
+2020-09-14 15:49:30 ctrl         DEBUG    CasF Incubation Seconds remaining: 279
+2020-09-14 15:49:30 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 15:49:30 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 15:49:40 ctrl         DEBUG    CasE Incubation Seconds remaining: 233
+2020-09-14 15:49:40 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:49:40 ctrl         DEBUG    CasD Incubation Seconds remaining: 225
+2020-09-14 15:49:40 ctrl.casD    INFO     CasD publishing secs-remaining!
+2020-09-14 15:49:40 ctrl         DEBUG    CasF Incubation Seconds remaining: 269
+2020-09-14 15:49:40 ctrl.casF    INFO     CasF publishing secs-remaining!
+2020-09-14 15:49:40 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 15:49:40 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 15:49:40 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 15:49:40 ctrl.casD    INFO     Mixing CasD...
+2020-09-14 15:50:00 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:50:22 ctrl         DEBUG    CasE Incubation Seconds remaining: 191
+2020-09-14 15:50:22 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:50:22 ctrl         DEBUG    CasD Incubation Seconds remaining: 183
+2020-09-14 15:50:22 ctrl.casD    INFO     CasD publishing secs-remaining!
+2020-09-14 15:50:22 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 15:50:22 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 15:50:22 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 15:50:22 ctrl.casE    INFO     Mixing CasE...
+2020-09-14 15:50:43 ctrl         DEBUG    CasF Incubation Seconds remaining: 206
+2020-09-14 15:50:43 ctrl.casF    INFO     CasF publishing secs-remaining!
+2020-09-14 15:50:43 ctrl         DEBUG    CasD Incubation Seconds remaining: 161
+2020-09-14 15:50:43 ctrl.casD    INFO     CasD publishing secs-remaining!
+2020-09-14 15:50:43 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 15:50:43 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 15:50:43 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 15:50:43 ctrl.casD    INFO     Mixing CasD...
+2020-09-14 15:51:03 ctrl         DEBUG    CasE Incubation Seconds remaining: 149
+2020-09-14 15:51:03 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:51:03 ctrl         DEBUG    CasF Incubation Seconds remaining: 186
+2020-09-14 15:51:03 ctrl.casF    INFO     CasF publishing secs-remaining!
+2020-09-14 15:51:03 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-09-14 15:51:03 ctrl.casD    INFO     ['casE', 'casF', 'casD']
+2020-09-14 15:51:04 ctrl.casD    INFO     SHUTDOWN CasD
+2020-09-14 15:51:09 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 15:51:09 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 15:51:09 ctrl.casF    INFO     Mixing CasF...
+2020-09-14 15:51:27 ctrl         DEBUG    CasE Incubation Seconds remaining: 126
+2020-09-14 15:51:27 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:51:27 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 15:51:27 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 15:51:27 ctrl.casE    INFO     Mixing CasE...
+2020-09-14 15:51:48 ctrl         DEBUG    CasF Incubation Seconds remaining: 141
+2020-09-14 15:51:48 ctrl.casF    INFO     CasF publishing secs-remaining!
+2020-09-14 15:51:48 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 15:51:48 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 15:51:56 ctrl.casE    INFO     Trying to cancel casE, getting active tasks...
+2020-09-14 15:51:56 ctrl.casE    INFO     ['casE', 'casF']
+2020-09-14 15:51:56 ctrl.casE    INFO     SHUTDOWN CasE
+2020-09-14 15:52:01 ctrl         DEBUG    CasF Incubation Seconds remaining: 128
+2020-09-14 15:52:01 ctrl.casF    INFO     CasF publishing secs-remaining!
+2020-09-14 15:52:01 ctrl.casF    INFO     Trying to cancel casF, getting active tasks...
+2020-09-14 15:52:01 ctrl.casF    INFO     ['casF']
+2020-09-14 15:52:01 ctrl.casF    INFO     SHUTDOWN CasF
+2020-09-14 15:52:41 ctrl.casD    INFO     
+
+
+
+2020-09-14 15:52:41 ctrl.casD    INFO     Starting Run!
+sampleName                                           Dmix
+protocolName                                       mixing
+protocolPath    /home/pi/CasMonitor/Protocols/mixing.json
+startlog                                              471
+Name: casD, dtype: object
+2020-09-14 15:52:41 ctrl.casD    INFO     Starting task on casD
+2020-09-14 15:52:41 ctrl.casD    INFO     ['casD']
+2020-09-14 15:52:41 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-14 15:52:41 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=6, volume=3.0)']
+2020-09-14 15:52:41 ctrl.casD    INFO     MIXING CasD, 6 TIMES, 3.0 VOLUME
+2020-09-14 15:52:47 ctrl.casD    INFO     Mixing D, #1 of 6 cycles...
+2020-09-14 15:53:45 ctrl.casD    INFO     Mixing D, #2 of 6 cycles...
+2020-09-14 15:54:43 ctrl.casD    INFO     Mixing D, #3 of 6 cycles...
+2020-09-14 15:55:41 ctrl.casD    INFO     Mixing D, #4 of 6 cycles...
+2020-09-14 15:56:39 ctrl.casD    INFO     Mixing D, #5 of 6 cycles...
+2020-09-14 15:57:37 ctrl.casD    INFO     Mixing D, #6 of 6 cycles...
+2020-09-14 15:58:35 ctrl.casD    INFO     Finished casD task!
+2020-09-14 15:58:35 ctrl.casD    INFO     Updating progress on casD...
+2020-09-14 15:58:35 ctrl.casE    INFO     
+
+
+
+2020-09-14 15:58:35 ctrl.casE    INFO     Starting Run!
+sampleName                                           Emix
+protocolName                                       mixing
+protocolPath    /home/pi/CasMonitor/Protocols/mixing.json
+startlog                                              320
+Name: casE, dtype: object
+2020-09-14 15:58:35 ctrl.casE    INFO     Starting task on casE
+2020-09-14 15:58:35 ctrl.casE    INFO     ['casD', 'casE']
+2020-09-14 15:58:35 ctrl.casF    INFO     
+
+
+
+2020-09-14 15:58:35 ctrl.casF    INFO     Starting Run!
+sampleName                                           Fmix
+protocolName                                       mixing
+protocolPath    /home/pi/CasMonitor/Protocols/mixing.json
+startlog                                              301
+Name: casF, dtype: object
+2020-09-14 15:58:35 ctrl.casF    INFO     Starting task on casF
+2020-09-14 15:58:35 ctrl.casF    INFO     ['casD', 'casF', 'casE']
+2020-09-14 15:58:35 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-14 15:58:35 ctrl.casE    INFO     ['self.mix(casL="E", numCycles=6, volume=3.0)']
+2020-09-14 15:58:35 ctrl.casF    INFO     casF: Evaluating step 0
+2020-09-14 15:58:35 ctrl.casF    INFO     ['self.mix(casL="F", numCycles=6, volume=3.0)']
+2020-09-14 15:58:35 ctrl.casE    INFO     MIXING CasE, 6 TIMES, 3.0 VOLUME
+2020-09-14 15:58:43 ctrl.casE    INFO     Mixing E, #1 of 6 cycles...
+2020-09-14 15:59:41 ctrl.casE    INFO     Mixing E, #2 of 6 cycles...
+2020-09-14 16:00:39 ctrl.casE    INFO     Mixing E, #3 of 6 cycles...
+2020-09-14 16:01:37 ctrl.casE    INFO     Mixing E, #4 of 6 cycles...
+2020-09-14 16:02:35 ctrl.casE    INFO     Mixing E, #5 of 6 cycles...
+2020-09-14 16:03:33 ctrl.casE    INFO     Mixing E, #6 of 6 cycles...
+2020-09-14 16:04:23 ctrl.casF    INFO     MIXING CasF, 6 TIMES, 3.0 VOLUME
+2020-09-14 16:05:37 ctrl         INFO     9000
+2020-09-14 16:05:37 ctrl         INFO     Loading last controller state...
+2020-09-14 16:05:37 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 16:05:37 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 16:05:37 ctrl         INFO     Registered to all procedures!
+2020-09-14 16:05:37 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 16:06:48 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-14 16:06:57 ctrl.casD    INFO     Engage CasD...
+2020-09-14 16:07:00 ctrl.casE    INFO     Engage CasE...
+2020-09-14 16:07:03 ctrl.casF    INFO     Engage CasF...
+2020-09-14 16:08:08 ctrl.casD    INFO     
+
+
+
+2020-09-14 16:08:08 ctrl.casD    INFO     Starting Run!
+sampleName                                           MixD
+protocolName                                       mixing
+protocolPath    /home/pi/CasMonitor/Protocols/mixing.json
+startlog                                              819
+Name: casD, dtype: object
+2020-09-14 16:08:08 ctrl.casD    INFO     Starting task on casD
+2020-09-14 16:08:08 ctrl.casD    INFO     ['casD']
+2020-09-14 16:08:08 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-14 16:08:08 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=3, volume=3.0)']
+2020-09-14 16:08:08 ctrl.casD    INFO     MIXING CasD, 3 TIMES, 3.0 VOLUME
+2020-09-14 16:08:20 ctrl.casD    INFO     Mixing D, #1 of 3 cycles...
+2020-09-14 16:08:42 ctrl.casD    INFO     Mixing D, #2 of 3 cycles...
+2020-09-14 16:09:04 ctrl.casD    INFO     Mixing D, #3 of 3 cycles...
+2020-09-14 16:09:26 ctrl.casD    INFO     Finished casD task!
+2020-09-14 16:09:26 ctrl.casD    INFO     Updating progress on casD...
+2020-09-14 16:09:26 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 16:10:02 ctrl.casE    INFO     
+
+
+
+2020-09-14 16:10:02 ctrl.casE    INFO     Starting Run!
+sampleName                                        Epurge
+protocolName                                       purge
+protocolPath    /home/pi/CasMonitor/Protocols/purge.json
+startlog                                             660
+Name: casE, dtype: object
+2020-09-14 16:10:02 ctrl.casE    INFO     Starting task on casE
+2020-09-14 16:10:02 ctrl.casE    INFO     ['casE']
+2020-09-14 16:10:02 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-14 16:10:02 ctrl.casE    INFO     ['self.purge(casL="E",deadvol=4.0)']
+2020-09-14 16:10:02 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-09-14 16:10:52 ctrl.casE    INFO     Finished casE task!
+2020-09-14 16:10:52 ctrl.casE    INFO     Updating progress on casE...
+2020-09-14 16:10:53 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-14 16:17:50 ctrl.casF    INFO     
+
+
+
+2020-09-14 16:17:50 ctrl.casF    INFO     Starting Run!
+sampleName                                                 loads
+protocolName                                       lots of loads
+protocolPath    /home/pi/CasMonitor/Protocols/lots of loads.json
+startlog                                                     331
+Name: casF, dtype: object
+2020-09-14 16:17:50 ctrl.casF    INFO     Starting task on casF
+2020-09-14 16:17:50 ctrl.casF    INFO     ['casF']
+2020-09-14 16:17:50 ctrl.casF    INFO     casF: Evaluating step 0
+2020-09-14 16:17:50 ctrl.casF    INFO     ['self.purge(casL="F",deadvol=4.0)']
+2020-09-14 16:17:50 ctrl.casF    INFO     PURGING CHAMBER, CasF
+2020-09-14 16:18:40 ctrl.casF    INFO     Updating progress on casF...
+2020-09-14 16:18:40 ctrl.casF    INFO     casF: Evaluating step 1
+2020-09-14 16:18:40 ctrl.casF    INFO     ['self.mix(casL="F", numCycles=3, volume=1.0)']
+2020-09-14 16:18:40 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 16:18:40 ctrl.casF    INFO     MIXING CasF, 3 TIMES, 1.0 VOLUME
+2020-09-14 16:18:46 ctrl.casF    INFO     Mixing F, #1 of 3 cycles...
+2020-09-14 16:18:56 ctrl.casF    INFO     Mixing F, #2 of 3 cycles...
+2020-09-14 16:19:06 ctrl.casF    INFO     Mixing F, #3 of 3 cycles...
+2020-09-14 16:19:16 ctrl.casF    INFO     Updating progress on casF...
+2020-09-14 16:19:16 ctrl.casF    INFO     casF: Evaluating step 2
+2020-09-14 16:19:16 ctrl.casF    INFO     ['self.purge(casL="F",deadvol=4.0)']
+2020-09-14 16:19:16 ctrl.casF    INFO     PURGING CHAMBER, CasF
+2020-09-14 16:20:08 ctrl.casF    INFO     Updating progress on casF...
+2020-09-14 16:20:08 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 16:20:08 ctrl.casF    INFO     casF: Evaluating step 3
+2020-09-14 16:20:08 ctrl.casF    INFO     ['self.loadReagent(casL="F",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 16:20:08 ctrl.casF    INFO     PURGING CHAMBER, CasF
+2020-09-14 16:20:46 ctrl.casF    INFO     ADDING Formalin TO CasF
+2020-09-14 16:21:13 ctrl.casF    INFO     Updating progress on casF...
+2020-09-14 16:21:13 ctrl.casF    INFO     casF: Evaluating step 4
+2020-09-14 16:21:13 ctrl.casF    INFO     ['self.purge(casL="F",deadvol=4.0)']
+2020-09-14 16:21:13 ctrl.casF    INFO     PURGING CHAMBER, CasF
+2020-09-14 16:22:04 ctrl.casF    INFO     Updating progress on casF...
+2020-09-14 16:22:04 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 16:22:04 ctrl.casF    INFO     casF: Evaluating step 5
+2020-09-14 16:22:04 ctrl.casF    INFO     ['self.loadReagent(casL="F",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 16:22:04 ctrl.casF    INFO     PURGING CHAMBER, CasF
+2020-09-14 16:22:43 ctrl.casF    INFO     ADDING Dehydrant TO CasF
+2020-09-14 16:23:10 ctrl.casF    INFO     Updating progress on casF...
+2020-09-14 16:23:10 ctrl.casF    INFO     casF: Evaluating step 6
+2020-09-14 16:23:10 ctrl.casF    INFO     ['self.loadReagent(casL="F",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 16:23:10 ctrl.casF    INFO     PURGING CHAMBER, CasF
+2020-09-14 16:23:49 ctrl.casF    INFO     ADDING Dehydrant TO CasF
+2020-09-14 16:24:16 ctrl.casF    INFO     Updating progress on casF...
+2020-09-14 16:24:16 ctrl         DEBUG    Sent updated casF cassette log!
+2020-09-14 16:24:16 ctrl.casF    INFO     Trying to cancel casF, getting active tasks...
+2020-09-14 16:24:16 ctrl.casF    INFO     ['casF']
+2020-09-14 16:24:16 ctrl.casF    INFO     SHUTDOWN CasF
+2020-09-14 16:30:07 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 16:30:09 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 16:30:11 ctrl.casF    INFO     Disengage CasF...
+2020-09-14 16:37:23 ctrl         WARNING  Disconnected, ['casF']
+2020-09-14 16:37:23 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 16:39:32 ctrl         INFO     9000
+2020-09-14 16:39:32 ctrl         INFO     Loading last controller state...
+2020-09-14 16:39:32 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 16:39:32 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 16:39:32 ctrl         INFO     Registered to all procedures!
+2020-09-14 16:39:32 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 16:40:43 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-14 16:50:58 ctrl.casA    INFO     Engage CasA...
+2020-09-14 16:50:58 ctrl         CRITICAL Machine could not engage casA. Does it exist?
+2020-09-14 16:50:58 ctrl         CRITICAL module 'machine' has no attribute 'engage_sampleA'
+2020-09-14 16:51:00 ctrl.casD    INFO     Engage CasD...
+2020-09-14 16:51:08 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 16:51:34 ctrl         WARNING  Disconnected, []
+2020-09-14 16:51:34 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 16:51:37 ctrl         INFO     9000
+2020-09-14 16:51:37 ctrl         INFO     Loading last controller state...
+2020-09-14 16:51:37 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 16:51:37 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 16:51:37 ctrl         INFO     Registered to all procedures!
+2020-09-14 16:51:37 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 16:52:47 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-14 16:53:02 ctrl.casD    INFO     Engage CasD...
+2020-09-14 16:53:06 ctrl.casE    INFO     Engage CasE...
+2020-09-14 16:53:10 ctrl.casF    INFO     Engage CasF...
+2020-09-14 16:54:08 ctrl.casD    INFO     
+
+
+
+2020-09-14 16:54:08 ctrl.casD    INFO     Starting Run!
+sampleName                                        Dmeoh
+protocolName                                       meoh
+protocolPath    /home/pi/CasMonitor/Protocols/meoh.json
+startlog                                           1066
+Name: casD, dtype: object
+2020-09-14 16:54:08 ctrl.casD    INFO     Starting task on casD
+2020-09-14 16:54:08 ctrl.casD    INFO     ['casD']
+2020-09-14 16:54:08 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-14 16:54:08 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=1.0,speed=1,deadvol=2.0)']
+2020-09-14 16:54:08 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-14 16:54:51 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-09-14 16:55:25 ctrl.casD    INFO     Finished casD task!
+2020-09-14 16:55:25 ctrl.casD    INFO     Updating progress on casD...
+2020-09-14 16:55:25 ctrl         DEBUG    Sent updated casD cassette log!
+2020-09-14 16:55:55 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 16:56:20 ctrl.casD    INFO     Engage CasD...
+2020-09-14 17:02:18 ctrl         WARNING  GUI is disconnected!
+2020-09-14 17:02:18 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-14 17:03:05 ctrl         WARNING  Disconnected, ['casD']
+2020-09-14 17:03:05 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 17:08:42 ctrl         INFO     9000
+2020-09-14 17:08:42 ctrl         INFO     Loading last controller state...
+2020-09-14 17:08:42 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 17:08:42 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 17:08:42 ctrl         INFO     Registered to all procedures!
+2020-09-14 17:08:42 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 17:09:53 ctrl         INFO     Repopulating controller tasks from contoller state...
+2020-09-14 17:09:53 ctrl         DEBUG    casA
+2020-09-14 17:09:53 ctrl         DEBUG    casB
+2020-09-14 17:09:53 ctrl         DEBUG    casC
+2020-09-14 17:09:53 ctrl         DEBUG    casD
+2020-09-14 17:09:53 ctrl.casD    INFO     Engage CasD...
+2020-09-14 17:09:56 ctrl         DEBUG    casE
+2020-09-14 17:09:56 ctrl.casE    INFO     Engage CasE...
+2020-09-14 17:09:59 ctrl         DEBUG    casF
+2020-09-14 17:09:59 ctrl.casF    INFO     Engage CasF...
+2020-09-14 17:10:02 ctrl         INFO     Restore connection with logger(s)......NOT IMPLEMENTED YET...
+2020-09-14 17:10:02 ctrl         INFO     Sending tasks to GUI to repopulate it...
+2020-09-14 17:10:14 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 17:10:23 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 17:10:25 ctrl.casF    INFO     Disengage CasF...
+2020-09-14 17:13:46 ctrl.casA    INFO     Engage CasA...
+2020-09-14 17:13:46 ctrl         CRITICAL Machine could not engage casA. Does it exist?
+2020-09-14 17:13:46 ctrl         CRITICAL module 'machine' has no attribute 'engage_sampleA'
+2020-09-14 17:13:47 ctrl.casD    INFO     Engage CasD...
+2020-09-14 17:13:49 ctrl.casE    INFO     Engage CasE...
+2020-09-14 17:13:51 ctrl.casF    INFO     Engage CasF...
+2020-09-14 17:13:54 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 17:13:56 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 17:13:58 ctrl.casF    INFO     Disengage CasF...
+2020-09-14 17:14:01 ctrl.casD    INFO     Engage CasD...
+2020-09-14 17:14:03 ctrl.casE    INFO     Engage CasE...
+2020-09-14 17:14:05 ctrl.casF    INFO     Engage CasF...
+2020-09-14 17:14:08 ctrl.casF    INFO     Disengage CasF...
+2020-09-14 17:14:10 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 17:14:12 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 17:14:16 ctrl.casD    INFO     Engage CasD...
+2020-09-14 17:14:18 ctrl.casE    INFO     Engage CasE...
+2020-09-14 17:14:20 ctrl.casF    INFO     Engage CasF...
+2020-09-14 17:14:23 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 17:14:32 ctrl.casD    INFO     Engage CasD...
+2020-09-14 17:14:38 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 17:14:46 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 17:14:48 ctrl.casF    INFO     Disengage CasF...
+2020-09-14 17:15:09 ctrl         WARNING  Disconnected, []
+2020-09-14 17:15:09 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 17:15:16 ctrl         INFO     9000
+2020-09-14 17:15:16 ctrl         INFO     Loading last controller state...
+2020-09-14 17:15:16 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 17:15:16 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 17:15:16 ctrl         INFO     Registered to all procedures!
+2020-09-14 17:15:16 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 17:16:27 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-14 17:16:35 ctrl.casD    INFO     Engage CasD...
+2020-09-14 17:16:40 ctrl.casD    INFO     Disengage CasD...
+2020-09-14 17:21:26 ctrl         INFO     9000
+2020-09-14 17:21:26 ctrl         INFO     Loading last controller state...
+2020-09-14 17:21:26 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-14 17:21:26 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-14 17:21:26 ctrl         INFO     Registered to all procedures!
+2020-09-14 17:21:26 ctrl         INFO     Subscribed to 18 procedure(s)
+2020-09-14 17:21:45 ctrl         WARNING  Disconnected, []
+2020-09-14 17:21:45 ctrl         INFO     Writing disconnect-state to file...
+2020-09-14 17:21:45 ctrl         CRITICAL Could not park machine!
+2020-09-14 17:21:45 ctrl         CRITICAL 

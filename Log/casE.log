@@ -1,0 +1,933 @@
+2020-09-14 15:14:36 ctrl.casE    INFO     Engage CasE...
+2020-09-14 15:14:36 ctrl.machine DEBUG    move axis: sampleE 8
+2020-09-14 15:14:36 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=8
+2020-09-14 15:14:36 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:14:36 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:14:36 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:14:38 ctrl.machine DEBUG    ok
+
+2020-09-14 15:14:38 ctrl.machine DEBUG    message received
+2020-09-14 15:14:38 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:22:42 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 15:22:42 ctrl.machine DEBUG    move axis: sampleE 4
+2020-09-14 15:22:42 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=4
+2020-09-14 15:22:42 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:22:42 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:22:42 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:22:43 ctrl.machine DEBUG    ok
+
+2020-09-14 15:22:43 ctrl.machine DEBUG    message received
+2020-09-14 15:22:43 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:47:37 ctrl.casE    INFO     Engage CasE...
+2020-09-14 15:47:37 ctrl.machine DEBUG    move axis: sampleE 8
+2020-09-14 15:47:37 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=8
+2020-09-14 15:47:37 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:47:37 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:47:37 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:47:39 ctrl.machine DEBUG    ok
+
+2020-09-14 15:47:39 ctrl.machine DEBUG    message received
+2020-09-14 15:47:39 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:48:33 ctrl.casE    INFO     
+
+
+
+2020-09-14 15:48:33 ctrl.casE    INFO     Starting Run!
+sampleName                                             EInc
+protocolName                                       incubate
+protocolPath    /home/pi/CasMonitor/Protocols/incubate.json
+startlog                                                 33
+Name: casE, dtype: object
+2020-09-14 15:48:33 ctrl.casE    INFO     Starting task on casE
+2020-09-14 15:48:33 ctrl.casE    INFO     ['casE', 'casD']
+2020-09-14 15:48:33 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-14 15:48:33 ctrl.casE    INFO     ['self.incubate(casL="E",incTime=300,mixAfter=20)']
+2020-09-14 15:48:33 ctrl.casE    INFO     INCUBATING CasE
+2020-09-14 15:49:09 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:49:10 ctrl.casE    INFO     Mixing CasE...
+2020-09-14 15:49:10 ctrl.machine DEBUG    move axis: z 40
+2020-09-14 15:49:10 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-14 15:49:10 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:49:10 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:49:10 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:49:13 ctrl.machine DEBUG    ok
+
+2020-09-14 15:49:13 ctrl.machine DEBUG    message received
+2020-09-14 15:49:13 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:49:13 ctrl.machine DEBUG    move axis: x -133
+2020-09-14 15:49:13 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=x MOVE=-133
+2020-09-14 15:49:13 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:49:13 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:49:13 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:49:14 ctrl.machine DEBUG    ok
+
+2020-09-14 15:49:14 ctrl.machine DEBUG    message received
+2020-09-14 15:49:14 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:49:14 ctrl.machine DEBUG    move axis: z 66
+2020-09-14 15:49:14 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=66
+2020-09-14 15:49:14 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:49:14 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:49:14 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:49:17 ctrl.machine DEBUG    ok
+
+2020-09-14 15:49:17 ctrl.machine DEBUG    message received
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:49:17 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 15:49:17 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:49:17 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:49:17 ctrl.machine DEBUG    ok
+
+2020-09-14 15:49:17 ctrl.machine DEBUG    message received
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 15:49:17 ctrl.machine DEBUG    move axis: pump 4.5
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=4.5 SPEED=1
+2020-09-14 15:49:17 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:49:17 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:49:17 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:49:22 ctrl.machine DEBUG    ok
+
+2020-09-14 15:49:22 ctrl.machine DEBUG    message received
+2020-09-14 15:49:22 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:49:22 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:49:22 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:49:24 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 15:49:24 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:49:24 ctrl.machine DEBUG    move axis: pump 4.5
+2020-09-14 15:49:24 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=4.5
+2020-09-14 15:49:24 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:49:24 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:49:24 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:49:25 ctrl.machine DEBUG    ok
+
+2020-09-14 15:49:25 ctrl.machine DEBUG    message received
+2020-09-14 15:49:25 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:49:25 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:49:25 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 15:49:25 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 15:49:25 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=1
+2020-09-14 15:49:25 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:49:25 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:49:25 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:49:30 ctrl.machine DEBUG    ok
+
+2020-09-14 15:49:30 ctrl.machine DEBUG    message received
+2020-09-14 15:49:30 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:49:30 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:49:30 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:49:40 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:50:22 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:50:22 ctrl.casE    INFO     Mixing CasE...
+2020-09-14 15:50:22 ctrl.machine DEBUG    move axis: z 40
+2020-09-14 15:50:22 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-14 15:50:22 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:50:22 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:50:22 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:50:25 ctrl.machine DEBUG    ok
+
+2020-09-14 15:50:25 ctrl.machine DEBUG    message received
+2020-09-14 15:50:25 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:50:25 ctrl.machine DEBUG    move axis: x -133
+2020-09-14 15:50:25 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=x MOVE=-133
+2020-09-14 15:50:25 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:50:25 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:50:25 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:50:27 ctrl.machine DEBUG    ok
+
+2020-09-14 15:50:27 ctrl.machine DEBUG    message received
+2020-09-14 15:50:27 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:50:27 ctrl.machine DEBUG    move axis: z 66
+2020-09-14 15:50:27 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=66
+2020-09-14 15:50:27 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:50:27 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:50:27 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:50:30 ctrl.machine DEBUG    ok
+
+2020-09-14 15:50:30 ctrl.machine DEBUG    message received
+2020-09-14 15:50:30 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:50:30 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 15:50:30 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:50:30 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 15:50:30 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 15:50:30 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:50:30 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:50:30 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:50:31 ctrl.machine DEBUG    ok
+
+2020-09-14 15:50:31 ctrl.machine DEBUG    message received
+2020-09-14 15:50:31 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:50:31 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:50:31 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 15:50:31 ctrl.machine DEBUG    move axis: pump 4.5
+2020-09-14 15:50:31 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=4.5 SPEED=1
+2020-09-14 15:50:31 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:50:31 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:50:31 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:50:36 ctrl.machine DEBUG    ok
+
+2020-09-14 15:50:36 ctrl.machine DEBUG    message received
+2020-09-14 15:50:36 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:50:36 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:50:36 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:50:38 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 15:50:38 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:50:38 ctrl.machine DEBUG    move axis: pump 4.5
+2020-09-14 15:50:38 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=4.5
+2020-09-14 15:50:38 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:50:38 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:50:38 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:50:38 ctrl.machine DEBUG    ok
+
+2020-09-14 15:50:38 ctrl.machine DEBUG    message received
+2020-09-14 15:50:38 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:50:38 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:50:38 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 15:50:38 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 15:50:38 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=1
+2020-09-14 15:50:38 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:50:38 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:50:38 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:50:43 ctrl.machine DEBUG    ok
+
+2020-09-14 15:50:43 ctrl.machine DEBUG    message received
+2020-09-14 15:50:43 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:50:43 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:50:43 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:51:03 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:51:27 ctrl.casE    INFO     CasE publishing secs-remaining!
+2020-09-14 15:51:27 ctrl.casE    INFO     Mixing CasE...
+2020-09-14 15:51:27 ctrl.machine DEBUG    move axis: z 40
+2020-09-14 15:51:27 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-14 15:51:27 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:51:27 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:51:27 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:51:30 ctrl.machine DEBUG    ok
+
+2020-09-14 15:51:30 ctrl.machine DEBUG    message received
+2020-09-14 15:51:30 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:51:30 ctrl.machine DEBUG    move axis: x -133
+2020-09-14 15:51:30 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=x MOVE=-133
+2020-09-14 15:51:30 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:51:30 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:51:30 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:51:32 ctrl.machine DEBUG    ok
+
+2020-09-14 15:51:32 ctrl.machine DEBUG    message received
+2020-09-14 15:51:32 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:51:32 ctrl.machine DEBUG    move axis: z 66
+2020-09-14 15:51:32 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=66
+2020-09-14 15:51:32 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:51:32 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:51:32 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:51:35 ctrl.machine DEBUG    ok
+
+2020-09-14 15:51:35 ctrl.machine DEBUG    message received
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:51:35 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 15:51:35 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:51:35 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:51:35 ctrl.machine DEBUG    ok
+
+2020-09-14 15:51:35 ctrl.machine DEBUG    message received
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 15:51:35 ctrl.machine DEBUG    move axis: pump 4.5
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=4.5 SPEED=1
+2020-09-14 15:51:35 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:51:35 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:51:35 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:51:40 ctrl.machine DEBUG    ok
+
+2020-09-14 15:51:40 ctrl.machine DEBUG    message received
+2020-09-14 15:51:40 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:51:40 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:51:40 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:51:42 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 15:51:42 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:51:42 ctrl.machine DEBUG    move axis: pump 4.5
+2020-09-14 15:51:42 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=4.5
+2020-09-14 15:51:42 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:51:42 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:51:42 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:51:43 ctrl.machine DEBUG    ok
+
+2020-09-14 15:51:43 ctrl.machine DEBUG    message received
+2020-09-14 15:51:43 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:51:43 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:51:43 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 15:51:43 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 15:51:43 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=1
+2020-09-14 15:51:43 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:51:43 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:51:43 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:51:48 ctrl.machine DEBUG    ok
+
+2020-09-14 15:51:48 ctrl.machine DEBUG    message received
+2020-09-14 15:51:48 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:51:48 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:51:48 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:51:56 ctrl.casE    INFO     Trying to cancel casE, getting active tasks...
+2020-09-14 15:51:56 ctrl.casE    INFO     ['casE', 'casF']
+2020-09-14 15:51:56 ctrl.casE    INFO     SHUTDOWN CasE
+2020-09-14 15:51:56 ctrl.machine DEBUG    move axis: z 40
+2020-09-14 15:51:56 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-14 15:51:56 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:51:56 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:51:56 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:51:59 ctrl.machine DEBUG    ok
+
+2020-09-14 15:51:59 ctrl.machine DEBUG    message received
+2020-09-14 15:51:59 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:51:59 ctrl.machine DEBUG    move axis: x -70
+2020-09-14 15:51:59 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=x MOVE=-70
+2020-09-14 15:51:59 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:51:59 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:51:59 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:52:01 ctrl.machine DEBUG    ok
+
+2020-09-14 15:52:01 ctrl.machine DEBUG    message received
+2020-09-14 15:52:01 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:52:01 ctrl.machine DEBUG    move axis: z 40
+2020-09-14 15:52:01 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-14 15:52:01 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:52:01 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:52:01 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:52:02 ctrl.machine DEBUG    ok
+
+2020-09-14 15:52:02 ctrl.machine DEBUG    message received
+2020-09-14 15:52:02 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:52:02 ctrl.machine DEBUG    move axis: x -70
+2020-09-14 15:52:02 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=x MOVE=-70
+2020-09-14 15:52:02 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:52:02 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:52:02 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:52:02 ctrl.machine DEBUG    ok
+
+2020-09-14 15:52:02 ctrl.machine DEBUG    message received
+2020-09-14 15:52:02 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:58:35 ctrl.casE    INFO     
+
+
+
+2020-09-14 15:58:35 ctrl.casE    INFO     Starting Run!
+sampleName                                           Emix
+protocolName                                       mixing
+protocolPath    /home/pi/CasMonitor/Protocols/mixing.json
+startlog                                              320
+Name: casE, dtype: object
+2020-09-14 15:58:35 ctrl.casE    INFO     Starting task on casE
+2020-09-14 15:58:35 ctrl.casE    INFO     ['casD', 'casE']
+2020-09-14 15:58:35 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-14 15:58:35 ctrl.casE    INFO     ['self.mix(casL="E", numCycles=6, volume=3.0)']
+2020-09-14 15:58:35 ctrl.casE    INFO     MIXING CasE, 6 TIMES, 3.0 VOLUME
+2020-09-14 15:58:35 ctrl.machine DEBUG    move axis: z 40
+2020-09-14 15:58:35 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-14 15:58:35 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:58:35 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:58:35 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:58:38 ctrl.machine DEBUG    ok
+
+2020-09-14 15:58:38 ctrl.machine DEBUG    message received
+2020-09-14 15:58:38 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:58:38 ctrl.machine DEBUG    move axis: x -133
+2020-09-14 15:58:38 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=x MOVE=-133
+2020-09-14 15:58:38 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:58:38 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:58:38 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:58:39 ctrl.machine DEBUG    ok
+
+2020-09-14 15:58:39 ctrl.machine DEBUG    message received
+2020-09-14 15:58:39 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:58:39 ctrl.machine DEBUG    move axis: z 66
+2020-09-14 15:58:39 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=66
+2020-09-14 15:58:39 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:58:39 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:58:39 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:58:43 ctrl.machine DEBUG    ok
+
+2020-09-14 15:58:43 ctrl.machine DEBUG    message received
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:58:43 ctrl.casE    INFO     Mixing E, #1 of 6 cycles...
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:58:43 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 15:58:43 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:58:43 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:58:43 ctrl.machine DEBUG    ok
+
+2020-09-14 15:58:43 ctrl.machine DEBUG    message received
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 15:58:43 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0 SPEED=1
+2020-09-14 15:58:43 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:58:43 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:58:43 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:59:11 ctrl.machine DEBUG    ok
+
+2020-09-14 15:59:11 ctrl.machine DEBUG    message received
+2020-09-14 15:59:11 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:59:11 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:59:11 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:59:13 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 15:59:13 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:59:13 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 15:59:13 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0
+2020-09-14 15:59:13 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:59:13 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:59:13 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:59:13 ctrl.machine DEBUG    ok
+
+2020-09-14 15:59:13 ctrl.machine DEBUG    message received
+2020-09-14 15:59:13 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:59:13 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:59:13 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 15:59:13 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 15:59:13 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=1
+2020-09-14 15:59:13 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:59:13 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:59:13 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:59:41 ctrl.machine DEBUG    ok
+
+2020-09-14 15:59:41 ctrl.machine DEBUG    message received
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:59:41 ctrl.casE    INFO     Mixing E, #2 of 6 cycles...
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 15:59:41 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 15:59:41 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:59:41 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 15:59:41 ctrl.machine DEBUG    ok
+
+2020-09-14 15:59:41 ctrl.machine DEBUG    message received
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: M84
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 15:59:41 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0 SPEED=1
+2020-09-14 15:59:41 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 15:59:41 ctrl.machine DEBUG    send message: M400
+2020-09-14 15:59:41 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:00:09 ctrl.machine DEBUG    ok
+
+2020-09-14 16:00:09 ctrl.machine DEBUG    message received
+2020-09-14 16:00:09 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:00:09 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:00:09 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:00:11 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:00:11 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:00:11 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:00:11 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0
+2020-09-14 16:00:11 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:00:11 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:00:11 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:00:11 ctrl.machine DEBUG    ok
+
+2020-09-14 16:00:11 ctrl.machine DEBUG    message received
+2020-09-14 16:00:11 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:00:11 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:00:11 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:00:11 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:00:11 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=1
+2020-09-14 16:00:11 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:00:11 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:00:11 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:00:39 ctrl.machine DEBUG    ok
+
+2020-09-14 16:00:39 ctrl.machine DEBUG    message received
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:00:39 ctrl.casE    INFO     Mixing E, #3 of 6 cycles...
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:00:39 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 16:00:39 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:00:39 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:00:39 ctrl.machine DEBUG    ok
+
+2020-09-14 16:00:39 ctrl.machine DEBUG    message received
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:00:39 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0 SPEED=1
+2020-09-14 16:00:39 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:00:39 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:00:39 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:01:07 ctrl.machine DEBUG    ok
+
+2020-09-14 16:01:07 ctrl.machine DEBUG    message received
+2020-09-14 16:01:07 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:01:07 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:01:07 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:01:09 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:01:09 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:01:09 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:01:09 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0
+2020-09-14 16:01:09 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:01:09 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:01:09 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:01:09 ctrl.machine DEBUG    ok
+
+2020-09-14 16:01:09 ctrl.machine DEBUG    message received
+2020-09-14 16:01:09 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:01:09 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:01:09 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:01:09 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:01:09 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=1
+2020-09-14 16:01:09 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:01:09 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:01:09 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:01:37 ctrl.machine DEBUG    ok
+
+2020-09-14 16:01:37 ctrl.machine DEBUG    message received
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:01:37 ctrl.casE    INFO     Mixing E, #4 of 6 cycles...
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:01:37 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 16:01:37 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:01:37 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:01:37 ctrl.machine DEBUG    ok
+
+2020-09-14 16:01:37 ctrl.machine DEBUG    message received
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:01:37 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0 SPEED=1
+2020-09-14 16:01:37 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:01:37 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:01:37 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:02:05 ctrl.machine DEBUG    ok
+
+2020-09-14 16:02:05 ctrl.machine DEBUG    message received
+2020-09-14 16:02:05 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:02:05 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:02:05 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:02:07 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:02:07 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:02:07 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:02:07 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0
+2020-09-14 16:02:07 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:02:07 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:02:07 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:02:07 ctrl.machine DEBUG    ok
+
+2020-09-14 16:02:07 ctrl.machine DEBUG    message received
+2020-09-14 16:02:07 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:02:07 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:02:07 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:02:07 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:02:07 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=1
+2020-09-14 16:02:07 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:02:07 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:02:07 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:02:35 ctrl.machine DEBUG    ok
+
+2020-09-14 16:02:35 ctrl.machine DEBUG    message received
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:02:35 ctrl.casE    INFO     Mixing E, #5 of 6 cycles...
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:02:35 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 16:02:35 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:02:35 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:02:35 ctrl.machine DEBUG    ok
+
+2020-09-14 16:02:35 ctrl.machine DEBUG    message received
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:02:35 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0 SPEED=1
+2020-09-14 16:02:35 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:02:35 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:02:35 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:03:03 ctrl.machine DEBUG    ok
+
+2020-09-14 16:03:03 ctrl.machine DEBUG    message received
+2020-09-14 16:03:03 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:03:03 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:03:03 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:03:05 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:03:05 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:03:05 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:03:05 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0
+2020-09-14 16:03:05 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:03:05 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:03:05 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:03:05 ctrl.machine DEBUG    ok
+
+2020-09-14 16:03:05 ctrl.machine DEBUG    message received
+2020-09-14 16:03:05 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:03:05 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:03:05 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:03:05 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:03:05 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=1
+2020-09-14 16:03:05 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:03:05 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:03:05 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:03:33 ctrl.machine DEBUG    ok
+
+2020-09-14 16:03:33 ctrl.machine DEBUG    message received
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:03:33 ctrl.casE    INFO     Mixing E, #6 of 6 cycles...
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:03:33 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 16:03:33 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:03:33 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:03:33 ctrl.machine DEBUG    ok
+
+2020-09-14 16:03:33 ctrl.machine DEBUG    message received
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:03:33 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0 SPEED=1
+2020-09-14 16:03:33 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:03:33 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:03:33 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:04:01 ctrl.machine DEBUG    ok
+
+2020-09-14 16:04:01 ctrl.machine DEBUG    message received
+2020-09-14 16:04:01 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:04:01 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:04:01 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:04:03 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:04:03 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:04:03 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:04:03 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0
+2020-09-14 16:04:03 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:04:03 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:04:03 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:04:03 ctrl.machine DEBUG    ok
+
+2020-09-14 16:04:03 ctrl.machine DEBUG    message received
+2020-09-14 16:04:03 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:04:03 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:04:03 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:04:03 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:04:03 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=1
+2020-09-14 16:04:03 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:04:03 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:04:03 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:07:00 ctrl.casE    INFO     Engage CasE...
+2020-09-14 16:07:00 ctrl.machine DEBUG    move axis: sampleE 8
+2020-09-14 16:07:00 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=8
+2020-09-14 16:07:00 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:07:00 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:07:00 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:07:03 ctrl.machine DEBUG    ok
+
+2020-09-14 16:07:03 ctrl.machine DEBUG    message received
+2020-09-14 16:07:03 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:02 ctrl.casE    INFO     
+
+
+
+2020-09-14 16:10:02 ctrl.casE    INFO     Starting Run!
+sampleName                                        Epurge
+protocolName                                       purge
+protocolPath    /home/pi/CasMonitor/Protocols/purge.json
+startlog                                             660
+Name: casE, dtype: object
+2020-09-14 16:10:02 ctrl.casE    INFO     Starting task on casE
+2020-09-14 16:10:02 ctrl.casE    INFO     ['casE']
+2020-09-14 16:10:02 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-14 16:10:02 ctrl.casE    INFO     ['self.purge(casL="E",deadvol=4.0)']
+2020-09-14 16:10:02 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-09-14 16:10:02 ctrl.machine DEBUG    move axis: z 40
+2020-09-14 16:10:02 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-14 16:10:02 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:02 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:02 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:05 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:05 ctrl.machine DEBUG    message received
+2020-09-14 16:10:05 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:05 ctrl.machine DEBUG    move axis: x -133
+2020-09-14 16:10:05 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=x MOVE=-133
+2020-09-14 16:10:05 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:05 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:05 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:06 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:06 ctrl.machine DEBUG    message received
+2020-09-14 16:10:06 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:06 ctrl.machine DEBUG    move axis: z 66
+2020-09-14 16:10:06 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=66
+2020-09-14 16:10:06 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:06 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:06 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:09 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:09 ctrl.machine DEBUG    message received
+2020-09-14 16:10:09 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:09 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:10:09 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:10:09 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:10:09 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 16:10:09 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:09 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:09 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:10 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:10 ctrl.machine DEBUG    message received
+2020-09-14 16:10:10 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:10 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:10:10 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:10:10 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:10:10 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0 SPEED=3
+2020-09-14 16:10:10 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:10 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:10 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:20 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:20 ctrl.machine DEBUG    message received
+2020-09-14 16:10:20 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:20 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:10:20 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:10:20 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:10:20 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:10:20 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:10:20 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0
+2020-09-14 16:10:20 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:20 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:20 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:23 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:23 ctrl.machine DEBUG    message received
+2020-09-14 16:10:23 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:23 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:10:23 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:10:23 ctrl.machine DEBUG    move axis: pump 9.0
+2020-09-14 16:10:23 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=9.0 SPEED=3
+2020-09-14 16:10:23 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:23 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:23 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:26 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:26 ctrl.machine DEBUG    message received
+2020-09-14 16:10:26 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:26 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:10:26 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:10:27 ctrl.machine DEBUG    move axis: z 40
+2020-09-14 16:10:27 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-14 16:10:27 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:27 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:27 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:30 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:30 ctrl.machine DEBUG    message received
+2020-09-14 16:10:30 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:30 ctrl.machine DEBUG    move axis: x -156
+2020-09-14 16:10:30 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=x MOVE=-156
+2020-09-14 16:10:30 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:30 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:30 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:32 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:32 ctrl.machine DEBUG    message received
+2020-09-14 16:10:32 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:32 ctrl.machine DEBUG    move axis: z 80
+2020-09-14 16:10:32 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=80
+2020-09-14 16:10:32 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:32 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:32 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:36 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:36 ctrl.machine DEBUG    message received
+2020-09-14 16:10:36 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:36 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:10:36 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:10:36 ctrl.machine DEBUG    move axis: pump 27.0
+2020-09-14 16:10:36 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=27.0
+2020-09-14 16:10:36 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:36 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:36 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:39 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:39 ctrl.machine DEBUG    message received
+2020-09-14 16:10:39 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:39 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:10:39 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:10:39 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:10:39 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=8
+2020-09-14 16:10:39 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:39 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:39 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:43 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:43 ctrl.machine DEBUG    message received
+2020-09-14 16:10:43 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:43 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:10:43 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:10:43 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=1
+2020-09-14 16:10:43 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:10:43 ctrl.machine DEBUG    move axis: pump 18.0
+2020-09-14 16:10:43 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=18.0
+2020-09-14 16:10:43 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:43 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:43 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:45 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:45 ctrl.machine DEBUG    message received
+2020-09-14 16:10:45 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:45 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:10:45 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=1
+2020-09-14 16:10:45 ctrl.machine DEBUG    move axis: pump 0
+2020-09-14 16:10:45 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=pump MOVE=0 SPEED=8
+2020-09-14 16:10:45 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:45 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:45 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:48 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:48 ctrl.machine DEBUG    message received
+2020-09-14 16:10:48 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:48 ctrl.machine DEBUG    send message: SET_PIN PIN=vent VALUE=0
+2020-09-14 16:10:48 ctrl.machine DEBUG    send message: SET_PIN PIN=syringe VALUE=0
+2020-09-14 16:10:48 ctrl.machine DEBUG    move axis: z 40
+2020-09-14 16:10:48 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-14 16:10:48 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:10:48 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:10:48 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:10:52 ctrl.machine DEBUG    ok
+
+2020-09-14 16:10:52 ctrl.machine DEBUG    message received
+2020-09-14 16:10:52 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:10:52 ctrl.casE    INFO     Finished casE task!
+2020-09-14 16:10:52 ctrl.casE    INFO     Updating progress on casE...
+2020-09-14 16:30:09 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 16:30:09 ctrl.machine DEBUG    move axis: sampleE 3
+2020-09-14 16:30:09 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=3
+2020-09-14 16:30:09 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:30:09 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:30:09 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:30:11 ctrl.machine DEBUG    ok
+
+2020-09-14 16:30:11 ctrl.machine DEBUG    message received
+2020-09-14 16:30:11 ctrl.machine DEBUG    send message: M84
+2020-09-14 16:53:06 ctrl.casE    INFO     Engage CasE...
+2020-09-14 16:53:06 ctrl.machine DEBUG    move axis: sampleE 8
+2020-09-14 16:53:06 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=8
+2020-09-14 16:53:06 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 16:53:06 ctrl.machine DEBUG    send message: M400
+2020-09-14 16:53:06 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 16:53:09 ctrl.machine DEBUG    ok
+
+2020-09-14 16:53:09 ctrl.machine DEBUG    message received
+2020-09-14 16:53:09 ctrl.machine DEBUG    send message: M84
+2020-09-14 17:09:56 ctrl.casE    INFO     Engage CasE...
+2020-09-14 17:09:56 ctrl.machine DEBUG    move axis: sampleE 8
+2020-09-14 17:09:56 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=8
+2020-09-14 17:09:56 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 17:09:56 ctrl.machine DEBUG    send message: M400
+2020-09-14 17:09:56 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 17:09:59 ctrl.machine DEBUG    ok
+
+2020-09-14 17:09:59 ctrl.machine DEBUG    message received
+2020-09-14 17:09:59 ctrl.machine DEBUG    send message: M84
+2020-09-14 17:10:23 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 17:10:23 ctrl.machine DEBUG    move axis: sampleE 3
+2020-09-14 17:10:23 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=3
+2020-09-14 17:10:23 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 17:10:23 ctrl.machine DEBUG    send message: M400
+2020-09-14 17:10:23 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 17:10:25 ctrl.machine DEBUG    ok
+
+2020-09-14 17:10:25 ctrl.machine DEBUG    message received
+2020-09-14 17:10:25 ctrl.machine DEBUG    send message: M84
+2020-09-14 17:13:49 ctrl.casE    INFO     Engage CasE...
+2020-09-14 17:13:49 ctrl.machine DEBUG    move axis: sampleE 8
+2020-09-14 17:13:49 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=8
+2020-09-14 17:13:49 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 17:13:49 ctrl.machine DEBUG    send message: M400
+2020-09-14 17:13:49 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 17:13:51 ctrl.machine DEBUG    ok
+
+2020-09-14 17:13:51 ctrl.machine DEBUG    message received
+2020-09-14 17:13:51 ctrl.machine DEBUG    send message: M84
+2020-09-14 17:13:56 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 17:13:56 ctrl.machine DEBUG    move axis: sampleE 3
+2020-09-14 17:13:56 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=3
+2020-09-14 17:13:56 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 17:13:56 ctrl.machine DEBUG    send message: M400
+2020-09-14 17:13:56 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 17:13:58 ctrl.machine DEBUG    ok
+
+2020-09-14 17:13:58 ctrl.machine DEBUG    message received
+2020-09-14 17:13:58 ctrl.machine DEBUG    send message: M84
+2020-09-14 17:14:03 ctrl.casE    INFO     Engage CasE...
+2020-09-14 17:14:03 ctrl.machine DEBUG    move axis: sampleE 8
+2020-09-14 17:14:03 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=8
+2020-09-14 17:14:03 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 17:14:03 ctrl.machine DEBUG    send message: M400
+2020-09-14 17:14:03 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 17:14:05 ctrl.machine DEBUG    ok
+
+2020-09-14 17:14:05 ctrl.machine DEBUG    message received
+2020-09-14 17:14:05 ctrl.machine DEBUG    send message: M84
+2020-09-14 17:14:10 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 17:14:10 ctrl.machine DEBUG    move axis: sampleE 3
+2020-09-14 17:14:10 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=3
+2020-09-14 17:14:10 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 17:14:10 ctrl.machine DEBUG    send message: M400
+2020-09-14 17:14:10 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 17:14:12 ctrl.machine DEBUG    ok
+
+2020-09-14 17:14:12 ctrl.machine DEBUG    message received
+2020-09-14 17:14:12 ctrl.machine DEBUG    send message: M84
+2020-09-14 17:14:18 ctrl.casE    INFO     Engage CasE...
+2020-09-14 17:14:18 ctrl.machine DEBUG    move axis: sampleE 8
+2020-09-14 17:14:18 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=8
+2020-09-14 17:14:18 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 17:14:18 ctrl.machine DEBUG    send message: M400
+2020-09-14 17:14:18 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 17:14:20 ctrl.machine DEBUG    ok
+
+2020-09-14 17:14:20 ctrl.machine DEBUG    message received
+2020-09-14 17:14:20 ctrl.machine DEBUG    send message: M84
+2020-09-14 17:14:46 ctrl.casE    INFO     Disengage CasE...
+2020-09-14 17:14:46 ctrl.machine DEBUG    move axis: sampleE 3
+2020-09-14 17:14:46 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleE MOVE=3
+2020-09-14 17:14:46 ctrl.machine DEBUG    waiting for move to complete
+2020-09-14 17:14:46 ctrl.machine DEBUG    send message: M400
+2020-09-14 17:14:46 ctrl.machine DEBUG    waiting for message: ok
+2020-09-14 17:14:48 ctrl.machine DEBUG    ok
+
+2020-09-14 17:14:48 ctrl.machine DEBUG    message received
+2020-09-14 17:14:48 ctrl.machine DEBUG    send message: M84

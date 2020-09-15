@@ -74,6 +74,12 @@ machinelog.addHandler(modHdl)
 #close file and do not write anything until needed
 modHdl.close()
 
+mixSpeed = 3
+purgeSpeed = 3
+purgeVol = 4
+wasteSpeed = 8
+
+
 # Define application session class for controller
 class Component(ApplicationSession):
     
@@ -152,6 +158,14 @@ class Component(ApplicationSession):
             ctrl.error("could not subscribe to procedure: {0}".format(e))
         asyncio.ensure_future(self.update())
         #After connecting, home the machine and make sure it's connected
+        try:
+            machine.reset()
+            machine.home()
+        except Exception as e:
+            ctrl.critical('Could not reset and home machine!')
+            ctrl.critical(e)
+            self.leave()
+            self.disconnect()
         
         if len(dcTask):
             #Convert strings back to lists...
@@ -174,6 +188,13 @@ class Component(ApplicationSession):
         #Write the last state of the controller taskDF to a file
         ctrl.info('Writing disconnect-state to file...')
         self.taskDF.to_pickle('./Log/disconnect/disconnect-state.pkl')
+        try:
+            machine.goto_park()
+            ctrl.info('Parking machine...')
+        except Exception as e:
+            ctrl.critical('Could not park machine!')
+            ctrl.critical(e)
+        
         
         
     def get_tasks(self):
@@ -239,22 +260,36 @@ class Component(ApplicationSession):
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
         casLogs[casL].info('Engage Cas{}...'.format(casL))
         # machine.test_logger()
-        #eval('machine.engage_sample{}()'.format(casL))
-        
-        time.sleep(1)
-        self.publish('com.prepbot.prothandler.ready', casL, True)
-        self.taskDF.loc['cas{}'.format(casL),'engaged'] = True
-    
+        try:
+            eval('machine.engage_sample{}()'.format(casL))
+#             time.sleep(1)
+            self.publish('com.prepbot.prothandler.ready', casL, True)
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = True
+
+        except Exception as e:
+            ctrl.critical('Machine could not engage cas{}. Does it exist?'.format(casL))
+            ctrl.critical(e)
+            self.taskDF.loc['cas{}'.format(casL)] = np.nan
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+            self.publish('com.prepbot.prothandler.ready', casL, False)
+            
     @wamp.subscribe('com.prepbot.prothandler.disengage')
     def disengage(self, casL):
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
         casLogs[casL].info('Disengage Cas{}...'.format(casL))
-        #eval('machine.disengage_sample{}()'.format(casL))
-        time.sleep(1)
-        self.publish('com.prepbot.prothandler.ready', casL, False)
-        self.taskDF.loc['cas{}'.format(casL)] = np.nan
-        self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+        try:
+            eval('machine.disengage_sample{}()'.format(casL))
+#             time.sleep(1)
+            self.publish('com.prepbot.prothandler.ready', casL, False)
+            self.taskDF.loc['cas{}'.format(casL)] = np.nan
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+        except Exception as e:
+            ctrl.critical('Machine could not disengage cas{}. Does it exist?'.format(casL))
+            ctrl.critical(e)
+            self.taskDF.loc['cas{}'.format(casL)] = np.nan
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+            self.publish('com.prepbot.prothandler.ready', casL, False)
 
         
     @wamp.subscribe('com.prepbot.prothandler.start')
@@ -434,7 +469,11 @@ class Component(ApplicationSession):
     async def shutdown(self, casL):
         #Basic shutdown procedures when stopping a run before finishing.....
         casLogs[casL].info('SHUTDOWN Cas{}'.format(casL))
-        await asyncio.sleep(10)
+        try:
+            machine.goto_park()
+        except Exception as e:
+            casLogs[casL].critical(e)
+            
         
     
     async def incubate(self, casL, incTime, mixAfter=600):
@@ -485,52 +524,69 @@ class Component(ApplicationSession):
                 modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
                 casLogs[casL].info('Mixing Cas{}...'.format(casL))
                 #Goto last fluidtype???
-                # eval('machine.goto_sample{}()'.format(casL))
-                # machine.pump_in(0.5)
-                time.sleep(2)
-                # machine.pump_out(0.5)
-    
+                try:
+                    eval('machine.goto_sample{}()'.format(casL))
+                    machine.pump_in(0.5, mixSpeed)
+                    time.sleep(2)
+                    machine.pump_out(0.5, mixSpeed)
+                except Exception as e:
+                    casLogs[casL].critical(e)
+        
     async def mix(self, casL, numCycles, volume):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
         casLogs[casL].info("MIXING Cas{}, {} TIMES, {} VOLUME".format(casL, numCycles, volume))
-        # eval('machine.goto_sample{}()'.format(casL))
-        for i in range(int(numCycles)):
-            # await asyncio.sleep(0.01)
-            casLogs[casL].info('Mixing {}, #{} of {} cycles...'.format(casL,i+1,int(numCycles)))
-            # Goto last fluidtype???
-            # machine.pump_in(volume)
-            time.sleep(2)
-            # machine.pump_out(volume)
-    
+        try:
+            eval('machine.goto_sample{}()'.format(casL))
+            for i in range(int(numCycles)):
+                # await asyncio.sleep(0.01)
+                casLogs[casL].info('Mixing {}, #{} of {} cycles...'.format(casL,i+1,int(numCycles)))
+                # Goto last fluidtype???
+                machine.pump_in(volume, mixSpeed)
+                time.sleep(2)
+                machine.pump_out(volume, mixSpeed)
+        except Exception as e:
+            casLogs[casL].critical(e)
+        
     async def purge(self, casL, deadvol):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
         casLogs[casL].info('PURGING CHAMBER, Cas{}'.format(casL))
         # Goto last fluidtype???
-        # eval('machine.goto_sample{}()'.format(casL))
-        # machine.pump_in(deadvol)
-        await asyncio.sleep(5)
-        #machine.empty_syringe()
-    
+        try:
+            eval('machine.goto_sample{}()'.format(casL))
+            machine.pump_in(deadvol, purgeSpeed)
+            time.sleep(1)
+            machine.empty_syringe(wasteSpeed)
+        except Exception as e:
+            casLogs[casL].critical(e)
+        
     async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
-        casLogs[casL].info('PURGING CHAMBER, Cas{}'.format(casL))
-        # eval('machine.goto_sample{}()'.format(casL))
-        # machine.pump_in(deadvol)
-        await asyncio.sleep(5)
-        #machine.empty_syringe()
+        try:
+            casLogs[casL].info('PURGING CHAMBER, Cas{}'.format(casL))
+            eval('machine.goto_sample{}()'.format(casL))
+#             machine.pump_in(deadvol, purgeSpeed)
+#             time.sleep(1)
+#             machine.empty_syringe(wasteSpeed)
+            flowThru = purgeVol + deadvol
+            machine.pump_out(flowThru, purgeSpeed)
 
-        casLogs[casL].info('ADDING {} TO Cas{}'.format(loadstr, casL))
-        # eval('machine.goto_{}()'.format(reagent))
-        # machine.pump_in(vol,speed)
-        await asyncio.sleep(5)
-        # eval('machine.goto_sample{}()'.format(casL))
-        # machine.pump_out(vol,speed)
+            casLogs[casL].info('ADDING {} TO Cas{}'.format(loadstr, casL))
+            eval('machine.goto_{}()'.format(reagent))
+            machine.pump_in(vol,speed)
+            if reagent == 'babb':
+                time.sleep(3)
+            else:
+                time.sleep(1)
+            eval('machine.goto_sample{}()'.format(casL))
+            machine.pump_out(vol,speed)
+        except Exception as e:
+            casLogs[casL].critical(e)
 
     @wamp.subscribe('com.prepbot.button.btn_halt')
     async def halt(self):
