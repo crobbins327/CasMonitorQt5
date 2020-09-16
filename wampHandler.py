@@ -167,6 +167,11 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         guilog.info("Disconnected GUI")
         guilog.info(self.taskDF)
     
+    @QtCore.pyqtSlot(str)
+    def execScript(self, linesToExec):
+        self.publish('com.prepbot.prothandler.exec-script', linesToExec)
+    
+    
     #Takes casNumber and protocol.json
     @QtCore.pyqtSlot(str, str, str, str, str)
     def startProtocol(self, casNumber, protPath, runtime, sampleName, protocolName):
@@ -550,7 +555,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         else:
             vol = float(volume[:-2])/1000
         #Convert to mL for machine pump in/out command
-        deVol = vol + self.deadspace/1000
+#         deVol = vol + self.deadspace/1000
         # purgeStr = '''
         # print('PURGING CHAMBER')
         # machine.goto_sample{}()
@@ -558,7 +563,8 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # sleep(5)
         # machine.empty_syringe()
         # '''.format(casL,deVol)
-        purgeStr = 'self.purge(casL="{}",deadvol={})'.format(casL,deVol)
+#         purgeStr = 'self.purge(casL="{}",deadvol={})'.format(casL,deVol)
+        purgeStr = 'self.purge(casL="{}")'.format(casL)
         return(purgeStr)
         
     def __load_reagent(self, casL, volume, speed, loadType, mL=False):
@@ -570,7 +576,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         else:
             vol = float(volume[:-2])/1000
         #Convert to mL for machine pump in/out command
-        deVol = vol + self.deadspace/1000
+#         deVol = vol + self.deadspace/1000
         # loadString = '''
         # print('ADDING {}')
         # machine.goto_{}()
@@ -579,7 +585,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # machine.goto_sample{}()
         # machine.pump_out({},{})
         # '''.format(loadType,reaConv[loadType],vol,speed,casL,deVol,speed)
-        loadStr= 'self.loadReagent(casL="{}",loadstr="{}",reagent="{}",vol={},speed={},deadvol={})'.format(casL,loadType, reaConv[loadType], vol, speed, deVol)
+        loadStr= 'self.loadReagent(casL="{}",loadstr="{}",reagent="{}",vol={},speed={})'.format(casL,loadType, reaConv[loadType], vol, speed)
         return(loadStr)
         
     

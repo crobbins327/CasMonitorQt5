@@ -671,7 +671,12 @@ Item {
 
                         enabled: scriptSwitch.checked
 
-                        onClicked: {}
+                        onClicked: {
+                            //Send the protocol in the exec terminal into the WAMPHandler
+                            WAMPHandler.execScript(scriptText)
+                            //Clear script text
+                            scriptText = ''
+                            }
                     }
 
                     BevButton {
@@ -1038,36 +1043,37 @@ Item {
                             //                ScrollBar.vertical.interactive: true
                             enabled: scriptSwitch.checked
 
-                            TextEdit {
+                            TextArea {
                                 id: scriptEditor
-                                height: scriptRec.height
-                                width: scriptRec.width
+                                //height: scriptRec.height
+                                //width: scriptRec.width
                                 readOnly: false
                                 selectByMouse: true
                                 selectByKeyboard: true
+                                focus: true
+                                placeholderText: 'Execute functions from controlNQ.py or machine.py!' 
+                                //placeholderText: scriptEditor.text == '' ? 'Execute functions from controlNQ.py or machine.py using script editor!' : ''
                                 text: scriptText
+                                //anchors.fill: parent
                                 anchors.topMargin: 5
                                 anchors.bottomMargin: 5
                                 anchors.rightMargin: 10
                                 anchors.leftMargin: 5
                                 font.pointSize: 11
-                                wrapMode:{
-                                    if(scriptEditor.text.length > 40){
-//                                        console.log('Wrapping!', scriptEditor.text.length)
-                                        return(Text.WordWrap)
-                                    } else {
-//                                        console.log('no wrap')
-                                        return(Text.NoWrap)
-                                    }
-                                }
+                                wrapMode: Text.WrapAnywhere
 
                                 opacity: scriptSwitch.checked ? 1 : 0.3
-                                anchors.fill: parent
                                 enabled: scriptSwitch.checked
+                                
+                                background: Rectangle{
+                                    implicitWidth: scriptRec.width
+                                    implicitHeight: scriptRec.height
+                                    }
 
                                 onEditingFinished: {
                                     scriptText = scriptEditor.text
                                 }
+                                
                             }
                         }
                     }

@@ -1857,3 +1857,251 @@ Name: casF, dtype: object
 2020-09-14 17:15:09 ctrl.machine DEBUG    waiting for move to complete
 2020-09-14 17:15:09 ctrl.machine DEBUG    send message: M400
 2020-09-14 17:15:09 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 17:55:24 ctrl.casF    INFO     Engage CasF...
+2020-09-15 17:55:24 ctrl.machine DEBUG    move axis: sampleF 11
+2020-09-15 17:55:24 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=11
+2020-09-15 17:55:24 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 17:55:24 ctrl.machine DEBUG    send message: M400
+2020-09-15 17:55:24 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 17:55:27 ctrl.machine DEBUG    ok
+
+2020-09-15 17:55:27 ctrl.machine DEBUG    message received
+2020-09-15 17:55:27 ctrl.machine DEBUG    send message: M84
+2020-09-15 17:55:50 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 17:55:50 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 17:55:50 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 17:55:50 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 17:55:50 ctrl.machine DEBUG    send message: M400
+2020-09-15 17:55:50 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 17:55:52 ctrl.machine DEBUG    ok
+
+2020-09-15 17:55:52 ctrl.machine DEBUG    message received
+2020-09-15 17:55:52 ctrl.machine DEBUG    send message: M84
+2020-09-15 17:56:04 ctrl.casF    INFO     Engage CasF...
+2020-09-15 17:56:04 ctrl.machine DEBUG    move axis: sampleF 11
+2020-09-15 17:56:04 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=11
+2020-09-15 17:56:04 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 17:56:04 ctrl.machine DEBUG    send message: M400
+2020-09-15 17:56:04 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 17:56:06 ctrl.machine DEBUG    ok
+
+2020-09-15 17:56:06 ctrl.machine DEBUG    message received
+2020-09-15 17:56:06 ctrl.machine DEBUG    send message: M84
+2020-09-15 18:01:08 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 18:01:08 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 18:01:08 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 18:01:08 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 18:01:08 ctrl.machine DEBUG    send message: M400
+2020-09-15 18:01:08 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 18:01:10 ctrl.machine DEBUG    ok
+
+2020-09-15 18:01:10 ctrl.machine DEBUG    message received
+2020-09-15 18:01:10 ctrl.machine DEBUG    send message: M84
+2020-09-15 18:01:49 ctrl.casF    INFO     Engage CasF...
+2020-09-15 18:01:49 ctrl.machine DEBUG    move axis: sampleF 11
+2020-09-15 18:01:49 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=11
+2020-09-15 18:01:49 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 18:01:49 ctrl.machine DEBUG    send message: M400
+2020-09-15 18:01:49 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 18:01:51 ctrl.machine DEBUG    ok
+
+2020-09-15 18:01:51 ctrl.machine DEBUG    message received
+2020-09-15 18:01:51 ctrl.machine DEBUG    send message: M84
+2020-09-15 18:01:53 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 18:01:53 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 18:01:53 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 18:01:53 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 18:01:53 ctrl.machine DEBUG    send message: M400
+2020-09-15 18:01:53 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 18:01:55 ctrl.machine DEBUG    ok
+
+2020-09-15 18:01:55 ctrl.machine DEBUG    message received
+2020-09-15 18:01:55 ctrl.machine DEBUG    send message: M84
+2020-09-15 18:02:05 ctrl.casF    INFO     Engage CasF...
+2020-09-15 18:02:05 ctrl.machine DEBUG    move axis: sampleF 11
+2020-09-15 18:02:05 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=11
+2020-09-15 18:02:05 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 18:02:05 ctrl.machine DEBUG    send message: M400
+2020-09-15 18:02:05 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 18:02:07 ctrl.machine DEBUG    ok
+
+2020-09-15 18:02:07 ctrl.machine DEBUG    message received
+2020-09-15 18:02:07 ctrl.machine DEBUG    send message: M84
+2020-09-15 18:02:09 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 18:02:09 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 18:02:09 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 18:02:09 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 18:02:09 ctrl.machine DEBUG    send message: M400
+2020-09-15 18:02:09 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 18:02:11 ctrl.machine DEBUG    ok
+
+2020-09-15 18:02:11 ctrl.machine DEBUG    message received
+2020-09-15 18:02:11 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:39:59 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:39:59 ctrl.machine DEBUG    move axis: sampleF 11
+2020-09-15 19:39:59 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=11
+2020-09-15 19:39:59 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:39:59 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:39:59 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:40:02 ctrl.machine DEBUG    ok
+
+2020-09-15 19:40:02 ctrl.machine DEBUG    message received
+2020-09-15 19:40:02 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:40:08 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:40:08 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 19:40:08 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 19:40:08 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:40:08 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:40:08 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:40:10 ctrl.machine DEBUG    ok
+
+2020-09-15 19:40:10 ctrl.machine DEBUG    message received
+2020-09-15 19:40:10 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:40:46 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:40:46 ctrl.machine DEBUG    move axis: sampleF 11
+2020-09-15 19:40:46 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=11
+2020-09-15 19:40:46 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:40:46 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:40:46 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:40:48 ctrl.machine DEBUG    ok
+
+2020-09-15 19:40:48 ctrl.machine DEBUG    message received
+2020-09-15 19:40:48 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:40:49 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:40:49 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 19:40:49 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 19:40:49 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:40:49 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:40:49 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:40:51 ctrl.machine DEBUG    ok
+
+2020-09-15 19:40:51 ctrl.machine DEBUG    message received
+2020-09-15 19:40:51 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:55:49 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:55:49 ctrl.machine DEBUG    move axis: sampleF 11
+2020-09-15 19:55:49 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=11
+2020-09-15 19:55:49 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:55:49 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:55:49 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:55:52 ctrl.machine DEBUG    ok
+
+2020-09-15 19:55:52 ctrl.machine DEBUG    message received
+2020-09-15 19:55:52 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:56:02 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:56:02 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 19:56:02 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 19:56:02 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:56:02 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:56:02 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:56:04 ctrl.machine DEBUG    ok
+
+2020-09-15 19:56:04 ctrl.machine DEBUG    message received
+2020-09-15 19:56:04 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:57:03 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:57:03 ctrl.machine DEBUG    move axis: sampleF 11
+2020-09-15 19:57:03 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=11
+2020-09-15 19:57:03 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:57:03 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:57:03 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:57:05 ctrl.machine DEBUG    ok
+
+2020-09-15 19:57:05 ctrl.machine DEBUG    message received
+2020-09-15 19:57:05 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:57:07 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:57:07 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 19:57:07 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 19:57:07 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:57:07 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:57:07 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:57:09 ctrl.machine DEBUG    ok
+
+2020-09-15 19:57:09 ctrl.machine DEBUG    message received
+2020-09-15 19:57:09 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:57:18 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:57:18 ctrl.machine DEBUG    move axis: sampleF 11
+2020-09-15 19:57:18 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=11
+2020-09-15 19:57:18 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:57:18 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:57:18 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:57:20 ctrl.machine DEBUG    ok
+
+2020-09-15 19:57:20 ctrl.machine DEBUG    message received
+2020-09-15 19:57:20 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:57:36 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:57:36 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 19:57:36 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 19:57:36 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:57:36 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:57:36 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:57:38 ctrl.machine DEBUG    ok
+
+2020-09-15 19:57:38 ctrl.machine DEBUG    message received
+2020-09-15 19:57:38 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:57:40 ctrl.machine DEBUG    move axis: z 40
+2020-09-15 19:57:40 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=z MOVE=40
+2020-09-15 19:57:40 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:57:40 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:57:40 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:57:40 ctrl.machine DEBUG    ok
+
+2020-09-15 19:57:40 ctrl.machine DEBUG    message received
+2020-09-15 19:57:40 ctrl.machine DEBUG    send message: M84
+2020-09-15 19:57:40 ctrl.machine DEBUG    move axis: x -70
+2020-09-15 19:57:40 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=x MOVE=-70
+2020-09-15 19:57:40 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 19:57:40 ctrl.machine DEBUG    send message: M400
+2020-09-15 19:57:40 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 19:57:41 ctrl.machine DEBUG    ok
+
+2020-09-15 19:57:41 ctrl.machine DEBUG    message received
+2020-09-15 19:57:41 ctrl.machine DEBUG    send message: M84
+2020-09-15 20:02:17 ctrl.casF    INFO     Engage CasF...
+2020-09-15 20:02:17 ctrl.machine DEBUG    move axis: sampleF 10
+2020-09-15 20:02:17 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=10
+2020-09-15 20:02:17 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 20:02:17 ctrl.machine DEBUG    send message: M400
+2020-09-15 20:02:17 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 20:02:20 ctrl.machine DEBUG    ok
+
+2020-09-15 20:02:20 ctrl.machine DEBUG    message received
+2020-09-15 20:02:20 ctrl.machine DEBUG    send message: M84
+2020-09-15 20:02:32 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 20:02:32 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 20:02:32 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 20:02:32 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 20:02:32 ctrl.machine DEBUG    send message: M400
+2020-09-15 20:02:32 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 20:02:34 ctrl.machine DEBUG    ok
+
+2020-09-15 20:02:34 ctrl.machine DEBUG    message received
+2020-09-15 20:02:34 ctrl.machine DEBUG    send message: M84
+2020-09-15 20:02:56 ctrl.casF    INFO     Engage CasF...
+2020-09-15 20:02:56 ctrl.machine DEBUG    move axis: sampleF 10
+2020-09-15 20:02:56 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=10
+2020-09-15 20:02:56 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 20:02:56 ctrl.machine DEBUG    send message: M400
+2020-09-15 20:02:56 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 20:02:58 ctrl.machine DEBUG    ok
+
+2020-09-15 20:02:58 ctrl.machine DEBUG    message received
+2020-09-15 20:02:58 ctrl.machine DEBUG    send message: M84
+2020-09-15 20:02:59 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 20:02:59 ctrl.machine DEBUG    move axis: sampleF 3
+2020-09-15 20:02:59 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=3
+2020-09-15 20:02:59 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 20:02:59 ctrl.machine DEBUG    send message: M400
+2020-09-15 20:02:59 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 20:03:01 ctrl.machine DEBUG    ok
+
+2020-09-15 20:03:01 ctrl.machine DEBUG    message received
+2020-09-15 20:03:01 ctrl.machine DEBUG    send message: M84
+2020-09-15 21:55:22 ctrl.casF    INFO     Engage CasF...
+2020-09-15 21:55:22 ctrl.machine DEBUG    move axis: sampleF 10
+2020-09-15 21:55:22 ctrl.machine DEBUG    send message: MANUAL_STEPPER STEPPER=sampleF MOVE=10
+2020-09-15 21:55:22 ctrl.machine DEBUG    waiting for move to complete
+2020-09-15 21:55:22 ctrl.machine DEBUG    send message: M400
+2020-09-15 21:55:22 ctrl.machine DEBUG    waiting for message: ok
+2020-09-15 21:55:24 ctrl.machine DEBUG    ok
+
+2020-09-15 21:55:24 ctrl.machine DEBUG    message received
+2020-09-15 21:55:24 ctrl.machine DEBUG    send message: M84

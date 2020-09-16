@@ -973,3 +973,944 @@ casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
 2020-09-14 17:21:45 ctrl         INFO     Writing disconnect-state to file...
 2020-09-14 17:21:45 ctrl         CRITICAL Could not park machine!
 2020-09-14 17:21:45 ctrl         CRITICAL 
+2020-09-15 16:18:46 ctrl         INFO     9000
+2020-09-15 16:18:46 ctrl         INFO     Loading last controller state...
+2020-09-15 16:18:46 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 16:18:46 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 16:18:46 ctrl         INFO     Registered to all procedures!
+2020-09-15 16:18:46 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 16:20:55 ctrl         WARNING  Disconnected, []
+2020-09-15 16:20:55 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 16:20:55 ctrl         CRITICAL Could not park machine!
+2020-09-15 16:20:55 ctrl         CRITICAL 
+2020-09-15 16:17:51 ctrl         INFO     9000
+2020-09-15 16:17:51 ctrl         INFO     Loading last controller state...
+2020-09-15 16:17:51 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 16:17:51 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 16:17:51 ctrl         INFO     Registered to all procedures!
+2020-09-15 16:17:51 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 16:19:07 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 16:19:13 ctrl.casE    INFO     Engage CasE...
+2020-09-15 16:19:16 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 16:19:39 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:19:39 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:23:41 ctrl         WARNING  Disconnected, []
+2020-09-15 16:23:41 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 16:23:47 ctrl         INFO     Parking machine...
+2020-09-15 16:24:18 ctrl         INFO     9000
+2020-09-15 16:24:18 ctrl         INFO     Loading last controller state...
+2020-09-15 16:24:18 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 16:24:18 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 16:24:18 ctrl         INFO     Registered to all procedures!
+2020-09-15 16:24:18 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 16:25:29 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 16:26:02 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:26:02 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:27:58 ctrl         WARNING  Disconnected, []
+2020-09-15 16:27:58 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 16:28:05 ctrl         INFO     Parking machine...
+2020-09-15 16:28:09 ctrl         INFO     9000
+2020-09-15 16:28:09 ctrl         INFO     Loading last controller state...
+2020-09-15 16:28:09 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 16:28:09 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 16:28:09 ctrl         INFO     Registered to all procedures!
+2020-09-15 16:28:09 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 16:29:20 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 16:30:59 ctrl         INFO     
+
+
+2020-09-15 16:30:59 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:30:59 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:31:30 ctrl         INFO     move('sampleD', -1)
+2020-09-15 16:31:30 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:31:30 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:32:18 ctrl         INFO     machine.move('sampleD', -1)
+2020-09-15 16:32:18 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:32:18 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:36:32 ctrl         INFO     machine.move("sampleD", -1)
+2020-09-15 16:36:32 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:36:32 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:37:22 ctrl         INFO     machine.goto_formalin()
+2020-09-15 16:37:22 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:37:22 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:38:13 ctrl         INFO     "machine.goto_formalin()"
+2020-09-15 16:38:13 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:38:13 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:38:49 ctrl         INFO     machine.move("sampleD", -1)
+
+2020-09-15 16:38:49 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:38:49 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:40:46 ctrl         WARNING  Disconnected, []
+2020-09-15 16:40:46 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 16:40:53 ctrl         INFO     Parking machine...
+2020-09-15 16:40:57 ctrl         INFO     9000
+2020-09-15 16:40:57 ctrl         INFO     Loading last controller state...
+2020-09-15 16:40:57 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 16:40:57 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 16:40:57 ctrl         INFO     Registered to all procedures!
+2020-09-15 16:40:57 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 16:42:08 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 16:42:18 ctrl         INFO     
+
+
+
+
+
+
+2020-09-15 16:42:18 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:42:18 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:45:33 ctrl         WARNING  Disconnected, []
+2020-09-15 16:45:33 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 16:45:39 ctrl         INFO     Parking machine...
+2020-09-15 16:45:43 ctrl         INFO     9000
+2020-09-15 16:45:43 ctrl         INFO     Loading last controller state...
+2020-09-15 16:45:43 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 16:45:43 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 16:45:43 ctrl         INFO     Registered to all procedures!
+2020-09-15 16:45:43 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 16:46:54 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 16:47:15 ctrl         INFO     machine.move('sampleD', -1)
+2020-09-15 16:47:15 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:47:15 ctrl         DEBUG    ["machine.move('sampleD', -1)"]
+2020-09-15 16:47:16 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:48:01 ctrl         INFO     
+
+
+
+
+
+
+
+2020-09-15 16:48:01 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:48:01 ctrl         DEBUG    ['', '', '', '', '', '', '', '']
+2020-09-15 16:48:01 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 16:56:00 ctrl         WARNING  Disconnected, []
+2020-09-15 16:56:00 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 16:56:06 ctrl         INFO     Parking machine...
+2020-09-15 16:56:10 ctrl         INFO     9000
+2020-09-15 16:56:10 ctrl         INFO     Loading last controller state...
+2020-09-15 16:56:10 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 16:56:10 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 16:56:10 ctrl         INFO     Registered to all procedures!
+2020-09-15 16:56:10 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 16:57:21 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 16:59:19 ctrl         INFO     
+
+
+
+
+
+
+      
+
+
+
+
+2020-09-15 16:59:19 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 16:59:19 ctrl         DEBUG    ['', '', '', '', '', '', '', '      ', '', '', '', '']
+2020-09-15 17:00:11 ctrl         INFO     machine.move('sampleD',-3)
+
+machine.move('sampleD',-5)
+2020-09-15 17:00:11 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:00:11 ctrl         DEBUG    ["machine.move('sampleD',-3)", '', "machine.move('sampleD',-5)"]
+2020-09-15 17:00:12 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:01:44 ctrl         INFO     
+machine.move('sampleD',-5)
+
+
+machine.move('sampleD', -6)
+2020-09-15 17:01:44 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:01:44 ctrl         DEBUG    ['', "machine.move('sampleD',-5)", '', '', "machine.move('sampleD', -6)"]
+2020-09-15 17:01:45 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:03:19 ctrl         INFO     machine.move('sampleD',-9)
+2020-09-15 17:03:19 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:03:19 ctrl         DEBUG    ["machine.move('sampleD',-9)"]
+2020-09-15 17:03:20 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:03:30 ctrl         INFO     machine.move('sampleD',-10)
+2020-09-15 17:03:30 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:03:30 ctrl         DEBUG    ["machine.move('sampleD',-10)"]
+2020-09-15 17:03:31 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:03:41 ctrl         INFO     machine.move('sampleD',-12)
+2020-09-15 17:03:41 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:03:41 ctrl         DEBUG    ["machine.move('sampleD',-12)"]
+2020-09-15 17:03:42 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:04:06 ctrl         INFO     machine.move('sampleD',-15)
+2020-09-15 17:04:06 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:04:06 ctrl         DEBUG    ["machine.move('sampleD',-15)"]
+2020-09-15 17:04:07 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:14:09 ctrl         INFO     machine.move('sampleD',-12)
+2020-09-15 17:14:09 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:14:09 ctrl         DEBUG    ["machine.move('sampleD',-12)"]
+2020-09-15 17:14:10 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:14:27 ctrl         INFO     machine.move('sampleD',-9)
+2020-09-15 17:14:27 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:14:27 ctrl         DEBUG    ["machine.move('sampleD',-9)"]
+2020-09-15 17:14:28 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:15:06 ctrl         INFO     machine.move('sampleD',-11)
+2020-09-15 17:15:06 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:15:06 ctrl         DEBUG    ["machine.move('sampleD',-11)"]
+2020-09-15 17:15:07 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:15:18 ctrl.casD    INFO     Engage CasD...
+2020-09-15 17:15:24 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 17:15:42 ctrl         INFO     machine.move('sampleD',-9)
+2020-09-15 17:15:42 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:15:42 ctrl         DEBUG    ["machine.move('sampleD',-9)"]
+2020-09-15 17:15:45 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:15:56 ctrl         INFO     machine.move('sampleD',-11)
+2020-09-15 17:15:56 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:15:56 ctrl         DEBUG    ["machine.move('sampleD',-11)"]
+2020-09-15 17:15:57 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:36:49 ctrl         INFO     machine.move('sampleE',-1)
+
+2020-09-15 17:36:49 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:36:49 ctrl         DEBUG    ["machine.move('sampleE',-1)", '']
+2020-09-15 17:36:49 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:37:25 ctrl         INFO     machine.move('sampleE',-3)
+2020-09-15 17:37:25 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:37:25 ctrl         DEBUG    ["machine.move('sampleE',-3)"]
+2020-09-15 17:37:26 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:38:24 ctrl         INFO     machine.move('sampleE',0)
+2020-09-15 17:38:24 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:38:24 ctrl         DEBUG    ["machine.move('sampleE',0)"]
+2020-09-15 17:38:25 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:38:43 ctrl         INFO     machine.move('sampleE',-2)
+2020-09-15 17:38:43 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:38:43 ctrl         DEBUG    ["machine.move('sampleE',-2)"]
+2020-09-15 17:38:44 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:38:53 ctrl         INFO     machine.move('sampleE',-1)
+2020-09-15 17:38:53 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:38:53 ctrl         DEBUG    ["machine.move('sampleE',-1)"]
+2020-09-15 17:38:54 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:39:12 ctrl         INFO     machine.move('sampleD',-10)
+2020-09-15 17:39:12 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:39:12 ctrl         DEBUG    ["machine.move('sampleD',-10)"]
+2020-09-15 17:39:13 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:39:20 ctrl         INFO     machine.move('sampleE',-12)
+2020-09-15 17:39:20 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:39:20 ctrl         DEBUG    ["machine.move('sampleE',-12)"]
+2020-09-15 17:39:23 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:39:33 ctrl         INFO     machine.move('sampleE',0)
+2020-09-15 17:39:33 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:39:33 ctrl         DEBUG    ["machine.move('sampleE',0)"]
+2020-09-15 17:39:36 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:48:07 ctrl         INFO     machine.move('sampleD',-12)
+2020-09-15 17:48:07 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:48:07 ctrl         DEBUG    ["machine.move('sampleD',-12)"]
+2020-09-15 17:48:08 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:48:20 ctrl         INFO     machine.move('sampleD',-11)
+2020-09-15 17:48:20 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 17:48:20 ctrl         DEBUG    ["machine.move('sampleD',-11)"]
+2020-09-15 17:48:20 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 17:48:28 ctrl         WARNING  Disconnected, []
+2020-09-15 17:48:28 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 17:48:35 ctrl         INFO     Parking machine...
+2020-09-15 17:53:39 ctrl         INFO     9000
+2020-09-15 17:53:39 ctrl         INFO     Loading last controller state...
+2020-09-15 17:53:39 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 17:53:39 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 17:53:39 ctrl         INFO     Registered to all procedures!
+2020-09-15 17:53:39 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 17:54:50 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 17:55:08 ctrl.casD    INFO     Engage CasD...
+2020-09-15 17:55:18 ctrl.casE    INFO     Engage CasE...
+2020-09-15 17:55:24 ctrl.casF    INFO     Engage CasF...
+2020-09-15 17:55:50 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 17:55:53 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 17:55:56 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 17:56:01 ctrl.casD    INFO     Engage CasD...
+2020-09-15 17:56:02 ctrl.casE    INFO     Engage CasE...
+2020-09-15 17:56:04 ctrl.casF    INFO     Engage CasF...
+2020-09-15 18:00:17 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 18:00:20 ctrl.casE    INFO     Engage CasE...
+2020-09-15 18:01:06 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 18:01:08 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 18:01:10 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 18:01:18 ctrl.casD    INFO     Engage CasD...
+2020-09-15 18:01:38 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 18:01:46 ctrl.casE    INFO     Engage CasE...
+2020-09-15 18:01:49 ctrl.casF    INFO     Engage CasF...
+2020-09-15 18:01:53 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 18:02:05 ctrl.casF    INFO     Engage CasF...
+2020-09-15 18:02:09 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 18:02:23 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 18:02:30 ctrl.casE    INFO     Engage CasE...
+2020-09-15 18:02:32 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 18:02:52 ctrl.casE    INFO     Engage CasE...
+2020-09-15 18:02:54 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 18:03:16 ctrl.casE    INFO     Engage CasE...
+2020-09-15 18:03:57 ctrl.casE    INFO     
+
+
+
+2020-09-15 18:03:57 ctrl.casE    INFO     Starting Run!
+sampleName                                           lE
+protocolName                                       meoh
+protocolPath    /home/pi/CasMonitor/Protocols/meoh.json
+startlog                                           1113
+Name: casE, dtype: object
+2020-09-15 18:03:57 ctrl.casE    INFO     Starting task on casE
+2020-09-15 18:03:57 ctrl.casE    INFO     ['casE']
+2020-09-15 18:03:57 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-15 18:03:57 ctrl.casE    INFO     ['self.loadReagent(casL="E",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=2.1)']
+2020-09-15 18:03:58 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-09-15 18:04:36 ctrl.casE    INFO     ADDING Dehydrant TO CasE
+2020-09-15 18:05:05 ctrl.casE    INFO     Finished casE task!
+2020-09-15 18:05:05 ctrl.casE    INFO     Updating progress on casE...
+2020-09-15 18:05:05 ctrl.casE    INFO     Trying to cancel casE, getting active tasks...
+2020-09-15 18:05:05 ctrl.casE    INFO     ['casE']
+2020-09-15 18:05:05 ctrl.casE    INFO     SHUTDOWN CasE
+2020-09-15 18:05:20 ctrl.casE    INFO     
+
+
+
+2020-09-15 18:05:20 ctrl.casE    INFO     Starting Run!
+sampleName                                         aaaa
+protocolName                                       meoh
+protocolPath    /home/pi/CasMonitor/Protocols/meoh.json
+startlog                                           1353
+Name: casE, dtype: object
+2020-09-15 18:05:20 ctrl.casE    INFO     Starting task on casE
+2020-09-15 18:05:20 ctrl.casE    INFO     ['casE']
+2020-09-15 18:05:20 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-15 18:05:20 ctrl.casE    INFO     ['self.loadReagent(casL="E",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=2.1)']
+2020-09-15 18:05:20 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-09-15 18:05:53 ctrl.casE    INFO     ADDING Dehydrant TO CasE
+2020-09-15 18:06:21 ctrl.casE    INFO     Finished casE task!
+2020-09-15 18:06:21 ctrl.casE    INFO     Updating progress on casE...
+2020-09-15 18:06:21 ctrl.casE    INFO     Trying to cancel casE, getting active tasks...
+2020-09-15 18:06:21 ctrl.casE    INFO     ['casE']
+2020-09-15 18:06:21 ctrl.casE    INFO     SHUTDOWN CasE
+2020-09-15 18:06:27 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 18:06:37 ctrl         WARNING  GUI is disconnected!
+2020-09-15 18:06:37 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 18:08:01 ctrl         INFO     9000
+2020-09-15 18:08:01 ctrl         INFO     Loading last controller state...
+2020-09-15 18:08:01 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 18:08:01 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 18:08:01 ctrl         INFO     Registered to all procedures!
+2020-09-15 18:08:01 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 18:08:56 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 18:09:18 ctrl         INFO     machine.move('z', 40)
+2020-09-15 18:09:18 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 18:09:18 ctrl         DEBUG    ["machine.move('z', 40)"]
+2020-09-15 18:09:18 ctrl         DEBUG    machine.move('z', 40)
+2020-09-15 18:09:23 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 18:09:43 ctrl.casE    INFO     Engage CasE...
+2020-09-15 18:09:53 ctrl.casE    INFO     
+
+
+
+2020-09-15 18:09:53 ctrl.casE    INFO     Starting Run!
+sampleName                                          aaa
+protocolName                                       meoh
+protocolPath    /home/pi/CasMonitor/Protocols/meoh.json
+startlog                                           1613
+Name: casE, dtype: object
+2020-09-15 18:09:53 ctrl.casE    INFO     Starting task on casE
+2020-09-15 18:09:53 ctrl.casE    INFO     ['casE']
+2020-09-15 18:09:53 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-15 18:09:53 ctrl.casE    INFO     ['self.loadReagent(casL="E",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=2.1)']
+2020-09-15 18:09:53 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-09-15 18:10:28 ctrl.casE    INFO     ADDING Dehydrant TO CasE
+2020-09-15 18:10:57 ctrl.casE    INFO     Finished casE task!
+2020-09-15 18:10:57 ctrl.casE    INFO     Updating progress on casE...
+2020-09-15 18:10:57 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-15 18:12:04 ctrl.casE    INFO     
+
+
+
+2020-09-15 18:12:04 ctrl.casE    INFO     Starting Run!
+sampleName                                               ai
+protocolName                                       shortinc
+protocolPath    /home/pi/CasMonitor/Protocols/shortinc.json
+startlog                                               1832
+Name: casE, dtype: object
+2020-09-15 18:12:04 ctrl.casE    INFO     Starting task on casE
+2020-09-15 18:12:04 ctrl.casE    INFO     ['casE']
+2020-09-15 18:12:04 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-15 18:12:04 ctrl.casE    INFO     ['self.incubate(casL="E",incTime=5,mixAfter=20)']
+2020-09-15 18:12:04 ctrl.casE    INFO     INCUBATING CasE
+2020-09-15 18:12:04 ctrl.casE    INFO     Finished casE task!
+2020-09-15 18:12:04 ctrl.casE    INFO     Updating progress on casE...
+2020-09-15 18:12:05 ctrl.casE    INFO     Trying to cancel casE, getting active tasks...
+2020-09-15 18:12:05 ctrl.casE    INFO     []
+2020-09-15 18:12:05 ctrl.casE    WARNING  casE is not running a protocol...
+2020-09-15 18:12:34 ctrl.casE    INFO     
+
+
+
+2020-09-15 18:12:34 ctrl.casE    INFO     Starting Run!
+sampleName                                          asdfasd
+protocolName                                       shortinc
+protocolPath    /home/pi/CasMonitor/Protocols/shortinc.json
+startlog                                               1852
+Name: casE, dtype: object
+2020-09-15 18:12:34 ctrl.casE    INFO     Starting task on casE
+2020-09-15 18:12:34 ctrl.casE    INFO     ['casE']
+2020-09-15 18:12:34 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-15 18:12:34 ctrl.casE    INFO     ['self.incubate(casL="E",incTime=17,mixAfter=20)']
+2020-09-15 18:12:34 ctrl.casE    INFO     INCUBATING CasE
+2020-09-15 18:12:35 ctrl.casE    INFO     Trying to cancel casE, getting active tasks...
+2020-09-15 18:12:35 ctrl.casE    INFO     ['casE']
+2020-09-15 18:12:35 ctrl.casE    INFO     SHUTDOWN CasE
+2020-09-15 18:13:04 ctrl.casE    INFO     
+
+
+
+2020-09-15 18:13:04 ctrl.casE    INFO     Starting Run!
+sampleName                                     testfill
+protocolName                                       meoh
+protocolPath    /home/pi/CasMonitor/Protocols/meoh.json
+startlog                                           1888
+Name: casE, dtype: object
+2020-09-15 18:13:04 ctrl.casE    INFO     Starting task on casE
+2020-09-15 18:13:04 ctrl.casE    INFO     ['casE']
+2020-09-15 18:13:04 ctrl.casE    INFO     casE: Evaluating step 0
+2020-09-15 18:13:04 ctrl.casE    INFO     ['self.loadReagent(casL="E",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=2.1)']
+2020-09-15 18:13:04 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-09-15 18:13:37 ctrl.casE    INFO     ADDING Dehydrant TO CasE
+2020-09-15 18:14:06 ctrl.casE    INFO     Finished casE task!
+2020-09-15 18:14:06 ctrl.casE    INFO     Updating progress on casE...
+2020-09-15 18:14:06 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-15 18:15:06 ctrl         INFO     machine.goto_park()
+2020-09-15 18:15:06 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 18:15:06 ctrl         DEBUG    ['machine.goto_park()']
+2020-09-15 18:15:06 ctrl         DEBUG    machine.goto_park()
+2020-09-15 18:15:11 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 18:15:11 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-15 18:16:05 ctrl         INFO     self.loadReagent(casL="E", loadstr="meoh", reagent="meoh", vol=0, speed=1, deadvol=1.5)
+2020-09-15 18:16:05 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 18:16:05 ctrl         DEBUG    ['self.loadReagent(casL="E", loadstr="meoh", reagent="meoh", vol=0, speed=1, deadvol=1.5)']
+2020-09-15 18:16:05 ctrl         DEBUG    self.loadReagent(casL="E", loadstr="meoh", reagent="meoh", vol=0, speed=1, deadvol=1.5)
+2020-09-15 18:16:05 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-09-15 18:16:34 ctrl.casE    INFO     ADDING meoh TO CasE
+2020-09-15 18:16:50 ctrl         DEBUG    Sent updated casE cassette log!
+2020-09-15 18:21:54 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 18:56:39 ctrl         INFO     machine.goto_park()
+2020-09-15 18:56:39 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 18:56:39 ctrl         DEBUG    ['machine.goto_park()']
+2020-09-15 18:56:39 ctrl         DEBUG    machine.goto_park()
+2020-09-15 18:56:44 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 19:27:16 ctrl         INFO     machine.move('z', -50)
+2020-09-15 19:27:16 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 19:27:16 ctrl         DEBUG    ["machine.move('z', -50)"]
+2020-09-15 19:27:16 ctrl         DEBUG    machine.move('z', -50)
+2020-09-15 19:27:16 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 19:27:31 ctrl         INFO     machine.move('z',0)
+2020-09-15 19:27:31 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 19:27:31 ctrl         DEBUG    ["machine.move('z',0)"]
+2020-09-15 19:27:31 ctrl         DEBUG    machine.move('z',0)
+2020-09-15 19:27:35 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 19:39:53 ctrl.casD    INFO     Engage CasD...
+2020-09-15 19:39:58 ctrl.casE    INFO     Engage CasE...
+2020-09-15 19:39:59 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:40:08 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:40:10 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 19:40:22 ctrl.casD    INFO     Engage CasD...
+2020-09-15 19:40:26 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 19:40:46 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:40:49 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:40:59 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 19:42:11 ctrl         INFO     machine.pump_in(1)
+
+2020-09-15 19:42:11 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 19:42:11 ctrl         DEBUG    ['machine.pump_in(1)', '']
+2020-09-15 19:42:11 ctrl         DEBUG    machine.pump_in(1)
+2020-09-15 19:42:21 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 19:42:45 ctrl         INFO     machine.goto_park()
+2020-09-15 19:42:45 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 19:42:45 ctrl         DEBUG    ['machine.goto_park()']
+2020-09-15 19:42:45 ctrl         DEBUG    machine.goto_park()
+2020-09-15 19:42:50 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 19:43:42 ctrl         INFO     9000
+2020-09-15 19:43:42 ctrl         INFO     Loading last controller state...
+2020-09-15 19:43:42 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 19:43:42 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 19:43:42 ctrl         INFO     Registered to all procedures!
+2020-09-15 19:43:42 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 19:45:31 ctrl         INFO     9000
+2020-09-15 19:45:31 ctrl         INFO     Loading last controller state...
+2020-09-15 19:45:31 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 19:45:31 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 19:45:31 ctrl         INFO     Registered to all procedures!
+2020-09-15 19:45:31 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 19:48:04 ctrl         INFO     9000
+2020-09-15 19:48:04 ctrl         INFO     Loading last controller state...
+2020-09-15 19:48:04 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 19:48:04 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 19:48:04 ctrl         INFO     Registered to all procedures!
+2020-09-15 19:48:04 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 19:49:15 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 19:50:01 ctrl         INFO     machine.goto_park()
+2020-09-15 19:50:01 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 19:50:01 ctrl         DEBUG    ['machine.goto_park()']
+2020-09-15 19:50:01 ctrl         DEBUG    machine.goto_park()
+2020-09-15 19:50:08 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 19:55:27 ctrl.casE    INFO     Engage CasE...
+2020-09-15 19:55:33 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 19:55:43 ctrl.casE    INFO     Engage CasE...
+2020-09-15 19:55:46 ctrl.casD    INFO     Engage CasD...
+2020-09-15 19:55:49 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:56:00 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 19:56:02 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:56:04 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 19:57:03 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:57:07 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:57:18 ctrl.casF    INFO     Engage CasF...
+2020-09-15 19:57:20 ctrl.casE    INFO     Engage CasE...
+2020-09-15 19:57:22 ctrl.casD    INFO     Engage CasD...
+2020-09-15 19:57:31 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 19:57:33 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 19:57:36 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 19:57:40 ctrl         WARNING  Disconnected, []
+2020-09-15 19:57:40 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 19:57:41 ctrl         INFO     Parking machine...
+2020-09-15 19:58:06 ctrl         INFO     9000
+2020-09-15 19:58:06 ctrl         INFO     Loading last controller state...
+2020-09-15 19:58:06 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 19:58:06 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 19:58:06 ctrl         INFO     Registered to all procedures!
+2020-09-15 19:58:06 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 19:59:17 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 20:00:29 ctrl         WARNING  Disconnected, []
+2020-09-15 20:00:29 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 20:00:36 ctrl         INFO     Parking machine...
+2020-09-15 20:00:39 ctrl         INFO     9000
+2020-09-15 20:00:39 ctrl         INFO     Loading last controller state...
+2020-09-15 20:00:39 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 20:00:39 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 20:00:39 ctrl         INFO     Registered to all procedures!
+2020-09-15 20:00:39 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 20:01:50 ctrl         INFO     dcTask has no engaged cassettes nor running/finished processes.
+2020-09-15 20:02:15 ctrl.casE    INFO     Engage CasE...
+2020-09-15 20:02:17 ctrl.casF    INFO     Engage CasF...
+2020-09-15 20:02:20 ctrl.casD    INFO     Engage CasD...
+2020-09-15 20:02:28 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 20:02:30 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 20:02:32 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 20:02:40 ctrl.casD    INFO     Engage CasD...
+2020-09-15 20:02:43 ctrl.casD    INFO     Disengage CasD...
+2020-09-15 20:02:49 ctrl.casE    INFO     Engage CasE...
+2020-09-15 20:02:51 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 20:02:56 ctrl.casF    INFO     Engage CasF...
+2020-09-15 20:02:59 ctrl.casF    INFO     Disengage CasF...
+2020-09-15 20:03:08 ctrl.casE    INFO     Engage CasE...
+2020-09-15 20:03:55 ctrl         INFO     machine.goto_formalin()
+2020-09-15 20:03:55 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:03:55 ctrl         DEBUG    ['machine.goto_formalin()']
+2020-09-15 20:03:55 ctrl         DEBUG    machine.goto_formalin()
+2020-09-15 20:04:06 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 20:04:06 ctrl         CRITICAL object NoneType can't be used in 'await' expression
+2020-09-15 20:04:42 ctrl         INFO     machine.pump_in(0.5)
+time.sleep(1)
+machine.pump_in(0.5)
+2020-09-15 20:04:42 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:04:42 ctrl         DEBUG    ['machine.pump_in(0.5)', 'time.sleep(1)', 'machine.pump_in(0.5)']
+2020-09-15 20:04:42 ctrl         DEBUG    machine.pump_in(0.5)
+2020-09-15 20:04:48 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 20:04:48 ctrl         CRITICAL object NoneType can't be used in 'await' expression
+2020-09-15 20:06:08 ctrl         INFO     machine.pump_out(1)
+2020-09-15 20:06:08 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:06:08 ctrl         DEBUG    ['machine.pump_out(1)']
+2020-09-15 20:06:08 ctrl         DEBUG    machine.pump_out(1)
+2020-09-15 20:06:18 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 20:06:18 ctrl         CRITICAL object NoneType can't be used in 'await' expression
+2020-09-15 20:09:16 ctrl         WARNING  Disconnected, []
+2020-09-15 20:09:16 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 20:09:20 ctrl         INFO     Parking machine...
+2020-09-15 20:09:26 ctrl         INFO     9000
+2020-09-15 20:09:26 ctrl         INFO     Loading last controller state...
+2020-09-15 20:09:26 ctrl         INFO     Checking disonnect-state for last controller state...
+2020-09-15 20:09:26 ctrl         DEBUG    
+     status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 12 columns]
+2020-09-15 20:09:26 ctrl         INFO     Registered to all procedures!
+2020-09-15 20:09:26 ctrl         INFO     Subscribed to 19 procedure(s)
+2020-09-15 20:10:37 ctrl         INFO     Repopulating controller tasks from contoller state...
+2020-09-15 20:10:37 ctrl         DEBUG    casA
+2020-09-15 20:10:37 ctrl         DEBUG    casB
+2020-09-15 20:10:37 ctrl         DEBUG    casC
+2020-09-15 20:10:37 ctrl         DEBUG    casD
+2020-09-15 20:10:37 ctrl         DEBUG    casE
+2020-09-15 20:10:37 ctrl.casE    INFO     Engage CasE...
+2020-09-15 20:10:39 ctrl         DEBUG    casF
+2020-09-15 20:10:39 ctrl         INFO     Restore connection with logger(s)......NOT IMPLEMENTED YET...
+2020-09-15 20:10:39 ctrl         INFO     Sending tasks to GUI to repopulate it...
+2020-09-15 20:11:37 ctrl         INFO     machine.goto_formalin()
+ 
+
+machine.pump_in(3)
+2020-09-15 20:11:37 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:11:37 ctrl         DEBUG    ['machine.goto_formalin()', ' ', '', 'machine.pump_in(3)']
+2020-09-15 20:11:37 ctrl         DEBUG    machine.goto_formalin()
+2020-09-15 20:11:48 ctrl         DEBUG    machine.pump_in(3)
+2020-09-15 20:12:46 ctrl         INFO     machine.pump_out(7)
+2020-09-15 20:12:46 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:12:46 ctrl         DEBUG    ['machine.pump_out(7)']
+2020-09-15 20:12:46 ctrl         DEBUG    machine.pump_out(7)
+2020-09-15 20:14:20 ctrl         INFO     machine.pump_in(1)
+2020-09-15 20:14:20 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:14:20 ctrl         DEBUG    ['machine.pump_in(1)']
+2020-09-15 20:14:20 ctrl         DEBUG    machine.pump_in(1)
+2020-09-15 20:15:01 ctrl         INFO     machine.pump_out(2)
+2020-09-15 20:15:01 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:15:01 ctrl         DEBUG    ['machine.pump_out(2)']
+2020-09-15 20:15:01 ctrl         DEBUG    machine.pump_out(2)
+2020-09-15 20:15:42 ctrl         INFO     machine.pump_in(2)
+2020-09-15 20:15:42 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:15:42 ctrl         DEBUG    ['machine.pump_in(2)']
+2020-09-15 20:15:42 ctrl         DEBUG    machine.pump_in(2)
+2020-09-15 20:18:09 ctrl         INFO     machine.pump_out(3)
+2020-09-15 20:18:09 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:18:09 ctrl         DEBUG    ['machine.pump_out(3)']
+2020-09-15 20:18:09 ctrl         DEBUG    machine.pump_out(3)
+2020-09-15 20:19:02 ctrl         INFO     machine.pump_in(3,8)
+2020-09-15 20:19:02 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:19:02 ctrl         DEBUG    ['machine.pump_in(3,8)']
+2020-09-15 20:19:02 ctrl         DEBUG    machine.pump_in(3,8)
+2020-09-15 20:19:32 ctrl         INFO     machine.pump_out(3,8)
+2020-09-15 20:19:32 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:19:32 ctrl         DEBUG    ['machine.pump_out(3,8)']
+2020-09-15 20:19:32 ctrl         DEBUG    machine.pump_out(3,8)
+2020-09-15 20:19:57 ctrl         INFO     machine.pump_in(3,10)
+2020-09-15 20:19:57 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:19:57 ctrl         DEBUG    ['machine.pump_in(3,10)']
+2020-09-15 20:19:57 ctrl         DEBUG    machine.pump_in(3,10)
+2020-09-15 20:21:05 ctrl         INFO     machine.goto_waste()
+2020-09-15 20:21:05 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:21:05 ctrl         DEBUG    ['machine.goto_waste()']
+2020-09-15 20:21:05 ctrl         DEBUG    machine.goto_waste()
+2020-09-15 20:21:25 ctrl         INFO     machine.pump_out(3,10)
+2020-09-15 20:21:25 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:21:25 ctrl         DEBUG    ['machine.pump_out(3,10)']
+2020-09-15 20:21:25 ctrl         DEBUG    machine.pump_out(3,10)
+2020-09-15 20:21:43 ctrl         INFO     machine.goto_meoh()
+2020-09-15 20:21:43 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:21:43 ctrl         DEBUG    ['machine.goto_meoh()']
+2020-09-15 20:21:43 ctrl         DEBUG    machine.goto_meoh()
+2020-09-15 20:22:03 ctrl         INFO     machine.pump_in(3,10)
+2020-09-15 20:22:03 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:22:03 ctrl         DEBUG    ['machine.pump_in(3,10)']
+2020-09-15 20:22:03 ctrl         DEBUG    machine.pump_in(3,10)
+2020-09-15 20:22:40 ctrl         INFO     machine.goto_waste()
+2020-09-15 20:22:40 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:22:40 ctrl         DEBUG    ['machine.goto_waste()']
+2020-09-15 20:22:40 ctrl         DEBUG    machine.goto_waste()
+2020-09-15 20:22:59 ctrl         INFO     machine,pump_out(3,10)
+2020-09-15 20:22:59 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:22:59 ctrl         DEBUG    ['machine,pump_out(3,10)']
+2020-09-15 20:22:59 ctrl         DEBUG    machine,pump_out(3,10)
+2020-09-15 20:22:59 ctrl         CRITICAL Cannot evaluate script! Please check that function called exists and formatting is correct.
+2020-09-15 20:22:59 ctrl         CRITICAL name 'pump_out' is not defined
+2020-09-15 20:23:26 ctrl         INFO     machine.pump_out(3,10)
+2020-09-15 20:23:26 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:23:26 ctrl         DEBUG    ['machine.pump_out(3,10)']
+2020-09-15 20:23:26 ctrl         DEBUG    machine.pump_out(3,10)
+2020-09-15 20:33:02 ctrl         INFO     machine.goto_meoh()
+2020-09-15 20:33:02 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:33:02 ctrl         DEBUG    ['machine.goto_meoh()']
+2020-09-15 20:33:02 ctrl         DEBUG    machine.goto_meoh()
+2020-09-15 20:33:27 ctrl         INFO     machine.pump_in(3,10)
+2020-09-15 20:33:27 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:33:27 ctrl         DEBUG    ['machine.pump_in(3,10)']
+2020-09-15 20:33:27 ctrl         DEBUG    machine.pump_in(3,10)
+2020-09-15 20:33:50 ctrl         INFO     machine.goto_sampleE()
+2020-09-15 20:33:50 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:33:50 ctrl         DEBUG    ['machine.goto_sampleE()']
+2020-09-15 20:33:50 ctrl         DEBUG    machine.goto_sampleE()
+2020-09-15 20:34:12 ctrl         INFO     machine.pump_in(0.5)
+2020-09-15 20:34:12 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:34:12 ctrl         DEBUG    ['machine.pump_in(0.5)']
+2020-09-15 20:34:12 ctrl         DEBUG    machine.pump_in(0.5)
+2020-09-15 20:34:52 ctrl         INFO     machine.pump_in(10,5)
+2020-09-15 20:34:52 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:34:52 ctrl         DEBUG    ['machine.pump_in(10,5)']
+2020-09-15 20:34:52 ctrl         DEBUG    machine.pump_in(10,5)
+2020-09-15 20:35:45 ctrl         INFO     machine.disengage_sampleE()
+2020-09-15 20:35:45 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:35:45 ctrl         DEBUG    ['machine.disengage_sampleE()']
+2020-09-15 20:35:45 ctrl         DEBUG    machine.disengage_sampleE()
+2020-09-15 20:36:37 ctrl         INFO     machine.engage_sampleE()
+2020-09-15 20:36:37 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:36:37 ctrl         DEBUG    ['machine.engage_sampleE()']
+2020-09-15 20:36:37 ctrl         DEBUG    machine.engage_sampleE()
+2020-09-15 20:37:21 ctrl         INFO     machine.pump_in(1)
+2020-09-15 20:37:21 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:37:21 ctrl         DEBUG    ['machine.pump_in(1)']
+2020-09-15 20:37:21 ctrl         DEBUG    machine.pump_in(1)
+2020-09-15 20:37:45 ctrl         INFO     machine.goto_waste()
+2020-09-15 20:37:45 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:37:45 ctrl         DEBUG    ['machine.goto_waste()']
+2020-09-15 20:37:45 ctrl         DEBUG    machine.goto_waste()
+2020-09-15 20:38:36 ctrl         INFO     machine.goto_sampleE()
+machine.pump_in(3)
+machine.pump_out(1)
+2020-09-15 20:38:36 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:38:36 ctrl         DEBUG    ['machine.goto_sampleE()', 'machine.pump_in(3)', 'machine.pump_out(1)']
+2020-09-15 20:38:36 ctrl         DEBUG    machine.goto_sampleE()
+2020-09-15 20:38:45 ctrl         DEBUG    machine.pump_in(3)
+2020-09-15 20:39:14 ctrl         DEBUG    machine.pump_out(1)
+2020-09-15 20:39:55 ctrl         INFO     machine.pump_out(0.25)
+2020-09-15 20:39:55 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:39:55 ctrl         DEBUG    ['machine.pump_out(0.25)']
+2020-09-15 20:39:55 ctrl         DEBUG    machine.pump_out(0.25)
+2020-09-15 20:40:58 ctrl         INFO     machine.pump_in(2, 10)
+2020-09-15 20:40:58 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:40:58 ctrl         DEBUG    ['machine.pump_in(2, 10)']
+2020-09-15 20:40:58 ctrl         DEBUG    machine.pump_in(2, 10)
+2020-09-15 20:41:22 ctrl         INFO     machine.pump_in(2,3)
+2020-09-15 20:41:22 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:41:22 ctrl         DEBUG    ['machine.pump_in(2,3)']
+2020-09-15 20:41:22 ctrl         DEBUG    machine.pump_in(2,3)
+2020-09-15 20:41:52 ctrl         INFO     machine.pump_in(1.25,3)
+2020-09-15 20:41:52 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:41:52 ctrl         DEBUG    ['machine.pump_in(1.25,3)']
+2020-09-15 20:41:52 ctrl         DEBUG    machine.pump_in(1.25,3)
+2020-09-15 20:42:10 ctrl         INFO     machine.pump_out(1.25,3)
+2020-09-15 20:42:10 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:42:10 ctrl         DEBUG    ['machine.pump_out(1.25,3)']
+2020-09-15 20:42:10 ctrl         DEBUG    machine.pump_out(1.25,3)
+2020-09-15 20:42:44 ctrl         INFO     machine.pump_in(3,3)
+2020-09-15 20:42:44 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:42:44 ctrl         DEBUG    ['machine.pump_in(3,3)']
+2020-09-15 20:42:44 ctrl         DEBUG    machine.pump_in(3,3)
+2020-09-15 20:43:55 ctrl         INFO     machine.pump_out(1,3)
+2020-09-15 20:43:55 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:43:55 ctrl         DEBUG    ['machine.pump_out(1,3)']
+2020-09-15 20:43:55 ctrl         DEBUG    machine.pump_out(1,3)
+2020-09-15 20:44:23 ctrl         INFO     machine.disengage_sampleE()
+2020-09-15 20:44:23 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:44:23 ctrl         DEBUG    ['machine.disengage_sampleE()']
+2020-09-15 20:44:23 ctrl         DEBUG    machine.disengage_sampleE()
+2020-09-15 20:44:55 ctrl         INFO     machine.pump_out(7,3)
+2020-09-15 20:44:55 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:44:55 ctrl         DEBUG    ['machine.pump_out(7,3)']
+2020-09-15 20:44:55 ctrl         DEBUG    machine.pump_out(7,3)
+2020-09-15 20:52:23 ctrl         INFO     machine.engage_sampleE()
+machine.goto_meoh()
+machine.pump_in(5,8)
+machine.goto_sampleE()
+2020-09-15 20:52:23 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:52:23 ctrl         DEBUG    ['machine.engage_sampleE()', 'machine.goto_meoh()', 'machine.pump_in(5,8)', 'machine.goto_sampleE()']
+2020-09-15 20:52:23 ctrl         DEBUG    machine.engage_sampleE()
+2020-09-15 20:52:24 ctrl         DEBUG    machine.goto_meoh()
+2020-09-15 20:52:32 ctrl         DEBUG    machine.pump_in(5,8)
+2020-09-15 20:52:43 ctrl         DEBUG    machine.goto_sampleE()
+2020-09-15 20:53:25 ctrl         INFO     machine.pump_in(1.6,1)
+2020-09-15 20:53:25 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:53:25 ctrl         DEBUG    ['machine.pump_in(1.6,1)']
+2020-09-15 20:53:25 ctrl         DEBUG    machine.pump_in(1.6,1)
+2020-09-15 20:54:02 ctrl         INFO     machine.pump_out(1.6,1)
+2020-09-15 20:54:02 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:54:02 ctrl         DEBUG    ['machine.pump_out(1.6,1)']
+2020-09-15 20:54:02 ctrl         DEBUG    machine.pump_out(1.6,1)
+2020-09-15 20:54:49 ctrl         INFO     machine.disengage_sampleE()
+machine.goto_waste()
+2020-09-15 20:54:49 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:54:49 ctrl         DEBUG    ['machine.disengage_sampleE()', 'machine.goto_waste()']
+2020-09-15 20:54:49 ctrl         DEBUG    machine.disengage_sampleE()
+2020-09-15 20:54:51 ctrl         DEBUG    machine.goto_waste()
+2020-09-15 20:56:29 ctrl         INFO     machine.engage_sampleE()
+2020-09-15 20:56:29 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:56:29 ctrl         DEBUG    ['machine.engage_sampleE()']
+2020-09-15 20:56:29 ctrl         DEBUG    machine.engage_sampleE()
+2020-09-15 20:56:53 ctrl         INFO     machine.goto_sampleE()
+machine.pump_out(1.6,2)
+2020-09-15 20:56:53 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:56:53 ctrl         DEBUG    ['machine.goto_sampleE()', 'machine.pump_out(1.6,2)']
+2020-09-15 20:56:53 ctrl         DEBUG    machine.goto_sampleE()
+2020-09-15 20:57:02 ctrl         DEBUG    machine.pump_out(1.6,2)
+2020-09-15 20:58:13 ctrl         INFO     machine.disengage_sampleE()
+2020-09-15 20:58:13 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:58:13 ctrl         DEBUG    ['machine.disengage_sampleE()']
+2020-09-15 20:58:13 ctrl         DEBUG    machine.disengage_sampleE()
+2020-09-15 20:59:03 ctrl         INFO     machine.goto_waste()
+machine.pump_out(10)
+2020-09-15 20:59:03 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 20:59:03 ctrl         DEBUG    ['machine.goto_waste()', 'machine.pump_out(10)']
+2020-09-15 20:59:03 ctrl         DEBUG    machine.goto_waste()
+2020-09-15 20:59:12 ctrl         DEBUG    machine.pump_out(10)
+2020-09-15 21:01:51 ctrl         INFO     machine.goto_sampleE()
+machine.pump_out(7,2)
+2020-09-15 21:01:51 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 21:01:51 ctrl         DEBUG    ['machine.goto_sampleE()', 'machine.pump_out(7,2)']
+2020-09-15 21:01:51 ctrl         DEBUG    machine.goto_sampleE()
+2020-09-15 21:02:00 ctrl         DEBUG    machine.pump_out(7,2)
+2020-09-15 21:08:42 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:08:42 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:11:40 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:11:40 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:12:39 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:12:39 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:18:50 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:18:50 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:26:34 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:26:34 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:30:38 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:30:38 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:38:52 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:38:52 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:43:01 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:43:01 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:47:57 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:47:57 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:48:31 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:48:31 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:49:35 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:49:35 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:52:05 ctrl         INFO     machine.engage_sampleE()
+2020-09-15 21:52:05 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 21:52:05 ctrl         DEBUG    ['machine.engage_sampleE()']
+2020-09-15 21:52:05 ctrl         DEBUG    machine.engage_sampleE()
+2020-09-15 21:52:32 ctrl         INFO     machine.pump_out(3)
+2020-09-15 21:52:32 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 21:52:32 ctrl         DEBUG    ['machine.pump_out(3)']
+2020-09-15 21:52:32 ctrl         DEBUG    machine.pump_out(3)
+2020-09-15 21:54:06 ctrl         INFO     
+self.purge(casL="E", deadvol=4)
+2020-09-15 21:54:06 ctrl         INFO     Starting to execute lines from script editor!
+2020-09-15 21:54:06 ctrl         DEBUG    ['', 'self.purge(casL="E", deadvol=4)']
+2020-09-15 21:54:06 ctrl         DEBUG    self.purge(casL="E", deadvol=4)
+2020-09-15 21:54:06 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-09-15 21:55:17 ctrl.casE    INFO     Disengage CasE...
+2020-09-15 21:55:22 ctrl.casF    INFO     Engage CasF...
+2020-09-15 21:55:24 ctrl.casD    INFO     Engage CasD...
+2020-09-15 21:55:33 ctrl.casE    INFO     Engage CasE...
+2020-09-15 21:55:47 ctrl         WARNING  GUI is disconnected!
+2020-09-15 21:55:47 ctrl         WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-gui>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-09-15 21:55:50 ctrl         WARNING  Disconnected, []
+2020-09-15 21:55:50 ctrl         INFO     Writing disconnect-state to file...
+2020-09-15 21:55:53 ctrl         INFO     Parking machine...

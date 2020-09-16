@@ -77,6 +77,7 @@ modHdl.close()
 mixSpeed = 3
 purgeSpeed = 3
 purgeVol = 4
+deadspace = 3
 wasteSpeed = 8
 
 
@@ -158,6 +159,9 @@ class Component(ApplicationSession):
             ctrl.error("could not subscribe to procedure: {0}".format(e))
         asyncio.ensure_future(self.update())
         #After connecting, home the machine and make sure it's connected
+        #Prime the reagent lines
+        #Formalin ~3mL, 10speed
+        #MeOH ~3mL, 10speed
         try:
             machine.reset()
             machine.home()
@@ -474,7 +478,28 @@ class Component(ApplicationSession):
         except Exception as e:
             casLogs[casL].critical(e)
             
-        
+    #Perhaps make this an async function that is awaited on as a named task for the debug screen
+    @wamp.subscribe('com.prepbot.prothandler.exec-script')
+    async def execScript(self, linesToExec):
+        try:
+            ctrl.info('{}'.format(linesToExec))
+            #get current line of ctrl logger to send to debug screen...
+            ctrl.info('Starting to execute lines from script editor!')
+            #split the lines by \n, make a list
+            execList = linesToExec.split('\n')
+            ctrl.debug('{}'.format(execList))
+            #make a for loop through list
+            for i in range(len(execList)):
+                if execList[i]!='' and not execList[i].isspace():
+                    ctrl.debug(execList[i])
+                    #string evaluate each line
+                    if execList[i][0:4] == 'self':
+                        await eval(execList[i])
+                    else:
+                        eval(execList[i])
+        except Exception as e:
+            ctrl.critical('Cannot evaluate script! Please check that function called exists and formatting is correct.')
+            ctrl.critical(e)
     
     async def incubate(self, casL, incTime, mixAfter=600):
         casName = 'cas{}'.format(casL)
@@ -549,7 +574,7 @@ class Component(ApplicationSession):
         except Exception as e:
             casLogs[casL].critical(e)
         
-    async def purge(self, casL, deadvol):
+    async def purge(self, casL, deadvol=deadspace):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
@@ -563,7 +588,7 @@ class Component(ApplicationSession):
         except Exception as e:
             casLogs[casL].critical(e)
         
-    async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol):
+    async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol=deadspace):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
@@ -575,10 +600,12 @@ class Component(ApplicationSession):
 #             machine.empty_syringe(wasteSpeed)
             flowThru = purgeVol + deadvol
             machine.pump_out(flowThru, purgeSpeed)
+            
 
             casLogs[casL].info('ADDING {} TO Cas{}'.format(loadstr, casL))
             eval('machine.goto_{}()'.format(reagent))
-            machine.pump_in(vol,speed)
+            deVol = vol + deadvol
+            machine.pump_in(deVol,speed)
             if reagent == 'babb':
                 time.sleep(3)
             else:

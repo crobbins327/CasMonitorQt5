@@ -56,9 +56,9 @@ VIAL_SCRAPE_Z = 10
 VIAL_SCRAPE_X = -180
 VIAL_OFFSET = -64           # degrees from sensor to needle position
 
-S_ENGAGE_D = 8
-S_ENGAGE_E = 8
-S_ENGAGE_F = 11
+S_ENGAGE_D = 10
+S_ENGAGE_E = 9
+S_ENGAGE_F = 10
 S_DISENGAGE = 3
 
 PUMP_SPEED = 1
@@ -68,9 +68,9 @@ LIMITS = {
     'z': [0, 100],
     'pump': [0, 40],
     'wheel': [float('-inf'), float('inf')],
-    'sampleD': [0, 50],
-    'sampleE': [0, 50],
-    'sampleF': [0, 50],
+    'sampleD': [-50, 50],
+    'sampleE': [-50, 50],
+    'sampleF': [-50, 50],
 }
 
 def test_logger():
