@@ -33,6 +33,7 @@ casDlog = logging.getLogger('ctrl.casD')
 casElog = logging.getLogger('ctrl.casE')
 casFlog = logging.getLogger('ctrl.casF')
 machinelog = logging.getLogger('ctrl.machine')
+opTimeslog = logging.getLogger('ctrl.opTimes')
 rootlog = logging.getLogger('')
 
 #Replace consoleHandler format with colorlog... can't pass the log_colors arg in the config file for some reason...
@@ -74,6 +75,30 @@ machinelog.addHandler(modHdl)
 #close file and do not write anything until needed
 modHdl.close()
 
+mixSpeed = 1
+incSpeed = 0.2
+removeSpeed = 1
+fillLineSpeed = 1
+fillSyrSpeed = 1
+washSyrSpeed = 1
+wasteSpeed = 4
+
+# sample deadspace
+LINEVOL = 0.75
+removeVol = 1.5
+purgeVol = 4
+
+#Dictionary for density adjustments
+#vial==stain
+#unk or unknown for first fluid in chamber. It adjusts like if it were water in the chamber
+reaDensOrder = {'meoh':0,'vial':0,'formalin':1,'babb':2, 'unk': 1}
+#Density column adjustment volume and speed
+densVol = 0.1
+densSpeed = 0.2
+#Time to let fluid layers settle before density adjustment (secs)
+settleTime = 15
+
+
 # Define application session class for controller
 class Component(ApplicationSession):
     
@@ -86,7 +111,8 @@ class Component(ApplicationSession):
         ApplicationSession.__init__(self, config)
         self.halted = True
         self.homed = False
-        self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','engaged','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName','startlog','endlog'] ,
+        self.writeDCstate = True
+        self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','currentFluid','engaged','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName','startlog','endlog'] ,
                                    index=['casA','casB','casC','casD','casE','casF'], dtype=object)
         self.taskDF.engaged = False
         self.taskDF.engaged = self.taskDF.engaged.astype(object)
@@ -97,6 +123,9 @@ class Component(ApplicationSession):
     async def heartbeat(self):
         if self.guiStatus == 'disconnected':
             self.guiStatus = 'connected'
+            
+    def send_mStatus(self):
+        return(self.homed)
     
     async def update(self):
         while True:
@@ -132,6 +161,7 @@ class Component(ApplicationSession):
             dcTask = pd.read_pickle('./Log/disconnect/disconnect-state.pkl')
             ctrl.info('Checking disonnect-state for last controller state...')
             ctrl.debug('\n{}'.format(dcTask))
+            self.taskDF = dcTask
             #Remove that file so that it would not disrupt a new controller instance
         else:
             dcTask = []
@@ -141,6 +171,7 @@ class Component(ApplicationSession):
             self.register(self.get_tasks, 'com.prepbot.prothandler.controller-tasks')
             self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-ctrl')
             self.register(self.get_caslogchunk, 'com.prepbot.prothandler.caslog-chunk')
+            self.register(self.send_mStatus, 'com.prepbot.prothandler.gui-get-machine-homed')
             ctrl.info('Registered to all procedures!')
         except Exception as e:
             ctrl.error('Could not register get_tasks to router...')
@@ -150,19 +181,62 @@ class Component(ApplicationSession):
             ctrl.info("Subscribed to {0} procedure(s)".format(len(res)))
         except Exception as e:
             ctrl.error("could not subscribe to procedure: {0}".format(e))
+
         asyncio.ensure_future(self.update())
-        #After connecting, home the machine and make sure it's connected
-        
+        #After connecting to router, make sure machine is connected and check if it should be homed
+        if self.halted == True:
+        	try:
+        		# machine.acquire()
+        		self.halted = False
+        	except Exception as e:
+        		ctrl.critical('Could not acquire machine lock!')
+        		ctrl.critical(e)
+        		self.writeDCstate = False
+        		self.leave()
+        		self.disconnect()
+
+        #Check if GUI says that machine has been homed. If GUI is not responsive, timeput
+        ctrl.info('Checking if GUI says that machine is homed...')
+        try:
+            # mstat = asyncio.ensure_future(self.call('com.prepbot.prothandler.is-machine-homed'))
+            self.homed = await asyncio.wait_for(self.call('com.prepbot.prothandler.is-machine-homed'), timeout=3.5)
+            ctrl.info('Machine is homed? : {}'.format(self.homed))
+        except Exception as e:
+        	ctrl.warning('GUI may not be connected! Setting machine homed status to False.')
+        	ctrl.warning(e)
+        	self.homed = False
+
+        if self.homed == False:
+            try:
+                ctrl.info('Resetting and homing machine...')
+# 	            machine.reset()
+# 	            machine.home()
+                self.homed = True
+                self.halted = False
+                try:
+                    await asyncio.wait_for(self.call('com.prepbot.prothandler.set-machine-homed', True), timeout=3.5)
+                except Exception as e:
+                    ctrl.warning('GUI may not be connected! Machine has been homed.')
+                    ctrl.warning(e)
+            except Exception as e:
+	            ctrl.critical('Could not reset and home machine!')
+	            ctrl.critical(e)
+	            self.writeDCstate = False
+	            self.leave()
+	            self.disconnect()
+
+	    #Warn GUI to prime the reagent lines
+        #Formalin ~3mL, 10speed
+        #MeOH ~3mL, 10speed
+	        
         if len(dcTask):
             #Convert strings back to lists...
-            if pd.notna(dcTask.status).sum() > 0 or dcTask.engaged.sum() > 0:
-                self.taskDF = dcTask
+            if pd.notna(self.taskDF.status).sum() > 0 or self.taskDF.engaged.sum() > 0:
                 ctrl.info('Repopulating controller tasks from contoller state...')
-                self.repopulateController()
+                await self.repopulateController()
                 ctrl.info('Sending tasks to GUI to repopulate it...')
                 self.publish('com.prepbot.prothandler.tasks-to-gui', self.taskDF.to_json())
             else:
-                self.taskDF = dcTask
                 ctrl.info('dcTask has no engaged cassettes nor running/finished processes.')
                 pass
         else:
@@ -171,11 +245,39 @@ class Component(ApplicationSession):
             
     def onDisconnect(self):
         ctrl.warning("Disconnected, {}".format(self.activeTasks))
-        #Write the last state of the controller taskDF to a file
-        ctrl.info('Writing disconnect-state to file...')
-        self.taskDF.to_pickle('./Log/disconnect/disconnect-state.pkl')
-        
-        
+
+        if self.writeDCstate == True:
+        	#Write the last state of the controller taskDF to a file
+	        ctrl.info('Writing disconnect-state to file...')
+	        self.taskDF.to_pickle('./Log/disconnect/disconnect-state.pkl')
+	        try:
+# 	            machine.goto_park()
+	            ctrl.info('Parking machine...')
+	        except Exception as e:
+	            ctrl.critical('Could not park machine!')
+	            ctrl.critical(e)
+	        
+
+    async def connectNHome(self):
+        if self.halted == True:
+            try:
+                # machine.acquire()
+                self.halted = False 
+            except Exception as e:
+                ctrl.critical(e)
+                
+        ctrl.info('Checking if machine is connected and homed....')
+
+        if self.homed == False:
+            try:
+                # machine.reset()
+                # machine.home()
+                self.homed = True
+                await self.call('com.prepbot.prothandler.set-machine-homed', True)
+            except Exception as e:
+                ctrl.critical(e)
+
+
     def get_tasks(self):
         return(self.taskDF.to_json())
     
@@ -199,6 +301,16 @@ class Component(ApplicationSession):
                     elif i > start+limit:
                         break
                     
+                    
+        def update_caslogchunk(self, casL):
+            #Send updated log
+            start = self.taskDF.loc['cas{}'.format(casL),'endlog'] + 1
+            linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
+            if len(linesToSend) > 0:
+                self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
+            #Update end line number of log
+            self.taskDF.loc['cas{}'.format(casL),'endlog'] = currentEnd
+                    
         #Make a string that can be displayed/written to file
         linesToSend = ''.join(linesToSend)
         return(linesToSend, end)
@@ -211,62 +323,81 @@ class Component(ApplicationSession):
         return(last_line_num)
                     
     
-    def repopulateController(self):
+    async def repopulateController(self):
         running = self.taskDF[self.taskDF.status.isin(['running'])].index
-        engagedCas = self.taskDF[self.taskDF.engaged==True & ~self.taskDF.status.isin(['running'])].index
+        cleanStop = self.taskDF[self.taskDF.status.isin(['cleaning','stopping'])].index
+        engagedCas = self.taskDF[self.taskDF.engaged==True & ~self.taskDF.status.isin(['running','cleaning','stopping'])].index
         
         for i in self.taskDF.index:
             ctrl.debug(i)
             if i in engagedCas:
-                self.engage(i[-1])
+                await self.engage(i[-1])
             elif i in running:
+                await self.engage(i[-1])
                 ctrl.info('{}, Restarting run!'.format(i))
                 asyncio.ensure_future(self.startProtocol(casL=i[-1], taskJSON=None, restart=True))
                 # self.publish('com.prepbot.prothandler.start', i[-1], None, True)
+            elif i in cleanStop:
+                ctrl.info('{}, Restarting clean/shutdown!'.format(i))
+                asyncio.ensure_future(self.startProtocol(casL=i[-1], taskJSON=None, restart=True))
+                
                 
                 
         
         ctrl.info("Restore connection with logger(s)......NOT IMPLEMENTED YET...")
     # @wamp.subscribe('com.prepbot.prothandler.request-tasks-gui')
     # def sendTasks(self):
-    #     self.publish('com.prepbot.prothandler.tasks-to-gui', self.taskDF.to_json())
+    #     self.publish('com.prepbot.prothandler.tasnanks-to-gui', self.taskDF.to_json())
     
     
     @wamp.subscribe('com.prepbot.prothandler.engage')
-    def engage(self, casL):
+    async def engage(self, casL):
         #How to check if cassette already is engaged....?
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
+        #Check if machine is connected and homed
+        await self.connectNHome()
         casLogs[casL].info('Engage Cas{}...'.format(casL))
         # machine.test_logger()
-        #eval('machine.engage_sample{}()'.format(casL))
-        
-        time.sleep(1)
-        self.publish('com.prepbot.prothandler.ready', casL, True)
-        self.taskDF.loc['cas{}'.format(casL),'engaged'] = True
-    
+        try:
+            # eval('machine.engage_sample{}()'.format(casL))
+#             time.sleep(1)
+            self.publish('com.prepbot.prothandler.ready', casL, True)
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = True
+
+        except Exception as e:
+            ctrl.critical('Machine could not engage cas{}. Does it exist?'.format(casL))
+            ctrl.critical(e)
+            self.taskDF.loc['cas{}'.format(casL)] = np.nan
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+            self.publish('com.prepbot.prothandler.ready', casL, False)
+            
     @wamp.subscribe('com.prepbot.prothandler.disengage')
-    def disengage(self, casL):
+    async def disengage(self, casL):
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
+        #Check if machine is connected and homed
+        await self.connectNHome()
         casLogs[casL].info('Disengage Cas{}...'.format(casL))
-        #eval('machine.disengage_sample{}()'.format(casL))
-        time.sleep(1)
-        self.publish('com.prepbot.prothandler.ready', casL, False)
-        self.taskDF.loc['cas{}'.format(casL)] = np.nan
-        self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+        try:
+            # eval('machine.disengage_sample{}()'.format(casL))
+#             time.sleep(1)
+            self.publish('com.prepbot.prothandler.ready', casL, False)
+            self.taskDF.loc['cas{}'.format(casL)] = np.nan
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+            
+        except Exception as e:
+            ctrl.critical('Machine could not disengage cas{}. Does it exist?'.format(casL))
+            ctrl.critical(e)
+            self.taskDF.loc['cas{}'.format(casL)] = np.nan
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+            self.publish('com.prepbot.prothandler.ready', casL, False)
 
         
     @wamp.subscribe('com.prepbot.prothandler.start')
     async def startProtocol(self, casL, taskJSON, restart = False):
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
-        if self.halted:
-            # self.connect()
-            self.halted = False
-        if not self.homed:
-            # self.home()
-            self.homed = True
         casName = 'cas{}'.format(casL)
         #Check if a task with that CasL name already exists
         self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
@@ -278,27 +409,50 @@ class Component(ApplicationSession):
             await self.publish('com.prepbot.prothandler.one-task-to-gui', casName, self.taskDF.loc[casName].to_json())
             pass
         else:
+        	#Check if machine is connected and homed
+            await self.connectNHome()
+            
             if restart:
-                casLogs[casL].warning('Restarting Run...\n{}'.format(self.taskDF.loc[casName,['sampleName','protocolName','protocolPath']]))
-                #Start at current stepNum and if the step is an incubate step,
-                stepNum = int(self.taskDF.loc[casName,'stepNum'])
-                # casLogs[casL].debug(stepNum)
-                casLogs[casL].info('{}: Restarting at step # {}...'.format(casName, stepNum))
-                #update the runtime using secsRemaining
-                if self.taskDF.loc[casName,'progressNames'][stepNum-1] == 'Incubation':
-                    casLogs[casL].info('{}: Restarting incubate timer'.format(casName))
-                    incStr = self.taskDF.loc[casName,'protocolList'][stepNum-1]
-                    #Get parameters betwen parantheses
-                    incParam = re.search('\(([^)]+)', incStr).group(1).split(',')
-                    casLogs[casL].debug(incParam)
-                    #Find incTime
-                    j = [ i for i, word in enumerate(incParam) if word.startswith('incTime=') ][0]
-                    casLogs[casL].debug(j)
-                    #Change incTime
-                    incParam[j] = 'incTime={}'.format(self.taskDF.loc[casName,'secsRemaining'])
-                    #Change incStr and protocolList
-                    self.taskDF.loc[casName,'protocolList'][stepNum-1] = 'self.incubate({})'.format(','.join(incParam))
-                    casLogs[casL].debug(self.taskDF.loc[casName,'protocolList'][stepNum-1])
+                casLogs[casL].debug(self.taskDF.loc[casName, 'status'])
+                if self.taskDF.loc[casName, 'status'] == 'cleaning':
+                    progStrings = self.taskDF.loc[casName,'progressNames']
+                    stepNum = len(progStrings)
+                    
+                    exec('self.{} = nTask.create_task(self.restartClean(casL, stepNum), name="{}")'.format(casName,casName))
+                    
+                elif self.taskDF.loc[casName, 'status'] == 'stopping':
+                    exec('self.{} = nTask.create_task(self.restartShutdown(casL), name="{}")'.format(casName,casName))
+
+                elif self.taskDF.loc[casName, 'status'] == 'running':
+                    casLogs[casL].warning('Restarting Run...\n{}'.format(self.taskDF.loc[casName,['sampleName','protocolName','protocolPath']]))
+                    #Start at current stepNum and if the step is an incubate step,
+                    stepNum = int(self.taskDF.loc[casName,'stepNum'])
+                    # casLogs[casL].debug(stepNum)
+                    casLogs[casL].info('{}: Restarting at step # {}...'.format(casName, stepNum))
+                    #update the runtime using secsRemaining
+                    if self.taskDF.loc[casName,'progressNames'][stepNum-1] == 'Incubation':
+                        casLogs[casL].info('{}: Restarting incubate timer'.format(casName))
+                        incStr = self.taskDF.loc[casName,'protocolList'][stepNum-1]
+                        #Get parameters betwen parantheses
+                        incParam = re.search('\(([^)]+)', incStr).group(1).split(',')
+                        casLogs[casL].debug(incParam)
+                        #Find incTime
+                        j = [ i for i, word in enumerate(incParam) if word.startswith('incTime=') ][0]
+                        casLogs[casL].debug(j)
+                        #Change incTime
+                        incParam[j] = 'incTime={}'.format(self.taskDF.loc[casName,'secsRemaining'])
+                        #Change incStr and protocolList
+                        self.taskDF.loc[casName,'protocolList'][stepNum-1] = 'self.incubate({})'.format(','.join(incParam))
+                        casLogs[casL].debug(self.taskDF.loc[casName,'protocolList'][stepNum-1])
+                    #get the protocol functions to be executed
+                    protStrings = self.taskDF.loc[casName,'protocolList']
+                    progStrings = self.taskDF.loc[casName,'progressNames']
+                    exec('self.{} = nTask.create_task(self.evalProtocol(casL, protStrings, progStrings, stepNum), name="{}")'.format(casName,casName))
+                    #update the activeTasks
+                    self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
+                    casLogs[casL].info('Starting task on {}'.format(casName))
+                    casLogs[casL].info(self.activeTasks)
+
             else:
                 #When the protocol is starting
                 #Add step to taskDF
@@ -312,20 +466,21 @@ class Component(ApplicationSession):
                 start = await self.get_lastline(fn)
                 self.taskDF.loc[casName,'startlog'] = start 
                 #Set end number to 0 until the protocol is completed or stopped
-                self.taskDF.loc[casName,'endlog'] = start
+                # self.taskDF.loc[casName,'endlog'] = start
                 casLogs[casL].info('Starting Run!\n{}'.format(self.taskDF.loc[casName,['sampleName','protocolName','protocolPath','startlog']]))
                 stepNum = 1
                 self.taskDF.loc[casName,'secsRemaining'] = self.taskDF.loc[casName,'stepTimes'][0]
-            #get the protocol functions to be executed
-            protStrings = self.taskDF.loc[casName,'protocolList']
-            progStrings = self.taskDF.loc[casName,'progressNames']
-            exec('self.{} = nTask.create_task(self.evalProtocol(casL, protStrings, progStrings, stepNum), name="{}")'.format(casName,casName,stepNum))
-            #update the activeTasks
-            self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
-            casLogs[casL].info('Starting task on {}'.format(casName))
-            casLogs[casL].info(self.activeTasks)
-            if not restart:
+                #get the protocol functions to be executed
+                protStrings = self.taskDF.loc[casName,'protocolList']
+                progStrings = self.taskDF.loc[casName,'progressNames']
+                exec('self.{} = nTask.create_task(self.evalProtocol(casL, protStrings, progStrings, stepNum), name="{}")'.format(casName,casName))
+                #update the activeTasks
+                self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
+                casLogs[casL].info('Starting task on {}'.format(casName))
+                casLogs[casL].info(self.activeTasks)
+                #publish that task was started to GUI
                 samplelog, currentEnd = self.get_caslogchunk(casL, start, end=0)
+                self.taskDF.loc[casName,'endlog'] = currentEnd
                 self.publish('com.prepbot.prothandler.started', casName, self.taskDF.loc[casName].to_json(), samplelog, currentEnd)
                 
             
@@ -334,6 +489,9 @@ class Component(ApplicationSession):
         fn = casLogs[casL].handlers[0].baseFilename
         # i=stepNum-1
         # while i < len(protStrings):
+        casLogs[casL].debug(protStrings)
+        casLogs[casL].debug(progStrings)
+        casLogs[casL].debug(stepNum)
         for i in range(stepNum-1, len(protStrings)):
             #Break up blocks of code, exec cannot be used because it does not return values
             #Eval() has poor security!!!! Should at least filter protStrings before evaluating...
@@ -356,24 +514,50 @@ class Component(ApplicationSession):
                 #advance taskDF for next step
                 self.taskDF.loc[casName,'secsRemaining'] = self.taskDF.loc[casName,'stepTimes'][i+1]
                 self.taskDF.loc[casName,'stepNum'] = i+2
+                #Send updated log
+                start = self.taskDF.loc[casName,'endlog'] + 1
+                linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
+                if len(linesToSend) > 0:
+                    self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
+                #Update end line number of log
+                self.taskDF.loc[casName,'endlog'] = currentEnd
+                #wampHandler will send a corresponding signal to QML to update the progress bar, GUI taskDF, and cassette log
+                self.publish('com.prepbot.prothandler.progress', casL, self.taskDF.loc[casName].to_json())
+                casLogs[casL].info('Updating progress on cas{}...'.format(casL))
+                await asyncio.sleep(0.05)
+                # i+= 1
             else:
                 #this is the last step when it is completed
+                #Disengage sample and clean the line using finishedRun()
                 self.taskDF.loc[casName,'secsRemaining'] = 0
                 self.taskDF.loc[casName,'stepNum'] = i+1
+                #Send updated log
+                start = self.taskDF.loc[casName,'endlog'] + 1
+                linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
+                if len(linesToSend) > 0:
+                    self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
+                #Update end line number of log
+                self.taskDF.loc[casName,'endlog'] = currentEnd
+                self.publish('com.prepbot.prothandler.progress', casL, self.taskDF.loc[casName].to_json())
+                casLogs[casL].info('Finished all steps, starting to clean cas{}...'.format(casL))
+                
+                #start cleaning
+                self.taskDF.loc[casName,'status'] = 'cleaning'
+                self.publish('com.prepbot.prothandler.start-clean', casL)
+                await self.clean(casL)
+                
                 self.taskDF.loc[casName,'status'] = 'finished'
                 casLogs[casL].info('Finished {} task!'.format(casName))
-            #Send updated log
-            start = self.taskDF.loc[casName,'endlog'] + 1
-            linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
-            if len(linesToSend) > 0:
-                self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
-            #Update end line number of log
-            self.taskDF.loc[casName,'endlog'] = currentEnd
-            #wampHandler will send a corresponding signal to QML to update the progress bar, GUI taskDF, and cassette log
-            self.publish('com.prepbot.prothandler.progress', casL, self.taskDF.loc[casName].to_json())
-            casLogs[casL].info('Updating progress on cas{}...'.format(casL))
-            await asyncio.sleep(0.05)
-            # i+= 1
+                #Send updated log
+                start = self.taskDF.loc[casName,'endlog'] + 1
+                linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
+                if len(linesToSend) > 0:
+                    self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
+                #Update end line number of log
+                self.taskDF.loc[casName,'endlog'] = currentEnd
+                self.publish('com.prepbot.prothandler.finish-clean', casL, self.taskDF.loc[casName].to_json())
+                
+            
             
     @wamp.subscribe('com.prepbot.prothandler.stop')
     async def stopProtocol(self, casL):
@@ -382,26 +566,36 @@ class Component(ApplicationSession):
         self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
         casLogs[casL].info(self.activeTasks)
         if casName in self.activeTasks:
-            eval('self.{}.cancel()'.format(casName))
             self.taskDF.loc[casName,'status'] = 'stopping'
-            try:
-                eval('self.{}'.format(casName))
-            except asyncio.CancelledError:
-                casLogs[casL].info("The run on {} has been cancelled.".format(casName))
+            eval('self.{}.cancel()'.format(casName))
             self.publish('com.prepbot.prothandler.start-shutdown', casL)
             #Shutdown procedures...
             await self.shutdown(casL)
-            #Clearing taskDF, getting end of log, and publishing it
+            self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
+            casLogs[casL].info(self.activeTasks)
+            try:
+                eval('self.{}'.format(casName))
+                cancelBool = eval('self.{}.cancelled()'.format(casName))
+                casLogs[casL].info("The run on {} has been cancelled? {}.".format(casName, cancelBool))
+            except asyncio.CancelledError:
+                casLogs[casL].info("The run on {} has been cancelled.".format(casName))
+            #Getting log, sending updated log chunk, and publishing taskDF
             self.taskDF.loc[casName,'status'] = 'shutdown'
             # self.taskDF.loc[casName, ['stepNum','secsRemaining','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName']] = np.nan
-            fn = casLogs[casL].handlers[0].baseFilename
-            end = await self.get_lastline(fn)
-            self.taskDF.loc[casName,'endlog'] = end
+            # fn = casLogs[casL].handlers[0].baseFilename
+            #Send updated log
+            start = self.taskDF.loc[casName,'endlog'] + 1
+            linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
+            if len(linesToSend) > 0:
+                self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
+            #Update end line number of log
+            self.taskDF.loc[casName,'endlog'] = currentEnd
+            
             self.publish('com.prepbot.prothandler.finish-shutdown', casL, self.taskDF.loc[casName].to_json())
         else:
             casLogs[casL].warning('{} is not running a protocol...'.format(casName))
             self.taskDF.loc[casName,'status'] = 'idle'
-            self.taskDF.loc[casName, ['stepNum','secsRemaining','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName']] = np.nan
+            #self.taskDF.loc[casName, ['stepNum','secsRemaining','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName']] = np.nan
             self.publish('com.prepbot.prothandler.finish-shutdown', casL, self.taskDF.loc[casName].to_json())
             
             
@@ -431,29 +625,212 @@ class Component(ApplicationSession):
     #         self.taskDF.loc[casName, ['stepNum','secsRemaining','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName']] = np.nan
     #         self.publish('com.prepbot.prothandler.finish-shutdown', casL, self.taskDF.loc[casName].to_json(), True)
             
-    async def shutdown(self, casL):
+    
+    
+    async def restartClean(self, casL, stepNum):
+        self.publish('com.prepbot.prothandler.start-clean', casL)
+        await self.clean(casL)
+        casName = 'cas{}'.format(casL)
+        self.taskDF.loc[casName,'secsRemaining'] = 0
+        self.taskDF.loc[casName,'stepNum'] = stepNum
+        self.taskDF.loc[casName,'status'] = 'finished'
+        casLogs[casL].info('Finished {} task!'.format(casName))
+        #Send updated log
+        start = self.taskDF.loc[casName,'endlog'] + 1
+        linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
+        if len(linesToSend) > 0:
+            self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
+        #Update end line number of log
+        self.taskDF.loc[casName,'endlog'] = currentEnd
+        self.publish('com.prepbot.prothandler.finish-clean', casL, self.taskDF.loc[casName].to_json())
+        
+    
+    
+    async def clean(self, casL, deadvol=LINEVOL):
+        await asyncio.sleep(0.1)
+        #Basic cleaning procedures when finishing a run
+        try:
+        #Start time
+            t0 = time.time()
+            casLogs[casL].info('Disengage Cas{}...'.format(casL))
+            # eval('machine.disengage_sample{}'.format(casL))
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+            
+            casLogs[casL].info('Cleaning line for Cas{}'.format(casL))
+            casLogs[casL].info('PURGING LINE, Cas{}'.format(casL))
+            # eval('machine.goto_sample{}()'.format(casL))
+            # machine.pump_in(purgeVol, removeSpeed)
+            # machine.empty_syringe(wasteSpeed)
+            
+            time.sleep(5)
+            
+            casLogs[casL].info('MEOH WASH of Cas{} LINE'.format(casL))
+            # machine.goto_meoh()
+            # machine.pump_in(deadvol, washSyrSpeed)
+            #wash the line
+            # eval('machine.goto_sample{}()'.format(casL))
+            #fill linevol
+            # machine.pump_out(deadvol, fillLineSpeed)
+            #remove from line
+            casLogs[casL].info('REMOVING MEOH WASH from LINE, Cas{}'.format(casL))
+            # machine.pump_in(purgeVol, removeSpeed)
+            # machine.empty_syringe(wasteSpeed)
+            
+            #Stop time
+            casLogs[casL].info('Clean Time: {:0.2f}s'.format(time.time()-t0))
+            opTimeslog.info('Clean Time: {:0.2f}s'.format(time.time()-t0))
+            
+        except Exception as e:
+            casLogs[casL].critical(e)
+            
+    async def restartShutdown(self, casL):
+        self.publish('com.prepbot.prothandler.start-shutdown', casL)
+        #Shutdown procedures...
+        await self.shutdown(casL)
+        casName = 'cas{}'.format(casL)
+        #Getting log, sending updated log chunk, and publishing taskDF
+        self.taskDF.loc[casName,'status'] = 'shutdown'
+        # self.taskDF.loc[casName, ['stepNum','secsRemaining','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName']] = np.nan
+        # fn = casLogs[casL].handlers[0].baseFilename
+        #Send updated log
+        start = self.taskDF.loc[casName,'endlog'] + 1
+        linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
+        if len(linesToSend) > 0:
+            self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
+        #Update end line number of log
+        self.taskDF.loc[casName,'endlog'] = currentEnd
+        self.publish('com.prepbot.prothandler.finish-shutdown', casL, self.taskDF.loc[casName].to_json())
+    
+    
+    async def shutdown(self, casL, deadvol=LINEVOL):
+        await asyncio.sleep(0.1)
         #Basic shutdown procedures when stopping a run before finishing.....
         casLogs[casL].info('SHUTDOWN Cas{}'.format(casL))
-        await asyncio.sleep(10)
+        try:
+        #Start time
+            t0 = time.time()
+            
+            casLogs[casL].info('Disengage Cas{}...'.format(casL))
+            # eval('machine.disengage_sample{}'.format(casL))
+            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
+            
+            casLogs[casL].info('Cleaning line for Cas{}'.format(casL))
+            casLogs[casL].info('PURGING LINE, Cas{}'.format(casL))
+            # eval('machine.goto_sample{}()'.format(casL))
+            # machine.pump_in(purgeVol, removeSpeed)
+            # machine.empty_syringe(wasteSpeed)
+            
+            time.sleep(5)
+            
+            casLogs[casL].info('MEOH WASH of Cas{} LINE'.format(casL))
+            # machine.goto_meoh()
+            # machine.pump_in(deadvol, washSyrSpeed)
+            #wash the line
+            # eval('machine.goto_sample{}()'.format(casL))
+            #fill linevol
+            # machine.pump_out(deadvol, fillLineSpeed)
+            #remove from line
+            casLogs[casL].info('REMOVING MEOH WASH from LINE, Cas{}'.format(casL))
+            # machine.pump_in(purgeVol, removeSpeed)
+            # machine.empty_syringe(wasteSpeed)
+            
+            #Stop time
+            casLogs[casL].info('Shutdown Time: {:0.2f}s'.format(time.time()-t0))
+            opTimeslog.info('Shutdown Time: {:0.2f}s'.format(time.time()-t0))
+
+        except Exception as e:
+            casLogs[casL].critical(e)
+            
+    #Perhaps make this an async function that is awaited on as a named task for the debug screen
+    @wamp.subscribe('com.prepbot.prothandler.exec-script')
+    async def createTerminalTask(self, linesToSend):
+        # loop = asyncio.get_event_loop()
+        self.termTask = nTask.create_task(self.execScript(linesToSend), name='termTask')
+        # loop.run_until_complete(self.termTask)
         
+    @wamp.subscribe('com.prepbot.prothandler.exec-stop')
+    async def stopTerminalTask(self):
+        pending = asyncio.Task.all_tasks()
+        for task in pending:
+            ctrl.debug(task )
+            task.cancel()
+        
+        
+        self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
+        ctrl.info(self.activeTasks)
+        if 'termTask' in self.activeTasks:
+            self.termTask.cancel()
+            try:
+                self.termTask
+                cancelBool = self.termTask.cancelled()
+                ctrl.info("The run from the terminal has been cancelled? {}.".format(cancelBool))
+            except asyncio.CancelledError:
+                ctrl.info("The run on terminal has been cancelled.")
+        else:
+            ctrl.warning('Terminal is not running a protocol/task...')
+        
+        
+    async def execScript(self, linesToExec):
+        try:
+            #Check if machine is connected and homed
+            await self.connectNHome()
+            ctrl.info('{}'.format(linesToExec))
+            #get current line of ctrl logger to send to debug screen...
+            ctrl.info('Starting to execute lines from script editor!')
+            #split the lines by \n, make a list
+            execList = linesToExec.split('\n')
+            ctrl.debug('{}'.format(execList))
+            #make a for loop through list
+            for i in range(len(execList)):
+                if execList[i]!='' and not execList[i].isspace():
+                    ctrl.debug(execList[i])
+                    #string evaluate each line
+                    if execList[i][0:4] == 'self':
+                        await eval(execList[i])
+                    else:
+                        eval(execList[i])
+        except Exception as e:
+            ctrl.critical('Cannot evaluate script! Please check that function called exists and formatting is correct.')
+            ctrl.critical(e)
     
     async def incubate(self, casL, incTime, mixAfter=600):
         casName = 'cas{}'.format(casL)
         #Get start time
         start = datetime.datetime.now()
         incSleep  = 10
-        if mixAfter=='undefined' or int(mixAfter)<=0:
-            waitI= int(incTime/incSleep)
-            #No washes/mixes, only one iteration
-            washI = 0
-        else:
-            mixMod = int(mixAfter/2)
-            if mixMod < 1:
-                mixMod=1
-            washI = int(incTime/mixMod)
-            #Divide mixMod by the incSleep to get the iterator for how many times to asyncio.sleep
-            #wait iterator
-            waitI = int(mixMod/incSleep)
+        fn = casLogs[casL].handlers[0].baseFilename
+        try:
+            if not incTime > 0:
+                casLogs[casL].warning('Inc. time not > 0: {}'.format(incTime))
+                casLogs[casL].warning('Skipping incubation...')
+                return
+        except Exception as e:
+            casLogs[casL].critical(e)
+            casLogs[casL].critical('Skipping incubation...')
+            return
+        
+        try:
+            if mixAfter=='undefined' or int(mixAfter)<=0 or int(mixAfter) > int(incTime):
+                waitI= int(incTime/incSleep)
+                if waitI < 1:
+                    waitI=1
+                #No washes/mixes, only one iteration
+                washI = 1
+                casLogs[casL].info('No washes for incubation. incTime={}, mixAfter={}'.format(incTime, mixAfter))
+            else:
+                mixMod = int(mixAfter/2)
+                if mixMod < 1:
+                    mixMod=1
+                washI = int(incTime/mixMod)
+                #Divide mixMod by the incSleep to get the iterator for how many times to asyncio.sleep
+                #wait iterator
+                waitI = int(mixMod/incSleep)
+                if waitI < 1:
+                    waitI=1
+        except Exception as e:
+            casLogs[casL].critical(e)
+            casLogs[casL].critical('Skipping incubation...')
+            return
         casLogs[casL].info('INCUBATING Cas{}'.format(casL))
         #Want to break out of this loop if timediff exceeds incTime
         exceedInc = False
@@ -476,8 +853,10 @@ class Component(ApplicationSession):
                 #This interupts the processes on the wampHandler by publishing every second
                 #Send a publish every 30 seconds?
                 if diff > 30*p:
-                    casLogs[casL].info('Cas{} publishing secs-remaining!'.format(casL))
-                    self.publish('com.com.prepbot.prothandler.secs-remaining',casL,int(incTime - diff))
+                    casLogs[casL].info('Cas{} publishing secs-remaining and new task DF!'.format(casL))
+                    self.taskDF.loc['cas{}'.format(casL),'endlog'] = await self.get_lastline(fn)
+                    self.taskDF.loc[casName,'secsRemaining'] = int(incTime - diff)
+                    self.publish('com.prepbot.prothandler.update-taskdf',casL,self.taskDF.loc[casName].to_json())
                     p += 1
             if ((i % 2) == 0):
                 await asyncio.sleep(0.1)
@@ -485,52 +864,198 @@ class Component(ApplicationSession):
                 modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
                 casLogs[casL].info('Mixing Cas{}...'.format(casL))
                 #Goto last fluidtype???
-                # eval('machine.goto_sample{}()'.format(casL))
-                # machine.pump_in(0.5)
-                time.sleep(2)
-                # machine.pump_out(0.5)
-    
+                try:
+                    t0 = time.time()
+                    # eval('machine.goto_sample{}()'.format(casL))
+                    # machine.pump_in(0.6, incSpeed)
+                    time.sleep(1)
+                    # machine.pump_out(0.6, incSpeed)
+                    self.taskDF.loc['cas{}'.format(casL),'endlog'] = await self.get_lastline(fn)
+                    self.publish('com.prepbot.prothandler.update-taskdf',casL,self.taskDF.loc[casName].to_json())
+                    casLogs[casL].info('Inc. Mix Time: {:0.2f}s'.format(time.time()-t0))
+                    opTimeslog.info('Inc. Mix Time: {:0.2f}s'.format(time.time()-t0))
+                except Exception as e:
+                    casLogs[casL].critical(e)
+                    # await self.stopProtocol(casL)
+        
+        casLogs[casL].info('FINISHED INCUBATION of Cas{}'.format(casL))
+        
     async def mix(self, casL, numCycles, volume):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
         casLogs[casL].info("MIXING Cas{}, {} TIMES, {} VOLUME".format(casL, numCycles, volume))
-        # eval('machine.goto_sample{}()'.format(casL))
-        for i in range(int(numCycles)):
-            # await asyncio.sleep(0.01)
-            casLogs[casL].info('Mixing {}, #{} of {} cycles...'.format(casL,i+1,int(numCycles)))
-            # Goto last fluidtype???
-            # machine.pump_in(volume)
-            time.sleep(2)
-            # machine.pump_out(volume)
-    
-    async def purge(self, casL, deadvol):
+        try:
+            # eval('machine.goto_sample{}()'.format(casL))
+            tStart = time.time()
+            for i in range(int(numCycles)):
+                # await asyncio.sleep(0.01)
+                casLogs[casL].info('Mixing {}, #{} of {} cycles...'.format(casL,i+1,int(numCycles)))
+                t0 = time.time()
+                # machine.pump_in(volume, mixSpeed)
+                time.sleep(2)
+                # machine.pump_out(volume, mixSpeed)
+                opTimeslog.info('Mix cycle {} of {} Time: {:0.2f}s'.format(i+1, int(numCycles), time.time()-t0))
+                
+            opTimeslog.info('Mix Finished, {} cycles Time: {:0.2f}s'.format(int(numCycles), time.time()-tStart))
+        except Exception as e:
+            casLogs[casL].critical(e)
+            # await self.stopProtocol(casL)
+        
+    async def purge(self, casL, deadvol=LINEVOL):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
         casLogs[casL].info('PURGING CHAMBER, Cas{}'.format(casL))
         # Goto last fluidtype???
-        # eval('machine.goto_sample{}()'.format(casL))
-        # machine.pump_in(deadvol)
-        await asyncio.sleep(5)
-        #machine.empty_syringe()
-    
-    async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol):
+        try:
+            t0 = time.time()
+            # eval('machine.goto_sample{}()'.format(casL))
+            # machine.pump_in(purgeVol, removeSpeed)
+            time.sleep(1)
+            # machine.empty_syringe(wasteSpeed)
+            opTimeslog.info('Purge, {} mL, {} removeSpeed, {} wasteSpeed, Time: {:0.2f}s'.format(purgeVol, removeSpeed, wasteSpeed, time.time()-t0))
+        except Exception as e:
+            casLogs[casL].critical(e)
+            # await self.stopProtocol(casL)
+        
+    async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol=LINEVOL, washSyr=False):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
-        casLogs[casL].info('PURGING CHAMBER, Cas{}'.format(casL))
-        # eval('machine.goto_sample{}()'.format(casL))
-        # machine.pump_in(deadvol)
-        await asyncio.sleep(5)
-        #machine.empty_syringe()
-
-        casLogs[casL].info('ADDING {} TO Cas{}'.format(loadstr, casL))
-        # eval('machine.goto_{}()'.format(reagent))
-        # machine.pump_in(vol,speed)
-        await asyncio.sleep(5)
-        # eval('machine.goto_sample{}()'.format(casL))
-        # machine.pump_out(vol,speed)
+        try:
+            tStart = time.time()
+            t0 = time.time()
+            casLogs[casL].info('PURGING CHAMBER, Cas{}'.format(casL))
+            # eval('machine.goto_sample{}()'.format(casL))
+            # machine.pump_in(purgeVol, removeSpeed)
+            time.sleep(1)
+            # machine.empty_syringe(wasteSpeed)
+            opTimeslog.info('Purge, {} mL, {} removeSpeed, {} wasteSpeed, Time: {:0.2f}s'.format(purgeVol, removeSpeed, wasteSpeed, time.time()-t0))
+            # #flowThru = purgeVol + deadvol
+            # #machine.pump_out(flowThru, purgeSpeed)
+            
+            if washSyr == True:
+                t0 = time.time()
+                casLogs[casL].info('WASHING SYRINGE WITH {}'.format(loadstr))
+                # eval('machine.goto_{}()'.format(reagent))
+                deVol = vol + deadvol
+                # machine.pump_in(deVol, washSyrSpeed)
+                #wash the line
+                # eval('machine.goto_sample{}()'.format(casL))
+                #fill linevol
+                # machine.pump_out(deadvol, fillLineSpeed)
+                #remove from line
+                # machine.pump_in(purgeVol, removeSpeed)
+                time.sleep(1)
+                # machine.empty_syringe(wasteSpeed)
+                opTimeslog.info('Wash Syringe, {} mL, {} washSyrSpeed, {} fillLineSpeed, Time: {:0.2f}s'.format(deVol, washSyrSpeed, fillLineSpeed, time.time()-t0))
+                
+            t0 = time.time()    
+            casLogs[casL].info('ADDING {} TO Cas{}'.format(loadstr, casL))
+            # eval('machine.goto_{}()'.format(reagent))
+            deVol = vol + deadvol
+    #            assume lines are primed....
+            # machine.pump_in(deVol, fillSyrSpeed)
+            # eval('machine.goto_sample{}()'.format(casL))
+            #pump out to LINEVOL at fillLineSpeed
+            # machine.pump_out(deadvol, fillLineSpeed)
+            time.sleep(2)
+            if reagent == 'babb':
+                time.sleep(2)
+            #pump out remaining fluid to fill the cassette depending on adjustable volume and speed
+            # machine.pump_out(vol, speed)
+            opTimeslog.info('Adding {}, {} mL, {} fillLineSpeed, {} speed, Time: {:0.2f}s'.format(loadstr, vol, fillLineSpeed, speed, time.time()-t0))
+        
+        except Exception as e:
+            casLogs[casL].citical('Load Reagent, 1st block error...')
+            casLogs[casL].citical(e)
+        
+        #adjust for last fluid density
+        #meoh < formalin/water < babb
+        residualFluid = self.taskDF.loc['cas{}'.format(casL),'currentFluid']
+        reaDen = reaDensOrder[reagent]
+        try:
+            residualDen = reaDensOrder[residualFluid]
+        except Exception as e:
+            casLogs[casL].warning('Residual fluid may not be inside of density adjustment dictionary: {}'.format(residualFluid))
+            casLogs[casL].warning(e)
+            casLogs[casL].info('Setting residual fluid to unknown (unk)')
+            residualDen = reaDensOrder['unk']
+            
+        #update current fluid in taskDF
+        self.taskDF.loc['cas{}'.format(casL),'currentFluid'] = reagent
+        casLogs[casL].info('Cas{} CURRENT FLUID: {}'.format(casL, reagent))
+        
+        t0 = time.time()
+        if reaDen > residualDen:
+            #if reagent density > currentFluid density
+            #pump out a little more reagent to push out the last fluid
+            #Allow fluid density column to settle
+            casLogs[casL].info('Cas{} SETTLE TIME: {}'.format(casL, settleTime))
+            await asyncio.sleep(settleTime)
+            casLogs[casL].info('Cas{}: Reagent ({}) is denser than residual fluid ({}). Pump out {}mL to push out residual fluid.'.format(casL, reagent, residualFluid, densVol))
+            try:
+                # eval('machine.goto_sample{}()'.format(casL))
+                # machine.pump_out(densVol, densSpeed)
+                opTimeslog.info('Reagent denser than resid., adjusting, {}s settleTime, {} densVol, {} densSpeed, Time: {:0.2f}s'.format(settleTime, densVol, densSpeed, time.time()-t0))
+            except Exception as e:
+                casLogs[casL].citical('Load Reagent, Density adjustment reaDen > residualDen error...')
+                casLogs[casL].citical(e)
+            
+        elif reaDen < residualDen:
+            #else if reagent density < currentFluid density
+            #pump in a little to suck in last fluid
+            #Pump out a little more to give room to suck in after fluid column settles
+            try:
+                # machine.pump_out(densVol, densSpeed)
+                casLogs[casL].info('Pump out ({}mL) to give room for sucking residual fluid in...'.format(densVol))
+            except Exception as e:
+                casLogs[casL].citical('Load Reagent, Density adjustment reaDen < residualDen error...')
+                casLogs[casL].citical(e)
+            #Allow fluid density column to settle
+            casLogs[casL].info('Cas{} SETTLE TIME: {}'.format(casL, settleTime))
+            await asyncio.sleep(settleTime)
+            casLogs[casL].info('Cas{}: Reagent ({}) is less dense than residual fluid ({}). Pump in {}mL to suck in residual fluid.'.format(casL, reagent, residualFluid, densVol))
+            try:
+                # eval('machine.goto_sample{}()'.format(casL))
+                # machine.pump_in(densVol, densSpeed)
+                opTimeslog.info('Reagent less dense than resid., adjusting, {}s settleTime, {} densVol, {} densSpeed, Time: {:0.2f}s'.format(settleTime, densVol, densSpeed, time.time()-t0))
+            except Exception as e:
+                casLogs[casL].citical('Load Reagent, Density adjustment reaDen < residualDen error...')
+                casLogs[casL].citical(e)
+                
+        else:
+            #else None is currentFluid or reagent == current fluid density
+            #no adjustment
+            casLogs[casL].info('Cas{}: Reagent ({}) and residual fluid ({}) do not require a density adjustment.'.format(casL, reagent, residualFluid))
+        
+                
+            casLogs[casL].info('FINISHED LOADING {} TO Cas{}, Time: {:0.2f}s'.format(loadstr, casL, time.time()-tStart))
+            opTimeslog.info('FINISHED LOADING {} TO Cas{}, Time: {:0.2f}s'.format(loadstr, casL, time.time()-tStart))
+        
+        # except Exception as e:
+        #     await asyncio.sleep(0.1)
+        #     casLogs[casL].critical('\n{}'.format(self.taskDF.loc['cas{}'.format(casL)]))
+        #     casLogs[casL].critical(e)
+        #     self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
+        #     casLogs[casL].info(self.activeTasks)
+        #     if self.taskDF.loc['cas{}'.format(casL),'status'] in ['stopping','cleaning','shutdown','cleaned','finished']:
+        #         #just be sure the task was canceled
+        #         casName = 'cas{}'.format(casL)
+        #         cancelBool = eval('self.{}.cancelled()'.format(casName))
+        #         casLogs[casL].info("Checking to cancel task on {}..? {}".format(casName, cancelBool))
+        #         if not cancelBool:    
+        #             eval('self.{}.cancel()'.format(casName))
+        #         try:
+        #             eval('self.{}'.format(casName))
+        #             cancelBool = eval('self.{}.cancelled()'.format(casName))
+        #             casLogs[casL].info("The run on {} has been cancelled? {}.".format(casName, cancelBool))
+        #         except asyncio.CancelledError:
+        #             casLogs[casL].info("The run on {} has been cancelled.".format(casName))
+        #     else:
+        #         #stop the protocol
+        #         await self.stopProtocol(casL)
 
     @wamp.subscribe('com.prepbot.button.btn_halt')
     async def halt(self):
@@ -540,7 +1065,7 @@ class Component(ApplicationSession):
 
     @wamp.subscribe('com.prepbot.button.btn_connect')
     def connect(self):
-        machine.connect()
+        machine.acquire()
         self.halted = False
 
     @wamp.subscribe('com.prepbot.button.btn_home')
@@ -602,7 +1127,7 @@ class Component(ApplicationSession):
 
 if __name__ == '__main__':
     while True:
-        runner = ApplicationRunner(url="ws://127.0.0.1:8080/ws", realm="realm1")
+        runner = ApplicationRunner(url="ws://127.0.0.1:8080/ws", realm="realm1", auto_ping_timeout=120)
         try:
             runner.run(Component)
             loop = asyncio.get_event_loop()

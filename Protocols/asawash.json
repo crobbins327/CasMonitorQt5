@@ -1,0 +1,32 @@
+[
+	{
+		"opName": "Load Formalin",
+		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
+		"volume": "600uL",
+		"pSpeed": "0.66",
+		"numCycles": "undefined",
+		"washSyr": "true",
+		"loadType": "Formalin"
+	},
+	{
+		"opName": "Load Dehydrant",
+		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
+		"volume": "600uL",
+		"pSpeed": "0.2",
+		"numCycles": "undefined",
+		"washSyr": "true",
+		"loadType": "Dehydrant"
+	},
+	{
+		"opName": "Load Stain",
+		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
+		"volume": "600uL",
+		"pSpeed": "1",
+		"numCycles": "undefined",
+		"washSyr": "false",
+		"loadType": "Stain"
+	}
+]

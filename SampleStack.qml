@@ -32,12 +32,14 @@ Item {
     property bool isLogRefreshed: false
 
     signal reSetupProt(string casNum, variant progS, variant stepTimes, string runtime, string samplen, string protocoln)
-    signal reStartedProt(int casNum, string newLog, int start, int currentEnd)
+    signal reStartedProt(int casNum, string logChunk, int start, int currentEnd)
     signal reUpdateProg(int casNum)
     signal reReqLogChunk(int casNum, string logChunk, int currentEnd)
     signal reUpLogChunk(int casNum, string logChunk, int currentEnd)
 //    signal reRepopulate(string casNum, variant progS, variant stepTimes, int stepInd, int secsRem, int totalRemaining, int totalRunSecs, string samplen, string protocoln, string status)
     signal reRepopulate(int casNum, variant progS, variant stepTimes, variant otherVars)
+    signal reCleanStart(int casNum)
+    signal reCleanFinished(int casNum)
     signal reShutdownStart(int casNum)
     signal reShutdownFinished(int casNum)
     signal reEngaged(int casNum)
@@ -52,6 +54,8 @@ Item {
         WAMPHandler.reqLogChunk.connect(reReqLogChunk)
         WAMPHandler.upLogChunk.connect(reUpLogChunk)
         WAMPHandler.repopulateProt.connect(reRepopulate)
+        WAMPHandler.cleanStart.connect(reCleanStart)
+        WAMPHandler.cleanDone.connect(reCleanFinished)
         WAMPHandler.shutdownStart.connect(reShutdownStart)
         WAMPHandler.shutdownDone.connect(reShutdownFinished)
         WAMPHandler.casEngaged.connect(reEngaged)
@@ -88,16 +92,17 @@ Item {
                 runDetB.enabled = false
             }
         }
-        function onReStartedProt(casNum, newLog, start, currentEnd) {
+        function onReStartedProt(casNum, logChunk, start, currentEnd) {
             if (root.casNumber==casNum && root.isHanging){
                 console.log('Starting Run, Cas', casNumber)
+                console.log(logChunk)
                 //start run
                 root.runStep = root.progStrings[root.stepIndex]
                 root.isHanging = false
                 runDetB.enabled = true
                 root.startlog = start
                 root.currentEnd = currentEnd
-                root.logText = newLog
+                root.logText = logChunk
             }
         }
         function onReUpdateProg(casNum) {
@@ -127,8 +132,8 @@ Item {
                     root.runTime = "00:00:00"
                     root.runSecs = get_sec(root.runTime)
                     root.runProgVal = 100
-                    stopRunB.visible = false
-                    nextRunB.visible = true
+//                    stopRunB.visible = false
+//                    nextRunB.visible = true
                 }
             }
         }
@@ -217,6 +222,29 @@ Item {
                     nextRunB.visible = false
                     stopRunB.enabled = false
                     stopRunB.checked = true
+//                    engageCasB.enabled = false
+                } else if (status == 'cleaning'){
+                    //setup run
+                    var stepInd = otherVars[0]
+                    var secsRem = otherVars[1]
+                    var samplen = otherVars[2]
+                    var protocoln = otherVars[3]
+                    runProgBar.progColor = "#17a81a"
+                    root.runTime = "00:00:00"
+                    root.runSecs = get_sec(root.runTime)
+                    root.runSampleName = samplen
+                    root.runProtocolName = protocoln
+                    root.stackIndex = 2
+                    root.stepIndex = stepInd-1
+                    root.progStrings = progS
+                    root.runStep = 'Cleaning...'
+                    root.runProgVal = 100
+                    root.stepRunTimes = stepTimes
+                    root.isRunning = true
+                    root.isHanging = true
+                    stopRunB.visible = true
+                    nextRunB.visible = false
+//                    engageCasB.enabled = false
                 } else if(status == 'finished'){
                     console.log('Protocol Finished! Cas', root.casNumber)
                     var stepInd = otherVars[0]
@@ -239,6 +267,7 @@ Item {
                     root.stepRunTimes = stepTimes
                     stopRunB.visible = false
                     nextRunB.visible = true
+                    engageCasB.enabled = true
                 } else if(status == 'shutdown'){
                     var stepInd = otherVars[0]
                     var secsRem = otherVars[1]
@@ -264,9 +293,29 @@ Item {
                     stopRunB.enabled = true
                     stopRunB.checked = false
                     nextRunB.visible = true
+                    engageCasB.enabled = true
                 }
             } else {
                 console.log('Not repopulating! Cas', casNumber)
+            }
+        }
+        function onReCleanStart(casNum){
+            if (root.casNumber==casNum){
+                root.runStep = 'Cleaning...'
+                root.isRunning = true
+                root.isHanging = true
+//                engageCasB.enabled = false
+            }
+        }
+        function onReCleanFinished(casNum){
+            if (root.casNumber==casNum){
+                root.runStep = 'Cleaned.'
+                root.isRunning = false
+                stopRunB.visible = false
+                stopRunB.enabled = true
+                stopRunB.checked = false
+                nextRunB.visible = true
+//                engageCasB.enabled = true
             }
         }
         function onReShutdownStart(casNum){
@@ -285,6 +334,7 @@ Item {
                 stopRunB.enabled = true
                 stopRunB.checked = false
                 nextRunB.visible = true
+//                engageCasB.enabled = true
             }
         }
         function onReEngaged(casNum) {
@@ -678,7 +728,9 @@ Item {
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
 
                 onClicked: {
+                    runDetWin.close()
                     runDetWin.show()
+                    runDetWin.raise()
                     if (!root.isLogRefreshed){
                         WAMPHandler.refreshRunDet(root.casNumber, root.currentEnd)
                         root.isLogRefreshed = true
@@ -771,7 +823,7 @@ Item {
                     WAMPHandler.nextProtocol(root.casNumber)
 
                     //switch index
-                    stackIndex = 1
+                    stackIndex = 0
                 }
             }
 
@@ -788,17 +840,20 @@ Item {
         minimumWidth: 220
         minimumHeight: 110
         visible: false
+        title: "Cas"+casNumber+" Log"
         flags: Qt.WindowMinimized
         color:'silver'
 
         Component.onCompleted: {runDetWin.close()}
-
-//        onClosing: {
+        
+        onClosing: {
+            root.isLogRefreshed = false
 //            close.accepted = false
 //            runDetWin.width = 550
 //            runDetWin.height = 300
 //            runDetWin.hide()
-//        }
+
+        }
 
         LogDisplay {
             id:logDisplay
@@ -836,6 +891,7 @@ Item {
         }
         onRejected: {
             console.log("Canceled.")
+            stopRunB.checked = false
             this.close
         }
     }

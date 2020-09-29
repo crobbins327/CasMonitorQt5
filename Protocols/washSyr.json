@@ -1,0 +1,12 @@
+[
+	{
+		"opName": "Load Formalin",
+		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
+		"volume": "1092uL",
+		"pSpeed": "0.72",
+		"numCycles": "undefined",
+		"washSyr": "true",
+		"loadType": "Formalin"
+	}
+]

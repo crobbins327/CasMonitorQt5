@@ -1,10 +1,15 @@
 import logging
+import logging.config
 from serial import Serial
 from colorlog import ColoredFormatter
 import fcntl
 import sys
-
-# formatter = ColoredFormatter(
+import os
+#For debugging with only the machine file
+# os.chdir('..')
+# logging.config.fileConfig(fname='./Log/init/ctrl-loggers.ini')
+# os.chdir('./prepbot')
+# colorFormat = ColoredFormatter(
 #     "%(log_color)s%(levelname)-8s%(reset)s %(blue)s%(message)s",
 #     datefmt=None,
 #     reset=True,
@@ -18,11 +23,8 @@ import sys
 #     secondary_log_colors={},
 #     style='%'
 # )
-# handler = logging.StreamHandler(sys.stdout)
-# handler.setFormatter(formatter)
 logger = logging.getLogger('ctrl.machine')
-# logger.addHandler(handler)
-# logger.setLevel(logging.DEBUG)
+# logger.handlers[0].setFormatter(colorFormat)
 
 homed = True
 
@@ -31,15 +33,17 @@ f = None
 s = None
 s_wheel = None
 
-X_PARK = -100
-X_MEOH = -120
-X_SAMPLE_D = -84
+X_PARK = -70
+X_SAMPLE_F = -85
+X_VIAL = -97
+X_FORMALIN = -109
+X_MEOH = -121
+X_SAMPLE_E = -133
+X_SAMPLE_D = -145
 X_WASTE = -156
 X_SAMPLE_B = -143
-X_VIAL = -96
 X_BABB = -132
 X_BABB_2 = -186
-X_FORMALIN = -107
 
 Z_SEPTUM = 66
 Z_SAFE = 40
@@ -52,10 +56,10 @@ VIAL_SCRAPE_Z = 10
 VIAL_SCRAPE_X = -180
 VIAL_OFFSET = -64           # degrees from sensor to needle position
 
-S_ENGAGE_D = 12
-S_ENGAGE_E = 8
-S_ENGAGE_F = 11
-S_DISENGAGE = 4
+S_ENGAGE_D = 10
+S_ENGAGE_E = 9
+S_ENGAGE_F = 10
+S_DISENGAGE = 3
 
 PUMP_SPEED = 1
 
@@ -64,9 +68,9 @@ LIMITS = {
     'z': [0, 100],
     'pump': [0, 40],
     'wheel': [float('-inf'), float('inf')],
-    'sampleD': [0, 50],
-    'sampleE': [0, 50],
-    'sampleF': [0, 50],
+    'sampleD': [-50, 50],
+    'sampleE': [-50, 50],
+    'sampleF': [-50, 50],
 }
 
 def test_logger():
@@ -75,6 +79,9 @@ def test_logger():
     logger.warning('Test warning')
     logger.error('Test error')
     logger.critical('Test critical')
+
+def get_home_status():
+    return(homed)
 
 def acquire():
     global f, s
@@ -245,6 +252,16 @@ def goto_sampleD():
     move('z', Z_SAFE)
     move('x', X_SAMPLE_D)
     move('z', Z_SEPTUM)
+    
+def goto_sampleE():
+    move('z', Z_SAFE)
+    move('x', X_SAMPLE_E)
+    move('z', Z_SEPTUM)
+
+def goto_sampleF():
+    move('z', Z_SAFE)
+    move('x', X_SAMPLE_F)
+    move('z', Z_SEPTUM)
 
 def goto_formalin():
     move('z', Z_SAFE)
@@ -297,7 +314,7 @@ def motors_off():
 
 def home():
     global homed
-    home_stepper('z', -100)
+    home_stepper('z', -100, wait=False)
     home_stepper('pump', -50, wait=False)
     home_stepper('x', 300, wait=False)
     home_stepper('sampleD', -50, wait=False)

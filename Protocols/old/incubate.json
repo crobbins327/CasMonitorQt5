@@ -1,0 +1,11 @@
+[
+	{
+		"opName": "Incubation",
+		"opTime": "00:05:00",
+		"mixAfterSecs": "20",
+		"volume": "undefined",
+		"pSpeed": "undefined",
+		"numCycles": "undefined",
+		"loadType": "undefined"
+	}
+]

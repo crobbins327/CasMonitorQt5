@@ -1,0 +1,11 @@
+[
+	{
+		"opName": "Load Dehydrant",
+		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
+		"volume": "600uL",
+		"pSpeed": "1",
+		"numCycles": "undefined",
+		"loadType": "Dehydrant"
+	}
+]

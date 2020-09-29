@@ -1,628 +1,594 @@
-2020-09-11 08:59:59 ctrl.casD    INFO     Engage CasD...
-2020-09-11 09:00:17 ctrl.casD    INFO     
+2020-09-24 15:13:23 ctrl.casD    INFO     Engage CasD...
+2020-09-24 15:13:27 ctrl.casD    INFO     
 
 
 
-2020-09-11 09:00:17 ctrl.casD    INFO     Starting Run!
-sampleName                                               sadfsdaf
-protocolName                                         testAll Fast
+2020-09-24 15:13:27 ctrl.casD    INFO     Starting Run!
+sampleName                                                 asdfas
+protocolName                                              washSyr
 protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
 startlog                                                        4
 Name: casD, dtype: object
-2020-09-11 09:00:17 ctrl.casD    INFO     Starting task on casD
-2020-09-11 09:00:17 ctrl.casD    INFO     ['casF', 'casB', 'casE', 'casC', 'casA', 'casD']
-2020-09-11 09:00:17 ctrl.casD    INFO     casD: Evaluating step 0
-2020-09-11 09:00:17 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=5,mixAfter=0)']
-2020-09-11 09:00:17 ctrl.casD    INFO     INCUBATING CasD
-2020-09-11 09:00:38 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 09:00:40 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 09:00:50 ctrl.casD    INFO     casD: Evaluating step 1
-2020-09-11 09:00:50 ctrl.casD    INFO     ['self.purge(casL="D",deadvol=4.0)']
-2020-09-11 09:01:00 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 09:01:05 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 09:01:15 ctrl.casD    INFO     casD: Evaluating step 2
-2020-09-11 09:01:15 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=3, volume=1.0)']
-2020-09-11 09:01:26 ctrl.casD    INFO     MIXING CasD, 3 TIMES, 1.0 VOLUME
-2020-09-11 09:01:26 ctrl.casD    INFO     Mixing D, #1 of 3 cycles...
-2020-09-11 09:01:28 ctrl.casD    INFO     Mixing D, #2 of 3 cycles...
-2020-09-11 09:01:30 ctrl.casD    INFO     Mixing D, #3 of 3 cycles...
-2020-09-11 09:01:32 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 09:01:42 ctrl.casD    INFO     casD: Evaluating step 3
-2020-09-11 09:01:42 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 09:01:52 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 09:01:57 ctrl.casD    INFO     ADDING Formalin TO CasD
-2020-09-11 09:02:02 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 09:02:02 ctrl.casD    INFO     casD: Evaluating step 4
-2020-09-11 09:02:02 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 09:02:12 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 09:02:17 ctrl.casD    INFO     ADDING Dehydrant TO CasD
-2020-09-11 09:02:22 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 09:02:22 ctrl.casD    INFO     casD: Evaluating step 5
-2020-09-11 09:02:22 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 09:02:22 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 09:02:27 ctrl.casD    INFO     ADDING Stain TO CasD
-2020-09-11 09:02:32 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 09:02:32 ctrl.casD    INFO     casD: Evaluating step 6
-2020-09-11 09:02:32 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="BABB",reagent="babb",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 09:02:32 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 09:02:37 ctrl.casD    INFO     ADDING BABB TO CasD
-2020-09-11 09:02:42 ctrl.casD    INFO     Finished casD task!
-2020-09-11 09:02:42 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 10:16:39 ctrl.casD    INFO     
+2020-09-24 15:13:27 ctrl.casD    INFO     Starting task on casD
+2020-09-24 15:13:27 ctrl.casD    INFO     ['casD']
+2020-09-24 15:13:59 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-09-24 15:13:59 ctrl.casD    INFO     []
+2020-09-24 15:13:59 ctrl.casD    WARNING  casD is not running a protocol...
+2020-09-24 15:14:04 ctrl.casD    INFO     Engage CasD...
+2020-09-24 15:14:11 ctrl.casD    INFO     
 
 
 
-2020-09-11 10:16:39 ctrl.casD    INFO     Starting Run!
-sampleName                                                asdfsad
-protocolName                                         testAll Fast
+2020-09-24 15:14:11 ctrl.casD    INFO     Starting Run!
+sampleName                                                sdafads
+protocolName                                              asawash
 protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
-startlog                                                       53
+startlog                                                       20
 Name: casD, dtype: object
-2020-09-11 10:16:39 ctrl.casD    INFO     Starting task on casD
-2020-09-11 10:16:39 ctrl.casD    INFO     ['casD', 'casF', 'casE']
-2020-09-11 10:16:39 ctrl.casD    INFO     casD: Evaluating step 0
-2020-09-11 10:16:39 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=5,mixAfter=0)']
-2020-09-11 10:16:39 ctrl.casD    INFO     INCUBATING CasD
-2020-09-11 10:16:49 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 10:16:51 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 10:16:51 ctrl.casD    INFO     casD: Evaluating step 1
-2020-09-11 10:16:51 ctrl.casD    INFO     ['self.purge(casL="D",deadvol=4.0)']
-2020-09-11 10:16:52 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 10:16:57 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 10:16:57 ctrl.casD    INFO     casD: Evaluating step 2
-2020-09-11 10:16:57 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=3, volume=1.0)']
-2020-09-11 10:16:57 ctrl.casD    INFO     MIXING CasD, 3 TIMES, 1.0 VOLUME
-2020-09-11 10:16:57 ctrl.casD    INFO     Mixing D, #1 of 3 cycles...
-2020-09-11 10:16:59 ctrl.casD    INFO     Mixing D, #2 of 3 cycles...
-2020-09-11 10:17:01 ctrl.casD    INFO     Mixing D, #3 of 3 cycles...
-2020-09-11 10:17:03 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 10:17:03 ctrl.casD    INFO     casD: Evaluating step 3
-2020-09-11 10:17:03 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 10:17:03 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 10:17:08 ctrl.casD    INFO     ADDING Formalin TO CasD
-2020-09-11 10:17:13 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 10:17:13 ctrl.casD    INFO     casD: Evaluating step 4
-2020-09-11 10:17:13 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 10:17:13 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 10:17:18 ctrl.casD    INFO     ADDING Dehydrant TO CasD
-2020-09-11 10:17:23 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 10:17:23 ctrl.casD    INFO     casD: Evaluating step 5
-2020-09-11 10:17:23 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 10:17:23 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 10:17:28 ctrl.casD    INFO     ADDING Stain TO CasD
-2020-09-11 10:17:33 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 10:17:33 ctrl.casD    INFO     casD: Evaluating step 6
-2020-09-11 10:17:33 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="BABB",reagent="babb",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 10:17:33 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 10:17:38 ctrl.casD    INFO     ADDING BABB TO CasD
-2020-09-11 10:17:43 ctrl.casD    INFO     Finished casD task!
-2020-09-11 10:17:43 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 12:02:05 ctrl.casD    INFO     Engage CasD...
-2020-09-11 12:59:16 ctrl.casD    INFO     Engage CasD...
-2020-09-11 13:01:23 ctrl.casD    INFO     
+2020-09-24 15:14:11 ctrl.casD    INFO     Starting task on casD
+2020-09-24 15:14:11 ctrl.casD    INFO     ['casD']
+2020-09-24 15:14:11 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-24 15:14:11 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=1.092,speed=0.72, washSyr=True)']
+2020-09-24 15:14:11 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:14:12 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-09-24 15:14:13 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-09-24 15:14:15 ctrl.casD    CRITICAL None
+2020-09-24 15:14:15 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 15:14:15 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 15:14:15 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 15:14:15 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 15:14:15 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 15:14:15 ctrl.casD    INFO     Clean Time: 0.00s
+2020-09-24 15:14:15 ctrl.casD    INFO     Finished casD task!
+2020-09-24 15:36:21 ctrl.casD    INFO     Engage CasD...
+2020-09-24 15:36:26 ctrl.casD    INFO     
 
 
 
-2020-09-11 13:01:23 ctrl.casD    INFO     Starting Run!
-sampleName                                              qqqqqwwww
-protocolName                                         testingagain
+2020-09-24 15:36:26 ctrl.casD    INFO     Starting Run!
+sampleName                                                  asdas
+protocolName                                              asawash
 protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
-startlog                                                      104
+startlog                                                       46
 Name: casD, dtype: object
-2020-09-11 13:01:23 ctrl.casD    INFO     Starting task on casD
-2020-09-11 13:01:23 ctrl.casD    INFO     ['casA', 'casF', 'casE', 'casD', 'casB']
-2020-09-11 13:01:23 ctrl.casD    INFO     casD: Evaluating step 0
-2020-09-11 13:01:23 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=5455,mixAfter=600)']
-2020-09-11 13:01:23 ctrl.casD    INFO     INCUBATING CasD
-2020-09-11 13:01:53 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:02:23 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:02:53 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:03:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:03:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:04:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:04:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:05:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:05:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:06:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:06:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:07:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:07:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:08:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:08:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:09:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:09:56 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:10:26 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:10:56 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:11:26 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:11:26 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 13:11:58 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:12:28 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:12:59 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:13:29 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:13:59 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:14:29 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:14:59 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:15:29 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:15:59 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:16:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:17:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:17:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:18:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:18:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:19:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:19:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:20:01 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:20:31 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:21:01 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:21:31 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:21:31 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 13:22:03 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:22:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:22:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:23:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:23:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:24:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:24:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:25:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:25:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:26:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:26:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:27:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:27:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:28:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:28:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:29:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:29:56 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:30:26 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:30:56 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:31:26 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:31:36 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 13:31:58 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:32:28 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:32:58 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:33:28 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:33:59 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:34:29 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:34:59 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:35:29 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:35:59 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:36:29 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:36:59 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:37:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:38:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:38:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:39:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:39:31 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:40:01 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:40:31 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:41:01 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:41:31 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:41:41 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 13:42:03 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:42:33 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:43:03 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:43:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:43:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:44:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:44:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:45:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:45:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:46:24 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:46:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:47:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:47:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:48:33 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:49:03 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:49:33 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:50:03 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:50:33 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:51:03 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:51:33 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:52:03 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:52:03 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 13:52:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:52:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:53:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:53:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:54:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:54:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:55:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:55:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:56:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:56:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:57:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:57:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:58:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:58:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:59:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 13:59:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:00:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:00:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:01:25 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:01:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:02:05 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 14:02:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:02:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:03:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:03:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:04:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:04:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:05:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:05:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:06:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:06:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:07:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:07:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:08:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:08:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:09:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:09:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:10:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:10:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:11:27 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:11:57 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:12:08 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 14:12:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:13:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:13:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:14:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:14:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:15:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:15:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:16:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:16:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:17:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:17:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:18:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:18:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:19:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:19:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:20:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:20:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:21:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:21:30 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:22:00 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:22:10 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 14:22:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:23:02 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:23:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:24:02 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:24:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:25:02 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:25:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:26:02 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:26:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:27:02 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:27:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:28:02 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:28:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:29:02 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:29:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:30:02 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:30:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:31:04 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:31:32 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 14:32:19 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 14:32:21 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 14:32:36 ctrl.casD    INFO     casD: Evaluating step 1
-2020-09-11 14:32:36 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=5, volume=1.0)']
-2020-09-11 14:32:46 ctrl.casD    INFO     MIXING CasD, 5 TIMES, 1.0 VOLUME
-2020-09-11 14:32:46 ctrl.casD    INFO     Mixing D, #1 of 5 cycles...
-2020-09-11 14:32:48 ctrl.casD    INFO     Mixing D, #2 of 5 cycles...
-2020-09-11 14:32:50 ctrl.casD    INFO     Mixing D, #3 of 5 cycles...
-2020-09-11 14:32:52 ctrl.casD    INFO     Mixing D, #4 of 5 cycles...
-2020-09-11 14:32:54 ctrl.casD    INFO     Mixing D, #5 of 5 cycles...
-2020-09-11 14:32:56 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 14:33:18 ctrl.casD    INFO     casD: Evaluating step 2
-2020-09-11 14:33:18 ctrl.casD    INFO     ['self.purge(casL="D",deadvol=4.0)']
-2020-09-11 14:33:28 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 14:33:33 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 14:33:53 ctrl.casD    INFO     casD: Evaluating step 3
-2020-09-11 14:33:53 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="BABB",reagent="babb",vol=1.875,speed=10,deadvol=2.875)']
-2020-09-11 14:34:13 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 14:34:18 ctrl.casD    INFO     ADDING BABB TO CasD
-2020-09-11 14:34:23 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 14:34:38 ctrl.casD    INFO     casD: Evaluating step 4
-2020-09-11 14:34:38 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 14:34:49 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 14:34:54 ctrl.casD    INFO     ADDING Formalin TO CasD
-2020-09-11 14:34:59 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 14:35:19 ctrl.casD    INFO     casD: Evaluating step 5
-2020-09-11 14:35:19 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 14:35:29 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 14:35:34 ctrl.casD    INFO     ADDING Dehydrant TO CasD
-2020-09-11 14:35:39 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 14:35:59 ctrl.casD    INFO     casD: Evaluating step 6
-2020-09-11 14:35:59 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=10800,mixAfter=0)']
-2020-09-11 14:35:59 ctrl.casD    INFO     INCUBATING CasD
-2020-09-11 14:35:59 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 14:35:59 ctrl.casD    INFO     casD: Evaluating step 7
-2020-09-11 14:35:59 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 14:36:19 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 14:36:24 ctrl.casD    INFO     ADDING Stain TO CasD
-2020-09-11 14:36:29 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 14:36:29 ctrl.casD    INFO     casD: Evaluating step 8
-2020-09-11 14:36:29 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="BABB",reagent="babb",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 14:36:29 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 14:36:34 ctrl.casD    INFO     ADDING BABB TO CasD
-2020-09-11 14:36:39 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 14:36:49 ctrl.casD    INFO     casD: Evaluating step 9
-2020-09-11 14:36:49 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 14:36:49 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 14:36:54 ctrl.casD    INFO     ADDING Dehydrant TO CasD
-2020-09-11 14:36:59 ctrl.casD    INFO     Finished casD task!
-2020-09-11 14:36:59 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 16:38:18 ctrl.casD    INFO     
+2020-09-24 15:36:26 ctrl.casD    INFO     Starting task on casD
+2020-09-24 15:36:26 ctrl.casD    INFO     ['casD', 'casA']
+2020-09-24 15:36:26 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-24 15:36:26 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=0.66, washSyr=True)']
+2020-09-24 15:36:26 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:36:27 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-09-24 15:36:28 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-09-24 15:36:30 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-09-24 15:36:30 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-09-24 15:36:30 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 4.01s
+2020-09-24 15:36:30 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 15:36:30 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 15:36:30 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=0.2, washSyr=True)']
+2020-09-24 15:36:30 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:36:31 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-09-24 15:36:32 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-09-24 15:36:34 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-09-24 15:36:34 ctrl.casD    INFO     CasD SETTLE TIME: 15
+2020-09-24 15:36:49 ctrl.casD    INFO     CasD: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2020-09-24 15:36:49 ctrl.casD    INFO     FINISHED LOADING Dehydrant TO CasD, Time: 19.01s
+2020-09-24 15:36:49 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 15:36:49 ctrl.casD    INFO     casD: Evaluating step 2
+2020-09-24 15:36:49 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Stain",reagent="vial",vol=0.6,speed=1, washSyr=False)']
+2020-09-24 15:36:49 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:36:50 ctrl.casD    INFO     ADDING Stain TO CasD
+2020-09-24 15:36:52 ctrl.casD    INFO     CasD CURRENT FLUID: vial
+2020-09-24 15:36:52 ctrl.casD    INFO     CasD: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2020-09-24 15:36:52 ctrl.casD    INFO     FINISHED LOADING Stain TO CasD, Time: 3.01s
+2020-09-24 15:36:52 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-09-24 15:36:52 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 15:36:52 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 15:36:52 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 15:36:57 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 15:36:57 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 15:36:57 ctrl.casD    INFO     Clean Time: 5.00s
+2020-09-24 15:36:57 ctrl.casD    INFO     Finished casD task!
+2020-09-24 15:37:37 ctrl.casD    INFO     Engage CasD...
+2020-09-24 15:37:41 ctrl.casD    INFO     
 
 
 
-2020-09-11 16:38:18 ctrl.casD    INFO     Starting Run!
-sampleName                                               sdfsdfsd
-protocolName                                         testAll Fast
+2020-09-24 15:37:41 ctrl.casD    INFO     Starting Run!
+sampleName                                                sadfasd
+protocolName                                              asawash
 protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
-startlog                                                      357
+startlog                                                       93
 Name: casD, dtype: object
-2020-09-11 16:38:18 ctrl.casD    INFO     Starting task on casD
-2020-09-11 16:38:18 ctrl.casD    INFO     ['casB', 'casA', 'casD', 'casE', 'casF', 'casC']
-2020-09-11 16:38:18 ctrl.casD    INFO     casD: Evaluating step 0
-2020-09-11 16:38:18 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=5,mixAfter=0)']
-2020-09-11 16:38:18 ctrl.casD    INFO     INCUBATING CasD
-2020-09-11 16:38:18 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 16:38:18 ctrl.casD    INFO     casD: Evaluating step 1
-2020-09-11 16:38:18 ctrl.casD    INFO     ['self.purge(casL="D",deadvol=4.0)']
-2020-09-11 16:38:18 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 16:38:23 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 16:38:23 ctrl.casD    INFO     casD: Evaluating step 2
-2020-09-11 16:38:23 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=3, volume=1.0)']
-2020-09-11 16:38:23 ctrl.casD    INFO     MIXING CasD, 3 TIMES, 1.0 VOLUME
-2020-09-11 16:38:23 ctrl.casD    INFO     Mixing D, #1 of 3 cycles...
-2020-09-11 16:38:25 ctrl.casD    INFO     Mixing D, #2 of 3 cycles...
-2020-09-11 16:38:27 ctrl.casD    INFO     Mixing D, #3 of 3 cycles...
-2020-09-11 16:38:29 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 16:38:29 ctrl.casD    INFO     casD: Evaluating step 3
-2020-09-11 16:38:29 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 16:38:33 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 16:38:38 ctrl.casD    INFO     ADDING Formalin TO CasD
-2020-09-11 16:38:43 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 16:38:43 ctrl.casD    INFO     casD: Evaluating step 4
-2020-09-11 16:38:43 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 16:38:49 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 16:38:54 ctrl.casD    INFO     ADDING Dehydrant TO CasD
-2020-09-11 16:38:59 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 16:38:59 ctrl.casD    INFO     casD: Evaluating step 5
-2020-09-11 16:38:59 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 16:39:03 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 16:39:49 ctrl.casD    WARNING  Restarting Run...
-sampleName                                               sdfsdfsd
-protocolName                                         testAll Fast
+2020-09-24 15:37:41 ctrl.casD    INFO     Starting task on casD
+2020-09-24 15:37:41 ctrl.casD    INFO     ['casA', 'casD']
+2020-09-24 15:37:41 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-24 15:37:41 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=0.66, washSyr=True)']
+2020-09-24 15:37:41 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:37:42 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-09-24 15:37:43 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-09-24 15:37:45 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-09-24 15:37:45 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-09-24 15:37:45 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 4.01s
+2020-09-24 15:37:45 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 15:37:45 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 15:37:45 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=0.2, washSyr=True)']
+2020-09-24 15:37:45 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:37:46 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-09-24 15:37:47 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-09-24 15:37:49 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-09-24 15:37:49 ctrl.casD    INFO     CasD SETTLE TIME: 15
+2020-09-24 15:38:05 ctrl.casD    INFO     Engage CasD...
+2020-09-24 15:38:05 ctrl.casD    WARNING  Restarting Run...
+sampleName                                                sadfasd
+protocolName                                              asawash
 protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
 Name: casD, dtype: object
-2020-09-11 16:39:49 ctrl.casD    INFO     casD: Restarting at step # 6...
-2020-09-11 16:39:49 ctrl.casD    INFO     Starting task on casD
-2020-09-11 16:39:49 ctrl.casD    INFO     ['casB', 'casC', 'casA', 'casD']
-2020-09-11 16:39:49 ctrl.casD    INFO     casD: Evaluating step 5
-2020-09-11 16:39:49 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Stain",reagent="vial",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 16:39:49 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 16:39:54 ctrl.casD    INFO     ADDING Stain TO CasD
-2020-09-11 16:39:59 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 16:39:59 ctrl.casD    INFO     casD: Evaluating step 6
-2020-09-11 16:39:59 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="BABB",reagent="babb",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 16:39:59 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 16:40:16 ctrl.casD    WARNING  Restarting Run...
-sampleName                                               sdfsdfsd
-protocolName                                         testAll Fast
+2020-09-24 15:38:05 ctrl.casD    INFO     casD: Restarting at step # 2...
+2020-09-24 15:38:05 ctrl.casD    INFO     Starting task on casD
+2020-09-24 15:38:05 ctrl.casD    INFO     ['casD', 'casA']
+2020-09-24 15:38:10 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 15:38:10 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=0.2, washSyr=True)']
+2020-09-24 15:38:11 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:38:12 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-09-24 15:38:13 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-09-24 15:38:15 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-09-24 15:38:15 ctrl.casD    INFO     CasD: Reagent (meoh) and residual fluid (meoh) do not require a density adjustment.
+2020-09-24 15:38:15 ctrl.casD    INFO     FINISHED LOADING Dehydrant TO CasD, Time: 4.01s
+2020-09-24 15:38:15 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 15:38:15 ctrl.casD    INFO     casD: Evaluating step 2
+2020-09-24 15:38:15 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Stain",reagent="vial",vol=0.6,speed=1, washSyr=False)']
+2020-09-24 15:38:15 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:38:16 ctrl.casD    INFO     ADDING Stain TO CasD
+2020-09-24 15:38:18 ctrl.casD    INFO     CasD CURRENT FLUID: vial
+2020-09-24 15:38:18 ctrl.casD    INFO     CasD: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2020-09-24 15:38:18 ctrl.casD    INFO     FINISHED LOADING Stain TO CasD, Time: 3.01s
+2020-09-24 15:38:18 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-09-24 15:38:18 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 15:38:18 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 15:38:18 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 15:38:22 ctrl.casD    INFO     Engage CasD...
+2020-09-24 15:38:22 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 15:38:22 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 15:38:22 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 15:38:27 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 15:38:27 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 15:38:27 ctrl.casD    INFO     Clean Time: 5.01s
+2020-09-24 15:38:27 ctrl.casD    INFO     Finished casD task!
+2020-09-24 15:38:52 ctrl.casD    INFO     Engage CasD...
+2020-09-24 15:38:57 ctrl.casD    INFO     
+
+
+
+2020-09-24 15:38:57 ctrl.casD    INFO     Starting Run!
+sampleName                                                asdfasd
+protocolName                                              asawash
 protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                      159
 Name: casD, dtype: object
-2020-09-11 16:40:16 ctrl.casD    INFO     casD: Restarting at step # 7...
-2020-09-11 16:40:16 ctrl.casD    INFO     Starting task on casD
-2020-09-11 16:40:16 ctrl.casD    INFO     ['casB', 'casC', 'casA', 'casD']
-2020-09-11 16:40:16 ctrl.casD    INFO     casD: Evaluating step 6
-2020-09-11 16:40:16 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="BABB",reagent="babb",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-11 16:40:16 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-11 16:40:21 ctrl.casD    INFO     ADDING BABB TO CasD
-2020-09-11 16:40:26 ctrl.casD    INFO     Finished casD task!
-2020-09-11 16:40:26 ctrl.casD    INFO     Updating progress on casD...
-2020-09-11 16:43:13 ctrl.casD    INFO     
+2020-09-24 15:38:57 ctrl.casD    INFO     Starting task on casD
+2020-09-24 15:38:57 ctrl.casD    INFO     ['casD']
+2020-09-24 15:38:57 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-24 15:38:57 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=0.66, washSyr=True)']
+2020-09-24 15:38:57 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:38:58 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-09-24 15:38:59 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-09-24 15:39:01 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-09-24 15:39:01 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-09-24 15:39:01 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 4.01s
+2020-09-24 15:39:01 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 15:39:01 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 15:39:01 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=0.2, washSyr=True)']
+2020-09-24 15:39:01 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 15:39:02 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-09-24 15:39:03 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-09-24 15:39:05 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-09-24 15:39:05 ctrl.casD    INFO     CasD SETTLE TIME: 15
+2020-09-24 15:39:09 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-09-24 15:39:09 ctrl.casD    INFO     ['casD']
+2020-09-24 15:39:09 ctrl.casD    INFO     SHUTDOWN CasD
+2020-09-24 15:39:09 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 15:39:09 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 15:39:09 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 15:39:14 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 15:39:14 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 15:39:14 ctrl.casD    INFO     Shutdown Time: 5.00s
+2020-09-24 15:39:14 ctrl.casD    CRITICAL Residual fluid may not be inside of density adjustment dictionary: formalin
+2020-09-24 15:39:14 ctrl.casD    CRITICAL 
+2020-09-24 15:39:14 ctrl.casD    INFO     FINISHED LOADING Dehydrant TO CasD, Time: 12.63s
+2020-09-24 15:39:14 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 16:22:48 ctrl.casD    INFO     Engage CasD...
+2020-09-24 16:24:04 ctrl.casD    INFO     Engage CasD...
+2020-09-24 16:31:58 ctrl.casD    INFO     Engage CasD...
+2020-09-24 16:33:19 ctrl.casD    INFO     Engage CasD...
+2020-09-24 16:33:55 ctrl.casD    INFO     Engage CasD...
+2020-09-24 16:35:51 ctrl.casD    INFO     Engage CasD...
+2020-09-24 16:48:34 ctrl.casD    INFO     Engage CasD...
+2020-09-24 16:53:40 ctrl.casD    INFO     Engage CasD...
+2020-09-24 17:09:48 ctrl.casD    INFO     Engage CasD...
+2020-09-24 17:11:54 ctrl.casD    INFO     Engage CasD...
+2020-09-24 17:14:33 ctrl.casD    INFO     Engage CasD...
+2020-09-24 17:17:47 ctrl.casD    INFO     Engage CasD...
+2020-09-24 17:23:44 ctrl.casD    INFO     Engage CasD...
+2020-09-24 17:27:03 ctrl.casD    INFO     Engage CasD...
+2020-09-24 17:27:08 ctrl.casD    INFO     
 
 
 
-2020-09-11 16:43:13 ctrl.casD    INFO     Starting Run!
-sampleName                                             SampleName
-protocolName                                      anotherProtocol
-protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
-startlog                                                      427
-Name: casD, dtype: object
-2020-09-11 16:43:13 ctrl.casD    INFO     Starting task on casD
-2020-09-11 16:43:13 ctrl.casD    INFO     ['casB', 'casD', 'casF', 'casC', 'casA', 'casE']
-2020-09-11 16:43:13 ctrl.casD    INFO     casD: Evaluating step 0
-2020-09-11 16:43:13 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=3600,mixAfter=60)']
-2020-09-11 16:43:13 ctrl.casD    INFO     INCUBATING CasD
-2020-09-11 16:44:02 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:44:26 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:44:46 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:44:47 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:45:19 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:45:49 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:45:49 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:46:21 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:46:51 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:46:53 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:47:15 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:47:45 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:47:58 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:48:20 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:48:50 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:49:00 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:49:22 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:49:43 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:50:03 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:50:15 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:50:46 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:51:06 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:51:18 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:51:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:52:13 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:52:38 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:52:52 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:53:22 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:53:42 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:53:54 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:54:14 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:54:44 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:54:44 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:55:16 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:55:47 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:55:49 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:56:21 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:56:51 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:56:53 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:57:15 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:57:45 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:57:55 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:58:17 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:58:48 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:58:58 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 16:59:20 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 16:59:50 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:00:00 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:00:22 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:00:52 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:01:02 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:01:14 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:01:44 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:02:07 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:02:19 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:02:49 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:03:09 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:03:21 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:03:51 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:04:11 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:04:23 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:04:43 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:05:14 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:05:14 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:05:46 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:06:16 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:06:16 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:06:48 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:07:18 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:07:18 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:07:50 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:08:20 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:08:23 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:08:45 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:09:15 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:09:25 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:09:47 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:10:17 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:10:27 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:10:49 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:11:19 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:11:29 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:11:51 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:12:21 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:12:32 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:12:44 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:13:14 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:13:34 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:13:46 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:14:16 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:14:38 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:14:50 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:15:20 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:15:41 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:15:53 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:16:23 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:16:43 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:16:55 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:17:15 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:17:45 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:17:45 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:18:17 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:18:47 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:18:47 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:19:19 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:19:49 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:19:50 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:20:22 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:20:52 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:20:54 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:21:16 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:21:46 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:21:56 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:22:18 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:22:48 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:22:59 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:23:21 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:23:51 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:24:01 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:24:13 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:24:43 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:25:03 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:25:15 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:25:45 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:26:05 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:26:17 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:26:48 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:27:10 ctrl.casD    INFO     Mixing CasD...
-2020-09-11 17:27:22 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-11 17:27:52 ctrl.casD    INFO     CasD publishing secs-remaining!
-2020-09-13 02:09:11 ctrl.casD    WARNING  Restarting Run...
-sampleName                                               sdfsdfsd
-protocolName                                         testAll Fast
-protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
-Name: casD, dtype: object
-2020-09-13 02:09:11 ctrl.casD    INFO     casD: Restarting at step # 7...
-2020-09-13 02:09:11 ctrl.casD    INFO     Starting task on casD
-2020-09-13 02:09:11 ctrl.casD    INFO     ['casB', 'casC', 'casA', 'casD']
-2020-09-13 02:09:11 ctrl.casD    INFO     casD: Evaluating step 6
-2020-09-13 02:09:11 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="BABB",reagent="babb",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-13 02:09:11 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-13 02:09:16 ctrl.casD    INFO     ADDING BABB TO CasD
-2020-09-13 02:09:21 ctrl.casD    INFO     Finished casD task!
-2020-09-13 02:13:07 ctrl.casD    INFO     Engage CasD...
-2020-09-13 02:15:01 ctrl.casD    INFO     Engage CasD...
-2020-09-13 02:20:17 ctrl.casD    INFO     Engage CasD...
-2020-09-13 03:32:50 ctrl.casD    INFO     Engage CasD...
-2020-09-13 03:32:57 ctrl.casD    INFO     
-
-
-
-2020-09-13 03:32:57 ctrl.casD    INFO     Starting Run!
+2020-09-24 17:27:08 ctrl.casD    INFO     Starting Run!
 sampleName                                                sadfsad
-protocolName                                         testAll Fast
+protocolName                                              asawash
 protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
-startlog                                                      589
+startlog                                                      214
 Name: casD, dtype: object
-2020-09-13 03:32:57 ctrl.casD    INFO     Starting task on casD
-2020-09-13 03:32:57 ctrl.casD    INFO     ['casA', 'casB', 'casD']
-2020-09-13 03:32:57 ctrl.casD    INFO     casD: Evaluating step 0
-2020-09-13 03:32:57 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=5,mixAfter=0)']
-2020-09-13 03:32:57 ctrl.casD    INFO     INCUBATING CasD
-2020-09-13 03:32:57 ctrl.casD    INFO     Updating progress on casD...
-2020-09-13 03:32:57 ctrl.casD    INFO     casD: Evaluating step 1
-2020-09-13 03:32:57 ctrl.casD    INFO     ['self.purge(casL="D",deadvol=4.0)']
-2020-09-13 03:32:57 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-13 03:33:02 ctrl.casD    INFO     Updating progress on casD...
-2020-09-13 03:33:02 ctrl.casD    INFO     casD: Evaluating step 2
-2020-09-13 03:33:02 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=3, volume=1.0)']
-2020-09-13 03:33:02 ctrl.casD    INFO     MIXING CasD, 3 TIMES, 1.0 VOLUME
-2020-09-13 03:33:02 ctrl.casD    INFO     Mixing D, #1 of 3 cycles...
-2020-09-13 03:33:04 ctrl.casD    INFO     Mixing D, #2 of 3 cycles...
-2020-09-13 03:33:06 ctrl.casD    INFO     Mixing D, #3 of 3 cycles...
-2020-09-13 03:33:08 ctrl.casD    INFO     Updating progress on casD...
-2020-09-13 03:33:08 ctrl.casD    INFO     casD: Evaluating step 3
-2020-09-13 03:33:08 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
-2020-09-13 03:33:10 ctrl.casD    INFO     PURGING CHAMBER, CasD
-2020-09-13 03:33:15 ctrl.casD    INFO     ADDING Formalin TO CasD
-2020-09-13 03:33:20 ctrl.casD    INFO     Updating progress on casD...
-2020-09-13 03:33:20 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
-2020-09-13 03:33:20 ctrl.casD    INFO     ['casE', 'casF', 'casA', 'casB', 'casC', 'casD']
-2020-09-13 03:33:20 ctrl.casD    INFO     SHUTDOWN CasD
-2020-09-13 03:33:36 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
-2020-09-13 03:33:36 ctrl.casD    INFO     ['casE', 'casF', 'casA', 'casB', 'casC']
-2020-09-13 03:33:36 ctrl.casD    WARNING  casD is not running a protocol...
-2020-09-13 03:44:06 ctrl.casD    INFO     Engage CasD...
-2020-09-13 03:46:43 ctrl.casD    INFO     Engage CasD...
-2020-09-13 03:48:04 ctrl.casD    INFO     Engage CasD...
-2020-09-13 04:02:19 ctrl.casD    INFO     Engage CasD...
+2020-09-24 17:27:08 ctrl.casD    INFO     Starting task on casD
+2020-09-24 17:27:08 ctrl.casD    INFO     ['casD']
+2020-09-24 17:27:08 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-24 17:27:08 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=0.66, washSyr=True)']
+2020-09-24 17:27:08 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 17:27:09 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-09-24 17:27:10 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-09-24 17:27:12 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-09-24 17:27:12 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-09-24 17:27:12 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 4.01s
+2020-09-24 17:27:12 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 17:27:12 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 17:27:12 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=0.2, washSyr=True)']
+2020-09-24 17:27:12 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 17:27:13 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-09-24 17:27:14 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-09-24 17:27:16 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-09-24 17:27:16 ctrl.casD    INFO     CasD SETTLE TIME: 15
+2020-09-24 17:27:16 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-09-24 17:27:16 ctrl.casD    INFO     ['casE', 'casD']
+2020-09-24 17:27:16 ctrl.casD    CRITICAL status                                                    stopping
+stepNum                                                          2
+secsRemaining                                                   90
+currentFluid                                                  meoh
+engaged                                                       True
+protocolList     [self.loadReagent(casL="D",loadstr="Formalin",...
+progressNames          [Load Formalin, Load Dehydrant, Load Stain]
+stepTimes                                             [90, 90, 90]
+sampleName                                                 sadfsad
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                               asawash
+startlog                                                       214
+endlog                                                         230
+Name: casD, dtype: object
+2020-09-24 17:27:16 ctrl.casD    CRITICAL 
+2020-09-24 17:27:16 ctrl.casD    INFO     ['casD']
+2020-09-24 17:27:16 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 17:27:16 ctrl.casD    INFO     casD: Evaluating step 2
+2020-09-24 17:27:16 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Stain",reagent="vial",vol=0.6,speed=1, washSyr=False)']
+2020-09-24 17:27:16 ctrl.casD    INFO     SHUTDOWN CasD
+2020-09-24 17:27:16 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 17:27:16 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 17:27:16 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 17:27:21 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 17:27:21 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 17:27:21 ctrl.casD    INFO     Shutdown Time: 5.00s
+2020-09-24 17:27:21 ctrl.casD    INFO     ['casD']
+2020-09-24 17:27:21 ctrl.casD    INFO     The run on casD has been cancelled? False.
+2020-09-24 17:27:21 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 17:27:22 ctrl.casD    INFO     ADDING Stain TO CasD
+2020-09-24 17:27:24 ctrl.casD    INFO     CasD CURRENT FLUID: vial
+2020-09-24 17:27:24 ctrl.casD    INFO     CasD: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2020-09-24 17:27:24 ctrl.casD    INFO     FINISHED LOADING Stain TO CasD, Time: 3.01s
+2020-09-24 17:27:24 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-09-24 17:27:25 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 17:27:25 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 17:27:25 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 17:27:30 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 17:27:30 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 17:27:30 ctrl.casD    INFO     Clean Time: 5.01s
+2020-09-24 17:27:30 ctrl.casD    INFO     Finished casD task!
+2020-09-24 17:32:09 ctrl.casD    INFO     Engage CasD...
+2020-09-24 17:32:33 ctrl.casD    INFO     
+
+
+
+2020-09-24 17:32:33 ctrl.casD    INFO     Starting Run!
+sampleName                                                sdafasd
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                      286
+Name: casD, dtype: object
+2020-09-24 17:32:33 ctrl.casD    INFO     Starting task on casD
+2020-09-24 17:32:33 ctrl.casD    INFO     ['casC', 'casA', 'casB', 'casD']
+2020-09-24 17:32:33 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-24 17:32:33 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Formalin",reagent="formalin",vol=0.6,speed=0.66, washSyr=True)']
+2020-09-24 17:32:42 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 17:32:43 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-09-24 17:32:44 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-09-24 17:32:46 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-09-24 17:32:46 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-09-24 17:32:46 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 4.01s
+2020-09-24 17:32:46 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 17:32:50 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 17:32:50 ctrl.casD    INFO     ['self.loadReagent(casL="D",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=0.2, washSyr=True)']
+2020-09-24 17:33:00 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 17:33:01 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-09-24 17:33:02 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-09-24 17:33:04 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-09-24 17:33:04 ctrl.casD    INFO     CasD SETTLE TIME: 15
+2020-09-24 17:33:04 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-09-24 17:33:04 ctrl.casD    INFO     ['casD']
+2020-09-24 17:33:04 ctrl.casD    CRITICAL status                                                    stopping
+stepNum                                                          2
+secsRemaining                                                   90
+currentFluid                                                  meoh
+engaged                                                       True
+protocolList     [self.loadReagent(casL="D",loadstr="Formalin",...
+progressNames          [Load Formalin, Load Dehydrant, Load Stain]
+stepTimes                                             [90, 90, 90]
+sampleName                                                 sdafasd
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                               asawash
+startlog                                                       286
+endlog                                                         305
+Name: casD, dtype: object
+2020-09-24 17:33:04 ctrl.casD    CRITICAL 
+2020-09-24 17:33:04 ctrl.casD    INFO     ['casD']
+2020-09-24 17:33:04 ctrl.casD    INFO     Checking to cancel task on casD..? False
+2020-09-24 17:33:04 ctrl.casD    INFO     The run on casD has been cancelled? False.
+2020-09-24 17:33:04 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 17:33:04 ctrl.casD    INFO     SHUTDOWN CasD
+2020-09-24 17:33:04 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 17:33:04 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 17:33:04 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 17:33:09 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 17:33:09 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 17:33:09 ctrl.casD    INFO     Shutdown Time: 5.01s
+2020-09-24 17:33:09 ctrl.casD    INFO     []
+2020-09-24 17:33:09 ctrl.casD    INFO     The run on casD has been cancelled? True.
+2020-09-24 17:51:46 ctrl.casD    INFO     Engage CasD...
+2020-09-24 18:05:11 ctrl.casD    INFO     Engage CasD...
+2020-09-24 22:46:03 ctrl.casD    INFO     Engage CasD...
+2020-09-24 22:46:26 ctrl.casD    INFO     
+
+
+
+2020-09-24 22:46:26 ctrl.casD    INFO     Starting Run!
+sampleName                                               asdfasdf
+protocolName                                             otherops
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                      347
+Name: casD, dtype: object
+2020-09-24 22:46:26 ctrl.casD    INFO     Starting task on casD
+2020-09-24 22:46:26 ctrl.casD    INFO     ['casA', 'casD', 'casC', 'casB']
+2020-09-24 22:46:26 ctrl.casD    DEBUG    ['self.mix(casL="D", numCycles=3, volume=1.0)', 'self.incubate(casL="D",incTime=48,mixAfter=7)', 'self.purge(casL="D")']
+2020-09-24 22:46:26 ctrl.casD    DEBUG    ['Mixing', 'Incubation', 'Purge']
+2020-09-24 22:46:26 ctrl.casD    DEBUG    1
+2020-09-24 22:46:26 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-24 22:46:26 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=3, volume=1.0)']
+2020-09-24 22:46:28 ctrl.casD    INFO     MIXING CasD, 3 TIMES, 1.0 VOLUME
+2020-09-24 22:46:28 ctrl.casD    INFO     Mixing D, #1 of 3 cycles...
+2020-09-24 22:46:30 ctrl.casD    INFO     Mixing D, #2 of 3 cycles...
+2020-09-24 22:46:32 ctrl.casD    INFO     Mixing D, #3 of 3 cycles...
+2020-09-24 22:46:34 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 22:46:49 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 22:46:49 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=48,mixAfter=7)']
+2020-09-24 22:46:49 ctrl.casD    INFO     INCUBATING CasD
+2020-09-24 22:46:52 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:46:53 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:47:02 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:47:03 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:47:07 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:47:08 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:47:12 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:47:13 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:47:18 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:47:19 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:47:22 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:47:23 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:47:30 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:47:31 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:47:38 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:47:39 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:47:39 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 22:47:45 ctrl.casD    INFO     casD: Evaluating step 2
+2020-09-24 22:47:45 ctrl.casD    INFO     ['self.purge(casL="D")']
+2020-09-24 22:47:45 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 22:47:46 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-09-24 22:47:47 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 22:47:47 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 22:47:47 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 22:47:52 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 22:47:52 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 22:47:52 ctrl.casD    INFO     Clean Time: 5.01s
+2020-09-24 22:47:52 ctrl.casD    INFO     Finished casD task!
+2020-09-24 22:48:18 ctrl.casD    INFO     Engage CasD...
+2020-09-24 22:48:35 ctrl.casD    INFO     
+
+
+
+2020-09-24 22:48:35 ctrl.casD    INFO     Starting Run!
+sampleName                                                 asdfas
+protocolName                                             otherops
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                      401
+Name: casD, dtype: object
+2020-09-24 22:48:35 ctrl.casD    INFO     Starting task on casD
+2020-09-24 22:48:35 ctrl.casD    INFO     ['casD']
+2020-09-24 22:48:35 ctrl.casD    DEBUG    ['self.mix(casL="D", numCycles=3, volume=1.0)', 'self.incubate(casL="D",incTime=48,mixAfter=7)', 'self.purge(casL="D")']
+2020-09-24 22:48:35 ctrl.casD    DEBUG    ['Mixing', 'Incubation', 'Purge']
+2020-09-24 22:48:35 ctrl.casD    DEBUG    1
+2020-09-24 22:48:35 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-24 22:48:35 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=3, volume=1.0)']
+2020-09-24 22:48:35 ctrl.casD    INFO     MIXING CasD, 3 TIMES, 1.0 VOLUME
+2020-09-24 22:48:35 ctrl.casD    INFO     Mixing D, #1 of 3 cycles...
+2020-09-24 22:48:37 ctrl.casD    INFO     Mixing D, #2 of 3 cycles...
+2020-09-24 22:48:39 ctrl.casD    INFO     Mixing D, #3 of 3 cycles...
+2020-09-24 22:48:41 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 22:48:41 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 22:48:41 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=48,mixAfter=7)']
+2020-09-24 22:48:41 ctrl.casD    INFO     INCUBATING CasD
+2020-09-24 22:48:41 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:48:42 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:48:42 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:48:43 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:48:43 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:48:44 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:48:44 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:48:45 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:48:45 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:48:46 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:48:46 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:48:47 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:48:48 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:48:49 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:48:49 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 22:48:50 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 22:48:50 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 22:48:50 ctrl.casD    INFO     casD: Evaluating step 2
+2020-09-24 22:48:50 ctrl.casD    INFO     ['self.purge(casL="D")']
+2020-09-24 22:48:50 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 22:48:51 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-09-24 22:48:51 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 22:48:51 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 22:48:51 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 22:48:56 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 22:48:56 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 22:48:56 ctrl.casD    INFO     Clean Time: 5.01s
+2020-09-24 22:48:56 ctrl.casD    INFO     Finished casD task!
+2020-09-24 22:48:57 ctrl.casD    INFO     Engage CasD...
+2020-09-24 22:59:05 ctrl.casD    INFO     Engage CasD...
+2020-09-24 22:59:39 ctrl.casD    INFO     Engage CasD...
+2020-09-24 22:59:59 ctrl.casD    INFO     Engage CasD...
+2020-09-24 23:00:33 ctrl.casD    INFO     
+
+
+
+2020-09-24 23:00:33 ctrl.casD    INFO     Starting Run!
+sampleName                                            asdfasdfasd
+protocolName                                             otherops
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                      458
+Name: casD, dtype: object
+2020-09-24 23:00:33 ctrl.casD    INFO     Starting task on casD
+2020-09-24 23:00:33 ctrl.casD    INFO     ['casA', 'casB', 'casD', 'casC']
+2020-09-24 23:00:33 ctrl.casD    DEBUG    ['self.mix(casL="D", numCycles=3, volume=1.0)', 'self.incubate(casL="D",incTime=48,mixAfter=7)', 'self.purge(casL="D")']
+2020-09-24 23:00:33 ctrl.casD    DEBUG    ['Mixing', 'Incubation', 'Purge']
+2020-09-24 23:00:33 ctrl.casD    DEBUG    1
+2020-09-24 23:00:33 ctrl.casD    INFO     casD: Evaluating step 0
+2020-09-24 23:00:33 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=3, volume=1.0)']
+2020-09-24 23:00:39 ctrl.casD    INFO     MIXING CasD, 3 TIMES, 1.0 VOLUME
+2020-09-24 23:00:39 ctrl.casD    INFO     Mixing D, #1 of 3 cycles...
+2020-09-24 23:00:41 ctrl.casD    INFO     Mixing D, #2 of 3 cycles...
+2020-09-24 23:00:43 ctrl.casD    INFO     Mixing D, #3 of 3 cycles...
+2020-09-24 23:00:45 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 23:00:59 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 23:00:59 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=48,mixAfter=7)']
+2020-09-24 23:00:59 ctrl.casD    INFO     INCUBATING CasD
+2020-09-24 23:01:01 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:02 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:07 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:08 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:12 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:13 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:17 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:18 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:22 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:23 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:25 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:26 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:30 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:31 ctrl.casD    CRITICAL Attempt to send on a closed protocol
+2020-09-24 23:01:38 ctrl.casD    INFO     Engage CasD...
+2020-09-24 23:01:38 ctrl.casD    DEBUG    running
+2020-09-24 23:01:38 ctrl.casD    WARNING  Restarting Run...
+sampleName                                            asdfasdfasd
+protocolName                                             otherops
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+Name: casD, dtype: object
+2020-09-24 23:01:38 ctrl.casD    INFO     casD: Restarting at step # 2...
+2020-09-24 23:01:38 ctrl.casD    INFO     casD: Restarting incubate timer
+2020-09-24 23:01:38 ctrl.casD    DEBUG    ['casL="D"', 'incTime=48', 'mixAfter=7']
+2020-09-24 23:01:38 ctrl.casD    DEBUG    1
+2020-09-24 23:01:38 ctrl.casD    DEBUG    self.incubate(casL="D",incTime=48,mixAfter=7)
+2020-09-24 23:01:38 ctrl.casD    INFO     Starting task on casD
+2020-09-24 23:01:38 ctrl.casD    INFO     ['casD', 'casA']
+2020-09-24 23:01:38 ctrl.casD    DEBUG    ['self.mix(casL="D", numCycles=3, volume=1.0)', 'self.incubate(casL="D",incTime=48,mixAfter=7)', 'self.purge(casL="D")']
+2020-09-24 23:01:38 ctrl.casD    DEBUG    ['Mixing', 'Incubation', 'Purge']
+2020-09-24 23:01:38 ctrl.casD    DEBUG    2
+2020-09-24 23:01:38 ctrl.casD    INFO     casD: Evaluating step 1
+2020-09-24 23:01:38 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=48,mixAfter=7)']
+2020-09-24 23:01:38 ctrl.casD    INFO     INCUBATING CasD
+2020-09-24 23:01:39 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:40 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:47 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:48 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:50 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:51 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:53 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:54 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:56 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:01:57 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:01:59 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:02:00 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:02:02 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:02:03 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:02:05 ctrl.casD    INFO     Mixing CasD...
+2020-09-24 23:02:06 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-09-24 23:02:06 ctrl.casD    INFO     Updating progress on casD...
+2020-09-24 23:02:08 ctrl.casD    INFO     casD: Evaluating step 2
+2020-09-24 23:02:08 ctrl.casD    INFO     ['self.purge(casL="D")']
+2020-09-24 23:02:08 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-24 23:02:09 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-09-24 23:02:11 ctrl.casD    INFO     Disengage CasD...
+2020-09-24 23:02:11 ctrl.casD    INFO     Cleaning line for CasD
+2020-09-24 23:02:11 ctrl.casD    INFO     PURGING LINE, CasD
+2020-09-24 23:02:16 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-09-24 23:02:16 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-09-24 23:02:16 ctrl.casD    INFO     Clean Time: 5.01s
+2020-09-24 23:02:16 ctrl.casD    INFO     Finished casD task!
+2020-09-24 23:02:24 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-09-24 23:02:24 ctrl.casD    INFO     []
+2020-09-24 23:02:24 ctrl.casD    WARNING  casD is not running a protocol...
+2020-09-24 23:02:24 ctrl.casD    INFO     Engage CasD...
+2020-09-24 23:02:30 ctrl.casD    INFO     Engage CasD...
+2020-09-24 23:05:31 ctrl.casD    INFO     Engage CasD...
+2020-09-24 23:22:26 ctrl.casD    INFO     Engage CasD...
+2020-09-24 23:40:28 ctrl.casD    INFO     Engage CasD...
+2020-09-24 23:43:24 ctrl.casD    INFO     Engage CasD...
+2020-09-24 23:48:23 ctrl.casD    INFO     Engage CasD...
+2020-09-24 23:55:16 ctrl.casD    INFO     Engage CasD...
+2020-09-25 00:00:39 ctrl.casD    INFO     Engage CasD...
+2020-09-25 00:01:45 ctrl.casD    INFO     Engage CasD...
+2020-09-25 00:02:19 ctrl.casD    INFO     Engage CasD...
+2020-09-25 02:32:35 ctrl.casD    INFO     Engage CasD...
+2020-09-25 02:49:46 ctrl.casD    INFO     Engage CasD...
+2020-09-25 02:52:49 ctrl.casD    INFO     Engage CasD...
+2020-09-25 02:54:20 ctrl.casD    INFO     Engage CasD...
+2020-09-25 03:07:02 ctrl.casD    INFO     Engage CasD...
+2020-09-25 03:10:24 ctrl.casD    INFO     Engage CasD...
+2020-09-25 03:11:04 ctrl.casD    INFO     INCUBATING CasD
+2020-09-25 03:11:43 ctrl.casD    INFO     Engage CasD...
+2020-09-25 03:13:48 ctrl.casD    INFO     Engage CasD...
+2020-09-25 03:24:07 ctrl.casD    INFO     Engage CasD...
+2020-09-25 03:26:31 ctrl.casD    INFO     Engage CasD...
+2020-09-25 03:26:42 ctrl.casD    INFO     INCUBATING CasD
+2020-09-25 03:27:16 ctrl.casD    INFO     Engage CasD...
+2020-09-25 03:27:20 ctrl.casD    INFO     INCUBATING CasD
+2020-09-25 03:35:44 ctrl.casD    INFO     Engage CasD...
+2020-09-25 04:08:06 ctrl.casD    INFO     Engage CasD...
+2020-09-25 04:13:37 ctrl.casD    INFO     INCUBATING CasD
+2020-09-25 04:18:30 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-25 04:18:31 ctrl.casD    INFO     WASHING SYRINGE WITH formalin
+2020-09-25 04:18:32 ctrl.casD    INFO     ADDING formalin TO CasD
+2020-09-25 04:18:34 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-09-25 04:18:34 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-09-25 04:18:34 ctrl.casD    INFO     FINISHED LOADING formalin TO CasD, Time: 4.01s
+2020-09-25 04:19:20 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-25 04:19:21 ctrl.casD    INFO     WASHING SYRINGE WITH formalin
+2020-09-25 04:19:22 ctrl.casD    INFO     ADDING formalin TO CasD
+2020-09-25 04:19:24 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-09-25 04:19:24 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (formalin) do not require a density adjustment.
+2020-09-25 04:19:24 ctrl.casD    INFO     FINISHED LOADING formalin TO CasD, Time: 4.01s
+2020-09-25 04:24:57 ctrl.casD    INFO     Engage CasD...
+2020-09-25 04:25:57 ctrl.casD    INFO     Engage CasD...
+2020-09-25 04:26:02 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-09-25 04:26:03 ctrl.casD    INFO     WASHING SYRINGE WITH formalin
+2020-09-25 04:26:04 ctrl.casD    INFO     ADDING formalin TO CasD
+2020-09-25 04:26:06 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-09-25 04:26:06 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (formalin) do not require a density adjustment.
+2020-09-25 04:26:06 ctrl.casD    INFO     FINISHED LOADING formalin TO CasD, Time: 4.01s
+2020-09-25 04:26:27 ctrl.casD    INFO     INCUBATING CasD

@@ -66,7 +66,8 @@ ApplicationWindow {
     minimumHeight: 410
     flags: rootApWin.visMode === 'Windowed' ? Qt.WindowMinimized :  Qt.FramelessWindowHint
     visibility: rootApWin.visMode === 'Windowed' ? Window.Windowed : Window.FullScreen
-
+    title: "Prepbot Sample Monitor"
+    
     onClosing: {
         close.accepted = exitDialog.closeStatus
         exitDialog.open()

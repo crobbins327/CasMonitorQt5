@@ -75,16 +75,22 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     shutdownStart = QtCore.pyqtSignal(int)
     #Send shutdown is finished
     shutdownDone = QtCore.pyqtSignal(int)
+    
+    cleanStart = QtCore.pyqtSignal(int)
+    cleanDone = QtCore.pyqtSignal(int)
+    
     deadspace = 1000 
     
     def __init__(self, cfg=None):
         ApplicationSession.__init__(self, cfg)
         QtCore.QObject.__init__(self)
-        self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','engaged','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName','startlog','endlog'] ,
+        self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','currentFluid','engaged','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName','startlog','endlog'] ,
                                    index=['casA','casB','casC','casD','casE','casF'], dtype=object)
         self.taskDF.engaged = False
         self.taskDF.engaged = self.taskDF.engaged.astype(object)
         self.controllerStatus = 'disconnected'
+        self.machineHomed = False
+        # self.machineHalted = True
         # self.logsOpen = pd.DataFrame(columns = ['isLogOpen'] ,
         #                            index=['casA','casB','casC','casD','casE','casF','ctrl','machine'], dtype=object)
     
@@ -94,6 +100,19 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         if self.controllerStatus == 'disconnected':
             self.controllerStatus = 'connected'
             await self.conJoined()
+        # if self.machineHomed != machineStatus:
+        #     self.machineHomed = machineStatus
+
+    async def get_mStatus(self):
+        return(self.machineHomed)
+
+    async def set_mStatus(self, mStatus):
+        try:
+            if mStatus == True:
+                self.machineHomed = True
+                # self.machineHalted = False
+        except Exception as e:
+            guilog.ctrl(e)
         
     async def update(self):
         while True:
@@ -121,6 +140,8 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         try:
             taskDFJSON = await self.call('com.prepbot.prothandler.controller-tasks')
             # guilog.info(taskDFJSON)
+            self.machineHomed = await self.call('com.prepbot.prothandler.gui-get-machine-homed')
+            guilog.info('Machine is homed? : {}'.format(self.machineHomed))
         except Exception as e:
             guilog.warning("Waiting until controller is connected...")
             guilog.warning(e)
@@ -146,8 +167,16 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             guilog.warning("could not subscribe to procedure: {0}".format(e))
             self.toWaitPopup.emit('Could not subscribe to procedures....')
         asyncio.ensure_future(self.update())
+        guilog.info('Registering GUI functions...')
+        self.toWaitPopup.emit('Registering GUI functions to router...')
+        try:
+            self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-gui')
+            self.register(self.get_mStatus,'com.prepbot.prothandler.is-machine-homed')
+            self.register(self.set_mStatus, 'com.prepbot.prothandler.set-machine-homed')
+        except Exception as e:
+            guilog.error('Could not register GUI functions to router...')
+            guilog.error(e)
         self.guiJoined.emit()
-        self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-gui')
         guilog.info('FINISHED JOIN!')
     
     # @wamp.subscribe('com.prepbot.prothandler.controller-joined')
@@ -167,6 +196,14 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         guilog.info("Disconnected GUI")
         guilog.info(self.taskDF)
     
+    @QtCore.pyqtSlot(str)
+    def execScript(self, linesToExec):
+        self.publish('com.prepbot.prothandler.exec-script', linesToExec)
+        
+    @QtCore.pyqtSlot()
+    def stopExecTerminal(self):
+        self.publish('com.prepbot.prothandler.exec-stop')
+    
     #Takes casNumber and protocol.json
     @QtCore.pyqtSlot(str, str, str, str, str)
     def startProtocol(self, casNumber, protPath, runtime, sampleName, protocolName):
@@ -180,7 +217,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         #Setup run by sending info to progress bar and sending protStrings
         self.setupProt.emit(casNumber,progStrings,stepTimes, runtime, sampleName, protocolName)
         #update taskDF
-        self.taskDF.loc['cas{}'.format(casL)] = np.array(['running',0,np.nan,True,protStrings, progStrings, stepTimes, sampleName,protPath,protocolName,np.nan,np.nan],dtype=object)
+        self.taskDF.loc['cas{}'.format(casL)] = np.array(['running',0,np.nan,'unk',True,protStrings, progStrings, stepTimes, sampleName,protPath,protocolName,np.nan,np.nan],dtype=object)
         guilog.debug(self.taskDF)
         #Send protocol to controller to add to Q
         self.publish('com.prepbot.prothandler.start', casL, self.taskDF.loc['cas{}'.format(casL)].to_json())
@@ -194,6 +231,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         self.taskDF.loc[casName] = pd.read_json(taskJSON, typ='series', dtype=object)
         #prepare run details chunk
         start = int(self.taskDF.loc[casName,'startlog'])
+        guilog.debug('start: {} stop: {}'.format(start, int(currentEnd)))
         # samplelog, currentEnd = await self.call('com.prepbot.prothandler.caslog-chunk', casL=casName[-1], start=start, end=0)
         #emit start signal
         casNumber = int(self.__get_key(casName[-1], self.convCas))
@@ -261,13 +299,30 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # self.publish('com.prepbot.prothandler.next', casL)
         self.taskDF.loc['cas{}'.format(casL),'status'] = 'idle'
     
+    @wamp.subscribe('com.prepbot.prothandler.start-clean')
+    async def start_clean(self, casL):
+        await asyncio.sleep(1)
+        guilog.info('\nCleaning Line of cas{}!!!\n'.format(casL))
+        casNumber = int(self.__get_key(casL, self.convCas))
+        self.cleanStart.emit(casNumber)
+    
+    #Currently isNext does nothing and is always False
+    @wamp.subscribe('com.prepbot.prothandler.finish-clean')
+    async def finish_clean(self, casL, taskJSON, isNext=False):
+        await asyncio.sleep(1)
+        casNumber = int(self.__get_key(casL, self.convCas))
+        self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
+        if not isNext:
+            self.cleanDone.emit(casNumber)
+    
     @wamp.subscribe('com.prepbot.prothandler.start-shutdown')
     async def start_shutown(self, casL):
         await asyncio.sleep(1)
         guilog.info('\nSHUTTING DOWN cas{}!!!\n'.format(casL))
         casNumber = int(self.__get_key(casL, self.convCas))
         self.shutdownStart.emit(casNumber)
-        
+    
+    #Currently isNext does nothing and is always False
     @wamp.subscribe('com.prepbot.prothandler.finish-shutdown')
     async def finish_shutown(self, casL, taskJSON, isNext=False):
         await asyncio.sleep(1)
@@ -319,6 +374,15 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         #Replace entry in taskDF
         self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
         guilog.debug("\n{}".format(self.taskDF.loc['cas{}'.format(casL)]))
+        
+    @wamp.subscribe('com.prepbot.prothandler.update-taskdf')
+    async def update_taskDF(self, casL, taskJSON):
+        #Prevent stopped or shutdown runs from updating???
+        await asyncio.sleep(1)
+        #Replace entry in taskDF
+        guilog.info('Updating GUI task DF.')
+        self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
+        guilog.debug("\n{}".format(self.taskDF.loc['cas{}'.format(casL)]))
     
     
     @wamp.subscribe('com.prepbot.prothandler.one-task-to-gui')
@@ -330,7 +394,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     def repopulate_one_GUI(self, casName):
         casNumber = int(self.__get_key(casName[-1], self.convCas))
         
-        if self.taskDF.loc[casName,'status'].isin(['running','finished','stopping','shutdown']):
+        if self.taskDF.loc[casName,'status'].isin(['running','cleaning','finished','stopping','shutdown']):
             otherVars = self.taskDF.loc[casName,['stepNum','secsRemaining','sampleName','protocolName','status']].tolist()
             # otherVars.append(totalSecs)
             # otherVars.append(tremSecs)
@@ -367,8 +431,8 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             #Repopulate logs
     
     def repopulate_all_GUI(self):
-        runfin = self.taskDF[self.taskDF.status.isin(['running','finished','stopping','shutdown'])].index
-        engagedCas = self.taskDF[self.taskDF.engaged==True & ~self.taskDF.status.isin(['running','finished','stopping','shutdown'])].index
+        runfin = self.taskDF[self.taskDF.status.isin(['running','cleaning','finished','stopping','shutdown'])].index
+        engagedCas = self.taskDF[self.taskDF.engaged==True & ~self.taskDF.status.isin(['running','cleaning','finished','stopping','shutdown'])].index
         
         for i in self.taskDF.index:
             # print(i)
@@ -399,7 +463,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 guilog.info('Emitting engages! {}'.format(i))
                 self.casEngaged.emit(int(self.__get_key(i[-1], self.convCas)))
         
-        guilog.debug("Restore connection with logger(s)......NOT IMPLEMENTED YET...")
+        # guilog.debug("Restore connection with logger(s)......NOT IMPLEMENTED YET...")
         
         #restore connection with logger + rundetails.....
     
@@ -452,7 +516,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 stepTimes.append(self.__get_sec(oper['opTime']))
             elif oper['opName'] == 'Load Formalin':
 #                rem = self.__purge(casL, oper['volume'], mL=mL)
-                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], mL=mL)
+                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], oper['washSyr'], mL=mL)
 #                protstrings.append(rem+'\n'+load)
                 protstrings.append(load)
                 progstrings.append(oper['opName'])
@@ -460,7 +524,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 fluidType = oper['loadType']
             elif oper['opName'] == 'Load Stain':
 #                rem = self.__purge(casL, oper['volume'], mL=mL)
-                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], mL=mL)
+                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], oper['washSyr'], mL=mL)
 #                protstrings.append(rem+'\n'+load)
                 protstrings.append(load)
                 progstrings.append(oper['opName'])
@@ -468,7 +532,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 fluidType = oper['loadType']
             elif oper['opName'] == 'Load BABB':
 #                rem = self.__purge(casL, oper['volume'], mL=mL)
-                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], mL=mL)
+                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], oper['washSyr'], mL=mL)
 #                protstrings.append(rem+'\n'+load)
                 protstrings.append(load)
                 progstrings.append(oper['opName'])
@@ -476,7 +540,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 fluidType = oper['loadType']
             elif oper['opName'] == 'Load Dehydrant':
 #                rem = self.__purge(casL, oper['volume'], mL=mL)
-                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], mL=mL)
+                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], oper['washSyr'], mL=mL)
 #                protstrings.append(rem+'\n'+load)
                 protstrings.append(load)
                 progstrings.append(oper['opName'])
@@ -558,10 +622,10 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # sleep(5)
         # machine.empty_syringe()
         # '''.format(casL,deVol)
-        purgeStr = 'self.purge(casL="{}",deadvol={})'.format(casL,deVol)
+        purgeStr = 'self.purge(casL="{}")'.format(casL)
         return(purgeStr)
         
-    def __load_reagent(self, casL, volume, speed, loadType, mL=False):
+    def __load_reagent(self, casL, volume, speed, loadType, washSyr, mL=False):
         reaConv = {'Dehydrant':'meoh','BABB':'babb',
                    'Formalin':'formalin','Stain':'vial'}
         #Check if volume is in uL or mL??
@@ -570,7 +634,11 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         else:
             vol = float(volume[:-2])/1000
         #Convert to mL for machine pump in/out command
-        deVol = vol + self.deadspace/1000
+        # deVol = vol + self.deadspace/1000
+        if washSyr == 'true':
+            washSyrBool = True
+        else:
+            washSyrBool = False
         # loadString = '''
         # print('ADDING {}')
         # machine.goto_{}()
@@ -579,7 +647,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # machine.goto_sample{}()
         # machine.pump_out({},{})
         # '''.format(loadType,reaConv[loadType],vol,speed,casL,deVol,speed)
-        loadStr= 'self.loadReagent(casL="{}",loadstr="{}",reagent="{}",vol={},speed={},deadvol={})'.format(casL,loadType, reaConv[loadType], vol, speed, deVol)
+        loadStr= 'self.loadReagent(casL="{}",reagent="{}",vol={},speed={}, washSyr={}, loadstr="{}",)'.format(casL, reaConv[loadType], vol, speed, washSyrBool, loadType)
         return(loadStr)
         
     

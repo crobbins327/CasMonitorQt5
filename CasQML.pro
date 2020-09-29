@@ -36,6 +36,7 @@ DISTFILES += \
     BevelRect.qml \
     CasMonitor.qml \
     DebugMode.qml \
+    DebugMode_old.qml \
     DraggableItem.qml \
     IncubationContent.qml \
     IncubationContent_old.qml \

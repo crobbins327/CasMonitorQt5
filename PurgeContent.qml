@@ -26,7 +26,7 @@ Item {
 
         radius: 5
         width: rootCol.width
-        height: 35
+        height: 25
         gradient: Gradient {
             orientation: Gradient.Horizontal
             GradientStop {position: 0.524; color: "#f5f5f5"}
@@ -36,16 +36,16 @@ Item {
         Button {
             id: closeButton
             x: 544
-            width: 30
-            height: 30
+            width: 25
+            height: 25
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
             anchors.rightMargin: 10
             icon.name: "close-X"
             icon.source: "Icons/close.png"
             icon.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
-            icon.width: 30
-            icon.height: 30
+            icon.width: 25
+            icon.height: 25
 
             onClicked: {
                 modDel.items.remove(itemIndex)
@@ -54,8 +54,8 @@ Item {
 
 
             background: Rectangle {
-                implicitWidth: 30
-                implicitHeight: 30
+                implicitWidth: 25
+                implicitHeight: 25
 //                border.width: 0.5
 //                border.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "black" : "transparent"
 //                radius: 8
@@ -76,7 +76,7 @@ Item {
 
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
-            font.pointSize: 12
+            font.pointSize: 11
             renderType: Text.QtRendering
         }
 
@@ -102,7 +102,7 @@ Item {
                 text: toolButton.text
                 font.weight: Font.Thin
                 font.bold: true
-                font.pointSize: 13
+                font.pointSize: 12
                 anchors.left: parent.left
                 anchors.leftMargin: 25
                 horizontalAlignment: Text.AlignLeft

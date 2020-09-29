@@ -17,7 +17,8 @@ Item {
     property bool minimize: true
 //    property string opTime: "00:05:00"
 //    property string volume: "750uL"
-//    property string pSpeed: '1'
+//    property string pSpeed: '2.95'
+//    property string washSyr: 'false'
 
     property string type: "step"
 
@@ -32,7 +33,8 @@ Item {
 
         radius: 5
         width: rootCol.width
-        height: 35
+        height: 25
+//        height: 35
         gradient: Gradient {
             orientation: Gradient.Horizontal
             GradientStop {position: 0.524; color: "#f5f5f5"}
@@ -42,16 +44,18 @@ Item {
         Button {
             id: closeButton
             x: 544
-            width: 30
-            height: 30
+//            width: 30
+//            height: 30
+            width: 25
+            height: 25
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
             anchors.rightMargin: 10
             icon.name: "close-X"
             icon.source: "Icons/close.png"
             icon.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
-            icon.width: 30
-            icon.height: 30
+            icon.width: 25
+            icon.height: 25
 
             onClicked: {
                 modDel.items.remove(itemIndex)
@@ -60,8 +64,8 @@ Item {
 
 
             background: Rectangle {
-                implicitWidth: 30
-                implicitHeight: 30
+                implicitWidth: 25
+                implicitHeight: 25
 //                border.width: 0.5
 //                border.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "black" : "transparent"
 //                radius: 8
@@ -82,7 +86,7 @@ Item {
 
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
-            font.pointSize: 12
+            font.pointSize: 11
             renderType: Text.QtRendering
         }
 
@@ -127,7 +131,7 @@ Item {
                         anchors.verticalCenter: parent.verticalCenter
                         font.weight: Font.Thin
                         font.bold: true
-                        font.pointSize: 13
+                        font.pointSize: 12
                         horizontalAlignment: Text.AlignLeft
                         verticalAlignment: Text.AlignVCenter
                     }
@@ -154,7 +158,7 @@ Item {
             anchors.right: closeButton.left
             anchors.rightMargin: 15
             anchors.verticalCenter: parent.verticalCenter
-            font.pointSize: 12
+            font.pointSize: 11
             font.weight: Font.Medium
             renderType: Text.QtRendering
             font.capitalization: Font.MixedCase
@@ -172,7 +176,7 @@ Item {
             anchors.verticalCenter: ribbon.verticalCenter
             anchors.leftMargin: 15
             anchors.left: opTimeText.right
-            font.pointSize: 12
+            font.pointSize: 11
             font.capitalization: Font.MixedCase
         }
 
@@ -182,7 +186,7 @@ Item {
         anchors.top: ribbon.bottom
 
         width: rootCol.width
-        height: rootCol.minimize ? 0 : 150
+        height: rootCol.minimize ? 0 : 120
 
         radius: 5
         border.width: 0.5
@@ -193,6 +197,8 @@ Item {
         Slider {
             id: volSlider
             y: 19
+            width: 150
+            height: 30
             anchors.left: parent.left
             anchors.leftMargin: 25
             value: parseInt(volume.slice(0,-2))
@@ -214,13 +220,13 @@ Item {
             id: volSLab
             x: 0
             y: 234
-            width: 74
+            width: 71
             height: 19
             color: "#000000"
             text: qsTr("Volume:")
             font.bold: true
             anchors.verticalCenter: volSlider.verticalCenter
-            font.pointSize: 12
+            font.pointSize: 11
             anchors.left: volSlider.right
             anchors.leftMargin: 15
         }
@@ -241,7 +247,7 @@ Item {
                 id: volInput
                 color: "#000000"
                 font.bold: true
-                font.pointSize: 12
+                font.pointSize: 11
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignLeft
                 validator: IntValidator {
@@ -274,7 +280,7 @@ Item {
             text: qsTr("uL")
             anchors.left: rectInput.right
             anchors.leftMargin: 5
-            font.pointSize: 12
+            font.pointSize: 11
             anchors.verticalCenter: rectInput.verticalCenter
             font.bold: true
         }
@@ -282,18 +288,18 @@ Item {
         Slider {
             id: speedSlider
             x: 25
-            width: 200
-            height: 40
-            stepSize: 1
-            value: parseInt(pSpeed)
-            to: 10
+            width: 125
+            height: 30
+            stepSize: 0.01
+            value: parseFloat(pSpeed).toFixed(2)
+            to: 3
             anchors.topMargin: 20
             anchors.top: volSlider.bottom
-            from: 1
+            from: 0.02
             onMoved: {
                 // If value below or above amount, convert to mL or uL
                 //Depends on what mixing values are desired..
-                pSpeed = speedSlider.value.toString()
+                pSpeed = speedSlider.value.toFixed(2).toString()
                 speedInput.text = speedSlider.value
                 speedSlider.value = speedInput.text
             }
@@ -303,7 +309,7 @@ Item {
             id: speedLab
             x: 7
             y: 241
-            width: 120
+            width: 104
             height: 19
             color: "#000000"
             text: qsTr("Pump Speed:")
@@ -312,14 +318,14 @@ Item {
             anchors.leftMargin: 15
             font.bold: true
             anchors.left: speedSlider.right
-            font.pointSize: 12
+            font.pointSize: 11
         }
 
         Rectangle {
             id: rectSpIn
             x: 7
             y: 240
-            width: 40
+            width: 60
             height: 30
             color: "#00000000"
             anchors.verticalCenterOffset: 0
@@ -336,15 +342,15 @@ Item {
                 font.bold: true
                 verticalAlignment: Text.AlignVCenter
                 selectedTextColor: "#ffffff"
-                validator: IntValidator {
+                validator: DoubleValidator {
                 }
-                font.pointSize: 12
-                maximumLength: 2
+                font.pointSize: 11
+                maximumLength: 4
                 anchors.rightMargin: 10
                 onEditingFinished: {
                     speedSlider.value = speedInput.text
                     speedInput.text = speedSlider.value
-                    pSpeed = speedSlider.value
+                    pSpeed = speedSlider.value.toFixed(2).toString()
                 }
             }
             anchors.verticalCenter: speedLab.verticalCenter
@@ -352,6 +358,27 @@ Item {
             anchors.left: speedLab.right
             border.width: 1
             border.color: "#515151"
+        }
+
+        CheckBox {
+            id: washCheckBox
+            y: 79
+            width: 146
+            height: 52
+            text: qsTr("Wash Syringe\n        & Line")
+            anchors.verticalCenterOffset: 0
+            display: AbstractButton.TextBesideIcon
+            font.pointSize: 10
+            font.bold: true
+            anchors.left: rectSpIn.right
+            anchors.leftMargin: 30
+            anchors.verticalCenter: speedLab.verticalCenter
+            checked: washSyr == 'false' ? false : true
+
+            onClicked: {
+                washSyr = washCheckBox.checked.toString()
+                console.log(washSyr)
+            }
         }
 
 
@@ -364,6 +391,6 @@ Item {
 /*##^##
 Designer {
     D{i:16;anchors_x:25}D{i:17;anchors_x:25}D{i:19;anchors_y:81}D{i:18;anchors_y:81}D{i:21;anchors_y:81}
-D{i:22;anchors_y:81}D{i:23;anchors_y:81}
+D{i:22;anchors_y:81}D{i:23;anchors_y:81}D{i:27;anchors_x:377}
 }
 ##^##*/

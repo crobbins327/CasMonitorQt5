@@ -1,0 +1,56 @@
+[
+	{
+		"opName": "Incubation",
+		"opTime": "00:03:00",
+		"mixAfterSecs": "30",
+		"volume": "undefined",
+		"pSpeed": "undefined",
+		"numCycles": "undefined",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Mixing",
+		"opTime": "00:05:00",
+		"mixAfterSecs": "undefined",
+		"volume": "7mL",
+		"pSpeed": "1",
+		"numCycles": "9",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Purge",
+		"opTime": "00:05:00",
+		"mixAfterSecs": "undefined",
+		"volume": "3mL",
+		"pSpeed": "1",
+		"numCycles": "undefined",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Load Formalin",
+		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
+		"volume": "3000uL",
+		"pSpeed": "7",
+		"numCycles": "undefined",
+		"loadType": "Formalin"
+	},
+	{
+		"opName": "Load Dehydrant",
+		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
+		"volume": "600uL",
+		"pSpeed": "1",
+		"numCycles": "undefined",
+		"loadType": "Dehydrant"
+	},
+	{
+		"opName": "Load Stain",
+		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
+		"volume": "600uL",
+		"pSpeed": "1",
+		"numCycles": "undefined",
+		"loadType": "Stain"
+	}
+]

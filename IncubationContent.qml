@@ -30,7 +30,8 @@ Item {
 
         radius: 5
         width: rootCol.width
-        height: 35
+//        height: 35
+        height: 25
         gradient: Gradient {
             orientation: Gradient.Horizontal
             GradientStop {position: 0.524; color: "#f5f5f5"}
@@ -40,16 +41,18 @@ Item {
         Button {
             id: closeButton
             x: 544
-            width: 30
-            height: 30
+//            width: 30
+//            height: 30
+            width: 25
+            height: 25
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
             anchors.rightMargin: 10
             icon.name: "close-X"
             icon.source: "Icons/close.png"
             icon.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
-            icon.width: 30
-            icon.height: 30
+            icon.width: 25
+            icon.height: 25
 
             onClicked: {
                 modDel.items.remove(itemIndex)
@@ -58,8 +61,8 @@ Item {
 
 
             background: Rectangle {
-                implicitWidth: 30
-                implicitHeight: 30
+                implicitWidth: 25
+                implicitHeight: 25
                 color: "transparent"
             }
 
@@ -80,7 +83,7 @@ Item {
 
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
-            font.pointSize: 12
+            font.pointSize: 11
             renderType: Text.QtRendering
         }
 
@@ -124,7 +127,7 @@ Item {
                     anchors.verticalCenter: parent.verticalCenter
                     font.weight: Font.Thin
                     font.bold: true
-                    font.pointSize: 13
+                    font.pointSize: 12
                     horizontalAlignment: Text.AlignLeft
                     verticalAlignment: Text.AlignVCenter
                 }
@@ -161,7 +164,7 @@ Item {
                 }
             }
             font.capitalization: Font.MixedCase
-            font.pointSize: 12
+            font.pointSize: 11
             anchors.left: opTimeText.right
             font.weight: Font.Medium
             renderType: Text.QtRendering
@@ -174,7 +177,7 @@ Item {
         anchors.top: ribbon.bottom
 
         width: rootCol.width
-        height: rootCol.minimize ? 0 : 150
+        height: rootCol.minimize ? 0 : 120
 
         radius: 5
         border.width: 0.5
@@ -190,7 +193,7 @@ Item {
             anchors.topMargin: 30
             anchors.left: parent.left
             anchors.leftMargin: 15
-            font.pointSize: 12
+            font.pointSize: 11
             font.weight: Font.Medium
             renderType: Text.QtRendering
             font.capitalization: Font.MixedCase
@@ -201,7 +204,7 @@ Item {
             width: 60
             anchors.left: runTimeLabel.right
             anchors.leftMargin: 10
-            font.pointSize: 14
+            font.pointSize: 12
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 8
             anchors.top: parent.top
@@ -231,7 +234,7 @@ Item {
             width: 60
             anchors.left: hoursTumbler.right
             anchors.leftMargin: 0
-            font.pointSize: 14
+            font.pointSize: 12
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 8
             anchors.top: parent.top
@@ -260,7 +263,7 @@ Item {
             width: 60
             anchors.left: minutesTumbler.right
             anchors.leftMargin: 0
-            font.pointSize: 14
+            font.pointSize: 12
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 8
             anchors.top: parent.top
@@ -290,7 +293,7 @@ Item {
             anchors.horizontalCenter: runTimeLabel.horizontalCenter
             anchors.top: runTimeLabel.bottom
             anchors.topMargin: 2
-            font.pointSize: 11
+            font.pointSize: 10
             font.weight: Font.Medium
             renderType: Text.QtRendering
             font.capitalization: Font.MixedCase
@@ -300,7 +303,7 @@ Item {
             id: mixAfterLabel
             color: "#000000"
             text: "Mix after:"
-            font.pointSize: 12
+            font.pointSize: 11
             font.capitalization: Font.MixedCase
             anchors.left: secondsTumbler.right
             anchors.verticalCenterOffset: 0
@@ -314,10 +317,10 @@ Item {
             id: mixAfterUnits
             color: mixSwitch.checked ? "#000000" : 'red'
             text: mixSwitch.checked ? "(min:sec)" : "No mixing"
+            font.pointSize: 10
             anchors.left: mixAfterLabel.left
             anchors.leftMargin: 0
             anchors.topMargin: 2
-            font.pointSize: mixSwitch.checked ? 11 : 12
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
             renderType: Text.QtRendering
@@ -331,7 +334,7 @@ Item {
             anchors.topMargin: 10
             anchors.bottomMargin: 8
             anchors.bottom: parent.bottom
-            font.pointSize: 14
+            font.pointSize: 12
             anchors.left: mixAfterLabel.right
             model: 60
             scale: 1
@@ -359,7 +362,7 @@ Item {
             anchors.topMargin: 10
             anchors.bottomMargin: 8
             anchors.bottom: parent.bottom
-            font.pointSize: 14
+            font.pointSize: 12
             model: 60
             anchors.top: parent.top
             transformOrigin: Item.Center
@@ -375,6 +378,7 @@ Item {
 
         Switch {
             id: mixSwitch
+            height: 30
             display: AbstractButton.TextBesideIcon
             checked: true
             anchors.top: mixAfterUnits.bottom

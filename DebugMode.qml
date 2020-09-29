@@ -5,6 +5,7 @@ import QtQml.Models 2.12
 //import Qt.labs.platform 1.1
 import QtQuick.Dialogs 1.3
 import Qt.labs.folderlistmodel 2.12
+import QtQuick.Layouts 1.12
 
 import "./Icons/"
 
@@ -37,7 +38,7 @@ Item {
     signal pumpOut()
 
 //    width: 780
-//    height: 410
+//    height: 1600
     //    anchors.fill: parent
 
 
@@ -197,976 +198,1124 @@ Item {
             anchors.rightMargin: -2
             anchors.left: parent.left
             anchors.leftMargin: -2
-            anchors.top: casBar.bottom
-            anchors.topMargin: 10
+            anchors.top: menuRect.bottom
+            anchors.topMargin: 0
 
-            SwipeView {
-                id: view
-                anchors.fill: parent
-                currentIndex: 0
-
-                Item{
-                    id: manualPg
-                    BevButton {
-                        id: homeSyrB
-                        width: 75
-                        height: 40
-                        text: qsTr("Home")
-                        anchors.top: manualLab.bottom
-                        anchors.topMargin: 15
-                        anchors.left: parent.left
-                        anchors.leftMargin: 25
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {ManualPrepbot.home()}
-                    }
-
-                    BevButton {
-                        id: connectB
-                        y: 119
-                        width: 85
-                        height: 40
-                        text: qsTr("Connect")
-                        anchors.verticalCenterOffset: 0
-                        anchors.left: homeSyrB.right
-                        anchors.leftMargin: 30
-                        anchors.verticalCenter: homeSyrB.verticalCenter
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {root.findVial(); console.log("Find Vial")}
-                    }
-
-                    BevButton {
-                        id: engageSaB
-                        y: 119
-                        height: 40
-                        text: qsTr("Engage Sample")
-                        anchors.left: haltB.right
-                        anchors.leftMargin: 50
-                        anchors.verticalCenterOffset: 0
-                        anchors.verticalCenter: haltB.verticalCenter
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {ManualPrepbot.engageSampleD; console.log("Engage Sample "+casNumber)}
-                    }
-
-                    BevButton {
-                        id: disengageSaB
-                        y: 119
-                        height: 40
-                        text: qsTr("Disengage Sample")
-                        anchors.left: engageSaB.right
-                        anchors.leftMargin: 30
-                        anchors.verticalCenter: homeSyrB.verticalCenter
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {root.dropVial(); console.log("Drop Vial")}
-                    }
-
-                    BevButton {
-                        id: meohB
-                        y: 188
-                        width: 75
-                        height: 40
-                        text: qsTr("MeOH")
-                        anchors.left: formalinB.right
-                        anchors.leftMargin: 30
-                        anchors.verticalCenter: formalinB.verticalCenter
-                        anchors.bottomMargin: 50
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {root.syrMeOH(); console.log("MeOH")}
-                    }
-
-                    BevButton {
-                        id: babbB
-                        y: 188
-                        width: 75
-                        height: 40
-                        text: qsTr("BABB")
-                        anchors.verticalCenter: meohB.verticalCenter
-                        anchors.left: meohB.right
-                        anchors.leftMargin: 30
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {root.syrBABB(); console.log("BABB")}
-                    }
-
-                    BevButton {
-                        id: formalinB
-                        y: 188
-                        width: 85
-                        height: 40
-                        text: qsTr("Formalin")
-                        anchors.left: wasteB.right
-                        anchors.leftMargin: 30
-                        anchors.verticalCenter: wasteB.verticalCenter
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {root.syrFormalin(); console.log("Formalin")}
-                    }
-
-                    BevButton {
-                        id: wasteB
-                        width: 75
-                        height: 40
-                        text: qsTr("Waste")
-                        anchors.top: homeSyrB.bottom
-                        anchors.topMargin: 20
-                        anchors.left: homeSyrB.left
-                        anchors.leftMargin: 0
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {root.syrWaste(); console.log("Waste")}
-                    }
-
-                    BevButton {
-                        id: sampleB
-                        y: 188
-                        width: 75
-                        height: 40
-                        text: qsTr("Sample")
-                        anchors.left: babbB.right
-                        anchors.leftMargin: 30
-                        anchors.verticalCenter: babbB.verticalCenter
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {root.syrSample(); console.log("Sample")}
-                    }
-
-                    BevButton {
-                        id: pumpInB
-                        height: 45
-                        text: qsTr("Pump in")
-                        anchors.top: wasteB.bottom
-                        anchors.topMargin: 20
-                        anchors.left: wasteB.left
-                        anchors.leftMargin: 0
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {root.pumpIn(); console.log("Pump In")}
-                    }
-
-                    BevButton {
-                        id: pumpOutB
-                        y: 293
-                        height: 45
-                        text: qsTr("Pump Out")
-                        anchors.left: pumpInB.right
-                        anchors.leftMargin: 45
-                        anchors.verticalCenter: pumpInB.verticalCenter
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {root.pumpOut(); console.log("Pump Out")}
-                    }
-
-                    BevButton {
-                        id: parkB
-                        y: 203
-                        height: 40
-                        text: qsTr("Park")
-                        anchors.left: sampleB.right
-                        anchors.leftMargin: 30
-                        anchors.verticalCenter: sampleB.verticalCenter
-                        palette {
-                            button: 'white'
-                        }
-                    }
-
-                    BevButton {
-                        id: takeDyeB
-                        width: 120
-                        height: 40
-                        text: qsTr("Take up Dye")
-                        anchors.top: pumpInB.bottom
-                        anchors.topMargin: 20
-                        anchors.left: pumpInB.left
-                        anchors.leftMargin: 0
-                        palette {
-                            button: 'white'
-                        }
-                    }
-
-                    BevButton {
-                        id: purgeB
-                        y: 295
-                        width: 140
-                        height: 40
-                        text: qsTr("Purge Syringe")
-                        anchors.verticalCenter: takeDyeB.verticalCenter
-                        anchors.left: takeDyeB.right
-                        anchors.leftMargin: 25
-                        palette {
-                            button: 'white'
-                        }
-                    }
-
-                    BevButton {
-                        id: haltB
-                        y: 98
-                        width: 75
-                        height: 40
-                        text: qsTr("Halt")
-                        anchors.left: connectB.right
-                        anchors.leftMargin: 30
-                        anchors.verticalCenter: connectB.verticalCenter
-
-                        palette {
-                            button: 'red'
-                            buttonText: 'white'
-                        }
-
-
-                    }
-
-                    Slider {
-                        id: volSlider
-                        y: 225
-                        height: 30
-                        anchors.left: pumpOutB.right
-                        anchors.leftMargin: 50
-                        anchors.verticalCenter: pumpOutB.verticalCenter
-                        value: 3
-                        to: 10
-                        stepSize: 0.01
-                    }
-
-                    Text {
-                        id: manualLab
-                        x: 545
-                        width: 152
-                        height: 23
-                        color: "#ffffff"
-                        text: qsTr("Manual Control")
-                        anchors.top: parent.top
-                        font.bold: true
-                        anchors.topMargin: 0
-                        anchors.left: parent.left
-                        font.pointSize: 14
-                        anchors.leftMargin: 10
-                    }
-
-                    Text {
-                        id: volSLab
-                        x: 0
-                        y: 234
-                        width: 74
-                        height: 23
-                        color: "#ffffff"
-                        text: qsTr("Volume:")
-                        font.bold: true
-                        anchors.verticalCenter: volSlider.verticalCenter
-                        font.pointSize: 13
-                        anchors.left: volSlider.right
-                        anchors.leftMargin: 15
-                    }
-
-                    Rectangle{
-                        id:rectInput
-                        color: "#848484"
-                        border.color: "#515151"
-                        border.width: 2
-                        width: 70
-                        height: 30
-                        anchors.left: volSLab.right
-                        anchors.leftMargin: 10
-                        anchors.verticalCenter: volSLab.verticalCenter
-                        y: 233
-
-                        TextInput {
-                            id: volInput
-                            color: "#ffffff"
-                            font.bold: true
-                            font.pointSize: 13
-                            verticalAlignment: Text.AlignVCenter
-                            horizontalAlignment: Text.AlignLeft
-                            validator: DoubleValidator {
-                            }
-                            maximumLength: 5
-                            text: volSlider.value
-                            anchors.rightMargin: 5
-                            anchors.leftMargin: 10
-                            anchors.fill: parent
-                            font.underline: false
-                            selectionColor: "#66000080"
-                            selectedTextColor: "#ffffff"
-                            clip: true
-                            onEditingFinished: {
-                                volSlider.value = volInput.text
-                            }
-
-
-                        }
-                    }
-
-                    Text {
-                        id: volSLab1
-                        y: 239
-                        width: 32
-                        height: 22
-                        color: "#ffffff"
-                        text: qsTr("mL")
-                        anchors.left: rectInput.right
-                        anchors.leftMargin: 5
-                        font.pointSize: 13
-                        anchors.verticalCenter: rectInput.verticalCenter
-                        font.bold: true
-                    }
-
+            BevButton {
+                id: execBtn
+                y: -117
+                height: 35
+                text: "Execute Code"
+                anchors.verticalCenter: scriptSwitch.verticalCenter
+                anchors.left: scriptSwitch.right
+                anchors.leftMargin: 15
+                anchors.right: casLogBtn.left
+                anchors.rightMargin: 15
+                palette {
+                    button: 'white'
                 }
 
-                Item{
-                    id: operationPg
+                enabled: scriptSwitch.checked
 
-                    BevButton {
-                        id: purgeBtn
-                        width: 95
-                        height: 35
-                        text: "Purge"
-                        anchors.top: pSpeed.bottom
-                        anchors.topMargin: 5
-                        anchors.left: loadBtn.left
-                        anchors.leftMargin: 0
-                        palette {
-                            button: 'white'
-                        }
+                onClicked: {
+                    //Send the protocol in the exec terminal into the WAMPHandler
+                    WAMPHandler.execScript(scriptText)
+                    //Clear script text
+                    scriptText = ''
+                }
+            }
 
-                        onClicked: {
-                            if(scriptSwitch.checked){
-                                //make the command for purge
-                                //currently set to 3mL purge with 1mL dead volume...
-//                                console.log(casBar.currentIndex)
-                                var casL = casNames[casBar.currentIndex]
-                                var purge = 'self.purge(casL="'+ casL + '", deadvol=4)'
-                                //add to scriptText
-                                scriptText = scriptText + '\n' + purge
-                            }
-                            //else execute directly
+            ScrollView {
+                id: view
+                width: 340
+                //                width: 400
+                anchors.leftMargin: 5
+                anchors.topMargin: 15
+                anchors.bottomMargin: 10
+                anchors.bottom: parent.bottom
+                anchors.left: parent.left
+                anchors.top: casBar.bottom
+                contentHeight: flickCol.implicitHeight
+                contentWidth: flickCol.implicitWidth
+                clip: true
 
-                        }
-                    }
-                    BevButton {
-                        id: incubateBtn
-                        width: 95
-                        height: 35
-                        text: "Incubate"
-                        anchors.top: parent.top
-                        anchors.topMargin: 40
-                        anchors.left: mixAfRect.right
-                        anchors.leftMargin: 15
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {
-                            if(scriptSwitch.checked){
-                                //make the command for purge
-                                //currently set to 3mL purge with 1mL dead volume...
-//                                console.log(casBar.currentIndex)
-                                var casL = casNames[casBar.currentIndex]
-                                var incubate = 'self.incubate(casL="'+ casL + '", incTime='+ incSecs +', mixAfter='+ mixAfterSecs +')'
-                                //add to scriptText
-                                scriptText = scriptText + '\n' + incubate
-                            }
-                            //else execute directly
-
-                        }
-                    }
-                    BevButton {
-                        id: loadBtn
-                        height: 35
-                        text: "Load Reagent"
-                        anchors.right: mixBtn.right
-                        anchors.rightMargin: -20
-                        anchors.top: mixBtn.bottom
-                        anchors.topMargin: 15
-                        anchors.left: reagentSel.right
-                        anchors.leftMargin: 64
-                        palette {
-                            button: 'white'
-                        }
-                        //loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol):
-                        onClicked: {
-                            if(scriptSwitch.checked){
-                                //make the command for purge
-                                //currently set to 3mL purge with 1mL dead volume...
-//                                console.log(casBar.currentIndex)
-                                var casL = casNames[casBar.currentIndex]
-                                var loadstr = reagentSel.currentValue
-                                var reagentstr = reagentSel.currentValue
-                                var deadvol = 1 + loadVol/1000
-
-                                var loadRea = 'self.loadReagent(casL="'+ casL + '", loadstr="'+ loadstr +'", reagent="' + reagentstr + '", vol='+ loadVol +', speed='+ pSpeedV +', deadvol='+deadvol+')'
-                                //add to scriptText
-                                scriptText = scriptText + '\n' + loadRea
-                            }
-                            //else execute directly
-                        }
-                    }
-                    BevButton {
-                        id: mixBtn
-                        height: 35
-                        text: "Mix"
-                        anchors.right: incubateBtn.right
-                        anchors.rightMargin: 0
-                        anchors.top: incubateBtn.bottom
-                        anchors.topMargin: 15
-                        anchors.left: mixVolRect.right
-                        anchors.leftMargin: 12
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {
-                            if(scriptSwitch.checked){
-                                //make the command for purge
-                                //currently set to 3mL purge with 1mL dead volume...
-//                                console.log(casBar.currentIndex)
-                                var casL = casNames[casBar.currentIndex]
-                                var mix = 'self.mix(casL="'+ casL + '", numCycles='+ numCycles +', volume='+ mixVol +')'
-                                //add to scriptText
-                                scriptText = scriptText + '\n' + mix
-                            }
-                            //else execute directly
-
-                        }
-                    }
-
-                    BevButton {
-                        id: execBtn
-                        width: 140
-                        height: 35
-                        text: "Execute Code"
-                        anchors.top: parent.top
-                        anchors.topMargin: 0
-                        anchors.left: scriptSwitch.right
-                        anchors.leftMargin: 25
-                        anchors.right: casLogBtn.left
-                        anchors.rightMargin: 25
-                        palette {
-                            button: 'white'
-                        }
-
-                        enabled: scriptSwitch.checked
-
-                        onClicked: {}
-                    }
-
-                    BevButton {
-                        id: casLogBtn
-                        width: 95
-                        height: 35
-                        text: "Get Log"
-                        anchors.top: parent.top
-                        anchors.topMargin: 0
-                        anchors.right: scriptRec.right
-                        anchors.rightMargin: 0
-                        palette {
-                            button: 'white'
-                        }
-
-                        onClicked: {}
-                    }
-
-                    ComboBox {
-                        id: reagentSel
-                        y: 120
-                        width: 130
-                        height: 30
-                        anchors.verticalCenter: loadBtn.verticalCenter
-                        anchors.left: mixCycles.left
-                        anchors.leftMargin: 0
-                        currentIndex: 0
-                        model: ["meoh", "formalin", "babb", "vial"]
-                    }
-
-                    Text {
-                        id: operationsLab
-                        x: 123
-                        width: 118
-                        height: 23
-                        color: "#ffffff"
-                        text: qsTr("Operations")
-                        anchors.top: parent.top
-                        font.bold: true
-                        anchors.topMargin: 0
-                        anchors.left: parent.left
-                        font.pointSize: 14
-                        anchors.leftMargin: 10
-                    }
-
-                    ComboBox {
-                        id: mixCycles
-                        y: 65
-                        width: 70
-                        height: 30
-                        anchors.verticalCenter: mixBtn.verticalCenter
-                        anchors.left: incRect.left
-                        anchors.leftMargin: 0
-                        displayText: currentValue + 1
-                        model: 20
-                        delegate: ItemDelegate {
-                            width: mixCycles.width
-                            contentItem: Text {
-                                text: modelData + 1
-                                //                                color: "#21be2b"
-                                font: mixCycles.font
-                                elide: Text.ElideRight
-                                verticalAlignment: Text.AlignVCenter
-                            }
-                            highlighted: mixCycles.highlightedIndex === index
-                        }
-                    }
-
-                    ComboBox {
-                        id: pSpeed
-                        width: 70
-                        height: 30
-                        anchors.top: reagentSel.bottom
-                        anchors.topMargin: 15
-                        anchors.left: reagentSel.left
-                        anchors.leftMargin: 0
-                        displayText: currentValue + 1
-                        model: 8
-                        delegate: ItemDelegate {
-                            width: pSpeed.width
-                            highlighted: pSpeed.highlightedIndex === index
-                            contentItem: Text {
-                                //                                color: "#21be2b"
-                                text: modelData + 1
-                                verticalAlignment: Text.AlignVCenter
-                                font: pSpeed.font
-                                elide: Text.ElideRight
-                            }
-                        }
-
-                    }
-
+                ColumnLayout{
+                    id:flickCol
+                    spacing: 20
+                    anchors.fill: parent
                     Rectangle{
-                        id:incRect
-                        y: 13
-                        width: 85
-                        height: 30
-                        color: "#808080"
-                        anchors.verticalCenter: incubateBtn.verticalCenter
-                        anchors.left: parent.left
-                        anchors.leftMargin: 15
-                        TextInput {
-                            property string placeholderText: "hh:mm:ss"
-                            id: incTimeIn
-                            color: "#ffffff"
-                            leftPadding: 5
-                            anchors.rightMargin: 0
-                            anchors.bottomMargin: 0
+                        id:manualPg
+                        width: view.width
+                        height: 650
+                        color:'transparent'
+
+                        BevButton {
+                            id: homeSyrB
+                            width: 75
+                            height: 35
+                            text: qsTr("Home")
+                            anchors.top: setupLab.bottom
+                            anchors.topMargin: 15
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {ManualPrepbot.home()}
+                        }
+
+                        BevButton {
+                            id: connectB
+                            y: 119
+                            width: 85
+                            height: 35
+                            text: qsTr("Connect")
+                            anchors.verticalCenterOffset: 0
+                            anchors.left: homeSyrB.right
+                            anchors.leftMargin: 30
+                            anchors.verticalCenter: homeSyrB.verticalCenter
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {root.findVial(); console.log("Find Vial")}
+                        }
+
+                        BevButton {
+                            id: engageSaB
+                            height: 35
+                            text: qsTr("Engage Sample")
+                            anchors.top: homeSyrB.bottom
+                            anchors.topMargin: 25
+                            anchors.left: homeSyrB.left
                             anchors.leftMargin: 0
-                            anchors.topMargin: 0
-                            verticalAlignment: Text.AlignVCenter
-                            horizontalAlignment: Text.AlignLeft
-                            anchors.fill: parent
-                            font.pointSize: 11
-                            selectionColor: "#040450"
-                            text: incTime
-                            inputMask: "99:99:99"
-                            echoMode: (incTime=='::' || incTime=='00:00:00' && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
-                            clip: true
-
-                            onTextEdited: {
-                                incTime = incTimeIn.text
-                                incSecs = get_sec(incTimeIn.text)
-                                //                                incTime = get_time(incSecs)
-                            }
-                            onEditingFinished: {
-                                //convert directly into seconds
-                                incSecs = get_sec(incTime)
-//                                console.log(get_sec(incTime))
-                                //convert again into runtime to fix 'empty' inputs
-                                incTime = get_time(incSecs)
+                            palette {
+                                button: 'white'
                             }
 
-                            Text {
-                                id: incTimeTxt
-                                anchors.fill: parent
-                                text: incTimeIn.placeholderText
-                                leftPadding: 5
-                                verticalAlignment: Text.AlignVCenter
-                                color: "#aaa"
-                                font: incTimeIn.font
-                                visible: (incTime=='::' || incTime == "00:00:00") && !incTimeIn.activeFocus
-                            }
+                            onClicked: {ManualPrepbot.engageSampleD; console.log("Engage Sample "+casNumber)}
                         }
-                    }
-                    Rectangle{
-                        id:mixAfRect
-                        y: 13
-                        width: 85
-                        height: 30
-                        color: "#808080"
-                        anchors.verticalCenter: incRect.verticalCenter
-                        anchors.left: incRect.right
-                        anchors.leftMargin: 15
-                        TextInput {
-                            property string placeholderText: "No mixing"
-                            id: mixAfIn
-                            color: "#ffffff"
-                            leftPadding: 5
-                            anchors.rightMargin: 0
-                            anchors.bottomMargin: 0
+
+                        BevButton {
+                            id: disengageSaB
+                            y: 119
+                            height: 35
+                            text: qsTr("Disengage Sample")
+                            anchors.verticalCenterOffset: 0
+                            anchors.left: engageSaB.right
+                            anchors.leftMargin: 25
+                            anchors.verticalCenter: engageSaB.verticalCenter
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {root.dropVial(); console.log("Drop Vial")}
+                        }
+
+                        BevButton {
+                            id: meohB
+                            y: 188
+                            width: 75
+                            height: 35
+                            text: qsTr("MeOH")
+                            anchors.left: formalinB.right
+                            anchors.leftMargin: 30
+                            anchors.verticalCenter: formalinB.verticalCenter
+                            anchors.bottomMargin: 50
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {root.syrMeOH(); console.log("MeOH")}
+                        }
+
+                        BevButton {
+                            id: babbB
+                            width: 75
+                            height: 35
+                            text: qsTr("BABB")
+                            anchors.top: wasteB.bottom
+                            anchors.topMargin: 25
+                            anchors.left: wasteB.left
                             anchors.leftMargin: 0
-                            anchors.topMargin: 0
-                            verticalAlignment: Text.AlignVCenter
-                            horizontalAlignment: Text.AlignLeft
-                            anchors.fill: parent
-                            font.pointSize: 11
-                            selectionColor: "#040450"
-                            text: mixAfterSecs
-                            validator: IntValidator{
-                                bottom: 0
-                                top: 99999
-                            }
-                            maximumLength: 5
-                            echoMode: (mixAfterSecs==0 && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
-                            clip: true
-
-                            onEditingFinished: {
-                                mixAfterSecs = parseInt(mixAfIn.text)
+                            palette {
+                                button: 'white'
                             }
 
-                            Text {
-                                id: phMixTxt
-                                anchors.fill: parent
-                                text: mixAfIn.placeholderText
-                                leftPadding: 5
-                                verticalAlignment: Text.AlignVCenter
-                                color: "#aaa"
-                                font: mixAfIn.font
-                                visible: mixAfterSecs==0 && !mixAfIn.activeFocus
-                            }
+                            onClicked: {root.syrBABB(); console.log("BABB")}
                         }
-                    }
 
-                    Rectangle{
-                        id:mixVolRect
-                        y: 13
-                        width: 100
-                        height: 30
-                        color: "#808080"
-                        anchors.verticalCenter: mixBtn.verticalCenter
-                        anchors.left: mixCycles.right
-                        anchors.leftMargin: 15
-                        TextInput {
-                            property string placeholderText: "volume (mL)"
-                            id: mixVolIn
-                            color: "#ffffff"
-                            leftPadding: 5
-                            anchors.rightMargin: 0
-                            anchors.bottomMargin: 0
+                        BevButton {
+                            id: formalinB
+                            y: 188
+                            width: 85
+                            height: 35
+                            text: qsTr("Formalin")
+                            anchors.left: wasteB.right
+                            anchors.leftMargin: 30
+                            anchors.verticalCenter: wasteB.verticalCenter
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {root.syrFormalin(); console.log("Formalin")}
+                        }
+
+                        BevButton {
+                            id: wasteB
+                            width: 75
+                            height: 35
+                            text: qsTr("Waste")
+                            anchors.top: gotoLab.bottom
+                            anchors.topMargin: 15
+                            anchors.left: homeSyrB.left
                             anchors.leftMargin: 0
-                            anchors.topMargin: 0
-                            verticalAlignment: Text.AlignVCenter
-                            horizontalAlignment: Text.AlignLeft
-                            anchors.fill: parent
-                            font.pointSize: 11
-                            selectionColor: "#040450"
-                            text: mixVol
-                            validator: DoubleValidator{
-                                bottom: 0
-                                top: 10
-                            }
-                            maximumLength: 5
-                            echoMode: (mixVol==0 && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
-                            clip: true
-
-                            onTextEdited: {
-                                if(parseFloat(mixVolIn.text)>10){
-                                    mixVolIn.text = 0
-                                }
+                            palette {
+                                button: 'white'
                             }
 
-                            onEditingFinished: {
-                                if (mixVolIn.text == ''){
-                                    mixVol = 0
-                                    mixVolIn.text = 0
-                                } else if (Math.abs(mixVol)>10){
-                                    mixVol = 0
-                                    mixVolIn.text = 0
-                                } else {
-                                    mixVol = parseFloat(mixVolIn.text)
-                                }
-                            }
-
-                            Text {
-                                id: phMixVolTxt
-                                anchors.fill: parent
-                                text: mixVolIn.placeholderText
-                                leftPadding: 5
-                                verticalAlignment: Text.AlignVCenter
-                                color: "#aaa"
-                                font: mixAfIn.font
-                                visible: mixVol==0 && !mixVolIn.activeFocus
-                            }
+                            onClicked: {root.syrWaste(); console.log("Waste")}
                         }
-                    }
 
-                    Rectangle{
-                        id:loadVolRect
-                        y: 188
-                        width: 100
-                        height: 30
-                        color: "#808080"
-                        anchors.left: pSpeed.right
-                        anchors.leftMargin: 15
-                        anchors.verticalCenter: pSpeed.verticalCenter
-                        TextInput {
-                            property string placeholderText: "volume (uL)"
-                            id: loadVolIn
-                            color: "#ffffff"
-                            leftPadding: 5
-                            anchors.rightMargin: 0
-                            anchors.bottomMargin: 0
+                        BevButton {
+                            id: sampleB
+                            y: 188
+                            width: 75
+                            height: 35
+                            text: qsTr("Sample")
+                            anchors.left: babbB.right
+                            anchors.leftMargin: 30
+                            anchors.verticalCenter: babbB.verticalCenter
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {root.syrSample(); console.log("Sample")}
+                        }
+
+                        BevButton {
+                            id: stainB
+                            y: 188
+                            width: 75
+                            height: 35
+                            text: qsTr("Stain")
+                            anchors.verticalCenterOffset: 0
+                            anchors.left: sampleB.right
+                            anchors.leftMargin: 30
+                            anchors.verticalCenter: sampleB.verticalCenter
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {root.syrSample(); console.log("Stain")}
+                        }
+
+                        BevButton {
+                            id: pumpInB
+                            height: 35
+                            text: qsTr("Pump in")
+                            anchors.top: pumpLab.bottom
+                            anchors.topMargin: 15
+                            anchors.left: pumpLab.left
                             anchors.leftMargin: 0
-                            anchors.topMargin: 0
-                            verticalAlignment: Text.AlignVCenter
-                            horizontalAlignment: Text.AlignLeft
-                            anchors.fill: parent
-                            font.pointSize: 11
-                            selectionColor: "#040450"
-                            text: loadVol
-                            validator: IntValidator{
-                                bottom: 0
-                                top: 3000
-                            }
-                            maximumLength: 4
-                            echoMode: (loadVol==0 && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
-                            clip: true
-
-                            onTextEdited: {
-                                if(parseInt(loadVolIn.text)>3000){
-                                    loadVolIn.text = 0
-                                }
+                            palette {
+                                button: 'white'
                             }
 
-                            onEditingFinished: {
-                                if (loadVolIn.text == ''){
-                                    loadVol = 0
-                                    loadVolIn.text = 0
-                                } else if (Math.abs(loadVol)>3000){
-                                    loadVol = 0
-                                    loadVolIn.text = 0
-                                } else {
-                                    loadVol = parseInt(loadVolIn.text)
-                                }
+                            onClicked: {root.pumpIn(); console.log("Pump In")}
+                        }
+
+                        BevButton {
+                            id: pumpOutB
+                            y: 293
+                            height: 35
+                            text: qsTr("Pump Out")
+                            anchors.left: pumpInB.right
+                            anchors.leftMargin: 45
+                            anchors.verticalCenter: pumpInB.verticalCenter
+                            palette {
+                                button: 'white'
                             }
 
-                            Text {
-                                id: phLoadVolTxt
-                                anchors.fill: parent
-                                text: loadVolIn.placeholderText
-                                leftPadding: 5
-                                verticalAlignment: Text.AlignVCenter
-                                color: "#aaa"
-                                font: loadVolIn.font
-                                visible: loadVol==0 && !loadVolIn.activeFocus
+                            onClicked: {root.pumpOut(); console.log("Pump Out")}
+                        }
+
+                        BevButton {
+                            id: parkB
+                            height: 35
+                            text: qsTr("Park")
+                            anchors.top: babbB.bottom
+                            anchors.topMargin: 25
+                            anchors.left: babbB.left
+                            anchors.leftMargin: 0
+                            palette {
+                                button: 'white'
                             }
                         }
-                    }
 
-                    Switch {
-                        id: scriptSwitch
-                        width: 167
-                        height: 35
-                        text: scriptSwitch.checked ? "Scripting ON" : "Scripting OFF"
-                        anchors.left: scriptRec.left
-                        anchors.leftMargin: -25
-                        anchors.top: parent.top
-                        anchors.topMargin: 0
-                        checked: true
-                        font.bold: true
-                        font.pointSize: 12
+                        BevButton {
+                            id: purgeB
+                            width: 140
+                            height: 35
+                            text: qsTr("Purge Syringe")
+                            anchors.top: rectInput.bottom
+                            anchors.topMargin: 25
+                            anchors.left: volSlider.left
+                            anchors.leftMargin: 0
+                            palette {
+                                button: 'white'
+                            }
+                        }
 
-                        contentItem: Text {
-                                text: scriptSwitch.text
-                                font: scriptSwitch.font
-                                opacity: enabled ? 1.0 : 0.3
-                                color: scriptSwitch.checked ? "#17a81a" : "darkred"
-                                verticalAlignment: Text.AlignVCenter
-                                leftPadding: scriptSwitch.indicator.width + scriptSwitch.spacing
+                        BevButton {
+                            id: haltB
+                            y: 98
+                            width: 75
+                            height: 35
+                            text: qsTr("Halt")
+                            anchors.left: connectB.right
+                            anchors.leftMargin: 30
+                            anchors.verticalCenter: connectB.verticalCenter
+
+                            palette {
+                                button: 'red'
+                                buttonText: 'white'
                             }
 
-                    }
 
-                    Rectangle{
-                        id: scriptRec
-                        color: 'white'
-                        anchors.top: parent.top
-                        anchors.topMargin: 40
-                        anchors.bottom: parent.bottom
-                        anchors.bottomMargin: 10
-                        anchors.right: parent.right
-                        anchors.rightMargin: 10
-                        anchors.left: loadBtn.right
-                        anchors.leftMargin: 10
-                        enabled: scriptSwitch.checked
-                        ScrollView{
-                            id:scriptScroller
-                            anchors.fill: parent
-                            clip: true
-//                            ScrollBar.horizontal.policy: ScrollBar.AlwaysOn
-//                            ScrollBar.vertical.policy: ScrollBar.AlwaysOn
-                            //                ScrollBar.horizontal.interactive: true
-                            //                ScrollBar.vertical.interactive: true
-                            enabled: scriptSwitch.checked
+                        }
 
-                            TextEdit {
-                                id: scriptEditor
-                                height: scriptRec.height
-                                width: scriptRec.width
-                                readOnly: false
-                                selectByMouse: true
-                                selectByKeyboard: true
-                                text: scriptText
-                                anchors.topMargin: 5
-                                anchors.bottomMargin: 5
-                                anchors.rightMargin: 10
-                                anchors.leftMargin: 5
+
+                        Slider {
+                            id: volSlider
+                            width: 245
+                            height: 30
+                            anchors.top: pumpInB.bottom
+                            anchors.topMargin: 25
+                            anchors.left: pumpInB.left
+                            anchors.leftMargin: 0
+                            value: 3
+                            to: 10
+                            stepSize: 0.01
+                        }
+
+                        Text {
+                            id: manualLab
+                            x: 545
+                            width: 152
+                            height: 23
+                            color: "#ffffff"
+                            text: qsTr("Manual Control")
+                            anchors.top: parent.top
+                            font.bold: true
+                            anchors.topMargin: 0
+                            anchors.left: parent.left
+                            font.pointSize: 14
+                            anchors.leftMargin: 10
+                        }
+
+                        Text {
+                            id: volSLab
+                            x: 0
+                            width: 66
+                            height: 18
+                            color: "#ffffff"
+                            text: qsTr("Volume:")
+                            anchors.top: volSlider.bottom
+                            anchors.topMargin: 25
+                            font.bold: true
+                            font.pointSize: 11
+                            anchors.left: volSlider.left
+                            anchors.leftMargin: 15
+                        }
+
+                        Rectangle{
+                            id:rectInput
+                            color: "#848484"
+                            border.color: "#515151"
+                            border.width: 2
+                            width: 70
+                            height: 30
+                            anchors.left: volSLab.right
+                            anchors.leftMargin: 10
+                            anchors.verticalCenter: volSLab.verticalCenter
+                            y: 233
+
+                            TextInput {
+                                id: volInput
+                                color: "#ffffff"
+                                font.bold: true
                                 font.pointSize: 11
-                                wrapMode:{
-                                    if(scriptEditor.text.length > 40){
-//                                        console.log('Wrapping!', scriptEditor.text.length)
-                                        return(Text.WordWrap)
-                                    } else {
-//                                        console.log('no wrap')
-                                        return(Text.NoWrap)
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignLeft
+                                validator: DoubleValidator {
+                                }
+                                maximumLength: 5
+                                text: volSlider.value
+                                anchors.rightMargin: 5
+                                anchors.leftMargin: 10
+                                anchors.fill: parent
+                                font.underline: false
+                                selectionColor: "#66000080"
+                                selectedTextColor: "#ffffff"
+                                clip: true
+                                onEditingFinished: {
+                                    volSlider.value = volInput.text
+                                }
+
+
+                            }
+                        }
+
+                        Text {
+                            id: volSLab1
+                            y: 239
+                            width: 32
+                            height: 22
+                            color: "#ffffff"
+                            text: qsTr("mL")
+                            anchors.left: rectInput.right
+                            anchors.leftMargin: 5
+                            font.pointSize: 11
+                            anchors.verticalCenter: rectInput.verticalCenter
+                            font.bold: true
+                        }
+
+                        Text {
+                            id: gotoLab
+                            x: 535
+                            y: -8
+                            width: 162
+                            height: 21
+                            color: "#ffffff"
+                            text: qsTr("Move Syringe:")
+                            font.pointSize: 12
+                            anchors.leftMargin: 15
+                            anchors.top: engageSaB.bottom
+                            anchors.left: parent.left
+                            font.bold: true
+                            anchors.topMargin: 15
+                        }
+
+                        Text {
+                            id: setupLab
+                            x: 547
+                            y: 7
+                            width: 152
+                            height: 23
+                            color: "#ffffff"
+                            text: qsTr("Setup:")
+                            font.pointSize: 12
+                            anchors.leftMargin: 15
+                            anchors.top: manualLab.bottom
+                            anchors.left: parent.left
+                            font.bold: true
+                            anchors.topMargin: 10
+                        }
+
+                        Text {
+                            id: pumpLab
+                            x: 535
+                            y: 349
+                            width: 108
+                            height: 21
+                            color: "#ffffff"
+                            text: qsTr("Pump:")
+                            anchors.leftMargin: 15
+                            font.pointSize: 12
+                            anchors.left: parent.left
+                            anchors.top: parkB.bottom
+                            font.bold: true
+                            anchors.topMargin: 15
+                        }
+
+                    }
+
+
+
+                    Rectangle{
+                        id: operationPg
+                        color:'transparent'
+                        width: view.width
+                        height: 360
+                        BevButton {
+                            id: purgeBtn
+                            width: 95
+                            height: 35
+                            text: "Purge"
+                            anchors.top: washSyrBox.bottom
+                            anchors.topMargin: 15
+                            anchors.left: loadBtn.left
+                            anchors.leftMargin: 0
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {
+                                if(scriptSwitch.checked){
+                                    //make the command for purge
+                                    //currently set to 3mL purge with 1mL dead volume...
+                                    //                                console.log(casBar.currentIndex)
+                                    var casL = casNames[casBar.currentIndex]
+                                    var purge = 'self.purge(casL="'+ casL + '", deadvol=4)'
+                                    //add to scriptText
+                                    scriptText = scriptText + '\n' + purge
+                                }
+                                //else execute directly
+
+                            }
+                        }
+                        BevButton {
+                            id: incubateBtn
+                            width: 95
+                            height: 35
+                            text: "Incubate"
+                            anchors.top: parent.top
+                            anchors.topMargin: 40
+                            anchors.left: mixAfRect.right
+                            anchors.leftMargin: 15
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {
+                                if(scriptSwitch.checked){
+                                    //make the command for purge
+                                    //currently set to 3mL purge with 1mL dead volume...
+                                    //                                console.log(casBar.currentIndex)
+                                    var casL = casNames[casBar.currentIndex]
+                                    var incubate = 'self.incubate(casL="'+ casL + '", incTime='+ incSecs +', mixAfter='+ mixAfterSecs +')'
+                                    //add to scriptText
+                                    scriptText = scriptText + '\n' + incubate
+                                }
+                                //else execute directly
+
+                            }
+                        }
+                        BevButton {
+                            id: loadBtn
+                            width: 115
+                            height: 35
+                            text: "Load Reagent"
+                            anchors.top: mixBtn.bottom
+                            anchors.topMargin: 25
+                            anchors.left: reagentSel.right
+                            anchors.leftMargin: 64
+                            palette {
+                                button: 'white'
+                            }
+                            //loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol):
+                            onClicked: {
+                                if(scriptSwitch.checked){
+                                    //make the command for purge
+                                    //currently set to 3mL purge with 1mL dead volume...
+                                    //                                console.log(casBar.currentIndex)
+                                    var casL = casNames[casBar.currentIndex]
+                                    var reagentstr = reagentSel.currentValue
+                                    var washBool = washSyrBox.checked ? 'True': 'False'
+
+                                    var loadRea = 'self.loadReagent(casL="'+ casL + '", reagent="' + reagentstr + '", vol='+ loadVol/1000 +', speed='+ pSpeedV +', washSyr='+washBool+')'
+                                    //add to scriptText
+                                    scriptText = scriptText + '\n' + loadRea
+                                }
+                                //else execute directly
+                            }
+                        }
+                        BevButton {
+                            id: mixBtn
+                            height: 35
+                            text: "Mix"
+                            anchors.right: incubateBtn.right
+                            anchors.rightMargin: 0
+                            anchors.top: incubateBtn.bottom
+                            anchors.topMargin: 25
+                            anchors.left: mixVolRect.right
+                            anchors.leftMargin: 12
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {
+                                if(scriptSwitch.checked){
+                                    //make the command for purge
+                                    //currently set to 3mL purge with 1mL dead volume...
+                                    //                                console.log(casBar.currentIndex)
+                                    var casL = casNames[casBar.currentIndex]
+                                    var mix = 'self.mix(casL="'+ casL + '", numCycles='+ numCycles +', volume='+ mixVol +')'
+                                    //add to scriptText
+                                    scriptText = scriptText + '\n' + mix
+                                }
+                                //else execute directly
+
+                            }
+                        }
+
+                        ComboBox {
+                            id: reagentSel
+                            y: 120
+                            width: 130
+                            height: 30
+                            anchors.verticalCenter: loadBtn.verticalCenter
+                            anchors.left: mixCycles.left
+                            anchors.leftMargin: 0
+                            currentIndex: 0
+                            model: ["meoh", "formalin", "babb", "vial"]
+                        }
+
+                        Text {
+                            id: operationsLab
+                            x: 123
+                            width: 118
+                            height: 23
+                            color: "#ffffff"
+                            text: qsTr("Operations")
+                            anchors.top: parent.top
+                            font.bold: true
+                            anchors.topMargin: 0
+                            anchors.left: parent.left
+                            font.pointSize: 14
+                            anchors.leftMargin: 10
+                        }
+
+                        ComboBox {
+                            id: mixCycles
+                            y: 65
+                            width: 70
+                            height: 30
+                            anchors.verticalCenter: mixBtn.verticalCenter
+                            anchors.left: incRect.left
+                            anchors.leftMargin: 0
+                            displayText: currentValue + 1
+                            model: 20
+                            delegate: ItemDelegate {
+                                width: mixCycles.width
+                                contentItem: Text {
+                                    text: modelData + 1
+                                    //                                color: "#21be2b"
+                                    font: mixCycles.font
+                                    elide: Text.ElideRight
+                                    verticalAlignment: Text.AlignVCenter
+                                }
+                                highlighted: mixCycles.highlightedIndex === index
+                            }
+                        }
+
+                        ComboBox {
+                            id: pSpeed
+                            width: 70
+                            height: 30
+                            anchors.top: reagentSel.bottom
+                            anchors.topMargin: 15
+                            anchors.left: reagentSel.left
+                            anchors.leftMargin: 0
+                            displayText: currentValue + 1
+                            model: 8
+                            delegate: ItemDelegate {
+                                width: pSpeed.width
+                                highlighted: pSpeed.highlightedIndex === index
+                                contentItem: Text {
+                                    //                                color: "#21be2b"
+                                    text: modelData + 1
+                                    verticalAlignment: Text.AlignVCenter
+                                    font: pSpeed.font
+                                    elide: Text.ElideRight
+                                }
+                            }
+
+                        }
+
+                        Rectangle{
+                            id:incRect
+                            y: 13
+                            width: 85
+                            height: 30
+                            color: "#808080"
+                            anchors.verticalCenter: incubateBtn.verticalCenter
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                            TextInput {
+                                property string placeholderText: "hh:mm:ss"
+                                id: incTimeIn
+                                color: "#ffffff"
+                                leftPadding: 5
+                                anchors.rightMargin: 0
+                                anchors.bottomMargin: 0
+                                anchors.leftMargin: 0
+                                anchors.topMargin: 0
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignLeft
+                                anchors.fill: parent
+                                font.pointSize: 11
+                                selectionColor: "#040450"
+                                text: incTime
+                                inputMask: "99:99:99"
+                                echoMode: (incTime=='::' || incTime=='00:00:00' && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
+                                clip: true
+
+                                onTextEdited: {
+                                    incTime = incTimeIn.text
+                                    incSecs = get_sec(incTimeIn.text)
+                                    //                                incTime = get_time(incSecs)
+                                }
+                                onEditingFinished: {
+                                    //convert directly into seconds
+                                    incSecs = get_sec(incTime)
+                                    //                                console.log(get_sec(incTime))
+                                    //convert again into runtime to fix 'empty' inputs
+                                    incTime = get_time(incSecs)
+                                }
+
+                                Text {
+                                    id: incTimeTxt
+                                    anchors.fill: parent
+                                    text: incTimeIn.placeholderText
+                                    leftPadding: 5
+                                    verticalAlignment: Text.AlignVCenter
+                                    color: "#aaa"
+                                    font: incTimeIn.font
+                                    visible: (incTime=='::' || incTime == "00:00:00") && !incTimeIn.activeFocus
+                                }
+                            }
+                        }
+                        Rectangle{
+                            id:mixAfRect
+                            y: 13
+                            width: 85
+                            height: 30
+                            color: "#808080"
+                            anchors.verticalCenter: incRect.verticalCenter
+                            anchors.left: incRect.right
+                            anchors.leftMargin: 15
+                            TextInput {
+                                property string placeholderText: "No mixing"
+                                id: mixAfIn
+                                color: "#ffffff"
+                                leftPadding: 5
+                                anchors.rightMargin: 0
+                                anchors.bottomMargin: 0
+                                anchors.leftMargin: 0
+                                anchors.topMargin: 0
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignLeft
+                                anchors.fill: parent
+                                font.pointSize: 11
+                                selectionColor: "#040450"
+                                text: mixAfterSecs
+                                validator: IntValidator{
+                                    bottom: 0
+                                    top: 99999
+                                }
+                                maximumLength: 5
+                                echoMode: (mixAfterSecs==0 && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
+                                clip: true
+
+                                onEditingFinished: {
+                                    mixAfterSecs = parseInt(mixAfIn.text)
+                                }
+
+                                Text {
+                                    id: phMixTxt
+                                    anchors.fill: parent
+                                    text: mixAfIn.placeholderText
+                                    leftPadding: 5
+                                    verticalAlignment: Text.AlignVCenter
+                                    color: "#aaa"
+                                    font: mixAfIn.font
+                                    visible: mixAfterSecs==0 && !mixAfIn.activeFocus
+                                }
+                            }
+                        }
+
+                        Rectangle{
+                            id:mixVolRect
+                            y: 13
+                            width: 100
+                            height: 30
+                            color: "#808080"
+                            anchors.verticalCenter: mixBtn.verticalCenter
+                            anchors.left: mixCycles.right
+                            anchors.leftMargin: 15
+                            TextInput {
+                                property string placeholderText: "volume (mL)"
+                                id: mixVolIn
+                                color: "#ffffff"
+                                leftPadding: 5
+                                anchors.rightMargin: 0
+                                anchors.bottomMargin: 0
+                                anchors.leftMargin: 0
+                                anchors.topMargin: 0
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignLeft
+                                anchors.fill: parent
+                                font.pointSize: 11
+                                selectionColor: "#040450"
+                                text: mixVol
+                                validator: DoubleValidator{
+                                    bottom: 0
+                                    top: 10
+                                }
+                                maximumLength: 5
+                                echoMode: (mixVol==0 && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
+                                clip: true
+
+                                onTextEdited: {
+                                    if(parseFloat(mixVolIn.text)>10){
+                                        mixVolIn.text = 0
                                     }
                                 }
 
-                                opacity: scriptSwitch.checked ? 1 : 0.3
-                                anchors.fill: parent
-                                enabled: scriptSwitch.checked
-
                                 onEditingFinished: {
-                                    scriptText = scriptEditor.text
+                                    if (mixVolIn.text == ''){
+                                        mixVol = 0
+                                        mixVolIn.text = 0
+                                    } else if (Math.abs(mixVol)>10){
+                                        mixVol = 0
+                                        mixVolIn.text = 0
+                                    } else {
+                                        mixVol = parseFloat(mixVolIn.text)
+                                    }
+                                }
+
+                                Text {
+                                    id: phMixVolTxt
+                                    anchors.fill: parent
+                                    text: mixVolIn.placeholderText
+                                    leftPadding: 5
+                                    verticalAlignment: Text.AlignVCenter
+                                    color: "#aaa"
+                                    font: mixAfIn.font
+                                    visible: mixVol==0 && !mixVolIn.activeFocus
                                 }
                             }
                         }
+
+                        Rectangle{
+                            id:loadVolRect
+                            y: 188
+                            width: 100
+                            height: 30
+                            color: "#808080"
+                            anchors.left: pSpeed.right
+                            anchors.leftMargin: 80
+                            anchors.verticalCenter: pSpeed.verticalCenter
+                            TextInput {
+                                property string placeholderText: "volume (uL)"
+                                id: loadVolIn
+                                color: "#ffffff"
+                                leftPadding: 5
+                                anchors.rightMargin: 0
+                                anchors.bottomMargin: 0
+                                anchors.leftMargin: 0
+                                anchors.topMargin: 0
+                                verticalAlignment: Text.AlignVCenter
+                                horizontalAlignment: Text.AlignLeft
+                                anchors.fill: parent
+                                font.pointSize: 11
+                                selectionColor: "#040450"
+                                text: loadVol
+                                validator: IntValidator{
+                                    bottom: 0
+                                    top: 3000
+                                }
+                                maximumLength: 4
+                                echoMode: (loadVol==0 && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
+                                clip: true
+
+                                onTextEdited: {
+                                    if(parseInt(loadVolIn.text)>3000){
+                                        loadVolIn.text = 0
+                                    }
+                                }
+
+                                onEditingFinished: {
+                                    if (loadVolIn.text == ''){
+                                        loadVol = 0
+                                        loadVolIn.text = 0
+                                    } else if (Math.abs(loadVol)>3000){
+                                        loadVol = 0
+                                        loadVolIn.text = 0
+                                    } else {
+                                        loadVol = parseInt(loadVolIn.text)
+                                    }
+                                }
+
+                                Text {
+                                    id: phLoadVolTxt
+                                    anchors.fill: parent
+                                    text: loadVolIn.placeholderText
+                                    leftPadding: 5
+                                    verticalAlignment: Text.AlignVCenter
+                                    color: "#aaa"
+                                    font: loadVolIn.font
+                                    visible: loadVol==0 && !loadVolIn.activeFocus
+                                }
+                            }
+                        }
+
+                        CheckBox {
+                            id: washSyrBox
+                            width: 189
+                            height: 30
+                            text: qsTr("Wash Syringe & Line")
+                            anchors.top: pSpeed.bottom
+                            anchors.topMargin: 15
+                            font.pointSize: 11
+                            anchors.left: pSpeed.left
+                            anchors.leftMargin: 0
+                            contentItem: Text {
+                                    text: washSyrBox.text
+                                    font: washSyrBox.font
+                                    color: 'white'
+                                    verticalAlignment: Text.AlignVCenter
+                                    leftPadding: washSyrBox.indicator.width + washSyrBox.spacing
+                                }
+                        }
+
+                        Text {
+                            id: speedLab
+                            y: 195
+                            width: 49
+                            height: 18
+                            color: "#ffffff"
+                            text: qsTr("speed")
+                            anchors.verticalCenterOffset: 2
+                            anchors.verticalCenter: pSpeed.verticalCenter
+                            font.pointSize: 11
+                            anchors.top: volSlider.bottom
+                            font.bold: false
+                            anchors.leftMargin: 7
+                            anchors.topMargin: 20
+                            anchors.left: pSpeed.right
+                        }
                     }
-
-
-
-
-
                 }
             }
 
-            PageIndicator {
-                id: indicator
+            Switch {
+                id: scriptSwitch
+                width: 175
+                height: 35
+                text: scriptSwitch.checked ? "Scripting ON" : "Scripting OFF"
+                anchors.left: view.right
+                anchors.leftMargin: 0
+                anchors.top: casBar.bottom
+                anchors.topMargin: 20
+                checked: true
+                font.bold: true
+                font.pointSize: 12
+
+                contentItem: Text {
+                    text: scriptSwitch.text
+                    font: scriptSwitch.font
+                    opacity: enabled ? 1.0 : 0.3
+                    color: scriptSwitch.checked ? "#17a81a" : "darkred"
+                    verticalAlignment: Text.AlignVCenter
+                    leftPadding: scriptSwitch.indicator.width + scriptSwitch.spacing
+                }
+
+            }
+
+            Rectangle{
+                id: scriptRec
+                color: 'white'
+                anchors.left: view.right
+                anchors.leftMargin: 20
+                anchors.top: scriptSwitch.bottom
+                anchors.topMargin: 5
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 10
+                anchors.right: parent.right
+                anchors.rightMargin: 10
+                enabled: scriptSwitch.checked
+                ScrollView{
+                    id:scriptScroller
+                    anchors.fill: parent
+                    clip: true
+                    //                            ScrollBar.horizontal.policy: ScrollBar.AlwaysOn
+                    //                            ScrollBar.vertical.policy: ScrollBar.AlwaysOn
+                    //                ScrollBar.horizontal.interactive: true
+                    //                ScrollBar.vertical.interactive: true
+                    enabled: scriptSwitch.checked
+
+                    TextArea {
+                        id: scriptEditor
+                        //height: scriptRec.height
+                        //width: scriptRec.width
+                        readOnly: false
+                        selectByMouse: true
+                        selectByKeyboard: true
+                        focus: true
+                        placeholderText: 'Execute functions from controlNQ.py or machine.py!'
+                        //placeholderText: scriptEditor.text == '' ? 'Execute functions from controlNQ.py or machine.py using script editor!' : ''
+                        text: scriptText
+                        //anchors.fill: parent
+                        anchors.topMargin: 5
+                        anchors.bottomMargin: 5
+                        anchors.rightMargin: 10
+                        anchors.leftMargin: 5
+                        font.pointSize: 11
+                        wrapMode: Text.Wrap
+
+                        opacity: scriptSwitch.checked ? 1 : 0.3
+                        enabled: scriptSwitch.checked
+
+                        background: Rectangle{
+                            implicitWidth: scriptRec.width
+                            implicitHeight: scriptRec.height
+                        }
+
+                        onEditingFinished: {
+                            scriptText = scriptEditor.text
+                        }
+
+                    }
+                }
+            }
+
+            BevButton {
+                id: casLogBtn
+                x: 0
+                y: 0
+                width: 95
+                height: 35
+                text: "Get Log"
+                anchors.verticalCenter: scriptSwitch.verticalCenter
+                anchors.right: parent.right
+                anchors.rightMargin: 10
+                palette {
+                    button: 'white'
+                }
+
+                onClicked: {}
+            }
+
+            BevButton {
+                id: stopExecB
+                x: 584
+                y: 7
+                width: 175
+                height: 40
+                text: qsTr("Stop Task!")
+                anchors.left: execBtn.horizontalCenter
+                anchors.leftMargin: 0
+                anchors.right: casLogBtn.horizontalCenter
+                anchors.rightMargin: 0
+                anchors.verticalCenterOffset: 0
+                anchors.verticalCenter: casBar.verticalCenter
+
+                palette {
+                    button: 'red'
+                    buttonText: 'white'
+                }
+                onClicked: {
+                    //Stop execution of code by sending signal to the WAMPHandler
+                    WAMPHandler.stopExecTerminal()
+                }
+
+
+            }
+
+            Text {
+                id: casSelectLab
+                x: 12
+                y: 15
+                width: 152
+                height: 23
+                color: "#ffffff"
+                text: qsTr("Select Cassette:")
+                anchors.top: parent.top
+                font.bold: true
+                anchors.topMargin: 15
                 anchors.left: parent.left
+                font.pointSize: 14
                 anchors.leftMargin: 10
-                count: view.count
-                currentIndex: view.currentIndex
-                anchors.bottom: view.bottom
             }
+
+            TabBar {
+                id: casBar
+                x: 204
+                y: 7
+                anchors.verticalCenter: casSelectLab.verticalCenter
+                anchors.left: casSelectLab.right
+                font.pointSize: 10
+                anchors.leftMargin: 40
+                width: 300
+                height: 40
+                TabButton {
+                    id: casA
+                    text: "A"
+                    anchors.top: parent.top
+                    anchors.topMargin: 0
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 0
+                }
+
+                TabButton {
+                    id: casB
+                    text: "B"
+                    anchors.top: parent.top
+                    anchors.topMargin: 0
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 0
+                }
+
+                TabButton {
+                    id: casC
+                    text: "C"
+                    anchors.top: parent.top
+                    anchors.topMargin: 0
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 0
+                }
+
+                TabButton {
+                    id: casD
+                    text: "D"
+                    anchors.top: parent.top
+                    anchors.topMargin: 0
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 0
+                }
+
+                TabButton {
+                    id: casE
+                    text: "E"
+                    anchors.top: parent.top
+                    anchors.topMargin: 0
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 0
+                }
+
+                TabButton {
+                    id: casF
+                    text: "F"
+                    anchors.top: parent.top
+                    anchors.topMargin: 0
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: 0
+                }
+            }
+
+
+
+
+
+
+
+
+
         }
 
-        TabBar {
-            id: casBar
-            anchors.verticalCenter: casSelectLab.verticalCenter
-            anchors.left: casSelectLab.right
-            font.pointSize: 10
-            anchors.leftMargin: 40
-            width: 300
-            height: 40
-            TabButton {
-                id: casA
-                text: "A"
-                anchors.top: parent.top
-                anchors.topMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
+        //            PageIndicator {
+        //                id: indicator
+        //                anchors.left: parent.left
+        //                anchors.leftMargin: 10
+        //                count: view.count
+        //                currentIndex: view.currentIndex
+        //                anchors.bottom: view.bottom
+        //            }
 
-            TabButton {
-                id: casB
-                text: "B"
-                anchors.top: parent.top
-                anchors.topMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-
-            TabButton {
-                id: casC
-                text: "C"
-                anchors.top: parent.top
-                anchors.topMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-
-            TabButton {
-                id: casD
-                text: "D"
-                anchors.top: parent.top
-                anchors.topMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-
-            TabButton {
-                id: casE
-                text: "E"
-                anchors.top: parent.top
-                anchors.topMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-
-            TabButton {
-                id: casF
-                text: "F"
-                anchors.top: parent.top
-                anchors.topMargin: 0
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 0
-            }
-        }
-
-        Text {
-            id: casSelectLab
-            x: -9
-            y: -8
-            width: 152
-            height: 23
-            color: "#ffffff"
-            text: qsTr("Select Cassette:")
-            anchors.top: menuRect.bottom
-            font.bold: true
-            anchors.topMargin: 15
-            anchors.left: parent.left
-            font.pointSize: 14
-            anchors.leftMargin: 10
-        }
 
     }
 
@@ -1186,3 +1335,12 @@ Item {
     }
 
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}D{i:14;anchors_width:140;anchors_x:"-165"}
+D{i:20;anchors_y:119}D{i:23;anchors_y:188}D{i:30;anchors_y:203}D{i:31;anchors_y:295}
+D{i:44;anchors_width:95}D{i:45;anchors_width:95}D{i:52;anchors_width:420}D{i:71;anchors_x:209;anchors_y:188}
+D{i:73;anchors_x:91}D{i:76;anchors_width:420}D{i:81;anchors_width:75;anchors_x:238}
+}
+##^##*/

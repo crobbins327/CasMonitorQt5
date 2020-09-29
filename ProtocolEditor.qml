@@ -525,13 +525,13 @@ Item {
                     id: stepLView
 
                     property var operDict: {
-                        'Incubation':{'opName':'Incubation','opTime':'00:00:00', 'mixAfterSecs': '0', 'volume': 'undefined', 'pSpeed':'undefined', 'numCycles': 'undefined', 'loadType': 'undefined'},
-                        'Mixing':{'opName':'Mixing','opTime':'00:05:00', 'mixAfterSecs': 'undefined', 'volume': '1mL', 'pSpeed':'1', 'numCycles': '3', 'loadType': 'undefined'},
-                        'Purge':{'opName':'Purge', 'opTime':'00:05:00', 'mixAfterSecs': 'undefined', 'volume': '3mL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType': 'undefined'},
-                        'Load Formalin':{'opName':'Load Formalin', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType':'Formalin'},
-                        'Load Dehydrant':{'opName':'Load Dehydrant', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType':'Dehydrant'},
-                        'Load Stain':{'opName':'Load Stain', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType':'Stain'},
-                        'Load BABB':{'opName':'Load BABB', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'loadType':'BABB'}
+                        'Incubation':{'opName':'Incubation','opTime':'00:00:00', 'mixAfterSecs': '0', 'volume': 'undefined', 'pSpeed':'undefined', 'numCycles': 'undefined', 'washSyr':'undefined', 'loadType': 'undefined'},
+                        'Mixing':{'opName':'Mixing','opTime':'00:05:00', 'mixAfterSecs': 'undefined', 'volume': '1mL', 'pSpeed':'1', 'numCycles': '3', 'washSyr':'undefined', 'loadType': 'undefined'},
+                        'Purge':{'opName':'Purge', 'opTime':'00:05:00', 'mixAfterSecs': 'undefined', 'volume': '3mL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'undefined', 'loadType': 'undefined'},
+                        'Load Formalin':{'opName':'Load Formalin', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'false', 'loadType':'Formalin'},
+                        'Load Dehydrant':{'opName':'Load Dehydrant', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'false', 'loadType':'Dehydrant'},
+                        'Load Stain':{'opName':'Load Stain', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'false', 'loadType':'Stain'},
+                        'Load BABB':{'opName':'Load BABB', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'false', 'loadType':'BABB'}
                     }
 
                     anchors {

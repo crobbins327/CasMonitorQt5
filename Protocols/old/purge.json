@@ -1,0 +1,11 @@
+[
+	{
+		"opName": "Purge",
+		"opTime": "00:05:00",
+		"mixAfterSecs": "undefined",
+		"volume": "3mL",
+		"pSpeed": "1",
+		"numCycles": "undefined",
+		"loadType": "undefined"
+	}
+]
