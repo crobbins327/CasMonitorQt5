@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <script src="./autobahn.js"></script>
+<!-- CSS only -->
+<link rel="stylesheet" href="./bootstrap.min.css">
+<link rel="stylesheet" href="./bootstrap-grid.min.css">
+<link rel="stylesheet" href="./bootstrap-reboot.min.css">
+<link rel="stylesheet" href="./bootstrap-slider.min.css">
+<style>
+  #custom-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+  }
+  </style>
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="./jquery-3.5.1.slim.min.js"></script>
+<script src="./bootstrap.bundle.min.js"></script>
+  <script src="./bootstrap-slider.min.js"></script>
+
+</head>
+   <body>
+      <h5>Prepbot Control</h5>
+      <script>AUTOBAHN_DEBUG = false;</script>
+
+      <script>
+         // the URL of the WAMP Router (Crossbar.io)
+         //
+         var wsuri;
+         if (document.location.origin == "file://") {
+            wsuri = "ws://127.0.0.1:8080/ws";
+
+         } else {
+            wsuri = (document.location.protocol === "http:" ? "ws:" : "wss:") + "//" +
+                        document.location.hostname + ":8080" + "/ws";
+         }
+
+
+         // the WAMP connection to the Router
+         //
+         var connection = new autobahn.Connection({
+            url: wsuri,
+            realm: "realm1"
+         });
+
+
+         // timers
+         //
+         var t1, t2;
+
+
+         // fired when connection is established and session attached
+         //
+         connection.onopen = function (session, details) {
+            console.log("Connected");
+
+$("#volume").on("change", function(slideEvt) {
+   $("#volumeVal").text(slideEvt.value.newValue);
+   $("#volume").data("slider-value", slideEvt.value.newValue);
+});
+            $(".btn").each(function() {
+               var msg = "com.prepbot.button." + $(this).attr("id");
+               $(this).click(function() {
+                  console.log("sending " + msg);
+                  session.publish(msg, []);
+               });
+            });
+
+            $("#btn_pumpin").click(function() {
+               session.publish("com.prepbot.button.btn_pumpin", [$("#volume").data('slider-value')]);
+            });
+
+            $("#btn_pumpout").click(function() {
+               session.publish("com.prepbot.button.btn_pumpout", [$("#volume").data('slider-value')]);
+            });
+
+            $("#btn_execute").click(function() {
+               session.publish("com.prepbot.button.btn_pumpout", $("#script")[0].value);
+            });
+            // SUBSCRIBE to a topic and receive events
+            //
+            function on_progress (args) {
+               var counter = args[0];
+               console.log("on_progress() event received with progress " + counter);
+            }
+            session.subscribe('com.prepbot.window.progress', on_progress).then(
+               function (sub) {
+                  console.log('subscribed to topic');
+               },
+               function (err) {
+                  console.log('failed to subscribe to topic', err);
+               }
+            );
+
+         };
+
+
+         // fired when connection was lost (or could not be established)
+         //
+         connection.onclose = function (reason, details) {
+            console.log("Connection lost: " + reason);
+            if (t1) {
+               clearInterval(t1);
+               t1 = null;
+            }
+            if (t2) {
+               clearInterval(t2);
+               t2 = null;
+            }
+         }
+
+
+         // now actually open the connection
+         //
+         connection.open();
+      </script>
+<div class="card">
+   <div class="card-body">
+      <button type="button" id="btn_connect" class="btn btn-primary">Connect</button>
+      <button type="button" id="btn_home" class="btn btn-primary">Home</button>
+      <button type="button" id="btn_halt" class="btn btn-danger">Halt</button>
+   </div>
+</div>
+<div class="card">
+   <div class="card-body">
+      <button type="button" id="btn_engage" class="btn btn-primary">Engage Sample</button>
+      <button type="button" id="btn_disengage" class="btn btn-primary">Disengage Sample</button>
+   </div>
+</div>
+<div class="card">
+   <div class="card-body">
+      <button type="button" id="btn_waste" class="btn btn-primary">Waste</button>
+      <button type="button" id="btn_formalin" class="btn btn-primary">Formalin</button>
+      <button type="button" id="btn_meoh" class="btn btn-primary">MeOH</button>
+      <button type="button" id="btn_babb" class="btn btn-primary">BABB</button>
+      <button type="button" id="btn_sample" class="btn btn-primary">Sample</button>
+      <button type="button" id="btn_vial" class="btn btn-primary">Dye Vial</button>
+      <button type="button" id="btn_park" class="btn btn-primary">Park</button>
+   </div>
+</div>
+<div class="card">
+   <div class="card-body">
+      <button type="button" id="btn_pumpin" class="btn btn-primary">Pump In</button>
+      <button type="button" id="btn_pumpout" class="btn btn-primary">Pump Out</button>
+      <input type="text" id="volume" data-provide="slider" data-slider-min="0" data-slider-max="10" data-slider-step="0.1" data-slider-value="3" data-slider-tooltip="hide"/>
+      <span id="volumeLabel">Volume: <span id="volumeVal">3</span>mL</span>
+   </div>
+</div>
+<div class="card">
+   <div class="card-body">
+      <button type="button" id="btn_dyeprocess" class="btn btn-primary">Take up Dye</button>
+      <button type="button" id="btn_purge" class="btn btn-primary">Purge Syringe</button>
+   </div>
+</div>
+<div class="card">
+   <div class="card-body">
+      <button type="button" id="btn_execute" class="btn btn-warning">Execute Script</button>
+      <input type="text" class="form-control" id="script">
+   </div>
+</div>
+   </body>
+</html>

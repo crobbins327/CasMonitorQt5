@@ -1,0 +1,22 @@
+parameters:
+    mixSpeed: 1
+    incSpeed: 0.2
+    removeSpeed: 1
+    wasteSpeed: 4
+    fillLineSpeed: 1
+    fillSyrSpeed: 1
+    washSyrSpeed: 1
+    densSpeed: 0.2
+    densVol: 0.1
+    LINEVOL: 0.75
+    removeVol: 1.5
+    purgeVol: 4
+    settleTime: 15
+    reagentDensOrder:
+      babb: 2
+      formalin: 1
+      meoh: 0
+      unk: 1
+      vial: 0
+  
+  
