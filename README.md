@@ -5,7 +5,7 @@ __1)__ Start _crossbario_ docker image in a new terminal. There is a text file t
 
 **IF on raspberry pi or other device, use appropriate docker image for _crossbario_!** (https://github.com/crossbario/crossbar)
 
-__2)__ Open a second terminal. Make sure all casettes and the needle are removed just incase. Activate the base environment for python and run the controlNQ.py file.
+__2)__ Open a second terminal. Make sure all casettes and the syringe needle are removed just incase. Activate the base environment for python and run the controlNQ.py file.
 
     cd CasMonitor/
     source activate base
