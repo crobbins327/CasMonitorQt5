@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2020-09-24 16:50:54 ctrl.casB    INFO     Engage CasB...
 2020-09-24 16:51:18 ctrl.casB    INFO     
 
@@ -1230,3 +1231,64 @@ Name: casB, dtype: object
 2020-09-30 17:06:24 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
 2020-09-30 17:06:24 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (formalin) do not require a density adjustment.
 2020-09-30 17:06:24 ctrl.casB    INFO     FINISHED LOADING formalin TO CasB, Time: 4.01s
+=======
+2020-09-14 14:16:59 ctrl.casB    INFO     Engage CasB...
+2020-09-14 14:17:09 ctrl.casB    INFO     
+
+
+
+2020-09-14 14:17:09 ctrl.casB    INFO     Starting Run!
+sampleName                                               dsgfdsg
+protocolName                                       lots of loads
+protocolPath    /home/pi/CasMonitor/Protocols/lots of loads.json
+startlog                                                       4
+Name: casB, dtype: object
+2020-09-14 14:17:09 ctrl.casB    INFO     Starting task on casB
+2020-09-14 14:17:09 ctrl.casB    INFO     ['casB']
+2020-09-14 14:17:09 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-14 14:17:09 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 14:17:09 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:14 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:14 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-14 14:17:14 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-14 14:17:14 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-14 14:17:14 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-14 14:17:16 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-14 14:17:18 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-14 14:17:20 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:20 ctrl.casB    INFO     casB: Evaluating step 2
+2020-09-14 14:17:20 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 14:17:21 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:26 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:26 ctrl.casB    INFO     casB: Evaluating step 3
+2020-09-14 14:17:26 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:17:26 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:31 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 14:17:36 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:36 ctrl.casB    INFO     casB: Evaluating step 4
+2020-09-14 14:17:36 ctrl.casB    INFO     ['self.purge(casL="B",deadvol=4.0)']
+2020-09-14 14:17:36 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:41 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:41 ctrl.casB    INFO     casB: Evaluating step 5
+2020-09-14 14:17:41 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:17:41 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:46 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 14:17:51 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:17:51 ctrl.casB    INFO     casB: Evaluating step 6
+2020-09-14 14:17:51 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Dehydrant",reagent="meoh",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:17:51 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:17:56 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2020-09-14 14:18:01 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:18:01 ctrl.casB    INFO     casB: Evaluating step 7
+2020-09-14 14:18:01 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:18:01 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:18:06 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-09-14 14:18:11 ctrl.casB    INFO     Updating progress on casB...
+2020-09-14 14:18:11 ctrl.casB    INFO     casB: Evaluating step 8
+2020-09-14 14:18:11 ctrl.casB    INFO     ['self.loadReagent(casL="B",loadstr="Formalin",reagent="formalin",vol=0.6,speed=1,deadvol=1.6)']
+2020-09-14 14:18:12 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-14 14:18:13 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2020-09-14 14:18:13 ctrl.casB    INFO     ['casB', 'casC']
+2020-09-14 14:18:13 ctrl.casB    INFO     SHUTDOWN CasB
+2020-09-14 15:14:16 ctrl.casB    INFO     Engage CasB...
+>>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d

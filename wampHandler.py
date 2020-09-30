@@ -75,6 +75,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     shutdownStart = QtCore.pyqtSignal(int)
     #Send shutdown is finished
     shutdownDone = QtCore.pyqtSignal(int)
+<<<<<<< HEAD
     
     cleanStart = QtCore.pyqtSignal(int)
     cleanDone = QtCore.pyqtSignal(int)
@@ -82,6 +83,9 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     recParam = QtCore.pyqtSignal('QVariantMap')
     
     deadspace = 1000 
+=======
+    deadspace = 1500 
+>>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
     
     def __init__(self, cfg=None):
         ApplicationSession.__init__(self, cfg)
@@ -212,6 +216,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     @QtCore.pyqtSlot(str)
     def execScript(self, linesToExec):
         self.publish('com.prepbot.prothandler.exec-script', linesToExec)
+<<<<<<< HEAD
         
     @QtCore.pyqtSlot('QVariantMap')
     def updateParam(self, paramDict):
@@ -231,6 +236,9 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     @QtCore.pyqtSlot()
     def stopExecTerminal(self):
         self.publish('com.prepbot.prothandler.exec-stop')
+=======
+    
+>>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
     
     #Takes casNumber and protocol.json
     @QtCore.pyqtSlot(str, str, str, str, str)
@@ -642,7 +650,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         else:
             vol = float(volume[:-2])/1000
         #Convert to mL for machine pump in/out command
-        deVol = vol + self.deadspace/1000
+#         deVol = vol + self.deadspace/1000
         # purgeStr = '''
         # print('PURGING CHAMBER')
         # machine.goto_sample{}()
@@ -650,6 +658,10 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # sleep(5)
         # machine.empty_syringe()
         # '''.format(casL,deVol)
+<<<<<<< HEAD
+=======
+#         purgeStr = 'self.purge(casL="{}",deadvol={})'.format(casL,deVol)
+>>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
         purgeStr = 'self.purge(casL="{}")'.format(casL)
         return(purgeStr)
         
@@ -662,11 +674,15 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         else:
             vol = float(volume[:-2])/1000
         #Convert to mL for machine pump in/out command
+<<<<<<< HEAD
         # deVol = vol + self.deadspace/1000
         if washSyr == 'true':
             washSyrBool = True
         else:
             washSyrBool = False
+=======
+#         deVol = vol + self.deadspace/1000
+>>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
         # loadString = '''
         # print('ADDING {}')
         # machine.goto_{}()
@@ -675,7 +691,11 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # machine.goto_sample{}()
         # machine.pump_out({},{})
         # '''.format(loadType,reaConv[loadType],vol,speed,casL,deVol,speed)
+<<<<<<< HEAD
         loadStr= 'self.loadReagent(casL="{}",reagent="{}",vol={},speed={}, washSyr={}, loadstr="{}")'.format(casL, reaConv[loadType], vol, speed, washSyrBool, loadType)
+=======
+        loadStr= 'self.loadReagent(casL="{}",loadstr="{}",reagent="{}",vol={},speed={})'.format(casL,loadType, reaConv[loadType], vol, speed)
+>>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
         return(loadStr)
         
     

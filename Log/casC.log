@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2020-09-24 17:15:55 ctrl.casC    INFO     Engage CasC...
 2020-09-24 17:16:00 ctrl.casC    INFO     
 
@@ -741,3 +742,25 @@ Name: casC, dtype: object
 2020-09-30 17:06:42 ctrl.casC    INFO     ADDING babb TO CasC
 2020-09-30 17:06:46 ctrl.casC    INFO     CasC CURRENT FLUID: babb
 2020-09-30 17:06:46 ctrl.casC    INFO     CasC SETTLE TIME: 15.0
+=======
+2020-09-14 14:17:01 ctrl.casC    INFO     Engage CasC...
+2020-09-14 14:17:44 ctrl.casC    INFO     
+
+
+
+2020-09-14 14:17:44 ctrl.casC    INFO     Starting Run!
+sampleName                                               Newone
+protocolName                                       newProtAgain
+protocolPath    /home/pi/CasMonitor/Protocols/newProtAgain.json
+startlog                                                      4
+Name: casC, dtype: object
+2020-09-14 14:17:44 ctrl.casC    INFO     Starting task on casC
+2020-09-14 14:17:44 ctrl.casC    INFO     ['casB', 'casC']
+2020-09-14 14:17:44 ctrl.casC    INFO     casC: Evaluating step 0
+2020-09-14 14:17:44 ctrl.casC    INFO     ['self.incubate(casL="C",incTime=360,mixAfter=390)']
+2020-09-14 14:17:44 ctrl.casC    INFO     INCUBATING CasC
+2020-09-14 14:18:14 ctrl.casC    INFO     Trying to cancel casC, getting active tasks...
+2020-09-14 14:18:14 ctrl.casC    INFO     ['casC']
+2020-09-14 14:18:14 ctrl.casC    INFO     SHUTDOWN CasC
+2020-09-14 15:14:20 ctrl.casC    INFO     Engage CasC...
+>>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
