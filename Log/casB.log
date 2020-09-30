@@ -978,3 +978,255 @@ Name: casB, dtype: object
 2020-09-25 04:32:05 ctrl.casB    INFO     CasB CURRENT FLUID: babb
 2020-09-25 04:32:05 ctrl.casB    INFO     CasB SETTLE TIME: 15
 2020-09-25 04:32:20 ctrl.casB    INFO     CasB: Reagent (babb) is denser than residual fluid (vial). Pump out 0.1mL to push out residual fluid.
+2020-09-29 15:57:53 ctrl.casB    INFO     Engage CasB...
+2020-09-30 02:38:56 ctrl.casB    INFO     Engage CasB...
+2020-09-30 02:40:09 ctrl.casB    INFO     Engage CasB...
+2020-09-30 03:40:30 ctrl.casB    INFO     Engage CasB...
+2020-09-30 14:44:05 ctrl.casB    INFO     Engage CasB...
+2020-09-30 14:50:06 ctrl.casB    INFO     Engage CasB...
+2020-09-30 14:55:32 ctrl.casB    INFO     Engage CasB...
+2020-09-30 15:59:04 ctrl.casB    INFO     Engage CasB...
+2020-09-30 15:59:10 ctrl.casB    INFO     
+
+
+
+2020-09-30 15:59:10 ctrl.casB    INFO     Starting Run!
+sampleName                                                   asdf
+protocolName                                             otherops
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                      991
+Name: casB, dtype: object
+2020-09-30 15:59:10 ctrl.casB    INFO     Starting task on casB
+2020-09-30 15:59:10 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-30 15:59:10 ctrl.casB    DEBUG    ['self.mix(casL="B", numCycles=3, volume=1.0)', 'self.incubate(casL="B",incTime=48,mixAfter=7)', 'self.purge(casL="B")']
+2020-09-30 15:59:10 ctrl.casB    DEBUG    ['Mixing', 'Incubation', 'Purge']
+2020-09-30 15:59:10 ctrl.casB    DEBUG    1
+2020-09-30 15:59:10 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-30 15:59:10 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-30 15:59:10 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-30 15:59:10 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-30 15:59:12 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-30 15:59:14 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-30 15:59:16 ctrl.casB    INFO     Updating progress on casB...
+2020-09-30 15:59:16 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-30 15:59:16 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=48,mixAfter=7)']
+2020-09-30 15:59:16 ctrl.casB    INFO     INCUBATING CasB
+2020-09-30 15:59:30 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 15:59:31 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 15:59:48 ctrl.casB    INFO     CasB publishing secs-remaining and new task DF!
+2020-09-30 15:59:49 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 15:59:50 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 15:59:59 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:00:00 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:00:06 ctrl.casB    INFO     FINISHED INCUBATION of CasB
+2020-09-30 16:00:06 ctrl.casB    INFO     Updating progress on casB...
+2020-09-30 16:00:06 ctrl.casB    INFO     casB: Evaluating step 2
+2020-09-30 16:00:06 ctrl.casB    INFO     ['self.purge(casL="B")']
+2020-09-30 16:00:12 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-30 16:00:13 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2020-09-30 16:00:13 ctrl.casB    INFO     Disengage CasB...
+2020-09-30 16:00:13 ctrl.casB    INFO     Cleaning line for CasB
+2020-09-30 16:00:13 ctrl.casB    INFO     PURGING LINE, CasB
+2020-09-30 16:00:18 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2020-09-30 16:00:18 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2020-09-30 16:00:18 ctrl.casB    INFO     Clean Time: 5.01s
+2020-09-30 16:00:18 ctrl.casB    INFO     Finished casB task!
+2020-09-30 16:04:16 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:04:28 ctrl.casB    INFO     
+
+
+
+2020-09-30 16:04:28 ctrl.casB    INFO     Starting Run!
+sampleName                                                asdfsad
+protocolName                                             otherops
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     1037
+Name: casB, dtype: object
+2020-09-30 16:04:28 ctrl.casB    INFO     Starting task on casB
+2020-09-30 16:04:28 ctrl.casB    INFO     ['casB', 'casA']
+2020-09-30 16:04:28 ctrl.casB    DEBUG    ['self.mix(casL="B", numCycles=3, volume=1.0)', 'self.incubate(casL="B",incTime=48,mixAfter=7)', 'self.purge(casL="B")']
+2020-09-30 16:04:28 ctrl.casB    DEBUG    ['Mixing', 'Incubation', 'Purge']
+2020-09-30 16:04:28 ctrl.casB    DEBUG    1
+2020-09-30 16:04:28 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-30 16:04:28 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-30 16:04:28 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-30 16:04:28 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-30 16:04:30 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-30 16:04:32 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-30 16:04:34 ctrl.casB    INFO     Updating progress on casB...
+2020-09-30 16:04:38 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-30 16:04:38 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=48,mixAfter=7)']
+2020-09-30 16:04:38 ctrl.casB    INFO     INCUBATING CasB
+2020-09-30 16:04:38 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2020-09-30 16:04:38 ctrl.casB    INFO     ['casB', 'casC']
+2020-09-30 16:04:43 ctrl.casB    INFO     SHUTDOWN CasB
+2020-09-30 16:04:43 ctrl.casB    INFO     Disengage CasB...
+2020-09-30 16:04:43 ctrl.casB    INFO     Cleaning line for CasB
+2020-09-30 16:04:43 ctrl.casB    INFO     PURGING LINE, CasB
+2020-09-30 16:04:48 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2020-09-30 16:04:48 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2020-09-30 16:04:48 ctrl.casB    INFO     Shutdown Time: 5.01s
+2020-09-30 16:04:48 ctrl.casB    INFO     ['casC']
+2020-09-30 16:04:48 ctrl.casB    INFO     The run on casB has been cancelled? True.
+2020-09-30 16:08:53 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:10:19 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:10:31 ctrl.casB    INFO     
+
+
+
+2020-09-30 16:10:31 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asdfsa
+protocolName                                             otherops
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     1075
+Name: casB, dtype: object
+2020-09-30 16:10:31 ctrl.casB    INFO     Starting task on casB
+2020-09-30 16:10:31 ctrl.casB    INFO     ['casA', 'casB']
+2020-09-30 16:10:31 ctrl.casB    DEBUG    ['self.mix(casL="B", numCycles=3, volume=1.0)', 'self.incubate(casL="B",incTime=48,mixAfter=7)', 'self.purge(casL="B")']
+2020-09-30 16:10:31 ctrl.casB    DEBUG    ['Mixing', 'Incubation', 'Purge']
+2020-09-30 16:10:31 ctrl.casB    DEBUG    1
+2020-09-30 16:10:31 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-30 16:10:31 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-30 16:10:31 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-30 16:10:31 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-30 16:10:33 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-30 16:10:35 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-30 16:10:37 ctrl.casB    INFO     Updating progress on casB...
+2020-09-30 16:10:41 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-30 16:10:41 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=48,mixAfter=7)']
+2020-09-30 16:10:41 ctrl.casB    INFO     INCUBATING CasB
+2020-09-30 16:10:50 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:10:51 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:11:04 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:11:05 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:11:11 ctrl.casB    INFO     CasB publishing secs-remaining and new task DF!
+2020-09-30 16:11:11 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:11:12 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:11:18 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:11:19 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:11:25 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:11:27 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:11:30 ctrl.casB    INFO     FINISHED INCUBATION of CasB
+2020-09-30 16:11:30 ctrl.casB    INFO     Updating progress on casB...
+2020-09-30 16:11:30 ctrl.casB    INFO     casB: Evaluating step 2
+2020-09-30 16:11:30 ctrl.casB    INFO     ['self.purge(casL="B")']
+2020-09-30 16:11:30 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-30 16:11:31 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2020-09-30 16:11:31 ctrl.casB    INFO     Disengage CasB...
+2020-09-30 16:11:31 ctrl.casB    INFO     Cleaning line for CasB
+2020-09-30 16:11:31 ctrl.casB    INFO     PURGING LINE, CasB
+2020-09-30 16:11:36 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2020-09-30 16:11:36 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2020-09-30 16:11:36 ctrl.casB    INFO     Clean Time: 5.01s
+2020-09-30 16:11:36 ctrl.casB    INFO     Finished casB task!
+2020-09-30 16:12:58 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:13:18 ctrl.casB    INFO     
+
+
+
+2020-09-30 16:13:18 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asdfas
+protocolName                                             otherops
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     1125
+Name: casB, dtype: object
+2020-09-30 16:13:18 ctrl.casB    INFO     Starting task on casB
+2020-09-30 16:13:18 ctrl.casB    INFO     ['casA', 'casB']
+2020-09-30 16:13:18 ctrl.casB    DEBUG    ['self.mix(casL="B", numCycles=3, volume=1.0)', 'self.incubate(casL="B",incTime=48,mixAfter=7)', 'self.purge(casL="B")']
+2020-09-30 16:13:18 ctrl.casB    DEBUG    ['Mixing', 'Incubation', 'Purge']
+2020-09-30 16:13:18 ctrl.casB    DEBUG    1
+2020-09-30 16:13:18 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-30 16:13:18 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-30 16:13:18 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-30 16:13:18 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-30 16:13:20 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-30 16:13:22 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-30 16:13:24 ctrl.casB    INFO     Updating progress on casB...
+2020-09-30 16:13:24 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-30 16:13:24 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=48,mixAfter=7)']
+2020-09-30 16:13:24 ctrl.casB    INFO     INCUBATING CasB
+2020-09-30 16:13:57 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:14:54 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:15:58 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:16:22 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:16:51 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:17:12 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:17:21 ctrl.casB    INFO     
+
+
+
+2020-09-30 16:17:21 ctrl.casB    INFO     Starting Run!
+sampleName                                                   asdf
+protocolName                                             otherops
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     1156
+Name: casB, dtype: object
+2020-09-30 16:17:21 ctrl.casB    INFO     Starting task on casB
+2020-09-30 16:17:21 ctrl.casB    INFO     ['casA', 'casB']
+2020-09-30 16:17:21 ctrl.casB    DEBUG    ['self.mix(casL="B", numCycles=3, volume=1.0)', 'self.incubate(casL="B",incTime=48,mixAfter=7)', 'self.purge(casL="B")']
+2020-09-30 16:17:21 ctrl.casB    DEBUG    ['Mixing', 'Incubation', 'Purge']
+2020-09-30 16:17:21 ctrl.casB    DEBUG    1
+2020-09-30 16:17:21 ctrl.casB    INFO     casB: Evaluating step 0
+2020-09-30 16:17:21 ctrl.casB    INFO     ['self.mix(casL="B", numCycles=3, volume=1.0)']
+2020-09-30 16:17:21 ctrl.casB    INFO     MIXING CasB, 3 TIMES, 1.0 VOLUME
+2020-09-30 16:17:21 ctrl.casB    INFO     Mixing B, #1 of 3 cycles...
+2020-09-30 16:17:23 ctrl.casB    INFO     Mixing B, #2 of 3 cycles...
+2020-09-30 16:17:25 ctrl.casB    INFO     Mixing B, #3 of 3 cycles...
+2020-09-30 16:17:27 ctrl.casB    INFO     Updating progress on casB...
+2020-09-30 16:17:27 ctrl.casB    INFO     casB: Evaluating step 1
+2020-09-30 16:17:27 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=48,mixAfter=7)']
+2020-09-30 16:17:27 ctrl.casB    INFO     INCUBATING CasB
+2020-09-30 16:17:33 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:17:34 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:17:40 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:17:41 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:17:47 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:17:48 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:17:54 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:17:55 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:17:58 ctrl.casB    INFO     CasB publishing secs-remaining and new task DF!
+2020-09-30 16:18:01 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:18:02 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:18:08 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:18:09 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:18:16 ctrl.casB    INFO     Mixing CasB...
+2020-09-30 16:18:17 ctrl.casB    INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:18:17 ctrl.casB    INFO     FINISHED INCUBATION of CasB
+2020-09-30 16:18:17 ctrl.casB    INFO     Updating progress on casB...
+2020-09-30 16:18:17 ctrl.casB    INFO     casB: Evaluating step 2
+2020-09-30 16:18:17 ctrl.casB    INFO     ['self.purge(casL="B")']
+2020-09-30 16:18:17 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-30 16:18:18 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2020-09-30 16:18:18 ctrl.casB    INFO     Disengage CasB...
+2020-09-30 16:18:18 ctrl.casB    INFO     Cleaning line for CasB
+2020-09-30 16:18:18 ctrl.casB    INFO     PURGING LINE, CasB
+2020-09-30 16:18:50 ctrl.casB    INFO     Engage CasB...
+2020-09-30 16:19:03 ctrl.casB    DEBUG    cleaning
+2020-09-30 16:19:03 ctrl.casB    INFO     Disengage CasB...
+2020-09-30 16:19:03 ctrl.casB    INFO     Cleaning line for CasB
+2020-09-30 16:19:03 ctrl.casB    INFO     PURGING LINE, CasB
+2020-09-30 16:19:08 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2020-09-30 16:19:08 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2020-09-30 16:19:08 ctrl.casB    INFO     Clean Time: 5.00s
+2020-09-30 16:19:08 ctrl.casB    INFO     Finished casB task!
+2020-09-30 17:05:06 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-30 17:05:07 ctrl.casB    INFO     ADDING meoh TO CasB
+2020-09-30 17:05:09 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2020-09-30 17:05:09 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-09-30 17:05:09 ctrl.casB    INFO     CasB SETTLE TIME: 15.0
+2020-09-30 17:05:24 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (unk). Pump in 0.1mL to suck in residual fluid.
+2020-09-30 17:05:33 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-30 17:05:34 ctrl.casB    INFO     ADDING formalin TO CasB
+2020-09-30 17:05:36 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2020-09-30 17:05:36 ctrl.casB    INFO     CasB SETTLE TIME: 15.0
+2020-09-30 17:06:08 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-30 17:06:09 ctrl.casB    INFO     ADDING formalin TO CasB
+2020-09-30 17:06:11 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2020-09-30 17:06:11 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (formalin) do not require a density adjustment.
+2020-09-30 17:06:11 ctrl.casB    INFO     FINISHED LOADING formalin TO CasB, Time: 3.01s
+2020-09-30 17:06:20 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-09-30 17:06:21 ctrl.casB    INFO     WASHING SYRINGE WITH formalin
+2020-09-30 17:06:22 ctrl.casB    INFO     ADDING formalin TO CasB
+2020-09-30 17:06:24 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2020-09-30 17:06:24 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (formalin) do not require a density adjustment.
+2020-09-30 17:06:24 ctrl.casB    INFO     FINISHED LOADING formalin TO CasB, Time: 4.01s

@@ -884,3 +884,276 @@
 2020-09-25 04:32:01 ctrl.opTimes INFO     Wash Syringe, 1.706 mL, 1 washSyrSpeed, 1 fillLineSpeed, Time: 1.00s
 2020-09-25 04:32:05 ctrl.opTimes INFO     Adding babb, 0.956 mL, 1 fillLineSpeed, 1 speed, Time: 4.00s
 2020-09-25 04:32:20 ctrl.opTimes INFO     Reagent denser than resid., adjusting, 15s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 15.00s
+2020-09-29 15:58:45 ctrl.opTimes INFO     Purge, 4 mL, 1 removeSpeed, 4 wasteSpeed, Time: 1.00s
+2020-09-29 15:58:47 ctrl.opTimes INFO     Adding meoh, 0.5 mL, 1 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-29 15:59:24 ctrl.opTimes INFO     Purge, 4 mL, 1 removeSpeed, 4 wasteSpeed, Time: 1.00s
+2020-09-29 15:59:26 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-29 15:59:41 ctrl.opTimes INFO     Reagent denser than resid., adjusting, 15s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 15.00s
+2020-09-29 15:59:57 ctrl.opTimes INFO     Purge, 4 mL, 1 removeSpeed, 4 wasteSpeed, Time: 1.00s
+2020-09-29 15:59:59 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-29 15:59:59 ctrl.opTimes INFO     FINISHED LOADING formalin TO CasA, Time: 3.01s
+2020-09-29 16:00:09 ctrl.opTimes INFO     Purge, 4 mL, 1 removeSpeed, 4 wasteSpeed, Time: 1.00s
+2020-09-29 16:00:11 ctrl.opTimes INFO     Adding meoh, 0.5 mL, 1 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-29 16:00:26 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 15s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 15.00s
+2020-09-29 16:06:35 ctrl.opTimes INFO     Purge, 4 mL, 1 removeSpeed, 4 wasteSpeed, Time: 1.00s
+2020-09-29 16:06:37 ctrl.opTimes INFO     Adding meoh, 0 mL, 1 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-29 16:06:37 ctrl.opTimes INFO     FINISHED LOADING meoh TO CasA, Time: 3.01s
+2020-09-30 03:45:47 ctrl.opTimes INFO     Purge, 4.12 mL, 4.0 removeSpeed, 9.0 wasteSpeed, Time: 1.00s
+2020-09-30 03:45:48 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 10.0 washSyrSpeed, 1.2 fillLineSpeed, Time: 1.00s
+2020-09-30 03:45:50 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.2 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 03:45:50 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 4.01s
+2020-09-30 03:45:52 ctrl.opTimes INFO     Purge, 4.12 mL, 4.0 removeSpeed, 9.0 wasteSpeed, Time: 1.00s
+2020-09-30 03:45:53 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 10.0 washSyrSpeed, 1.2 fillLineSpeed, Time: 1.00s
+2020-09-30 03:45:55 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.2 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 03:46:39 ctrl.opTimes INFO     Shutdown Time: 5.01s
+2020-09-30 15:08:24 ctrl.opTimes INFO     Purge, 4.0 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:08:26 ctrl.opTimes INFO     Adding meoh, 0.3 mL, 2.0 fillLineSpeed, 0.7 speed, Time: 2.00s
+2020-09-30 15:08:41 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 15.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 15.00s
+2020-09-30 15:09:20 ctrl.opTimes INFO     Purge, 4.0 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:09:22 ctrl.opTimes INFO     Adding formalin, 0.3 mL, 2.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 15:09:37 ctrl.opTimes INFO     Reagent denser than resid., adjusting, 15.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 15.00s
+2020-09-30 15:10:33 ctrl.opTimes INFO     Inc. Mix Time: 1.09s
+2020-09-30 15:10:54 ctrl.opTimes INFO     Inc. Mix Time: 1.07s
+2020-09-30 15:11:15 ctrl.opTimes INFO     Inc. Mix Time: 1.04s
+2020-09-30 15:35:54 ctrl.opTimes INFO     Inc. Mix Time: 1.04s
+2020-09-30 15:35:59 ctrl.opTimes INFO     Inc. Mix Time: 1.04s
+2020-09-30 15:36:04 ctrl.opTimes INFO     Inc. Mix Time: 1.07s
+2020-09-30 15:36:32 ctrl.opTimes INFO     Inc. Mix Time: 1.04s
+2020-09-30 15:36:47 ctrl.opTimes INFO     Inc. Mix Time: 1.07s
+2020-09-30 15:37:02 ctrl.opTimes INFO     Inc. Mix Time: 1.07s
+2020-09-30 15:59:01 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:59:02 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 15:59:04 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 15:59:04 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 4.01s
+2020-09-30 15:59:05 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:59:06 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 15:59:08 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 15:59:12 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 15:59:14 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 15:59:16 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 15:59:16 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 15:59:17 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:59:18 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 15:59:20 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 15:59:20 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasC, Time: 4.01s
+2020-09-30 15:59:22 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 15:59:24 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 15:59:26 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 15:59:26 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 15:59:27 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:59:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 15:59:30 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 15:59:30 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 15.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 21.80s
+2020-09-30 15:59:31 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 15:59:32 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:59:33 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 15:59:35 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 15:59:35 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasE, Time: 4.01s
+2020-09-30 15:59:36 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:59:38 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 15:59:38 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 3.01s
+2020-09-30 15:59:44 ctrl.opTimes INFO     Clean Time: 5.01s
+2020-09-30 15:59:45 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:59:46 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 15:59:48 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 15:59:48 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 15.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 17.40s
+2020-09-30 15:59:49 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 15:59:50 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 15:59:51 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 15:59:53 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 15:59:53 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasC, Time: 3.01s
+2020-09-30 15:59:58 ctrl.opTimes INFO     Clean Time: 5.01s
+2020-09-30 15:59:59 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:00:00 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:00:03 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 15.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 15.00s
+2020-09-30 16:00:04 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:00:06 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 16:00:06 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasE, Time: 3.01s
+2020-09-30 16:00:11 ctrl.opTimes INFO     Clean Time: 5.01s
+2020-09-30 16:00:12 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:00:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:00:18 ctrl.opTimes INFO     Clean Time: 5.01s
+2020-09-30 16:00:22 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:00:23 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:00:28 ctrl.opTimes INFO     Clean Time: 5.01s
+2020-09-30 16:04:25 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:04:26 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:04:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 16:04:28 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 4.01s
+2020-09-30 16:04:30 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:04:32 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:04:34 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:04:34 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 16:04:35 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:04:36 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:04:38 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 16:04:43 ctrl.opTimes INFO     Shutdown Time: 5.01s
+2020-09-30 16:04:48 ctrl.opTimes INFO     Shutdown Time: 5.01s
+2020-09-30 16:04:49 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:04:50 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:04:58 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:04:59 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:05:01 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 16:05:01 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasC, Time: 4.01s
+2020-09-30 16:05:02 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:05:03 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:05:05 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 16:05:09 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:05:11 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:05:13 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 16:05:13 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasC, Time: 4.01s
+2020-09-30 16:05:14 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:05:15 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:05:17 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 16:05:23 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:05:24 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:05:26 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 16:05:26 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasC, Time: 4.01s
+2020-09-30 16:05:27 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:05:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:05:30 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 16:05:46 ctrl.opTimes INFO     Shutdown Time: 5.01s
+2020-09-30 16:09:02 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:09:04 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:09:06 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:09:06 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 16:09:18 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:09:19 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:09:21 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 16:09:21 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasC, Time: 4.01s
+2020-09-30 16:09:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:09:23 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:09:25 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 16:09:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:09:43 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:09:45 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 16:09:45 ctrl.opTimes INFO     FINISHED LOADING Dehydrant TO CasC, Time: 4.01s
+2020-09-30 16:09:47 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:09:49 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 16:09:49 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasC, Time: 3.01s
+2020-09-30 16:09:54 ctrl.opTimes INFO     Clean Time: 5.01s
+2020-09-30 16:10:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:10:29 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:10:31 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 2.00s
+2020-09-30 16:10:31 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 4.01s
+2020-09-30 16:10:33 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:10:35 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:10:37 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:10:37 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 16:10:38 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:10:39 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:10:41 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 2.00s
+2020-09-30 16:10:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:10:43 ctrl.opTimes INFO     Wash Syringe, 1.842 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 16:10:45 ctrl.opTimes INFO     Adding Formalin, 1.092 mL, 1.0 fillLineSpeed, 0.72 speed, Time: 2.00s
+2020-09-30 16:10:45 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasC, Time: 4.01s
+2020-09-30 16:10:50 ctrl.opTimes INFO     Clean Time: 5.01s
+2020-09-30 16:10:51 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:10:56 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 15.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 15.00s
+2020-09-30 16:10:57 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:10:59 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 16:10:59 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 3.01s
+2020-09-30 16:11:04 ctrl.opTimes INFO     Clean Time: 5.01s
+2020-09-30 16:11:05 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:11:12 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:11:19 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:11:27 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:11:31 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:11:36 ctrl.opTimes INFO     Clean Time: 5.01s
+2020-09-30 16:13:14 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:13:16 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:13:18 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:13:18 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 16:13:20 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:13:22 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:13:24 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:13:24 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 16:13:31 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:13:33 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:13:35 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:13:35 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.00s
+2020-09-30 16:14:06 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:14:08 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:14:10 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:14:10 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 16:15:03 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:15:05 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:15:07 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:15:07 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 16:15:10 ctrl.opTimes INFO     Shutdown Time: 0.00s
+2020-09-30 16:16:09 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:16:11 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:16:13 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:16:13 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 16:17:23 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 2.00s
+2020-09-30 16:17:25 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 2.00s
+2020-09-30 16:17:27 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 2.00s
+2020-09-30 16:17:27 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 6.01s
+2020-09-30 16:17:34 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:17:41 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:17:41 ctrl.opTimes INFO     Shutdown Time: 50.00s
+2020-09-30 16:17:48 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:17:55 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:18:02 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:18:09 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:18:17 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 16:18:18 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 16:19:08 ctrl.opTimes INFO     Clean Time: 5.00s
+2020-09-30 17:03:45 ctrl.opTimes INFO     Inc. Mix Time: 1.04s
+2020-09-30 17:04:12 ctrl.opTimes INFO     Inc. Mix Time: 1.04s
+2020-09-30 17:04:15 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:04:17 ctrl.opTimes INFO     Inc. Mix Time: 1.07s
+2020-09-30 17:04:21 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:04:22 ctrl.opTimes INFO     Inc. Mix Time: 1.04s
+2020-09-30 17:04:26 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:04:27 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:04:28 ctrl.opTimes INFO     Inc. Mix Time: 1.07s
+2020-09-30 17:04:31 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:04:32 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:04:33 ctrl.opTimes INFO     Inc. Mix Time: 1.07s
+2020-09-30 17:04:36 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:04:37 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:04:39 ctrl.opTimes INFO     Inc. Mix Time: 1.07s
+2020-09-30 17:04:42 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:04:43 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-09-30 17:05:03 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:05:05 ctrl.opTimes INFO     Adding meoh, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:05:07 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:05:09 ctrl.opTimes INFO     Adding meoh, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:05:14 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:05:16 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:05:16 ctrl.opTimes INFO     FINISHED LOADING formalin TO CasD, Time: 3.01s
+2020-09-30 17:05:20 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 15.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 15.00s
+2020-09-30 17:05:24 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 15.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 15.00s
+2020-09-30 17:05:31 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:05:33 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:05:33 ctrl.opTimes INFO     FINISHED LOADING formalin TO CasD, Time: 3.01s
+2020-09-30 17:05:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:05:36 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:05:37 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:05:39 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:06:03 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:06:05 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:06:06 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:06:08 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:06:08 ctrl.opTimes INFO     FINISHED LOADING formalin TO CasC, Time: 3.01s
+2020-09-30 17:06:09 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:06:11 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:06:11 ctrl.opTimes INFO     FINISHED LOADING formalin TO CasB, Time: 3.01s
+2020-09-30 17:06:21 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:06:22 ctrl.opTimes INFO     Wash Syringe, 1.25 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 17:06:24 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:06:24 ctrl.opTimes INFO     FINISHED LOADING formalin TO CasB, Time: 4.01s
+2020-09-30 17:06:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:06:34 ctrl.opTimes INFO     Wash Syringe, 1.25 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 17:06:36 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 17:06:36 ctrl.opTimes INFO     FINISHED LOADING formalin TO CasD, Time: 4.01s
+2020-09-30 17:06:41 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:06:42 ctrl.opTimes INFO     Wash Syringe, 1.25 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 1.00s
+2020-09-30 17:06:46 ctrl.opTimes INFO     Adding babb, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 4.00s
+2020-09-30 17:07:58 ctrl.opTimes INFO     Clean Time: 5.00s
+2020-09-30 17:15:11 ctrl.opTimes INFO     Clean Time: 5.00s
+2020-09-30 17:15:30 ctrl.opTimes INFO     Clean Time: 5.00s
+2020-09-30 17:15:42 ctrl.opTimes INFO     Clean Time: 5.00s
+2020-09-30 17:15:43 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 17:15:45 ctrl.opTimes INFO     Adding meoh, 0 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s

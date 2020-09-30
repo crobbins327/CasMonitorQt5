@@ -79,6 +79,8 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     cleanStart = QtCore.pyqtSignal(int)
     cleanDone = QtCore.pyqtSignal(int)
     
+    recParam = QtCore.pyqtSignal('QVariantMap')
+    
     deadspace = 1000 
     
     def __init__(self, cfg=None):
@@ -124,6 +126,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                     self.controllerStatus = 'connected'
                     guilog.info('Sending controller joined to GUI!')
                     await self.conJoined()
+                    # await self.call('com.prepbot.prothandler.gui-get-param')
             except Exception as e:
                 guilog.warning(e)
                 guilog.warning('Controller disconnected...')
@@ -134,14 +137,40 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             await asyncio.sleep(1)
         
     async def onJoin(self, details):
-        guilog.info("Getting controller task dataframe...")
-        self.toWaitPopup.emit('Getting controller task dataframe...')
+        guilog.info('Registering GUI functions...')
+        self.toWaitPopup.emit('Registering GUI functions to router...')
+        try:
+            self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-gui')
+            self.register(self.get_mStatus,'com.prepbot.prothandler.is-machine-homed')
+            self.register(self.set_mStatus, 'com.prepbot.prothandler.set-machine-homed')
+        except Exception as e:
+            guilog.error('Could not register GUI functions to router...')
+            guilog.error(e)
+        guilog.info('Subscribing to procedures...')
+        self.toWaitPopup.emit('Subscribing to procedures...')
+        try:
+            res = await self.subscribe(self)
+            guilog.info("Subscribed to {0} procedure(s)".format(len(res)))
+            self.toWaitPopup.emit('Subscribed to procedures!')
+        except Exception as e:
+            guilog.warning("could not subscribe to procedure: {0}".format(e))
+            self.toWaitPopup.emit('Could not subscribe to procedures....')
+            
+        self.toWaitPopup.emit('Connecting to controller...')
+        guilog.info("Connecting to controller...")
         # self.publish('com.prepbot.prothandler.request-tasks-gui')
         try:
+            self.toWaitPopup.emit('Getting controller task dataframe...')
+            guilog.info("Getting controller task dataframe...")
             taskDFJSON = await self.call('com.prepbot.prothandler.controller-tasks')
             # guilog.info(taskDFJSON)
+            self.toWaitPopup.emit('Checking if machine is homed...')
+            guilog.info("Checking if machine is homed...")
             self.machineHomed = await self.call('com.prepbot.prothandler.gui-get-machine-homed')
             guilog.info('Machine is homed? : {}'.format(self.machineHomed))
+            self.toWaitPopup.emit('Getting controller parameters...')
+            guilog.info("Getting controller parameters..")
+            await self.call('com.prepbot.prothandler.gui-get-param')
         except Exception as e:
             guilog.warning("Waiting until controller is connected...")
             guilog.warning(e)
@@ -159,23 +188,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         self.toWaitPopup.emit('Finished reconnecting loggers!')
         guilog.info('Finished reconnecting loggers!')
         
-        try:
-            res = await self.subscribe(self)
-            guilog.info("Subscribed to {0} procedure(s)".format(len(res)))
-            self.toWaitPopup.emit('Subscribed to procedures!')
-        except Exception as e:
-            guilog.warning("could not subscribe to procedure: {0}".format(e))
-            self.toWaitPopup.emit('Could not subscribe to procedures....')
         asyncio.ensure_future(self.update())
-        guilog.info('Registering GUI functions...')
-        self.toWaitPopup.emit('Registering GUI functions to router...')
-        try:
-            self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-gui')
-            self.register(self.get_mStatus,'com.prepbot.prothandler.is-machine-homed')
-            self.register(self.set_mStatus, 'com.prepbot.prothandler.set-machine-homed')
-        except Exception as e:
-            guilog.error('Could not register GUI functions to router...')
-            guilog.error(e)
         self.guiJoined.emit()
         guilog.info('FINISHED JOIN!')
     
@@ -199,6 +212,21 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     @QtCore.pyqtSlot(str)
     def execScript(self, linesToExec):
         self.publish('com.prepbot.prothandler.exec-script', linesToExec)
+        
+    @QtCore.pyqtSlot('QVariantMap')
+    def updateParam(self, paramDict):
+        # guilog.debug(paramDict)
+        self.publish('com.prepbot.prothandler.send-param-controller', paramDict)
+        
+    @QtCore.pyqtSlot()
+    def guiParam(self):
+        self.recParam.emit(self.paramDict)
+        
+    @wamp.subscribe('com.prepbot.prothandler.send-param-gui')
+    async def receiveParam(self, paramDict):
+        self.paramDict = paramDict
+        guilog.debug(paramDict)
+        self.recParam.emit(paramDict)
         
     @QtCore.pyqtSlot()
     def stopExecTerminal(self):
@@ -647,7 +675,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # machine.goto_sample{}()
         # machine.pump_out({},{})
         # '''.format(loadType,reaConv[loadType],vol,speed,casL,deVol,speed)
-        loadStr= 'self.loadReagent(casL="{}",reagent="{}",vol={},speed={}, washSyr={}, loadstr="{}",)'.format(casL, reaConv[loadType], vol, speed, washSyrBool, loadType)
+        loadStr= 'self.loadReagent(casL="{}",reagent="{}",vol={},speed={}, washSyr={}, loadstr="{}")'.format(casL, reaConv[loadType], vol, speed, washSyrBool, loadType)
         return(loadStr)
         
     

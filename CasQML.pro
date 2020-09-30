@@ -37,9 +37,11 @@ DISTFILES += \
     CasMonitor.qml \
     DebugMode.qml \
     DebugMode_old.qml \
+    DoubleInput.qml \
     DraggableItem.qml \
     IncubationContent.qml \
     IncubationContent_old.qml \
+    IntInput.qml \
     LoadContent.qml \
     LoadContent_old.qml \
     LogDisplay.qml \
@@ -54,5 +56,4 @@ DISTFILES += \
     ProtocolSelector_old.qml \
     PurgeContent.qml \ \
     SampleStack.qml \
-    SampleStack_new.qml \
     StepListModel.qml

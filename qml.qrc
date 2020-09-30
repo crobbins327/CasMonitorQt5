@@ -36,5 +36,7 @@
         <file>DraggableItem.qml</file>
         <file>BevButton.qml</file>
         <file>LogDisplay.qml</file>
+        <file>DoubleInput.qml</file>
+        <file>IntInput.qml</file>
     </qresource>
 </RCC>

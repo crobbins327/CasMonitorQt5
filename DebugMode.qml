@@ -23,23 +23,67 @@ Item {
     property string scriptText: ''
     property var casNames: ['A','B','C','D','E','F']
 
-    signal syrHome()
-    signal findVial()
-    signal engageVial()
-    signal dropVial()
-    signal syrMeOH()
-    signal syrBABB()
-    signal syrFormalin()
-    signal syrWaste()
-    signal syrSample()
-    signal needleIn()
-    signal needleOut()
-    signal pumpIn()
-    signal pumpOut()
+    //parameters
+    property double mixSpd
+    property double incSpd
+    property double removeSpd
+    property double wasteSpd
+    property double fillLnSpd
+    property double fillSyrSpd
+    property double washSyrSpd
+    property double lineVol
+    property double removeVol
+    property double purgeVol
+    property double denseVol
+    property double denseSpd
+    property double settleTime
+
+    signal reRecParam(var paramDict)
+
+
+    Component.onCompleted: {
+        WAMPHandler.recParam.connect(reRecParam)
+        WAMPHandler.guiParam()
+    }
+    Connections {
+        target: root
+        function onReRecParam(paramDict){
+//            console.log(paramDict['mixSpeed'],
+//                        paramDict['incSpeed'],
+//                        paramDict['removeSpeed'],
+//                        paramDict['wasteSpeed'],
+//                        paramDict['fillLineSpeed'],
+//                        paramDict['fillSyrSpeed'],
+//                        paramDict['washSyrSpeed'],
+//                        paramDict['LINEVOL'],
+//                        paramDict['removeVol'],
+//                        paramDict['purgeVol'],
+//                        paramDict['densVol'],
+//                        paramDict['densSpeed'],
+//                        paramDict['settleTime'])
+
+            mixSpd = paramDict['mixSpeed']
+            incSpd = paramDict['incSpeed']
+            removeSpd = paramDict['removeSpeed']
+            wasteSpd = paramDict['wasteSpeed']
+            fillLnSpd = paramDict['fillLineSpeed']
+            fillSyrSpd = paramDict['fillSyrSpeed']
+            washSyrSpd = paramDict['washSyrSpeed']
+
+            lineVol = paramDict['LINEVOL']
+            removeVol = paramDict['removeVol']
+            purgeVol = paramDict['purgeVol']
+
+            denseVol = paramDict['densVol']
+            denseSpd = paramDict['densSpeed']
+            settleTime = paramDict['settleTime']
+        }
+
+    }
 
 //    width: 780
-//    height: 1600
-    //    anchors.fill: parent
+//    height: 1700
+//    anchors.fill: parent
 
 
     Rectangle {
@@ -262,7 +306,16 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {ManualPrepbot.home()}
+                            onClicked: {
+                                var homeStr = 'machine.reset()\nmachine.home()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + homeStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(homeStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -279,7 +332,16 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.findVial(); console.log("Find Vial")}
+                            onClicked: {
+                                var connectStr = 'machine.acquire()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + connectStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(connectStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -294,7 +356,17 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {ManualPrepbot.engageSampleD; console.log("Engage Sample "+casNumber)}
+                            onClicked: {
+                                var casL = casNames[casBar.currentIndex]
+                                var engageStr = 'machine.engage_sample'+casL+'()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + engageStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(engageStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -310,7 +382,17 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.dropVial(); console.log("Drop Vial")}
+                            onClicked: {
+                                var casL = casNames[casBar.currentIndex]
+                                var disengageStr = 'machine.disengage_sample'+casL+'()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + disengageStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(disengageStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -327,7 +409,16 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.syrMeOH(); console.log("MeOH")}
+                            onClicked: {
+                                var meohStr = 'machine.goto_meoh()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + meohStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(meohStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -343,7 +434,16 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.syrBABB(); console.log("BABB")}
+                            onClicked: {
+                                var babbStr = 'machine.goto_babb()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + babbStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(babbStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -359,7 +459,16 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.syrFormalin(); console.log("Formalin")}
+                            onClicked: {
+                                var formalinStr = 'machine.goto_formalin()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + formalinStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(formalinStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -375,7 +484,16 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.syrWaste(); console.log("Waste")}
+                            onClicked: {
+                                var wasteStr = 'machine.goto_waste()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + wasteStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(wasteStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -391,7 +509,17 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.syrSample(); console.log("Sample")}
+                            onClicked: {
+                                var casL = casNames[casBar.currentIndex]
+                                var sampleStr = 'machine.goto_sample'+casL+'()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + sampleStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(sampleStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -408,7 +536,16 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.syrSample(); console.log("Stain")}
+                            onClicked: {
+                                var stainStr = 'machine.goto_vial()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + stainStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(stainStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -423,7 +560,17 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.pumpIn(); console.log("Pump In")}
+                            onClicked: {
+                                var volVal = volInput.text
+                                var pumpInStr = 'machine.pump_in('+volVal+', speed=1)'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + pumpInStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(pumpInStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -438,7 +585,17 @@ Item {
                                 button: 'white'
                             }
 
-                            onClicked: {root.pumpOut(); console.log("Pump Out")}
+                            onClicked: {
+                                var volVal = volInput.text
+                                var pumpOutStr = 'machine.pump_out('+volVal+', speed=1)'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + pumpOutStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(pumpOutStr)
+                                }
+                            }
                         }
 
                         BevButton {
@@ -451,6 +608,17 @@ Item {
                             anchors.leftMargin: 0
                             palette {
                                 button: 'white'
+                            }
+
+                            onClicked: {
+                                var parkStr = 'machine.goto_park()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + parkStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(parkStr)
+                                }
                             }
                         }
 
@@ -465,6 +633,17 @@ Item {
                             anchors.leftMargin: 0
                             palette {
                                 button: 'white'
+                            }
+
+                            onClicked: {
+                                var purgeStr = 'machine.empty_syringe(purgeVol=5, speed=4)'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + purgeStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(purgeStr)
+                                }
                             }
                         }
 
@@ -483,6 +662,16 @@ Item {
                                 buttonText: 'white'
                             }
 
+                            onClicked: {
+                                var haltStr = 'self.halt()'
+
+                                if(scriptSwitch.checked){
+                                    scriptText = scriptText + '\n' + haltStr
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(haltStr)
+                                }
+                            }
 
                         }
 
@@ -569,8 +758,7 @@ Item {
                         }
 
                         Text {
-                            id: volSLab1
-                            y: 239
+                            id: volUniLab
                             width: 32
                             height: 22
                             color: "#ffffff"
@@ -639,13 +827,27 @@ Item {
                         color:'transparent'
                         width: view.width
                         height: 360
+
+                        Text {
+                            id: operationsLab
+                            width: 118
+                            height: 23
+                            color: "#ffffff"
+                            text: qsTr("Operations")
+                            anchors.top: parent.top
+                            font.bold: true
+                            anchors.topMargin: 0
+                            anchors.left: parent.left
+                            font.pointSize: 14
+                            anchors.leftMargin: 10
+                        }
+
                         BevButton {
                             id: purgeBtn
                             width: 95
                             height: 35
                             text: "Purge"
-                            anchors.top: washSyrBox.bottom
-                            anchors.topMargin: 15
+                            anchors.verticalCenter: cleanBtn.verticalCenter
                             anchors.left: loadBtn.left
                             anchors.leftMargin: 0
                             palette {
@@ -653,19 +855,46 @@ Item {
                             }
 
                             onClicked: {
+                                var casL = casNames[casBar.currentIndex]
+                                var purge = 'self.purge(casL="'+ casL + '", deadvol='+lineVol+')'
+
                                 if(scriptSwitch.checked){
-                                    //make the command for purge
-                                    //currently set to 3mL purge with 1mL dead volume...
-                                    //                                console.log(casBar.currentIndex)
-                                    var casL = casNames[casBar.currentIndex]
-                                    var purge = 'self.purge(casL="'+ casL + '", deadvol=4)'
                                     //add to scriptText
                                     scriptText = scriptText + '\n' + purge
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(purge)
                                 }
-                                //else execute directly
-
                             }
                         }
+
+                        BevButton {
+                            id: cleanBtn
+                            width: 95
+                            height: 35
+                            text: "Clean Line"
+                            anchors.right: purgeBtn.left
+                            anchors.rightMargin: 35
+                            anchors.top: washSyrBox.bottom
+                            anchors.topMargin: 15
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {
+                                var casL = casNames[casBar.currentIndex]
+                                var clean = 'self.clean(casL="'+ casL +'")'
+
+                                if(scriptSwitch.checked){
+                                    //add to scriptText
+                                    scriptText = scriptText + '\n' + clean
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(clean)
+                                }
+                            }
+                        }
+
                         BevButton {
                             id: incubateBtn
                             width: 95
@@ -680,17 +909,16 @@ Item {
                             }
 
                             onClicked: {
+                                var casL = casNames[casBar.currentIndex]
+                                var incubate = 'self.incubate(casL="'+ casL + '", incTime='+ incSecs +', mixAfter='+ mixAfterSecs +')'
+
                                 if(scriptSwitch.checked){
-                                    //make the command for purge
-                                    //currently set to 3mL purge with 1mL dead volume...
-                                    //                                console.log(casBar.currentIndex)
-                                    var casL = casNames[casBar.currentIndex]
-                                    var incubate = 'self.incubate(casL="'+ casL + '", incTime='+ incSecs +', mixAfter='+ mixAfterSecs +')'
                                     //add to scriptText
                                     scriptText = scriptText + '\n' + incubate
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(incubate)
                                 }
-                                //else execute directly
-
                             }
                         }
                         BevButton {
@@ -707,23 +935,23 @@ Item {
                             }
                             //loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol):
                             onClicked: {
-                                if(scriptSwitch.checked){
-                                    //make the command for purge
-                                    //currently set to 3mL purge with 1mL dead volume...
-                                    //                                console.log(casBar.currentIndex)
-                                    var casL = casNames[casBar.currentIndex]
-                                    var reagentstr = reagentSel.currentValue
-                                    var washBool = washSyrBox.checked ? 'True': 'False'
+                                var casL = casNames[casBar.currentIndex]
+                                var reagentstr = reagentSel.currentValue
+                                var washBool = washSyrBox.checked ? 'True': 'False'
+                                var loadRea = 'self.loadReagent(casL="'+ casL + '", reagent="' + reagentstr + '", vol='+ loadVol/1000 +', speed='+ pSpeedV +', washSyr='+washBool+')'
 
-                                    var loadRea = 'self.loadReagent(casL="'+ casL + '", reagent="' + reagentstr + '", vol='+ loadVol/1000 +', speed='+ pSpeedV +', washSyr='+washBool+')'
+                                if(scriptSwitch.checked){
                                     //add to scriptText
                                     scriptText = scriptText + '\n' + loadRea
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(loadRea)
                                 }
-                                //else execute directly
                             }
                         }
                         BevButton {
                             id: mixBtn
+                            width: 95
                             height: 35
                             text: "Mix"
                             anchors.right: incubateBtn.right
@@ -737,23 +965,22 @@ Item {
                             }
 
                             onClicked: {
+                                var casL = casNames[casBar.currentIndex]
+                                var mix = 'self.mix(casL="'+ casL + '", numCycles='+ numCycles +', volume='+ mixVol +')'
+
                                 if(scriptSwitch.checked){
-                                    //make the command for purge
-                                    //currently set to 3mL purge with 1mL dead volume...
-                                    //                                console.log(casBar.currentIndex)
-                                    var casL = casNames[casBar.currentIndex]
-                                    var mix = 'self.mix(casL="'+ casL + '", numCycles='+ numCycles +', volume='+ mixVol +')'
                                     //add to scriptText
                                     scriptText = scriptText + '\n' + mix
+                                } else {
+                                    //else execute directly
+                                    WAMPHandler.execScript(mix)
                                 }
-                                //else execute directly
 
                             }
                         }
 
                         ComboBox {
                             id: reagentSel
-                            y: 120
                             width: 130
                             height: 30
                             anchors.verticalCenter: loadBtn.verticalCenter
@@ -763,24 +990,9 @@ Item {
                             model: ["meoh", "formalin", "babb", "vial"]
                         }
 
-                        Text {
-                            id: operationsLab
-                            x: 123
-                            width: 118
-                            height: 23
-                            color: "#ffffff"
-                            text: qsTr("Operations")
-                            anchors.top: parent.top
-                            font.bold: true
-                            anchors.topMargin: 0
-                            anchors.left: parent.left
-                            font.pointSize: 14
-                            anchors.leftMargin: 10
-                        }
 
                         ComboBox {
                             id: mixCycles
-                            y: 65
                             width: 70
                             height: 30
                             anchors.verticalCenter: mixBtn.verticalCenter
@@ -827,7 +1039,6 @@ Item {
 
                         Rectangle{
                             id:incRect
-                            y: 13
                             width: 85
                             height: 30
                             color: "#808080"
@@ -878,179 +1089,54 @@ Item {
                                 }
                             }
                         }
-                        Rectangle{
+
+                        IntInput{
                             id:mixAfRect
-                            y: 13
                             width: 85
                             height: 30
                             color: "#808080"
                             anchors.verticalCenter: incRect.verticalCenter
                             anchors.left: incRect.right
                             anchors.leftMargin: 15
-                            TextInput {
-                                property string placeholderText: "No mixing"
-                                id: mixAfIn
-                                color: "#ffffff"
-                                leftPadding: 5
-                                anchors.rightMargin: 0
-                                anchors.bottomMargin: 0
-                                anchors.leftMargin: 0
-                                anchors.topMargin: 0
-                                verticalAlignment: Text.AlignVCenter
-                                horizontalAlignment: Text.AlignLeft
-                                anchors.fill: parent
-                                font.pointSize: 11
-                                selectionColor: "#040450"
-                                text: mixAfterSecs
-                                validator: IntValidator{
-                                    bottom: 0
-                                    top: 99999
-                                }
-                                maximumLength: 5
-                                echoMode: (mixAfterSecs==0 && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
-                                clip: true
 
-                                onEditingFinished: {
-                                    mixAfterSecs = parseInt(mixAfIn.text)
-                                }
-
-                                Text {
-                                    id: phMixTxt
-                                    anchors.fill: parent
-                                    text: mixAfIn.placeholderText
-                                    leftPadding: 5
-                                    verticalAlignment: Text.AlignVCenter
-                                    color: "#aaa"
-                                    font: mixAfIn.font
-                                    visible: mixAfterSecs==0 && !mixAfIn.activeFocus
-                                }
-                            }
+                            maxLength: 5
+                            maxVal: 99999
+                            intVal: mixAfterSecs
+                            placeholderText: "No mixing"
+                            onSetVal: {mixAfterSecs = mixAfRect.intVal}
                         }
 
-                        Rectangle{
+                        DoubleInput{
                             id:mixVolRect
-                            y: 13
                             width: 100
                             height: 30
                             color: "#808080"
                             anchors.verticalCenter: mixBtn.verticalCenter
                             anchors.left: mixCycles.right
                             anchors.leftMargin: 15
-                            TextInput {
-                                property string placeholderText: "volume (mL)"
-                                id: mixVolIn
-                                color: "#ffffff"
-                                leftPadding: 5
-                                anchors.rightMargin: 0
-                                anchors.bottomMargin: 0
-                                anchors.leftMargin: 0
-                                anchors.topMargin: 0
-                                verticalAlignment: Text.AlignVCenter
-                                horizontalAlignment: Text.AlignLeft
-                                anchors.fill: parent
-                                font.pointSize: 11
-                                selectionColor: "#040450"
-                                text: mixVol
-                                validator: DoubleValidator{
-                                    bottom: 0
-                                    top: 10
-                                }
-                                maximumLength: 5
-                                echoMode: (mixVol==0 && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
-                                clip: true
 
-                                onTextEdited: {
-                                    if(parseFloat(mixVolIn.text)>10){
-                                        mixVolIn.text = 0
-                                    }
-                                }
-
-                                onEditingFinished: {
-                                    if (mixVolIn.text == ''){
-                                        mixVol = 0
-                                        mixVolIn.text = 0
-                                    } else if (Math.abs(mixVol)>10){
-                                        mixVol = 0
-                                        mixVolIn.text = 0
-                                    } else {
-                                        mixVol = parseFloat(mixVolIn.text)
-                                    }
-                                }
-
-                                Text {
-                                    id: phMixVolTxt
-                                    anchors.fill: parent
-                                    text: mixVolIn.placeholderText
-                                    leftPadding: 5
-                                    verticalAlignment: Text.AlignVCenter
-                                    color: "#aaa"
-                                    font: mixAfIn.font
-                                    visible: mixVol==0 && !mixVolIn.activeFocus
-                                }
-                            }
+                            maxLength: 5
+                            maxVal: 10
+                            doubleVal: 0
+                            placeholderText: "volume (mL)"
+                            onSetVal: {mixVol = mixVolRect.doubleVal}
                         }
 
-                        Rectangle{
+                        IntInput{
                             id:loadVolRect
-                            y: 188
                             width: 100
                             height: 30
                             color: "#808080"
                             anchors.left: pSpeed.right
                             anchors.leftMargin: 80
                             anchors.verticalCenter: pSpeed.verticalCenter
-                            TextInput {
-                                property string placeholderText: "volume (uL)"
-                                id: loadVolIn
-                                color: "#ffffff"
-                                leftPadding: 5
-                                anchors.rightMargin: 0
-                                anchors.bottomMargin: 0
-                                anchors.leftMargin: 0
-                                anchors.topMargin: 0
-                                verticalAlignment: Text.AlignVCenter
-                                horizontalAlignment: Text.AlignLeft
-                                anchors.fill: parent
-                                font.pointSize: 11
-                                selectionColor: "#040450"
-                                text: loadVol
-                                validator: IntValidator{
-                                    bottom: 0
-                                    top: 3000
-                                }
-                                maximumLength: 4
-                                echoMode: (loadVol==0 && !activeFocus) ? TextInput.NoEcho : TextInput.Normal
-                                clip: true
 
-                                onTextEdited: {
-                                    if(parseInt(loadVolIn.text)>3000){
-                                        loadVolIn.text = 0
-                                    }
-                                }
+                            maxLength: 4
+                            maxVal: 3000
+                            intVal: loadVol
+                            placeholderText: "volume (uL)"
+                            onSetVal: {loadVol = loadVolRect.intVal}
 
-                                onEditingFinished: {
-                                    if (loadVolIn.text == ''){
-                                        loadVol = 0
-                                        loadVolIn.text = 0
-                                    } else if (Math.abs(loadVol)>3000){
-                                        loadVol = 0
-                                        loadVolIn.text = 0
-                                    } else {
-                                        loadVol = parseInt(loadVolIn.text)
-                                    }
-                                }
-
-                                Text {
-                                    id: phLoadVolTxt
-                                    anchors.fill: parent
-                                    text: loadVolIn.placeholderText
-                                    leftPadding: 5
-                                    verticalAlignment: Text.AlignVCenter
-                                    color: "#aaa"
-                                    font: loadVolIn.font
-                                    visible: loadVol==0 && !loadVolIn.activeFocus
-                                }
-                            }
                         }
 
                         CheckBox {
@@ -1074,7 +1160,6 @@ Item {
 
                         Text {
                             id: speedLab
-                            y: 195
                             width: 49
                             height: 18
                             color: "#ffffff"
@@ -1082,12 +1167,459 @@ Item {
                             anchors.verticalCenterOffset: 2
                             anchors.verticalCenter: pSpeed.verticalCenter
                             font.pointSize: 11
-                            anchors.top: volSlider.bottom
                             font.bold: false
                             anchors.leftMargin: 7
-                            anchors.topMargin: 20
                             anchors.left: pSpeed.right
                         }
+                    }
+
+                    Rectangle{
+                        id: paramPg
+                        color:'transparent'
+                        width: view.width
+                        height: 500
+
+                        Text {
+                            id: paramLab
+                            width: 118
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Parameters")
+                            anchors.top: parent.top
+                            font.bold: true
+                            anchors.topMargin: 0
+                            anchors.left: parent.left
+                            font.pointSize: 14
+                            anchors.leftMargin: 10
+                        }
+
+                        Text {
+                            id: mixSpLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Mix Speed:")
+                            font.bold: true
+                            anchors.topMargin: 10
+                            font.pointSize: 12
+                            anchors.top: paramLab.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: mixSpdIn
+                            width: 55
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: mixSpLb.verticalCenter
+                            anchors.left: mixSpLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: mixSpd
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "speed"
+                            onSetVal: {mixSpd = mixSpdIn.doubleVal}
+                        }
+
+                        Text {
+                            id: incSpLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Incubate Speed:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: mixSpLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: incSpdIn
+                            width: 55
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: incSpLb.verticalCenter
+                            anchors.left: incSpLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: incSpd
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "speed"
+                            onSetVal: {incSpd = incSpdIn.doubleVal}
+                        }
+
+                        Text {
+                            id: remSpLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Remove Speed:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: incSpLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: remSpdIn
+                            width: 55
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: remSpLb.verticalCenter
+                            anchors.left: remSpLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: removeSpd
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "speed"
+                            onSetVal: {removeSpd = remSpdIn.doubleVal}
+                        }
+
+                        Text {
+                            id: wasteSpLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Waste Speed:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: remSpLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: wasteSpdIn
+                            width: 55
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: wasteSpLb.verticalCenter
+                            anchors.left: wasteSpLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: wasteSpd
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "speed"
+                            onSetVal: {wasteSpd = wasteSpdIn.doubleVal}
+                        }
+
+                        Text {
+                            id: fillLineSpLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Fill Line Speed:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: wasteSpLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: fillLnSpdIn
+                            width: 55
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: fillLineSpLb.verticalCenter
+                            anchors.left: fillLineSpLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: fillLnSpd
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "speed"
+                            onSetVal: {fillLnSpd = fillLnSpdIn.doubleVal}
+                        }
+
+                        Text {
+                            id: fillSyrSpLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Fill Syringe Speed:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: fillLineSpLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: fillSyrSpdIn
+                            width: 55
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: fillSyrSpLb.verticalCenter
+                            anchors.left: fillSyrSpLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: fillSyrSpd
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "speed"
+                            onSetVal: {fillSyrSpd = fillSyrSpdIn.doubleVal}
+                        }
+
+                        Text {
+                            id: washSyrSpLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Wash Syringe Speed:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: fillSyrSpLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: washSyrSpdIn
+                            width: 55
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: washSyrSpLb.verticalCenter
+                            anchors.left: washSyrSpLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: washSyrSpd
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "speed"
+                            onSetVal: {washSyrSpd = washSyrSpdIn.doubleVal}
+                        }
+
+                        Text {
+                            id: densSpLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Density Adj Speed:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: washSyrSpLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: densSpdIn
+                            width: 55
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: densSpLb.verticalCenter
+                            anchors.left: densSpLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: denseSpd
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "speed"
+                            onSetVal: {denseSpd = densSpdIn.doubleVal}
+                        }
+
+                        Text {
+                            id: densVolLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Density Adj Vol:")
+                            font.bold: true
+                            anchors.topMargin: 12
+                            font.pointSize: 12
+                            anchors.top: densSpLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: densVolIn
+                            width: 70
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: densVolLb.verticalCenter
+                            anchors.left: densVolLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: denseVol
+                            maxLength: 4
+                            maxVal: 5
+                            placeholderText: "vol (mL)"
+                            onSetVal: {denseVol = densVolIn.doubleVal}
+                        }
+
+                        Text {
+                            id: lineVolLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Line Volume:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: densVolLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: lineVolIn
+                            width: 70
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: lineVolLb.verticalCenter
+                            anchors.left: lineVolLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: lineVol
+                            maxLength: 4
+                            maxVal: 5
+                            placeholderText: "vol (mL)"
+                            onSetVal: {lineVol = lineVolIn.doubleVal}
+                        }
+
+                        Text {
+                            id: remVolLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Remove Volume:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: lineVolLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: remVolIn
+                            width: 70
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: remVolLb.verticalCenter
+                            anchors.left: remVolLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: removeVol
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "vol (mL)"
+                            onSetVal: {removeVol = remVolIn.doubleVal}
+                        }
+
+                        Text {
+                            id: purgeVolLb
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Purge Volume:")
+                            font.bold: true
+                            anchors.topMargin: 5
+                            font.pointSize: 12
+                            anchors.top: remVolLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        DoubleInput{
+                            id: purgeVolIn
+                            width: 70
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: purgeVolLb.verticalCenter
+                            anchors.left: purgeVolLb.right
+                            anchors.leftMargin: 20
+
+                            doubleVal: purgeVol
+                            maxLength: 4
+                            maxVal: 10
+                            placeholderText: "vol (mL)"
+                            onSetVal: {purgeVol = purgeVolIn.doubleVal}
+                        }
+
+                        Text {
+                            id: settleTLb
+                            x: 8
+                            y: 9
+                            width: 160
+                            height: 25
+                            color: "#ffffff"
+                            text: qsTr("Settle Time:")
+                            font.bold: true
+                            anchors.topMargin: 12
+                            font.pointSize: 12
+                            anchors.top: purgeVolLb.bottom
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+                        }
+
+                        IntInput{
+                            id: settleTIn
+                            width: 55
+                            height: 25
+                            color: "#808080"
+                            anchors.verticalCenter: settleTLb.verticalCenter
+                            anchors.left: settleTLb.right
+                            anchors.leftMargin: 20
+
+                            intVal: settleTime
+                            maxLength: 4
+                            maxVal: 9999
+                            placeholderText: "secs"
+                            onSetVal: {settleTime = settleTIn.intVal}
+
+                        }
+
+                        BevButton {
+                            id: paramBtn
+                            height: 35
+                            width: 160
+                            text: "Update Parameters"
+                            anchors.top: settleTIn.bottom
+                            anchors.topMargin: 12
+                            anchors.left: parent.left
+                            anchors.leftMargin: 15
+
+                            palette {
+                                button: 'white'
+                            }
+
+                            onClicked: {
+                                //send to controller
+                                var paramDict = {'mixSpeed': mixSpd,
+                                             'incSpeed': incSpd,
+                                             'removeSpeed': removeSpd,
+                                             'wasteSpeed': wasteSpd,
+                                             'fillLineSpeed': fillLnSpd,
+                                             'fillSyrSpeed': fillSyrSpd,
+                                             'washSyrSpeed': washSyrSpd,
+                                             'densSpeed': denseSpd,
+                                             'densVol': denseVol,
+                                             'LINEVOL': lineVol,
+                                             'removeVol': removeVol,
+                                             'purgeVol': purgeVol,
+                                             'settleTime': settleTime}
+                                WAMPHandler.updateParam(paramDict)
+
+                            }
+                        }
+
                     }
                 }
             }
@@ -1297,24 +1829,7 @@ Item {
                 }
             }
 
-
-
-
-
-
-
-
-
         }
-
-        //            PageIndicator {
-        //                id: indicator
-        //                anchors.left: parent.left
-        //                anchors.leftMargin: 10
-        //                count: view.count
-        //                currentIndex: view.currentIndex
-        //                anchors.bottom: view.bottom
-        //            }
 
 
     }
@@ -1338,9 +1853,19 @@ Item {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:14;anchors_width:140;anchors_x:"-165"}
-D{i:20;anchors_y:119}D{i:23;anchors_y:188}D{i:30;anchors_y:203}D{i:31;anchors_y:295}
-D{i:44;anchors_width:95}D{i:45;anchors_width:95}D{i:52;anchors_width:420}D{i:71;anchors_x:209;anchors_y:188}
-D{i:73;anchors_x:91}D{i:76;anchors_width:420}D{i:81;anchors_width:75;anchors_x:238}
+    D{i:20;anchors_y:119}D{i:23;anchors_y:188}D{i:30;anchors_y:203}D{i:31;anchors_y:295}
+D{i:45;anchors_width:95}D{i:47;anchors_width:95}D{i:44;anchors_width:95}D{i:68;anchors_width:420;anchors_y:29}
+D{i:69;anchors_x:151}D{i:70;anchors_y:82}D{i:72;anchors_x:209;anchors_y:188}D{i:73;anchors_width:75;anchors_x:238}
+D{i:74;anchors_x:91;anchors_y:195}D{i:77;anchors_width:420;anchors_y:29}D{i:78;anchors_x:151}
+D{i:79;anchors_y:82}D{i:81;anchors_y:111}D{i:82;anchors_width:75;anchors_x:238}D{i:83;anchors_y:157}
+D{i:84;anchors_width:420;anchors_y:29}D{i:86;anchors_width:420;anchors_y:29}D{i:89;anchors_width:420}
+D{i:91;anchors_width:420}D{i:93;anchors_width:420;anchors_y:29}D{i:94;anchors_width:420;anchors_y:457}
+D{i:95;anchors_width:420;anchors_x:238;anchors_y:29}D{i:97;anchors_width:75;anchors_x:238}
+D{i:96;anchors_width:75;anchors_x:238;anchors_y:29}D{i:101;anchors_width:75;anchors_x:238}
+D{i:100;anchors_width:420;anchors_x:238}D{i:99;anchors_width:75;anchors_x:238}D{i:98;anchors_width:420;anchors_x:238}
+D{i:102;anchors_width:420;anchors_x:238}D{i:103;anchors_width:420}D{i:104;anchors_width:75;anchors_x:238}
+D{i:106;anchors_width:75;anchors_x:238}D{i:107;anchors_width:75;anchors_x:238}D{i:108;anchors_width:75;anchors_x:238}
+D{i:109;anchors_width:75;anchors_x:238}D{i:110;anchors_width:75;anchors_x:238}D{i:105;anchors_width:75;anchors_x:238}
+D{i:14;anchors_width:140;anchors_x:"-165"}
 }
 ##^##*/

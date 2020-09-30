@@ -118,6 +118,7 @@ class Component(ApplicationSession):
         self.taskDF.engaged = self.taskDF.engaged.astype(object)
         self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
         self.guiStatus = 'disconnected'
+        self.taskIter = 1
     
     # @wamp.subscribe('com.prepbot.prothandler.heartbeat-ctrl')
     async def heartbeat(self):
@@ -144,6 +145,8 @@ class Component(ApplicationSession):
                         ctrl.debug('Sent updated {} cassette log!'.format(i))
                 await asyncio.sleep(10)
             except Exception as e:
+                if 'termTask' in str(e):
+                    await self.stopTermTasks()
                 if self.guiStatus == 'connected':
                     self.guiStatus = 'disconnected'
                     ctrl.warning('GUI is disconnected!')
@@ -744,36 +747,28 @@ class Component(ApplicationSession):
     #Perhaps make this an async function that is awaited on as a named task for the debug screen
     @wamp.subscribe('com.prepbot.prothandler.exec-script')
     async def createTerminalTask(self, linesToSend):
-        # loop = asyncio.get_event_loop()
-        self.termTask = nTask.create_task(self.execScript(linesToSend), name='termTask')
-        # loop.run_until_complete(self.termTask)
+        self.termTask = nTask.create_task(self.execScript(linesToSend), name='termTask-{}'.format(self.taskIter))
+        self.taskIter += 1
         
     @wamp.subscribe('com.prepbot.prothandler.exec-stop')
-    async def stopTerminalTask(self):
-        pending = asyncio.Task.all_tasks()
-        for task in pending:
-            ctrl.debug(task )
+    async def stopTermTasks(self):
+        pending = [task for task in nTask.namedTask.all_tasks() if not task.done()]
+        # ctrl.debug(pending)
+        self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
+        #Find the tasks that have termTask in the name
+        indices = [i for i, s in enumerate(self.activeTasks) if 'termTask' in s]
+        # ctrl.debug(indices)
+        termTasks = [pending[i] for i in indices]
+        #Cancel all the termTasks
+        for task in termTasks:
+            ctrl.warning('Stopping {}'.format(task.get_name()))
             task.cancel()
         
         
-        self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
-        ctrl.info(self.activeTasks)
-        if 'termTask' in self.activeTasks:
-            self.termTask.cancel()
-            try:
-                self.termTask
-                cancelBool = self.termTask.cancelled()
-                ctrl.info("The run from the terminal has been cancelled? {}.".format(cancelBool))
-            except asyncio.CancelledError:
-                ctrl.info("The run on terminal has been cancelled.")
-        else:
-            ctrl.warning('Terminal is not running a protocol/task...')
-        
-        
     async def execScript(self, linesToExec):
+        #Check if machine is connected and homed
+        await self.connectNHome()
         try:
-            #Check if machine is connected and homed
-            await self.connectNHome()
             ctrl.info('{}'.format(linesToExec))
             #get current line of ctrl logger to send to debug screen...
             ctrl.info('Starting to execute lines from script editor!')
@@ -790,8 +785,14 @@ class Component(ApplicationSession):
                     else:
                         eval(execList[i])
         except Exception as e:
-            ctrl.critical('Cannot evaluate script! Please check that function called exists and formatting is correct.')
-            ctrl.critical(e)
+            if len(str(e))>0:
+                ctrl.critical('Cannot evaluate script! Please check that function called exists and formatting is correct.')
+                ctrl.critical(e)
+            else:
+                ctrl.warning('Canceling all termTasks...')
+                asyncio.ensure_future(self.stopTermTasks())
+                # await self.stopTermTasks()
+            
     
     async def incubate(self, casL, incTime, mixAfter=600):
         casName = 'cas{}'.format(casL)
@@ -919,10 +920,13 @@ class Component(ApplicationSession):
             casLogs[casL].critical(e)
             # await self.stopProtocol(casL)
         
-    async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol=LINEVOL, washSyr=False):
+    async def loadReagent(self, casL, reagent, vol, speed, deadvol=LINEVOL, washSyr=False, loadstr=None):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
+        if loadstr==None:
+            loadstr = reagent
+            
         try:
             tStart = time.time()
             t0 = time.time()

@@ -5,6 +5,7 @@ from colorlog import ColoredFormatter
 import fcntl
 import sys
 import os
+import time
 #For debugging with only the machine file
 # os.chdir('..')
 # logging.config.fileConfig(fname='./Log/init/ctrl-loggers.ini')
@@ -24,6 +25,7 @@ import os
 #     style='%'
 # )
 logger = logging.getLogger('ctrl.machine')
+opTimeslog = logging.getLogger('ctrl.opTimes')
 # logger.handlers[0].setFormatter(colorFormat)
 
 homed = True
@@ -138,7 +140,7 @@ def move(name, pos, wait=True, speed=None):
     if not homed:
         logger.warning('tried to move before homed!')
         raise RuntimeError
-
+    t0 = time.time()
     logger.debug('move axis: {} {}'.format(name, pos))
     low, high = LIMITS[name]
     if pos < low or pos > high:
@@ -151,8 +153,10 @@ def move(name, pos, wait=True, speed=None):
     if wait:
         wait_move_done()
     motors_off()
+    opTimeslog.debug('Move {}, {} pos, {} speed: {:0.2f}'.format(name, pos, speed, time.time()-t0))
 
 def home_stepper(name, dist, wait=True):
+    t0 = time.time()
     logger.info('home axis: {} {}'.format(name, dist))
     send('MANUAL_STEPPER STEPPER={} MOVE={} STOP_ON_ENDSTOP=1'.format(name, dist))
     wait_ok()
@@ -160,6 +164,7 @@ def home_stepper(name, dist, wait=True):
         wait_move_done()
     send('MANUAL_STEPPER STEPPER={} SET_POSITION=0'.format(name))
     wait_ok()
+    opTimeslog.info('Home stepper {} {} wait={}: {:0.2f}'.format(name, dist, wait, time.time()-t0))
 
 def check_vial_sensor():
     m = s_wheel.readall().decode()
@@ -204,6 +209,7 @@ def pump_off():
     send('SET_PIN PIN=syringe VALUE=0')
 
 def pump_in(ml, speed=PUMP_SPEED):
+    t0 = time.time()
     while ml:
         pump_vent()
         move('pump', 0)
@@ -215,8 +221,10 @@ def pump_in(ml, speed=PUMP_SPEED):
             move('pump', 45*ml/5, speed=speed)
             ml -= ml
         pump_off()
+    opTimeslog.info('Pump in {} mL, {} speed: {:0.2f}s'.format(ml, speed, time.time()-t0))
 
 def pump_out(ml, speed=PUMP_SPEED):
+    t0 = time.time()
     while ml:
         pump_vent()
         if ml >= 3:
@@ -228,50 +236,69 @@ def pump_out(ml, speed=PUMP_SPEED):
         pump_syringe()
         move('pump', 0, speed=speed)
         pump_off()
+    opTimeslog.info('Pump out {} mL, {} speed: {:0.2f}s'.format(ml, speed, time.time()-t0))
 
 def goto_waste():
+    t0 = time.time()
     move('z', Z_SAFE)
     move('x', X_WASTE)
     move('z', Z_WASTE)
+    opTimeslog.info('Goto waste: {:0.2f}'.format(time.time()-t0))
 
 def goto_meoh():
+    t0 = time.time()
     move('z', Z_SAFE)
     move('x', X_MEOH)
     move('z', Z_SEPTUM)
+    opTimeslog.info('Goto MEOH: {:0.2f}'.format(time.time()-t0))
 
 def goto_park():
+    t0 = time.time()
     move('z', Z_SAFE)
     move('x', X_PARK)
+    opTimeslog.info('Goto park: {:0.2f}'.format(time.time()-t0))
 
 def goto_babb():
+    t0 = time.time()
     move('z', Z_SAFE)
     move('x', X_BABB_2)
     move('z', Z_BABB)
+    opTimeslog.info('Goto BABB: {:0.2f}'.format(time.time()-t0))
 
 def goto_sampleD():
+    t0 = time.time()
     move('z', Z_SAFE)
     move('x', X_SAMPLE_D)
     move('z', Z_SEPTUM)
+    opTimeslog.info('Goto sampleD: {:0.2f}'.format(time.time()-t0))
     
 def goto_sampleE():
+    t0 = time.time()
     move('z', Z_SAFE)
     move('x', X_SAMPLE_E)
     move('z', Z_SEPTUM)
+    opTimeslog.info('Goto sampleE: {:0.2f}'.format(time.time()-t0))
 
 def goto_sampleF():
+    t0 = time.time()
     move('z', Z_SAFE)
     move('x', X_SAMPLE_F)
     move('z', Z_SEPTUM)
+    opTimeslog.info('Goto sampleF: {:0.2f}'.format(time.time()-t0))
 
 def goto_formalin():
+    t0 = time.time()
     move('z', Z_SAFE)
     move('x', X_FORMALIN)
     move('z', Z_SEPTUM)
+    opTimeslog.info('Goto formalin: {:0.2f}'.format(time.time()-t0))
 
 def goto_vial():
+    t0 = time.time()
     move('z', Z_SAFE)
     move('x', X_VIAL)
     move('z', Z_SEPTUM)
+    opTimeslog.info('Goto vial: {:0.2f}'.format(time.time()-t0))
 
 def purge_syringe():
     empty_syringe()
@@ -280,9 +307,11 @@ def purge_syringe():
     empty_syringe()
 
 def empty_syringe(speed=1):
+    t0 = time.time()
     goto_waste()
     pump_out(5, speed=speed)
     move('z', Z_SAFE)
+    opTimeslog.info('Empty syringe {} speed: {:0.2f}s'.format(speed, time.time()-t0))
 
 def dye_process():
     empty_syringe()
@@ -292,27 +321,40 @@ def dye_process():
     vial_discard()
 
 def engage_sampleD():
+    t0 = time.time()
     move('sampleD', S_ENGAGE_D)
+    opTimeslog.info('Engage sampleD: {:0.2f}s'.format(time.time()-t0))
 
 def disengage_sampleD():
+    t0 = time.time()
     move('sampleD', S_DISENGAGE)
+    opTimeslog.info('Disengage sampleD: {:0.2f}s'.format(time.time()-t0))
 
 def engage_sampleE():
+    t0 = time.time()
     move('sampleE', S_ENGAGE_E)
+    opTimeslog.info('Engage sampleE: {:0.2f}'.format(time.time()-t0))
 
 def disengage_sampleE():
+    t0 = time.time()
     move('sampleE', S_DISENGAGE)
+    opTimeslog.info('Disengage sampleE: {:0.2f}'.format(time.time()-t0))
 
 def engage_sampleF():
+    t0 = time.time()
     move('sampleF', S_ENGAGE_F)
+    opTimeslog.info('Engage sampleF: {:0.2f}'.format(time.time()-t0))
 
 def disengage_sampleF():
+    t0 = time.time()
     move('sampleF', S_DISENGAGE)
+    opTimeslog.info('Disengage sampleF: {:0.2f}'.format(time.time()-t0))
 
 def motors_off():
     send('M84')
 
 def home():
+    t0 = time.time()
     global homed
     home_stepper('z', -100, wait=False)
     home_stepper('pump', -50, wait=False)
@@ -323,3 +365,4 @@ def home():
     wait_move_done()
     motors_off()
     homed = True
+    opTimeslog.info('Finished homing: {:0.2f}'.format(time.time()-t0))
