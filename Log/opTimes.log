@@ -1157,3 +1157,16 @@
 2020-09-30 17:15:42 ctrl.opTimes INFO     Clean Time: 5.00s
 2020-09-30 17:15:43 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
 2020-09-30 17:15:45 ctrl.opTimes INFO     Adding meoh, 0 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 18:23:20 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 18:23:22 ctrl.opTimes INFO     Adding meoh, 1.231 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 18:23:22 ctrl.opTimes INFO     FINISHED LOADING meoh TO CasA, Time: 3.01s
+2020-09-30 18:23:36 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 18:23:38 ctrl.opTimes INFO     Adding meoh, 1.231 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 18:23:38 ctrl.opTimes INFO     FINISHED LOADING meoh TO CasA, Time: 3.01s
+2020-09-30 18:24:00 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 18:24:02 ctrl.opTimes INFO     Adding formalin, 1.231 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 18:24:11 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 18:24:13 ctrl.opTimes INFO     Adding meoh, 1.231 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 18:24:18 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
+2020-09-30 18:24:20 ctrl.opTimes INFO     Adding meoh, 1.231 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
+2020-09-30 18:24:20 ctrl.opTimes INFO     FINISHED LOADING meoh TO CasA, Time: 3.01s

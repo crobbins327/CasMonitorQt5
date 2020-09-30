@@ -5,10 +5,7 @@ from colorlog import ColoredFormatter
 import fcntl
 import sys
 import os
-<<<<<<< HEAD
 import time
-=======
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
 #For debugging with only the machine file
 # os.chdir('..')
 # logging.config.fileConfig(fname='./Log/init/ctrl-loggers.ini')
@@ -28,10 +25,7 @@ import time
 #     style='%'
 # )
 logger = logging.getLogger('ctrl.machine')
-<<<<<<< HEAD
 opTimeslog = logging.getLogger('ctrl.opTimes')
-=======
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
 # logger.handlers[0].setFormatter(colorFormat)
 
 homed = True
@@ -276,7 +270,6 @@ def goto_sampleD():
     move('z', Z_SAFE)
     move('x', X_SAMPLE_D)
     move('z', Z_SEPTUM)
-<<<<<<< HEAD
     opTimeslog.info('Goto sampleD: {:0.2f}'.format(time.time()-t0))
     
 def goto_sampleE():
@@ -292,18 +285,6 @@ def goto_sampleF():
     move('x', X_SAMPLE_F)
     move('z', Z_SEPTUM)
     opTimeslog.info('Goto sampleF: {:0.2f}'.format(time.time()-t0))
-=======
-    
-def goto_sampleE():
-    move('z', Z_SAFE)
-    move('x', X_SAMPLE_E)
-    move('z', Z_SEPTUM)
-
-def goto_sampleF():
-    move('z', Z_SAFE)
-    move('x', X_SAMPLE_F)
-    move('z', Z_SEPTUM)
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
 
 def goto_formalin():
     t0 = time.time()
@@ -325,12 +306,12 @@ def purge_syringe():
     pump_in(3)
     empty_syringe()
 
-def empty_syringe(speed=1):
+def empty_syringe(purgeVol=5, speed=1):
     t0 = time.time()
     goto_waste()
-    pump_out(5, speed=speed)
+    pump_out(purgeVol, speed=speed)
     move('z', Z_SAFE)
-    opTimeslog.info('Empty syringe {} speed: {:0.2f}s'.format(speed, time.time()-t0))
+    opTimeslog.info('Empty syringe {} mL, {} speed: {:0.2f}s'.format(purgeVol, speed, time.time()-t0))
 
 def dye_process():
     empty_syringe()

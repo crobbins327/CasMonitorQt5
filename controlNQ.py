@@ -8,6 +8,9 @@ import datetime
 import machine
 import itertools
 import namedTask as nTask
+# import confuse
+import yaml
+from collections import OrderedDict
 
 import pandas as pd
 # pd.set_option('display.max_rows', None)
@@ -75,37 +78,63 @@ machinelog.addHandler(modHdl)
 #close file and do not write anything until needed
 modHdl.close()
 
-<<<<<<< HEAD
-mixSpeed = 1
-incSpeed = 0.2
-removeSpeed = 1
-fillLineSpeed = 1
-fillSyrSpeed = 1
-washSyrSpeed = 1
-wasteSpeed = 4
 
-# sample deadspace
-LINEVOL = 0.75
-removeVol = 1.5
-purgeVol = 4
 
-#Dictionary for density adjustments
-#vial==stain
-#unk or unknown for first fluid in chamber. It adjusts like if it were water in the chamber
-reaDensOrder = {'meoh':0,'vial':0,'formalin':1,'babb':2, 'unk': 1}
-#Density column adjustment volume and speed
-densVol = 0.1
-densSpeed = 0.2
-#Time to let fluid layers settle before density adjustment (secs)
-settleTime = 15
-=======
-mixSpeed = 3
-purgeSpeed = 3
-purgeVol = 4
-deadspace = 3
-wasteSpeed = 8
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
+#open YAML file with parameters....
+def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
+    class OrderedLoader(Loader):
+        pass
+    def construct_mapping(loader, node):
+        loader.flatten_mapping(node)
+        return object_pairs_hook(loader.construct_pairs(node))
+    OrderedLoader.add_constructor(
+        yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
+        construct_mapping)
+    return yaml.load(stream, OrderedLoader)
 
+def ordered_dump(data, stream=None, Dumper=yaml.Dumper, **kwds):
+    class OrderedDumper(Dumper):
+        pass
+    def _dict_representer(dumper, data):
+        return dumper.represent_mapping(
+            yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
+            data.items())
+    OrderedDumper.add_representer(OrderedDict, _dict_representer)
+    return yaml.dump(data, stream, OrderedDumper, **kwds)
+
+
+with open(r'./prepbot/config.yaml') as file:
+    # The FullLoader parameter handles the conversion from YAML
+    # scalar values to Python the dictionary format
+    # confY = yaml.safe_load(file)
+    confY = ordered_load(file, yaml.SafeLoader)
+    ctrl.debug(confY)
+
+
+param = confY['parameters']
+
+# mixSpeed = 1
+# incSpeed = 0.2
+# removeSpeed = 1
+# wasteSpeed = 4
+# fillLineSpeed = 1
+# fillSyrSpeed = 1
+# washSyrSpeed = 1
+
+# # sample deadspace
+# LINEVOL = 0.75
+# removeVol = 4
+# purgeVol = 5
+
+# #Dictionary for density adjustments
+# #vial==stain
+# #unk or unknown for first fluid in chamber. It adjusts like if it were water in the chamber
+# reaDensOrder = {'meoh':0,'vial':0,'formalin':1,'babb':2, 'unk': 1}
+# #Density column adjustment volume and speed
+# densVol = 0.1
+# densSpeed = 0.2
+# #Time to let fluid layers settle before density adjustment (secs)
+# settleTime = 15
 
 # Define application session class for controller
 class Component(ApplicationSession):
@@ -133,8 +162,14 @@ class Component(ApplicationSession):
         if self.guiStatus == 'disconnected':
             self.guiStatus = 'connected'
             
+    async def halt(self):
+        machine.send('M112', read_response=False)
+        self.halted = True
+        self.homed = False
+
     def send_mStatus(self):
         return(self.homed)
+    
     
     async def update(self):
         while True:
@@ -161,7 +196,30 @@ class Component(ApplicationSession):
                     ctrl.warning(e)
                 await asyncio.sleep(1)
                 
-
+    @wamp.subscribe('com.prepbot.prothandler.send-param-controller')
+    async def update_param(self, paramDict):
+        ctrl.debug(paramDict)
+        #Set global param
+        self.set_param(paramDict)
+        #Write to YAML file...
+        with open('./prepbot/config.yaml', 'w') as f:
+            # yaml.dump(confY, f, default_flow_style=False, sort_keys=False)
+            ordered_dump(confY, f, Dumper=yaml.SafeDumper)
+            
+        ctrl.debug('Wrote parameters to config.yaml!')
+        #Confirm GUI is updated...
+        self.publish('com.prepbot.prothandler.send-param-gui', param)
+    
+    def set_param(self, paramDict):
+        global confY, param
+        for k in paramDict.keys():
+            param[k] = paramDict[k]
+        confY['parameters'] = param
+            
+    def send_param(self):
+        self.publish('com.prepbot.prothandler.send-param-gui', param)
+        
+                
     async def onJoin(self, details):
         #Trying to check if there was a disconnection recently
         #If disconnection occured, load in taskDF from file
@@ -170,7 +228,7 @@ class Component(ApplicationSession):
         disconnectDir = os.listdir('./Log/disconnect')
         if 'disconnect-state.pkl' in disconnectDir:
             dcTask = pd.read_pickle('./Log/disconnect/disconnect-state.pkl')
-            ctrl.info('Checking disonnect-state for last controller state...')
+            ctrl.info('Checking disconnect-state for last controller state...')
             ctrl.debug('\n{}'.format(dcTask))
             self.taskDF = dcTask
             #Remove that file so that it would not disrupt a new controller instance
@@ -183,9 +241,10 @@ class Component(ApplicationSession):
             self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-ctrl')
             self.register(self.get_caslogchunk, 'com.prepbot.prothandler.caslog-chunk')
             self.register(self.send_mStatus, 'com.prepbot.prothandler.gui-get-machine-homed')
+            self.register(self.send_param, 'com.prepbot.prothandler.gui-get-param')
             ctrl.info('Registered to all procedures!')
         except Exception as e:
-            ctrl.error('Could not register get_tasks to router...')
+            ctrl.error('Could not register functions to router...')
             ctrl.error(e)
         try:
             res = await self.subscribe(self)
@@ -194,7 +253,6 @@ class Component(ApplicationSession):
             ctrl.error("could not subscribe to procedure: {0}".format(e))
 
         asyncio.ensure_future(self.update())
-<<<<<<< HEAD
         #After connecting to router, make sure machine is connected and check if it should be homed
         if self.halted == True:
         	try:
@@ -236,26 +294,13 @@ class Component(ApplicationSession):
 	            self.writeDCstate = False
 	            self.leave()
 	            self.disconnect()
-
+                
+        ctrl.info('Sending parameters to GUI...')
+        self.send_param()
 	    #Warn GUI to prime the reagent lines
         #Formalin ~3mL, 10speed
         #MeOH ~3mL, 10speed
 	        
-=======
-        #After connecting, home the machine and make sure it's connected
-        #Prime the reagent lines
-        #Formalin ~3mL, 10speed
-        #MeOH ~3mL, 10speed
-        try:
-            machine.reset()
-            machine.home()
-        except Exception as e:
-            ctrl.critical('Could not reset and home machine!')
-            ctrl.critical(e)
-            self.leave()
-            self.disconnect()
-        
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
         if len(dcTask):
             #Convert strings back to lists...
             if pd.notna(self.taskDF.status).sum() > 0 or self.taskDF.engaged.sum() > 0:
@@ -272,7 +317,6 @@ class Component(ApplicationSession):
             
     def onDisconnect(self):
         ctrl.warning("Disconnected, {}".format(self.activeTasks))
-<<<<<<< HEAD
 
         if self.writeDCstate == True:
         	#Write the last state of the controller taskDF to a file
@@ -306,20 +350,6 @@ class Component(ApplicationSession):
                 ctrl.critical(e)
 
 
-=======
-        #Write the last state of the controller taskDF to a file
-        ctrl.info('Writing disconnect-state to file...')
-        self.taskDF.to_pickle('./Log/disconnect/disconnect-state.pkl')
-        try:
-            machine.goto_park()
-            ctrl.info('Parking machine...')
-        except Exception as e:
-            ctrl.critical('Could not park machine!')
-            ctrl.critical(e)
-        
-        
-        
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
     def get_tasks(self):
         return(self.taskDF.to_json())
     
@@ -343,19 +373,19 @@ class Component(ApplicationSession):
                     elif i > start+limit:
                         break
                     
-                    
-        def update_caslogchunk(self, casL):
-            #Send updated log
-            start = self.taskDF.loc['cas{}'.format(casL),'endlog'] + 1
-            linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
-            if len(linesToSend) > 0:
-                self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
-            #Update end line number of log
-            self.taskDF.loc['cas{}'.format(casL),'endlog'] = currentEnd
-                    
         #Make a string that can be displayed/written to file
         linesToSend = ''.join(linesToSend)
         return(linesToSend, end)
+        
+    
+    # def update_caslogchunk(self, casL):
+    #     #Send updated log
+    #     start = self.taskDF.loc['cas{}'.format(casL),'endlog'] + 1
+    #     linesToSend, currentEnd = self.get_caslogchunk(casL, start, end=0)
+    #     if len(linesToSend) > 0:
+    #         self.publish('com.prepbot.prothandler.update-cas-log', casL, linesToSend, currentEnd)
+    #     #Update end line number of log
+    #     self.taskDF.loc['cas{}'.format(casL),'endlog'] = currentEnd
                     
     async def get_lastline(self, fn):
         with open(fn, 'r') as logfile:
@@ -402,11 +432,7 @@ class Component(ApplicationSession):
         casLogs[casL].info('Engage Cas{}...'.format(casL))
         # machine.test_logger()
         try:
-<<<<<<< HEAD
             # eval('machine.engage_sample{}()'.format(casL))
-=======
-            eval('machine.engage_sample{}()'.format(casL))
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
 #             time.sleep(1)
             self.publish('com.prepbot.prothandler.ready', casL, True)
             self.taskDF.loc['cas{}'.format(casL),'engaged'] = True
@@ -426,19 +452,12 @@ class Component(ApplicationSession):
         await self.connectNHome()
         casLogs[casL].info('Disengage Cas{}...'.format(casL))
         try:
-<<<<<<< HEAD
             # eval('machine.disengage_sample{}()'.format(casL))
-=======
-            eval('machine.disengage_sample{}()'.format(casL))
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
 #             time.sleep(1)
             self.publish('com.prepbot.prothandler.ready', casL, False)
             self.taskDF.loc['cas{}'.format(casL)] = np.nan
             self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
-<<<<<<< HEAD
             
-=======
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
         except Exception as e:
             ctrl.critical('Machine could not disengage cas{}. Does it exist?'.format(casL))
             ctrl.critical(e)
@@ -699,7 +718,7 @@ class Component(ApplicationSession):
         
     
     
-    async def clean(self, casL, deadvol=LINEVOL):
+    async def clean(self, casL, deadvol=param['LINEVOL']):
         await asyncio.sleep(0.1)
         #Basic cleaning procedures when finishing a run
         try:
@@ -712,22 +731,22 @@ class Component(ApplicationSession):
             casLogs[casL].info('Cleaning line for Cas{}'.format(casL))
             casLogs[casL].info('PURGING LINE, Cas{}'.format(casL))
             # eval('machine.goto_sample{}()'.format(casL))
-            # machine.pump_in(purgeVol, removeSpeed)
-            # machine.empty_syringe(wasteSpeed)
+            # machine.pump_in(param['removeVol'], param['removeSpeed'])
+            # machine.empty_syringe(param['purgeVol'], param['wasteSpeed'])
             
-            time.sleep(5)
+            await asyncio.sleep(5)
             
             casLogs[casL].info('MEOH WASH of Cas{} LINE'.format(casL))
             # machine.goto_meoh()
-            # machine.pump_in(deadvol, washSyrSpeed)
+            # machine.pump_in(deadvol, param['washSyrSpeed'])
             #wash the line
             # eval('machine.goto_sample{}()'.format(casL))
             #fill linevol
-            # machine.pump_out(deadvol, fillLineSpeed)
+            # machine.pump_out(deadvol, param['fillLineSpeed'])
             #remove from line
             casLogs[casL].info('REMOVING MEOH WASH from LINE, Cas{}'.format(casL))
-            # machine.pump_in(purgeVol, removeSpeed)
-            # machine.empty_syringe(wasteSpeed)
+            # machine.pump_in(param['removeVol'], param['removeSpeed'])
+            # machine.empty_syringe(param['purgeVol'], param['wasteSpeed'])
             
             #Stop time
             casLogs[casL].info('Clean Time: {:0.2f}s'.format(time.time()-t0))
@@ -755,12 +774,11 @@ class Component(ApplicationSession):
         self.publish('com.prepbot.prothandler.finish-shutdown', casL, self.taskDF.loc[casName].to_json())
     
     
-    async def shutdown(self, casL, deadvol=LINEVOL):
+    async def shutdown(self, casL, deadvol=param['LINEVOL']):
         await asyncio.sleep(0.1)
         #Basic shutdown procedures when stopping a run before finishing.....
         casLogs[casL].info('SHUTDOWN Cas{}'.format(casL))
         try:
-<<<<<<< HEAD
         #Start time
             t0 = time.time()
             
@@ -771,36 +789,32 @@ class Component(ApplicationSession):
             casLogs[casL].info('Cleaning line for Cas{}'.format(casL))
             casLogs[casL].info('PURGING LINE, Cas{}'.format(casL))
             # eval('machine.goto_sample{}()'.format(casL))
-            # machine.pump_in(purgeVol, removeSpeed)
-            # machine.empty_syringe(wasteSpeed)
+            # machine.pump_in(param['removeVol'], param['removeSpeed'])
+            # machine.empty_syringe(param['purgeVol'], param['wasteSpeed'])
             
-            time.sleep(5)
+            await asyncio.sleep(5)
             
             casLogs[casL].info('MEOH WASH of Cas{} LINE'.format(casL))
             # machine.goto_meoh()
-            # machine.pump_in(deadvol, washSyrSpeed)
+            # machine.pump_in(deadvol, param['washSyrSpeed'])
             #wash the line
             # eval('machine.goto_sample{}()'.format(casL))
             #fill linevol
-            # machine.pump_out(deadvol, fillLineSpeed)
+            # machine.pump_out(deadvol, param['fillLineSpeed'])
             #remove from line
             casLogs[casL].info('REMOVING MEOH WASH from LINE, Cas{}'.format(casL))
-            # machine.pump_in(purgeVol, removeSpeed)
-            # machine.empty_syringe(wasteSpeed)
+            # machine.pump_in(param['removeVol'], param['removeSpeed'])
+            # machine.empty_syringe(param['purgeVol'], param['wasteSpeed'])
             
             #Stop time
             casLogs[casL].info('Shutdown Time: {:0.2f}s'.format(time.time()-t0))
             opTimeslog.info('Shutdown Time: {:0.2f}s'.format(time.time()-t0))
 
-=======
-            machine.goto_park()
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
         except Exception as e:
             casLogs[casL].critical(e)
             
     #Perhaps make this an async function that is awaited on as a named task for the debug screen
     @wamp.subscribe('com.prepbot.prothandler.exec-script')
-<<<<<<< HEAD
     async def createTerminalTask(self, linesToSend):
         self.termTask = nTask.create_task(self.execScript(linesToSend), name='termTask-{}'.format(self.taskIter))
         self.taskIter += 1
@@ -823,9 +837,6 @@ class Component(ApplicationSession):
     async def execScript(self, linesToExec):
         #Check if machine is connected and homed
         await self.connectNHome()
-=======
-    async def execScript(self, linesToExec):
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
         try:
             ctrl.info('{}'.format(linesToExec))
             #get current line of ctrl logger to send to debug screen...
@@ -843,7 +854,6 @@ class Component(ApplicationSession):
                     else:
                         eval(execList[i])
         except Exception as e:
-<<<<<<< HEAD
             if len(str(e))>0:
                 ctrl.critical('Cannot evaluate script! Please check that function called exists and formatting is correct.')
                 ctrl.critical(e)
@@ -852,16 +862,11 @@ class Component(ApplicationSession):
                 asyncio.ensure_future(self.stopTermTasks())
                 # await self.stopTermTasks()
             
-=======
-            ctrl.critical('Cannot evaluate script! Please check that function called exists and formatting is correct.')
-            ctrl.critical(e)
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
     
-    async def incubate(self, casL, incTime, mixAfter=600):
+    async def incubate(self, casL, incTime, mixAfter=600, incSleep=10):
         casName = 'cas{}'.format(casL)
         #Get start time
         start = datetime.datetime.now()
-        incSleep  = 10
         fn = casLogs[casL].handlers[0].baseFilename
         try:
             if not incTime > 0:
@@ -888,9 +893,12 @@ class Component(ApplicationSession):
                 washI = int(incTime/mixMod)
                 #Divide mixMod by the incSleep to get the iterator for how many times to asyncio.sleep
                 #wait iterator
-                waitI = int(mixMod/incSleep)
-                if waitI < 1:
-                    waitI=1
+                if mixMod < incSleep:
+                    incSleep = mixMod
+                    waitI = 1
+                else:
+                    waitI = int(mixMod/incSleep)
+                
         except Exception as e:
             casLogs[casL].critical(e)
             casLogs[casL].critical('Skipping incubation...')
@@ -929,12 +937,11 @@ class Component(ApplicationSession):
                 casLogs[casL].info('Mixing Cas{}...'.format(casL))
                 #Goto last fluidtype???
                 try:
-<<<<<<< HEAD
                     t0 = time.time()
                     # eval('machine.goto_sample{}()'.format(casL))
-                    # machine.pump_in(0.6, incSpeed)
+                    # machine.pump_in(0.6, param['incSpeed'])
                     time.sleep(1)
-                    # machine.pump_out(0.6, incSpeed)
+                    # machine.pump_out(0.6, param['incSpeed'])
                     self.taskDF.loc['cas{}'.format(casL),'endlog'] = await self.get_lastline(fn)
                     self.publish('com.prepbot.prothandler.update-taskdf',casL,self.taskDF.loc[casName].to_json())
                     casLogs[casL].info('Inc. Mix Time: {:0.2f}s'.format(time.time()-t0))
@@ -944,14 +951,6 @@ class Component(ApplicationSession):
                     # await self.stopProtocol(casL)
         
         casLogs[casL].info('FINISHED INCUBATION of Cas{}'.format(casL))
-=======
-                    eval('machine.goto_sample{}()'.format(casL))
-                    machine.pump_in(0.5, mixSpeed)
-                    time.sleep(2)
-                    machine.pump_out(0.5, mixSpeed)
-                except Exception as e:
-                    casLogs[casL].critical(e)
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
         
     async def mix(self, casL, numCycles, volume):
         await asyncio.sleep(0.1)
@@ -959,16 +958,15 @@ class Component(ApplicationSession):
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
         casLogs[casL].info("MIXING Cas{}, {} TIMES, {} VOLUME".format(casL, numCycles, volume))
         try:
-<<<<<<< HEAD
             # eval('machine.goto_sample{}()'.format(casL))
             tStart = time.time()
             for i in range(int(numCycles)):
                 # await asyncio.sleep(0.01)
                 casLogs[casL].info('Mixing {}, #{} of {} cycles...'.format(casL,i+1,int(numCycles)))
                 t0 = time.time()
-                # machine.pump_in(volume, mixSpeed)
+                # machine.pump_in(volume, param['mixSpeed'])
                 time.sleep(2)
-                # machine.pump_out(volume, mixSpeed)
+                # machine.pump_out(volume, param['mixSpeed'])
                 opTimeslog.info('Mix cycle {} of {} Time: {:0.2f}s'.format(i+1, int(numCycles), time.time()-t0))
                 
             opTimeslog.info('Mix Finished, {} cycles Time: {:0.2f}s'.format(int(numCycles), time.time()-tStart))
@@ -976,39 +974,24 @@ class Component(ApplicationSession):
             casLogs[casL].critical(e)
             # await self.stopProtocol(casL)
         
-    async def purge(self, casL, deadvol=LINEVOL):
-=======
-            eval('machine.goto_sample{}()'.format(casL))
-            for i in range(int(numCycles)):
-                # await asyncio.sleep(0.01)
-                casLogs[casL].info('Mixing {}, #{} of {} cycles...'.format(casL,i+1,int(numCycles)))
-                # Goto last fluidtype???
-                machine.pump_in(volume, mixSpeed)
-                time.sleep(2)
-                machine.pump_out(volume, mixSpeed)
-        except Exception as e:
-            casLogs[casL].critical(e)
-        
-    async def purge(self, casL, deadvol=deadspace):
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
+    async def purge(self, casL, deadvol=param['LINEVOL']):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
         casLogs[casL].info('PURGING CHAMBER, Cas{}'.format(casL))
         # Goto last fluidtype???
         try:
-<<<<<<< HEAD
             t0 = time.time()
             # eval('machine.goto_sample{}()'.format(casL))
-            # machine.pump_in(purgeVol, removeSpeed)
+            # machine.pump_in(param['removeVol'], param['removeSpeed'])
             time.sleep(1)
-            # machine.empty_syringe(wasteSpeed)
-            opTimeslog.info('Purge, {} mL, {} removeSpeed, {} wasteSpeed, Time: {:0.2f}s'.format(purgeVol, removeSpeed, wasteSpeed, time.time()-t0))
+            # machine.empty_syringe(param['purgeVol'], param['wasteSpeed'])
+            opTimeslog.info('Purge, {} mL, {} removeSpeed, {} wasteSpeed, Time: {:0.2f}s'.format(param['removeVol'], param['removeSpeed'], param['wasteSpeed'], time.time()-t0))
         except Exception as e:
             casLogs[casL].critical(e)
             # await self.stopProtocol(casL)
         
-    async def loadReagent(self, casL, reagent, vol, speed, deadvol=LINEVOL, washSyr=False, loadstr=None):
+    async def loadReagent(self, casL, reagent, vol, speed, deadvol=param['LINEVOL'], washSyr=False, loadstr=None):
         await asyncio.sleep(0.1)
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
@@ -1020,11 +1003,11 @@ class Component(ApplicationSession):
             t0 = time.time()
             casLogs[casL].info('PURGING CHAMBER, Cas{}'.format(casL))
             # eval('machine.goto_sample{}()'.format(casL))
-            # machine.pump_in(purgeVol, removeSpeed)
+            # machine.pump_in(param['removeVol'], param['removeSpeed'])
             time.sleep(1)
-            # machine.empty_syringe(wasteSpeed)
-            opTimeslog.info('Purge, {} mL, {} removeSpeed, {} wasteSpeed, Time: {:0.2f}s'.format(purgeVol, removeSpeed, wasteSpeed, time.time()-t0))
-            # #flowThru = purgeVol + deadvol
+            # machine.empty_syringe(param['purgeVol'], param['wasteSpeed'])
+            opTimeslog.info('Purge, {} mL, {} removeSpeed, {} wasteSpeed, Time: {:0.2f}s'.format(param['removeVol'], param['removeSpeed'], param['wasteSpeed'], time.time()-t0))
+            # #flowThru = param['purgeVol'] + deadvol
             # #machine.pump_out(flowThru, purgeSpeed)
             
             if washSyr == True:
@@ -1032,32 +1015,32 @@ class Component(ApplicationSession):
                 casLogs[casL].info('WASHING SYRINGE WITH {}'.format(loadstr))
                 # eval('machine.goto_{}()'.format(reagent))
                 deVol = vol + deadvol
-                # machine.pump_in(deVol, washSyrSpeed)
+                # machine.pump_in(deVol, param['washSyrSpeed'])
                 #wash the line
                 # eval('machine.goto_sample{}()'.format(casL))
                 #fill linevol
-                # machine.pump_out(deadvol, fillLineSpeed)
+                # machine.pump_out(deadvol, param['fillLineSpeed'])
                 #remove from line
-                # machine.pump_in(purgeVol, removeSpeed)
+                # machine.pump_in(param['removeVol'], param['removeSpeed'])
                 time.sleep(1)
-                # machine.empty_syringe(wasteSpeed)
-                opTimeslog.info('Wash Syringe, {} mL, {} washSyrSpeed, {} fillLineSpeed, Time: {:0.2f}s'.format(deVol, washSyrSpeed, fillLineSpeed, time.time()-t0))
+                # machine.empty_syringe(param['purgeVol'], param['wasteSpeed'])
+                opTimeslog.info('Wash Syringe, {} mL, {} washSyrSpeed, {} fillLineSpeed, Time: {:0.2f}s'.format(deVol, param['washSyrSpeed'], param['fillLineSpeed'], time.time()-t0))
                 
             t0 = time.time()    
             casLogs[casL].info('ADDING {} TO Cas{}'.format(loadstr, casL))
             # eval('machine.goto_{}()'.format(reagent))
             deVol = vol + deadvol
     #            assume lines are primed....
-            # machine.pump_in(deVol, fillSyrSpeed)
+            # machine.pump_in(deVol, param['fillSyrSpeed'])
             # eval('machine.goto_sample{}()'.format(casL))
             #pump out to LINEVOL at fillLineSpeed
-            # machine.pump_out(deadvol, fillLineSpeed)
+            # machine.pump_out(deadvol, param['fillLineSpeed'])
             time.sleep(2)
             if reagent == 'babb':
                 time.sleep(2)
             #pump out remaining fluid to fill the cassette depending on adjustable volume and speed
             # machine.pump_out(vol, speed)
-            opTimeslog.info('Adding {}, {} mL, {} fillLineSpeed, {} speed, Time: {:0.2f}s'.format(loadstr, vol, fillLineSpeed, speed, time.time()-t0))
+            opTimeslog.info('Adding {}, {} mL, {} fillLineSpeed, {} speed, Time: {:0.2f}s'.format(loadstr, vol, param['fillLineSpeed'], speed, time.time()-t0))
         
         except Exception as e:
             casLogs[casL].citical('Load Reagent, 1st block error...')
@@ -1066,14 +1049,14 @@ class Component(ApplicationSession):
         #adjust for last fluid density
         #meoh < formalin/water < babb
         residualFluid = self.taskDF.loc['cas{}'.format(casL),'currentFluid']
-        reaDen = reaDensOrder[reagent]
+        reaDen = param['reagentDensOrder'][reagent]
         try:
-            residualDen = reaDensOrder[residualFluid]
+            residualDen = param['reagentDensOrder'][residualFluid]
         except Exception as e:
             casLogs[casL].warning('Residual fluid may not be inside of density adjustment dictionary: {}'.format(residualFluid))
             casLogs[casL].warning(e)
             casLogs[casL].info('Setting residual fluid to unknown (unk)')
-            residualDen = reaDensOrder['unk']
+            residualDen = param['reagentDensOrder']['unk']
             
         #update current fluid in taskDF
         self.taskDF.loc['cas{}'.format(casL),'currentFluid'] = reagent
@@ -1084,13 +1067,13 @@ class Component(ApplicationSession):
             #if reagent density > currentFluid density
             #pump out a little more reagent to push out the last fluid
             #Allow fluid density column to settle
-            casLogs[casL].info('Cas{} SETTLE TIME: {}'.format(casL, settleTime))
-            await asyncio.sleep(settleTime)
-            casLogs[casL].info('Cas{}: Reagent ({}) is denser than residual fluid ({}). Pump out {}mL to push out residual fluid.'.format(casL, reagent, residualFluid, densVol))
+            casLogs[casL].info('Cas{} SETTLE TIME: {}'.format(casL, param['settleTime']))
+            await asyncio.sleep(param['settleTime'])
+            casLogs[casL].info('Cas{}: Reagent ({}) is denser than residual fluid ({}). Pump out {}mL to push out residual fluid.'.format(casL, reagent, residualFluid, param['densVol']))
             try:
                 # eval('machine.goto_sample{}()'.format(casL))
-                # machine.pump_out(densVol, densSpeed)
-                opTimeslog.info('Reagent denser than resid., adjusting, {}s settleTime, {} densVol, {} densSpeed, Time: {:0.2f}s'.format(settleTime, densVol, densSpeed, time.time()-t0))
+                # machine.pump_out(param['densVol'], param['densSpeed'])
+                opTimeslog.info('Reagent denser than resid., adjusting, {}s settleTime, {} densVol, {} densSpeed, Time: {:0.2f}s'.format(param['settleTime'], param['densVol'], param['densSpeed'], time.time()-t0))
             except Exception as e:
                 casLogs[casL].citical('Load Reagent, Density adjustment reaDen > residualDen error...')
                 casLogs[casL].citical(e)
@@ -1100,19 +1083,19 @@ class Component(ApplicationSession):
             #pump in a little to suck in last fluid
             #Pump out a little more to give room to suck in after fluid column settles
             try:
-                # machine.pump_out(densVol, densSpeed)
-                casLogs[casL].info('Pump out ({}mL) to give room for sucking residual fluid in...'.format(densVol))
+                # machine.pump_out(param['densVol'], param['densSpeed'])
+                casLogs[casL].info('Pump out ({}mL) to give room for sucking residual fluid in...'.format(param['densVol']))
             except Exception as e:
                 casLogs[casL].citical('Load Reagent, Density adjustment reaDen < residualDen error...')
                 casLogs[casL].citical(e)
             #Allow fluid density column to settle
-            casLogs[casL].info('Cas{} SETTLE TIME: {}'.format(casL, settleTime))
-            await asyncio.sleep(settleTime)
-            casLogs[casL].info('Cas{}: Reagent ({}) is less dense than residual fluid ({}). Pump in {}mL to suck in residual fluid.'.format(casL, reagent, residualFluid, densVol))
+            casLogs[casL].info('Cas{} SETTLE TIME: {}'.format(casL, param['settleTime']))
+            await asyncio.sleep(param['settleTime'])
+            casLogs[casL].info('Cas{}: Reagent ({}) is less dense than residual fluid ({}). Pump in {}mL to suck in residual fluid.'.format(casL, reagent, residualFluid, param['densVol']))
             try:
                 # eval('machine.goto_sample{}()'.format(casL))
-                # machine.pump_in(densVol, densSpeed)
-                opTimeslog.info('Reagent less dense than resid., adjusting, {}s settleTime, {} densVol, {} densSpeed, Time: {:0.2f}s'.format(settleTime, densVol, densSpeed, time.time()-t0))
+                # machine.pump_in(param['densVol'], param['densSpeed'])
+                opTimeslog.info('Reagent less dense than resid., adjusting, {}s settleTime, {} densVol, {} densSpeed, Time: {:0.2f}s'.format(param['settleTime'], param['densVol'], param['densSpeed'], time.time()-t0))
             except Exception as e:
                 casLogs[casL].citical('Load Reagent, Density adjustment reaDen < residualDen error...')
                 casLogs[casL].citical(e)
@@ -1148,109 +1131,7 @@ class Component(ApplicationSession):
         #     else:
         #         #stop the protocol
         #         await self.stopProtocol(casL)
-=======
-            eval('machine.goto_sample{}()'.format(casL))
-            machine.pump_in(deadvol, purgeSpeed)
-            time.sleep(1)
-            machine.empty_syringe(wasteSpeed)
-        except Exception as e:
-            casLogs[casL].critical(e)
-        
-    async def loadReagent(self, casL, loadstr, reagent, vol, speed, deadvol=deadspace):
-        await asyncio.sleep(0.1)
-        modHdl.close()
-        modHdl.baseFilename = os.path.abspath('./Log/cas{}.log'.format(casL))
-        try:
-            casLogs[casL].info('PURGING CHAMBER, Cas{}'.format(casL))
-            eval('machine.goto_sample{}()'.format(casL))
-#             machine.pump_in(deadvol, purgeSpeed)
-#             time.sleep(1)
-#             machine.empty_syringe(wasteSpeed)
-            flowThru = purgeVol + deadvol
-            machine.pump_out(flowThru, purgeSpeed)
-            
 
-            casLogs[casL].info('ADDING {} TO Cas{}'.format(loadstr, casL))
-            eval('machine.goto_{}()'.format(reagent))
-            deVol = vol + deadvol
-            machine.pump_in(deVol,speed)
-            if reagent == 'babb':
-                time.sleep(3)
-            else:
-                time.sleep(1)
-            eval('machine.goto_sample{}()'.format(casL))
-            machine.pump_out(vol,speed)
-        except Exception as e:
-            casLogs[casL].critical(e)
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
-
-    @wamp.subscribe('com.prepbot.button.btn_halt')
-    async def halt(self):
-        machine.send('M112', read_response=False)
-        self.halted = True
-        self.homed = False
-
-    @wamp.subscribe('com.prepbot.button.btn_connect')
-    def connect(self):
-        machine.acquire()
-        self.halted = False
-
-    @wamp.subscribe('com.prepbot.button.btn_home')
-    def home(self):
-        machine.home()
-        self.homed = True
-
-    # @wamp.subscribe('com.prepbot.button.btn_engage')
-    # def enage(self):
-    #     machine.engage_sampleD()
-
-    # @wamp.subscribe('com.prepbot.button.btn_disengage')
-    # def disengage(self):
-    #     machine.disengage_sampleD()
-
-    @wamp.subscribe('com.prepbot.button.btn_waste')
-    def btn_waste(self):
-        machine.goto_waste()
-
-    @wamp.subscribe('com.prepbot.button.btn_formalin')
-    def btn_formalin(self):
-        machine.goto_formalin()
-
-    @wamp.subscribe('com.prepbot.button.btn_meoh')    
-    def btn_meoh(self):
-        machine.goto_meoh()
-
-    @wamp.subscribe('com.prepbot.button.btn_babb')    
-    def btn_babb(self):
-        machine.goto_babb()
-
-    @wamp.subscribe('com.prepbot.button.btn_sample')    
-    def btn_sample(self):
-        machine.goto_sampleD()
-
-    @wamp.subscribe('com.prepbot.button.btn_vial')    
-    def btn_vial(self):
-        machine.goto_vial()
-
-    @wamp.subscribe('com.prepbot.button.btn_park')    
-    def btn_park(self):
-        machine.goto_park()
-
-    @wamp.subscribe('com.prepbot.button.btn_pumpin')
-    def btn_pumpin(self, vol=None):
-        machine.pump_in(vol)
-
-    @wamp.subscribe('com.prepbot.button.btn_pumpout')    
-    def btn_pumpout(self, vol=None):
-        machine.pump_out(vol)
-
-    @wamp.subscribe('com.prepbot.button.btn_dyeprocess')
-    def btn_dyeprocess(self):
-        machine.dye_process()
-
-    @wamp.subscribe('com.prepbot.button.btn_purge')
-    def btn_purge(self):
-        machine.purge_syringe()
 
 if __name__ == '__main__':
     while True:

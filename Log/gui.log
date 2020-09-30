@@ -44791,3 +44791,316 @@ casF   None    None          None  ...           None     None   None
 
 [6 rows x 12 columns]
 >>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
+2020-09-30 18:18:34 gui          INFO     Registering GUI functions...
+2020-09-30 18:18:34 gui          INFO     Subscribing to procedures...
+2020-09-30 18:18:34 gui          INFO     Subscribed to 13 procedure(s)
+2020-09-30 18:18:34 gui          INFO     Connecting to controller...
+2020-09-30 18:18:34 gui          INFO     Getting controller task dataframe...
+2020-09-30 18:18:34 gui          INFO     Checking if machine is homed...
+2020-09-30 18:18:34 gui          INFO     Machine is homed? : True
+2020-09-30 18:18:34 gui          INFO     Getting controller parameters..
+2020-09-30 18:18:34 gui          DEBUG    {'mixSpeed': 1.0, 'incSpeed': 0.2, 'removeSpeed': 1.0, 'wasteSpeed': 4.0, 'fillLineSpeed': 1.0, 'fillSyrSpeed': 1.0, 'washSyrSpeed': 1.0, 'densSpeed': 0.2, 'densVol': 0.1, 'LINEVOL': 0.75, 'removeVol': 1.5, 'purgeVol': 4.0, 'settleTime': 15.0, 'reagentDensOrder': {'babb': 2, 'formalin': 1, 'meoh': 0, 'unk': 1, 'vial': 0}}
+2020-09-30 18:18:34 gui          INFO     Repopulating GUI with controller procedures!
+2020-09-30 18:18:34 gui          INFO     casA: Repopulating GUI task
+2020-09-30 18:18:34 gui          DEBUG    
+status                                                    shutdown
+stepNum                                                          2
+secsRemaining                                                    3
+currentFluid                                                  meoh
+engaged                                                      False
+protocolList     [self.mix(casL="A", numCycles=3, volume=1.0), ...
+progressNames                          [Mixing, Incubation, Purge]
+stepTimes                                           [300, 48, 300]
+sampleName                                                    asfd
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                              otherops
+startlog                                                    312040
+endlog                                                      312093
+Name: casA, dtype: object
+2020-09-30 18:18:34 gui          INFO     casB: Repopulating GUI task
+2020-09-30 18:18:34 gui          DEBUG    
+status                                                    finished
+stepNum                                                          3
+secsRemaining                                                    0
+currentFluid                                              formalin
+engaged                                                      False
+protocolList     [self.mix(casL="B", numCycles=3, volume=1.0), ...
+progressNames                          [Mixing, Incubation, Purge]
+stepTimes                                           [300, 48, 300]
+sampleName                                                    asdf
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                              otherops
+startlog                                                      1156
+endlog                                                        1210
+Name: casB, dtype: object
+2020-09-30 18:18:34 gui          INFO     casC: Repopulating GUI task
+2020-09-30 18:18:34 gui          DEBUG    
+status                                                    finished
+stepNum                                                          1
+secsRemaining                                                   18
+currentFluid                                                  babb
+engaged                                                       True
+protocolList     [self.loadReagent(casL="C",reagent="formalin",...
+progressNames                                      [Load Formalin]
+stepTimes                                                     [90]
+sampleName                                                  asdfas
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                               washSyr
+startlog                                                       639
+endlog                                                         721
+Name: casC, dtype: object
+2020-09-30 18:18:34 gui          INFO     casD: Repopulating GUI task
+2020-09-30 18:18:34 gui          DEBUG    
+status                                                    finished
+stepNum                                                          3
+secsRemaining                                                    0
+currentFluid                                              formalin
+engaged                                                       True
+protocolList     [self.mix(casL="D", numCycles=3, volume=1.0), ...
+progressNames                          [Mixing, Incubation, Purge]
+stepTimes                                           [300, 48, 300]
+sampleName                                                  asdfas
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                              otherops
+startlog                                                       605
+endlog                                                         648
+Name: casD, dtype: object
+2020-09-30 18:18:34 gui          INFO     casE: Repopulating GUI task
+2020-09-30 18:18:34 gui          DEBUG    
+status                                                    finished
+stepNum                                                          3
+secsRemaining                                                    0
+currentFluid                                              formalin
+engaged                                                       True
+protocolList     [self.loadReagent(casL="E",reagent="formalin",...
+progressNames          [Load Formalin, Load Dehydrant, Load Stain]
+stepTimes                                             [90, 90, 90]
+sampleName                                                  asdfas
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                               asawash
+startlog                                                       262
+endlog                                                         307
+Name: casE, dtype: object
+2020-09-30 18:18:34 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-09-30 18:18:34 gui          INFO     Finished reconnecting loggers!
+2020-09-30 18:18:34 gui          INFO     FINISHED JOIN!
+2020-09-30 18:18:34 gui          INFO     Sending controller joined to GUI!
+2020-09-30 18:18:37 gui          INFO     Disconnected GUI
+2020-09-30 18:18:37 gui          INFO             status stepNum secsRemaining  ... protocolName startlog  endlog
+casA  shutdown       2             3  ...     otherops   312040  312093
+casB  finished       3             0  ...     otherops     1156    1210
+casC  finished       1            18  ...      washSyr      639     721
+casD  finished       3             0  ...     otherops      605     648
+casE  finished       3             0  ...      asawash      262     307
+casF      None     NaN           NaN  ...         None      NaN     NaN
+
+[6 rows x 13 columns]
+2020-09-30 18:18:41 gui          INFO     Registering GUI functions...
+2020-09-30 18:18:41 gui          INFO     Subscribing to procedures...
+2020-09-30 18:18:41 gui          INFO     Subscribed to 13 procedure(s)
+2020-09-30 18:18:41 gui          INFO     Connecting to controller...
+2020-09-30 18:18:41 gui          INFO     Getting controller task dataframe...
+2020-09-30 18:18:41 gui          INFO     Checking if machine is homed...
+2020-09-30 18:18:41 gui          INFO     Machine is homed? : True
+2020-09-30 18:18:41 gui          INFO     Getting controller parameters..
+2020-09-30 18:18:41 gui          DEBUG    {'mixSpeed': 1.0, 'incSpeed': 0.2, 'removeSpeed': 1.0, 'wasteSpeed': 4.0, 'fillLineSpeed': 1.0, 'fillSyrSpeed': 1.0, 'washSyrSpeed': 1.0, 'densSpeed': 0.2, 'densVol': 0.1, 'LINEVOL': 0.75, 'removeVol': 1.5, 'purgeVol': 4.0, 'settleTime': 15.0, 'reagentDensOrder': {'babb': 2, 'formalin': 1, 'meoh': 0, 'unk': 1, 'vial': 0}}
+2020-09-30 18:18:41 gui          INFO     Repopulating GUI with controller procedures!
+2020-09-30 18:18:41 gui          INFO     casA: Repopulating GUI task
+2020-09-30 18:18:41 gui          DEBUG    
+status                                                    shutdown
+stepNum                                                          2
+secsRemaining                                                    3
+currentFluid                                                  meoh
+engaged                                                      False
+protocolList     [self.mix(casL="A", numCycles=3, volume=1.0), ...
+progressNames                          [Mixing, Incubation, Purge]
+stepTimes                                           [300, 48, 300]
+sampleName                                                    asfd
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                              otherops
+startlog                                                    312040
+endlog                                                      312093
+Name: casA, dtype: object
+2020-09-30 18:18:41 gui          INFO     casB: Repopulating GUI task
+2020-09-30 18:18:41 gui          DEBUG    
+status                                                    finished
+stepNum                                                          3
+secsRemaining                                                    0
+currentFluid                                              formalin
+engaged                                                      False
+protocolList     [self.mix(casL="B", numCycles=3, volume=1.0), ...
+progressNames                          [Mixing, Incubation, Purge]
+stepTimes                                           [300, 48, 300]
+sampleName                                                    asdf
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                              otherops
+startlog                                                      1156
+endlog                                                        1210
+Name: casB, dtype: object
+2020-09-30 18:18:41 gui          INFO     casC: Repopulating GUI task
+2020-09-30 18:18:41 gui          DEBUG    
+status                                                    finished
+stepNum                                                          1
+secsRemaining                                                   18
+currentFluid                                                  babb
+engaged                                                       True
+protocolList     [self.loadReagent(casL="C",reagent="formalin",...
+progressNames                                      [Load Formalin]
+stepTimes                                                     [90]
+sampleName                                                  asdfas
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                               washSyr
+startlog                                                       639
+endlog                                                         721
+Name: casC, dtype: object
+2020-09-30 18:18:41 gui          INFO     casD: Repopulating GUI task
+2020-09-30 18:18:41 gui          DEBUG    
+status                                                    finished
+stepNum                                                          3
+secsRemaining                                                    0
+currentFluid                                              formalin
+engaged                                                       True
+protocolList     [self.mix(casL="D", numCycles=3, volume=1.0), ...
+progressNames                          [Mixing, Incubation, Purge]
+stepTimes                                           [300, 48, 300]
+sampleName                                                  asdfas
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                              otherops
+startlog                                                       605
+endlog                                                         648
+Name: casD, dtype: object
+2020-09-30 18:18:41 gui          INFO     casE: Repopulating GUI task
+2020-09-30 18:18:41 gui          DEBUG    
+status                                                    finished
+stepNum                                                          3
+secsRemaining                                                    0
+currentFluid                                              formalin
+engaged                                                       True
+protocolList     [self.loadReagent(casL="E",reagent="formalin",...
+progressNames          [Load Formalin, Load Dehydrant, Load Stain]
+stepTimes                                             [90, 90, 90]
+sampleName                                                  asdfas
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                               asawash
+startlog                                                       262
+endlog                                                         307
+Name: casE, dtype: object
+2020-09-30 18:18:41 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-09-30 18:18:41 gui          INFO     Finished reconnecting loggers!
+2020-09-30 18:18:41 gui          INFO     FINISHED JOIN!
+2020-09-30 18:18:41 gui          INFO     Sending controller joined to GUI!
+2020-09-30 18:22:17 gui          INFO     Disconnected GUI
+2020-09-30 18:22:17 gui          INFO             status stepNum secsRemaining  ... protocolName startlog  endlog
+casA  shutdown       2             3  ...     otherops   312040  312093
+casB  finished       3             0  ...     otherops     1156    1210
+casC  finished       1            18  ...      washSyr      639     721
+casD  finished       3             0  ...     otherops      605     648
+casE  finished       3             0  ...      asawash      262     307
+casF      None     NaN           NaN  ...         None      NaN     NaN
+
+[6 rows x 13 columns]
+2020-09-30 18:22:20 gui          INFO     Registering GUI functions...
+2020-09-30 18:22:20 gui          INFO     Subscribing to procedures...
+2020-09-30 18:22:20 gui          INFO     Subscribed to 13 procedure(s)
+2020-09-30 18:22:20 gui          INFO     Connecting to controller...
+2020-09-30 18:22:20 gui          INFO     Getting controller task dataframe...
+2020-09-30 18:22:20 gui          INFO     Checking if machine is homed...
+2020-09-30 18:22:20 gui          INFO     Machine is homed? : True
+2020-09-30 18:22:20 gui          INFO     Getting controller parameters..
+2020-09-30 18:22:20 gui          DEBUG    {'mixSpeed': 1.0, 'incSpeed': 0.2, 'removeSpeed': 1.0, 'wasteSpeed': 4.0, 'fillLineSpeed': 1.0, 'fillSyrSpeed': 1.0, 'washSyrSpeed': 1.0, 'densSpeed': 0.2, 'densVol': 0.1, 'LINEVOL': 0.75, 'removeVol': 1.5, 'purgeVol': 4.0, 'settleTime': 15.0, 'reagentDensOrder': {'babb': 2, 'formalin': 1, 'meoh': 0, 'unk': 1, 'vial': 0}}
+2020-09-30 18:22:20 gui          INFO     Repopulating GUI with controller procedures!
+2020-09-30 18:22:20 gui          INFO     casA: Repopulating GUI task
+2020-09-30 18:22:20 gui          DEBUG    
+status                                                    shutdown
+stepNum                                                          2
+secsRemaining                                                    3
+currentFluid                                                  meoh
+engaged                                                      False
+protocolList     [self.mix(casL="A", numCycles=3, volume=1.0), ...
+progressNames                          [Mixing, Incubation, Purge]
+stepTimes                                           [300, 48, 300]
+sampleName                                                    asfd
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                              otherops
+startlog                                                    312040
+endlog                                                      312093
+Name: casA, dtype: object
+2020-09-30 18:22:20 gui          INFO     casB: Repopulating GUI task
+2020-09-30 18:22:20 gui          DEBUG    
+status                                                    finished
+stepNum                                                          3
+secsRemaining                                                    0
+currentFluid                                              formalin
+engaged                                                      False
+protocolList     [self.mix(casL="B", numCycles=3, volume=1.0), ...
+progressNames                          [Mixing, Incubation, Purge]
+stepTimes                                           [300, 48, 300]
+sampleName                                                    asdf
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                              otherops
+startlog                                                      1156
+endlog                                                        1210
+Name: casB, dtype: object
+2020-09-30 18:22:20 gui          INFO     casC: Repopulating GUI task
+2020-09-30 18:22:20 gui          DEBUG    
+status                                                    finished
+stepNum                                                          1
+secsRemaining                                                   18
+currentFluid                                                  babb
+engaged                                                       True
+protocolList     [self.loadReagent(casL="C",reagent="formalin",...
+progressNames                                      [Load Formalin]
+stepTimes                                                     [90]
+sampleName                                                  asdfas
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                               washSyr
+startlog                                                       639
+endlog                                                         721
+Name: casC, dtype: object
+2020-09-30 18:22:20 gui          INFO     casD: Repopulating GUI task
+2020-09-30 18:22:20 gui          DEBUG    
+status                                                    finished
+stepNum                                                          3
+secsRemaining                                                    0
+currentFluid                                              formalin
+engaged                                                       True
+protocolList     [self.mix(casL="D", numCycles=3, volume=1.0), ...
+progressNames                          [Mixing, Incubation, Purge]
+stepTimes                                           [300, 48, 300]
+sampleName                                                  asdfas
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                              otherops
+startlog                                                       605
+endlog                                                         648
+Name: casD, dtype: object
+2020-09-30 18:22:20 gui          INFO     casE: Repopulating GUI task
+2020-09-30 18:22:20 gui          DEBUG    
+status                                                    finished
+stepNum                                                          3
+secsRemaining                                                    0
+currentFluid                                              formalin
+engaged                                                       True
+protocolList     [self.loadReagent(casL="E",reagent="formalin",...
+progressNames          [Load Formalin, Load Dehydrant, Load Stain]
+stepTimes                                             [90, 90, 90]
+sampleName                                                  asdfas
+protocolPath     /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+protocolName                                               asawash
+startlog                                                       262
+endlog                                                         307
+Name: casE, dtype: object
+2020-09-30 18:22:20 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-09-30 18:22:20 gui          INFO     Finished reconnecting loggers!
+2020-09-30 18:22:20 gui          INFO     FINISHED JOIN!
+2020-09-30 18:22:20 gui          INFO     Sending controller joined to GUI!
+2020-09-30 18:22:49 gui          DEBUG    {'mixSpeed': 1.0, 'incSpeed': 0.2, 'removeSpeed': 1.0, 'wasteSpeed': 4.0, 'fillLineSpeed': 1.0, 'fillSyrSpeed': 1.0, 'washSyrSpeed': 1.0, 'densSpeed': 0.2, 'densVol': 0.1, 'LINEVOL': 0.75, 'removeVol': 1.5, 'purgeVol': 4.0, 'settleTime': 15.0, 'reagentDensOrder': {'babb': 2, 'formalin': 1, 'meoh': 0, 'unk': 1, 'vial': 0}}
+2020-09-30 18:24:27 gui          INFO     Disconnected GUI
+2020-09-30 18:24:27 gui          INFO             status stepNum secsRemaining  ... protocolName startlog  endlog
+casA  shutdown       2             3  ...     otherops   312040  312093
+casB  finished       3             0  ...     otherops     1156    1210
+casC  finished       1            18  ...      washSyr      639     721
+casD  finished       3             0  ...     otherops      605     648
+casE  finished       3             0  ...      asawash      262     307
+casF      None     NaN           NaN  ...         None      NaN     NaN
+
+[6 rows x 13 columns]

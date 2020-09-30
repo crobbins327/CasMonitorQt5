@@ -14,12 +14,10 @@ from colorlog import ColoredFormatter
 # os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
 import jsonHelper as jh
 import wampHandler as wh
-import manualMachine as mM
 from PyQt5 import QtCore, QtGui, QtQml, QtQuick, QtWidgets
 import sys
 # insert at 1, 0 is the script path (or '' in REPL)
 sys.path.insert(1, './prepbot')
-import machine
 # import controller
 
 import asyncio
@@ -59,11 +57,9 @@ if __name__ == '__main__':
     engine = QtQml.QQmlApplicationEngine()
     #My context properties that signal-slot between python and QML
     json_helper = jh.JSONHelper()
-    manPrepbot = mM.manualMachine()
     wHandler = wh.wampHandler()
 
     engine.rootContext().setContextProperty("JSONHelper", json_helper)
-    engine.rootContext().setContextProperty("ManualPrepbot", manPrepbot)
     engine.rootContext().setContextProperty("WAMPHandler", wHandler)
     engine.load(QtCore.QUrl('CasMonitor.qml'))
     

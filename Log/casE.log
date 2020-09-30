@@ -4652,3 +4652,6 @@ Name: casE, dtype: object
 2020-09-15 21:55:53 ctrl.machine DEBUG    message received
 2020-09-15 21:55:53 ctrl.machine DEBUG    send message: M84
 >>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
+2020-09-30 17:50:05 ctrl.casE    INFO     Engage CasE...
+2020-09-30 18:22:54 ctrl.machine INFO     connect to klipper
+2020-09-30 18:22:54 ctrl.machine INFO     waiting to acquire machine lock

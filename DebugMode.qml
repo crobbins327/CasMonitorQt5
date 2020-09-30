@@ -731,7 +731,6 @@ Item {
                             anchors.verticalCenter: volSLab.verticalCenter
                             y: 233
 
-<<<<<<< HEAD
                             TextInput {
                                 id: volInput
                                 color: "#ffffff"
@@ -753,16 +752,6 @@ Item {
                                 onEditingFinished: {
                                     volSlider.value = volInput.text
                                 }
-=======
-                        onClicked: {
-                            //Send the protocol in the exec terminal into the WAMPHandler
-                            WAMPHandler.execScript(scriptText)
-                            //Clear script text
-                            scriptText = ''
-                            }
-                    }
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
-
 
                             }
                         }
@@ -1132,7 +1121,6 @@ Item {
                             onSetVal: {mixVol = mixVolRect.doubleVal}
                         }
 
-<<<<<<< HEAD
                         IntInput{
                             id:loadVolRect
                             width: 100
@@ -1149,56 +1137,6 @@ Item {
                             onSetVal: {loadVol = loadVolRect.intVal}
 
                         }
-=======
-                    Rectangle{
-                        id: scriptRec
-                        color: 'white'
-                        anchors.top: parent.top
-                        anchors.topMargin: 40
-                        anchors.bottom: parent.bottom
-                        anchors.bottomMargin: 10
-                        anchors.right: parent.right
-                        anchors.rightMargin: 10
-                        anchors.left: loadBtn.right
-                        anchors.leftMargin: 10
-                        enabled: scriptSwitch.checked
-                        ScrollView{
-                            id:scriptScroller
-                            anchors.fill: parent
-                            clip: true
-//                            ScrollBar.horizontal.policy: ScrollBar.AlwaysOn
-//                            ScrollBar.vertical.policy: ScrollBar.AlwaysOn
-                            //                ScrollBar.horizontal.interactive: true
-                            //                ScrollBar.vertical.interactive: true
-                            enabled: scriptSwitch.checked
-
-                            TextArea {
-                                id: scriptEditor
-                                //height: scriptRec.height
-                                //width: scriptRec.width
-                                readOnly: false
-                                selectByMouse: true
-                                selectByKeyboard: true
-                                focus: true
-                                placeholderText: 'Execute functions from controlNQ.py or machine.py!' 
-                                //placeholderText: scriptEditor.text == '' ? 'Execute functions from controlNQ.py or machine.py using script editor!' : ''
-                                text: scriptText
-                                //anchors.fill: parent
-                                anchors.topMargin: 5
-                                anchors.bottomMargin: 5
-                                anchors.rightMargin: 10
-                                anchors.leftMargin: 5
-                                font.pointSize: 11
-                                wrapMode: Text.WrapAnywhere
-
-                                opacity: scriptSwitch.checked ? 1 : 0.3
-                                enabled: scriptSwitch.checked
-                                
-                                background: Rectangle{
-                                    implicitWidth: scriptRec.width
-                                    implicitHeight: scriptRec.height
-                                    }
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
 
                         CheckBox {
                             id: washSyrBox
@@ -1217,7 +1155,6 @@ Item {
                                     verticalAlignment: Text.AlignVCenter
                                     leftPadding: washSyrBox.indicator.width + washSyrBox.spacing
                                 }
-<<<<<<< HEAD
                         }
 
                         Text {
@@ -1232,10 +1169,6 @@ Item {
                             font.bold: false
                             anchors.leftMargin: 7
                             anchors.left: pSpeed.right
-=======
-                                
-                            }
->>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
                         }
                     }
 
