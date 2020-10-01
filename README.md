@@ -17,5 +17,6 @@ __3)__ Open another terminal or use the docker terminal to open the gui.
     source activate base
     python setupGUI.py
     
-    
+
+#### Version 0.0.0 UI Demonstration:
 ![](examples/ProgressGIFs/9-11-UI-demonstration.gif)
