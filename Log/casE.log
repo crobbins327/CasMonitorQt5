@@ -4655,3 +4655,14 @@ Name: casE, dtype: object
 2020-09-30 17:50:05 ctrl.casE    INFO     Engage CasE...
 2020-09-30 18:22:54 ctrl.machine INFO     connect to klipper
 2020-09-30 18:22:54 ctrl.machine INFO     waiting to acquire machine lock
+2020-09-30 20:37:12 ctrl.casE    INFO     Engage CasE...
+2020-09-30 20:38:02 ctrl.casE    INFO     Disengage CasE...
+2020-09-30 20:38:02 ctrl.casE    INFO     Cleaning line for CasE
+2020-09-30 20:38:02 ctrl.casE    INFO     PURGING LINE, CasE
+2020-09-30 20:38:03 ctrl.casE    CRITICAL 
+2020-09-30 20:38:11 ctrl.casE    INFO     Disengage CasE...
+2020-09-30 20:38:11 ctrl.casE    INFO     Cleaning line for CasE
+2020-09-30 20:38:11 ctrl.casE    INFO     PURGING LINE, CasE
+2020-09-30 20:38:16 ctrl.casE    INFO     MEOH WASH of CasE LINE
+2020-09-30 20:38:16 ctrl.casE    INFO     REMOVING MEOH WASH from LINE, CasE
+2020-09-30 20:38:16 ctrl.casE    INFO     Clean Time: 5.00s

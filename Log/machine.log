@@ -13267,3 +13267,7 @@ ok
 >>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
 2020-09-30 18:22:54 ctrl.machine INFO     connect to klipper
 2020-09-30 18:22:54 ctrl.machine INFO     waiting to acquire machine lock
+2020-09-30 20:37:41 ctrl.machine DEBUG    move axis: sampleE 9
+2020-09-30 20:37:41 ctrl.machine INFO     waiting to acquire machine lock
+2020-09-30 20:37:53 ctrl.machine DEBUG    move axis: sampleE 3
+2020-09-30 20:37:53 ctrl.machine INFO     waiting to acquire machine lock

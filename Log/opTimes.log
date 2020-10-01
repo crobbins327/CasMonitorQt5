@@ -1170,3 +1170,4 @@
 2020-09-30 18:24:18 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 1.00s
 2020-09-30 18:24:20 ctrl.opTimes INFO     Adding meoh, 1.231 mL, 1.0 fillLineSpeed, 1 speed, Time: 2.00s
 2020-09-30 18:24:20 ctrl.opTimes INFO     FINISHED LOADING meoh TO CasA, Time: 3.01s
+2020-09-30 20:38:16 ctrl.opTimes INFO     Clean Time: 5.01s
