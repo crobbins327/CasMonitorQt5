@@ -16,3 +16,6 @@ __3)__ Open another terminal or use the docker terminal to open the gui.
     cd CasMonitor/
     source activate base
     python setupGUI.py
+    
+    
+![](examples/ProgressGIFs/9-11-UI-demonstration.gif)
