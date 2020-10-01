@@ -18,4 +18,4 @@ __3)__ Open another terminal or use the docker terminal to open the gui.
     python setupGUI.py
     
     
-![](examples/ProgressGIFs/9-11 UI demonstration.gif)
+![](examples/ProgressGIFs/9-11-UI-demonstration.gif)
