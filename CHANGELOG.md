@@ -35,5 +35,5 @@ First Changelog entry and operational CasMonitor version!
   - Determine operation bottlenecks and adjust parameters to speed up protocols
 
 
-[0.0.1]: 
+[0.0.1]: https://github.com/crobbins327/CasMonitor/tree/0.0.1 
 
