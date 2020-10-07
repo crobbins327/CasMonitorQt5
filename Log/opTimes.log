@@ -1560,3 +1560,31 @@
 2020-10-07 15:05:33 ctrl.opTimes INFO     Adding Formalin, 2.1 mL, 1.0 fillLineSpeed, 0.13 speed, Time: 0.00s
 2020-10-07 15:05:33 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
 2020-10-07 15:05:38 ctrl.opTimes INFO     Clean Time: 5.00s
+2020-10-07 15:40:15 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2020-10-07 15:40:15 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2020-10-07 15:40:15 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2020-10-07 15:40:15 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasE, Time: 0.00s
+2020-10-07 15:40:16 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2020-10-07 15:40:16 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2020-10-07 15:40:16 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2020-10-07 15:40:21 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2020-10-07 15:40:21 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2020-10-07 15:40:21 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 15:40:25 ctrl.opTimes INFO     Shutdown Time: 5.00s
+2020-10-07 15:40:26 ctrl.opTimes INFO     Clean Time: 5.00s
+2020-10-07 15:41:27 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2020-10-07 15:41:27 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2020-10-07 15:41:29 ctrl.opTimes INFO     Reagent denser than resid., adjusting, 2.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 2.00s
+2020-10-07 15:41:44 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2020-10-07 15:41:44 ctrl.opTimes INFO     Adding meoh, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2020-10-07 15:41:46 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 2.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 2.00s
+2020-10-07 15:41:57 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2020-10-07 15:41:57 ctrl.opTimes INFO     Adding meoh, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2020-10-07 15:41:57 ctrl.opTimes INFO     FINISHED LOADING meoh TO CasE, Time: 0.00s
+2020-10-07 15:41:57 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2020-10-07 15:41:57 ctrl.opTimes INFO     Adding formalin, 0.5 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2020-10-07 15:42:59 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-10-07 15:43:02 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-10-07 15:43:05 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-10-07 15:43:08 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
+2020-10-07 15:43:13 ctrl.opTimes INFO     Shutdown Time: 5.00s
