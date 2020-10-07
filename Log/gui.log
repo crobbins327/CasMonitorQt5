@@ -50151,3 +50151,81 @@ casE  shutdown       2            90  ...      asawash     4798   4837
 casF      None     NaN           NaN  ...         None      NaN    NaN
 
 [6 rows x 13 columns]
+2020-10-07 15:39:57 gui          INFO     Registering GUI functions...
+2020-10-07 15:39:57 gui          INFO     Subscribing to procedures...
+2020-10-07 15:39:57 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:39:57 gui          INFO     Connecting to controller...
+2020-10-07 15:39:57 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:39:57 gui          INFO     Checking if machine is homed...
+2020-10-07 15:39:57 gui          INFO     Machine is homed? : True
+2020-10-07 15:39:57 gui          INFO     Getting controller parameters..
+2020-10-07 15:39:57 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:39:57 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:39:57 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:39:57 gui          INFO     Emitting engages! casF
+2020-10-07 15:39:57 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:39:57 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:39:57 gui          INFO     FINISHED JOIN!
+2020-10-07 15:40:02 gui          INFO     CasF disengage complete
+2020-10-07 15:40:03 gui          INFO     CasF engage complete
+2020-10-07 15:40:04 gui          INFO     CasE engage complete
+2020-10-07 15:40:05 gui          INFO     CasD engage complete
+2020-10-07 15:40:11 gui          INFO     casD: Starting protocol:
+['self.incubate(casL="D",incTime=4,mixAfter=0)', 'self.loadReagent(casL="D",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+['Incubation', 'Load Formalin']
+[4, 90]
+2020-10-07 15:40:11 gui          INFO     casD: Confirmed protocol and sending sample log.
+2020-10-07 15:40:15 gui          INFO     casE: Starting protocol:
+['self.loadReagent(casL="E",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="E",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="E",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+['Load Formalin', 'Load Dehydrant', 'Load Stain']
+[90, 90, 90]
+2020-10-07 15:40:15 gui          INFO     casE: Confirmed protocol and sending sample log.
+2020-10-07 15:40:15 gui          INFO     casE: Update run details log
+2020-10-07 15:40:16 gui          INFO     casE: Updating progress to next step
+2020-10-07 15:40:17 gui          INFO     casD: Update run details log
+2020-10-07 15:40:17 gui          INFO     casE: Update run details log
+2020-10-07 15:40:20 gui          INFO     casE: Requesting to stop run...
+2020-10-07 15:40:21 gui          INFO     casD: Update run details log
+2020-10-07 15:40:21 gui          INFO     casD: Update run details log
+2020-10-07 15:40:21 gui          INFO     
+SHUTTING DOWN casE!!!
+
+2020-10-07 15:40:22 gui          INFO     casD: Updating progress to next step
+2020-10-07 15:40:22 gui          INFO     casD: Updating progress to next step
+2020-10-07 15:40:22 gui          INFO     
+Cleaning Line of casD!!!
+
+2020-10-07 15:40:25 gui          INFO     casE: Update run details log
+2020-10-07 15:40:26 gui          INFO     casD: Update run details log
+2020-10-07 15:40:28 gui          INFO     casD: Requesting a refresh on run details log.
+2020-10-07 15:40:28 gui          INFO     casD: Request run details log
+2020-10-07 15:40:39 gui          INFO     CasD engage complete
+2020-10-07 15:40:47 gui          INFO     casD: Update run details log
+2020-10-07 15:41:27 gui          INFO     casD: Update run details log
+2020-10-07 15:42:07 gui          INFO     CasE engage complete
+2020-10-07 15:42:56 gui          INFO     casE: Starting protocol:
+['self.incubate(casL="E",incTime=48,mixAfter=3)', 'self.mix(casL="E", numCycles=11, volume=1.0)', 'self.purge(casL="E")', 'self.loadReagent(casL="E",reagent="formalin",vol=1.937,speed=0.06, washSyr=True, loadstr="Formalin")']
+['Incubation', 'Mixing', 'Purge', 'Load Formalin']
+[48, 300, 300, 90]
+2020-10-07 15:42:56 gui          INFO     casE: Confirmed protocol and sending sample log.
+2020-10-07 15:42:57 gui          INFO     casE: Update run details log
+2020-10-07 15:43:00 gui          INFO     Updating GUI task DF.
+2020-10-07 15:43:03 gui          INFO     Updating GUI task DF.
+2020-10-07 15:43:06 gui          INFO     Updating GUI task DF.
+2020-10-07 15:43:07 gui          INFO     casE: Update run details log
+2020-10-07 15:43:08 gui          INFO     casE: Requesting to stop run...
+2020-10-07 15:43:09 gui          INFO     Updating GUI task DF.
+2020-10-07 15:43:09 gui          INFO     
+SHUTTING DOWN casE!!!
+
+2020-10-07 15:43:13 gui          INFO     casE: Update run details log
+2020-10-07 15:43:19 gui          INFO     Disconnected GUI
+2020-10-07 15:43:19 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD      idle       2             0  ...  anotherProt     3142   3174
+casE  shutdown       1            36  ...       asdfsa     4906   4939
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
