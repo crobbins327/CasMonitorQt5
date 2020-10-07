@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 24 00:40:29 2020
 
-@author: jackr
-"""
 from PyQt5 import QtCore, QtGui, QtQml, QtQuick, QtWidgets
 import jsonHelper as jh
 import json
@@ -16,6 +10,7 @@ import pandas as pd
 # pd.set_option('display.width', None)
 # pd.set_option('display.max_colwidth', -1)
 import numpy as np
+from collections import OrderedDict
 import logging
 import logging.config
 from colorlog import ColoredFormatter
@@ -92,6 +87,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         self.taskDF.engaged = self.taskDF.engaged.astype(object)
         self.controllerStatus = 'disconnected'
         self.machineHomed = False
+        self.paramDict = OrderedDict()
         # self.machineHalted = True
         # self.logsOpen = pd.DataFrame(columns = ['isLogOpen'] ,
         #                            index=['casA','casB','casC','casD','casE','casF','ctrl','machine'], dtype=object)
@@ -243,6 +239,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
 
         #Start progress bar and track steps completed in protocol for current sample...
         #Setup run by sending info to progress bar and sending protStrings
+        self.publish('com.prepbot.prothandler.setup-protocol', casNumber,progStrings,stepTimes, runtime, sampleName, protocolName)
         self.setupProt.emit(casNumber,progStrings,stepTimes, runtime, sampleName, protocolName)
         #update taskDF
         self.taskDF.loc['cas{}'.format(casL)] = np.array(['running',0,np.nan,'unk',True,protStrings, progStrings, stepTimes, sampleName,protPath,protocolName,np.nan,np.nan],dtype=object)
@@ -251,6 +248,11 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         self.publish('com.prepbot.prothandler.start', casL, self.taskDF.loc['cas{}'.format(casL)].to_json())
         #update log
         guilog.info('cas{}: Starting protocol:\n{}\n{}\n{}'.format(casL,protStrings,progStrings,stepTimes))
+    
+    
+    @wamp.subscribe('com.prepbot.prothandler.setup-protocol')
+    async def setupProtocol(self, casNumber,progStrings,stepTimes, runtime, sampleName, protocolName):
+        self.setupProt.emit(casNumber,progStrings,stepTimes, runtime, sampleName, protocolName)
     
     #Separate start of gui when protocol is actually started on controller???
     #Hang until the start signal is actually received?
@@ -368,8 +370,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     @wamp.subscribe('com.prepbot.prothandler.ready')
     def casReady(self, casL, engageBool):
         casNumber = int(self.__get_key(casL, self.convCas))
-        print(casNumber)
-        if engageBool:
+        if engageBool == True:
             self.casEngaged.emit(casNumber)
             self.taskDF.loc['cas{}'.format(casL),'engaged'] = True
             guilog.info('Cas{} engage complete'.format(casL))
@@ -422,7 +423,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     def repopulate_one_GUI(self, casName):
         casNumber = int(self.__get_key(casName[-1], self.convCas))
         
-        if self.taskDF.loc[casName,'status'].isin(['running','cleaning','finished','stopping','shutdown']):
+        if self.taskDF.loc[casName,'status'] in ['running','cleaning','finished','stopping','shutdown']:
             otherVars = self.taskDF.loc[casName,['stepNum','secsRemaining','sampleName','protocolName','status']].tolist()
             # otherVars.append(totalSecs)
             # otherVars.append(tremSecs)

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Sample Monitor
+Exec=bash -i /home/jackr/SampleMonitor/Git/CasQML/runApp
+Terminal=true
+Icon=/home/jackr/SampleMonitor/Git/CasQML/AppIcons/test-tube.png
+Type=Application
+Categories=Utility;Application;
+
+

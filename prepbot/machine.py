@@ -25,6 +25,7 @@ import time
 #     style='%'
 # )
 logger = logging.getLogger('ctrl.machine')
+logger.setLevel(logging.INFO)
 opTimeslog = logging.getLogger('ctrl.opTimes')
 # logger.handlers[0].setFormatter(colorFormat)
 
@@ -35,20 +36,19 @@ f = None
 s = None
 s_wheel = None
 
-X_PARK = -70
-X_SAMPLE_F = -85
-X_VIAL = -97
-X_FORMALIN = -109
-X_MEOH = -121
-X_SAMPLE_E = -133
-X_SAMPLE_D = -145
-X_WASTE = -156
-X_SAMPLE_B = -143
-X_BABB = -132
-X_BABB_2 = -186
+X_PARK = -47
+X_MEOH = -108 
+X_SAMPLE_F = -82
+X_SAMPLE_E = -131
+X_SAMPLE_D = -143
+X_WASTE = -154
+X_VIAL = -94
+X_BABB = -130
+X_BABB_2 = -184
+X_FORMALIN = -119 
 
 Z_SEPTUM = 66
-Z_SAFE = 40
+Z_SAFE = 45
 Z_WASTE = 80
 Z_BABB = 72
 
@@ -58,8 +58,8 @@ VIAL_SCRAPE_Z = 10
 VIAL_SCRAPE_X = -180
 VIAL_OFFSET = -64           # degrees from sensor to needle position
 
-S_ENGAGE_D = 10
-S_ENGAGE_E = 9
+S_ENGAGE_D = 12
+S_ENGAGE_E = 8
 S_ENGAGE_F = 10
 S_DISENGAGE = 3
 
@@ -70,10 +70,11 @@ LIMITS = {
     'z': [0, 100],
     'pump': [0, 40],
     'wheel': [float('-inf'), float('inf')],
-    'sampleD': [-50, 50],
-    'sampleE': [-50, 50],
-    'sampleF': [-50, 50],
+    'sampleD': [0, 50],
+    'sampleE': [0, 50],
+    'sampleF': [0, 50],
 }
+
 
 def test_logger():
     logger.debug('Test debug')
@@ -210,6 +211,7 @@ def pump_off():
 
 def pump_in(ml, speed=PUMP_SPEED):
     t0 = time.time()
+    vol = ml
     while ml:
         pump_vent()
         move('pump', 0)
@@ -221,10 +223,11 @@ def pump_in(ml, speed=PUMP_SPEED):
             move('pump', 45*ml/5, speed=speed)
             ml -= ml
         pump_off()
-    opTimeslog.info('Pump in {} mL, {} speed: {:0.2f}s'.format(ml, speed, time.time()-t0))
+    opTimeslog.info('Pump in {} mL, {} speed: {:0.2f}s'.format(vol, speed, time.time()-t0))
 
 def pump_out(ml, speed=PUMP_SPEED):
     t0 = time.time()
+    vol = ml
     while ml:
         pump_vent()
         if ml >= 3:
@@ -236,7 +239,7 @@ def pump_out(ml, speed=PUMP_SPEED):
         pump_syringe()
         move('pump', 0, speed=speed)
         pump_off()
-    opTimeslog.info('Pump out {} mL, {} speed: {:0.2f}s'.format(ml, speed, time.time()-t0))
+    opTimeslog.info('Pump out {} mL, {} speed: {:0.2f}s'.format(vol, speed, time.time()-t0))
 
 def goto_waste():
     t0 = time.time()
@@ -309,7 +312,8 @@ def purge_syringe():
 def empty_syringe(purgeVol=5, speed=1):
     t0 = time.time()
     goto_waste()
-    pump_out(purgeVol, speed=speed)
+    pump_out(ml=purgeVol, speed=speed)
+    time.sleep(1)
     move('z', Z_SAFE)
     opTimeslog.info('Empty syringe {} mL, {} speed: {:0.2f}s'.format(purgeVol, speed, time.time()-t0))
 

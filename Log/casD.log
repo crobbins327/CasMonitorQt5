@@ -2482,3 +2482,555 @@ Name: casD, dtype: object
 >>>>>>> 52424aa28ec32f17e75f60f05cc5e1c33462d92d
 2020-09-30 17:50:05 ctrl.casD    INFO     Engage CasD...
 2020-09-30 20:37:12 ctrl.casD    INFO     Engage CasD...
+2020-10-07 03:52:19 ctrl.casD    INFO     Engage CasD...
+2020-10-07 03:54:12 ctrl.casD    INFO     Engage CasD...
+2020-10-07 03:55:13 ctrl.casD    INFO     Engage CasD...
+2020-10-07 03:58:16 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:05:09 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:08:49 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:09:51 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:12:25 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:12:58 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:16:00 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:16:22 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:20:26 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:21:37 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:27:19 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:30:06 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:30:56 ctrl.casD    INFO     Engage CasD...
+2020-10-07 04:31:14 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:22:54 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:23:04 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:23:04 ctrl.casD    INFO     Starting Run!
+sampleName                                                    ccc
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2505
+Name: casD, dtype: object
+2020-10-07 05:23:04 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:23:04 ctrl.casD    INFO     ['casD']
+2020-10-07 05:23:04 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:23:04 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:23:04 ctrl.casD    DEBUG    1
+2020-10-07 05:23:04 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:23:04 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:23:05 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:23:05 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:23:05 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:23:05 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:23:05 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:23:05 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:23:05 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:23:05 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:23:05 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:23:05 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:23:05 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:23:05 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:23:05 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:23:05 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:23:05 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:23:10 ctrl.casD    INFO     ['casD']
+2020-10-07 05:23:10 ctrl.casD    INFO     Already running task on casD!
+2020-10-07 05:23:20 ctrl.casD    INFO     CasD: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2020-10-07 05:23:20 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:23:20 ctrl.casD    INFO     casD: Evaluating step 2
+2020-10-07 05:23:20 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:23:20 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:23:20 ctrl.casD    INFO     ADDING Stain TO CasD
+2020-10-07 05:23:20 ctrl.casD    INFO     CasD CURRENT FLUID: vial
+2020-10-07 05:23:20 ctrl.casD    INFO     CasD: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2020-10-07 05:23:20 ctrl.casD    INFO     FINISHED LOADING Stain TO CasD, Time: 0.00s
+2020-10-07 05:23:20 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-10-07 05:23:20 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:23:20 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:23:20 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:23:25 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:23:25 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:23:25 ctrl.casD    INFO     Clean Time: 5.00s
+2020-10-07 05:23:25 ctrl.casD    INFO     Finished casD task!
+2020-10-07 05:27:26 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:27:33 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:27:33 ctrl.casD    INFO     Starting Run!
+sampleName                                                  asdfa
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2557
+Name: casD, dtype: object
+2020-10-07 05:27:33 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:27:33 ctrl.casD    INFO     ['casD']
+2020-10-07 05:27:33 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:27:33 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:27:33 ctrl.casD    DEBUG    1
+2020-10-07 05:27:33 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:27:33 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:27:33 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:27:33 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:27:33 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:27:33 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:27:33 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:27:33 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:27:33 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:27:33 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:27:33 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:27:33 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:27:33 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:27:33 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:27:33 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:27:33 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:27:33 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:27:38 ctrl.casD    INFO     ['casD']
+2020-10-07 05:27:38 ctrl.casD    INFO     Already running task on casD!
+2020-10-07 05:27:48 ctrl.casD    INFO     CasD: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2020-10-07 05:27:48 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:27:48 ctrl.casD    INFO     casD: Evaluating step 2
+2020-10-07 05:27:48 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:27:48 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:27:48 ctrl.casD    INFO     ADDING Stain TO CasD
+2020-10-07 05:27:48 ctrl.casD    INFO     CasD CURRENT FLUID: vial
+2020-10-07 05:27:48 ctrl.casD    INFO     CasD: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2020-10-07 05:27:48 ctrl.casD    INFO     FINISHED LOADING Stain TO CasD, Time: 0.00s
+2020-10-07 05:27:48 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-10-07 05:27:48 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:27:48 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:27:48 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:27:53 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:27:53 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:27:53 ctrl.casD    INFO     Clean Time: 5.00s
+2020-10-07 05:27:53 ctrl.casD    INFO     Finished casD task!
+2020-10-07 05:30:44 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:30:49 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:30:49 ctrl.casD    INFO     Starting Run!
+sampleName                                                   asdf
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2609
+Name: casD, dtype: object
+2020-10-07 05:30:49 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:30:49 ctrl.casD    INFO     ['casD']
+2020-10-07 05:30:49 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:30:49 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:30:49 ctrl.casD    DEBUG    1
+2020-10-07 05:30:49 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:30:49 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:30:49 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:30:49 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:30:49 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:30:49 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:30:49 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:30:49 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:30:49 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:30:49 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:30:49 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:30:49 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:30:49 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:30:49 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:30:49 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:30:49 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:30:49 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:30:54 ctrl.casD    INFO     ['casD']
+2020-10-07 05:30:54 ctrl.casD    INFO     Already running task on casD!
+2020-10-07 05:31:04 ctrl.casD    INFO     CasD: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2020-10-07 05:31:04 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:31:04 ctrl.casD    INFO     casD: Evaluating step 2
+2020-10-07 05:31:04 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:31:05 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:31:05 ctrl.casD    INFO     ADDING Stain TO CasD
+2020-10-07 05:31:05 ctrl.casD    INFO     CasD CURRENT FLUID: vial
+2020-10-07 05:31:05 ctrl.casD    INFO     CasD: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2020-10-07 05:31:05 ctrl.casD    INFO     FINISHED LOADING Stain TO CasD, Time: 0.00s
+2020-10-07 05:31:05 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-10-07 05:31:05 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:31:05 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:31:05 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:31:08 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-10-07 05:31:08 ctrl.casD    INFO     ['casD']
+2020-10-07 05:31:08 ctrl.casD    CRITICAL 
+2020-10-07 05:31:08 ctrl.casD    INFO     Finished casD task!
+2020-10-07 05:31:08 ctrl.casD    INFO     SHUTDOWN CasD
+2020-10-07 05:31:08 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:31:08 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:31:08 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:31:13 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:31:13 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:31:13 ctrl.casD    INFO     Shutdown Time: 5.00s
+2020-10-07 05:31:13 ctrl.casD    INFO     []
+2020-10-07 05:31:13 ctrl.casD    INFO     The run on casD has been cancelled? False.
+2020-10-07 05:32:37 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:32:42 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:32:42 ctrl.casD    INFO     Starting Run!
+sampleName                                                   asfd
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2670
+Name: casD, dtype: object
+2020-10-07 05:32:42 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:32:42 ctrl.casD    INFO     ['casD']
+2020-10-07 05:32:42 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:32:42 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:32:42 ctrl.casD    DEBUG    1
+2020-10-07 05:32:42 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:32:42 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:32:42 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:32:42 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:32:42 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:32:42 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:32:42 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:32:42 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:32:42 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:32:42 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:32:42 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:32:42 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:32:42 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:32:42 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:32:42 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:32:42 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:32:42 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:32:55 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-10-07 05:32:55 ctrl.casD    INFO     ['casD']
+2020-10-07 05:32:55 ctrl.casD    INFO     SHUTDOWN CasD
+2020-10-07 05:32:55 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:32:55 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:32:55 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:33:00 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:33:00 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:33:00 ctrl.casD    INFO     Shutdown Time: 5.00s
+2020-10-07 05:33:00 ctrl.casD    INFO     []
+2020-10-07 05:33:00 ctrl.casD    INFO     The run on casD has been cancelled? True.
+2020-10-07 05:33:34 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:33:42 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:33:42 ctrl.casD    INFO     Starting Run!
+sampleName                                                   asdf
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2714
+Name: casD, dtype: object
+2020-10-07 05:33:43 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:33:43 ctrl.casD    INFO     ['casD']
+2020-10-07 05:33:43 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:33:43 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:33:43 ctrl.casD    DEBUG    1
+2020-10-07 05:33:43 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:33:43 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:33:43 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:33:43 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:33:43 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:33:43 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:33:43 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:33:43 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:33:43 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:33:43 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:33:43 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:33:43 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:33:43 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:33:43 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:33:43 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:33:43 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:33:43 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:33:46 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-10-07 05:33:46 ctrl.casD    INFO     ['casD']
+2020-10-07 05:33:46 ctrl.casD    INFO     SHUTDOWN CasD
+2020-10-07 05:33:46 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:33:46 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:33:46 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:33:51 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:33:51 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:33:51 ctrl.casD    INFO     Shutdown Time: 5.00s
+2020-10-07 05:33:51 ctrl.casD    INFO     []
+2020-10-07 05:33:51 ctrl.casD    INFO     The run on casD has been cancelled? True.
+2020-10-07 05:34:08 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:34:12 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:34:12 ctrl.casD    INFO     Starting Run!
+sampleName                                                   asdf
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2758
+Name: casD, dtype: object
+2020-10-07 05:34:12 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:34:12 ctrl.casD    INFO     ['casD']
+2020-10-07 05:34:12 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:34:12 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:34:12 ctrl.casD    DEBUG    1
+2020-10-07 05:34:12 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:34:12 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:34:12 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:34:12 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:34:12 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:34:12 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:34:12 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:34:12 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:34:12 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:34:12 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:34:12 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:34:12 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:34:12 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:34:12 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:34:12 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:34:12 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:34:12 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:34:27 ctrl.casD    INFO     CasD: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2020-10-07 05:34:27 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:34:28 ctrl.casD    INFO     casD: Evaluating step 2
+2020-10-07 05:34:28 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:34:28 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:34:28 ctrl.casD    INFO     ADDING Stain TO CasD
+2020-10-07 05:34:28 ctrl.casD    INFO     CasD CURRENT FLUID: vial
+2020-10-07 05:34:28 ctrl.casD    INFO     CasD: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2020-10-07 05:34:28 ctrl.casD    INFO     FINISHED LOADING Stain TO CasD, Time: 0.00s
+2020-10-07 05:34:28 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-10-07 05:34:28 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:34:28 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:34:28 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:34:33 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:34:33 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:34:33 ctrl.casD    INFO     Clean Time: 5.00s
+2020-10-07 05:34:33 ctrl.casD    INFO     Finished casD task!
+2020-10-07 05:38:55 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:38:59 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:38:59 ctrl.casD    INFO     Starting Run!
+sampleName                                                   asdf
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2808
+Name: casD, dtype: object
+2020-10-07 05:38:59 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:38:59 ctrl.casD    INFO     ['casD']
+2020-10-07 05:38:59 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:38:59 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:38:59 ctrl.casD    DEBUG    1
+2020-10-07 05:38:59 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:38:59 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:39:00 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:39:00 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:39:00 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:39:00 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:39:00 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:39:00 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:39:00 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:39:00 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:39:00 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:39:00 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:39:00 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:39:00 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:39:00 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:39:00 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:39:00 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:39:15 ctrl.casD    INFO     CasD: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2020-10-07 05:39:15 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:39:15 ctrl.casD    INFO     casD: Evaluating step 2
+2020-10-07 05:39:15 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:39:15 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:39:15 ctrl.casD    INFO     ADDING Stain TO CasD
+2020-10-07 05:39:15 ctrl.casD    INFO     CasD CURRENT FLUID: vial
+2020-10-07 05:39:15 ctrl.casD    INFO     CasD: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2020-10-07 05:39:15 ctrl.casD    INFO     FINISHED LOADING Stain TO CasD, Time: 0.00s
+2020-10-07 05:39:15 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-10-07 05:39:15 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:39:15 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:39:15 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:39:20 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:39:20 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:39:20 ctrl.casD    INFO     Clean Time: 5.00s
+2020-10-07 05:39:20 ctrl.casD    INFO     Finished casD task!
+2020-10-07 05:47:49 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:47:55 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:47:55 ctrl.casD    INFO     Starting Run!
+sampleName                                                  fasdf
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2858
+Name: casD, dtype: object
+2020-10-07 05:47:55 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:47:55 ctrl.casD    INFO     ['casD']
+2020-10-07 05:47:55 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:47:55 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:47:55 ctrl.casD    DEBUG    1
+2020-10-07 05:47:55 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:47:55 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:47:55 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:47:55 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:47:55 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:47:55 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:47:55 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:47:55 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:47:55 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:47:55 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:47:55 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:47:55 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:47:55 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:47:55 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:47:55 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:47:55 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:47:55 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:48:10 ctrl.casD    INFO     CasD: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2020-10-07 05:48:10 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:48:10 ctrl.casD    INFO     casD: Evaluating step 2
+2020-10-07 05:48:10 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:48:10 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:48:10 ctrl.casD    INFO     ADDING Stain TO CasD
+2020-10-07 05:48:10 ctrl.casD    INFO     CasD CURRENT FLUID: vial
+2020-10-07 05:48:10 ctrl.casD    INFO     CasD: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2020-10-07 05:48:10 ctrl.casD    INFO     FINISHED LOADING Stain TO CasD, Time: 0.00s
+2020-10-07 05:48:10 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-10-07 05:48:10 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:48:10 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:48:10 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:48:15 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:48:15 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:48:15 ctrl.casD    INFO     Clean Time: 5.00s
+2020-10-07 05:48:15 ctrl.casD    INFO     Finished casD task!
+2020-10-07 05:49:39 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:49:44 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:49:44 ctrl.casD    INFO     Starting Run!
+sampleName                                                 asdfas
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2908
+Name: casD, dtype: object
+2020-10-07 05:49:44 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:49:44 ctrl.casD    INFO     ['casD']
+2020-10-07 05:49:44 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:49:44 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:49:44 ctrl.casD    DEBUG    1
+2020-10-07 05:49:44 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:49:44 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:49:44 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:49:44 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:49:44 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:49:44 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:49:44 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:49:44 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:49:44 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:49:44 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:49:44 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:49:44 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:49:44 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:49:44 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:49:44 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:49:44 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:49:44 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:49:51 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-10-07 05:49:51 ctrl.casD    INFO     ['casD']
+2020-10-07 05:49:51 ctrl.casD    INFO     SHUTDOWN CasD
+2020-10-07 05:49:51 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:49:51 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:49:51 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:49:56 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:49:56 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:49:56 ctrl.casD    INFO     Shutdown Time: 5.00s
+2020-10-07 05:49:56 ctrl.casD    INFO     []
+2020-10-07 05:49:56 ctrl.casD    INFO     The run on casD has been cancelled? True.
+2020-10-07 05:51:18 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:51:22 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:51:22 ctrl.casD    INFO     Starting Run!
+sampleName                                                   asdf
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2952
+Name: casD, dtype: object
+2020-10-07 05:51:22 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:51:22 ctrl.casD    INFO     ['casD']
+2020-10-07 05:51:22 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:51:22 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:51:22 ctrl.casD    DEBUG    1
+2020-10-07 05:51:22 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:51:22 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:51:22 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:51:22 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:51:22 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:51:22 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:51:22 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:51:22 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:51:22 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:51:22 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:51:22 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:51:22 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:51:22 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:51:22 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:51:22 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:51:22 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:51:22 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:51:29 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-10-07 05:51:29 ctrl.casD    INFO     ['casD']
+2020-10-07 05:51:29 ctrl.casD    INFO     SHUTDOWN CasD
+2020-10-07 05:51:29 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:51:29 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:51:29 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:51:34 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:51:34 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:51:34 ctrl.casD    INFO     Shutdown Time: 5.00s
+2020-10-07 05:51:34 ctrl.casD    INFO     []
+2020-10-07 05:51:34 ctrl.casD    INFO     The run on casD has been cancelled? True.
+2020-10-07 05:54:48 ctrl.casD    INFO     Engage CasD...
+2020-10-07 05:54:53 ctrl.casD    INFO     
+
+
+
+2020-10-07 05:54:53 ctrl.casD    INFO     Starting Run!
+sampleName                                                   asdf
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     2996
+Name: casD, dtype: object
+2020-10-07 05:54:53 ctrl.casD    INFO     Starting task on casD
+2020-10-07 05:54:53 ctrl.casD    INFO     ['casD']
+2020-10-07 05:54:53 ctrl.casD    DEBUG    ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="D",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 05:54:53 ctrl.casD    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 05:54:53 ctrl.casD    DEBUG    1
+2020-10-07 05:54:53 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 05:54:53 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 05:54:53 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:54:53 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 05:54:53 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 05:54:53 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 05:54:53 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 05:54:53 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 05:54:53 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 05:54:53 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 05:54:53 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 05:54:53 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 05:54:53 ctrl.casD    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 05:54:53 ctrl.casD    INFO     ADDING Dehydrant TO CasD
+2020-10-07 05:54:53 ctrl.casD    INFO     CasD CURRENT FLUID: meoh
+2020-10-07 05:54:53 ctrl.casD    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 05:54:53 ctrl.casD    INFO     CasD SETTLE TIME: 15.0
+2020-10-07 05:54:56 ctrl.casD    INFO     Trying to cancel casD, getting active tasks...
+2020-10-07 05:54:56 ctrl.casD    INFO     ['casD']
+2020-10-07 05:54:56 ctrl.casD    INFO     SHUTDOWN CasD
+2020-10-07 05:54:56 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 05:54:56 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 05:54:56 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 05:55:01 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 05:55:01 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 05:55:01 ctrl.casD    INFO     Shutdown Time: 5.00s
+2020-10-07 05:55:01 ctrl.casD    INFO     []
+2020-10-07 05:55:01 ctrl.casD    INFO     The run on casD has been cancelled? True.

@@ -11,7 +11,7 @@ parameters:
   LINEVOL: 0.75
   removeVol: 1.5
   purgeVol: 4.0
-  settleTime: 15.0
+  settleTime: 150.0
   reagentDensOrder:
     babb: 2
     formalin: 1
