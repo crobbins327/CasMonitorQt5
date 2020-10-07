@@ -28,7 +28,7 @@ __3)__ Open another terminal or use the docker terminal to open the gui.
     
 
 #### Version 0.0.2 UI Demonstration:
-
+![](examples/ProgressGIFs/10-07-UI-demonstration.gif)
 
 
 #### Version 0.0.0 UI Demonstration:
