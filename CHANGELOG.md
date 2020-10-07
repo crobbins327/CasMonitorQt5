@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.0.2] - 10/07/2020
+### Added
+**Controller and GUI**
+- Made .desktop launcher that runs bash script (runApp--> starts runApp.py) that starts subprocesses for the controlNQ.py and setupGUI.py
+- Modifed pub-sub strategy so that another remote instance of setupGUI.py can receive and send commands to the controller
+- Cleaned up code that was commented, extra QML console.log messages, and set GUI logging level to info.
+
+### TODO
+- Test on prepbot
+- Swipe view on cassette monitor to increase the number of samples that can be run
+  - refactor corresponding machine functions to eliminate boilerplate code
+- Save sample log button
+- Past run/sample log history in GUI
+- Add paths and preferences (default protocol, protocol folder, windowed/fullscreen) to config.yaml parameter file
+- Update times for real operations using opTimes.log data
+  - Determine operation bottlenecks and adjust parameters to speed up protocols
+
+
 ## [0.0.1] - 09/30/2020
 ### Added
 First Changelog entry and operational CasMonitor version!
@@ -35,5 +53,6 @@ First Changelog entry and operational CasMonitor version!
   - Determine operation bottlenecks and adjust parameters to speed up protocols
 
 
-[0.0.1]: https://github.com/crobbins327/CasMonitor/tree/0.0.1 
+[0.0.1]: https://github.com/crobbins327/CasMonitor/tree/0.0.1
+[0.0.2]: https://github.com/crobbins327/CasMonitor/tree/0.0.2
 
