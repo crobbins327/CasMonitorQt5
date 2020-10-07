@@ -914,3 +914,36 @@ Name: casC, dtype: object
 2020-10-07 05:51:08 ctrl.casC    INFO     Engage CasC...
 2020-10-07 05:54:42 ctrl.casC    INFO     Engage CasC...
 2020-10-07 05:56:25 ctrl.casC    INFO     Engage CasC...
+2020-10-07 06:06:58 ctrl.casC    INFO     Engage CasC...
+2020-10-07 14:50:06 ctrl.casC    INFO     Engage CasC...
+2020-10-07 14:54:01 ctrl.casC    INFO     Engage CasC...
+2020-10-07 14:56:09 ctrl.casC    INFO     
+
+
+
+2020-10-07 14:56:09 ctrl.casC    INFO     Starting Run!
+sampleName                                                    aaa
+protocolName                                          anotherProt
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                      922
+Name: casC, dtype: object
+2020-10-07 14:56:09 ctrl.casC    INFO     Starting task on casC
+2020-10-07 14:56:09 ctrl.casC    INFO     ['casC', 'casA']
+2020-10-07 14:56:09 ctrl.casC    DEBUG    ['self.incubate(casL="C",incTime=4,mixAfter=0)', 'self.loadReagent(casL="C",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2020-10-07 14:56:09 ctrl.casC    DEBUG    ['Incubation', 'Load Formalin']
+2020-10-07 14:56:09 ctrl.casC    DEBUG    1
+2020-10-07 14:56:09 ctrl.casC    INFO     casC: Evaluating step 0
+2020-10-07 14:56:09 ctrl.casC    INFO     ['self.incubate(casL="C",incTime=4,mixAfter=0)']
+2020-10-07 14:56:09 ctrl.casC    INFO     No washes for incubation. incTime=4, mixAfter=0
+2020-10-07 14:56:09 ctrl.casC    INFO     INCUBATING CasC
+2020-10-07 14:56:18 ctrl.casC    INFO     Trying to cancel casC, getting active tasks...
+2020-10-07 14:56:18 ctrl.casC    INFO     ['casC', 'casA', 'casE']
+2020-10-07 14:56:18 ctrl.casC    INFO     SHUTDOWN CasC
+2020-10-07 14:56:18 ctrl.casC    INFO     Disengage CasC...
+2020-10-07 14:56:18 ctrl.casC    INFO     Cleaning line for CasC
+2020-10-07 14:56:18 ctrl.casC    INFO     PURGING LINE, CasC
+2020-10-07 14:56:23 ctrl.casC    INFO     MEOH WASH of CasC LINE
+2020-10-07 14:56:23 ctrl.casC    INFO     REMOVING MEOH WASH from LINE, CasC
+2020-10-07 14:56:23 ctrl.casC    INFO     Shutdown Time: 5.00s
+2020-10-07 14:56:23 ctrl.casC    INFO     ['casE']
+2020-10-07 14:56:23 ctrl.casC    INFO     The run on casC has been cancelled? True.

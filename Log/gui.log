@@ -49391,3 +49391,763 @@ casE  finished       3             0         vial  ...  /home/jackr/SampleMonito
 casF  finished       3             0         vial  ...  /home/jackr/SampleMonitor/Git/CasQML/Protocols...      asawash     2381   2426
 
 [6 rows x 13 columns]
+2020-10-07 06:06:58 gui          INFO     Registering GUI functions...
+2020-10-07 06:06:58 gui          INFO     Subscribing to procedures...
+2020-10-07 06:06:58 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 06:06:58 gui          INFO     Connecting to controller...
+2020-10-07 06:06:58 gui          INFO     Getting controller task dataframe...
+2020-10-07 06:06:58 gui          INFO     Checking if machine is homed...
+2020-10-07 06:06:58 gui          INFO     Machine is homed? : True
+2020-10-07 06:06:58 gui          INFO     Getting controller parameters..
+2020-10-07 06:06:58 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 06:06:58 gui          INFO     Emitting engages! casA
+2020-10-07 06:06:58 gui          INFO     casB: Repopulating GUI task
+2020-10-07 06:06:58 gui          INFO     casC: Repopulating GUI task
+2020-10-07 06:06:58 gui          INFO     casD: Repopulating GUI task
+2020-10-07 06:06:58 gui          INFO     casE: Repopulating GUI task
+2020-10-07 06:06:58 gui          INFO     casF: Repopulating GUI task
+2020-10-07 06:06:58 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 06:06:58 gui          INFO     Finished reconnecting loggers!
+2020-10-07 06:06:58 gui          INFO     FINISHED JOIN!
+2020-10-07 06:06:58 gui          INFO     Sending controller joined to GUI!
+2020-10-07 06:07:03 gui          INFO     Disconnected GUI
+2020-10-07 06:07:03 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB  shutdown       2            41  ...     otherops     1743   1777
+casC  finished       3             0  ...      asawash      824    869
+casD  shutdown       2            90  ...      asawash     2996   3035
+casE  finished       3             0  ...      asawash     4703   4748
+casF  finished       3             0  ...      asawash     2381   2426
+
+[6 rows x 13 columns]
+2020-10-07 14:50:06 gui          INFO     Registering GUI functions...
+2020-10-07 14:50:06 gui          INFO     Subscribing to procedures...
+2020-10-07 14:50:07 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 14:50:07 gui          INFO     Connecting to controller...
+2020-10-07 14:50:07 gui          INFO     Getting controller task dataframe...
+2020-10-07 14:50:07 gui          INFO     Checking if machine is homed...
+2020-10-07 14:50:07 gui          INFO     Machine is homed? : True
+2020-10-07 14:50:07 gui          INFO     Getting controller parameters..
+2020-10-07 14:50:07 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 14:50:07 gui          INFO     Emitting engages! casA
+2020-10-07 14:50:07 gui          INFO     casB: Repopulating GUI task
+2020-10-07 14:50:07 gui          INFO     casC: Repopulating GUI task
+2020-10-07 14:50:07 gui          INFO     casD: Repopulating GUI task
+2020-10-07 14:50:07 gui          INFO     casE: Repopulating GUI task
+2020-10-07 14:50:07 gui          INFO     casF: Repopulating GUI task
+2020-10-07 14:50:07 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 14:50:07 gui          INFO     Finished reconnecting loggers!
+2020-10-07 14:50:07 gui          INFO     FINISHED JOIN!
+2020-10-07 14:50:11 gui          INFO     Disconnected GUI
+2020-10-07 14:50:11 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB  shutdown       2            41  ...     otherops     1743   1777
+casC  finished       3             0  ...      asawash      824    869
+casD  shutdown       2            90  ...      asawash     2996   3035
+casE  finished       3             0  ...      asawash     4703   4748
+casF  finished       3             0  ...      asawash     2381   2426
+
+[6 rows x 13 columns]
+2020-10-07 14:50:34 gui          INFO     Registering GUI functions...
+2020-10-07 14:50:34 gui          INFO     Subscribing to procedures...
+2020-10-07 14:50:34 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 14:50:34 gui          INFO     Connecting to controller...
+2020-10-07 14:50:34 gui          INFO     Getting controller task dataframe...
+2020-10-07 14:50:34 gui          INFO     Checking if machine is homed...
+2020-10-07 14:50:34 gui          INFO     Machine is homed? : True
+2020-10-07 14:50:34 gui          INFO     Getting controller parameters..
+2020-10-07 14:50:34 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 14:50:34 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 14:50:34 gui          INFO     Finished reconnecting loggers!
+2020-10-07 14:50:34 gui          INFO     FINISHED JOIN!
+2020-10-07 14:50:34 gui          INFO     Sending controller joined to GUI!
+2020-10-07 14:50:37 gui          INFO     Disconnected GUI
+2020-10-07 14:50:37 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+casA    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 14:50:44 gui          INFO     Registering GUI functions...
+2020-10-07 14:50:44 gui          INFO     Subscribing to procedures...
+2020-10-07 14:50:44 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 14:50:44 gui          INFO     Connecting to controller...
+2020-10-07 14:50:44 gui          INFO     Getting controller task dataframe...
+2020-10-07 14:50:44 gui          INFO     Checking if machine is homed...
+2020-10-07 14:50:44 gui          INFO     Machine is homed? : True
+2020-10-07 14:50:44 gui          INFO     Getting controller parameters..
+2020-10-07 14:50:44 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 14:50:44 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 14:50:44 gui          INFO     Finished reconnecting loggers!
+2020-10-07 14:50:44 gui          INFO     FINISHED JOIN!
+2020-10-07 14:50:51 gui          INFO     Disconnected GUI
+2020-10-07 14:50:51 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+casA    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 14:50:58 gui          INFO     Registering GUI functions...
+2020-10-07 14:50:58 gui          INFO     Subscribing to procedures...
+2020-10-07 14:50:59 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 14:50:59 gui          INFO     Connecting to controller...
+2020-10-07 14:50:59 gui          INFO     Getting controller task dataframe...
+2020-10-07 14:50:59 gui          INFO     Checking if machine is homed...
+2020-10-07 14:50:59 gui          INFO     Machine is homed? : True
+2020-10-07 14:50:59 gui          INFO     Getting controller parameters..
+2020-10-07 14:50:59 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 14:50:59 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 14:50:59 gui          INFO     Finished reconnecting loggers!
+2020-10-07 14:50:59 gui          INFO     FINISHED JOIN!
+2020-10-07 14:50:59 gui          INFO     Sending controller joined to GUI!
+2020-10-07 14:51:01 gui          INFO     CasA engage complete
+2020-10-07 14:51:01 gui          INFO     CasA engage complete
+2020-10-07 14:51:06 gui          INFO     Disconnected GUI
+2020-10-07 14:51:06 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+casA    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 14:52:04 gui          INFO     Registering GUI functions...
+2020-10-07 14:52:04 gui          INFO     Subscribing to procedures...
+2020-10-07 14:52:04 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 14:52:04 gui          INFO     Connecting to controller...
+2020-10-07 14:52:04 gui          INFO     Getting controller task dataframe...
+2020-10-07 14:52:04 gui          INFO     Checking if machine is homed...
+2020-10-07 14:52:04 gui          INFO     Machine is homed? : True
+2020-10-07 14:52:04 gui          INFO     Getting controller parameters..
+2020-10-07 14:52:04 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 14:52:04 gui          INFO     Emitting engages! casA
+2020-10-07 14:52:04 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 14:52:04 gui          INFO     Finished reconnecting loggers!
+2020-10-07 14:52:04 gui          INFO     FINISHED JOIN!
+2020-10-07 14:52:04 gui          INFO     Sending controller joined to GUI!
+2020-10-07 14:52:06 gui          INFO     CasA disengage complete
+2020-10-07 14:52:06 gui          INFO     CasA disengage complete
+2020-10-07 14:52:09 gui          INFO     CasA engage complete
+2020-10-07 14:52:09 gui          INFO     CasA engage complete
+2020-10-07 14:52:10 gui          INFO     CasA disengage complete
+2020-10-07 14:52:10 gui          INFO     CasA disengage complete
+2020-10-07 14:52:14 gui          INFO     Disconnected GUI
+2020-10-07 14:52:14 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+casA   None    None          None  ...         None     None   None
+casB   None    None          None  ...         None     None   None
+casC   None    None          None  ...         None     None   None
+casD   None    None          None  ...         None     None   None
+casE   None    None          None  ...         None     None   None
+casF   None    None          None  ...         None     None   None
+
+[6 rows x 13 columns]
+2020-10-07 14:52:44 gui          INFO     Registering GUI functions...
+2020-10-07 14:52:44 gui          INFO     Subscribing to procedures...
+2020-10-07 14:52:44 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 14:52:44 gui          INFO     Connecting to controller...
+2020-10-07 14:52:44 gui          INFO     Getting controller task dataframe...
+2020-10-07 14:52:44 gui          INFO     Checking if machine is homed...
+2020-10-07 14:52:44 gui          INFO     Machine is homed? : True
+2020-10-07 14:52:44 gui          INFO     Getting controller parameters..
+2020-10-07 14:52:44 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 14:52:44 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 14:52:44 gui          INFO     Finished reconnecting loggers!
+2020-10-07 14:52:44 gui          INFO     FINISHED JOIN!
+2020-10-07 14:52:44 gui          INFO     Sending controller joined to GUI!
+2020-10-07 14:52:45 gui          INFO     CasA engage complete
+2020-10-07 14:52:48 gui          INFO     CasA disengage complete
+2020-10-07 14:52:55 gui          INFO     Disconnected GUI
+2020-10-07 14:52:55 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+casA    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 14:53:11 gui          INFO     Registering GUI functions...
+2020-10-07 14:53:11 gui          INFO     Subscribing to procedures...
+2020-10-07 14:53:11 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 14:53:11 gui          INFO     Connecting to controller...
+2020-10-07 14:53:11 gui          INFO     Getting controller task dataframe...
+2020-10-07 14:53:11 gui          INFO     Checking if machine is homed...
+2020-10-07 14:53:11 gui          INFO     Machine is homed? : True
+2020-10-07 14:53:11 gui          INFO     Getting controller parameters..
+2020-10-07 14:53:11 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 14:53:11 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 14:53:11 gui          INFO     Finished reconnecting loggers!
+2020-10-07 14:53:11 gui          INFO     FINISHED JOIN!
+2020-10-07 14:53:43 gui          INFO     Disconnected GUI
+2020-10-07 14:53:43 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+casA    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 14:53:58 gui          INFO     Registering GUI functions...
+2020-10-07 14:53:58 gui          INFO     Subscribing to procedures...
+2020-10-07 14:53:58 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 14:53:58 gui          INFO     Connecting to controller...
+2020-10-07 14:53:58 gui          INFO     Getting controller task dataframe...
+2020-10-07 14:53:58 gui          INFO     Checking if machine is homed...
+2020-10-07 14:53:58 gui          INFO     Machine is homed? : True
+2020-10-07 14:53:58 gui          INFO     Getting controller parameters..
+2020-10-07 14:53:58 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 14:53:58 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 14:53:58 gui          INFO     Finished reconnecting loggers!
+2020-10-07 14:53:58 gui          INFO     FINISHED JOIN!
+2020-10-07 14:53:58 gui          INFO     Sending controller joined to GUI!
+2020-10-07 14:53:59 gui          INFO     CasA engage complete
+2020-10-07 14:54:00 gui          INFO     CasB engage complete
+2020-10-07 14:54:01 gui          INFO     CasC engage complete
+2020-10-07 14:54:02 gui          INFO     CasF engage complete
+2020-10-07 14:54:03 gui          INFO     CasE engage complete
+2020-10-07 14:54:03 gui          INFO     CasD engage complete
+2020-10-07 14:54:12 gui          INFO     casA: Starting protocol:
+['self.loadReagent(casL="A",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="A",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="A",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+['Load Formalin', 'Load Dehydrant', 'Load Stain']
+[90, 90, 90]
+2020-10-07 14:54:13 gui          INFO     casA: Confirmed protocol and sending sample log.
+2020-10-07 14:54:13 gui          INFO     casA: Update run details log
+2020-10-07 14:54:14 gui          INFO     casA: Updating progress to next step
+2020-10-07 14:54:18 gui          INFO     casA: Update run details log
+2020-10-07 14:55:42 gui          INFO     casB: Starting protocol:
+['self.incubate(casL="B",incTime=4,mixAfter=0)', 'self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+['Incubation', 'Load Formalin']
+[4, 90]
+2020-10-07 14:55:42 gui          INFO     casB: Confirmed protocol and sending sample log.
+2020-10-07 14:55:48 gui          INFO     casB: Requesting a refresh on run details log.
+2020-10-07 14:55:48 gui          INFO     casB: Request run details log
+2020-10-07 14:55:49 gui          INFO     casB: Update run details log
+2020-10-07 14:55:52 gui          INFO     casB: Update run details log
+2020-10-07 14:55:52 gui          INFO     casB: Update run details log
+2020-10-07 14:55:53 gui          INFO     casB: Updating progress to next step
+2020-10-07 14:55:53 gui          INFO     casB: Updating progress to next step
+2020-10-07 14:55:53 gui          INFO     
+Cleaning Line of casB!!!
+
+2020-10-07 14:55:57 gui          INFO     casB: Update run details log
+2020-10-07 14:56:09 gui          INFO     casC: Starting protocol:
+['self.incubate(casL="C",incTime=4,mixAfter=0)', 'self.loadReagent(casL="C",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+['Incubation', 'Load Formalin']
+[4, 90]
+2020-10-07 14:56:09 gui          INFO     casC: Confirmed protocol and sending sample log.
+2020-10-07 14:56:09 gui          INFO     casC: Update run details log
+2020-10-07 14:56:15 gui          INFO     casE: Starting protocol:
+['self.incubate(casL="E",incTime=4,mixAfter=0)', 'self.loadReagent(casL="E",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+['Incubation', 'Load Formalin']
+[4, 90]
+2020-10-07 14:56:15 gui          INFO     casE: Confirmed protocol and sending sample log.
+2020-10-07 14:56:18 gui          INFO     casC: Requesting to stop run...
+2020-10-07 14:56:19 gui          INFO     
+SHUTTING DOWN casC!!!
+
+2020-10-07 14:56:19 gui          INFO     casC: Update run details log
+2020-10-07 14:56:20 gui          INFO     casE: Update run details log
+2020-10-07 14:56:21 gui          INFO     casA: Requesting to stop run...
+2020-10-07 14:56:22 gui          INFO     
+SHUTTING DOWN casA!!!
+
+2020-10-07 14:56:23 gui          INFO     casC: Update run details log
+2020-10-07 14:56:24 gui          INFO     casE: Requesting to stop run...
+2020-10-07 14:56:25 gui          INFO     
+SHUTTING DOWN casE!!!
+
+2020-10-07 14:56:27 gui          INFO     casA: Update run details log
+2020-10-07 14:56:29 gui          INFO     casE: Requesting a refresh on run details log.
+2020-10-07 14:56:29 gui          INFO     casE: Request run details log
+2020-10-07 14:56:29 gui          INFO     casE: Update run details log
+2020-10-07 14:57:51 gui          INFO     Disconnected GUI
+2020-10-07 14:57:51 gui          INFO             status stepNum secsRemaining  ... protocolName startlog  endlog
+casA  shutdown       2            90  ...      asawash   312766  312805
+casB  finished       2             0  ...  anotherProt     1782    1814
+casC  shutdown       1             4  ...  anotherProt      922     948
+casD       NaN     NaN           NaN  ...          NaN      NaN     NaN
+casE  shutdown       1             4  ...  anotherProt     4753    4779
+casF       NaN     NaN           NaN  ...          NaN      NaN     NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:02:36 gui          INFO     Registering GUI functions...
+2020-10-07 15:02:36 gui          INFO     Subscribing to procedures...
+2020-10-07 15:02:36 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:02:36 gui          INFO     Connecting to controller...
+2020-10-07 15:02:36 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:02:36 gui          INFO     Checking if machine is homed...
+2020-10-07 15:02:36 gui          INFO     Machine is homed? : True
+2020-10-07 15:02:36 gui          INFO     Getting controller parameters..
+2020-10-07 15:02:36 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 15:02:36 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:02:36 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:02:36 gui          INFO     FINISHED JOIN!
+2020-10-07 15:02:41 gui          INFO     CasD engage complete
+2020-10-07 15:02:42 gui          INFO     CasE engage complete
+2020-10-07 15:02:47 gui          INFO     casD: Starting protocol:
+['self.incubate(casL="D",incTime=4,mixAfter=0)', 'self.loadReagent(casL="D",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+['Incubation', 'Load Formalin']
+[4, 90]
+2020-10-07 15:02:47 gui          INFO     casD: Confirmed protocol and sending sample log.
+2020-10-07 15:02:52 gui          INFO     casE: Starting protocol:
+['self.loadReagent(casL="E",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="E",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="E",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+['Load Formalin', 'Load Dehydrant', 'Load Stain']
+[90, 90, 90]
+2020-10-07 15:02:52 gui          INFO     casE: Confirmed protocol and sending sample log.
+2020-10-07 15:02:52 gui          INFO     casE: Update run details log
+2020-10-07 15:02:53 gui          INFO     casE: Updating progress to next step
+2020-10-07 15:02:53 gui          INFO     CasF engage complete
+2020-10-07 15:02:56 gui          INFO     casD: Update run details log
+2020-10-07 15:02:56 gui          INFO     casE: Update run details log
+2020-10-07 15:02:56 gui          INFO     casE: Requesting to stop run...
+2020-10-07 15:02:57 gui          INFO     casD: Update run details log
+2020-10-07 15:02:57 gui          INFO     casD: Update run details log
+2020-10-07 15:02:57 gui          INFO     
+SHUTTING DOWN casE!!!
+
+2020-10-07 15:02:58 gui          INFO     casD: Updating progress to next step
+2020-10-07 15:02:58 gui          INFO     casD: Updating progress to next step
+2020-10-07 15:02:59 gui          INFO     
+Cleaning Line of casD!!!
+
+2020-10-07 15:03:02 gui          INFO     casE: Update run details log
+2020-10-07 15:03:03 gui          INFO     casD: Update run details log
+2020-10-07 15:03:06 gui          INFO     casD: Requesting a refresh on run details log.
+2020-10-07 15:03:06 gui          INFO     casD: Request run details log
+2020-10-07 15:03:14 gui          INFO     casE: Requesting a refresh on run details log.
+2020-10-07 15:03:14 gui          INFO     casE: Request run details log
+2020-10-07 15:04:24 gui          INFO     CasD engage complete
+2020-10-07 15:05:30 gui          INFO     casD: Starting protocol:
+['self.incubate(casL="D",incTime=2,mixAfter=2)', 'self.mix(casL="D", numCycles=4, volume=2.0)', 'self.purge(casL="D")', 'self.loadReagent(casL="D",reagent="formalin",vol=2.1,speed=0.13, washSyr=True, loadstr="Formalin")']
+['Incubation', 'Mixing', 'Purge', 'Load Formalin']
+[2, 300, 300, 90]
+2020-10-07 15:05:30 gui          INFO     casD: Confirmed protocol and sending sample log.
+2020-10-07 15:05:33 gui          INFO     casD: Update run details log
+2020-10-07 15:05:33 gui          INFO     casD: Update run details log
+2020-10-07 15:05:33 gui          INFO     casD: Update run details log
+2020-10-07 15:05:33 gui          INFO     casD: Update run details log
+2020-10-07 15:05:34 gui          INFO     Updating GUI task DF.
+2020-10-07 15:05:34 gui          INFO     casD: Updating progress to next step
+2020-10-07 15:05:34 gui          INFO     casD: Updating progress to next step
+2020-10-07 15:05:34 gui          INFO     casD: Updating progress to next step
+2020-10-07 15:05:34 gui          INFO     casD: Updating progress to next step
+2020-10-07 15:05:34 gui          INFO     
+Cleaning Line of casD!!!
+
+2020-10-07 15:05:36 gui          INFO     casD: Update run details log
+2020-10-07 15:05:38 gui          INFO     casD: Update run details log
+2020-10-07 15:06:10 gui          INFO     CasD engage complete
+2020-10-07 15:06:16 gui          INFO     casD: Update run details log
+2020-10-07 15:09:46 gui          INFO     Disconnected GUI
+2020-10-07 15:09:46 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA       NaN     NaN           NaN  ...          NaN      NaN    NaN
+casB       NaN     NaN           NaN  ...          NaN      NaN    NaN
+casC       NaN     NaN           NaN  ...          NaN      NaN    NaN
+casD      idle       4             0  ...    protAgain     3078   3124
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF       NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:09:52 gui          INFO     Registering GUI functions...
+2020-10-07 15:09:52 gui          INFO     Subscribing to procedures...
+2020-10-07 15:09:52 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:09:52 gui          INFO     Connecting to controller...
+2020-10-07 15:09:52 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:09:52 gui          INFO     Checking if machine is homed...
+2020-10-07 15:09:52 gui          INFO     Machine is homed? : True
+2020-10-07 15:09:52 gui          INFO     Getting controller parameters..
+2020-10-07 15:09:52 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:09:52 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:09:52 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:09:52 gui          INFO     Emitting engages! casF
+2020-10-07 15:09:52 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:09:52 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:09:52 gui          INFO     FINISHED JOIN!
+2020-10-07 15:09:52 gui          INFO     Sending controller joined to GUI!
+2020-10-07 15:11:01 gui          INFO     Disconnected GUI
+2020-10-07 15:11:01 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:13:24 gui          INFO     Registering GUI functions...
+2020-10-07 15:13:24 gui          INFO     Subscribing to procedures...
+2020-10-07 15:13:24 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:13:24 gui          INFO     Connecting to controller...
+2020-10-07 15:13:24 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:13:24 gui          INFO     Checking if machine is homed...
+2020-10-07 15:13:24 gui          INFO     Machine is homed? : True
+2020-10-07 15:13:24 gui          INFO     Getting controller parameters..
+2020-10-07 15:13:24 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:13:24 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:13:24 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:13:24 gui          INFO     Emitting engages! casF
+2020-10-07 15:13:24 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:13:24 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:13:24 gui          INFO     FINISHED JOIN!
+2020-10-07 15:15:11 gui          INFO     CasD engage complete
+2020-10-07 15:15:11 gui          INFO     CasF engage complete
+2020-10-07 15:15:11 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 15:15:11 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:15:11 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:15:11 gui          INFO     Emitting engages! casF
+2020-10-07 15:15:12 gui          INFO     Registering GUI functions...
+2020-10-07 15:15:12 gui          INFO     Subscribing to procedures...
+2020-10-07 15:15:12 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:15:12 gui          INFO     Connecting to controller...
+2020-10-07 15:15:12 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:15:12 gui          INFO     Checking if machine is homed...
+2020-10-07 15:15:12 gui          INFO     Machine is homed? : True
+2020-10-07 15:15:12 gui          INFO     Getting controller parameters..
+2020-10-07 15:15:12 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:15:12 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:15:12 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:15:12 gui          INFO     Emitting engages! casF
+2020-10-07 15:15:12 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:15:12 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:15:12 gui          INFO     FINISHED JOIN!
+2020-10-07 15:15:12 gui          INFO     Sending controller joined to GUI!
+2020-10-07 15:15:14 gui          INFO     Disconnected GUI
+2020-10-07 15:15:14 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:15:15 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:15:15 gui          WARNING  Controller disconnected...
+2020-10-07 15:15:15 gui          WARNING  Sending disconnect to GUI!
+2020-10-07 15:15:16 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:15:16 gui          WARNING  Controller disconnected...
+2020-10-07 15:15:17 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:15:17 gui          WARNING  Controller disconnected...
+2020-10-07 15:15:18 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:15:18 gui          WARNING  Controller disconnected...
+2020-10-07 15:15:19 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:15:19 gui          WARNING  Controller disconnected...
+2020-10-07 15:15:20 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:15:20 gui          WARNING  Controller disconnected...
+2020-10-07 15:15:21 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:15:21 gui          WARNING  Controller disconnected...
+2020-10-07 15:15:22 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:15:22 gui          WARNING  Controller disconnected...
+2020-10-07 15:15:23 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:15:23 gui          WARNING  Controller disconnected...
+2020-10-07 15:15:23 gui          INFO     Disconnected GUI
+2020-10-07 15:15:23 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:15:30 gui          INFO     Registering GUI functions...
+2020-10-07 15:15:30 gui          INFO     Subscribing to procedures...
+2020-10-07 15:15:30 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:15:30 gui          INFO     Connecting to controller...
+2020-10-07 15:15:30 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:15:30 gui          INFO     Checking if machine is homed...
+2020-10-07 15:15:30 gui          INFO     Machine is homed? : True
+2020-10-07 15:15:30 gui          INFO     Getting controller parameters..
+2020-10-07 15:15:30 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:15:30 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:15:30 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:15:30 gui          INFO     Emitting engages! casF
+2020-10-07 15:15:30 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:15:30 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:15:30 gui          INFO     FINISHED JOIN!
+2020-10-07 15:15:30 gui          INFO     Sending controller joined to GUI!
+2020-10-07 15:16:30 gui          INFO     Disconnected GUI
+2020-10-07 15:16:30 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:16:38 gui          INFO     Registering GUI functions...
+2020-10-07 15:16:38 gui          INFO     Subscribing to procedures...
+2020-10-07 15:16:38 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:16:38 gui          INFO     Connecting to controller...
+2020-10-07 15:16:38 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:16:38 gui          INFO     Checking if machine is homed...
+2020-10-07 15:16:38 gui          INFO     Machine is homed? : True
+2020-10-07 15:16:38 gui          INFO     Getting controller parameters..
+2020-10-07 15:16:38 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:16:38 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:16:38 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:16:38 gui          INFO     Emitting engages! casF
+2020-10-07 15:16:38 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:16:38 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:16:38 gui          INFO     FINISHED JOIN!
+2020-10-07 15:16:41 gui          INFO     CasD engage complete
+2020-10-07 15:16:41 gui          INFO     CasF engage complete
+2020-10-07 15:16:41 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 15:16:41 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:16:41 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:16:41 gui          INFO     Emitting engages! casF
+2020-10-07 15:16:41 gui          INFO     Registering GUI functions...
+2020-10-07 15:16:41 gui          INFO     Subscribing to procedures...
+2020-10-07 15:16:41 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:16:41 gui          INFO     Connecting to controller...
+2020-10-07 15:16:41 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:16:41 gui          INFO     Checking if machine is homed...
+2020-10-07 15:16:41 gui          INFO     Machine is homed? : True
+2020-10-07 15:16:41 gui          INFO     Getting controller parameters..
+2020-10-07 15:16:41 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:16:41 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:16:41 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:16:41 gui          INFO     Emitting engages! casF
+2020-10-07 15:16:41 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:16:41 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:16:41 gui          INFO     FINISHED JOIN!
+2020-10-07 15:16:41 gui          INFO     Sending controller joined to GUI!
+2020-10-07 15:16:45 gui          INFO     Disconnected GUI
+2020-10-07 15:16:45 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:16:54 gui          INFO     CasD engage complete
+2020-10-07 15:16:54 gui          INFO     CasF engage complete
+2020-10-07 15:16:54 gui          INFO     Controller has same taskDF as GUI
+2020-10-07 15:16:54 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:16:54 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:16:54 gui          INFO     Emitting engages! casF
+2020-10-07 15:16:55 gui          INFO     Registering GUI functions...
+2020-10-07 15:16:55 gui          INFO     Subscribing to procedures...
+2020-10-07 15:16:55 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:16:55 gui          INFO     Connecting to controller...
+2020-10-07 15:16:55 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:16:55 gui          INFO     Checking if machine is homed...
+2020-10-07 15:16:55 gui          INFO     Machine is homed? : True
+2020-10-07 15:16:55 gui          INFO     Getting controller parameters..
+2020-10-07 15:16:55 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:16:55 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:16:55 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:16:55 gui          INFO     Emitting engages! casF
+2020-10-07 15:16:55 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:16:55 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:16:55 gui          INFO     FINISHED JOIN!
+2020-10-07 15:16:55 gui          INFO     Sending controller joined to GUI!
+2020-10-07 15:16:56 gui          INFO     Disconnected GUI
+2020-10-07 15:16:56 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:16:57 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:16:57 gui          WARNING  Controller disconnected...
+2020-10-07 15:16:57 gui          WARNING  Sending disconnect to GUI!
+2020-10-07 15:16:58 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:16:58 gui          WARNING  Controller disconnected...
+2020-10-07 15:16:59 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:16:59 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:00 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:00 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:01 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:01 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:02 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:02 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:03 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:03 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:04 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:04 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:05 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:06 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:06 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:07 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:07 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:08 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:08 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:09 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:09 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:10 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:10 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:11 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:11 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:12 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:12 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:13 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:13 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:14 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:14 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:15 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:15 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:16 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:16 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:17 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:17 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:18 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:18 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:19 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:19 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:20 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:20 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:21 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:21 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:22 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:22 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:23 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:23 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:24 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:24 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:25 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:25 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:26 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:26 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:27 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:27 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:28 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:28 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:29 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:29 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:29 gui          INFO     Disconnected GUI
+2020-10-07 15:17:29 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:17:35 gui          INFO     Registering GUI functions...
+2020-10-07 15:17:35 gui          INFO     Subscribing to procedures...
+2020-10-07 15:17:35 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:17:35 gui          INFO     Connecting to controller...
+2020-10-07 15:17:35 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:17:35 gui          INFO     Checking if machine is homed...
+2020-10-07 15:17:35 gui          INFO     Machine is homed? : True
+2020-10-07 15:17:35 gui          INFO     Getting controller parameters..
+2020-10-07 15:17:35 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:17:35 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:17:35 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:17:35 gui          INFO     Emitting engages! casF
+2020-10-07 15:17:35 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:17:35 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:17:35 gui          INFO     FINISHED JOIN!
+2020-10-07 15:17:37 gui          INFO     Disconnected GUI
+2020-10-07 15:17:37 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:17:42 gui          INFO     Registering GUI functions...
+2020-10-07 15:17:42 gui          INFO     Subscribing to procedures...
+2020-10-07 15:17:42 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:17:42 gui          INFO     Connecting to controller...
+2020-10-07 15:17:42 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:17:42 gui          INFO     Checking if machine is homed...
+2020-10-07 15:17:42 gui          INFO     Machine is homed? : True
+2020-10-07 15:17:42 gui          INFO     Getting controller parameters..
+2020-10-07 15:17:42 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:17:42 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:17:42 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:17:42 gui          INFO     Emitting engages! casF
+2020-10-07 15:17:42 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:17:42 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:17:42 gui          INFO     FINISHED JOIN!
+2020-10-07 15:17:42 gui          INFO     Sending controller joined to GUI!
+2020-10-07 15:17:43 gui          INFO     Registering GUI functions...
+2020-10-07 15:17:43 gui          INFO     Subscribing to procedures...
+2020-10-07 15:17:43 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:17:43 gui          INFO     Connecting to controller...
+2020-10-07 15:17:43 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:17:43 gui          INFO     Checking if machine is homed...
+2020-10-07 15:17:43 gui          INFO     Machine is homed? : True
+2020-10-07 15:17:43 gui          INFO     Getting controller parameters..
+2020-10-07 15:17:43 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:17:43 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:17:43 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:17:43 gui          INFO     Emitting engages! casF
+2020-10-07 15:17:43 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:17:43 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:17:43 gui          INFO     FINISHED JOIN!
+2020-10-07 15:17:43 gui          INFO     Sending controller joined to GUI!
+2020-10-07 15:17:46 gui          INFO     Disconnected GUI
+2020-10-07 15:17:46 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:17:47 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:47 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:47 gui          WARNING  Sending disconnect to GUI!
+2020-10-07 15:17:48 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:48 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:49 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-07 15:17:49 gui          WARNING  Controller disconnected...
+2020-10-07 15:17:49 gui          INFO     Disconnected GUI
+2020-10-07 15:17:49 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-07 15:18:01 gui          INFO     Registering GUI functions...
+2020-10-07 15:18:01 gui          INFO     Subscribing to procedures...
+2020-10-07 15:18:01 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-07 15:18:01 gui          INFO     Connecting to controller...
+2020-10-07 15:18:01 gui          INFO     Getting controller task dataframe...
+2020-10-07 15:18:01 gui          INFO     Checking if machine is homed...
+2020-10-07 15:18:01 gui          INFO     Machine is homed? : True
+2020-10-07 15:18:01 gui          INFO     Getting controller parameters..
+2020-10-07 15:18:01 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-07 15:18:01 gui          INFO     casD: Repopulating GUI task
+2020-10-07 15:18:01 gui          INFO     casE: Repopulating GUI task
+2020-10-07 15:18:01 gui          INFO     Emitting engages! casF
+2020-10-07 15:18:01 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-07 15:18:01 gui          INFO     Finished reconnecting loggers!
+2020-10-07 15:18:01 gui          INFO     FINISHED JOIN!
+2020-10-07 15:18:04 gui          INFO     CasB engage complete
+2020-10-07 15:18:06 gui          INFO     CasB disengage complete
+2020-10-07 15:21:02 gui          INFO     Disconnected GUI
+2020-10-07 15:21:02 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       4             0  ...    protAgain     3078   3125
+casE  shutdown       2            90  ...      asawash     4798   4837
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]

@@ -1,0 +1,22 @@
+[
+	{
+		"opName": "Incubation",
+		"opTime": "00:00:04",
+		"mixAfterSecs": "0",
+		"volume": "undefined",
+		"pSpeed": "undefined",
+		"numCycles": "undefined",
+		"washSyr": "undefined",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Load Formalin",
+		"opTime": "00:01:30",
+		"mixAfterSecs": "undefined",
+		"volume": "819uL",
+		"pSpeed": "0.37",
+		"numCycles": "undefined",
+		"washSyr": "false",
+		"loadType": "Formalin"
+	}
+]

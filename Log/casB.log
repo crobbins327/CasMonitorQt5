@@ -1776,3 +1776,42 @@ Name: casB, dtype: object
 2020-10-07 05:18:25 ctrl.casB    INFO     Shutdown Time: 5.00s
 2020-10-07 05:18:25 ctrl.casB    INFO     ['casA']
 2020-10-07 05:18:25 ctrl.casB    INFO     The run on casB has been cancelled? True.
+2020-10-07 14:54:00 ctrl.casB    INFO     Engage CasB...
+2020-10-07 14:55:42 ctrl.casB    INFO     
+
+
+
+2020-10-07 14:55:42 ctrl.casB    INFO     Starting Run!
+sampleName                                                testing
+protocolName                                          anotherProt
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     1782
+Name: casB, dtype: object
+2020-10-07 14:55:42 ctrl.casB    INFO     Starting task on casB
+2020-10-07 14:55:42 ctrl.casB    INFO     ['casA', 'casB']
+2020-10-07 14:55:42 ctrl.casB    DEBUG    ['self.incubate(casL="B",incTime=4,mixAfter=0)', 'self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2020-10-07 14:55:42 ctrl.casB    DEBUG    ['Incubation', 'Load Formalin']
+2020-10-07 14:55:42 ctrl.casB    DEBUG    1
+2020-10-07 14:55:42 ctrl.casB    INFO     casB: Evaluating step 0
+2020-10-07 14:55:42 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=4,mixAfter=0)']
+2020-10-07 14:55:42 ctrl.casB    INFO     No washes for incubation. incTime=4, mixAfter=0
+2020-10-07 14:55:42 ctrl.casB    INFO     INCUBATING CasB
+2020-10-07 14:55:52 ctrl.casB    INFO     FINISHED INCUBATION of CasB
+2020-10-07 14:55:52 ctrl.casB    INFO     Updating progress on casB...
+2020-10-07 14:55:52 ctrl.casB    INFO     casB: Evaluating step 1
+2020-10-07 14:55:52 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2020-10-07 14:55:52 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2020-10-07 14:55:52 ctrl.casB    INFO     ADDING Formalin TO CasB
+2020-10-07 14:55:52 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2020-10-07 14:55:52 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 14:55:52 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2020-10-07 14:55:52 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2020-10-07 14:55:52 ctrl.casB    INFO     Disengage CasB...
+2020-10-07 14:55:52 ctrl.casB    INFO     Cleaning line for CasB
+2020-10-07 14:55:52 ctrl.casB    INFO     PURGING LINE, CasB
+2020-10-07 14:55:57 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2020-10-07 14:55:57 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2020-10-07 14:55:57 ctrl.casB    INFO     Clean Time: 5.00s
+2020-10-07 14:55:57 ctrl.casB    INFO     Finished casB task!
+2020-10-07 15:18:04 ctrl.casB    INFO     Engage CasB...
+2020-10-07 15:18:06 ctrl.casB    INFO     Disengage CasB...

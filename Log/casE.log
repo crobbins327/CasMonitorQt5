@@ -4747,3 +4747,92 @@ Name: casE, dtype: object
 2020-10-07 05:34:47 ctrl.casE    INFO     REMOVING MEOH WASH from LINE, CasE
 2020-10-07 05:34:47 ctrl.casE    INFO     Clean Time: 5.00s
 2020-10-07 05:34:47 ctrl.casE    INFO     Finished casE task!
+2020-10-07 14:54:03 ctrl.casE    INFO     Engage CasE...
+2020-10-07 14:56:15 ctrl.casE    INFO     
+
+
+
+2020-10-07 14:56:15 ctrl.casE    INFO     Starting Run!
+sampleName                                               asdfasdf
+protocolName                                          anotherProt
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     4753
+Name: casE, dtype: object
+2020-10-07 14:56:15 ctrl.casE    INFO     Starting task on casE
+2020-10-07 14:56:15 ctrl.casE    INFO     ['casC', 'casA', 'casE']
+2020-10-07 14:56:15 ctrl.casE    DEBUG    ['self.incubate(casL="E",incTime=4,mixAfter=0)', 'self.loadReagent(casL="E",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2020-10-07 14:56:15 ctrl.casE    DEBUG    ['Incubation', 'Load Formalin']
+2020-10-07 14:56:15 ctrl.casE    DEBUG    1
+2020-10-07 14:56:15 ctrl.casE    INFO     casE: Evaluating step 0
+2020-10-07 14:56:15 ctrl.casE    INFO     ['self.incubate(casL="E",incTime=4,mixAfter=0)']
+2020-10-07 14:56:15 ctrl.casE    INFO     No washes for incubation. incTime=4, mixAfter=0
+2020-10-07 14:56:15 ctrl.casE    INFO     INCUBATING CasE
+2020-10-07 14:56:24 ctrl.casE    INFO     Trying to cancel casE, getting active tasks...
+2020-10-07 14:56:24 ctrl.casE    INFO     ['casE']
+2020-10-07 14:56:24 ctrl.casE    INFO     SHUTDOWN CasE
+2020-10-07 14:56:24 ctrl.casE    INFO     Disengage CasE...
+2020-10-07 14:56:24 ctrl.casE    INFO     Cleaning line for CasE
+2020-10-07 14:56:24 ctrl.casE    INFO     PURGING LINE, CasE
+2020-10-07 14:56:29 ctrl.casE    INFO     MEOH WASH of CasE LINE
+2020-10-07 14:56:29 ctrl.casE    INFO     REMOVING MEOH WASH from LINE, CasE
+2020-10-07 14:56:29 ctrl.casE    INFO     Shutdown Time: 5.00s
+2020-10-07 14:56:29 ctrl.casE    INFO     []
+2020-10-07 14:56:29 ctrl.casE    INFO     The run on casE has been cancelled? True.
+2020-10-07 14:57:22 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-10-07 14:57:22 ctrl.casE    INFO     ADDING meoh TO CasE
+2020-10-07 14:57:22 ctrl.casE    INFO     CasE CURRENT FLUID: meoh
+2020-10-07 14:57:22 ctrl.casE    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 14:57:22 ctrl.casE    INFO     CasE SETTLE TIME: 15.0
+2020-10-07 14:57:32 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-10-07 14:57:32 ctrl.casE    INFO     ADDING meoh TO CasE
+2020-10-07 14:57:32 ctrl.casE    INFO     CasE CURRENT FLUID: meoh
+2020-10-07 14:57:32 ctrl.casE    INFO     CasE: Reagent (meoh) and residual fluid (meoh) do not require a density adjustment.
+2020-10-07 14:57:32 ctrl.casE    INFO     FINISHED LOADING meoh TO CasE, Time: 0.00s
+2020-10-07 14:57:32 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-10-07 14:57:32 ctrl.casE    INFO     ADDING babb TO CasE
+2020-10-07 14:57:34 ctrl.casE    INFO     CasE CURRENT FLUID: babb
+2020-10-07 14:57:34 ctrl.casE    INFO     CasE SETTLE TIME: 15.0
+2020-10-07 15:02:42 ctrl.casE    INFO     Engage CasE...
+2020-10-07 15:02:52 ctrl.casE    INFO     
+
+
+
+2020-10-07 15:02:52 ctrl.casE    INFO     Starting Run!
+sampleName                                                 asdfas
+protocolName                                              asawash
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     4798
+Name: casE, dtype: object
+2020-10-07 15:02:52 ctrl.casE    INFO     Starting task on casE
+2020-10-07 15:02:52 ctrl.casE    INFO     ['casD', 'casE']
+2020-10-07 15:02:52 ctrl.casE    DEBUG    ['self.loadReagent(casL="E",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="E",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="E",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2020-10-07 15:02:52 ctrl.casE    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2020-10-07 15:02:52 ctrl.casE    DEBUG    1
+2020-10-07 15:02:52 ctrl.casE    INFO     casE: Evaluating step 0
+2020-10-07 15:02:52 ctrl.casE    INFO     ['self.loadReagent(casL="E",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2020-10-07 15:02:52 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-10-07 15:02:52 ctrl.casE    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 15:02:52 ctrl.casE    INFO     ADDING Formalin TO CasE
+2020-10-07 15:02:52 ctrl.casE    INFO     CasE CURRENT FLUID: formalin
+2020-10-07 15:02:52 ctrl.casE    INFO     CasE: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 15:02:52 ctrl.casE    INFO     FINISHED LOADING Formalin TO CasE, Time: 0.00s
+2020-10-07 15:02:52 ctrl.casE    INFO     Updating progress on casE...
+2020-10-07 15:02:52 ctrl.casE    INFO     casE: Evaluating step 1
+2020-10-07 15:02:52 ctrl.casE    INFO     ['self.loadReagent(casL="E",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2020-10-07 15:02:53 ctrl.casE    INFO     PURGING CHAMBER, CasE
+2020-10-07 15:02:53 ctrl.casE    INFO     WASHING SYRINGE WITH Dehydrant
+2020-10-07 15:02:53 ctrl.casE    INFO     ADDING Dehydrant TO CasE
+2020-10-07 15:02:53 ctrl.casE    INFO     CasE CURRENT FLUID: meoh
+2020-10-07 15:02:53 ctrl.casE    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2020-10-07 15:02:53 ctrl.casE    INFO     CasE SETTLE TIME: 15.0
+2020-10-07 15:02:56 ctrl.casE    INFO     Trying to cancel casE, getting active tasks...
+2020-10-07 15:02:56 ctrl.casE    INFO     ['casD', 'casE']
+2020-10-07 15:02:57 ctrl.casE    INFO     SHUTDOWN CasE
+2020-10-07 15:02:57 ctrl.casE    INFO     Disengage CasE...
+2020-10-07 15:02:57 ctrl.casE    INFO     Cleaning line for CasE
+2020-10-07 15:02:57 ctrl.casE    INFO     PURGING LINE, CasE
+2020-10-07 15:03:02 ctrl.casE    INFO     MEOH WASH of CasE LINE
+2020-10-07 15:03:02 ctrl.casE    INFO     REMOVING MEOH WASH from LINE, CasE
+2020-10-07 15:03:02 ctrl.casE    INFO     Shutdown Time: 5.00s
+2020-10-07 15:03:02 ctrl.casE    INFO     ['casD']
+2020-10-07 15:03:02 ctrl.casE    INFO     The run on casE has been cancelled? True.

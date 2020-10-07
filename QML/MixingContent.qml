@@ -160,9 +160,9 @@ Item {
             color: "#000000"
             text: {
                 if(numCycles==1){
-                    return(numCycles+' Cycle')
+                    return(numCycles.toString()+' Cycle')
                 }else{
-                 return(numCycles+' Cycles')
+                 return(numCycles.toString()+' Cycles')
                 }
             }
             anchors.left: opTimeText.right
@@ -224,12 +224,12 @@ Item {
                 }
             }
 
-            currentIndex: numCycles-1
+            currentIndex: (numCycles-1).toString()
 
 
 
             onMovingChanged: {
-                numCycles = cycleTumbler.currentIndex+1
+                numCycles = (cycleTumbler.currentIndex+1).toString()
             }
 
         }

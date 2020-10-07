@@ -3034,3 +3034,104 @@ Name: casD, dtype: object
 2020-10-07 05:55:01 ctrl.casD    INFO     Shutdown Time: 5.00s
 2020-10-07 05:55:01 ctrl.casD    INFO     []
 2020-10-07 05:55:01 ctrl.casD    INFO     The run on casD has been cancelled? True.
+2020-10-07 14:54:03 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:02:41 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:02:47 ctrl.casD    INFO     
+
+
+
+2020-10-07 15:02:47 ctrl.casD    INFO     Starting Run!
+sampleName                                                  asfdf
+protocolName                                          anotherProt
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     3041
+Name: casD, dtype: object
+2020-10-07 15:02:47 ctrl.casD    INFO     Starting task on casD
+2020-10-07 15:02:47 ctrl.casD    INFO     ['casD']
+2020-10-07 15:02:47 ctrl.casD    DEBUG    ['self.incubate(casL="D",incTime=4,mixAfter=0)', 'self.loadReagent(casL="D",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2020-10-07 15:02:47 ctrl.casD    DEBUG    ['Incubation', 'Load Formalin']
+2020-10-07 15:02:47 ctrl.casD    DEBUG    1
+2020-10-07 15:02:47 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 15:02:47 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=4,mixAfter=0)']
+2020-10-07 15:02:47 ctrl.casD    INFO     No washes for incubation. incTime=4, mixAfter=0
+2020-10-07 15:02:47 ctrl.casD    INFO     INCUBATING CasD
+2020-10-07 15:02:57 ctrl.casD    INFO     FINISHED INCUBATION of CasD
+2020-10-07 15:02:57 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 15:02:57 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 15:02:57 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2020-10-07 15:02:57 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 15:02:57 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 15:02:57 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 15:02:57 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 15:02:57 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 15:02:57 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-10-07 15:02:58 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 15:02:58 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 15:02:58 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 15:03:03 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 15:03:03 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 15:03:03 ctrl.casD    INFO     Clean Time: 5.00s
+2020-10-07 15:03:03 ctrl.casD    INFO     Finished casD task!
+2020-10-07 15:04:24 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:05:30 ctrl.casD    INFO     
+
+
+
+2020-10-07 15:05:30 ctrl.casD    INFO     Starting Run!
+sampleName                                                testing
+protocolName                                            protAgain
+protocolPath    /home/jackr/SampleMonitor/Git/CasQML/Protocols...
+startlog                                                     3078
+Name: casD, dtype: object
+2020-10-07 15:05:30 ctrl.casD    INFO     Starting task on casD
+2020-10-07 15:05:30 ctrl.casD    INFO     ['casD']
+2020-10-07 15:05:30 ctrl.casD    DEBUG    ['self.incubate(casL="D",incTime=2,mixAfter=2)', 'self.mix(casL="D", numCycles=4, volume=2.0)', 'self.purge(casL="D")', 'self.loadReagent(casL="D",reagent="formalin",vol=2.1,speed=0.13, washSyr=True, loadstr="Formalin")']
+2020-10-07 15:05:30 ctrl.casD    DEBUG    ['Incubation', 'Mixing', 'Purge', 'Load Formalin']
+2020-10-07 15:05:30 ctrl.casD    DEBUG    1
+2020-10-07 15:05:30 ctrl.casD    INFO     casD: Evaluating step 0
+2020-10-07 15:05:30 ctrl.casD    INFO     ['self.incubate(casL="D",incTime=2,mixAfter=2)']
+2020-10-07 15:05:30 ctrl.casD    INFO     INCUBATING CasD
+2020-10-07 15:05:32 ctrl.casD    INFO     Mixing CasD...
+2020-10-07 15:05:33 ctrl.casD    INFO     Inc. Mix Time: 1.00s
+2020-10-07 15:05:33 ctrl.casD    INFO     FINISHED INCUBATION of CasD
+2020-10-07 15:05:33 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 15:05:33 ctrl.casD    INFO     casD: Evaluating step 1
+2020-10-07 15:05:33 ctrl.casD    INFO     ['self.mix(casL="D", numCycles=4, volume=2.0)']
+2020-10-07 15:05:33 ctrl.casD    INFO     MIXING CasD, 4 TIMES, 2.0 VOLUME
+2020-10-07 15:05:33 ctrl.casD    INFO     Mixing D, #1 of 4 cycles...
+2020-10-07 15:05:33 ctrl.casD    INFO     Mixing D, #2 of 4 cycles...
+2020-10-07 15:05:33 ctrl.casD    INFO     Mixing D, #3 of 4 cycles...
+2020-10-07 15:05:33 ctrl.casD    INFO     Mixing D, #4 of 4 cycles...
+2020-10-07 15:05:33 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 15:05:33 ctrl.casD    INFO     casD: Evaluating step 2
+2020-10-07 15:05:33 ctrl.casD    INFO     ['self.purge(casL="D")']
+2020-10-07 15:05:33 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 15:05:33 ctrl.casD    INFO     Updating progress on casD...
+2020-10-07 15:05:33 ctrl.casD    INFO     casD: Evaluating step 3
+2020-10-07 15:05:33 ctrl.casD    INFO     ['self.loadReagent(casL="D",reagent="formalin",vol=2.1,speed=0.13, washSyr=True, loadstr="Formalin")']
+2020-10-07 15:05:33 ctrl.casD    INFO     PURGING CHAMBER, CasD
+2020-10-07 15:05:33 ctrl.casD    INFO     WASHING SYRINGE WITH Formalin
+2020-10-07 15:05:33 ctrl.casD    INFO     ADDING Formalin TO CasD
+2020-10-07 15:05:33 ctrl.casD    INFO     CasD CURRENT FLUID: formalin
+2020-10-07 15:05:33 ctrl.casD    INFO     CasD: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2020-10-07 15:05:33 ctrl.casD    INFO     FINISHED LOADING Formalin TO CasD, Time: 0.00s
+2020-10-07 15:05:33 ctrl.casD    INFO     Finished all steps, starting to clean casD...
+2020-10-07 15:05:33 ctrl.casD    INFO     Disengage CasD...
+2020-10-07 15:05:33 ctrl.casD    INFO     Cleaning line for CasD
+2020-10-07 15:05:33 ctrl.casD    INFO     PURGING LINE, CasD
+2020-10-07 15:05:38 ctrl.casD    INFO     MEOH WASH of CasD LINE
+2020-10-07 15:05:38 ctrl.casD    INFO     REMOVING MEOH WASH from LINE, CasD
+2020-10-07 15:05:38 ctrl.casD    INFO     Clean Time: 5.00s
+2020-10-07 15:05:38 ctrl.casD    INFO     Finished casD task!
+2020-10-07 15:06:10 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:09:51 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:13:23 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:15:11 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:15:29 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:16:37 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:16:41 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:16:54 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:17:34 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:17:41 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:17:42 ctrl.casD    INFO     Engage CasD...
+2020-10-07 15:18:00 ctrl.casD    INFO     Engage CasD...
