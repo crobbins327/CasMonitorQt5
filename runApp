@@ -6,6 +6,27 @@ killbg() {
 }
 trap '' INT TSTP
 source /home/jackr/.bashrc
+ContainerID=$(sudo docker ps -aqf "name=crossbar")
+echo "ContainerID: $ContainerID"
+#echo $contID
+if [ -z "$ContainerID" ]
+then
+	echo "ContainerID is empty, making crossbar container..."
+	sudo docker run --name=crossbar --rm -d -p 8080:8080 crossbario/crossbar
+else
+	echo "ContainerID is not empty, checking status of crossbar container..."
+	rID=$(sudo docker ps -aq --filter "name=crossbar" --filter "status=running")
+	if [ -z "$rID" ]
+	then
+		echo "The container is stopped/not running... restarting..."
+		sudo docker stop $(sudo docker ps -aqf "name=crossbar")
+		sudo docker rm $(sudo docker ps -aqf "name=crossbar")
+		sudo docker run --name=crossbar --rm -d -p 8080:8080 crossbario/crossbar
+	else
+		echo "The crossbar container is running! Skipping making new crossbar container..."
+	fi
+fi
+	
 source activate QML36
 cd /home/jackr/SampleMonitor/Git/CasQML
 python runApp.py
@@ -17,4 +38,3 @@ pids+=($!)
 background job 2... & 
 pids+=($!)
 foreground job
-

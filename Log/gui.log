@@ -50229,3 +50229,140 @@ casE  shutdown       1            36  ...       asdfsa     4906   4939
 casF      None     NaN           NaN  ...         None      NaN    NaN
 
 [6 rows x 13 columns]
+2020-10-10 15:31:10 gui          INFO     Registering GUI functions...
+2020-10-10 15:31:10 gui          INFO     Subscribing to procedures...
+2020-10-10 15:31:10 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-10 15:31:10 gui          INFO     Connecting to controller...
+2020-10-10 15:31:10 gui          INFO     Getting controller task dataframe...
+2020-10-10 15:31:10 gui          INFO     Checking if machine is homed...
+2020-10-10 15:31:10 gui          INFO     Machine is homed? : True
+2020-10-10 15:31:10 gui          INFO     Getting controller parameters..
+2020-10-10 15:31:10 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-10 15:31:10 gui          INFO     casD: Repopulating GUI task
+2020-10-10 15:31:10 gui          INFO     casE: Repopulating GUI task
+2020-10-10 15:31:10 gui          INFO     Emitting engages! casF
+2020-10-10 15:31:10 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-10 15:31:10 gui          INFO     Finished reconnecting loggers!
+2020-10-10 15:31:10 gui          INFO     FINISHED JOIN!
+2020-10-10 15:31:10 gui          INFO     Sending controller joined to GUI!
+2020-10-10 15:31:19 gui          INFO     Disconnected GUI
+2020-10-10 15:31:19 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       2             0  ...  anotherProt     3142   3177
+casE  shutdown       1            36  ...       asdfsa     4906   4939
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-10 15:31:19 gui          WARNING  
+2020-10-10 15:31:19 gui          WARNING  Controller disconnected...
+2020-10-10 15:31:19 gui          WARNING  Sending disconnect to GUI!
+2020-10-10 15:54:34 gui          INFO     Registering GUI functions...
+2020-10-10 15:54:34 gui          INFO     Subscribing to procedures...
+2020-10-10 15:54:34 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-10 15:54:34 gui          INFO     Connecting to controller...
+2020-10-10 15:54:34 gui          INFO     Getting controller task dataframe...
+2020-10-10 15:54:34 gui          INFO     Checking if machine is homed...
+2020-10-10 15:54:34 gui          INFO     Machine is homed? : True
+2020-10-10 15:54:34 gui          INFO     Getting controller parameters..
+2020-10-10 15:54:34 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-10 15:54:34 gui          INFO     casD: Repopulating GUI task
+2020-10-10 15:54:34 gui          INFO     casE: Repopulating GUI task
+2020-10-10 15:54:34 gui          INFO     Emitting engages! casF
+2020-10-10 15:54:34 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-10 15:54:34 gui          INFO     Finished reconnecting loggers!
+2020-10-10 15:54:34 gui          INFO     FINISHED JOIN!
+2020-10-10 15:54:34 gui          INFO     Sending controller joined to GUI!
+2020-10-10 15:54:51 gui          INFO     Disconnected GUI
+2020-10-10 15:54:51 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       2             0  ...  anotherProt     3142   3177
+casE  shutdown       1            36  ...       asdfsa     4906   4939
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-10 15:55:13 gui          INFO     Registering GUI functions...
+2020-10-10 15:55:13 gui          INFO     Subscribing to procedures...
+2020-10-10 15:55:13 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-10 15:55:13 gui          INFO     Connecting to controller...
+2020-10-10 15:55:13 gui          INFO     Getting controller task dataframe...
+2020-10-10 15:55:13 gui          INFO     Checking if machine is homed...
+2020-10-10 15:55:13 gui          INFO     Machine is homed? : True
+2020-10-10 15:55:13 gui          INFO     Getting controller parameters..
+2020-10-10 15:55:13 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-10 15:55:13 gui          INFO     casD: Repopulating GUI task
+2020-10-10 15:55:13 gui          INFO     casE: Repopulating GUI task
+2020-10-10 15:55:13 gui          INFO     Emitting engages! casF
+2020-10-10 15:55:13 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-10 15:55:13 gui          INFO     Finished reconnecting loggers!
+2020-10-10 15:55:13 gui          INFO     FINISHED JOIN!
+2020-10-10 15:55:13 gui          INFO     Sending controller joined to GUI!
+2020-10-10 15:55:43 gui          INFO     Disconnected GUI
+2020-10-10 15:55:43 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       2             0  ...  anotherProt     3142   3177
+casE  shutdown       1            36  ...       asdfsa     4906   4939
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-10 15:57:24 gui          INFO     Registering GUI functions...
+2020-10-10 15:57:24 gui          INFO     Subscribing to procedures...
+2020-10-10 15:57:24 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-10 15:57:24 gui          INFO     Connecting to controller...
+2020-10-10 15:57:24 gui          INFO     Getting controller task dataframe...
+2020-10-10 15:57:24 gui          INFO     Checking if machine is homed...
+2020-10-10 15:57:24 gui          INFO     Machine is homed? : True
+2020-10-10 15:57:24 gui          INFO     Getting controller parameters..
+2020-10-10 15:57:24 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-10 15:57:24 gui          INFO     casD: Repopulating GUI task
+2020-10-10 15:57:24 gui          INFO     casE: Repopulating GUI task
+2020-10-10 15:57:24 gui          INFO     Emitting engages! casF
+2020-10-10 15:57:24 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-10 15:57:24 gui          INFO     Finished reconnecting loggers!
+2020-10-10 15:57:24 gui          INFO     FINISHED JOIN!
+2020-10-10 15:57:24 gui          INFO     Sending controller joined to GUI!
+2020-10-10 15:58:30 gui          INFO     CasA engage complete
+2020-10-10 15:58:31 gui          INFO     CasA disengage complete
+2020-10-10 15:58:35 gui          INFO     CasF disengage complete
+2020-10-10 15:58:36 gui          INFO     CasF engage complete
+2020-10-10 15:58:47 gui          INFO     Disconnected GUI
+2020-10-10 15:58:47 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       2             0  ...  anotherProt     3142   3177
+casE  shutdown       1            36  ...       asdfsa     4906   4939
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-10 23:55:15 gui          INFO     Registering GUI functions...
+2020-10-10 23:55:15 gui          INFO     Subscribing to procedures...
+2020-10-10 23:55:15 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-10 23:55:15 gui          INFO     Connecting to controller...
+2020-10-10 23:55:15 gui          INFO     Getting controller task dataframe...
+2020-10-10 23:55:15 gui          INFO     Checking if machine is homed...
+2020-10-10 23:55:15 gui          INFO     Machine is homed? : True
+2020-10-10 23:55:15 gui          INFO     Getting controller parameters..
+2020-10-10 23:55:15 gui          INFO     Repopulating GUI with controller procedures!
+2020-10-10 23:55:15 gui          INFO     casD: Repopulating GUI task
+2020-10-10 23:55:15 gui          INFO     casE: Repopulating GUI task
+2020-10-10 23:55:15 gui          INFO     Emitting engages! casF
+2020-10-10 23:55:15 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-10 23:55:15 gui          INFO     Finished reconnecting loggers!
+2020-10-10 23:55:15 gui          INFO     FINISHED JOIN!
+2020-10-10 23:55:15 gui          INFO     Sending controller joined to GUI!
+2020-10-10 23:55:26 gui          INFO     Disconnected GUI
+2020-10-10 23:55:26 gui          INFO             status stepNum secsRemaining  ... protocolName startlog endlog
+casA      None     NaN           NaN  ...         None      NaN    NaN
+casB      None     NaN           NaN  ...         None      NaN    NaN
+casC      None     NaN           NaN  ...         None      NaN    NaN
+casD  finished       2             0  ...  anotherProt     3142   3177
+casE  shutdown       1            36  ...       asdfsa     4906   4939
+casF      None     NaN           NaN  ...         None      NaN    NaN
+
+[6 rows x 13 columns]

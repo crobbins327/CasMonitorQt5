@@ -1,5 +1,6 @@
 sudo docker stop $(sudo docker container ls -aq)
+sudo docker ps -aqf "name=crossbar"
 sudo docker rm $(sudo docker container ls -aq)
 
-sudo docker run --name=crossbar -d -p 8080:8080 crossbario/crossbar-armhf
+sudo docker run --name=crossbarPi -d --rm -p 8080:8080 crossbario/crossbar-armhf
 
