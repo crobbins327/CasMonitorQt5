@@ -50366,3 +50366,270 @@ casE  shutdown       1            36  ...       asdfsa     4906   4939
 casF      None     NaN           NaN  ...         None      NaN    NaN
 
 [6 rows x 13 columns]
+2020-10-12 11:36:24 gui          INFO     Registering GUI functions...
+2020-10-12 11:36:24 gui          INFO     Subscribing to procedures...
+2020-10-12 11:36:24 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:36:24 gui          INFO     Connecting to controller...
+2020-10-12 11:36:24 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:36:24 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:36:24 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:36:29 gui          INFO     Disconnected GUI
+2020-10-12 11:36:29 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:36:30 gui          INFO     Registering GUI functions...
+2020-10-12 11:36:30 gui          INFO     Subscribing to procedures...
+2020-10-12 11:36:30 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:36:30 gui          INFO     Connecting to controller...
+2020-10-12 11:36:30 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:36:30 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:36:30 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:36:34 gui          INFO     Disconnected GUI
+2020-10-12 11:36:34 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:36:35 gui          INFO     Registering GUI functions...
+2020-10-12 11:36:35 gui          INFO     Subscribing to procedures...
+2020-10-12 11:36:35 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:36:35 gui          INFO     Connecting to controller...
+2020-10-12 11:36:35 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:36:35 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:36:35 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:36:39 gui          INFO     Disconnected GUI
+2020-10-12 11:36:39 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:36:40 gui          INFO     Registering GUI functions...
+2020-10-12 11:36:40 gui          INFO     Subscribing to procedures...
+2020-10-12 11:36:40 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:36:40 gui          INFO     Connecting to controller...
+2020-10-12 11:36:40 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:36:40 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:36:40 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:36:44 gui          INFO     Disconnected GUI
+2020-10-12 11:36:44 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:36:45 gui          INFO     Registering GUI functions...
+2020-10-12 11:36:45 gui          INFO     Subscribing to procedures...
+2020-10-12 11:36:45 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:36:45 gui          INFO     Connecting to controller...
+2020-10-12 11:36:45 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:36:45 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:36:45 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:36:49 gui          INFO     Disconnected GUI
+2020-10-12 11:36:49 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:36:50 gui          INFO     Registering GUI functions...
+2020-10-12 11:36:50 gui          INFO     Subscribing to procedures...
+2020-10-12 11:36:50 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:36:50 gui          INFO     Connecting to controller...
+2020-10-12 11:36:50 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:36:50 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:36:50 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:36:54 gui          INFO     Disconnected GUI
+2020-10-12 11:36:54 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:36:55 gui          INFO     Registering GUI functions...
+2020-10-12 11:36:55 gui          INFO     Subscribing to procedures...
+2020-10-12 11:36:55 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:36:55 gui          INFO     Connecting to controller...
+2020-10-12 11:36:55 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:36:55 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:36:55 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:36:59 gui          INFO     Disconnected GUI
+2020-10-12 11:36:59 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:37:00 gui          INFO     Registering GUI functions...
+2020-10-12 11:37:00 gui          INFO     Subscribing to procedures...
+2020-10-12 11:37:00 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:37:00 gui          INFO     Connecting to controller...
+2020-10-12 11:37:00 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:37:00 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:37:00 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:37:04 gui          INFO     Disconnected GUI
+2020-10-12 11:37:04 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:37:05 gui          INFO     Registering GUI functions...
+2020-10-12 11:37:05 gui          INFO     Subscribing to procedures...
+2020-10-12 11:37:05 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:37:05 gui          INFO     Connecting to controller...
+2020-10-12 11:37:05 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:37:05 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:37:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:37:09 gui          INFO     Disconnected GUI
+2020-10-12 11:37:09 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:37:10 gui          INFO     Registering GUI functions...
+2020-10-12 11:37:10 gui          INFO     Subscribing to procedures...
+2020-10-12 11:37:10 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:37:10 gui          INFO     Connecting to controller...
+2020-10-12 11:37:10 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:37:10 gui          WARNING  Waiting until controller is connected...
+2020-10-12 11:37:10 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2020-10-12 11:37:13 gui          INFO     Disconnected GUI
+2020-10-12 11:37:13 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:37:36 gui          INFO     Registering GUI functions...
+2020-10-12 11:37:36 gui          INFO     Subscribing to procedures...
+2020-10-12 11:37:36 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:37:36 gui          INFO     Connecting to controller...
+2020-10-12 11:37:36 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:37:36 gui          INFO     Checking if machine is homed...
+2020-10-12 11:37:36 gui          INFO     Machine is homed? : True
+2020-10-12 11:37:36 gui          INFO     Getting controller parameters..
+2020-10-12 11:37:36 gui          INFO     Controller has same taskDF as GUI
+2020-10-12 11:37:36 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-12 11:37:36 gui          INFO     Finished reconnecting loggers!
+2020-10-12 11:37:36 gui          INFO     FINISHED JOIN!
+2020-10-12 11:37:36 gui          INFO     Sending controller joined to GUI!
+2020-10-12 11:37:44 gui          INFO     CasF engage complete
+2020-10-12 11:37:45 gui          INFO     CasE engage complete
+2020-10-12 11:37:46 gui          INFO     CasD engage complete
+2020-10-12 11:37:47 gui          INFO     CasD disengage complete
+2020-10-12 11:37:47 gui          INFO     CasE disengage complete
+2020-10-12 11:37:48 gui          INFO     CasF disengage complete
+2020-10-12 11:37:50 gui          INFO     Disconnected GUI
+2020-10-12 11:37:50 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:42:14 gui          INFO     Registering GUI functions...
+2020-10-12 11:42:14 gui          INFO     Subscribing to procedures...
+2020-10-12 11:42:15 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:42:15 gui          INFO     Connecting to controller...
+2020-10-12 11:42:15 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:42:15 gui          INFO     Checking if machine is homed...
+2020-10-12 11:42:15 gui          INFO     Machine is homed? : True
+2020-10-12 11:42:15 gui          INFO     Getting controller parameters..
+2020-10-12 11:42:15 gui          INFO     Controller has same taskDF as GUI
+2020-10-12 11:42:15 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-12 11:42:15 gui          INFO     Finished reconnecting loggers!
+2020-10-12 11:42:15 gui          INFO     FINISHED JOIN!
+2020-10-12 11:42:15 gui          INFO     Sending controller joined to GUI!
+2020-10-12 11:42:17 gui          INFO     Disconnected GUI
+2020-10-12 11:42:17 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:43:30 gui          INFO     Registering GUI functions...
+2020-10-12 11:43:30 gui          INFO     Subscribing to procedures...
+2020-10-12 11:43:31 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:43:31 gui          INFO     Connecting to controller...
+2020-10-12 11:43:31 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:43:31 gui          INFO     Checking if machine is homed...
+2020-10-12 11:43:31 gui          INFO     Machine is homed? : True
+2020-10-12 11:43:31 gui          INFO     Getting controller parameters..
+2020-10-12 11:43:31 gui          INFO     Controller has same taskDF as GUI
+2020-10-12 11:43:31 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-12 11:43:31 gui          INFO     Finished reconnecting loggers!
+2020-10-12 11:43:31 gui          INFO     FINISHED JOIN!
+2020-10-12 11:43:34 gui          INFO     Disconnected GUI
+2020-10-12 11:43:34 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2020-10-12 11:43:43 gui          INFO     Registering GUI functions...
+2020-10-12 11:43:43 gui          INFO     Subscribing to procedures...
+2020-10-12 11:43:43 gui          INFO     Subscribed to 14 procedure(s)
+2020-10-12 11:43:43 gui          INFO     Connecting to controller...
+2020-10-12 11:43:43 gui          INFO     Getting controller task dataframe...
+2020-10-12 11:43:43 gui          INFO     Checking if machine is homed...
+2020-10-12 11:43:43 gui          INFO     Machine is homed? : True
+2020-10-12 11:43:43 gui          INFO     Getting controller parameters..
+2020-10-12 11:43:43 gui          INFO     Controller has same taskDF as GUI
+2020-10-12 11:43:43 gui          INFO     Finished setting tasks and repopulating GUI!
+2020-10-12 11:43:43 gui          INFO     Finished reconnecting loggers!
+2020-10-12 11:43:43 gui          INFO     FINISHED JOIN!
+2020-10-12 11:43:43 gui          INFO     Sending controller joined to GUI!
+2020-10-12 11:43:45 gui          INFO     Disconnected GUI
+2020-10-12 11:43:45 gui          INFO          status stepNum secsRemaining  ...   protocolName startlog endlog
+casA    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...            NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...            NaN      NaN    NaN
+
+[6 rows x 13 columns]

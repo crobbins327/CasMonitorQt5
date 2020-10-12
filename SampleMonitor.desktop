@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Sample Monitor
-Exec=bash -i /home/jackr/SampleMonitor/Git/CasQML/runApp
+Exec=bash -i /home/pi/CasMonitor/runApp
 Terminal=true
-Icon=/home/jackr/SampleMonitor/Git/CasQML/AppIcons/test-tube.png
+Icon=/home/pi/CasMonitor/AppIcons/test-tube.png
 Type=Application
 Categories=Utility;Application;
 
