@@ -18533,4 +18533,3 @@ ok
 2020-10-07 01:40:33 ctrl.machine WARNING  tried to move before homed!
 2020-10-07 15:41:18 ctrl.machine DEBUG    move axis: sampleE 8
 2020-10-07 15:41:18 ctrl.machine INFO     waiting to acquire machine lock
-2020-10-10 15:58:44 ctrl.machine INFO     waiting to acquire machine lock

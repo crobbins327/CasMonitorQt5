@@ -166,7 +166,7 @@ class ApplicationRunner(object):
                     return session
         else:
             _create_app_session = make
-
+        
         # def _create_app_session():
         #     cfg = ComponentConfig(self._realm, self._extra)
         #     try:
@@ -187,7 +187,7 @@ class ApplicationRunner(object):
         txaio.use_asyncio()
         txaio.config.loop = self._loop
 
-        asyncio.async(self._connect(), loop=self._loop)
+        asyncio.run_coroutine_threadsafe(self._connect(), loop=self._loop)
 
         try:
             self._loop.add_signal_handler(signal.SIGTERM, self.stop)
@@ -236,7 +236,7 @@ class ApplicationRunner(object):
         print('Connection lost')
         if not self._closing:
             print('Reconnecting')
-            asyncio.async(self._connect(), loop=self._loop)
+            asyncio.run_coroutine_threadsafe(self._connect(), loop=self._loop)
 
     def stop(self, *args):
         self._loop.stop()

@@ -2,7 +2,7 @@ import logging
 import logging.config
 from serial import Serial
 from colorlog import ColoredFormatter
-import fcntl
+#import fcntl
 import sys
 import os
 import time
@@ -90,7 +90,7 @@ def acquire():
     global f, s
     logger.info('waiting to acquire machine lock')
     f = open('/tmp/machine.lock', 'w')
-    fcntl.lockf(f, fcntl.LOCK_EX)
+#    fcntl.lockf(f, fcntl.LOCK_EX)
     s = Serial('/opt/klipper/printer', baudrate=250000, timeout=0.01)
 
 def release():
@@ -98,7 +98,7 @@ def release():
     if s is None:
         return
     f = open('/tmp/machine.lock', 'w')
-    fcntl.lockf(f, fcntl.LOCK_UN)
+#    fcntl.lockf(f, fcntl.LOCK_UN)
     logger.info('machine lock released')
     f = None
     s.close()

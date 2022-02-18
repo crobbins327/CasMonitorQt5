@@ -1,0 +1,180 @@
+
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Nov  8 14:11:29 2020
+
+@author: Rick
+"""
+
+#!/usr/bin/env python3
+# PUMP conversion factor 1 ~ 50ul  ?
+from machine import *
+from time import sleep
+LINEVOL_1 = 0.6
+
+def countdown(t):
+    while t:
+        mins, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        print(timer, end="\r")
+        sleep(1)
+        t -=1
+
+
+print('STARTING...')
+connect()
+set_heater('CAS1',47)
+cassette_contact('CAS1')
+
+#mux_to(AIR)
+#pump_to_ml(-2, speed=200)
+#wait_move_done()
+#sleep(1)
+#mux_to(CAS1)
+#pump_to_ml(0, speed=200)
+#wait_move_done()
+#sleep(1)
+
+print('ADDING FORMALIN')
+mux_to(FORMALIN)
+sleep(1)
+pump_to_ml(-1.5, speed=400)
+wait_move_done()
+sleep(5)
+mux_to(CAS1)
+sleep(1)
+pump_to_ml(-0, speed=200)
+wait_move_done()
+mux_to(AIR)
+sleep(1)
+pump_to_ml(-0.5, speed=400)
+wait_move_done()
+mux_to(CAS1)
+sleep(1)
+pump_to_ml(-0, speed=200)
+wait_move_done()
+countdown(12)
+
+print('MEOH WASHING SAMPLE')
+mux_to(MEOH)
+sleep(1)
+pump_to_ml(-1.5, speed=400)
+wait_move_done()
+sleep(2)
+mux_to(CAS1)
+pump_to_ml(-0.5, speed=200)
+wait_move_done()
+countdown(5)
+pump_to_ml(0, speed=200)
+wait_move_done()
+countdown(7)
+
+mux_to(AIR)
+sleep(1)
+pump_to_ml(-1, speed=400)
+wait_move_done()
+sleep(1)
+mux_to(CAS1)
+sleep(1)
+pump_to_ml(0, speed=200)
+wait_move_done()
+countdown(4)
+
+print('REMOVING MEOH WASH')
+mux_to(CAS1)
+pump_to_ml(-2, speed=400)
+wait_move_done()
+sleep(5)
+mux_to(WASTE)
+pump_to_ml(0, speed=400)
+wait_move_done()
+sleep(1)
+
+print('ADDING DYE')
+mux_to(AIR)
+sleep(1)
+pump_to_ml(-0.2, speed=400)
+wait_move_done()
+
+mux_to(DYE) 
+sleep(1)
+pump_to_ml(-1.2, speed=200)
+wait_move_done()
+sleep(5)
+mux_to(CAS1)
+sleep(2)
+pump_to_ml(0, speed=200)
+wait_move_done()
+sleep(1)
+countdown(60)
+
+print('INCUBATING DYE')
+num_cycles = 5
+cycle_secs = 600
+for x in range(num_cycles):
+    print ('CYCLE : {:02d}'.format(x+1))
+    mux_to(AIR)
+    sleep(1)
+    pump_to_ml(-0.5, speed=200)
+    wait_move_done()
+    sleep(1)
+    mux_to(CAS1)
+    sleep(1)
+    pump_to_ml(-0.7, speed=200)
+    wait_move_done()
+    sleep(1)
+    pump_to_ml(-0.4, speed=200)
+    wait_move_done()
+    print('CYCLE : {:02d} of {:02d}'.format(x+1, num_cycles))
+    countdown(cycle_secs)
+
+print('DONE WITH DYE')
+mux_to(WASTE)
+pump_to_ml(0, speed=400)
+wait_move_done()
+sleep(1)
+
+print('ADDING BABB')
+mux_to(BABB)
+pump_to_ml(-2, speed=200)
+wait_move_done()
+sleep(5)
+mux_to(CAS1)
+sleep(1)
+pump_to_ml(-1, speed=200)
+wait_move_done()
+countdown(60)
+pump_to_ml(0, speed=200)
+wait_move_done()
+sleep(1)
+countdown(24)
+print('Specimen ejecting')
+cassette_eject('CAS1')
+
+print('CLEANING_PREP')
+mux_to(CAS1)
+sleep(1)
+pump_to_ml(-2, speed=400)
+wait_move_done()
+mux_to(WASTE)
+sleep(1)
+pump_to_ml(0, speed=400)
+wait_move_done()
+
+print('WASHING LINE')
+mux_to(MEOH)
+pump_to_ml(-1.5, speed=400)
+wait_move_done()
+sleep(1)
+mux_to(CAS1)
+pump_to_ml((-1.5+LINEVOL_1), speed=200)
+wait_move_done()
+countdown(5)
+pump_to_ml(-2.5, speed=400)
+wait_move_done()
+mux_to(WASTE)
+sleep(1)
+pump_to_ml(0, speed=200)
+wait_move_done()
+
+print('READY FOR NEW SAMPLE')

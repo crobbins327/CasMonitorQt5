@@ -1815,3 +1815,1305 @@ Name: casB, dtype: object
 2020-10-07 14:55:57 ctrl.casB    INFO     Finished casB task!
 2020-10-07 15:18:04 ctrl.casB    INFO     Engage CasB...
 2020-10-07 15:18:06 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 00:51:24 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 00:51:25 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:20:53 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:20:53 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:20:53 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:20:54 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:20:54 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:20:54 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:22:44 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:22:44 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:22:45 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:22:45 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:22:45 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:24:05 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:24:05 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:24:05 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:24:05 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:24:05 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:24:05 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting Run!
+sampleName                                                     aa
+protocolName                                          anotherProt
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/anotherProt....
+startlog                                                     1853
+Name: casB, dtype: object
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting Run!
+sampleName                                                     aa
+protocolName                                          anotherProt
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/anotherProt....
+startlog                                                     1853
+Name: casB, dtype: object
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting Run!
+sampleName                                                     aa
+protocolName                                          anotherProt
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/anotherProt....
+startlog                                                     1853
+Name: casB, dtype: object
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting Run!
+sampleName                                                     aa
+protocolName                                          anotherProt
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/anotherProt....
+startlog                                                     1853
+Name: casB, dtype: object
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting Run!
+sampleName                                                     aa
+protocolName                                          anotherProt
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/anotherProt....
+startlog                                                     1853
+Name: casB, dtype: object
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:24:05 ctrl.casB    INFO     ['casB']
+2022-02-18 02:24:05 ctrl.casB    INFO     ['casB']
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:24:05 ctrl.casB    INFO     ['casB']
+2022-02-18 02:24:05 ctrl.casB    INFO     ['casB']
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:24:05 ctrl.casB    INFO     ['casB']
+2022-02-18 02:24:05 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:24:05 ctrl.casB    INFO     ['casB']
+2022-02-18 02:24:05 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")', 'self.incubate(casL="B",incTime=4,mixAfter=0)']
+2022-02-18 02:24:05 ctrl.casB    DEBUG    ['Load Formalin', 'Incubation']
+2022-02-18 02:24:05 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")', 'self.incubate(casL="B",incTime=4,mixAfter=0)']
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:24:05 ctrl.casB    DEBUG    ['Load Formalin', 'Incubation']
+2022-02-18 02:24:05 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")', 'self.incubate(casL="B",incTime=4,mixAfter=0)']
+2022-02-18 02:24:05 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")', 'self.incubate(casL="B",incTime=4,mixAfter=0)']
+="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")', 'self.incubate(casL="B",incTime=4,mixAfter=0)']
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2022-02-18 02:24:05 ctrl.casB    DEBUG    ['Load Formalin', 'Incubation']
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:24:05 ctrl.casB    DEBUG    1
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:24:05 ctrl.casB    DEBUG    ['Load Formalin', 'Incubation']
+2022-02-18 02:24:05 ctrl.casB    DEBUG    ['Load Formalin', 'Incubation']
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:24:05 ctrl.casB    DEBUG    1
+2022-02-18 02:24:05 ctrl.casB    DEBUG    1
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.819,speed=0.37, washSyr=False, loadstr="Formalin")']
+2022-02-18 02:24:05 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:24:05 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:24:05 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:24:05 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+) do not require a density adjustment.
+2022-02-18 02:24:05 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:24:05 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:24:05 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:24:05 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:24:05 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:24:05 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:24:05 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:24:05 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:24:05 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=4,mixAfter=0)']
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=4,mixAfter=0)']
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=4,mixAfter=0)']
+2022-02-18 02:24:05 ctrl.casB    INFO     No washes for incubation. incTime=4, mixAfter=0
+2022-02-18 02:24:05 ctrl.casB    INFO     No washes for incubation. incTime=4, mixAfter=0
+2022-02-18 02:24:05 ctrl.casB    INFO     No washes for incubation. incTime=4, mixAfter=0
+2022-02-18 02:24:05 ctrl.casB    INFO     No washes for incubation. incTime=4, mixAfter=0
+2022-02-18 02:24:05 ctrl.casB    INFO     INCUBATING CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     INCUBATING CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     INCUBATING CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     INCUBATING CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:24:05 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=4,mixAfter=0)']
+2022-02-18 02:24:05 ctrl.casB    INFO     ['self.incubate(casL="B",incTime=4,mixAfter=0)']
+2022-02-18 02:24:05 ctrl.casB    INFO     No washes for incubation. incTime=4, mixAfter=0
+2022-02-18 02:24:05 ctrl.casB    INFO     No washes for incubation. incTime=4, mixAfter=0
+2022-02-18 02:24:05 ctrl.casB    INFO     INCUBATING CasB
+2022-02-18 02:24:05 ctrl.casB    INFO     INCUBATING CasB
+2022-02-18 02:24:15 ctrl.casB    INFO     FINISHED INCUBATION of CasB
+2022-02-18 02:24:15 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:24:15 ctrl.casB    INFO     FINISHED INCUBATION of CasB
+2022-02-18 02:24:15 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:24:15 ctrl.casB    INFO     FINISHED INCUBATION of CasB
+2022-02-18 02:24:15 ctrl.casB    INFO     FINISHED INCUBATION of CasB
+2022-02-18 02:24:15 ctrl.casB    INFO     FINISHED INCUBATION of CasB
+2022-02-18 02:24:15 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:24:15 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:24:15 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:24:16 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:24:16 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:24:16 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:24:16 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:24:16 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:24:16 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:24:16 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:24:16 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:24:16 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:24:16 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:24:16 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:24:16 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:24:16 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:24:21 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:24:21 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:24:21 ctrl.casB    INFO     Clean Time: 5.01s
+2022-02-18 02:24:21 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:24:21 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:24:21 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:24:21 ctrl.casB    INFO     Clean Time: 5.01s
+2022-02-18 02:24:21 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:24:21 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:24:21 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:24:21 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:24:21 ctrl.casB    INFO     Clean Time: 5.01s
+2022-02-18 02:24:21 ctrl.casB    INFO     Clean Time: 5.01s
+2022-02-18 02:24:21 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:24:21 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:24:21 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:24:21 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:24:21 ctrl.casB    INFO     Clean Time: 5.02s
+2022-02-18 02:24:21 ctrl.casB    INFO     Clean Time: 5.02s
+2022-02-18 02:24:21 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:24:21 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:25:35 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:25:35 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:25:35 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:25:35 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:49:17 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:49:17 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:49:17 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:49:17 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:49:17 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:49:17 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:49:28 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:49:28 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:49:28 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:49:28 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:49:28 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:49:28 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:49:28 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:49:28 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting Run!
+sampleName                                                 ASD
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2055
+Name: casB, dtype: object
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting Run!
+sampleName                                                 ASD
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2055
+Name: casB, dtype: object
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting Run!
+sampleName                                                 ASD
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2055
+Name: casB, dtype: object
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting Run!
+sampleName                                                 ASD
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2055
+Name: casB, dtype: object
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting Run!
+sampleName                                                 ASD
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2055
+Name: casB, dtype: object
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting Run!
+sampleName                                                 ASD
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2055
+Name: casB, dtype: object
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:49:28 ctrl.casB    INFO     ['casB']
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:49:28 ctrl.casB    INFO     ['casB']
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:49:28 ctrl.casB    INFO     ['casB']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['casB']
+un!
+sampleName                                                 ASD
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2055
+Name: casB, dtype: object
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:49:28 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:49:28 ctrl.casB    INFO     ['casB']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['casB']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['casB']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:49:28 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    DEBUG    1
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:49:28 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:49:28 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:49:28 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:49:28 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:49:28 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:49:28 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:49:28 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:49:28 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:49:28 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:49:28 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:49:28 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+ room for sucking residual fluid in...
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:49:28 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:49:28 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:49:28 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:49:28 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:49:28 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:49:28 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:49:28 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:49:28 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:49:28 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:49:48 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:49:48 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:49:48 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:49:48 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:48 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:48 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:48 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:49:48 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:48 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:49:48 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:48 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:48 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:48 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:49:48 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:48 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:49:48 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:49:48 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:49:53 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:49:53 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:49:53 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:49:53 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:49:53 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:49:53 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:49:53 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:49:53 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:49:53 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:49:53 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:49:53 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:49:53 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:49:53 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:49:53 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:49:53 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:49:53 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:49:53 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:15 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:15 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:15 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:15 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:15 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:15 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:15 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:15 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:15 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:19 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     
+
+
+
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2478
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting Run!
+sampleName                                                 asd
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2502
+Name: casB, dtype: object
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     Starting task on casB
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['casB']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+elf.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+elf.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:51:22 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    DEBUG    1
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+sidual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 02:51:22 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:51:22 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:51:22 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:51:22 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:51:22 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+oom for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+ room for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:51:22 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:51:22 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 02:51:22 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 02:51:22 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 02:51:22 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (meoh) is less dense than residual fluid (formalin). Pump in 0.1mL to suck in residual fluid.
+2022-02-18 02:51:42 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:51:42 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:51:42 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:42 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:51:42 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:51:42 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:42 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:42 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:51:42 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:51:42 ctrl.casB    INFO     casB: Evaluating step 2
+2022-02-18 02:51:42 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:42 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:42 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:42 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:51:42 ctrl.casB    INFO     ADDING Stain TO CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB CURRENT FLUID: vial
+2022-02-18 02:51:42 ctrl.casB    INFO     CasB: Reagent (vial) and residual fluid (meoh) do not require a density adjustment.
+2022-02-18 02:51:42 ctrl.casB    INFO     FINISHED LOADING Stain TO CasB, Time: 0.01s
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Finished all steps, starting to clean casB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 02:51:42 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 02:51:42 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:51:47 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:47 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:51:47 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:51:47 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.00s
+from LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:47 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:51:47 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:47 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:51:47 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:51:47 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:47 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:51:47 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:51:47 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 02:51:47 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 02:51:47 ctrl.casB    INFO     Clean Time: 5.02s
+2022-02-18 02:51:47 ctrl.casB    INFO     Finished casB task!
+2022-02-18 02:58:30 ctrl.casB    INFO     Engage CasB...
+2022-02-18 02:58:30 ctrl.casB    INFO     Engage CasB...
+2022-02-18 04:05:43 ctrl.casB    INFO     Engage CasB...
+2022-02-18 04:05:43 ctrl.casB    INFO     Engage CasB...
+2022-02-18 04:05:54 ctrl.casB    INFO     
+
+
+
+2022-02-18 04:05:54 ctrl.casB    INFO     
+
+
+
+2022-02-18 04:05:54 ctrl.casB    INFO     
+
+
+
+2022-02-18 04:05:54 ctrl.casB    INFO     
+
+
+
+2022-02-18 04:05:54 ctrl.casB    INFO     
+
+
+
+2022-02-18 04:05:54 ctrl.casB    INFO     
+
+
+
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting Run!
+sampleName                                                 sda
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2935
+Name: casB, dtype: object
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting Run!
+sampleName                                                 sda
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2935
+Name: casB, dtype: object
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting Run!
+sampleName                                                 sda
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2935
+Name: casB, dtype: object
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting Run!
+sampleName                                                 sda
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2935
+Name: casB, dtype: object
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting Run!
+sampleName                                                 sda
+protocolName                                           asawash
+protocolPath    f:/Torres/CasMonitorQt5/Protocols/asawash.json
+startlog                                                  2935
+Name: casB, dtype: object
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting task on casB
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting task on casB
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting task on casB
+2022-02-18 04:05:54 ctrl.casB    INFO     ['casB']
+2022-02-18 04:05:54 ctrl.casB    INFO     ['casB']
+2022-02-18 04:05:54 ctrl.casB    INFO     ['casB']
+ask on casB
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting task on casB
+2022-02-18 04:05:54 ctrl.casB    INFO     Starting task on casB
+2022-02-18 04:05:54 ctrl.casB    INFO     ['casB']
+2022-02-18 04:05:54 ctrl.casB    INFO     ['casB']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")', 'self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")', 'self.loadReagent(casL="B",reagent="vial",vol=0.6,speed=1, washSyr=False, loadstr="Stain")']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    1
+2022-02-18 04:05:54 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    1
+2022-02-18 04:05:54 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 04:05:54 ctrl.casB    DEBUG    1
+2022-02-18 04:05:54 ctrl.casB    DEBUG    ['Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-02-18 04:05:54 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 04:05:54 ctrl.casB    DEBUG    1
+2022-02-18 04:05:54 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 04:05:54 ctrl.casB    DEBUG    1
+2022-02-18 04:05:54 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 04:05:54 ctrl.casB    DEBUG    1
+2022-02-18 04:05:54 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 04:05:54 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 04:05:54 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 04:05:54 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 04:05:54 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 04:05:54 ctrl.casB    INFO     casB: Evaluating step 0
+2022-02-18 04:05:54 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 04:05:54 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="formalin",vol=0.6,speed=0.66, washSyr=True, loadstr="Formalin")']
+2022-02-18 04:05:54 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Formalin
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Formalin TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB CURRENT FLUID: formalin
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB: Reagent (formalin) and residual fluid (unk) do not require a density adjustment.
+2022-02-18 04:05:54 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.casB    INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 04:05:54 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 04:05:54 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 04:05:54 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 04:05:54 ctrl.casB    INFO     Updating progress on casB...
+2022-02-18 04:05:54 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 04:05:54 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 04:05:54 ctrl.casB    INFO     casB: Evaluating step 1
+2022-02-18 04:05:54 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 04:05:54 ctrl.casB    INFO     ['self.loadReagent(casL="B",reagent="meoh",vol=0.6,speed=0.2, washSyr=True, loadstr="Dehydrant")']
+2022-02-18 04:05:54 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     PURGING CHAMBER, CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 04:05:54 ctrl.casB    INFO     WASHING SYRINGE WITH Dehydrant
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     ADDING Dehydrant TO CasB
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB CURRENT FLUID: meoh
+2022-02-18 04:05:54 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 04:05:54 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 04:05:54 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 04:05:54 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 04:05:54 ctrl.casB    INFO     Pump out (0.1mL) to give room for sucking residual fluid in...
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 04:05:54 ctrl.casB    INFO     CasB SETTLE TIME: 20.0
+2022-02-18 04:06:03 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2022-02-18 04:06:03 ctrl.casB    INFO     ['casB']
+2022-02-18 04:06:03 ctrl.casB    INFO     ['casB']
+2022-02-18 04:06:03 ctrl.casB    INFO     ['casB']
+2022-02-18 04:06:03 ctrl.casB    INFO     ['casB']
+2022-02-18 04:06:03 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2022-02-18 04:06:03 ctrl.casB    INFO     Trying to cancel casB, getting active tasks...
+2022-02-18 04:06:03 ctrl.casB    INFO     ['casB']
+2022-02-18 04:06:03 ctrl.casB    INFO     ['casB']
+2022-02-18 04:06:03 ctrl.casB    INFO     SHUTDOWN CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     SHUTDOWN CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 04:06:03 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 04:06:03 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 04:06:03 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 04:06:03 ctrl.casB    INFO     Disengage CasB...
+2022-02-18 04:06:03 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     Cleaning line for CasB
+2022-02-18 04:06:03 ctrl.casB    INFO     PURGING LINE, CasB
+2022-02-18 04:06:08 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 04:06:08 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 04:06:08 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 04:06:08 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 04:06:08 ctrl.casB    INFO     Shutdown Time: 5.00s
+2022-02-18 04:06:08 ctrl.casB    INFO     Shutdown Time: 5.00s
+2022-02-18 04:06:08 ctrl.casB    INFO     Shutdown Time: 5.00s
+2022-02-18 04:06:08 ctrl.casB    INFO     []
+2022-02-18 04:06:08 ctrl.casB    INFO     The run on casB has been cancelled? True.
+2022-02-18 04:06:08 ctrl.casB    INFO     []
+2022-02-18 04:06:08 ctrl.casB    INFO     []
+2022-02-18 04:06:08 ctrl.casB    INFO     The run on casB has been cancelled? True.
+2022-02-18 04:06:08 ctrl.casB    INFO     The run on casB has been cancelled? True.
+2022-02-18 04:06:08 ctrl.casB    INFO     The run on casB has been cancelled? True.
+2022-02-18 04:06:08 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 04:06:08 ctrl.casB    INFO     MEOH WASH of CasB LINE
+2022-02-18 04:06:08 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 04:06:08 ctrl.casB    INFO     REMOVING MEOH WASH from LINE, CasB
+2022-02-18 04:06:08 ctrl.casB    INFO     Shutdown Time: 5.02s
+2022-02-18 04:06:08 ctrl.casB    INFO     Shutdown Time: 5.02s
+m LINE, CasB
+2022-02-18 04:06:08 ctrl.casB    INFO     []
+down Time: 5.02s
+2022-02-18 04:06:08 ctrl.casB    INFO     []
+2022-02-18 04:06:08 ctrl.casB    INFO     []
+2022-02-18 04:06:08 ctrl.casB    INFO     The run on casB has been cancelled? True.
+2022-02-18 04:06:08 ctrl.casB    INFO     The run on casB has been cancelled? True.
+2022-02-18 04:06:08 ctrl.casB    INFO     The run on casB has been cancelled? True.

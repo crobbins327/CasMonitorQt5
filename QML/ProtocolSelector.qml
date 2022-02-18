@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick 2.14
 import QtQuick.Controls 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQml.Models 2.12
@@ -12,6 +12,8 @@ import "./Icons/"
 
 Item {
     id: rootSel
+//    width: 800
+//    height: 400
     property int casNumber: 0
     property variant stepModel: ListModel{}
     property string mainDir: rootApWin.mainDir
@@ -28,8 +30,6 @@ Item {
         JSONHelper.nextModel.connect(reNextModel)
         checkDefaultProt()
     }
-    //width: parent.width
-    //height: parent.height
     
     Connections {
         target: rootSel
@@ -277,7 +277,7 @@ Item {
                                 //read file i/o
                                 var path = fileURL.toString();
                                 // remove prefixed "file:///"
-                                path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+                                path = path.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
                                 // unescape html codes like '%23' for '#'
                                 var cleanPath = decodeURIComponent(path);
                                 
@@ -756,7 +756,7 @@ Item {
             //open protocol
             var path = openDialog.fileUrl.toString();
             // remove prefixed "file:///"
-            path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+            path = path.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
             // unescape html codes like '%23' for '#'
             var cleanPath = decodeURIComponent(path);
 

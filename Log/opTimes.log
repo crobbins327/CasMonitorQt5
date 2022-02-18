@@ -1588,3 +1588,586 @@
 2020-10-07 15:43:05 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
 2020-10-07 15:43:08 ctrl.opTimes INFO     Inc. Mix Time: 1.00s
 2020-10-07 15:43:13 ctrl.opTimes INFO     Shutdown Time: 5.00s
+2022-02-18 00:51:52 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 00:51:52 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2022-02-18 00:51:52 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.03s
+2022-02-18 00:52:02 ctrl.opTimes INFO     Shutdown Time: 5.02s
+2022-02-18 02:24:05 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:24:05 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2022-02-18 02:24:05 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2022-02-18 02:24:05 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2022-02-18 02:24:05 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2022-02-18 02:24:05 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:24:05 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:24:05 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:24:05 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:24:05 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:24:21 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 02:24:21 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 02:24:21 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 02:24:21 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 02:24:21 ctrl.opTimes INFO     Clean Time: 5.02s
+2022-02-18 02:24:21 ctrl.opTimes INFO     Clean Time: 5.02s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:49:28 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:49:28 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:49:28 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.02s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:48 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:49:53 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:49:53 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+ime: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+0s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+ime: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.01s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:51:22 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.03s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.03s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.03s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.03s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.03s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.03s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.03s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:51:42 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasB, Time: 0.01s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:51:47 ctrl.opTimes INFO     Clean Time: 5.02s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 02:57:54 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 02:58:14 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 02:58:14 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 02:58:15 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:58:15 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:58:15 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 02:58:15 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 02:58:15 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 02:58:15 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 02:58:20 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 02:58:20 ctrl.opTimes INFO     Clean Time: 5.02s
+2022-02-18 03:32:05 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     Adding Formalin, 0.819 mL, 1.0 fillLineSpeed, 0.37 speed, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 03:32:05 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 03:32:20 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 03:32:20 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 03:32:20 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 03:32:21 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasB, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:05:54 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:06:08 ctrl.opTimes INFO     Shutdown Time: 5.00s
+2022-02-18 04:06:08 ctrl.opTimes INFO     Shutdown Time: 5.00s
+2022-02-18 04:06:08 ctrl.opTimes INFO     Shutdown Time: 5.00s
+2022-02-18 04:06:08 ctrl.opTimes INFO     Shutdown Time: 5.02s
+2022-02-18 04:06:08 ctrl.opTimes INFO     Shutdown Time: 5.02s
+2022-02-18 04:06:08 ctrl.opTimes INFO     Shutdown Time: 5.02s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.01s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.01s
+2022-02-18 04:58:11 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:11 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.02s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.02s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.03s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.03s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.03s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Formalin, 0.6 mL, 1.0 fillLineSpeed, 0.66 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     FINISHED LOADING Formalin TO CasA, Time: 0.01s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:12 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Wash Syringe, 1.35 mL, 1.0 washSyrSpeed, 1.0 fillLineSpeed, Time: 0.00s
+2022-02-18 04:58:13 ctrl.opTimes INFO     Adding Dehydrant, 0.6 mL, 1.0 fillLineSpeed, 0.2 speed, Time: 0.00s
+2022-02-18 04:58:32 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.02s
+2022-02-18 04:58:32 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 04:58:32 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:32 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.03s
+2022-02-18 04:58:32 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 04:58:32 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 04:58:32 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:32 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:32 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:32 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.01s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.02s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.01s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.02s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.02s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Reagent less dense than resid., adjusting, 20.0s settleTime, 0.1 densVol, 0.2 densSpeed, Time: 20.02s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:33 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Purge, 1.5 mL, 1.0 removeSpeed, 4.0 wasteSpeed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     Adding Stain, 0.6 mL, 1.0 fillLineSpeed, 1 speed, Time: 0.00s
+2022-02-18 04:58:34 ctrl.opTimes INFO     FINISHED LOADING Stain TO CasA, Time: 0.00s
+2022-02-18 04:58:38 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:38 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.02s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.00s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.02s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.02s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.02s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s
+2022-02-18 04:58:39 ctrl.opTimes INFO     Clean Time: 5.01s

@@ -1,0 +1,3 @@
+https://www.tal.org/tutorials/building-qt-515-raspberry-pi
+http://www.niladicpodcast.com/blog/2017/8/install-pyqt5-inside-a-virtual-environment/
+https://www.tal.org/tutorials/building-qt-512-raspberry-pi

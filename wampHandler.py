@@ -1,15 +1,15 @@
 
-from PyQt5 import QtCore, QtGui, QtQml, QtQuick, QtWidgets
+from PySide2 import QtCore, QtGui, QtQml, QtQuick, QtWidgets
 import jsonHelper as jh
 import json
 import jsonschema
 from time import sleep
+import numpy as np
 import pandas as pd
 # pd.set_option('display.max_rows', None)
 # pd.set_option('display.max_columns', None)
 # pd.set_option('display.width', None)
 # pd.set_option('display.max_colwidth', -1)
-import numpy as np
 from collections import OrderedDict
 import logging
 import logging.config
@@ -50,31 +50,31 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     jHelper = jh.JSONHelper()
     convCas = {1:'A',2:'B',3:'C',4:'D',5:'E',6:'F'}
     #CasNumber, protStrings, progstrings, runtime, sampleName, protocolName
-    setupProt = QtCore.pyqtSignal(str,'QVariantList','QVariantList',str,str,str)
-    startedProt = QtCore.pyqtSignal(int, str, int, int)
+    setupProt = QtCore.Signal(str,'QVariantList','QVariantList',str,str,str)
+    startedProt = QtCore.Signal(int, str, int, int)
     # To repopulate the progress bars when there is a GUI disconnection and rejoin
-    # repopulateProt = QtCore.pyqtSignal(str,'QVariantList','QVariantList',int,int,int,int,str,str,str)
-    guiJoined = QtCore.pyqtSignal()
-    toWaitPopup = QtCore.pyqtSignal(str)
-    controllerDCed = QtCore.pyqtSignal()
-    controllerJoined = QtCore.pyqtSignal()
-    repopulateProt = QtCore.pyqtSignal(int, 'QVariantList','QVariantList', 'QVariantList')
+    # repopulateProt = QtCore.Signal(str,'QVariantList','QVariantList',int,int,int,int,str,str,str)
+    guiJoined = QtCore.Signal()
+    toWaitPopup = QtCore.Signal(str)
+    controllerDCed = QtCore.Signal()
+    controllerJoined = QtCore.Signal()
+    repopulateProt = QtCore.Signal(int, 'QVariantList','QVariantList', 'QVariantList')
     #To update GUI that cassette is engaged and ready
-    casEngaged = QtCore.pyqtSignal(int)
-    casDisengaged = QtCore.pyqtSignal(int)
+    casEngaged = QtCore.Signal(int)
+    casDisengaged = QtCore.Signal(int)
     #To update progress bar. CasNumber of current sample to decrement.
-    updateProg = QtCore.pyqtSignal(int)
-    upLogChunk = QtCore.pyqtSignal(int, str, int)
-    reqLogChunk = QtCore.pyqtSignal(int, str, int)
+    updateProg = QtCore.Signal(int)
+    upLogChunk = QtCore.Signal(int, str, int)
+    reqLogChunk = QtCore.Signal(int, str, int)
     #Send shutdown is started
-    shutdownStart = QtCore.pyqtSignal(int)
+    shutdownStart = QtCore.Signal(int)
     #Send shutdown is finished
-    shutdownDone = QtCore.pyqtSignal(int)
+    shutdownDone = QtCore.Signal(int)
     
-    cleanStart = QtCore.pyqtSignal(int)
-    cleanDone = QtCore.pyqtSignal(int)
+    cleanStart = QtCore.Signal(int)
+    cleanDone = QtCore.Signal(int)
     
-    recParam = QtCore.pyqtSignal('QVariantMap')
+    recParam = QtCore.Signal('QVariantMap')
     
     deadspace = 1000 
     
@@ -205,16 +205,16 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         guilog.info("Disconnected GUI")
         guilog.info(self.taskDF)
     
-    @QtCore.pyqtSlot(str)
+    @QtCore.Slot(str)
     def execScript(self, linesToExec):
         self.publish('com.prepbot.prothandler.exec-script', linesToExec)
        
-    @QtCore.pyqtSlot('QVariantMap')
+    @QtCore.Slot('QVariantMap')
     def updateParam(self, paramDict):
         # guilog.debug(paramDict)
         self.publish('com.prepbot.prothandler.send-param-controller', paramDict)
         
-    @QtCore.pyqtSlot()
+    @QtCore.Slot()
     def guiParam(self):
         self.recParam.emit(self.paramDict)
         
@@ -224,12 +224,12 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         guilog.debug(paramDict)
         self.recParam.emit(paramDict)
         
-    @QtCore.pyqtSlot()
+    @QtCore.Slot()
     def stopExecTerminal(self):
         self.publish('com.prepbot.prothandler.exec-stop')
     
     #Takes casNumber and protocol.json
-    @QtCore.pyqtSlot(str, str, str, str, str)
+    @QtCore.Slot(str, str, str, str, str)
     def startProtocol(self, casNumber, protPath, runtime, sampleName, protocolName):
         #Check current run status on cassette...
         #Error if run already in progress
@@ -275,7 +275,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     #Also, the current code in the controller has blocking elements that cause the log to propogate slower than the runstep progress...
     #Try adding an asyncio.sleep at the end/beg of each controller protocol step to hope that the updateLogChunk function can be called more often?
     
-    @QtCore.pyqtSlot(str, int)
+    @QtCore.Slot(str, int)
     def refreshRunDet(self, casNumber, currentEnd):
         casL = self.convCas[int(casNumber)]
         casName = 'cas{}'.format(casL)
@@ -314,7 +314,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             pass
     
     
-    @QtCore.pyqtSlot(str)
+    @QtCore.Slot(str)
     def stopProtocol(self, casNumber):
         casL = self.convCas[int(casNumber)]
         self.publish('com.prepbot.prothandler.stop', casL)
@@ -322,7 +322,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         guilog.info('cas{}: Requesting to stop run...'.format(casL))
         self.taskDF.loc['cas{}'.format(casL),'status'] = 'stopped'
     
-    @QtCore.pyqtSlot(str)
+    @QtCore.Slot(str)
     def nextProtocol(self, casNumber):
         casL = self.convCas[int(casNumber)]
         #Trust the GUI for speed.... if it reached the next button by mistake startProtocol will catch the error
@@ -362,7 +362,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             self.shutdownDone.emit(casNumber)
     
     #GUI waits until cassette is actually engaged before able to start a protocol
-    @QtCore.pyqtSlot(str)
+    @QtCore.Slot(str)
     def engageCas(self, casNumber):
         casL = self.convCas[int(casNumber)]
         self.publish('com.prepbot.prothandler.engage', casL)
@@ -381,7 +381,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     
     #When the disengage button is hit, the GUI immediately switches away from the engaged screen
     #Deactivate the engage button until disengage is completed
-    @QtCore.pyqtSlot(str)
+    @QtCore.Slot(str)
     def disengageCas(self, casNumber):
         casL = self.convCas[int(casNumber)]
         self.publish('com.prepbot.prothandler.disengage', casL)

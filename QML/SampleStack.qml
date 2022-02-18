@@ -8,7 +8,7 @@ import "./Icons/"
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 0
+    property int stackIndex: 2
     property double runProgVal: 0
     property string firstRunTime : "01:31:55"
     property int firstRunSecs : get_sec(root.firstRunTime)
@@ -64,8 +64,8 @@ Item {
         WAMPHandler.controllerJoined.connect(reJoinController)
     }
 
-    width: 240
-    height: 200
+    width: 195
+    height: 250
 
     Connections {
         target: root
@@ -475,7 +475,7 @@ Item {
                 id: casNum1
                 text: casNumber
                 anchors.top: parent.top
-                anchors.topMargin: 30
+                anchors.topMargin: 15
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.weight: Font.Medium
                 font.pointSize: 18
@@ -484,56 +484,23 @@ Item {
 
             ColumnLayout {
                 id: colLayout
-                anchors.topMargin: 10
+                anchors.topMargin: 5
                 anchors.top: casNum1.bottom
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
                 anchors.margins: 10
-                spacing: 5
+                spacing: 10
 //                flow:  parent.width > parent.height ? GridLayout.LeftToRight : GridLayout.TopToBottom
 //                flow: GridLayout.TopToBottom
-                RowLayout {
-                    id: rowLayout
-//                    anchors.right: parent.right
-//                    anchors.left: parent.left
-                    spacing: 10
-
-                    BevButton {
-                        id: defRunB
-                        Layout.preferredWidth: (colLayout.width - rowLayout.spacing)/2
-                        text: qsTr("Default Run")
-                        Layout.preferredHeight: 40
-                        Layout.minimumHeight: 20
-
-                        onClicked: {
-//                            console.log("Setup run: ", casNumber)
-                            //                        push protocol selector screen and populate with casNumber info
-                            mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
-                            root.defaultRun(root.casNumber)}
-                    }
-
-                    BevButton {
-                        id: setupRunB
-                        Layout.preferredWidth: (colLayout.width - rowLayout.spacing)/2
-                        text: qsTr("Setup Run")
-                        Layout.preferredHeight: 40
-                        Layout.minimumHeight: 20
-
-                        onClicked: {
-//                            console.log("Setup run: ", casNumber)
-                            //                        push protocol selector screen and populate with casNumber info
-                            mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
-                        }
-                    }
-                }
 
                 BevButton {
                     id: disengageCasB
-                    Layout.preferredWidth: (colLayout.width - rowLayout.spacing)/2
+                    Layout.preferredWidth: colLayout.width/1.5
                     Layout.preferredHeight: 40
                     Layout.minimumHeight: 20
                     text: qsTr("Disengage")
+                    font.pointSize: 11
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     palette {
                         button: 'darkred'
@@ -548,6 +515,33 @@ Item {
                     }
                 }
 
+                ComboBox {
+                    id: comboProt
+                    model: ["Full Process", "No Stain", "No Fixation", "Custom"]
+                    popup.font.pointSize: 10
+                    font.pointSize: 11
+                    Layout.topMargin: 40
+                    Layout.preferredWidth: colLayout.width/1.1
+                    Layout.preferredHeight: 40
+                    Layout.minimumHeight: 20
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                }
+
+                BevButton {
+                    id: setupRunB
+                    Layout.preferredWidth: colLayout.width/2
+                    text: qsTr("Start")
+                    font.pointSize: 11
+                    Layout.preferredHeight: 40
+                    Layout.minimumHeight: 20
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+
+                    onClicked: {
+                        console.log("Setup run: ", casNumber)
+                        //                        push protocol selector screen and populate with casNumber info
+                        mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
+                    }
+                }
 
             }
 
@@ -655,12 +649,12 @@ Item {
                 background: Rectangle {
                     color: "#e6e6e6"
                     radius: 3
-                    implicitHeight: 12
+                    implicitHeight: 20
                     implicitWidth: 200
                 }
                 contentItem: Item {
                     anchors.fill: parent
-                    implicitHeight: 12
+                    implicitHeight: 20
                     implicitWidth: 200
                     Rectangle {
                         width: runProgBar.visualPosition * parent.width
@@ -681,8 +675,8 @@ Item {
             BevButton {
                 id: stopRunB
                 y: 157
-                width: 100
-                text: qsTr("Stop Run")
+                width: 80
+                text: qsTr("Stop")
                 font.pointSize: 11
                 anchors.left: parent.left
                 anchors.leftMargin: 10
@@ -700,7 +694,8 @@ Item {
                 id: runDetB
                 x: 152
                 y: 157
-                text: qsTr("Run Details")
+                width: 80
+                text: qsTr("Log")
                 font.pointSize: 11
                 anchors.right: parent.right
                 anchors.rightMargin: 10
@@ -727,7 +722,7 @@ Item {
                 fontSizeMode: Text.VerticalFit
                 anchors.left: runProgBar.left
                 anchors.leftMargin: 0
-                font.pointSize: 12
+                font.pointSize: 9
                 font.weight: Font.Thin
                 minimumPointSize: 10
             }
@@ -744,7 +739,7 @@ Item {
                 style: Text.Normal
                 minimumPointSize: 10
                 font.weight: Font.Normal
-                font.pointSize: 11
+                font.pointSize: 8
                 anchors.verticalCenterOffset: 0
                 anchors.verticalCenter: runProgBar.verticalCenter
                 fontSizeMode: Text.VerticalFit
@@ -759,9 +754,10 @@ Item {
                 text: runTime
                 fontSizeMode: Text.VerticalFit
                 anchors.right: runProgBar.right
+                horizontalAlignment: Text.AlignRight
                 anchors.rightMargin: 0
                 anchors.verticalCenter: runStepL.verticalCenter
-                font.pointSize: 11
+                font.pointSize: 9
                 font.weight: Font.Normal
                 minimumPointSize: 10
             }
@@ -770,7 +766,7 @@ Item {
                 id: nextRunB
                 y: 157
                 visible: false
-                width: 100
+                width: 80
                 text: qsTr("Next")
                 anchors.bottom: parent.bottom
                 font.pointSize: 11
@@ -826,14 +822,14 @@ Item {
 
         Component.onCompleted: {runDetWin.close()}
         
-        onClosing: {
-            root.isLogRefreshed = false
-//            close.accepted = false
-//            runDetWin.width = 550
-//            runDetWin.height = 300
-//            runDetWin.hide()
+//        onClosing: {
+//            root.isLogRefreshed = false
+////            close.accepted = false
+////            runDetWin.width = 550
+////            runDetWin.height = 300
+////            runDetWin.hide()
 
-        }
+//        }
 
         LogDisplay {
             id:logDisplay
@@ -902,8 +898,6 @@ Item {
 
 
 
-/*##^##
-Designer {
-    D{i:15;anchors_width:240}D{i:26;anchors_y:1}D{i:27;anchors_y:1}
-}
-##^##*/
+
+
+
