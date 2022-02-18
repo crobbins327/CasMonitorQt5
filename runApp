@@ -6,7 +6,7 @@ killbg() {
 }
 trap '' INT TSTP
 source /home/jackr/.bashrc
-source activate QML36
+source ~/prepbot/bin/activate
 cd /home/jackr/SampleMonitor/Git/CasQML
 python runApp.py
 
