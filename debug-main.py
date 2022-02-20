@@ -1,6 +1,6 @@
 #!/home/jackr/anaconda/envs/QML36/bin/python
 import sys
-sys.path.append('F:/Torres/CasMonitorQt5')
+sys.path.append('~/CasMonitorQt5')
 import subprocess
 
 if __name__ == '__main__':

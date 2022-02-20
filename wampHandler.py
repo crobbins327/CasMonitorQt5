@@ -78,9 +78,9 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     
     deadspace = 1000 
     
-    def __init__(self, cfg=None):
-        ApplicationSession.__init__(self, cfg)
+    def __init__(self, config=None):
         QtCore.QObject.__init__(self)
+        ApplicationSession.__init__(self, config=config)
         self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','currentFluid','engaged','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName','startlog','endlog'] ,
                                    index=['casA','casB','casC','casD','casE','casF'], dtype=object)
         self.taskDF.engaged = False
@@ -92,6 +92,10 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # self.logsOpen = pd.DataFrame(columns = ['isLogOpen'] ,
         #                            index=['casA','casB','casC','casD','casE','casF','ctrl','machine'], dtype=object)
     
+    #Override because of QObject disconnect()
+    def disconnect(self):
+        if self._transport:
+            self._transport.close()
     
     # @wamp.subscribe('com.prepbot.prothandler.heartbeat-gui')
     async def heartbeat(self):
@@ -171,8 +175,8 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             guilog.warning("Waiting until controller is connected...")
             guilog.warning(e)
             await asyncio.sleep(5)
-            self.disconnect()
             self.leave()
+            self.disconnect()
         
         self.toWaitPopup.emit('Repopulating GUI with tasks...')
         self.set_tasks_repopulate_all(taskDFJSON)
