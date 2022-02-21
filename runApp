@@ -5,9 +5,9 @@ killbg() {
         done
 }
 trap '' INT TSTP
-source /home/jackr/.bashrc
+source /home/pi/.bashrc
 source ~/prepbot/bin/activate
-cd /home/jackr/SampleMonitor/Git/CasQML
+cd ~/CasMonitorQt5
 python runApp.py
 
 trap killbg EXIT

@@ -52122,3 +52122,1520 @@ SHUTTING DOWN casB!!!
 2022-02-18 05:02:10 gui          INFO     CasC engage complete
 2022-02-18 05:02:10 gui          INFO     CasC engage complete
 2022-02-18 05:02:10 gui          INFO     CasC engage complete
+2022-02-18 16:12:58 gui          INFO     Registering GUI functions...
+2022-02-18 16:12:58 gui          INFO     Subscribing to procedures...
+2022-02-18 16:12:58 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 16:12:58 gui          INFO     Connecting to controller...
+2022-02-18 16:12:58 gui          INFO     Getting controller task dataframe...
+2022-02-18 16:12:58 gui          WARNING  Waiting until controller is connected...
+2022-02-18 16:12:58 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 16:53:22 gui          INFO     Registering GUI functions...
+2022-02-18 16:53:22 gui          INFO     Subscribing to procedures...
+2022-02-18 16:53:22 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 16:53:22 gui          INFO     Connecting to controller...
+2022-02-18 16:53:22 gui          INFO     Getting controller task dataframe...
+2022-02-18 16:53:22 gui          WARNING  Waiting until controller is connected...
+2022-02-18 16:53:22 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:05:25 gui          INFO     Registering GUI functions...
+2022-02-18 17:05:25 gui          INFO     Subscribing to procedures...
+2022-02-18 17:05:25 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:05:25 gui          INFO     Connecting to controller...
+2022-02-18 17:05:25 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:05:25 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:05:25 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:06:50 gui          INFO     Registering GUI functions...
+2022-02-18 17:06:50 gui          INFO     Subscribing to procedures...
+2022-02-18 17:06:50 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:06:50 gui          INFO     Connecting to controller...
+2022-02-18 17:06:50 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:06:50 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:06:50 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:35:49 gui          INFO     Registering GUI functions...
+2022-02-18 17:35:49 gui          INFO     Subscribing to procedures...
+2022-02-18 17:35:49 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:35:49 gui          INFO     Connecting to controller...
+2022-02-18 17:35:49 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:35:49 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:35:49 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:35:54 gui          INFO     Disconnected GUI
+2022-02-18 17:35:54 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:35:54 gui          INFO     Registering GUI functions...
+2022-02-18 17:35:54 gui          INFO     Subscribing to procedures...
+2022-02-18 17:35:54 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:35:54 gui          INFO     Connecting to controller...
+2022-02-18 17:35:54 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:35:54 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:35:54 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:35:59 gui          INFO     Disconnected GUI
+2022-02-18 17:35:59 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:00 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:00 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:00 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:00 gui          INFO     Connecting to controller...
+2022-02-18 17:36:00 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:00 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:00 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:05 gui          INFO     Disconnected GUI
+2022-02-18 17:36:05 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:05 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:05 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:05 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:05 gui          INFO     Connecting to controller...
+2022-02-18 17:36:05 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:05 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:10 gui          INFO     Disconnected GUI
+2022-02-18 17:36:10 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:10 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:10 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:10 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:10 gui          INFO     Connecting to controller...
+2022-02-18 17:36:10 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:10 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:10 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:15 gui          INFO     Disconnected GUI
+2022-02-18 17:36:15 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:15 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:15 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:15 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:15 gui          INFO     Connecting to controller...
+2022-02-18 17:36:15 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:15 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:15 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:20 gui          INFO     Disconnected GUI
+2022-02-18 17:36:20 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:20 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:20 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:20 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:20 gui          INFO     Connecting to controller...
+2022-02-18 17:36:20 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:20 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:20 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:25 gui          INFO     Disconnected GUI
+2022-02-18 17:36:25 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:25 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:25 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:25 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:25 gui          INFO     Connecting to controller...
+2022-02-18 17:36:25 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:25 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:25 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:30 gui          INFO     Disconnected GUI
+2022-02-18 17:36:30 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:30 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:30 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:30 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:30 gui          INFO     Connecting to controller...
+2022-02-18 17:36:30 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:30 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:30 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:35 gui          INFO     Disconnected GUI
+2022-02-18 17:36:35 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:35 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:35 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:35 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:35 gui          INFO     Connecting to controller...
+2022-02-18 17:36:35 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:35 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:35 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:40 gui          INFO     Disconnected GUI
+2022-02-18 17:36:40 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:40 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:40 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:40 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:40 gui          INFO     Connecting to controller...
+2022-02-18 17:36:40 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:40 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:40 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:45 gui          INFO     Disconnected GUI
+2022-02-18 17:36:45 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:45 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:45 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:45 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:45 gui          INFO     Connecting to controller...
+2022-02-18 17:36:45 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:45 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:45 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:50 gui          INFO     Disconnected GUI
+2022-02-18 17:36:50 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:50 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:50 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:50 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:50 gui          INFO     Connecting to controller...
+2022-02-18 17:36:50 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:50 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:50 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:36:55 gui          INFO     Disconnected GUI
+2022-02-18 17:36:55 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:36:55 gui          INFO     Registering GUI functions...
+2022-02-18 17:36:55 gui          INFO     Subscribing to procedures...
+2022-02-18 17:36:55 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:36:55 gui          INFO     Connecting to controller...
+2022-02-18 17:36:55 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:36:55 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:36:55 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:00 gui          INFO     Disconnected GUI
+2022-02-18 17:37:00 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:00 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:00 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:00 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:00 gui          INFO     Connecting to controller...
+2022-02-18 17:37:00 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:00 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:00 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:05 gui          INFO     Disconnected GUI
+2022-02-18 17:37:05 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:05 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:05 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:05 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:05 gui          INFO     Connecting to controller...
+2022-02-18 17:37:05 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:05 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:10 gui          INFO     Disconnected GUI
+2022-02-18 17:37:10 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:10 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:10 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:10 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:10 gui          INFO     Connecting to controller...
+2022-02-18 17:37:10 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:10 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:10 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:15 gui          INFO     Disconnected GUI
+2022-02-18 17:37:15 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:15 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:15 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:15 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:15 gui          INFO     Connecting to controller...
+2022-02-18 17:37:15 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:15 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:15 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:20 gui          INFO     Disconnected GUI
+2022-02-18 17:37:20 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:20 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:20 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:20 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:20 gui          INFO     Connecting to controller...
+2022-02-18 17:37:20 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:20 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:20 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:25 gui          INFO     Disconnected GUI
+2022-02-18 17:37:25 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:25 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:25 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:25 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:25 gui          INFO     Connecting to controller...
+2022-02-18 17:37:25 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:25 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:25 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:30 gui          INFO     Disconnected GUI
+2022-02-18 17:37:30 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:30 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:30 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:30 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:30 gui          INFO     Connecting to controller...
+2022-02-18 17:37:30 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:30 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:30 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:35 gui          INFO     Disconnected GUI
+2022-02-18 17:37:35 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:35 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:35 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:35 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:35 gui          INFO     Connecting to controller...
+2022-02-18 17:37:35 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:35 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:35 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:40 gui          INFO     Disconnected GUI
+2022-02-18 17:37:40 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:40 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:40 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:40 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:40 gui          INFO     Connecting to controller...
+2022-02-18 17:37:40 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:40 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:40 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:45 gui          INFO     Disconnected GUI
+2022-02-18 17:37:45 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:45 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:45 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:45 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:45 gui          INFO     Connecting to controller...
+2022-02-18 17:37:45 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:45 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:45 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:50 gui          INFO     Disconnected GUI
+2022-02-18 17:37:50 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:50 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:50 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:50 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:50 gui          INFO     Connecting to controller...
+2022-02-18 17:37:50 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:50 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:50 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:37:55 gui          INFO     Disconnected GUI
+2022-02-18 17:37:55 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:37:55 gui          INFO     Registering GUI functions...
+2022-02-18 17:37:55 gui          INFO     Subscribing to procedures...
+2022-02-18 17:37:55 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:37:55 gui          INFO     Connecting to controller...
+2022-02-18 17:37:55 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:37:55 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:37:55 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:00 gui          INFO     Disconnected GUI
+2022-02-18 17:38:00 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:00 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:00 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:00 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:00 gui          INFO     Connecting to controller...
+2022-02-18 17:38:00 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:00 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:00 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:05 gui          INFO     Disconnected GUI
+2022-02-18 17:38:05 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:05 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:05 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:05 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:05 gui          INFO     Connecting to controller...
+2022-02-18 17:38:05 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:05 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:10 gui          INFO     Disconnected GUI
+2022-02-18 17:38:10 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:10 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:10 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:10 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:10 gui          INFO     Connecting to controller...
+2022-02-18 17:38:10 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:10 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:10 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:15 gui          INFO     Disconnected GUI
+2022-02-18 17:38:15 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:15 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:15 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:15 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:15 gui          INFO     Connecting to controller...
+2022-02-18 17:38:15 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:15 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:15 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:20 gui          INFO     Disconnected GUI
+2022-02-18 17:38:20 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:20 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:20 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:20 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:20 gui          INFO     Connecting to controller...
+2022-02-18 17:38:20 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:20 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:20 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:25 gui          INFO     Disconnected GUI
+2022-02-18 17:38:25 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:25 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:25 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:25 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:25 gui          INFO     Connecting to controller...
+2022-02-18 17:38:25 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:25 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:25 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:30 gui          INFO     Disconnected GUI
+2022-02-18 17:38:30 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:30 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:30 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:30 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:30 gui          INFO     Connecting to controller...
+2022-02-18 17:38:30 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:30 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:30 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:35 gui          INFO     Disconnected GUI
+2022-02-18 17:38:35 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:35 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:35 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:35 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:35 gui          INFO     Connecting to controller...
+2022-02-18 17:38:35 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:35 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:35 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:40 gui          INFO     Disconnected GUI
+2022-02-18 17:38:40 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:40 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:40 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:40 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:40 gui          INFO     Connecting to controller...
+2022-02-18 17:38:40 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:40 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:40 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:45 gui          INFO     Disconnected GUI
+2022-02-18 17:38:45 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:45 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:45 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:45 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:45 gui          INFO     Connecting to controller...
+2022-02-18 17:38:45 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:45 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:45 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:50 gui          INFO     Disconnected GUI
+2022-02-18 17:38:50 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:50 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:50 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:50 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:50 gui          INFO     Connecting to controller...
+2022-02-18 17:38:50 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:50 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:50 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:38:55 gui          INFO     Disconnected GUI
+2022-02-18 17:38:55 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:38:55 gui          INFO     Registering GUI functions...
+2022-02-18 17:38:55 gui          INFO     Subscribing to procedures...
+2022-02-18 17:38:55 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:38:55 gui          INFO     Connecting to controller...
+2022-02-18 17:38:55 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:38:55 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:38:55 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:00 gui          INFO     Disconnected GUI
+2022-02-18 17:39:00 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:00 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:00 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:00 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:00 gui          INFO     Connecting to controller...
+2022-02-18 17:39:00 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:00 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:00 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:05 gui          INFO     Disconnected GUI
+2022-02-18 17:39:05 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:05 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:05 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:05 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:05 gui          INFO     Connecting to controller...
+2022-02-18 17:39:05 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:05 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:10 gui          INFO     Disconnected GUI
+2022-02-18 17:39:10 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:10 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:10 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:10 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:10 gui          INFO     Connecting to controller...
+2022-02-18 17:39:10 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:10 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:10 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:15 gui          INFO     Disconnected GUI
+2022-02-18 17:39:15 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:15 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:15 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:15 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:15 gui          INFO     Connecting to controller...
+2022-02-18 17:39:15 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:15 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:15 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:20 gui          INFO     Disconnected GUI
+2022-02-18 17:39:20 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:20 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:20 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:20 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:20 gui          INFO     Connecting to controller...
+2022-02-18 17:39:20 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:20 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:20 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:25 gui          INFO     Disconnected GUI
+2022-02-18 17:39:25 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:25 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:25 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:25 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:25 gui          INFO     Connecting to controller...
+2022-02-18 17:39:25 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:25 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:25 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:30 gui          INFO     Disconnected GUI
+2022-02-18 17:39:30 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:30 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:30 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:30 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:30 gui          INFO     Connecting to controller...
+2022-02-18 17:39:30 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:30 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:30 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:35 gui          INFO     Disconnected GUI
+2022-02-18 17:39:35 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:35 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:35 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:35 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:35 gui          INFO     Connecting to controller...
+2022-02-18 17:39:35 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:35 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:35 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:40 gui          INFO     Disconnected GUI
+2022-02-18 17:39:40 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:40 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:40 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:40 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:40 gui          INFO     Connecting to controller...
+2022-02-18 17:39:40 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:40 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:40 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:45 gui          INFO     Disconnected GUI
+2022-02-18 17:39:45 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:45 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:45 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:45 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:45 gui          INFO     Connecting to controller...
+2022-02-18 17:39:45 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:45 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:45 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:50 gui          INFO     Disconnected GUI
+2022-02-18 17:39:50 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:50 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:50 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:50 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:50 gui          INFO     Connecting to controller...
+2022-02-18 17:39:50 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:50 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:50 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:39:55 gui          INFO     Disconnected GUI
+2022-02-18 17:39:55 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:39:55 gui          INFO     Registering GUI functions...
+2022-02-18 17:39:55 gui          INFO     Subscribing to procedures...
+2022-02-18 17:39:55 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:39:55 gui          INFO     Connecting to controller...
+2022-02-18 17:39:55 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:39:55 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:39:55 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:00 gui          INFO     Disconnected GUI
+2022-02-18 17:40:00 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:00 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:00 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:00 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:00 gui          INFO     Connecting to controller...
+2022-02-18 17:40:00 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:00 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:00 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:05 gui          INFO     Disconnected GUI
+2022-02-18 17:40:05 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:05 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:05 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:05 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:05 gui          INFO     Connecting to controller...
+2022-02-18 17:40:05 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:05 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:10 gui          INFO     Disconnected GUI
+2022-02-18 17:40:10 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:10 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:10 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:10 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:10 gui          INFO     Connecting to controller...
+2022-02-18 17:40:10 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:10 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:10 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:15 gui          INFO     Disconnected GUI
+2022-02-18 17:40:15 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:15 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:15 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:15 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:15 gui          INFO     Connecting to controller...
+2022-02-18 17:40:15 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:15 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:15 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:20 gui          INFO     Disconnected GUI
+2022-02-18 17:40:20 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:20 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:20 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:20 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:20 gui          INFO     Connecting to controller...
+2022-02-18 17:40:20 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:20 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:20 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:25 gui          INFO     Disconnected GUI
+2022-02-18 17:40:25 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:25 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:25 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:25 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:25 gui          INFO     Connecting to controller...
+2022-02-18 17:40:25 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:25 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:25 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:30 gui          INFO     Disconnected GUI
+2022-02-18 17:40:30 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:30 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:30 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:30 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:30 gui          INFO     Connecting to controller...
+2022-02-18 17:40:30 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:30 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:30 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:35 gui          INFO     Disconnected GUI
+2022-02-18 17:40:35 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:35 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:35 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:35 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:35 gui          INFO     Connecting to controller...
+2022-02-18 17:40:35 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:35 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:35 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:40 gui          INFO     Disconnected GUI
+2022-02-18 17:40:40 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:40 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:40 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:40 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:40 gui          INFO     Connecting to controller...
+2022-02-18 17:40:40 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:40 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:40 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:45 gui          INFO     Disconnected GUI
+2022-02-18 17:40:45 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:45 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:45 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:45 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:45 gui          INFO     Connecting to controller...
+2022-02-18 17:40:45 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:45 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:45 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:50 gui          INFO     Disconnected GUI
+2022-02-18 17:40:50 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:50 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:50 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:50 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:50 gui          INFO     Connecting to controller...
+2022-02-18 17:40:50 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:50 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:50 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:40:55 gui          INFO     Disconnected GUI
+2022-02-18 17:40:55 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:40:55 gui          INFO     Registering GUI functions...
+2022-02-18 17:40:55 gui          INFO     Subscribing to procedures...
+2022-02-18 17:40:55 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:40:55 gui          INFO     Connecting to controller...
+2022-02-18 17:40:55 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:40:55 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:40:55 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:41:00 gui          INFO     Disconnected GUI
+2022-02-18 17:41:00 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:41:00 gui          INFO     Registering GUI functions...
+2022-02-18 17:41:00 gui          INFO     Subscribing to procedures...
+2022-02-18 17:41:00 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:41:00 gui          INFO     Connecting to controller...
+2022-02-18 17:41:00 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:41:00 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:41:00 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:41:05 gui          INFO     Disconnected GUI
+2022-02-18 17:41:05 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:41:05 gui          INFO     Registering GUI functions...
+2022-02-18 17:41:05 gui          INFO     Subscribing to procedures...
+2022-02-18 17:41:05 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:41:05 gui          INFO     Connecting to controller...
+2022-02-18 17:41:05 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:41:05 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:41:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:41:10 gui          INFO     Disconnected GUI
+2022-02-18 17:41:10 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:41:10 gui          INFO     Registering GUI functions...
+2022-02-18 17:41:10 gui          INFO     Subscribing to procedures...
+2022-02-18 17:41:10 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:41:10 gui          INFO     Connecting to controller...
+2022-02-18 17:41:10 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:41:10 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:41:10 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:41:15 gui          INFO     Disconnected GUI
+2022-02-18 17:41:15 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:41:15 gui          INFO     Registering GUI functions...
+2022-02-18 17:41:15 gui          INFO     Subscribing to procedures...
+2022-02-18 17:41:15 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:41:15 gui          INFO     Connecting to controller...
+2022-02-18 17:41:15 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:41:15 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:41:15 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:41:20 gui          INFO     Disconnected GUI
+2022-02-18 17:41:20 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:41:20 gui          INFO     Registering GUI functions...
+2022-02-18 17:41:20 gui          INFO     Subscribing to procedures...
+2022-02-18 17:41:20 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:41:20 gui          INFO     Connecting to controller...
+2022-02-18 17:41:20 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:41:20 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:41:20 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:41:25 gui          INFO     Disconnected GUI
+2022-02-18 17:41:25 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:41:25 gui          INFO     Registering GUI functions...
+2022-02-18 17:41:25 gui          INFO     Subscribing to procedures...
+2022-02-18 17:41:25 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:41:25 gui          INFO     Connecting to controller...
+2022-02-18 17:41:25 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:41:25 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:41:25 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:41:30 gui          INFO     Disconnected GUI
+2022-02-18 17:41:30 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:41:30 gui          INFO     Registering GUI functions...
+2022-02-18 17:41:30 gui          INFO     Subscribing to procedures...
+2022-02-18 17:41:30 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:41:30 gui          INFO     Connecting to controller...
+2022-02-18 17:41:30 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:41:30 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:41:30 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:41:35 gui          INFO     Disconnected GUI
+2022-02-18 17:41:35 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+casA    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casB    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casC    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casD    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casE    NaN     NaN           NaN  ...          NaN      NaN    NaN
+casF    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:43:55 gui          INFO     Registering GUI functions...
+2022-02-18 17:43:55 gui          INFO     Subscribing to procedures...
+2022-02-18 17:43:55 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:43:55 gui          INFO     Connecting to controller...
+2022-02-18 17:43:55 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:43:55 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:43:55 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:01 gui          INFO     Disconnected GUI
+2022-02-18 17:44:01 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:01 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:01 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:01 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:01 gui          INFO     Connecting to controller...
+2022-02-18 17:44:01 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:01 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:01 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:06 gui          INFO     Disconnected GUI
+2022-02-18 17:44:06 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:06 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:06 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:06 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:06 gui          INFO     Connecting to controller...
+2022-02-18 17:44:06 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:06 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:06 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:11 gui          INFO     Disconnected GUI
+2022-02-18 17:44:11 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:11 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:11 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:11 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:11 gui          INFO     Connecting to controller...
+2022-02-18 17:44:11 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:11 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:11 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:16 gui          INFO     Disconnected GUI
+2022-02-18 17:44:16 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:16 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:16 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:16 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:16 gui          INFO     Connecting to controller...
+2022-02-18 17:44:16 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:16 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:16 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:21 gui          INFO     Disconnected GUI
+2022-02-18 17:44:21 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:21 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:21 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:21 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:21 gui          INFO     Connecting to controller...
+2022-02-18 17:44:21 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:21 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:21 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:26 gui          INFO     Disconnected GUI
+2022-02-18 17:44:26 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:26 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:26 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:26 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:26 gui          INFO     Connecting to controller...
+2022-02-18 17:44:26 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:26 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:26 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:31 gui          INFO     Disconnected GUI
+2022-02-18 17:44:31 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:31 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:31 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:31 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:31 gui          INFO     Connecting to controller...
+2022-02-18 17:44:31 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:31 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:31 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:36 gui          INFO     Disconnected GUI
+2022-02-18 17:44:36 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:36 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:36 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:36 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:36 gui          INFO     Connecting to controller...
+2022-02-18 17:44:36 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:36 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:36 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:41 gui          INFO     Disconnected GUI
+2022-02-18 17:44:41 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:41 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:41 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:41 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:41 gui          INFO     Connecting to controller...
+2022-02-18 17:44:41 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:41 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:41 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:46 gui          INFO     Disconnected GUI
+2022-02-18 17:44:46 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:46 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:46 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:46 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:46 gui          INFO     Connecting to controller...
+2022-02-18 17:44:46 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:46 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:46 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:51 gui          INFO     Disconnected GUI
+2022-02-18 17:44:51 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:44:51 gui          INFO     Registering GUI functions...
+2022-02-18 17:44:51 gui          INFO     Subscribing to procedures...
+2022-02-18 17:44:51 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:44:51 gui          INFO     Connecting to controller...
+2022-02-18 17:44:51 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:44:51 gui          WARNING  Waiting until controller is connected...
+2022-02-18 17:44:51 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.controller-tasks>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-02-18 17:44:54 gui          INFO     Disconnected GUI
+2022-02-18 17:44:54 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casB    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casC    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casD    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:51:23 gui          INFO     Registering GUI functions...
+2022-02-18 17:51:23 gui          INFO     Subscribing to procedures...
+2022-02-18 17:51:24 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 17:51:24 gui          INFO     Connecting to controller...
+2022-02-18 17:51:24 gui          INFO     Getting controller task dataframe...
+2022-02-18 17:51:24 gui          INFO     Checking if machine is homed...
+2022-02-18 17:51:24 gui          INFO     Machine is homed? : True
+2022-02-18 17:51:24 gui          INFO     Getting controller parameters..
+2022-02-18 17:51:24 gui          INFO     Controller has same taskDF as GUI
+2022-02-18 17:51:24 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-02-18 17:51:24 gui          INFO     Finished reconnecting loggers!
+2022-02-18 17:51:24 gui          INFO     FINISHED JOIN!
+2022-02-18 17:51:24 gui          INFO     Sending controller joined to GUI!
+2022-02-18 17:51:50 gui          INFO     casA: Requesting to stop run...
+2022-02-18 17:51:53 gui          INFO     CasA engage complete
+2022-02-18 17:52:55 gui          INFO     casC: Requesting to stop run...
+2022-02-18 17:52:57 gui          INFO     casD: Requesting to stop run...
+2022-02-18 17:52:59 gui          INFO     casB: Requesting to stop run...
+2022-02-18 17:56:23 gui          INFO     Disconnected GUI
+2022-02-18 17:56:23 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA   idle    None          None         None  ...         None         None     None   None
+casB   idle    None          None         None  ...         None         None     None   None
+casC   idle    None          None         None  ...         None         None     None   None
+casD   idle    None          None         None  ...         None         None     None   None
+casE    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+casF    NaN     NaN           NaN          NaN  ...          NaN          NaN      NaN    NaN
+
+[6 rows x 13 columns]
+2022-02-18 17:56:23 gui          WARNING  
+2022-02-18 17:56:23 gui          WARNING  Controller disconnected...
+2022-02-18 17:56:23 gui          WARNING  Sending disconnect to GUI!
+2022-02-18 18:12:05 gui          INFO     Registering GUI functions...
+2022-02-18 18:12:05 gui          INFO     Subscribing to procedures...
+2022-02-18 18:12:06 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 18:12:06 gui          INFO     Connecting to controller...
+2022-02-18 18:12:06 gui          INFO     Getting controller task dataframe...
+2022-02-18 18:12:06 gui          INFO     Checking if machine is homed...
+2022-02-18 18:12:06 gui          INFO     Machine is homed? : True
+2022-02-18 18:12:06 gui          INFO     Getting controller parameters..
+2022-02-18 18:12:06 gui          INFO     Repopulating GUI with controller procedures!
+2022-02-18 18:12:06 gui          INFO     Emitting engages! casA
+2022-02-18 18:12:06 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-02-18 18:12:06 gui          INFO     Finished reconnecting loggers!
+2022-02-18 18:12:06 gui          INFO     FINISHED JOIN!
+2022-02-18 18:12:09 gui          INFO     CasA disengage complete
+2022-02-18 18:12:33 gui          INFO     CasA engage complete
+2022-02-18 18:12:41 gui          INFO     CasB engage complete
+2022-02-18 18:12:42 gui          INFO     CasB disengage complete
+2022-02-18 18:12:47 gui          INFO     CasF engage complete
+2022-02-18 18:12:48 gui          INFO     CasF disengage complete
+2022-02-18 18:12:56 gui          INFO     Disconnected GUI
+2022-02-18 18:12:56 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA   idle    None          None         None  ...         None         None     None   None
+casB   idle    None          None         None  ...         None         None     None   None
+casC   idle    None          None         None  ...         None         None     None   None
+casD   idle    None          None         None  ...         None         None     None   None
+casE   None    None          None         None  ...         None         None     None   None
+casF   None    None          None         None  ...         None         None     None   None
+
+[6 rows x 13 columns]
+2022-02-18 18:13:56 gui          INFO     Registering GUI functions...
+2022-02-18 18:13:56 gui          INFO     Subscribing to procedures...
+2022-02-18 18:13:56 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 18:13:56 gui          INFO     Connecting to controller...
+2022-02-18 18:13:56 gui          INFO     Getting controller task dataframe...
+2022-02-18 18:13:56 gui          INFO     Checking if machine is homed...
+2022-02-18 18:13:56 gui          INFO     Machine is homed? : True
+2022-02-18 18:13:56 gui          INFO     Getting controller parameters..
+2022-02-18 18:13:56 gui          INFO     Repopulating GUI with controller procedures!
+2022-02-18 18:13:56 gui          INFO     Emitting engages! casA
+2022-02-18 18:13:56 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-02-18 18:13:56 gui          INFO     Finished reconnecting loggers!
+2022-02-18 18:13:56 gui          INFO     FINISHED JOIN!
+2022-02-18 18:13:57 gui          INFO     Sending controller joined to GUI!
+2022-02-18 18:14:01 gui          INFO     CasA disengage complete
+2022-02-18 18:14:03 gui          INFO     Disconnected GUI
+2022-02-18 18:14:03 gui          INFO          status stepNum secsRemaining currentFluid  ... protocolPath protocolName startlog endlog
+casA   None    None          None         None  ...         None         None     None   None
+casB   None    None          None         None  ...         None         None     None   None
+casC   idle    None          None         None  ...         None         None     None   None
+casD   idle    None          None         None  ...         None         None     None   None
+casE   None    None          None         None  ...         None         None     None   None
+casF   None    None          None         None  ...         None         None     None   None
+
+[6 rows x 13 columns]
+2022-02-18 18:38:33 gui          INFO     Registering GUI functions...
+2022-02-18 18:38:33 gui          INFO     Subscribing to procedures...
+2022-02-18 18:38:33 gui          INFO     Subscribed to 14 procedure(s)
+2022-02-18 18:38:33 gui          INFO     Connecting to controller...
+2022-02-18 18:38:33 gui          INFO     Getting controller task dataframe...
+2022-02-18 18:38:33 gui          INFO     Checking if machine is homed...
+2022-02-18 18:38:33 gui          INFO     Machine is homed? : True
+2022-02-18 18:38:33 gui          INFO     Getting controller parameters..
+2022-02-18 18:38:33 gui          INFO     Repopulating GUI with controller procedures!
+2022-02-18 18:38:33 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-02-18 18:38:33 gui          INFO     Finished reconnecting loggers!
+2022-02-18 18:38:33 gui          INFO     FINISHED JOIN!
+2022-02-18 18:38:33 gui          INFO     Sending controller joined to GUI!
+2022-02-18 18:38:35 gui          INFO     CasA engage complete
+2022-02-18 18:38:37 gui          INFO     CasA disengage complete
+2022-02-18 18:38:38 gui          INFO     CasA engage complete
+2022-02-18 18:38:39 gui          INFO     CasB engage complete
+2022-02-18 18:39:34 gui          INFO     Disconnected GUI
+2022-02-18 18:39:34 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+casA   None    None          None  ...         None     None   None
+casB   None    None          None  ...         None     None   None
+casC   idle    None          None  ...         None     None   None
+casD   idle    None          None  ...         None     None   None
+casE   None    None          None  ...         None     None   None
+casF   None    None          None  ...         None     None   None
+
+[6 rows x 13 columns]
