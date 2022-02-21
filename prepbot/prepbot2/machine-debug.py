@@ -37,8 +37,7 @@ PORTS = {
 
 s = {}
 
-CURRENT_PUMP = None #Not assuming the system is homed...
-# but need to get current pump position from somewhere if system is homed and controller disconnects....
+CURRENT_PUMP = 0 #Assuming the system is homed...
 MAX_PUMP_VOL = 5
 CURRENT_MUX = None
 POS = {
@@ -137,7 +136,7 @@ def pump_to_ml(ml, speed=200):
     global CURRENT_PUMP
     logger.info('CURRENT_PUMP: {}'.format(CURRENT_PUMP))
     logger.info('trying to pump to {}, speed={}'.format(ml, speed))
-    pump_to(ml * PUMP_Z_PER_ML, speed)
+    # pump_to(ml * PUMP_Z_PER_ML, speed)
     #Set what the current pump is at
     CURRENT_PUMP = ml
 
@@ -148,7 +147,7 @@ def pump_in(ml, speed=200):
     elif CURRENT_PUMP-ml < -MAX_PUMP_VOL:
         raise ValueError('PUMP CANNOT EXCEED -{} (tried {})'.format(MAX_PUMP_VOL, CURRENT_PUMP-ml))
     pump_to_ml(CURRENT_PUMP-ml, speed)
-    wait_move_done()
+    # wait_move_done()
 
 def pump_out(ml, speed=200):
     global CURRENT_PUMP
@@ -158,7 +157,7 @@ def pump_out(ml, speed=200):
         diff = ml+CURRENT_PUMP  #Difference that needs to be pumped
         if CURRENT_PUMP != 0:
             pump_to_ml(0, speed)
-            wait_move_done()
+            # wait_move_done()
         #if diff < MAX_PUMP_VOL, then diff == rem
         rem = diff % MAX_PUMP_VOL #the remainder if you were to pump in MAX_PUMP_VOL cycles
         #pump the remainder first
@@ -178,7 +177,7 @@ def pump_out(ml, speed=200):
     elif CURRENT_PUMP+ml < -MAX_PUMP_VOL:
         raise ValueError('PUMP CANNOT EXCEED -{} (tried {})'.format(MAX_PUMP_VOL, CURRENT_PUMP+ml))
     pump_to_ml(CURRENT_PUMP+ml, speed)
-    wait_move_done()
+    # wait_move_done()
 
 
 def send(d, m, read_response=False):
@@ -209,7 +208,7 @@ def mux_to(p):
         p = CURRENT_MUX
     logger.debug('MUX TO {}'.format(p))
     CURRENT_MUX = p
-    s['MUX'].write('GO{}\n'.format(POS[p]).encode())
+    # s['MUX'].write('GO{}\n'.format(POS[p]).encode())
     time.sleep(0.5)
 
 def set_heater(c, T):

@@ -48,6 +48,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     
     #Globals...
     jHelper = jh.JSONHelper()
+    #Remove cas letter conversions
     convCas = {1:'A',2:'B',3:'C',4:'D',5:'E',6:'F'}
     #CasNumber, protStrings, progstrings, runtime, sampleName, protocolName
     setupProt = QtCore.Signal(str,'QVariantList','QVariantList',str,str,str)
@@ -513,6 +514,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         #Strings for keeping track of runtime
         stepTimes = list()
         #Need to pump out fluid in chamber before loading new fluid....
+        #Check that JSON variables are indeed the expected variables... Help to protect from malicious code/wrong variable types.
         for i in range(len(jsonprot)):
             oper = jsonprot[i]
             #Check volume string

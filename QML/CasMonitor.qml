@@ -176,8 +176,10 @@ Item {
             id: casScroll
             anchors.top: menuRect.bottom
             anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
+            anchors.horizontalCenter: swipeRow.width < rootBG.width ? parent.horizontalCenter : undefined
+            anchors.left: swipeRow.width < rootBG.width ? undefined : parent.left
+            width: swipeRow.width < rootBG.width ? swipeRow.width : rootBG.width
+//            anchors.right: swipeRow.width < rootBG.width ? undefined : parent.right
             anchors.topMargin: 30
             anchors.bottomMargin: 5
             anchors.leftMargin: 5
@@ -188,9 +190,10 @@ Item {
             Row {
                 id: swipeRow
                 spacing: 3
+//                width: childrenRect.width
 
                 Repeater {
-                    model: 8
+                    model: 3
                     delegate: Item {
                         width: cas.width
                         height: casScroll.height-5
@@ -319,3 +322,9 @@ Item {
 
 
 
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/

@@ -269,7 +269,7 @@ class Component(ApplicationSession):
         		self.leave()
         		self.disconnect()
 
-        #Check if GUI says that machine has been homed. If GUI is not responsive, timeput
+        #Check if GUI says that machine has been homed. If GUI is not responsive, timeout
         ctrl.info('Checking if GUI says that machine is homed...')
         try:
             # mstat = asyncio.ensure_future(self.call('com.prepbot.prothandler.is-machine-homed'))
