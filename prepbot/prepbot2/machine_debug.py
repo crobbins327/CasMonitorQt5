@@ -209,7 +209,7 @@ def mux_to(p):
     logger.debug('MUX TO {}'.format(p))
     CURRENT_MUX = p
     # s['MUX'].write('GO{}\n'.format(POS[p]).encode())
-    time.sleep(0.5)
+    time.sleep(1.5)
 
 def set_heater(c, T):
     logger.info('Setting heater {} to {}C'.format(c, T))

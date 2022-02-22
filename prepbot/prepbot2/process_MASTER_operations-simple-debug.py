@@ -1,7 +1,7 @@
 import sys
 
 sys.path.append('./prepbot/prepbot2')
-from machine import *
+from machine_debug import *
 from time import sleep
 import datetime
 
@@ -13,6 +13,11 @@ LINEVOL_3 = 1.0
 casDict = {'CAS1': {'linevol': LINEVOL_1, 'currentFluid': None, 'volInLine': 0},
            'CAS2': {'linevol': LINEVOL_2, 'currentFluid': None, 'volInLine': 0},
            'CAS3': {'linevol': LINEVOL_3, 'currentFluid': None, 'volInLine': 0}, }
+
+reagentDict = {'FORMALIN': {'pumpInWait': 1},
+               'MEOH': {'pumpInWait': 0},
+               'DYE': {'pumpInWait': 2},
+               'BABB': {'pumpInWait': 4}}
 volInLineFactor = 1.3
 # The currentFluid must be the same and volInLine must be 1.3*pumpVol in order to pump from the line. This is a safety factor so not to pump bubbles/air into chamber.
 # So if you wanted to pump 0.5ml into the chamber and the linevol was 1ml, 0.5*1.3 < 1 is true.
@@ -223,16 +228,15 @@ def purge(cas='CAS1'):
 	casDict[cas]['volInLine'] = 0
 	print(cas, casDict[cas])
 
-
-def washAndReuseLoadReagent(cas, reagent, ml, inSpeed, chamberSpeed, lineSpeed, washSyr='auto', washSyrReagent='MEOH'):
-	if reagent not in ['FROMALIN','MEOH','DYE','BABB']:
+def washSyringeLogic(reagent, washSyr='auto', washSyrReagent='MEOH'):
+	if reagent not in ['FORMALIN','MEOH','DYE','BABB']:
 		# stop protocol
 		raise ValueError('CANNOT LOAD {}....'.format(reagent))
 
 	global syringeFluid
 	print('syringeFluid before:', syringeFluid)
 	if washSyr == 'auto':
-		if reagent in ['FORMALIN','MEOH']:
+		if reagent in ['FORMALIN', 'MEOH']:
 			# Check if last reagent in syringe was BABB, then need to wash syringe with MEOH first
 			if syringeFluid == 'BABB':
 				washSyringe(reagent=washSyrReagent)  # Should I give you the ability to change the washSyrReagent?
@@ -245,14 +249,21 @@ def washAndReuseLoadReagent(cas, reagent, ml, inSpeed, chamberSpeed, lineSpeed, 
 			if syringeFluid == 'FORMALIN':
 				washSyringe(reagent=washSyrReagent)  # Should I give you the ability to change the washSyrReagent?
 		else:
-			#The load reagent would never be None or AIR so this does nothing
+			# The load reagent would never be None or AIR so this does nothing
 			pass
 
 	elif washSyr == True:
 		# Force washing syringe
 		washSyringe(reagent=washSyrReagent)
 	else:
+		#Do not wash the syringe
 		pass
+
+
+def reuseOrPurgeLine(cas, reagent, ml, inSpeed, chamberSpeed):
+	if reagent not in ['FORMALIN','MEOH','DYE','BABB']:
+		# stop protocol
+		raise ValueError('CANNOT LOAD {}....'.format(reagent))
 
 	# Reuse linevol if it is reagent and has sufficient volInLine for pumping
 	if casDict[cas]['currentFluid'] == reagent and ml * volInLineFactor < casDict[cas]['volInLine']:
@@ -271,262 +282,149 @@ def washAndReuseLoadReagent(cas, reagent, ml, inSpeed, chamberSpeed, lineSpeed, 
 
 		# This process doesn't change the last syringe fluid
 		print('syringeFluid:', syringeFluid)
-		return
+		#Is the operation completed? Yes, because you are reusing the reagent in the line.
+		return True
 	elif casDict[cas]['currentFluid'] not in [None, 'AIR', reagent]:
 		# Purge the line with AIR before starting
 		print('{} LINE has {}, not {}'.format(cas, casDict[cas]['currentFluid'], reagent))
 		purge(cas=cas)
-
-	####### reagent specific protocol #######
-
-def formalin(cas='CAS1', ml=0.5, inSpeed=500, chamberSpeed=50, lineSpeed=400, washSyr='auto', washSyrReagent='MEOH'):
-	global syringeFluid
-	print('syringeFluid before:', syringeFluid)
-	if washSyr == 'auto':
-		# Check if last reagent in syringe was BABB, then need to wash syringe with MEOH first
-		if syringeFluid == 'BABB':
-			washSyringe(reagent=washSyrReagent)  # Should I give you the ability to change the washSyrReagent?
-	elif washSyr == True:
-		# Force washing syringe
-		washSyringe(reagent=washSyrReagent)
-
-	# Reuse linevol if it is FORMALIN and has sufficient volInLine for pumping
-	if casDict[cas]['currentFluid'] == 'FORMALIN' and ml * volInLineFactor < casDict[cas]['volInLine']:
-		print('ADDING FORMALIN, REUSING {} linevol {}'.format(cas, casDict[cas]['volInLine']))
-		mux_to('AIR')
-		pump_in(ml, speed=inSpeed)
-		# pump_to_ml(-0.5, speed = 500)
-		# wait_move_done()
-		mux_to(cas)
-		pump_out(ml, speed=chamberSpeed)
-		# pump_to_ml(0, speed=50)
-		# wait_move_done()
-		casDict[cas]['currentFluid'] = 'FORMALIN'
-		casDict[cas]['volInLine'] -= ml
-		print(cas, casDict[cas])
-
-		# This process doesn't change the last syringe fluid
-		print('syringeFluid:', syringeFluid)
-		return
-	elif casDict[cas]['currentFluid'] not in [None, 'AIR', 'FORMALIN']:
-		# Purge the line with AIR before starting
-		print('{} LINE has {}, not FORMALIN'.format(cas, casDict[cas]['currentFluid']))
-		purge(cas=cas)
-
-	linevol = casDict[cas]['linevol']
-	print('ADD FORMALIN')
-	mux_to('FORMALIN')
-	# why 0.5? is this the chamber volume? is this something you want to modify
-	pump_in(linevol + ml, speed=inSpeed)
-	# pump_to_ml(-(LINEVOL_1+0.5), speed=500)
-	# wait_move_done()
-	sleep(1)
-	mux_to(cas)
-	pump_out(linevol, speed=lineSpeed)
-	pump_out(ml, speed=chamberSpeed)
-	# pump_to_ml(0, speed=chamberSpeed)
-	# wait_move_done()
-
-	casDict[cas]['currentFluid'] = 'FORMALIN'
-	casDict[cas]['volInLine'] = linevol
-	print(cas, casDict[cas])
-
-	syringeFluid = 'FORMALIN'
-	print('syringeFluid:', syringeFluid)
+		# Is the operation completed? No, you just purged the line so that the reagent could be loaded using specific load parameters...
+		####### goto reagent specific protocol #######
+		return False
+	else:
+		#It's okay to fill the line with new fluid, do not reuse linevol
+		# Is the operation completed? No, you can't reuse the linevol for the load operation. You need to continue.
+		####### goto reagent specific protocol #######
+		return False
 
 
-def meoh(cas='CAS1', ml=0.5, inSpeed=500, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH'):
-	global syringeFluid
-	print('syringeFluid before:', syringeFluid)
-	if washSyr == 'auto':
-		# Check if last reagent in syringe was BABB, then need to wash syringe with MEOH first
-		if syringeFluid == 'BABB':
-			washSyringe(reagent=washSyrReagent)
-	elif washSyr == True:
-		# Force washing syringe
-		washSyringe(reagent=washSyrReagent)
-
-	# Reuse linevol if it is MEOH and has sufficient volInLine for pumping
-	if casDict[cas]['currentFluid'] == 'MEOH' and ml * volInLineFactor < casDict[cas]['volInLine']:
-		print('ADDING MEOH, REUSING {} linevol {}'.format(cas, casDict[cas]['volInLine']))
-		mux_to('AIR')
-		pump_in(ml, speed=inSpeed)
-		# pump_to_ml(-0.5, speed = 500)
-		# wait_move_done()
-		mux_to(cas)
-		pump_out(ml, speed=chamberSpeed)
-		# pump_to_ml(0, speed=50)
-		# wait_move_done()
-		casDict[cas]['currentFluid'] = 'MEOH'
-		casDict[cas]['volInLine'] -= ml
-		print(cas, casDict[cas])
-
-		# syringeFluid = 'MEOH'
-		# This process doesn't change the last syringe fluid
-		print('syringeFluid:', syringeFluid)
-		return
-	elif casDict[cas]['currentFluid'] not in [None, 'AIR', 'MEOH']:
-		# Purge the line with AIR before starting
-		print('{} LINE has {}, not MEOH'.format(cas, casDict[cas]['currentFluid']))
-		purge(cas=cas)
-
-	linevol = casDict[cas]['linevol']
-	print('MEOH WASHING SAMPLE')
-	mux_to('MEOH')
-	pump_in(linevol + ml, speed=inSpeed)
-	# pump_to_ml(-(LINEVOL_1+0.5), speed=400)
-	# wait_move_done()
-	mux_to(cas)
-	pump_out(linevol, speed=lineSpeed)
-	# pump_to_ml(-0.7, speed=200) #Fill reservoir quickly
-	# wait_move_done()
-	pump_out(ml, speed=chamberSpeed)
-	# pump_to_ml(0, speed=chamberSpeed) #Fill chamber slow to keep laminar
-	# wait_move_done()
-
-	casDict[cas]['currentFluid'] = 'MEOH'
-	casDict[cas]['volInLine'] = linevol
-	print(cas, casDict[cas])
-
-	syringeFluid = 'MEOH'
-	print('syringeFluid:', syringeFluid)
-
-
+# reagentDict = {'FORMALIN': {'pumpInWait': 1},
+#                'MEOH': {'pumpInWait': 0},
+#                'DYE': {'pumpInWait': 2},
+#                'BABB': {'pumpInWait': 4}}
 # What do you want to modify here as parameters in a config file?
 stainAirVol = 1
 stainAirInSpeed = 500
 stainAirOutSpeed = 200
-def stain(cas='CAS1', ml=0.2, inSpeed=200, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH'):
+def loadFreshReagent(cas, reagent, ml, inSpeed, chamberSpeed, lineSpeed, pumpInWait='auto'):
 	global syringeFluid
-	print('syringeFluid before:', syringeFluid)
-	if washSyr == 'auto':
-		# If prior step was not MEOH, should wash syringe with MEOH
-		if syringeFluid != 'MEOH':
-			washSyringe(reagent=washSyrReagent)  # Should I give you the ability to change the washSyrReagent?
-	elif washSyr == True:
-		# Force washing syringe
-		washSyringe(reagent=washSyrReagent)
+	if reagent not in ['FORMALIN','MEOH','DYE','BABB']:
+		# stop protocol
+		raise ValueError('CANNOT LOAD {}....'.format(reagent))
+	if pumpInWait is None or pumpInWait == 'auto':
+		#Get parameter from dictionary
+		pumpInWait = reagentDict[reagent]['pumpInWait']
 
-	# Reuse linevol if it is DYE and has sufficient volInLine for pumping
-	if casDict[cas]['currentFluid'] == 'DYE' and ml * volInLineFactor < casDict[cas]['volInLine']:
-		print('ADDING DYE, REUSING {} linevol {}'.format(cas, casDict[cas]['volInLine']))
+	####### reagent specific protocol #######
+	# What do you want to modify here as parameters in a config file?
+	if reagent == 'DYE':
+		linevol = casDict[cas]['linevol']
+		print('ADDING DYE')
+		# First get air into dye bottle to prevent neg pressure
+		# May need to do in two steps of 0.5ml if pressure gets too high with 1
 		mux_to('AIR')
-		pump_in(ml, speed=inSpeed)
-		# pump_to_ml(-0.5, speed = 500)
+		pump_in(stainAirVol + linevol + ml, speed=stainAirInSpeed)
+		# pump_to_ml(-2, speed=500)
+		mux_to('DYE')
+		# This doesn't make sense, shouldn't you completely pump out and then draw in the same volume?
+		# If anything, pump out a little more air into the dye container?
+		# Why have air in the pump at in this step all?
+		pump_out(linevol + ml, speed=stainAirOutSpeed)
+		# pump_to_ml(-1.0, speed=200) # not too fast so there is no leakage
 		# wait_move_done()
+		pump_in(linevol + ml, speed=inSpeed)
+		# pump_to_ml(-2, speed=200) # draw dye back into syringe, dead vol small, ~0.1 ml?
+		sleep(pumpInWait) #2s
 		mux_to(cas)
-		pump_out(ml, speed=chamberSpeed)
-		# pump_to_ml(0, speed=50)
+		pump_out(linevol, speed=lineSpeed)
+		# pump_to_ml(-(2-LINEVOL_1), speed=200) # Fast fill of reservoir
 		# wait_move_done()
-		casDict[cas]['currentFluid'] = 'DYE'
-		casDict[cas]['volInLine'] -= ml
-		print(casDict[cas])
-		# syringeFluid = 'DYE'
-		# This process doesn't change the last syringe fluid
-		print(syringeFluid)
-		return
-	elif casDict[cas]['currentFluid'] not in [None, 'AIR', 'DYE']:
-		# Purge the line with AIR before starting
-		print('{} LINE has {}, not DYE'.format(cas, casDict[cas]['currentFluid']))
-		purge(cas=cas)
+		pump_out(ml, speed=chamberSpeed)
+		# pump_to_ml(-(2-LINEVOL_1-0.2), speed=50) # Slow fill of chamber
+		# May need to adjust the 0.2 depending on dead volume of dye bottle connector
+		sleep(1) #Why sleep here??
+		# Need to reset the pump to 0 because it still has stainAirVol inside....
+		mux_to('WASTE')
+		# Perhaps the pump should be zeroed at the end of every fluid operation to prevent accumulation of rounding errors?
+		pump_to_ml(0, speed=stainAirOutSpeed)
+		##################################################################################################################
+		# wait_move_done()
+		##################################################################################################################
+	elif reagent in ['FORMALIN','MEOH','BABB']:
+		linevol = casDict[cas]['linevol']
+		print('ADDING {}'.format(reagent))
+		mux_to(reagent)
+		pump_in(linevol + ml, speed=inSpeed)
+		# pump_to_ml(-2, speed=200) # a bit slower because viscous
+		# wait_move_done()
+		# BABB = 4s
+		# FORMALIN = 1s
+		# MEOH = 0s
+		sleep(pumpInWait) # give time to equilibrate pressure because reagent can be viscous
+		mux_to(cas)
+		pump_out(linevol, speed=lineSpeed)
+		# pump_to_ml(-2+LINEVOL_1, speed=200) # fast but less fast than MEOH
+		# wait_move_done()
+		pump_out(ml, speed=chamberSpeed)
+		# pump_to_ml(0, speed = chamberSpeed) # very slow push through for clearing 1
+		# wait_move_done()
+	else:
+		raise ValueError('{} loading is not implemented...'.format(reagent))
 
-	linevol = casDict[cas]['linevol']
-	print('ADDING DYE')
-	# First get air into dye bottle to prevent neg pressure
-	# May need to do in two steps of 0.5ml if pressure gets too high with 1
-	mux_to('AIR')
-	pump_in(stainAirVol + linevol + ml, speed=stainAirInSpeed)
-	# pump_to_ml(-2, speed=500)
-	mux_to('DYE')
-	# This doesn't make sense, shouldn't you completely pump out and then draw in the same volume?
-	# If anything, pump out a little more air into the dye container?
-	# Why have air in the pump at in this step all?
-	pump_out(linevol + ml, speed=stainAirOutSpeed)
-	# pump_to_ml(-1.0, speed=200) # not too fast so there is no leakage
-	# wait_move_done()
-	pump_in(linevol + ml, speed=inSpeed)
-	# pump_to_ml(-2, speed=200) # draw dye back into syringe, dead vol small, ~0.1 ml?
-	sleep(2)  # Why wait 2 seconds
-	mux_to(cas)
-	pump_out(linevol, speed=lineSpeed)
-	# pump_to_ml(-(2-LINEVOL_1), speed=200) # Fast fill of reservoir 
-	# wait_move_done()
-	pump_out(ml, speed=chamberSpeed)
-	# pump_to_ml(-(2-LINEVOL_1-0.2), speed=50) # Slow fill of chamber
-	# May need to adjust the 0.2 depending on dead volume of dye bottle connector 
-	# sleep(1) #Why sleep here??
-	# Need to reset the pump to 0 because it still has stainAirVol inside....
-	mux_to('WASTE')
-	# Perhaps the pump should be zeroed at the end of every fluid operation to prevent accumulation of rounding errors?
-	pump_to_ml(0, speed=stainAirOutSpeed)
-	##################################################################################################################
-	# wait_move_done()
-	##################################################################################################################
-
-	casDict[cas]['currentFluid'] = 'DYE'
+	#Update globals and casDict
+	casDict[cas]['currentFluid'] = reagent
 	casDict[cas]['volInLine'] = linevol
 	print(cas, casDict[cas])
-
-	syringeFluid = 'DYE'
+	syringeFluid = reagent
 	print('syringeFluid:', syringeFluid)
+
+
+def formalin(cas='CAS1', ml=0.5, inSpeed=500, chamberSpeed=50, lineSpeed=400, washSyr='auto', washSyrReagent='MEOH'):
+	washSyringeLogic(reagent='FORMALIN', washSyr=washSyr, washSyrReagent=washSyrReagent)
+	completed = reuseOrPurgeLine(cas=cas, reagent='FORMALIN', ml=ml, inSpeed=inSpeed, chamberSpeed=chamberSpeed)
+	if completed:
+		#Finished with operation because the reagent within the line volume was used for the loading operation
+		return
+	else:
+		loadFreshReagent(cas=cas, reagent='FORMALIN', ml=ml, inSpeed=inSpeed,
+		                 chamberSpeed=chamberSpeed, lineSpeed=lineSpeed,
+		                 pumpInWait='auto')
+
+
+def meoh(cas='CAS1', ml=0.5, inSpeed=500, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH'):
+	washSyringeLogic(reagent='MEOH', washSyr=washSyr, washSyrReagent=washSyrReagent)
+	completed = reuseOrPurgeLine(cas=cas, reagent='MEOH', ml=ml, inSpeed=inSpeed, chamberSpeed=chamberSpeed)
+	if completed:
+		# Finished with operation because the reagent within the line volume was used for the loading operation
+		return
+	else:
+		loadFreshReagent(cas=cas, reagent='MEOH', ml=ml, inSpeed=inSpeed,
+		                 chamberSpeed=chamberSpeed, lineSpeed=lineSpeed,
+		                 pumpInWait='auto')
+
+
+def stain(cas='CAS1', ml=0.2, inSpeed=200, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH'):
+	washSyringeLogic(reagent='DYE', washSyr=washSyr, washSyrReagent=washSyrReagent)
+	completed = reuseOrPurgeLine(cas=cas, reagent='DYE', ml=ml, inSpeed=inSpeed, chamberSpeed=chamberSpeed)
+	if completed:
+		# Finished with operation because the reagent within the line volume was used for the loading operation
+		return
+	else:
+		loadFreshReagent(cas=cas, reagent='DYE', ml=ml, inSpeed=inSpeed,
+		                 chamberSpeed=chamberSpeed, lineSpeed=lineSpeed,
+		                 pumpInWait='auto')
 
 
 def babb(cas='CAS1', ml=1, inSpeed=200, chamberSpeed=25, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH'):
-	global syringeFluid
-	print('syringeFluid before:', syringeFluid)
-	if washSyr == 'auto':
-		# If prior step was formalin, should do MEOH wash of syringe
-		if syringeFluid == 'FORMALIN':
-			washSyringe(reagent=washSyrReagent)  # Should I give you the ability to change the washSyrReagent?
-	elif washSyr == True:
-		# Force washing syringe
-		washSyringe(reagent=washSyrReagent)
-
-	# Reuse linevol if it is BABB and has sufficient volInLine for pumping
-	if casDict[cas]['currentFluid'] == 'BABB' and ml * volInLineFactor < casDict[cas]['volInLine']:
-		print('ADDING BABB, REUSING {} linevol {}'.format(cas, casDict[cas]['volInLine']))
-		mux_to('AIR')
-		pump_in(ml, speed=inSpeed)
-		# pump_to_ml(-0.5, speed = 500)
-		# wait_move_done()
-		mux_to(cas)
-		pump_out(ml, speed=chamberSpeed)
-		# pump_to_ml(0, speed=50)
-		# wait_move_done()
-		casDict[cas]['currentFluid'] = 'BABB'
-		casDict[cas]['volInLine'] -= ml
-		print(casDict[cas])
-		# syringeFluid = 'BABB'
-		# This process doesn't change the last syringe fluid
-		print(syringeFluid)
+	washSyringeLogic(reagent='BABB', washSyr=washSyr, washSyrReagent=washSyrReagent)
+	completed = reuseOrPurgeLine(cas=cas, reagent='BABB', ml=ml, inSpeed=inSpeed, chamberSpeed=chamberSpeed)
+	if completed:
+		# Finished with operation because the reagent within the line volume was used for the loading operation
 		return
-	elif casDict[cas]['currentFluid'] not in [None, 'AIR', 'BABB']:
-		# Purge the line with AIR before starting
-		print('{} LINE has {}, not BABB'.format(cas, casDict[cas]['currentFluid']))
-		purge(cas=cas)
-
-	linevol = casDict[cas]['linevol']
-	print('ADDING BABB')
-	mux_to('BABB')
-	pump_in(linevol + ml, speed=inSpeed)
-	# pump_to_ml(-2, speed=200) # a bit slower because viscous
-	# wait_move_done()
-	sleep(4)  # give time to equilibrate pressure because viscous
-	mux_to(cas)
-	pump_out(linevol, speed=lineSpeed)
-	# pump_to_ml(-2+LINEVOL_1, speed=200) # fast but less fast than MEOH
-	# wait_move_done()
-	pump_out(ml, speed=chamberSpeed)
-	# pump_to_ml(0, speed = chamberSpeed) # very slow push through for clearing 1
-	# wait_move_done()
-
-	casDict[cas]['currentFluid'] = 'BABB'
-	casDict[cas]['volInLine'] = linevol
-	print(cas, casDict[cas])
-
-	syringeFluid = 'BABB'
-	print('syringeFluid:', syringeFluid)
-
+	else:
+		loadFreshReagent(cas=cas, reagent='BABB', ml=ml, inSpeed=inSpeed,
+		                 chamberSpeed=chamberSpeed, lineSpeed=lineSpeed,
+		                 pumpInWait='auto')
 
 # CURRENT STATIC PARAMETERS
 # syringeFluid = None
