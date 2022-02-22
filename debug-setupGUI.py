@@ -14,6 +14,7 @@ import wampHandler as wh
 from PySide2.QtGui import QGuiApplication
 from PySide2.QtWidgets import QApplication
 from PySide2.QtQml import QQmlApplicationEngine
+from PySide2.QtQuickControls2 import QQuickStyle
 
 #Setup logging
 guilog = logging.getLogger('gui')
@@ -22,8 +23,18 @@ qtlog.setLevel(logging.INFO)
 guilog.setLevel(logging.INFO)
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-#    app = QGuiApplication(sys.argv)
+
+    # How to set the style for QtQuick :
+
+    # Option 1 - passing or forcing --style argument
+    #sys.argv += ['--style', 'material']
+
+    # Option 2 - use QtQuickStyle module
+    if not os.environ.get("QT_QUICK_CONTROLS_STYLE"):
+        QQuickStyle.setStyle("Material")
+
+#    app = QApplication(sys.argv)
+    app = QGuiApplication(sys.argv)
 
     asyncio_loop = QEventLoop(app)
     asyncio.set_event_loop(asyncio_loop)

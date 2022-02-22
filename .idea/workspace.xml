@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="337fc151-9f50-4409-b5a2-edd7ccc4260b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/prepbot/prepbot2/process_MASTER_operations-simple-debug.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prepbot/prepbot2/process_MASTER_operations-simple.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prepbot/prepbot2/machine-debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/prepbot2/machine_debug.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prepbot/prepbot2/machine.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/prepbot2/machine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prepbot/prepbot2/process_MASTER_operations-debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/prepbot2/process_MASTER_operations-debug.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

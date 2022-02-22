@@ -10,6 +10,7 @@ from colorlog import ColoredFormatter
 import jsonHelper as jh
 import wampHandler as wh
 from PySide2 import QtCore, QtGui, QtQml, QtQuick, QtWidgets
+from PySide2.QtQuickControls2 import QQuickStyle
 import sys
 # insert at 1, 0 is the script path (or '' in REPL)
 sys.path.insert(1, './prepbot')
@@ -32,9 +33,18 @@ qtlog.setLevel(logging.INFO)
 guilog.setLevel(logging.INFO)
 
 if __name__ == '__main__':
+    # How to set the style for QtQuick :
+
+    # Option 1 - passing or forcing --style argument
+    #sys.argv += ['--style', 'material']
+
+    # Option 2 - use QtQuickStyle module
+    if not os.environ.get("QT_QUICK_CONTROLS_STYLE"):
+        QQuickStyle.setStyle("Material")
+
     #Setup QML application with asynchronous event loop
-    app = QtWidgets.QApplication(sys.argv)
-#    app = QtGui.QGuiApplication(sys.argv)
+#    app = QtWidgets.QApplication(sys.argv)
+    app = QtGui.QGuiApplication(sys.argv)
 
     asyncio_loop = QEventLoop(app)
     asyncio.set_event_loop(asyncio_loop)

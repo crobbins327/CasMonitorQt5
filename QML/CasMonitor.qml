@@ -6,36 +6,40 @@ import QtQml.Models 2.12
 import QtQuick.Dialogs 1.3
 import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 
 import "./Icons/"
 
 Item {
     id: casMonitor
-//    width: 800
+//    width: 776
 //    height: 400
 
-    Rectangle {
+    Pane {
         id: rootBG
-        anchors.right: parent.right
-        anchors.rightMargin: 0
-        anchors.left: parent.left
-        anchors.leftMargin: 0
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 0
-        anchors.top: parent.top
-        anchors.topMargin: 0
+        anchors.fill: parent
+//        anchors.right: parent.right
+//        anchors.rightMargin: 0
+//        anchors.left: parent.left
+//        anchors.leftMargin: 0
+//        anchors.bottom: parent.bottom
+//        anchors.bottomMargin: 0
+//        anchors.top: parent.top
+//        anchors.topMargin: 0
 
-        color: "dimgray"
+//        color: "dimgray"
+        Material.theme: Universal.Dark
+        Material.accent: Universal.Purple
 
         Rectangle{
             id: menuRect
             height: 60
             anchors.top: parent.top
-            anchors.topMargin: 0
+            anchors.topMargin: -12
             anchors.left: parent.left
-            anchors.leftMargin: 0
+            anchors.leftMargin: -12
             anchors.right: parent.right
-            anchors.rightMargin: 0
+            anchors.rightMargin: -12
             gradient: Gradient {
                 GradientStop {
                     position: 0
@@ -315,6 +319,8 @@ Item {
 
     }
 }
+
+
 
 
 

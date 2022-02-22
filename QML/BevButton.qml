@@ -5,7 +5,7 @@ import QtQuick.Templates 2.12 as T
 
 Button {
     id: bevButton
-
+    font.capitalization: Font.MixedCase
     contentItem: IconLabel {
            spacing: bevButton.spacing
            mirrored: bevButton.mirrored

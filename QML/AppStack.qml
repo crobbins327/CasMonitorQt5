@@ -6,6 +6,7 @@ import QtQuick.Window 2.12
 import QtQuick.Dialogs 1.3
 import QtQuick.Layouts 1.12
 //import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 
 ApplicationWindow {
     id: rootApWin
@@ -22,6 +23,9 @@ ApplicationWindow {
     signal reDCController()
     signal reJoinController()
     signal rePopupTxt(string msg)
+
+    Material.theme: Material.Dark
+    Material.accent: Material.Purple
 
     Component.onCompleted: {
         WAMPHandler.guiJoined.connect(reGUIJoined)
@@ -75,20 +79,23 @@ ApplicationWindow {
         parent: Overlay.overlay
         x: Math.round((parent.width - waitPopup.width) / 2)
         y: Math.round((parent.height - waitPopup.height) / 2)
-//        width: 150
-//        height: 150
+        width: 500
+        height: 150
         dim: true
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.NoAutoClose
         modal: true
         opacity: 0.8
 
-        background: Rectangle {
-                implicitWidth: 500
-                implicitHeight: 150
-                color: 'silver'
-//                border.color: "#444"
-            }
+        Material.theme: Material.Light
+        Material.accent: Material.Purple
+
+//        background: Rectangle {
+//                implicitWidth: 500
+//                implicitHeight: 150
+//                color: 'silver'
+////                border.color: "#444"
+//            }
 
         contentItem: ColumnLayout {
             spacing: 10
