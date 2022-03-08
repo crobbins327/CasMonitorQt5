@@ -2,6 +2,8 @@ import QtQuick 2.12
 import QtQml.Models 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQuick.Controls 2.12
+import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 import "./Icons/"
 
 
@@ -16,7 +18,7 @@ Item {
 //    property string volume: "3mL"
     property string type: "step"
 
-    width: 540
+    width: parent.width
     height: ribbon.height + container.height
 
     Rectangle {
@@ -35,33 +37,38 @@ Item {
 
         Button {
             id: closeButton
-            x: 544
-            width: 25
-            height: 25
+            width: parent.height
+            height: parent.height
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
             anchors.rightMargin: 10
-            icon.name: "close-X"
-            icon.source: "Icons/close.png"
-            icon.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
-            icon.width: 25
-            icon.height: 25
+
+            Image {
+                id: closeImage
+                source: "Icons/close.png"
+                anchors.horizontalCenter: closeButton.horizontalCenter
+                anchors.verticalCenter: closeButton.verticalCenter
+                width: closeButton.width*0.5
+                height: closeButton.height*0.5
+                fillMode: Image.PreserveAspectFit
+            }
+            ColorOverlay {
+                anchors.fill: closeImage
+                source: closeImage
+                color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
+            }
+
+            background: Rectangle {
+                implicitWidth: closeButton.width*0.5
+                implicitHeight: closeButton.height*0.5
+                color: "transparent"
+            }
 
             onClicked: {
                 modDel.items.remove(itemIndex)
                 modDel.model.remove(itemIndex)
             }
 
-
-            background: Rectangle {
-                implicitWidth: 25
-                implicitHeight: 25
-//                border.width: 0.5
-//                border.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "black" : "transparent"
-//                radius: 8
-//                opacity: closeButton.down ? 0.75 : 1
-                color: "transparent"
-            }
 
         }
 
@@ -160,9 +167,9 @@ Item {
             color: "#000000"
             text: {
                 if(numCycles==1){
-                    return(numCycles.toString()+' Cycle')
+                    return(numCycles+' Cycle')
                 }else{
-                 return(numCycles.toString()+' Cycles')
+                 return(numCycles+' Cycles')
                 }
             }
             anchors.left: opTimeText.right
@@ -177,6 +184,8 @@ Item {
     Rectangle {
         id: container
         anchors.top: ribbon.bottom
+        Material.theme: Material.Light
+        Material.accent: Material.Blue
 
         width: rootCol.width
         height: rootCol.minimize ? 0 : 120
@@ -224,12 +233,12 @@ Item {
                 }
             }
 
-            currentIndex: (numCycles-1).toString()
+            currentIndex: parseInt(numCycles)-1
 
 
 
             onMovingChanged: {
-                numCycles = (cycleTumbler.currentIndex+1).toString()
+                numCycles = cycleTumbler.currentIndex+1
             }
 
         }
@@ -241,9 +250,9 @@ Item {
             anchors.top: cycleTumbler.verticalCenter
             anchors.topMargin: 40
             value: parseInt(volume.slice(0,-2))
-            from: 0.25
-            to: 3
-            stepSize: 0.25
+            from: 50
+            to: 1500
+            stepSize: 10
 
             onMoved: {
                 // If value below or above amount, convert to mL or uL
@@ -251,7 +260,7 @@ Item {
                 var volumeVal = volSlider.value.toString()
                 volInput.text = volSlider.value
                 volSlider.value = volInput.text
-                volume = volumeVal + 'mL'
+                volume = volumeVal + 'uL'
             }
         }
 
@@ -291,7 +300,7 @@ Item {
                 horizontalAlignment: Text.AlignLeft
                 validator: DoubleValidator {
                        }
-                maximumLength: 5
+                maximumLength: 4
                 text: volSlider.value
                 anchors.rightMargin: 5
                 anchors.leftMargin: 10
@@ -303,7 +312,7 @@ Item {
                 onEditingFinished: {
                     volSlider.value = volInput.text
                     volInput.text = volSlider.value
-                    volume = volSlider.value + 'mL'
+                    volume = volSlider.value + 'uL'
                 }
 
 
@@ -316,7 +325,7 @@ Item {
             width: 32
             height: 19
             color: "#000000"
-            text: qsTr("mL")
+            text: qsTr("uL")
             anchors.left: rectInput.right
             anchors.leftMargin: 5
             font.pointSize: 11

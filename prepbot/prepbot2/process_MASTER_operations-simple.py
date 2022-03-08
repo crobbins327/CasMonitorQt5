@@ -397,94 +397,97 @@ def babb(cas='CAS1', ml=1, inSpeed=200, chamberSpeed=25, lineSpeed=200, washSyr=
 		                 chamberSpeed=chamberSpeed, lineSpeed=lineSpeed,
 		                 pumpInWait='auto')
 
-# CURRENT STATIC PARAMETERS
-# syringeFluid = None
-# LINEVOL_1 = 1.0 # MAX is 1.0
-# LINEVOL_2 = 1.0
-# LINEVOL_3 = 1.0
-# #Could add more casette specific properties, save/load part as a JSON/YAML
-# casDict = {'CAS1':{'linevol': LINEVOL_1, 'currentFluid': None, 'volInLine': 0},
-# 		'CAS2': {'linevol': LINEVOL_2, 'currentFluid': None, 'volInLine': 0},
-# 		'CAS3': {'linevol': LINEVOL_3, 'currentFluid': None, 'volInLine': 0},}
-# volInLineFactor = 1.3
-# #The currentFluid must be the same and volInLine must be 1.3*pumpVol in order to pump from the line. This is a safety factor so not to pump bubbles/air into chamber.
-# #So if you wanted to pump 0.5ml into the chamber and the linevol was 1ml, 0.5*1.3 < 1 is true.
-# #However, for the next cycle to pump 0.5ml, the linevol is now 0.5ml, and 0.5*1.3 < 0.5 is false.
-# #Therefore, you have to purge the line before loading the new reagent.
-formalin_secs = 5
-meoh_secs = 5
-dye_cycles = 6
-dye_cycle_secs = 10
-babb_secs = 5
-# mixInSpeed=500
-# mixOutSpeed = 50
-# #Can use this to ensure that linevolume is not depleted from pushing extra volume out
-# extraMixFactor = 1.1
-# clnVol = 1
-# clnInSpeed = 200
-# washVol = 1.5
-# washInSpeed = 500
-# wasteSpeed = 500
-# purgeInSpeed = 400
-# purgeOutSpeed = 50
-# #Shouldn't the purgeVol be the linevol + some extra so that you fully purge line and chamber?
-# purgeVol = 0.5
-# stainAirVol = 1
-# stainAirInSpeed = 500
-# stainAirOutSpeed = 200
 
-# This part will be done mainly by the onJoin command
-print('STARTING...')
-connect()
-# Is this where acquire goes?
-acquire()
-# Do you want to have an option to set the heater temp in the protocol or GUI defaults? There a heater setting for each cassette?
-set_heater('CAS1', 47)
-# Should you wait until the heater is at the right temperature before starting the protocol? If so, how do you check the heater temperature?
-# Is it just cassette_temp('CAS1')?
-# engage('CAS1')  # same thing for now
-cassette_contact('CAS1')
-sleep(1)  # Can I move this sleep into the machine.py code?
 
-# Skip for ARF
-# If last step was BABB in syringe, need to wash syringe with MEOH first
-# If last step was dye, should be ok to go direct to here
-# Do you want to do this everytime you draw formalin? Or just when the current reagent in the syringe isn't formalin?
-washSyringe(reagent='FORMALIN', washVol=casDict['CAS1']['linevol'] + 0.5,
-            washInSpeed=500, wasteSpeed=400)
+if __name__== '__main__':
+	# CURRENT STATIC PARAMETERS
+	# syringeFluid = None
+	# LINEVOL_1 = 1.0 # MAX is 1.0
+	# LINEVOL_2 = 1.0
+	# LINEVOL_3 = 1.0
+	# #Could add more casette specific properties, save/load part as a JSON/YAML
+	# casDict = {'CAS1':{'linevol': LINEVOL_1, 'currentFluid': None, 'volInLine': 0},
+	# 		'CAS2': {'linevol': LINEVOL_2, 'currentFluid': None, 'volInLine': 0},
+	# 		'CAS3': {'linevol': LINEVOL_3, 'currentFluid': None, 'volInLine': 0},}
+	# volInLineFactor = 1.3
+	# #The currentFluid must be the same and volInLine must be 1.3*pumpVol in order to pump from the line. This is a safety factor so not to pump bubbles/air into chamber.
+	# #So if you wanted to pump 0.5ml into the chamber and the linevol was 1ml, 0.5*1.3 < 1 is true.
+	# #However, for the next cycle to pump 0.5ml, the linevol is now 0.5ml, and 0.5*1.3 < 0.5 is false.
+	# #Therefore, you have to purge the line before loading the new reagent.
+	formalin_secs = 5
+	meoh_secs = 5
+	dye_cycles = 6
+	dye_cycle_secs = 10
+	babb_secs = 5
+	# mixInSpeed=500
+	# mixOutSpeed = 50
+	# #Can use this to ensure that linevolume is not depleted from pushing extra volume out
+	# extraMixFactor = 1.1
+	# clnVol = 1
+	# clnInSpeed = 200
+	# washVol = 1.5
+	# washInSpeed = 500
+	# wasteSpeed = 500
+	# purgeInSpeed = 400
+	# purgeOutSpeed = 50
+	# #Shouldn't the purgeVol be the linevol + some extra so that you fully purge line and chamber?
+	# purgeVol = 0.5
+	# stainAirVol = 1
+	# stainAirInSpeed = 500
+	# stainAirOutSpeed = 200
 
-formalin(cas='CAS1', ml=0.5, inSpeed=500, chamberSpeed=50, lineSpeed=50, washSyr='auto', washSyrReagent='MEOH')
-incubate(cas='CAS1', incTime=formalin_secs, mixAfter=None)
-# OK TO DO OTHER THINGS
+	# This part will be done mainly by the onJoin command
+	print('STARTING...')
+	connect()
+	# Is this where acquire goes?
+	acquire()
+	# Do you want to have an option to set the heater temp in the protocol or GUI defaults? There a heater setting for each cassette?
+	set_heater('CAS1', 47)
+	# Should you wait until the heater is at the right temperature before starting the protocol? If so, how do you check the heater temperature?
+	# Is it just cassette_temp('CAS1')?
+	# engage('CAS1')  # same thing for now
+	cassette_contact('CAS1')
+	sleep(1)  # Can I move this sleep into the machine.py code?
 
-meoh(cas='CAS1', ml=0.5, inSpeed=400, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
-incubate(cas='CAS1', incTime=meoh_secs, mixAfter=None)
-# OK TO DO OTHER THINGS
+	# Skip for ARF
+	# If last step was BABB in syringe, need to wash syringe with MEOH first
+	# If last step was dye, should be ok to go direct to here
+	# Do you want to do this everytime you draw formalin? Or just when the current reagent in the syringe isn't formalin?
+	washSyringe(reagent='FORMALIN', washVol=casDict['CAS1']['linevol'] + 0.5,
+	            washInSpeed=500, wasteSpeed=400)
 
-meoh(cas='CAS1', ml=0.5, inSpeed=500, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
-incubate(cas='CAS1', incTime=meoh_secs, mixAfter=None)
-# OK TO DO OTHER THINGS
+	formalin(cas='CAS1', ml=0.5, inSpeed=500, chamberSpeed=50, lineSpeed=50, washSyr='auto', washSyrReagent='MEOH')
+	incubate(cas='CAS1', incTime=formalin_secs, mixAfter=None)
+	# OK TO DO OTHER THINGS
 
-purge(cas='CAS1')
-countdown(4)  # equilibrate
+	meoh(cas='CAS1', ml=0.5, inSpeed=400, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
+	incubate(cas='CAS1', incTime=meoh_secs, mixAfter=None)
+	# OK TO DO OTHER THINGS
 
-stain(cas='CAS1', ml=0.2, inSpeed=200, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
-incubate(cas='CAS1', incTime=dye_cycle_secs * dye_cycles, mixAfter=dye_cycle_secs, mixVol=0.1, extraVolOut=0.1, earlyStopping=False)
+	meoh(cas='CAS1', ml=0.5, inSpeed=500, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
+	incubate(cas='CAS1', incTime=meoh_secs, mixAfter=None)
+	# OK TO DO OTHER THINGS
 
-print('DONE WITH DYE')
+	purge(cas='CAS1')
+	countdown(4)  # equilibrate
 
-babb(cas='CAS1', ml=1, inSpeed=200, chamberSpeed=25, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
-incubate(cas='CAS1', incTime=babb_secs, mixAfter=None)
-# OK TO DO SOMETHING ELSE
+	stain(cas='CAS1', ml=0.2, inSpeed=200, chamberSpeed=50, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
+	incubate(cas='CAS1', incTime=dye_cycle_secs * dye_cycles, mixAfter=dye_cycle_secs, mixVol=0.1, extraVolOut=0.1, earlyStopping=False)
 
-babb(cas='CAS1', ml=0.5, inSpeed=200, chamberSpeed=25, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
-incubate(cas='CAS1', incTime=babb_secs, mixAfter=None)
-# OK TO DO SOMETHING ELSE
+	print('DONE WITH DYE')
 
-print('Specimen ejecting')
-cassette_eject('CAS1')  # Should minimize delay for eject when ready
-# disengage(cas='CAS1')
+	babb(cas='CAS1', ml=1, inSpeed=200, chamberSpeed=25, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
+	incubate(cas='CAS1', incTime=babb_secs, mixAfter=None)
+	# OK TO DO SOMETHING ELSE
 
-clean(cas='CAS1')
+	babb(cas='CAS1', ml=0.5, inSpeed=200, chamberSpeed=25, lineSpeed=200, washSyr='auto', washSyrReagent='MEOH')
+	incubate(cas='CAS1', incTime=babb_secs, mixAfter=None)
+	# OK TO DO SOMETHING ELSE
 
-print('READY FOR NEW SAMPLE')
+	print('Specimen ejecting')
+	cassette_eject('CAS1')  # Should minimize delay for eject when ready
+	# disengage(cas='CAS1')
+
+	clean(cas='CAS1')
+
+	print('READY FOR NEW SAMPLE')

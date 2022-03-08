@@ -2,6 +2,8 @@ import QtQuick 2.12
 import QtQml.Models 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQuick.Controls 2.12
+import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 import "./Icons/"
 
 
@@ -41,26 +43,31 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
             anchors.rightMargin: 10
-            icon.name: "close-X"
-            icon.source: "Icons/close.png"
-            icon.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
-            icon.width: 25
-            icon.height: 25
+
+            Image {
+                id: closeImage
+                source: "Icons/close.png"
+                anchors.horizontalCenter: closeButton.horizontalCenter
+                anchors.verticalCenter: closeButton.verticalCenter
+                width: closeButton.width*0.5
+                height: closeButton.height*0.5
+                fillMode: Image.PreserveAspectFit
+            }
+            ColorOverlay {
+                anchors.fill: closeImage
+                source: closeImage
+                color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
+            }
+
+            background: Rectangle {
+                implicitWidth: closeButton.width*0.5
+                implicitHeight: closeButton.height*0.5
+                color: "transparent"
+            }
 
             onClicked: {
                 modDel.items.remove(itemIndex)
                 modDel.model.remove(itemIndex)
-            }
-
-
-            background: Rectangle {
-                implicitWidth: 25
-                implicitHeight: 25
-//                border.width: 0.5
-//                border.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "black" : "transparent"
-//                radius: 8
-//                opacity: closeButton.down ? 0.75 : 1
-                color: "transparent"
             }
 
         }

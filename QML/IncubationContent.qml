@@ -2,6 +2,8 @@ import QtQuick 2.12
 import QtQml.Models 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQuick.Controls 2.12
+import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 import "./Icons/"
 
 
@@ -14,13 +16,13 @@ Item {
     property DelegateModel modDel: null
     property int itemIndex : DelegateModel.itemsIndex
     property bool minimize: true
-//    property string mixAfterSecs: '600'
-    property string mixAfterTime: get_time(parseInt(mixAfterSecs))
+//    property string mixAfterSecs: 600
+    property string mixAfterTime: get_time(mixAfterSecs)
 
     property string type: "step"
 
 
-    width: 540
+    width: parent.width
     height: ribbon.height + container.height
 
     Rectangle {
@@ -40,30 +42,36 @@ Item {
 
         Button {
             id: closeButton
-            x: 544
-//            width: 30
-//            height: 30
             width: 25
             height: 25
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
             anchors.rightMargin: 10
-            icon.name: "close-X"
-            icon.source: "Icons/close.png"
-            icon.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
-            icon.width: 25
-            icon.height: 25
+
+            Image {
+                id: closeImage
+                source: "Icons/close.png"
+                anchors.horizontalCenter: closeButton.horizontalCenter
+                anchors.verticalCenter: closeButton.verticalCenter
+                width: closeButton.width*0.5
+                height: closeButton.height*0.5
+                fillMode: Image.PreserveAspectFit
+            }
+            ColorOverlay {
+                anchors.fill: closeImage
+                source: closeImage
+                color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
+            }
+
+            background: Rectangle {
+                implicitWidth: closeButton.width*0.5
+                implicitHeight: closeButton.height*0.5
+                color: "transparent"
+            }
 
             onClicked: {
                 modDel.items.remove(itemIndex)
                 modDel.model.remove(itemIndex)
-            }
-
-
-            background: Rectangle {
-                implicitWidth: 25
-                implicitHeight: 25
-                color: "transparent"
             }
 
         }
@@ -159,7 +167,7 @@ Item {
                     return('mix every '+ mixAfterSecs + 's')
                 } else{
                     console.log(mixAfterSecs, ', value error for mixAfterSecs')
-                    mixAfterSecs = '0'
+                    mixAfterSecs = 0
                     return('no mixing')
                 }
             }
@@ -175,6 +183,8 @@ Item {
     Rectangle {
         id: container
         anchors.top: ribbon.bottom
+        Material.theme: Material.Light
+        Material.accent: Material.Blue
 
         width: rootCol.width
         height: rootCol.minimize ? 0 : 120
@@ -346,7 +356,7 @@ Item {
             currentIndex: getMin(mixAfterTime)
 
             onMovingChanged: {
-                mixAfterSecs = (minMix.currentIndex*60 + secMix.currentIndex).toString()
+                mixAfterSecs = minMix.currentIndex*60 + secMix.currentIndex
 //                console.log(mixAfterSecs)
 //                console.log(mixAfterTime)
             }
@@ -370,7 +380,7 @@ Item {
             currentIndex: getSec(mixAfterTime)
 
             onMovingChanged: {
-                mixAfterSecs = (minMix.currentIndex*60 + secMix.currentIndex).toString()
+                mixAfterSecs = minMix.currentIndex*60 + secMix.currentIndex
 //                console.log(mixAfterTime)
 //                console.log(mixAfterSecs)
             }
@@ -386,7 +396,7 @@ Item {
             anchors.horizontalCenter: mixAfterLabel.horizontalCenter
             onClicked: {
                 if(!mixSwitch.checked){
-                    mixAfterSecs = '0'
+                    mixAfterSecs = 0
                     minMix.currentIndex = 0
                     secMix.currentIndex = 0
                 }

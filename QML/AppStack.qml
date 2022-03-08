@@ -25,7 +25,7 @@ ApplicationWindow {
     signal rePopupTxt(string msg)
 
     Material.theme: Material.Dark
-    Material.accent: Material.Purple
+    Material.accent: Material.Blue
 
     Component.onCompleted: {
         WAMPHandler.guiJoined.connect(reGUIJoined)
@@ -80,15 +80,16 @@ ApplicationWindow {
         x: Math.round((parent.width - waitPopup.width) / 2)
         y: Math.round((parent.height - waitPopup.height) / 2)
         width: 500
-        height: 150
+        height: 200
         dim: true
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.NoAutoClose
         modal: true
-        opacity: 0.8
+//        opacity: 1
 
-        Material.theme: Material.Light
-        Material.accent: Material.Purple
+        Material.theme: Material.Dark
+        Material.background: 'transparent'
+        Material.accent: Material.Blue
 
 //        background: Rectangle {
 //                implicitWidth: 500
@@ -101,12 +102,13 @@ ApplicationWindow {
             spacing: 10
             anchors.fill: parent
             BusyIndicator {
+                Layout.topMargin: 20
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 running: true
             }
-            Text {
+            Label {
                 text: rootApWin.waitPopupTxt
                 minimumPointSize: 12
                 font.pointSize: 14

@@ -5,6 +5,7 @@ import QtQml.Models 2.12
 //import Qt.labs.platform 1.1
 import QtQuick.Dialogs 1.3
 import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 
 import "./Icons/"
 
@@ -78,63 +79,39 @@ Item {
             }
             Button {
                 id: homeB
-//                y: 8
-                width: 50
-                height: 50
+                width: 60
+                height: 60
                 anchors.left: parent.left
                 anchors.leftMargin: 20
                 display: AbstractButton.IconOnly
                 anchors.verticalCenter: parent.verticalCenter
-
-                opacity: homeB.down || homeB.checked || homeB.highlighted ? 0.5 : 1
                 flat: true
 
                 icon.source: "Icons/home-run.png"
                 icon.color: "white"
-                icon.height: 50
-                icon.width: 50
-
-                background: Rectangle {
-                    implicitWidth: 50
-                    implicitHeight: 50
-                    border.width: homeB.down || homeB.checked || homeB.highlighted ? 4 : 3
-                    border.color: "white"
-                    radius: 30
-                    color: "transparent"
-                }
+                icon.height: 60
+                icon.width: 60
 
                 onClicked: {
                     //Warning if model isn't empty?
-                    mainStack.pop(null, StackView.Immediate)
+                    mainStack.pop(null)
                 }
             }
 
             Button {
                 id: backB
-//                y: 8
-                width: 50
-                height: 50
+                width: 60
+                height: 60
                 display: AbstractButton.IconOnly
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: homeB.right
                 anchors.leftMargin: 20
-
-                opacity: backB.down || backB.checked || backB.highlighted ? 0.5 : 1
                 flat: true
 
                 icon.source: "Icons/back.png"
                 icon.color: "white"
-                icon.height: 50
-                icon.width: 50
-
-                background: Rectangle {
-                    implicitWidth: 50
-                    implicitHeight: 50
-                    border.width: backB.down || backB.checked || backB.highlighted ? 4 : 3
-                    border.color: "white"
-                    radius: 30
-                    color: "transparent"
-                }
+                icon.height: 60
+                icon.width: 60
 
                 onClicked: {
                     //Warning if model isn't empty?
@@ -144,30 +121,18 @@ Item {
 
             Button {
                 id: settingsB
-                width: 50
-                height: 50
+                width: 60
+                height: 60
                 display: AbstractButton.IconOnly
                 anchors.right: parent.right
                 anchors.rightMargin: 20
                 anchors.verticalCenter: parent.verticalCenter
-
-
-                opacity: settingsB.down || settingsB.checked || settingsB.highlighted ? 0.5 : 1
                 flat: true
 
                 icon.source: "Icons/settings-icon.png"
                 icon.color: "white"
-                icon.height: 50
-                icon.width: 50
-
-                background: Rectangle {
-                    implicitWidth: 50
-                    implicitHeight: 50
-                    border.width: settingsB.down || settingsB.checked || settingsB.highlighted ? 4 : 3
-                    border.color: "white"
-                    radius: 30
-                    color: "transparent"
-                }
+                icon.height: 60
+                icon.width: 60
 
                 onClicked: {
                     settingsMenu.open()
@@ -519,20 +484,33 @@ Item {
 
                 }
 
-
-
                 ListView {
                     id: stepLView
 
                     property var operDict: {
-                        'Incubation':{'opName':'Incubation','opTime':'00:00:00', 'mixAfterSecs': '0', 'volume': 'undefined', 'pSpeed':'undefined', 'numCycles': 'undefined', 'washSyr':'undefined', 'loadType': 'undefined'},
-                        'Mixing':{'opName':'Mixing','opTime':'00:05:00', 'mixAfterSecs': 'undefined', 'volume': '1mL', 'pSpeed':'1', 'numCycles': '3', 'washSyr':'undefined', 'loadType': 'undefined'},
-                        'Purge':{'opName':'Purge', 'opTime':'00:05:00', 'mixAfterSecs': 'undefined', 'volume': '3mL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'undefined', 'loadType': 'undefined'},
-                        'Load Formalin':{'opName':'Load Formalin', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'false', 'loadType':'Formalin'},
-                        'Load Dehydrant':{'opName':'Load Dehydrant', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'false', 'loadType':'Dehydrant'},
-                        'Load Stain':{'opName':'Load Stain', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'false', 'loadType':'Stain'},
-                        'Load BABB':{'opName':'Load BABB', 'opTime':'00:01:30', 'mixAfterSecs': 'undefined', 'volume': '600uL', 'pSpeed':'1', 'numCycles': 'undefined', 'washSyr':'false', 'loadType':'BABB'}
+                        'Incubation':{'opName':'Incubation', 'opTime':'00:00:00', 'mixAfterSecs':0, 'volume':'100uL', 'extraVolOut':'0uL',
+                            'inSpeed':0, 'chamberSpeed':0, 'lineSpeed':0, 'numCycles':0,
+                            'washSyr':'undefined', 'washReagent':'undefined', 'loadType':'undefined'},
+                        'Mixing':{'opName':'Mixing', 'opTime':'00:05:00', 'mixAfterSecs':0, 'volume':'100uL','extraVolOut':'undefined',
+                            'inSpeed':0, 'chamberSpeed':0, 'lineSpeed':0, 'numCycles':3,
+                            'washSyr':'undefined', 'washReagent':'undefined', 'loadType':'undefined'},
+                        'Purge':{'opName':'Purge', 'opTime':'00:05:00', 'mixAfterSecs':0, 'volume':'undefined','extraVolOut':'undefined',
+                            'inSpeed':0, 'chamberSpeed':0, 'lineSpeed':0, 'numCycles':0,
+                            'washSyr':'undefined', 'washReagent':'undefined', 'loadType':'undefined'},
+                        'Load Formalin':{'opName':'Load Formalin', 'opTime':'00:01:30', 'mixAfterSecs': 0, 'volume': '500uL','extraVolOut':'undefined',
+                            'inSpeed':500,'chamberSpeed':50, 'lineSpeed':400, 'numCycles': 0,
+                            'washSyr':'auto', 'washReagent':'Dehydrant', 'loadType':'Formalin'},
+                        'Load Dehydrant':{'opName':'Load Dehydrant', 'opTime':'00:01:30', 'mixAfterSecs': 0, 'volume': '500uL','extraVolOut':'undefined',
+                            'inSpeed':500, 'chamberSpeed':50, 'lineSpeed':200, 'numCycles': 0,
+                            'washSyr':'auto', 'washReagent':'Dehydrant', 'loadType':'Dehydrant'},
+                        'Load Stain':{'opName':'Load Stain', 'opTime':'00:01:30', 'mixAfterSecs': 0, 'volume': '200uL','extraVolOut':'undefined',
+                            'inSpeed':200, 'chamberSpeed':50, 'lineSpeed':200, 'numCycles': 0,
+                            'washSyr':'auto', 'washReagent':'Dehydrant', 'loadType':'Stain'},
+                        'Load BABB':{'opName':'Load BABB', 'opTime':'00:01:30', 'mixAfterSecs': 0, 'volume': '500uL','extraVolOut':'undefined',
+                            'inSpeed':200, 'chamberSpeed':25, 'lineSpeed':200, 'numCycles': 0,
+                            'washSyr':'auto', 'washReagent':'Dehydrant', 'loadType':'BABB'}
                     }
+
 
                     anchors {
                         left: parent.left; right: parent.right; bottom: parent.bottom;
@@ -595,9 +573,7 @@ Item {
 
             Button {
                 id: openB
-                x: 10
-                y: 47
-                height: 30
+                height: 50
                 text: qsTr("Open")
                 anchors.right: parent.right
                 anchors.rightMargin: 6
@@ -607,6 +583,9 @@ Item {
                 display: AbstractButton.TextBesideIcon
                 anchors.bottomMargin: 60
                 font.pointSize: 12
+                font.capitalization: Font.MixedCase
+                Material.theme: Material.Light
+                Material.foreground: "black"
 
                 onClicked: {
                     openDialog.open()
@@ -615,19 +594,19 @@ Item {
 
             Button {
                 id: saveAsB
-                x: -6
-                y: 33
-                height: 30
+                height: 50
                 text: qsTr("Save As")
                 anchors.right: parent.right
                 anchors.rightMargin: 6
                 anchors.bottom: saveB.top
                 anchors.bottomMargin: 10
                 font.pointSize: 12
+                font.capitalization: Font.MixedCase
                 display: AbstractButton.TextBesideIcon
                 anchors.left: parent.left
                 anchors.leftMargin: 5
-
+                Material.theme: Material.Light
+                Material.foreground: "black"
 
                 onClicked: {
                     //Validate that mixing and incubation operations are non-zero
@@ -642,16 +621,18 @@ Item {
 
             Button {
                 id: saveB
-                x: -6
-                height: 30
+                height: 50
                 text: qsTr("Save")
                 anchors.right: parent.right
                 anchors.rightMargin: 6
                 anchors.bottom: startB.top
                 anchors.bottomMargin: 15
                 font.pointSize: 12
+                font.capitalization: Font.MixedCase
                 anchors.left: parent.left
                 anchors.leftMargin: 5
+                Material.theme: Material.Light
+                Material.foreground: "black"
 
                 // When the file has an existing directory + name, set enabled to true. Save under current file directory.
                 enabled: rootEd.savedPath === '' ? false : true
@@ -661,7 +642,9 @@ Item {
                     //Save to existing file url bypassing opening saveDialog
                     var datamodel = []
                     for (var i = 0; i < stepListModDel.model.count; ++i) datamodel.push(stepListModDel.model.get(i))
-                    var datastring = JSON.stringify(datamodel, null, "\t")
+//                    var datastring = JSON.stringify(datamodel, null, "\t")
+                    var datastring = JSON.stringify(datamodel, space="\t")
+                    console.log(datastring)
                     JSONHelper.saveProtocol(rootEd.savedPath, datastring)
                     console.log("SavedP: ", rootEd.savedPath)
                 }
@@ -669,15 +652,14 @@ Item {
 
             Button {
                 id: startB
-                x: -3
-                y: 156
-                height: 40
+                height: 50
                 text: qsTr("Start")
                 anchors.right: parent.right
                 anchors.rightMargin: 6
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 25
                 font.pointSize: 12
+                font.capitalization: Font.MixedCase
                 padding: 0
                 rightPadding: 0
                 leftPadding: 0
@@ -685,6 +667,8 @@ Item {
                 display: AbstractButton.TextBesideIcon
                 anchors.left: parent.left
                 anchors.leftMargin: 5
+                Material.theme: Material.Light
+                Material.foreground: "black"
 
                 enabled: !rootEd.casNumber == 0 && !rootApWin.isDisconnected
 
@@ -890,17 +874,10 @@ Item {
         }
 
     }
-    states: [
-        State {
-            name: "State1"
-        }
-    ]
 }
-
-
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.9}
+    D{i:0;autoSize:true;height:480;width:640}
 }
 ##^##*/

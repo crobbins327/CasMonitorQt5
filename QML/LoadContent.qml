@@ -2,6 +2,8 @@ import QtQuick 2.12
 import QtQml.Models 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQuick.Controls 2.12
+import QtGraphicalEffects 1.12
+import QtQuick.Controls.Material 2.12
 import "./Icons/"
 
 
@@ -17,12 +19,12 @@ Item {
     property bool minimize: true
 //    property string opTime: "00:05:00"
 //    property string volume: "750uL"
-//    property string pSpeed: '2.95'
 //    property string washSyr: 'false'
 
     property string type: "step"
 
-    width: 540
+//    width: 540
+    width: parent.width
     height: ribbon.height + container.height
 
     Rectangle {
@@ -43,19 +45,32 @@ Item {
 
         Button {
             id: closeButton
-            x: 544
-//            width: 30
-//            height: 30
-            width: 25
-            height: 25
+            width: parent.height
+            height: parent.height
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
             anchors.rightMargin: 10
-            icon.name: "close-X"
-            icon.source: "Icons/close.png"
-            icon.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
-            icon.width: 25
-            icon.height: 25
+
+            Image {
+                id: closeImage
+                source: "Icons/close.png"
+                anchors.horizontalCenter: closeButton.horizontalCenter
+                anchors.verticalCenter: closeButton.verticalCenter
+                width: closeButton.width*0.5
+                height: closeButton.height*0.5
+                fillMode: Image.PreserveAspectFit
+            }
+            ColorOverlay {
+                anchors.fill: closeImage
+                source: closeImage
+                color: closeButton.down || closeButton.checked || closeButton.highlighted ? "red" : "black"
+            }
+
+            background: Rectangle {
+                implicitWidth: closeButton.width*0.5
+                implicitHeight: closeButton.height*0.5
+                color: "transparent"
+            }
 
             onClicked: {
                 modDel.items.remove(itemIndex)
@@ -63,20 +78,10 @@ Item {
             }
 
 
-            background: Rectangle {
-                implicitWidth: 25
-                implicitHeight: 25
-//                border.width: 0.5
-//                border.color: closeButton.down || closeButton.checked || closeButton.highlighted ? "black" : "transparent"
-//                radius: 8
-//                opacity: closeButton.down ? 0.75 : 1
-                color: "transparent"
-            }
         }
 
         Text {
             id: opTimeText
-            y: 7
             color: "#000000"
             //            text: {return opTimeText.opHour+":"+opTimeText.opMin+":"+opTimeText.opSec}
             text: opTime == null ? "00:05:00" : opTime
@@ -152,7 +157,6 @@ Item {
 
         Text {
             id: volText
-            y: 4
             color: "#000000"
             text: volume
             anchors.right: closeButton.left
@@ -164,26 +168,12 @@ Item {
             font.capitalization: Font.MixedCase
         }
 
-        Text {
-            id: pSpeedText
-            x: 292
-            y: 0
-            color: "#000000"
-            text: pSpeed+ ' Speed'
-            anchors.verticalCenterOffset: 0
-            font.weight: Font.Medium
-            renderType: Text.QtRendering
-            anchors.verticalCenter: ribbon.verticalCenter
-            anchors.leftMargin: 15
-            anchors.left: opTimeText.right
-            font.pointSize: 11
-            font.capitalization: Font.MixedCase
-        }
-
         }
     Rectangle {
         id: container
         anchors.top: ribbon.bottom
+        Material.theme: Material.Light
+        Material.accent: Material.Blue
 
         width: rootCol.width
         height: rootCol.minimize ? 0 : 120
@@ -196,10 +186,11 @@ Item {
 
         Slider {
             id: volSlider
-            y: 19
             width: 150
             height: 30
             anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.topMargin: 19
             anchors.leftMargin: 25
             value: parseInt(volume.slice(0,-2))
             from: 1
@@ -285,99 +276,28 @@ Item {
             font.bold: true
         }
 
-        Slider {
-            id: speedSlider
-            x: 25
-            width: 125
-            height: 30
-            stepSize: 0.01
-            value: parseFloat(pSpeed).toFixed(2)
-            to: 3
-            anchors.topMargin: 20
-            anchors.top: volSlider.bottom
-            from: 0.02
-            onMoved: {
-                // If value below or above amount, convert to mL or uL
-                //Depends on what mixing values are desired..
-                pSpeed = speedSlider.value.toFixed(2).toString()
-                speedInput.text = speedSlider.value
-                speedSlider.value = speedInput.text
-            }
-        }
-
-        Text {
-            id: speedLab
-            x: 7
-            y: 241
-            width: 104
-            height: 19
-            color: "#000000"
-            text: qsTr("Pump Speed:")
-            anchors.verticalCenterOffset: 0
-            anchors.verticalCenter: speedSlider.verticalCenter
-            anchors.leftMargin: 15
-            font.bold: true
-            anchors.left: speedSlider.right
-            font.pointSize: 11
-        }
-
-        Rectangle {
-            id: rectSpIn
-            x: 7
-            y: 240
-            width: 60
-            height: 30
-            color: "#00000000"
-            anchors.verticalCenterOffset: 0
-            TextInput {
-                id: speedInput
-                color: "#000000"
-                text: speedSlider.value
-                horizontalAlignment: Text.AlignLeft
-                anchors.fill: parent
-                clip: true
-                font.underline: false
-                anchors.leftMargin: 10
-                selectionColor: "#66000080"
-                font.bold: true
-                verticalAlignment: Text.AlignVCenter
-                selectedTextColor: "#ffffff"
-                validator: DoubleValidator {
-                }
-                font.pointSize: 11
-                maximumLength: 4
-                anchors.rightMargin: 10
-                onEditingFinished: {
-                    speedSlider.value = speedInput.text
-                    speedInput.text = speedSlider.value
-                    pSpeed = speedSlider.value.toFixed(2).toString()
-                }
-            }
-            anchors.verticalCenter: speedLab.verticalCenter
-            anchors.leftMargin: 20
-            anchors.left: speedLab.right
-            border.width: 1
-            border.color: "#515151"
-        }
-
         CheckBox {
             id: washCheckBox
-            y: 79
-            width: 146
-            height: 52
-            text: qsTr("Wash Syringe\n        & Line")
+            width: 326
+            height: 44
+            text: qsTr("Wash Syringe & Line")
             anchors.verticalCenterOffset: 0
             display: AbstractButton.TextBesideIcon
             font.pointSize: 10
             font.bold: true
-            anchors.left: rectSpIn.right
-            anchors.leftMargin: 30
-            anchors.verticalCenter: speedLab.verticalCenter
-            checked: washSyr == 'false' ? false : true
+            anchors.left: volSlider.left
+            anchors.top: volSlider.bottom
+            anchors.topMargin: 12
+            anchors.leftMargin: 0
+            checked: washSyr == 'true' ? true : false
 
             onClicked: {
-                washSyr = washCheckBox.checked.toString()
-                console.log(washSyr)
+                if (washCheckBox.checked){
+                    washSyr = 'true'
+                } else {
+                    washSyr = 'auto'
+                }
+//                console.log(washSyr)
             }
         }
 
@@ -388,9 +308,4 @@ Item {
 
 
 
-/*##^##
-Designer {
-    D{i:16;anchors_x:25}D{i:17;anchors_x:25}D{i:19;anchors_y:81}D{i:18;anchors_y:81}D{i:21;anchors_y:81}
-D{i:22;anchors_y:81}D{i:23;anchors_y:81}D{i:27;anchors_x:377}
-}
-##^##*/
+

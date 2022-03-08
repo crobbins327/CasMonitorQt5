@@ -3,12 +3,13 @@ import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Dialogs 1.3
 import QtQuick.Window 2.12
+import QtQuick.Controls.Material 2.12
 import "./Icons/"
 
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 0
+    property int stackIndex: 1
     property double runProgVal: 0
     property string firstRunTime : "01:31:55"
     property int firstRunSecs : get_sec(root.firstRunTime)
@@ -415,13 +416,18 @@ Item {
         anchors.topMargin: 0
         anchors.fill: parent
         currentIndex: stackIndex
+        Material.theme: Material.Dark
+//        Material.background: Material.BlueGrey
+        Material.accent: Material.Blue
 
-        Rectangle {
+        RoundPane {
             id: noCasDetected
-            color: "silver"
-            radius: 8
-            border.color: "black"
-            border.width: 0.5
+            Material.elevation: 9
+            radius: 15
+            backgroundColor: "#777777"
+//            radius: 8
+//            border.color: "black"
+//            border.width: 0.5
 
             Text {
                 id: casNum0
@@ -444,17 +450,20 @@ Item {
                 anchors.right: parent.right
                 anchors.rightMargin: 0
 
-                BevButton {
+                Button {
                     id: engageCasB
-                    Layout.preferredHeight: 40
+                    Layout.preferredHeight: 50
                     Layout.minimumHeight: 30
                     text: qsTr("Engage")
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     font.pointSize: 11
-                    palette {
-                        button: 'green'
-                        buttonText: 'white'
-                    }
+                    font.capitalization: Font.MixedCase
+//                    palette {
+//                        button: 'green'
+//                        buttonText: 'white'
+//                    }
+                    Material.background: 'green'
+                    Material.foreground: 'white'
 
                     onClicked: {
                         WAMPHandler.engageCas(root.casNumber)
@@ -464,12 +473,11 @@ Item {
                 }
            }
         }
-        Rectangle {
+        RoundPane {
             id: setupRun
-            color: "silver"
-            radius: 8
-            border.color: "black"
-            border.width: 0.5
+            Material.elevation: 9
+            radius: 15
+            backgroundColor: "#777777"
 
             Text {
                 id: casNum1
@@ -494,18 +502,21 @@ Item {
 //                flow:  parent.width > parent.height ? GridLayout.LeftToRight : GridLayout.TopToBottom
 //                flow: GridLayout.TopToBottom
 
-                BevButton {
+                Button {
                     id: disengageCasB
                     Layout.preferredWidth: colLayout.width/1.5
-                    Layout.preferredHeight: 40
-                    Layout.minimumHeight: 20
+                    Layout.preferredHeight: 50
+                    Layout.minimumHeight: 30
                     text: qsTr("Disengage")
                     font.pointSize: 11
+                    font.capitalization: Font.MixedCase
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                    palette {
-                        button: 'darkred'
-                        buttonText: 'white'
-                    }
+//                    palette {
+//                        button: 'darkred'
+//                        buttonText: 'white'
+//                    }
+                    Material.background: 'darkred'
+                    Material.foreground: 'white'
 
                     onClicked: {
                         root.stackIndex = 0
@@ -517,24 +528,33 @@ Item {
 
                 ComboBox {
                     id: comboProt
-                    model: ["Full Process", "No Stain", "No Fixation", "Custom"]
+                    Material.accent: Material.Blue
+//                    Material.background: '#999999'
+//                    Material.primary: 'silver'
+                    Material.elevation: 5
+//                    popup.Material.background: '#999999'
                     popup.font.pointSize: 10
+
+                    model: ["Full Process", "No Stain", "No Fixation", "Custom"]
+
                     font.pointSize: 11
                     Layout.topMargin: 40
                     Layout.preferredWidth: colLayout.width/1.1
-                    Layout.preferredHeight: 40
-                    Layout.minimumHeight: 20
+                    Layout.preferredHeight: 50
+                    Layout.minimumHeight: 30
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 }
 
-                BevButton {
+                Button {
                     id: setupRunB
                     Layout.preferredWidth: colLayout.width/2
                     text: qsTr("Start")
                     font.pointSize: 11
-                    Layout.preferredHeight: 40
-                    Layout.minimumHeight: 20
+                    font.capitalization: Font.MixedCase
+                    Layout.preferredHeight: 50
+                    Layout.minimumHeight: 30
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                    Material.theme: Material.Light
 
                     onClicked: {
                         console.log("Setup run: ", casNumber)
@@ -546,12 +566,14 @@ Item {
             }
 
         }
-        Rectangle {
+        RoundPane {
             id: runInProg
-            color: "silver"
-            radius: 8
-            border.color: "black"
-            border.width: 0.5
+            Material.elevation: 9
+            radius: 15
+            backgroundColor: "#777777"
+//            radius: 8
+//            border.color: "black"
+//            border.width: 0.5
 
             Timer {
                 id: progTimer
@@ -635,6 +657,35 @@ Item {
 
             }
 
+            Text {
+                id: runStepL
+                text: runStep
+                style: Text.Normal
+                fontSizeMode: Text.VerticalFit
+                anchors.left: runProgBar.left
+                anchors.bottom: runProgBar.top
+                anchors.bottomMargin: 5
+                anchors.leftMargin: 0
+                font.pointSize: 9
+                font.weight: Font.Thin
+                minimumPointSize: 10
+            }
+
+            Text {
+                id: runTimeL
+                width: 69
+                height: 19
+                text: runTime
+                fontSizeMode: Text.VerticalFit
+                anchors.right: runProgBar.right
+                horizontalAlignment: Text.AlignRight
+                anchors.rightMargin: 0
+                anchors.verticalCenter: runStepL.verticalCenter
+                font.pointSize: 9
+                font.weight: Font.Normal
+                minimumPointSize: 10
+            }
+
             ProgressBar {
                 property string progColor: "#17a81a"
                 id: runProgBar
@@ -672,66 +723,8 @@ Item {
                 // Update prog value and step on change
             }
 
-            BevButton {
-                id: stopRunB
-                y: 157
-                width: 80
-                text: qsTr("Stop")
-                font.pointSize: 11
-                anchors.left: parent.left
-                anchors.leftMargin: 10
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 15
-                palette {
-                    button: 'darkred'
-                    buttonText: 'white'
-                }
-
-                onClicked: {stopDialog.open()}
-            }
-
-            BevButton {
-                id: runDetB
-                x: 152
-                y: 157
-                width: 80
-                text: qsTr("Log")
-                font.pointSize: 11
-                anchors.right: parent.right
-                anchors.rightMargin: 10
-                anchors.verticalCenter: stopRunB.verticalCenter
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
-
-                onClicked: {
-                    runDetWin.close()
-                    runDetWin.show()
-                    runDetWin.raise()
-                    if (!root.isLogRefreshed){
-                        WAMPHandler.refreshRunDet(root.casNumber, root.currentEnd)
-                        root.isLogRefreshed = true
-                    }
-                }
-            }
-
-            Text {
-                id: runStepL
-                text: runStep
-                style: Text.Normal
-                anchors.verticalCenterOffset: -22
-                anchors.verticalCenter: runProgBar.verticalCenter
-                fontSizeMode: Text.VerticalFit
-                anchors.left: runProgBar.left
-                anchors.leftMargin: 0
-                font.pointSize: 9
-                font.weight: Font.Thin
-                minimumPointSize: 10
-            }
-
-
             Text {
                 id: runStepNum
-                x: 58
-                y: 119
                 text: (stepIndex+1).toString() + '/' + totalSteps.toString()
                 anchors.horizontalCenterOffset: 0
                 font.bold: false
@@ -745,34 +738,75 @@ Item {
                 fontSizeMode: Text.VerticalFit
             }
 
-            Text {
-                id: runTimeL
-                x: 161
-                y: 1
-                width: 69
-                height: 19
-                text: runTime
-                fontSizeMode: Text.VerticalFit
-                anchors.right: runProgBar.right
-                horizontalAlignment: Text.AlignRight
-                anchors.rightMargin: 0
-                anchors.verticalCenter: runStepL.verticalCenter
-                font.pointSize: 9
-                font.weight: Font.Normal
-                minimumPointSize: 10
+            Button {
+                id: stopRunB
+                width: (runInProg.width - (runDetB.anchors.rightMargin + stopRunB.anchors.leftMargin))/2 - 15
+//                Layout.preferredWidth: 80
+                Layout.minimumWidth: 60
+                Layout.preferredHeight: 50
+                Layout.minimumHeight: 30
+
+                text: qsTr("Stop")
+                font.pointSize: 11
+                font.capitalization: Font.MixedCase
+                anchors.left: parent.left
+                anchors.leftMargin: 10
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 15
+//                palette {
+//                    button: 'darkred'
+//                    buttonText: 'white'
+//                }
+                Material.background: 'darkred'
+                Material.foreground: 'white'
+
+                onClicked: {stopDialog.open()}
             }
 
-            BevButton {
+            Button {
+                id: runDetB
+//                Layout.preferredWidth: 80
+                width: (runInProg.width - (runDetB.anchors.rightMargin + stopRunB.anchors.leftMargin))/2 - 15
+//                Layout.preferredWidth: 80
+                Layout.minimumWidth: 60
+                Layout.preferredHeight: 50
+                Layout.minimumHeight: 30
+                text: qsTr("Log")
+                font.pointSize: 11
+                font.capitalization: Font.MixedCase
+                anchors.right: parent.right
+                anchors.rightMargin: 10
+                anchors.verticalCenter: stopRunB.verticalCenter
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                Material.theme: Material.Light
+
+                onClicked: {
+                    runDetWin.close()
+                    runDetWin.show()
+                    runDetWin.raise()
+                    if (!root.isLogRefreshed){
+                        WAMPHandler.refreshRunDet(root.casNumber, root.currentEnd)
+                        root.isLogRefreshed = true
+                    }
+                }
+            }
+
+            Button {
                 id: nextRunB
-                y: 157
                 visible: false
-                width: 80
+                width: (runInProg.width - (runDetB.anchors.rightMargin + stopRunB.anchors.leftMargin))/2 - 15
+//                Layout.preferredWidth: 80
+                Layout.minimumWidth: 60
+                Layout.preferredHeight: 50
+                Layout.minimumHeight: 30
                 text: qsTr("Next")
                 anchors.bottom: parent.bottom
                 font.pointSize: 11
+                font.capitalization: Font.MixedCase
                 anchors.leftMargin: 10
                 anchors.left: parent.left
                 anchors.bottomMargin: 15
+                Material.theme: Material.Light
 
 
                 onClicked: {
@@ -901,3 +935,9 @@ Item {
 
 
 
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:2}
+}
+##^##*/

@@ -6,6 +6,7 @@ import QtQml.Models 2.12
 import QtQuick.Dialogs 1.3
 import Qt.labs.folderlistmodel 2.12
 import QtQuick.Layouts 1.12
+import QtQuick.Controls.Material 2.12
 //import QtQuick.VirtualKeyboard 2.12
 
 import "./Icons/"
@@ -60,7 +61,12 @@ Item {
         anchors.top: parent.top
         anchors.topMargin: 0
 
-        color: "dimgray"
+//        color: "dimgray"
+//        Material.theme: Material.Dark
+//        Material.accent: Material.Blue
+//        Material.primary:
+        color: Material.backgroundColor
+
 
         Rectangle{
             id: menuRect
@@ -84,60 +90,37 @@ Item {
             }
             Button {
                 id: homeB
-                y: 8
-                width: 50
-                height: 50
+                width: 60
+                height: 60
                 anchors.left: parent.left
                 anchors.leftMargin: 20
                 display: AbstractButton.IconOnly
                 anchors.verticalCenter: parent.verticalCenter
-
-                opacity: homeB.down || homeB.checked || homeB.highlighted ? 0.5 : 1
                 flat: true
 
                 icon.source: "Icons/home-run.png"
                 icon.color: "white"
-                icon.height: 50
-                icon.width: 50
+                icon.height: 60
+                icon.width: 60
 
-                background: Rectangle {
-                    implicitWidth: 50
-                    implicitHeight: 50
-                    border.width: homeB.down || homeB.checked || homeB.highlighted ? 4 : 3
-                    border.color: "white"
-                    radius: 30
-                    color: "transparent"
-                }
-
-                onClicked: {mainStack.pop(null, StackView.Immediate)}
+                onClicked: {mainStack.pop(null)}
             }
 
             Button {
                 id: backB
-                y: 8
-                width: 50
-                height: 50
+                width: 60
+                height: 60
                 display: AbstractButton.IconOnly
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: homeB.right
                 anchors.leftMargin: 20
-
-                opacity: backB.down || backB.checked || backB.highlighted ? 0.5 : 1
                 flat: true
 
                 icon.source: "Icons/back.png"
                 icon.color: "white"
-                icon.height: 50
-                icon.width: 50
+                icon.height: 60
+                icon.width: 60
 
-                background: Rectangle {
-                    implicitWidth: 50
-                    implicitHeight: 50
-                    border.width: backB.down || backB.checked || backB.highlighted ? 4 : 3
-                    border.color: "white"
-                    radius: 30
-                    color: "transparent"
-                }
 
                 onClicked: {mainStack.pop()}
             }
@@ -146,30 +129,19 @@ Item {
                 id: settingsB
                 x: 692
                 y: 8
-                width: 50
-                height: 50
+                width: 60
+                height: 60
                 display: AbstractButton.IconOnly
                 anchors.right: parent.right
                 anchors.rightMargin: 20
                 anchors.verticalCenter: parent.verticalCenter
-
-
-                opacity: settingsB.down || settingsB.checked || settingsB.highlighted ? 0.5 : 1
                 flat: true
 
                 icon.source: "Icons/settings-icon.png"
                 icon.color: "white"
-                icon.height: 50
-                icon.width: 50
+                icon.height: 60
+                icon.width: 60
 
-                background: Rectangle {
-                    implicitWidth: 50
-                    implicitHeight: 50
-                    border.width: settingsB.down || settingsB.checked || settingsB.highlighted ? 4 : 3
-                    border.color: "white"
-                    radius: 30
-                    color: "transparent"
-                }
 
                 onClicked: {
                     settingsMenu.open()
@@ -242,7 +214,7 @@ Item {
                 width: 300
                 height: parent.height
                 anchors {left: rootSelTangle.left; top: rootSelTangle.top; bottom: rootSelTangle.bottom}
-                color: "silver"
+                color: "#999999"
                 radius: 5
 
                 ListView {
@@ -254,6 +226,7 @@ Item {
                     anchors {topMargin: 35; bottomMargin: 0}
                     clip: true
                     highlightFollowsCurrentItem: true
+                    spacing: 0
 
                     model: FolderListModel {
                         id: folderListModel
@@ -268,8 +241,10 @@ Item {
                     delegate: Button {
                         id: fileButton
                         width: fileSelector.width
-                        height: 40
+                        height: 50
                         text: fileName
+//                        opacity: fileButton.down || fileButton.checked || fileButton.highlighted ? 0.5 : 1
+                        flat: true
                         onClicked: {
                             if (fileIsDir) {
                                 folderListModel.folder = fileURL
@@ -323,10 +298,10 @@ Item {
 
                         }
 
-                        background: Rectangle {
-                            color: fileIsDir ? "whitesmoke" : "whitesmoke"
-                            border.color: "black"
-                        }
+//                        background: Rectangle {
+//                            color: fileIsDir ? "whitesmoke" : "whitesmoke"
+//                            border.color: "black"
+//                        }
                     }
                 }
 
@@ -346,28 +321,34 @@ Item {
                     Button {
                         id: openDirB
                         y: 3
-                        height: 40
+                        height: 45
                         text: qsTr("Open Protocol")
+                        font.capitalization: Font.MixedCase
                         anchors.left: backFileB.right
-                        anchors.leftMargin: 30
+                        anchors.right: parent.right
+                        anchors.rightMargin: 7
+                        anchors.leftMargin: 40
                         anchors.verticalCenter: parent.verticalCenter
                         display: AbstractButton.TextBesideIcon
                         font.pointSize: 12
+                        Material.theme: Material.Light
+                        Material.foreground: "black"
 
                         onClicked: {openDialog.open()}
                     }
 
                     Button {
                         id: backFileB
-                        x: 8
-                        y: 0
-                        height: 40
+                        height: 45
                         text: qsTr("Back")
-                        anchors.horizontalCenterOffset: -75
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        font.capitalization: Font.MixedCase
                         anchors.verticalCenter: parent.verticalCenter
+                        anchors.left: parent.left
+                        anchors.leftMargin: 7
                         font.pointSize: 12
                         display: AbstractButton.TextBesideIcon
+                        Material.theme: Material.Light
+                        Material.foreground: "black"
 
                         onClicked: folderListModel.folder = folderListModel.parentFolder
                     }
@@ -460,10 +441,10 @@ Item {
 
                     Button {
                         id: startB
-                        x: 240
-                        y: 4
-                        height: 40
+                        width: 100
+                        height: 45
                         text: qsTr("Start")
+                        font.capitalization: Font.MixedCase
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.right: parent.right
                         anchors.rightMargin: 7
@@ -473,6 +454,8 @@ Item {
                         leftPadding: 0
                         layer.wrapMode: ShaderEffectSource.ClampToEdge
                         display: AbstractButton.TextBesideIcon
+                        Material.theme: Material.Light
+                        Material.foreground: "black"
 
                         icon.source: "Icons/rightArrow-black.png"
                         icon.color: "green"
@@ -505,14 +488,17 @@ Item {
 
                     Button {
                         id: editB
-                        height: 40
+                        height: 45
                         text: qsTr("Edit Protocol")
+                        font.capitalization: Font.MixedCase
                         anchors.left: parent.left
                         anchors.leftMargin: 7
                         anchors.verticalCenterOffset: 0
                         font.pointSize: 12
                         display: AbstractButton.TextBesideIcon
                         anchors.verticalCenter: parent.verticalCenter
+                        Material.theme: Material.Light
+                        Material.foreground: "black"
                         
                         enabled: stepModel.count > 0 ? true : false
                         
@@ -523,14 +509,17 @@ Item {
 
                     Button {
                         id: newB
-                        height: 40
+                        height: 45
                         text: qsTr("New Protocol")
+                        font.capitalization: Font.MixedCase
                         anchors.left: editB.right
-                        anchors.leftMargin: 14
+                        anchors.leftMargin: 15
                         anchors.verticalCenterOffset: 0
                         font.pointSize: 12
                         display: AbstractButton.TextBesideIcon
                         anchors.verticalCenter: parent.verticalCenter
+                        Material.theme: Material.Light
+                        Material.foreground: "black"
 
                         onClicked: {mainStack.push("ProtocolEditor.qml",{casNumber: casNumber, sampleName: sampleName})}
                     }
@@ -562,6 +551,7 @@ Item {
                         TextInput {
                             id: sampInput
                             property string placeholderText: "Enter Sample Name..."
+                            font.capitalization: Font.MixedCase
                             color: "#ffffff"
                             leftPadding: 5
                             anchors.rightMargin: 0

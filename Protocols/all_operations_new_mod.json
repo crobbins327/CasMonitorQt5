@@ -1,0 +1,93 @@
+[
+	{
+		"opName": "Incubation",
+		"opTime": "00:00:53",
+		"mixAfterSecs": 2,
+		"volume": "undefined",
+		"inSpeed": 0,
+		"chamberSpeed": 0,
+		"lineSpeed": 0,
+		"numCycles": 0,
+		"washSyr": "undefined",
+		"washReagent": "undefined",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Mixing",
+		"opTime": "00:05:00",
+		"mixAfterSecs": 0,
+		"volume": "520uL",
+		"inSpeed": 0,
+		"chamberSpeed": 0,
+		"lineSpeed": 0,
+		"numCycles": 4,
+		"washSyr": "undefined",
+		"washReagent": "undefined",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Purge",
+		"opTime": "00:05:00",
+		"mixAfterSecs": 0,
+		"volume": "undefined",
+		"inSpeed": 0,
+		"chamberSpeed": 0,
+		"lineSpeed": 0,
+		"numCycles": 0,
+		"washSyr": "undefined",
+		"washReagent": "undefined",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Load Formalin",
+		"opTime": "00:01:30",
+		"mixAfterSecs": 0,
+		"volume": "1453uL",
+		"inSpeed": 500,
+		"chamberSpeed": 50,
+		"lineSpeed": 400,
+		"numCycles": 0,
+		"washSyr": "true",
+		"washReagent": "Dehydrant",
+		"loadType": "Formalin"
+	},
+	{
+		"opName": "Load Dehydrant",
+		"opTime": "00:01:30",
+		"mixAfterSecs": 0,
+		"volume": "1836uL",
+		"inSpeed": 500,
+		"chamberSpeed": 50,
+		"lineSpeed": 200,
+		"numCycles": 0,
+		"washSyr": "auto",
+		"washReagent": "Dehydrant",
+		"loadType": "Dehydrant"
+	},
+	{
+		"opName": "Load Stain",
+		"opTime": "00:01:30",
+		"mixAfterSecs": 0,
+		"volume": "2652uL",
+		"inSpeed": 200,
+		"chamberSpeed": 50,
+		"lineSpeed": 200,
+		"numCycles": 0,
+		"washSyr": "auto",
+		"washReagent": "Dehydrant",
+		"loadType": "Stain"
+	},
+	{
+		"opName": "Load BABB",
+		"opTime": "00:01:30",
+		"mixAfterSecs": 0,
+		"volume": "2436uL",
+		"inSpeed": 200,
+		"chamberSpeed": 25,
+		"lineSpeed": 200,
+		"numCycles": 0,
+		"washSyr": "true",
+		"washReagent": "Dehydrant",
+		"loadType": "BABB"
+	}
+]

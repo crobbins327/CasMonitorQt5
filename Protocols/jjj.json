@@ -1,0 +1,30 @@
+[
+	{
+		"opName": "Incubation",
+		"opTime": "00:00:00",
+		"mixAfterSecs": 0,
+		"volume": "100uL",
+		"extraVolOut": "0uL",
+		"inSpeed": 0,
+		"chamberSpeed": 0,
+		"lineSpeed": 0,
+		"numCycles": 0,
+		"washSyr": "undefined",
+		"washReagent": "undefined",
+		"loadType": "undefined"
+	},
+	{
+		"opName": "Mixing",
+		"opTime": "00:05:00",
+		"mixAfterSecs": 0,
+		"volume": "100uL",
+		"extraVolOut": "undefined",
+		"inSpeed": 0,
+		"chamberSpeed": 0,
+		"lineSpeed": 0,
+		"numCycles": 3,
+		"washSyr": "undefined",
+		"washReagent": "undefined",
+		"loadType": "undefined"
+	}
+]

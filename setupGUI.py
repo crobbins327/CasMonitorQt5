@@ -53,7 +53,6 @@ if __name__ == '__main__':
     #My context properties that signal-slot between python and QML
     json_helper = jh.JSONHelper()
     wHandler = wh.wampHandler()
-    print(wh.wampHandler.__mro__)
 
     engine.rootContext().setContextProperty("JSONHelper", json_helper)
     engine.rootContext().setContextProperty("WAMPHandler", wHandler)

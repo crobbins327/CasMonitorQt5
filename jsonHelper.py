@@ -42,7 +42,7 @@ class JSONHelper(QtCore.QObject):
         isValid = self.validateJson(jsondata)
         print('Is the jsondata valid: {}'.format(isValid))
         if not isValid:
-            print('JSON has key value error. opName, opTime, volume, pSpeed, numCycles, and loadType are the only keys accepted.')
+            print('JSON has key value error. opName, opTime, volume, extraVolOut, inSpeed, chamberSpeed, lineSpeed, numCycles, washSyr, washReagent, and loadType are the only keys accepted.')
             return
         else:
             # Send JSON string with file info
@@ -64,7 +64,7 @@ class JSONHelper(QtCore.QObject):
         isValid = self.validateJson(jsondata)
         print('Is the jsondata valid: {}'.format(isValid))
         if not isValid:
-            print('JSON has key value error. opName, opTime, volume, pSpeed, numCycles, and loadType are the only keys accepted.')
+            print('JSON has key value error. opName, opTime, volume, extraVolOut, inSpeed, chamberSpeed, lineSpeed, numCycles, washSyr, washReagent, and loadType are the only keys accepted.')
             return
         else:
             # Send JSON string with file info
@@ -81,13 +81,20 @@ class JSONHelper(QtCore.QObject):
                 "properties": {
                     "opName": {"type": "string"},
                     "opTime": {"type": "string"},
-                    "mixAfterSecs" : {"type": "string"},
+                    "mixAfterSecs": {"type": ["integer", "null"]},
                     "volume": {"type": "string"},
-                    "pSpeed": {"type": "string"},
-                    "numCycles": {"type": "string"},
+                    "extraVolOut": {"type": "string"},
+                    "inSpeed": {"type": ["integer", "null"]},
+                    "chamberSpeed": {"type": ["integer", "null"]},
+                    "lineSpeed": {"type": ["integer", "null"]},
+                    "numCycles": {"type": ["integer", "null"]},
+                    "washSyr": {"type": "string"},
+                    "washReagent": {"type": "string"},
                     "loadType": {"type": "string"},
                 },
-                "required": ["opName", "opTime","mixAfterSecs","volume","pSpeed","numCycles","loadType"]
+                "required": ["opName", "opTime", "mixAfterSecs", "volume", "extraVolOut",
+                             "inSpeed", "chamberSpeed", "lineSpeed", "numCycles",
+                             "washSyr", "washReagent", "loadType"]
             }
         }
         try:

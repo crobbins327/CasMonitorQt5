@@ -2,7 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="337fc151-9f50-4409-b5a2-edd7ccc4260b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Log/cas1.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Log/cas2.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Log/cas3.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Log/cas4.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Log/cas5.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Log/cas6.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Protocols/all_operations_new.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Protocols/jjj.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QML/RoundPane.qml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prepbot.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prepbot/machine_debug.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pump_homed" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CasMonitorQt5.pyproject" beforeDir="false" afterPath="$PROJECT_DIR$/CasMonitorQt5.pyproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CasMonitorQt5.pyproject.user" beforeDir="false" afterPath="$PROJECT_DIR$/CasMonitorQt5.pyproject.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/casA.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/casB.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/casC.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/casD.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/casE.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/casF.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/ctrl.log" beforeDir="false" afterPath="$PROJECT_DIR$/Log/ctrl.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/disconnect/disconnect-state.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/gui.log" beforeDir="false" afterPath="$PROJECT_DIR$/Log/gui.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/init/ctrl-loggers.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Log/init/ctrl-loggers.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/machine.log" beforeDir="false" afterPath="$PROJECT_DIR$/Log/machine.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Log/opTimes.log" beforeDir="false" afterPath="$PROJECT_DIR$/Log/opTimes.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/aaa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/all_operations.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/anotherProt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/asawash.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/asdfsa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/asdfsdddddd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/cyc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/mixharder.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/otherops.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Protocols/protAgain.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/AppStack.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/AppStack.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/CasMonitor.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/CasMonitor.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/DebugMode.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/DebugMode.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/IncubationContent.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/IncubationContent.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/LoadContent.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/LoadContent.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/MixingContent.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/MixingContent.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/PSelContent.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/PSelContent.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/ProtocolEditor.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/ProtocolEditor.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/ProtocolSelector.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/ProtocolSelector.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/PurgeContent.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/PurgeContent.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QML/SampleStack.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/SampleStack.qml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsonHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/jsonHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prepbot/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prepbot/controlNQ.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/controlNQ.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prepbot/machine.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/machine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prepbot/prepbot2/process_MASTER_operations-simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/prepbot2/process_MASTER_operations-simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/runApp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setupGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/setupGUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wampHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/wampHandler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,20 +79,24 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="25P6tZypjFaSHwm1RFWzBXGcSDy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/prepbot/prepbot2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/prepbot" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Torres\CasMonitorQt5\prepbot" />
       <recent name="F:\Torres\CasMonitorQt5\prepbot\prepbot2" />
     </key>
   </component>
@@ -52,6 +111,9 @@
     </task>
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.qml" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -62,5 +124,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -15,7 +15,7 @@ Item {
 //    width: 776
 //    height: 400
 
-    Pane {
+    Rectangle {
         id: rootBG
         anchors.fill: parent
 //        anchors.right: parent.right
@@ -28,18 +28,20 @@ Item {
 //        anchors.topMargin: 0
 
 //        color: "dimgray"
-        Material.theme: Universal.Dark
-        Material.accent: Universal.Purple
+        Material.theme: Material.Dark
+        Material.accent: Material.Blue
+        color: Material.background
+
 
         Rectangle{
             id: menuRect
             height: 60
             anchors.top: parent.top
-            anchors.topMargin: -12
+            anchors.topMargin: 0
             anchors.left: parent.left
-            anchors.leftMargin: -12
+            anchors.leftMargin: 0
             anchors.right: parent.right
-            anchors.rightMargin: -12
+            anchors.rightMargin: 0
             gradient: Gradient {
                 GradientStop {
                     position: 0
@@ -55,30 +57,30 @@ Item {
 
             Button {
                 id: settingsB
-                width: 50
-                height: 50
+                width: 60
+                height: 60
                 display: AbstractButton.IconOnly
                 anchors.right: parent.right
                 anchors.rightMargin: 20
                 anchors.verticalCenter: parent.verticalCenter
 
 
-                opacity: settingsB.down || settingsB.checked || settingsB.highlighted ? 0.5 : 1
+//                opacity: settingsB.down || settingsB.checked || settingsB.highlighted ? 0.5 : 1
                 flat: true
 
                 icon.source: "Icons/settings-icon.png"
                 icon.color: "white"
-                icon.height: 50
-                icon.width: 50
+                icon.height: 60
+                icon.width: 60
 
-                background: Rectangle {
-                    implicitWidth: 50
-                    implicitHeight: 50
-                    border.width: settingsB.down || settingsB.checked || settingsB.highlighted ? 4 : 3
-                    border.color: "white"
-                    radius: 30
-                    color: "transparent"
-                }
+//                background: Rectangle {
+//                    implicitWidth: 50
+//                    implicitHeight: 50
+//                    border.width: settingsB.down || settingsB.checked || settingsB.highlighted ? 4 : 3
+//                    border.color: "white"
+//                    radius: 30
+//                    color: "transparent"
+//                }
 
                 onClicked: {
                     settingsMenu.open()
@@ -136,8 +138,8 @@ Item {
                 id: debugB
                 x: 2
                 y: 7
-                width: 50
-                height: 50
+                width: 60
+                height: 60
                 anchors.right: settingsB.left
                 anchors.rightMargin: 30
                 anchors.verticalCenter: parent.verticalCenter
@@ -145,19 +147,21 @@ Item {
                 display: AbstractButton.IconOnly
                 flat: true
 
-                background: Rectangle {
-                    color: "#00000000"
-                    radius: 30
-                    border.width: 0
-                    implicitWidth: 50
-                    border.color: "#ffffff"
-                    implicitHeight: 50
-                }
+//                background: Rectangle {
+//                    color: "#00000000"
+//                    radius: 30
+//                    border.width: 0
+//                    implicitWidth: 50
+//                    border.color: "#ffffff"
+//                    implicitHeight: 50
+//                }
                 Image {
                     id: debugImage
                     source: "Icons/debug-mode.png"
-                    anchors.fill: parent
-                    width: 60
+                    anchors.horizontalCenter: debugB.horizontalCenter
+                    anchors.verticalCenter: debugB.verticalCenter
+                    width: 45
+                    height: 45
                     fillMode: Image.PreserveAspectFit
                 }
                 ColorOverlay {
@@ -193,10 +197,11 @@ Item {
 
             Row {
                 id: swipeRow
-                spacing: 3
+                spacing: casRepeater.count == 4 ? 3 : 20
 //                width: childrenRect.width
 
                 Repeater {
+                    id: casRepeater
                     model: 3
                     delegate: Item {
                         width: cas.width
@@ -205,7 +210,13 @@ Item {
                         SampleStack {
                             id: cas
                             height: parent.height
-                            width: (casMonitor.width-3*swipeRow.spacing - casScroll.anchors.leftMargin - casScroll.anchors.rightMargin)/4
+                            width: {
+                                if (casRepeater.count >= 4){
+                                    return ((casMonitor.width-3*swipeRow.spacing - casScroll.anchors.leftMargin - casScroll.anchors.rightMargin)/4)
+                                } else {
+                                    return (196)
+                                }
+                            }
                             casNumber: index+1
                         }
                     }

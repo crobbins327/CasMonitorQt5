@@ -1,20 +1,51 @@
-parameters:
-  mixSpeed: 1.0
-  incSpeed: 0.2
-  removeSpeed: 1.0
-  wasteSpeed: 4.0
-  fillLineSpeed: 1.0
-  fillSyrSpeed: 1.0
-  washSyrSpeed: 1.0
-  densSpeed: 0.2
-  densVol: 0.1
-  LINEVOL: 0.75
-  removeVol: 1.5
-  purgeVol: 4.0
-  settleTime: 20.0
-  reagentDensOrder:
-    babb: 2
-    formalin: 1
-    meoh: 0
-    unk: 1
-    vial: 0
+load:
+  extraMixFactor: 1.1
+  volInLineFactor: 1.3
+  mixInSpeed: 500
+  mixOutSpeed: 50
+  purgeInSpeed: 400
+  purgeOutSpeed: 50
+  purgeVol: 0.5
+  washInSpeed: 500
+  wasteSpeed: 500
+  washVol: 1.5
+  clnInSpeed: 200
+  clnOutSpeed: 50
+  clnVol: 1
+  stainAirInSpeed: 500
+  stainAirOutSpeed: 200
+  stainAirVol: 1
+cassettes:
+  CAS1:
+    linevol: 1
+  CAS2:
+    linevol: 1
+  CAS3:
+    linevol: 1
+  CAS4:
+    linevol: 1
+  CAS5:
+    linevol: 1
+  CAS6:
+    linevol: 1
+reagents:
+  'FORMALIN':
+    'inSpeed': 500
+    'chamberSpeed': 50
+    'lineSpeed': 400
+    'pumpInWait': 1
+  'MEOH':
+    'inSpeed': 500
+    'chamberSpeed': 50
+    'lineSpeed': 200
+    'pumpInWait': 0
+  'DYE':
+    'inSpeed': 200
+    'chamberSpeed': 50
+    'lineSpeed': 200
+    'pumpInWait': 2
+  'BABB':
+    'inSpeed': 200
+    'chamberSpeed': 25
+    'lineSpeed': 200
+    'pumpInWait': 4

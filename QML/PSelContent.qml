@@ -59,7 +59,7 @@ Item {
                 if(mixAfterSecs=='undefined'){
                     return(null)
                 } else if(mixAfterSecs==0){
-                    return('no mixing')
+                    return(null)
                 } else if(mixAfterSecs>0){
                     return('mix every '+mixAfterSecs+'s')
                 } else{
@@ -76,25 +76,25 @@ Item {
             font.capitalization: Font.MixedCase
         }
 
-        Text {
-            id: speedText
-            y: 4
-            color: "#000000"
-            text: pSpeed == 'undefined' | numCycles != 'undefined' ? null : pSpeed+' Spd.'
-            anchors.left: opTimeText.right
-            anchors.verticalCenter: parent.verticalCenter
-            font.pointSize: 12
-            font.weight: Font.Medium
-            renderType: Text.QtRendering
-            anchors.leftMargin: 10
-            font.capitalization: Font.MixedCase
-        }
+//        Text {
+//            id: speedText
+//            y: 4
+//            color: "#000000"
+//            text: pSpeed == 'undefined' | numCycles != 'undefined' ? null : pSpeed+' Spd.'
+//            anchors.left: opTimeText.right
+//            anchors.verticalCenter: parent.verticalCenter
+//            font.pointSize: 12
+//            font.weight: Font.Medium
+//            renderType: Text.QtRendering
+//            anchors.leftMargin: 10
+//            font.capitalization: Font.MixedCase
+//        }
 
         Text {
             id: cycleText
             y: 4
             color: "#000000"
-            text: numCycles == 'undefined' ? null : numCycles+' Cyc.'
+            text: parseInt(numCycles) == 0 ? null : numCycles+' Cyc.'
             anchors.left: opTimeText.right
             anchors.verticalCenter: parent.verticalCenter
             font.pointSize: 12
@@ -111,8 +111,6 @@ Item {
             text: volume == 'undefined' ? null : volume
             anchors.right: parent.right
             anchors.rightMargin: 10
-//            anchors.left: numCycles == 'undefined' ? speedText.right : cycleText.right
-//            anchors.leftMargin: 20
             anchors.verticalCenter: parent.verticalCenter
             font.pointSize: 12
             font.weight: Font.Medium

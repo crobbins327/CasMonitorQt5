@@ -148,7 +148,7 @@ Item {
                     color: "transparent"
                 }
 
-                onClicked: {mainStack.pop(null, StackView.Immediate)}
+                onClicked: {mainStack.pop(null)}
             }
 
             Button {

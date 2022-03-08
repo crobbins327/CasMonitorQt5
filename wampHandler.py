@@ -49,9 +49,9 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     #Globals...
     jHelper = jh.JSONHelper()
     #Remove cas letter conversions
-    convCas = {1:'A',2:'B',3:'C',4:'D',5:'E',6:'F'}
+    convCas = {1:'CAS1', 2:'CAS2', 3:'CAS3', 4:'CAS4', 5:'CAS5', 6:'CAS6'}
     #CasNumber, protStrings, progstrings, runtime, sampleName, protocolName
-    setupProt = QtCore.Signal(str,'QVariantList','QVariantList',str,str,str)
+    setupProt = QtCore.Signal(str, 'QVariantList', 'QVariantList', str, str, str)
     startedProt = QtCore.Signal(int, str, int, int)
     # To repopulate the progress bars when there is a GUI disconnection and rejoin
     # repopulateProt = QtCore.Signal(str,'QVariantList','QVariantList',int,int,int,int,str,str,str)
@@ -59,7 +59,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     toWaitPopup = QtCore.Signal(str)
     controllerDCed = QtCore.Signal()
     controllerJoined = QtCore.Signal()
-    repopulateProt = QtCore.Signal(int, 'QVariantList','QVariantList', 'QVariantList')
+    repopulateProt = QtCore.Signal(int, 'QVariantList', 'QVariantList', 'QVariantList')
     #To update GUI that cassette is engaged and ready
     casEngaged = QtCore.Signal(int)
     casDisengaged = QtCore.Signal(int)
@@ -77,18 +77,21 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     
     recParam = QtCore.Signal('QVariantMap')
     
-    deadspace = 1000 
-    
     def __init__(self, config=None):
         QtCore.QObject.__init__(self)
         ApplicationSession.__init__(self, config=config)
-        self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','currentFluid','engaged','protocolList','progressNames','stepTimes','sampleName','protocolPath','protocolName','startlog','endlog'] ,
-                                   index=['casA','casB','casC','casD','casE','casF'], dtype=object)
+        self.taskDF = pd.DataFrame(columns = ['status','stepNum','secsRemaining','currentFluid','volInLine','engaged','protocolList','progressNames',
+                                              'stepTimes','sampleName','protocolPath','protocolName','startlog','endlog'] ,
+                                   index=['CAS1','CAS2','CAS3','CAS4','CAS5','CAS6'], dtype=object)
         self.taskDF.engaged = False
         self.taskDF.engaged = self.taskDF.engaged.astype(object)
         self.controllerStatus = 'disconnected'
         self.machineHomed = False
         self.paramDict = OrderedDict()
+        self.reaConv = {'Dehydrant': 'MEOH',
+                        'BABB': 'BABB',
+                        'Formalin': 'FORMALIN',
+                        'Stain': 'DYE'}
         # self.machineHalted = True
         # self.logsOpen = pd.DataFrame(columns = ['isLogOpen'] ,
         #                            index=['casA','casB','casC','casD','casE','casF','ctrl','machine'], dtype=object)
@@ -111,7 +114,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
 
     async def set_mStatus(self, mStatus):
         try:
-            if mStatus == True:
+            if mStatus:
                 self.machineHomed = True
                 # self.machineHalted = False
         except Exception as e:
@@ -142,8 +145,9 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         self.toWaitPopup.emit('Registering GUI functions to router...')
         try:
             self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-gui')
-            self.register(self.get_mStatus,'com.prepbot.prothandler.is-machine-homed')
+            # self.register(self.get_mStatus,'com.prepbot.prothandler.is-machine-homed')
             self.register(self.set_mStatus, 'com.prepbot.prothandler.set-machine-homed')
+            guilog.info('Registered all procedures!')
         except Exception as e:
             guilog.error('Could not register GUI functions to router...')
             guilog.error(e)
@@ -159,12 +163,11 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             
         self.toWaitPopup.emit('Connecting to controller...')
         guilog.info("Connecting to controller...")
-        # self.publish('com.prepbot.prothandler.request-tasks-gui')
+
         try:
             self.toWaitPopup.emit('Getting controller task dataframe...')
             guilog.info("Getting controller task dataframe...")
             taskDFJSON = await self.call('com.prepbot.prothandler.controller-tasks')
-            # guilog.info(taskDFJSON)
             self.toWaitPopup.emit('Checking if machine is homed...')
             guilog.info("Checking if machine is homed...")
             self.machineHomed = await self.call('com.prepbot.prothandler.gui-get-machine-homed')
@@ -227,7 +230,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     async def receiveParam(self, paramDict):
         self.paramDict = paramDict
         guilog.debug(paramDict)
-        self.recParam.emit(paramDict)
+        # self.recParam.emit(paramDict)
         
     @QtCore.Slot()
     def stopExecTerminal(self):
@@ -240,38 +243,39 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         #Error if run already in progress
         #Error if interpretter cannot interpret protocol
         #Interpret protocol and make list of strings to be executed
-        casL, protStrings, progStrings, stepTimes = self.interpret(casNumber, protPath)
+        cas, protStrings, progStrings, stepTimes = self.interpret(casNumber, protPath)
 
         #Start progress bar and track steps completed in protocol for current sample...
         #Setup run by sending info to progress bar and sending protStrings
-        self.publish('com.prepbot.prothandler.setup-protocol', casNumber,progStrings,stepTimes, runtime, sampleName, protocolName)
-        self.setupProt.emit(casNumber,progStrings,stepTimes, runtime, sampleName, protocolName)
+        # self.publish('com.prepbot.prothandler.setup-protocol', casNumber, progStrings, stepTimes, runtime, sampleName, protocolName)
+        self.setupProt.emit(casNumber, progStrings, stepTimes, runtime, sampleName, protocolName)
         #update taskDF
-        self.taskDF.loc['cas{}'.format(casL)] = np.array(['running',0,np.nan,'unk',True,protStrings, progStrings, stepTimes, sampleName,protPath,protocolName,np.nan,np.nan],dtype=object)
+        self.taskDF.loc[cas] = np.array(['running', 0, np.nan, 'unk', 0, True, protStrings, progStrings,
+                                         stepTimes, sampleName, protPath, protocolName, np.nan, np.nan], dtype=object)
         guilog.debug(self.taskDF)
         #Send protocol to controller to add to Q
-        self.publish('com.prepbot.prothandler.start', casL, self.taskDF.loc['cas{}'.format(casL)].to_json())
+        self.publish('com.prepbot.prothandler.start', cas, self.taskDF.loc[cas].to_json())
         #update log
-        guilog.info('cas{}: Starting protocol:\n{}\n{}\n{}'.format(casL,protStrings,progStrings,stepTimes))
+        guilog.info('{}: Starting protocol:\n{}\n{}\n{}'.format(cas, protStrings, progStrings, stepTimes))
     
     
     @wamp.subscribe('com.prepbot.prothandler.setup-protocol')
-    async def setupProtocol(self, casNumber,progStrings,stepTimes, runtime, sampleName, protocolName):
-        self.setupProt.emit(casNumber,progStrings,stepTimes, runtime, sampleName, protocolName)
+    async def setupProtocol(self, casNumber, progStrings, stepTimes, runtime, sampleName, protocolName):
+        self.setupProt.emit(casNumber, progStrings, stepTimes, runtime, sampleName, protocolName)
     
     #Separate start of gui when protocol is actually started on controller???
     #Hang until the start signal is actually received?
     @wamp.subscribe('com.prepbot.prothandler.started')
-    async def startedGUIProtocol(self, casName, taskJSON, samplelog, currentEnd):
-        self.taskDF.loc[casName] = pd.read_json(taskJSON, typ='series', dtype=object)
+    async def startedGUIProtocol(self, cas, taskJSON, samplelog, currentEnd):
+        self.taskDF.loc[cas] = pd.read_json(taskJSON, typ='series', dtype=object)
         #prepare run details chunk
-        start = int(self.taskDF.loc[casName,'startlog'])
+        start = int(self.taskDF.loc[cas, 'startlog'])
         guilog.debug('start: {} stop: {}'.format(start, int(currentEnd)))
-        # samplelog, currentEnd = await self.call('com.prepbot.prothandler.caslog-chunk', casL=casName[-1], start=start, end=0)
+        # samplelog, currentEnd = await self.call('com.prepbot.prothandler.caslog-chunk', cas=cas, start=start, end=0)
         #emit start signal
-        casNumber = int(self.__get_key(casName[-1], self.convCas))
+        casNumber = int(self.__get_key(cas, self.convCas))
         # guilog.debug(currentEnd,'Testing end getter')
-        guilog.info('{}: Confirmed protocol and sending sample log.'.format(casName))
+        guilog.info('{}: Confirmed protocol and sending sample log.'.format(cas))
         self.startedProt.emit(casNumber, samplelog, start, int(currentEnd))
         
     
@@ -282,170 +286,174 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     
     @QtCore.Slot(str, int)
     def refreshRunDet(self, casNumber, currentEnd):
-        casL = self.convCas[int(casNumber)]
-        casName = 'cas{}'.format(casL)
-        start = int(self.taskDF.loc[casName,'startlog'])
+        cas = self.convCas[int(casNumber)]
+        start = int(self.taskDF.loc[cas, 'startlog'])
         print(start)
-        end = int(self.taskDF.loc[casName,'endlog'])
+        end = int(self.taskDF.loc[cas, 'endlog'])
         print(end)
-        guilog.info('{}: Requesting a refresh on run details log.'.format(casName))
-        # print(self.taskDF.loc[casName])
+        guilog.info('{}: Requesting a refresh on run details log.'.format(cas))
+        # print(self.taskDF.loc[cas])
         #Request next lines (limit=1000) in the log at the current end
-        # asyncio.ensure_future(self.updateLogChunk(casL, start=currentEnd+1, end=0))
-        asyncio.ensure_future(self.requestLogChunk(casL, start=start, end=end))
+        # asyncio.ensure_future(self.updateLogChunk(cas, start=currentEnd+1, end=0))
+        asyncio.ensure_future(self.requestLogChunk(cas, start=start, end=end))
         
     
-    async def requestLogChunk(self, casL, start, end):
-        samplelog, currentEnd = await self.call('com.prepbot.prothandler.caslog-chunk', casL, start, end)
+    async def requestLogChunk(self, cas, start, end):
+        samplelog, currentEnd = await self.call('com.prepbot.prothandler.caslog-chunk', cas, start, end)
         if len(samplelog) > 0:
-            guilog.info('cas{}: Request run details log'.format(casL))
+            guilog.info('{}: Request run details log'.format(cas))
             guilog.debug('\n{}'.format(samplelog))
-            casNumber = int(self.__get_key(casL, self.convCas))
+            casNumber = int(self.__get_key(cas, self.convCas))
             self.reqLogChunk.emit(casNumber, samplelog, int(currentEnd))
         else:
-            guilog.info('cas{}: Nothing more to request for run details log'.format(casL))
+            guilog.info('{}: Nothing more to request for run details log'.format(cas))
             pass
     
     @wamp.subscribe('com.prepbot.prothandler.update-cas-log')
-    async def updateLogChunk(self, casL, samplelog, currentEnd):
+    async def updateLogChunk(self, cas, samplelog, currentEnd):
         #Receive log chunk
         if len(samplelog) > 0:
-            guilog.info('cas{}: Update run details log'.format(casL))
+            guilog.info('{}: Update run details log'.format(cas))
             guilog.debug('\n{}'.format(samplelog))
-            casNumber = int(self.__get_key(casL, self.convCas))
+            casNumber = int(self.__get_key(cas, self.convCas))
             self.upLogChunk.emit(casNumber, samplelog, int(currentEnd))
         else:
-            guilog.info('cas{}: Nothing to update for run details log'.format(casL))
+            guilog.info('{}: Nothing to update for run details log'.format(cas))
             pass
     
     
     @QtCore.Slot(str)
     def stopProtocol(self, casNumber):
-        casL = self.convCas[int(casNumber)]
-        self.publish('com.prepbot.prothandler.stop', casL)
+        cas = self.convCas[int(casNumber)]
+        self.publish('com.prepbot.prothandler.stop', cas)
         #mark as stopped in taskDF
-        guilog.info('cas{}: Requesting to stop run...'.format(casL))
-        self.taskDF.loc['cas{}'.format(casL),'status'] = 'stopped'
+        guilog.info('{}: Requesting to stop run...'.format(cas))
+        self.taskDF.loc[cas, 'status'] = 'stopped'
     
     @QtCore.Slot(str)
     def nextProtocol(self, casNumber):
-        casL = self.convCas[int(casNumber)]
+        cas = self.convCas[int(casNumber)]
         #Trust the GUI for speed.... if it reached the next button by mistake startProtocol will catch the error
-        # self.publish('com.prepbot.prothandler.next', casL)
-        self.taskDF.loc['cas{}'.format(casL),'status'] = 'idle'
+        # self.publish('com.prepbot.prothandler.next', cas)
+        self.taskDF.loc[cas, 'status'] = 'idle'
     
     @wamp.subscribe('com.prepbot.prothandler.start-clean')
-    async def start_clean(self, casL):
+    async def start_clean(self, cas):
         await asyncio.sleep(1)
-        guilog.info('\nCleaning Line of cas{}!!!\n'.format(casL))
-        casNumber = int(self.__get_key(casL, self.convCas))
+        guilog.info('\nCleaning Line of {}!!!\n'.format(cas))
+        casNumber = int(self.__get_key(cas, self.convCas))
         self.cleanStart.emit(casNumber)
     
     #Currently isNext does nothing and is always False
     @wamp.subscribe('com.prepbot.prothandler.finish-clean')
-    async def finish_clean(self, casL, taskJSON, isNext=False):
+    async def finish_clean(self, cas, taskJSON, isNext=False):
         await asyncio.sleep(1)
-        casNumber = int(self.__get_key(casL, self.convCas))
-        self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
+        casNumber = int(self.__get_key(cas, self.convCas))
+        self.taskDF.loc[cas] = pd.read_json(taskJSON, typ='series', dtype=object)
         if not isNext:
             self.cleanDone.emit(casNumber)
     
     @wamp.subscribe('com.prepbot.prothandler.start-shutdown')
-    async def start_shutown(self, casL):
+    async def start_shutown(self, cas):
         await asyncio.sleep(1)
-        guilog.info('\nSHUTTING DOWN cas{}!!!\n'.format(casL))
-        casNumber = int(self.__get_key(casL, self.convCas))
+        guilog.info('\nSHUTTING DOWN {}!!!\n'.format(cas))
+        casNumber = int(self.__get_key(cas, self.convCas))
         self.shutdownStart.emit(casNumber)
     
     #Currently isNext does nothing and is always False
     @wamp.subscribe('com.prepbot.prothandler.finish-shutdown')
-    async def finish_shutown(self, casL, taskJSON, isNext=False):
+    async def finish_shutown(self, cas, taskJSON, isNext=False):
         await asyncio.sleep(1)
-        casNumber = int(self.__get_key(casL, self.convCas))
-        self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
+        casNumber = int(self.__get_key(cas, self.convCas))
+        self.taskDF.loc[cas] = pd.read_json(taskJSON, typ='series', dtype=object)
         if not isNext:
             self.shutdownDone.emit(casNumber)
     
     #GUI waits until cassette is actually engaged before able to start a protocol
     @QtCore.Slot(str)
     def engageCas(self, casNumber):
-        casL = self.convCas[int(casNumber)]
-        self.publish('com.prepbot.prothandler.engage', casL)
+        cas = self.convCas[int(casNumber)]
+        self.publish('com.prepbot.prothandler.engage', cas)
     
     @wamp.subscribe('com.prepbot.prothandler.ready')
-    def casReady(self, casL, engageBool):
-        casNumber = int(self.__get_key(casL, self.convCas))
-        if engageBool == True:
+    def casReady(self, cas, engageBool, insertError=False):
+        casNumber = int(self.__get_key(cas, self.convCas))
+        if engageBool:
             self.casEngaged.emit(casNumber)
-            self.taskDF.loc['cas{}'.format(casL),'engaged'] = True
-            guilog.info('Cas{} engage complete'.format(casL))
+            self.taskDF.loc[cas, 'engaged'] = True
+            guilog.info('{} engage complete'.format(cas))
+        elif insertError:
+            #Make a warning popup when there is an insert error
+            # self.casInsertError.emit(casNumber)
+            self.taskDF.loc[cas, 'engaged'] = False
+            guilog.warning('{} is not inserted!'.format(cas))
         else:
             self.casDisengaged.emit(casNumber)
-            self.taskDF.loc['cas{}'.format(casL),'engaged'] = False
-            guilog.info('Cas{} disengage complete'.format(casL))
+            self.taskDF.loc[cas, 'engaged'] = False
+            guilog.info('{} disengage complete'.format(cas))
     
     #When the disengage button is hit, the GUI immediately switches away from the engaged screen
     #Deactivate the engage button until disengage is completed
     @QtCore.Slot(str)
     def disengageCas(self, casNumber):
-        casL = self.convCas[int(casNumber)]
-        self.publish('com.prepbot.prothandler.disengage', casL)
+        cas = self.convCas[int(casNumber)]
+        self.publish('com.prepbot.prothandler.disengage', cas)
         
     @wamp.subscribe('com.com.prepbot.prothandler.secs-remaining')
-    async def update_runtime(self, casL, secsRem):
+    async def update_runtime(self, cas, secsRem):
         await asyncio.sleep(1)
-        self.taskDF.loc['cas{}'.format(casL), 'secsRemaining'] = secsRem
-        guilog.info("cas{}: Getting seconds remaining for current step.... {}secs".format(casL,secsRem))
-        guilog.debug('\n{}'.format(self.taskDF.loc['cas{}'.format(casL)]))
+        self.taskDF.loc[cas, 'secsRemaining'] = secsRem
+        guilog.info("{}: Getting seconds remaining for current step.... {}secs".format(cas, secsRem))
+        guilog.debug('\n{}'.format(self.taskDF.loc[cas]))
     
     @wamp.subscribe('com.prepbot.prothandler.progress')
-    async def update_progress(self, casL, taskJSON):
+    async def update_progress(self, cas, taskJSON):
         #Prevent stopped or shutdown runs from updating???
         await asyncio.sleep(1)
-        casNumber = int(self.__get_key(casL, self.convCas))
-        guilog.info('cas{}: Updating progress to next step'.format(casL))
+        casNumber = int(self.__get_key(cas, self.convCas))
+        guilog.info('{}: Updating progress to next step'.format(cas))
         self.updateProg.emit(casNumber)
         #Replace entry in taskDF
-        self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
-        guilog.debug("\n{}".format(self.taskDF.loc['cas{}'.format(casL)]))
+        self.taskDF.loc[cas] = pd.read_json(taskJSON, typ='series', dtype=object)
+        guilog.debug("\n{}".format(self.taskDF.loc[cas]))
         
     @wamp.subscribe('com.prepbot.prothandler.update-taskdf')
-    async def update_taskDF(self, casL, taskJSON):
+    async def update_taskDF(self, cas, taskJSON):
         #Prevent stopped or shutdown runs from updating???
         await asyncio.sleep(1)
         #Replace entry in taskDF
         guilog.info('Updating GUI task DF.')
-        self.taskDF.loc['cas{}'.format(casL)] = pd.read_json(taskJSON, typ='series', dtype=object)
-        guilog.debug("\n{}".format(self.taskDF.loc['cas{}'.format(casL)]))
+        self.taskDF.loc[cas] = pd.read_json(taskJSON, typ='series', dtype=object)
+        guilog.debug("\n{}".format(self.taskDF.loc[cas]))
     
     
     @wamp.subscribe('com.prepbot.prothandler.one-task-to-gui')
-    def set_tasks_repopulate_one(self, casName, taskJSON):
-        self.taskDF.loc[casName] = pd.read_json(taskJSON, typ='series', dtype=object)
-        self.repopulate_one_GUI(casName)
+    def set_tasks_repopulate_one(self, cas, taskJSON):
+        self.taskDF.loc[cas] = pd.read_json(taskJSON, typ='series', dtype=object)
+        self.repopulate_one_GUI(cas)
         #Repopulate logs?
     
-    def repopulate_one_GUI(self, casName):
-        casNumber = int(self.__get_key(casName[-1], self.convCas))
+    def repopulate_one_GUI(self, cas):
+        casNumber = int(self.__get_key(cas, self.convCas))
         
-        if self.taskDF.loc[casName,'status'] in ['running','cleaning','finished','stopping','shutdown']:
-            otherVars = self.taskDF.loc[casName,['stepNum','secsRemaining','sampleName','protocolName','status']].tolist()
+        if self.taskDF.loc[cas,'status'] in ['running','cleaning','finished','stopping','shutdown']:
+            otherVars = self.taskDF.loc[cas, ['stepNum','secsRemaining','sampleName','protocolName','status']].tolist()
             # otherVars.append(totalSecs)
             # otherVars.append(tremSecs)
             # print('\npre-Emitted???')
-            guilog.info("{}: Repopulating GUI task".format(casName))
-            guilog.debug("\n{}".format(self.taskDF.loc[casName]))
-            # print(self.taskDF.loc[casName,'progressNames'])
-            # print(self.taskDF.loc[casName,'stepTimes'])
+            guilog.info("{}: Repopulating GUI task".format(cas))
+            guilog.debug("\n{}".format(self.taskDF.loc[cas]))
+            # print(self.taskDF.loc[cas,'progressNames'])
+            # print(self.taskDF.loc[cas,'stepTimes'])
             # print(otherVars)
             self.repopulateProt.emit(casNumber,
-                                  self.taskDF.loc[casName,'progressNames'],
-                                  self.taskDF.loc[casName,'stepTimes'],
+                                  self.taskDF.loc[cas,'progressNames'],
+                                  self.taskDF.loc[cas,'stepTimes'],
                                   otherVars)
             # print('Emitted???')
             
-        elif self.taskDF.loc[casName,'engaged']:
-            guilog.info('Emitting engages! {}'.format(casName))
+        elif self.taskDF.loc[cas, 'engaged']:
+            guilog.info('Emitting engages! {}'.format(cas))
             self.casEngaged.emit(casNumber)
     
     
@@ -472,12 +480,12 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             # print(i)
             # print(i in runfin)
             if i in runfin:
-                casNumber = int(self.__get_key(i[-1], self.convCas))
+                casNumber = int(self.__get_key(i, self.convCas))
                 # stepNum = self.taskDF.loc[i,'stepNum']
                 # secsRem = self.taskDF.loc[i,'secsRemaining']
                 # totalSecs = sum(self.taskDF.loc[i,'stepTimes'])
                 # tremSecs = sum(self.taskDF.loc[i,'stepTimes'][stepNum:]) + secsRem
-                otherVars = self.taskDF.loc[i,['stepNum','secsRemaining','sampleName','protocolName','status']].tolist()
+                otherVars = self.taskDF.loc[i, ['stepNum','secsRemaining','sampleName','protocolName','status']].tolist()
                 # otherVars.append(totalSecs)
                 # otherVars.append(tremSecs)
                 guilog.info("{}: Repopulating GUI task".format(i))
@@ -495,7 +503,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 # print('Emitted???')
             elif i in engagedCas:
                 guilog.info('Emitting engages! {}'.format(i))
-                self.casEngaged.emit(int(self.__get_key(i[-1], self.convCas)))
+                self.casEngaged.emit(int(self.__get_key(i, self.convCas)))
         
         # guilog.debug("Restore connection with logger(s)......NOT IMPLEMENTED YET...")
         
@@ -508,7 +516,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     
     def interpret(self, casNumber, protPath):
         #Convert casNumber to sample letter...
-        casL = self.convCas[int(casNumber)]
+        cas = self.convCas[int(casNumber)]
         #Open/Read .json file as a list of dictionaries
         jsonprot = self.jHelper.openToRun(protPath)
         #Strings to execute for protocol->controller
@@ -522,73 +530,63 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         for i in range(len(jsonprot)):
             oper = jsonprot[i]
             #Check volume string
-            if oper['volume'].lower() == 'undefined':
-                pass
-            elif oper['volume'][-2:].lower() == 'ul':
-                mL = False
-            elif oper['volume'][-2:].lower() == 'ml':
-                mL = True
-            else:
-                guilog.error('Volume in protocol step {} is not defined ({})! Use "undefined", mL, or uL for volume'.format(i,oper['volume']))
-                break
-                    
-            fluidType = 'undefined'
+            # if oper['volume'].lower() == 'undefined':
+            #     pass
+            # elif oper['volume'][-2:].lower() == 'ul':
+            #     mL = False
+            # elif oper['volume'][-2:].lower() == 'ml':
+            #     mL = True
+            # else:
+            #     guilog.error('Volume in protocol step {} is not defined ({})! Use "undefined", mL, or uL for volume'.format(i, oper['volume']))
+            #     break
+
             # print(oper)
             if oper['opName'] == 'Incubation':
-                inc = self.__incubate(casL, oper['opTime'], oper['mixAfterSecs'])
+                inc = self.__incubate(cas, oper['opTime'], oper['mixAfterSecs'], oper['volume'], oper['extraVolOut'])
                 protstrings.append(inc)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
             elif oper['opName'] == 'Mixing':
-                mix = self.__mix(casL, oper['numCycles'], oper['volume'], mL=mL)
+                mix = self.__mix(cas, oper['numCycles'], oper['volume'])
                 protstrings.append(mix)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
             elif oper['opName'] == 'Purge':
-                rem = self.__purge(casL, oper['volume'], mL=mL)
+                rem = self.__purge(cas)
                 protstrings.append(rem)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
             elif oper['opName'] == 'Load Formalin':
-#                rem = self.__purge(casL, oper['volume'], mL=mL)
-                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], oper['washSyr'], mL=mL)
-#                protstrings.append(rem+'\n'+load)
+                load = self.__load_reagent(cas, oper['loadType'], oper['volume'], oper['inSpeed'], oper['chamberSpeed'],
+                                           oper['lineSpeed'], oper['washSyr'], oper['washReagent'])
                 protstrings.append(load)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
-                fluidType = oper['loadType']
             elif oper['opName'] == 'Load Stain':
-#                rem = self.__purge(casL, oper['volume'], mL=mL)
-                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], oper['washSyr'], mL=mL)
-#                protstrings.append(rem+'\n'+load)
+                load = self.__load_reagent(cas, oper['loadType'], oper['volume'], oper['inSpeed'], oper['chamberSpeed'],
+                                           oper['lineSpeed'], oper['washSyr'], oper['washReagent'])
                 protstrings.append(load)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
-                fluidType = oper['loadType']
             elif oper['opName'] == 'Load BABB':
-#                rem = self.__purge(casL, oper['volume'], mL=mL)
-                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], oper['washSyr'], mL=mL)
-#                protstrings.append(rem+'\n'+load)
+                load = self.__load_reagent(cas, oper['loadType'], oper['volume'], oper['inSpeed'], oper['chamberSpeed'],
+                                           oper['lineSpeed'], oper['washSyr'], oper['washReagent'])
                 protstrings.append(load)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
-                fluidType = oper['loadType']
             elif oper['opName'] == 'Load Dehydrant':
-#                rem = self.__purge(casL, oper['volume'], mL=mL)
-                load = self.__load_reagent(casL, oper['volume'], oper['pSpeed'], oper['loadType'], oper['washSyr'], mL=mL)
-#                protstrings.append(rem+'\n'+load)
+                load = self.__load_reagent(cas, oper['loadType'], oper['volume'], oper['inSpeed'], oper['chamberSpeed'],
+                                           oper['lineSpeed'], oper['washSyr'], oper['washReagent'])
                 protstrings.append(load)
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
-                fluidType = oper['loadType']
             elif oper['opName'] == 'Load Custom':
                 protstrings.append('print("Custom loading reagent....")')
                 progstrings.append(oper['opName'])
                 stepTimes.append(self.__get_sec(oper['opTime']))
-                fluidType = oper['loadType']
             else:
                 guilog.error('Operation "{}" not in protocol operations!'.format(oper['opName']))
-        return(casL, protstrings, progstrings, stepTimes)
+        return(cas, protstrings, progstrings, stepTimes)
             
     
 
@@ -599,6 +597,20 @@ class wampHandler(ApplicationSession, QtCore.QObject):
       
         return 0
 
+    def convert_vol_to_mL(self, vol):
+        if 'mL' in str(vol):
+            vol = float(vol[:-2])
+        elif 'uL' in str(vol):
+            vol = float(vol[:-2]) / 1000
+        else:
+            # Check if vol is greater than MAX_PUMP_VOL
+            if float(vol) > 5:
+                # assume vol in uL
+                vol = float(vol)/1000
+            else:
+                # assume vol in mL
+                pass
+        return vol
 
     #For each dictionary, case switch or if elif opName
     #to make strings to be executed
@@ -607,84 +619,44 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         h, m, s = time_str.split(':')
         return int(h) * 3600 + int(m) * 60 + int(s)
 
-    def __incubate(self, casL, runtime, mixAfter):
+    def __incubate(self, cas, runtime, mixAfter, mixVol=0.1, extraVolOut=0):
         #Convert runtime hh:mm:ss into seconds
         incubateTime = self.__get_sec(runtime)
-        
+        # Convert vol to mL
+        mixVol = self.convert_vol_to_mL(mixVol)
+        extraVolOut = self.convert_vol_to_mL(extraVolOut)
         if mixAfter == 'undefined':
             mixAfter = 0
-        # incubate_time_sec =  10
-        #Mix every 2x seconds
-        # wash_interval = mixAfter
-        # washF = int(incubateTime/wash_interval)
-        # incStr = '''
-        # print('INCUBATING DYE')
-        # for i in range({}):
-        #     # print('i=',i)
-        #     for j in range({}):
-        #         sleep(1)
-        #         print("Sample{} Seconds remaining: ", ({}-j-(i*{})))
-        #     if ((i % 2) == 0):
-        #         print('Mix')
-        #         machine.pump_in(0.5)
-        #         sleep(2)
-        #         machine.pump_out(0.5)
-        # '''.format(washF,wash_interval,casL,incubateTime,wash_interval)
-        incStr = 'self.incubate(casL="{}",incTime={},mixAfter={})'.format(casL,incubateTime,mixAfter)
+
+        incStr = 'self.incubate(cas="{}",incTime={},mixAfter={},mixVol={},extraVolOut={})'.format(
+            cas, incubateTime, mixAfter, mixVol, extraVolOut)
         return(incStr)
                 
-    def __mix(self, casL, numCycles, volume, mL=False):
-        #Check if volume is in uL or mL??
-        if mL:
-            vol = float(volume[:-2])
-        else:
-            vol = float(volume[:-2])/1000
-        mixStr = 'self.mix(casL="{}", numCycles={}, volume={})'.format(casL,numCycles,vol)
+    def __mix(self, cas, numCycles, volume):
+        # Convert vol to mL
+        vol = self.convert_vol_to_mL(volume)
+
+        mixStr = 'self.mix(cas="{}", numCycles={}, volume={})'.format(cas, numCycles, vol)
         return(mixStr)
         
-    def __purge(self, casL, volume, mL=False):
-        #Check if volume is in uL or mL??
-        if mL:
-            vol = float(volume[:-2])
-        else:
-            vol = float(volume[:-2])/1000
-        #Convert to mL for machine pump in/out command
-#         deVol = vol + self.deadspace/1000
-        # purgeStr = '''
-        # print('PURGING CHAMBER')
-        # machine.goto_sample{}()
-        # machine.pump_in({})
-        # sleep(5)
-        # machine.empty_syringe()
-        # '''.format(casL,deVol)
-        purgeStr = 'self.purge(casL="{}")'.format(casL)
+    def __purge(self, cas):
+        purgeStr = 'self.purge(cas="{}")'.format(cas)
         return(purgeStr)
-        
-    def __load_reagent(self, casL, volume, speed, loadType, washSyr, mL=False):
-        reaConv = {'Dehydrant':'meoh','BABB':'babb',
-                   'Formalin':'formalin','Stain':'vial'}
-        #Check if volume is in uL or mL??
-        if mL:
-            vol = float(volume[:-2])
-        else:
-            vol = float(volume[:-2])/1000
-        #Convert to mL for machine pump in/out command
-        # deVol = vol + self.deadspace/1000
+
+    def __load_reagent(self, cas, loadType, volume, inSpeed=None, chamberSpeed=None, lineSpeed=None, washSyr='auto', washSyrReagent='Dehydrant'):
+        # Convert vol to mL
+        vol = self.convert_vol_to_mL(volume)
+
+
         if washSyr == 'true':
             washSyrBool = True
+            loadStr = 'self.loadReagent(cas="{}",reagent="{}",ml={},inSpeed={},chamberSpeed={},lineSpeed={},washSyr={},washSyrReagent="{}")'.format(
+                cas, self.reaConv[loadType], vol, inSpeed, chamberSpeed, lineSpeed, washSyrBool, self.reaConv[washSyrReagent])
         else:
-            washSyrBool = False
-            
-        # loadString = '''
-        # print('ADDING {}')
-        # machine.goto_{}()
-        # machine.pump_in({},{})
-        # sleep(5)
-        # machine.goto_sample{}()
-        # machine.pump_out({},{})
-        # '''.format(loadType,reaConv[loadType],vol,speed,casL,deVol,speed)
-        loadStr= 'self.loadReagent(casL="{}",reagent="{}",vol={},speed={}, washSyr={}, loadstr="{}")'.format(casL, reaConv[loadType], vol, speed, washSyrBool, loadType)
+            washSyrBool = 'auto'
+            loadStr = 'self.loadReagent(cas="{}",reagent="{}",ml={},inSpeed={},chamberSpeed={},lineSpeed={},washSyr="{}",washSyrReagent="{}")'.format(
+                cas, self.reaConv[loadType], vol, inSpeed, chamberSpeed, lineSpeed, washSyrBool,
+                self.reaConv[washSyrReagent])
+
         return(loadStr)
-        
-    
     
