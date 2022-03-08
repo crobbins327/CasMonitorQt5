@@ -1,8 +1,8 @@
 #!/home/jackr/anaconda/envs/QML36/bin/python
 import os
 import sys
-#sys.path.append('/home/pi/CasMonitorQt5/')
-sys.path.append('F:/Torres/CasMonitorQt5/')
+sys.path.append('/home/pi/CasMonitorQt5/')
+# sys.path.append('F:/Torres/CasMonitorQt5/')
 import asyncio
 from autobahn.asyncio.wamp import ApplicationSession
 from autobahn_autoreconnect import ApplicationRunner
@@ -214,20 +214,6 @@ class Component(ApplicationSession):
         
                 
     async def onJoin(self, details):
-        # Trying to check if there was a disconnection recently
-        # If disconnection occured, load in taskDF from file
-        ctrl.info(sys.getrecursionlimit())
-        ctrl.info('Loading last controller state...')
-        disconnectDir = os.listdir('./Log/disconnect')
-        if 'disconnect-state.pkl' in disconnectDir:
-            dcTask = pd.read_pickle('./Log/disconnect/disconnect-state.pkl')
-            ctrl.info('Checking disconnect-state for last controller state...')
-            ctrl.debug('\n{}'.format(dcTask))
-            self.taskDF = dcTask
-            # Remove that file so that it would not disrupt a new controller instance
-        else:
-            dcTask = []
-        # Else, new controller instance with no taskDF
         # Register so that GUI can get_tasks when reconnecting/joining
         try:
             self.register(self.get_tasks, 'com.prepbot.prothandler.controller-tasks')
@@ -244,8 +230,24 @@ class Component(ApplicationSession):
             ctrl.info("Subscribed to {0} procedure(s)".format(len(res)))
         except Exception as e:
             ctrl.error("could not subscribe to procedure: {0}".format(e))
-
+        
         asyncio.ensure_future(self.update())
+        
+        # Trying to check if there was a disconnection recently
+        # If disconnection occured, load in taskDF from file
+        ctrl.info(sys.getrecursionlimit())
+        ctrl.info('Loading last controller state...')
+        disconnectDir = os.listdir('./Log/disconnect')
+        if 'disconnect-state.pkl' in disconnectDir:
+            dcTask = pd.read_pickle('./Log/disconnect/disconnect-state.pkl')
+            ctrl.info('Checking disconnect-state for last controller state...')
+            ctrl.debug('\n{}'.format(dcTask))
+            self.taskDF = dcTask
+            # Remove that file so that it would not disrupt a new controller instance
+        else:
+            dcTask = []
+        # Else, new controller instance with no taskDF
+
         # After connecting to router, make sure machine is connected and check if it should be homed
         # Need to release the lock to reset the pump homing file when the controller is first opened
         try:

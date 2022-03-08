@@ -165,9 +165,6 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         guilog.info("Connecting to controller...")
 
         try:
-            self.toWaitPopup.emit('Getting controller task dataframe...')
-            guilog.info("Getting controller task dataframe...")
-            taskDFJSON = await self.call('com.prepbot.prothandler.controller-tasks')
             self.toWaitPopup.emit('Checking if machine is homed...')
             guilog.info("Checking if machine is homed...")
             self.machineHomed = await self.call('com.prepbot.prothandler.gui-get-machine-homed')
@@ -175,6 +172,11 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             self.toWaitPopup.emit('Getting controller parameters...')
             guilog.info("Getting controller parameters..")
             await self.call('com.prepbot.prothandler.gui-get-param')
+            self.toWaitPopup.emit('Getting controller task dataframe...')
+            guilog.info("Getting controller task dataframe...")
+            taskDFJSON = await self.call('com.prepbot.prothandler.controller-tasks')
+            self.toWaitPopup.emit('Repopulating GUI with tasks...')
+            await self.set_tasks_repopulate_all(taskDFJSON)
         except Exception as e:
             guilog.warning("Waiting until controller is connected...")
             guilog.warning(e)
@@ -182,8 +184,6 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             self.leave()
             self.disconnect()
         
-        self.toWaitPopup.emit('Repopulating GUI with tasks...')
-        self.set_tasks_repopulate_all(taskDFJSON)
         self.toWaitPopup.emit('Finished setting tasks and repopulating GUI!')
         guilog.info('Finished setting tasks and repopulating GUI!')
         
@@ -458,7 +458,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     
     
     @wamp.subscribe('com.prepbot.prothandler.tasks-to-gui')
-    def set_tasks_repopulate_all(self, taskDFJSON):
+    async def set_tasks_repopulate_all(self, taskDFJSON):
         cTasks = pd.read_json(taskDFJSON, typ='frame', dtype=object)
         if cTasks.equals(self.taskDF):
             guilog.info('Controller has same taskDF as GUI')
