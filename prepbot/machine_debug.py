@@ -5,25 +5,28 @@ import time
 import os
 import math
 
-formatter = ColoredFormatter(
-    "%(log_color)s%(levelname)-8s%(reset)s %(blue)s%(message)s",
-    datefmt=None,
-    reset=True,
-    log_colors={
-        'DEBUG':    'cyan',
-        'INFO':     'green',
-        'WARNING':  'yellow',
-        'ERROR':    'red',
-        'CRITICAL': 'red,bg_white',
-    },
-    secondary_log_colors={},
-    style='%'
-)
-handler = logging.StreamHandler()
-handler.setFormatter(formatter)
-logger = logging.getLogger(__name__)
-logger.addHandler(handler)
-logger.setLevel(logging.DEBUG)
+# formatter = ColoredFormatter(
+#     "%(log_color)s%(levelname)-8s%(reset)s %(blue)s%(message)s",
+#     datefmt=None,
+#     reset=True,
+#     log_colors={
+#         'DEBUG':    'cyan',
+#         'INFO':     'green',
+#         'WARNING':  'yellow',
+#         'ERROR':    'red',
+#         'CRITICAL': 'red,bg_white',
+#     },
+#     secondary_log_colors={},
+#     style='%'
+# )
+# handler = logging.StreamHandler()
+# handler.setFormatter(formatter)
+# logger = logging.getLogger(__name__)
+# logger.addHandler(handler)
+# logger.setLevel(logging.DEBUG)
+
+logger = logging.getLogger('ctrl.machine')
+logger.setLevel(logging.INFO)
 
 PUMP_Z_PER_ML = 30
 
@@ -107,10 +110,16 @@ def release():
     # logger.info('releasing hardware control')
     # for p in s.values():
     #     p.close()
-    # os.remove('/run/shm/prepbot.lock')
-    # os.remove('F:/Torres/CasMonitorQt5/prepbot.lock')
-    # os.remove('/run/shm/pump_homed')
-    os.remove('F:/Torres/CasMonitorQt5/pump_homed')
+    try:
+        # os.remove('/run/shm/prepbot.lock')
+        os.remove('F:/Torres/CasMonitorQt5/prepbot.lock')
+    except Exception as e:
+        logger.warning(e)
+    try:
+        # os.remove('/run/shm/pump_homed')
+        os.remove('F:/Torres/CasMonitorQt5/pump_homed')
+    except Exception as e:
+        logger.warning(e)
 
 def pump_home():
     logger.info('homing pump')

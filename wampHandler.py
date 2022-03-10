@@ -186,8 +186,8 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         guilog.info("Connecting to controller...")
 
         try:
-            self.toWaitPopup.emit('Checking if machine is homed...')
-            guilog.info("Checking if machine is homed...")
+            self.toWaitPopup.emit('Getting hardware lock and homing...')
+            guilog.info("Getting hardware lock and homing...")
             self.machineHomed = await self.call('com.prepbot.prothandler.gui-get-machine-homed')
             guilog.info('Machine is homed? : {}'.format(self.machineHomed))
             self.toWaitPopup.emit('Getting controller parameters...')
@@ -221,7 +221,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     async def conJoined(self):
         self.controllerJoined.emit()
     
-    # @wamp.subscribe('com.prepbot.prothandler.controller-dced')
+    @wamp.subscribe('com.prepbot.prothandler.controller-dced')
     async def conDCed(self):
         self.controllerDCed.emit()
      
@@ -233,7 +233,12 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     def onDisconnect(self):
         guilog.info("Disconnected GUI")
         guilog.info(self.taskDF)
-    
+
+    @QtCore.Slot()
+    def closeApp(self):
+    	self.call('com.prepbot.prothandler.discconnect-ctrl')
+
+
     @QtCore.Slot(str)
     def execScript(self, linesToExec):
         self.publish('com.prepbot.prothandler.exec-script', linesToExec)

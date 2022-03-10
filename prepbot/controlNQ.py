@@ -212,7 +212,6 @@ class Component(ApplicationSession):
     def send_param(self):
         self.publish('com.prepbot.prothandler.send-param-gui', confY)
 
-        
                 
     async def onJoin(self, details):
         # Register so that GUI can get_tasks when reconnecting/joining
@@ -222,6 +221,7 @@ class Component(ApplicationSession):
             self.register(self.get_caslogchunk, 'com.prepbot.prothandler.caslog-chunk')
             self.register(self.send_mStatus, 'com.prepbot.prothandler.gui-get-machine-homed')
             self.register(self.send_param, 'com.prepbot.prothandler.gui-get-param')
+            self.register(self.leaveNDC, 'com.prepbot.prothandler.discconnect-ctrl')
             ctrl.info('Registered all procedures!')
         except Exception as e:
             ctrl.error('Could not register functions to router...')
@@ -293,7 +293,10 @@ class Component(ApplicationSession):
         else:
             ctrl.info('No dcTask file was found, starting controller in null state.')
             
-            
+    def leaveNDC(self):
+        self.leave()
+        self.disconnect()
+
     def onDisconnect(self):
         ctrl.warning("Disconnected, {}".format(self.activeTasks))
         if self.writeDCstate == True:

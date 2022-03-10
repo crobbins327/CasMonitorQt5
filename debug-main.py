@@ -2,6 +2,7 @@
 import sys
 sys.path.append('~/CasMonitorQt5')
 import subprocess
+import time
 
 if __name__ == '__main__':
     processes = []
@@ -9,7 +10,12 @@ if __name__ == '__main__':
     processes.append(subprocess.Popen([sys.executable, 'setupGUI.py']))
 
     while True:
-        if any(p.poll() == 0 for p in processes):
+        time.sleep(10)
+#        print(processes)
+        for p in processes:
+            print(p)
+            print(p.poll())
+        if any(p.poll() != None for p in processes):
             break
         continue
 

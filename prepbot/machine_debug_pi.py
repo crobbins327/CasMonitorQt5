@@ -111,7 +111,7 @@ def release():
     # for p in s.values():
     #     p.close()
     try:
-        # os.remove('/run/shm/prepbot.lock')
+        os.remove('/run/shm/prepbot.lock')
         # os.remove('F:/Torres/CasMonitorQt5/prepbot.lock')
     except Exception as e:
         logger.warning(e)
