@@ -174,7 +174,7 @@ class Component(ApplicationSession):
                         self.taskDF.loc[i, 'endlog'] = currentEnd
                         self.publish('com.prepbot.prothandler.update-cas-log', i, linesToSend, currentEnd)
                         ctrl.debug('Sent updated {} cassette log!'.format(i))
-                await asyncio.sleep(10)
+                await asyncio.sleep(20)
             except Exception as e:
                 if 'termTask' in str(e):
                     await self.stopTermTasks()
@@ -182,7 +182,7 @@ class Component(ApplicationSession):
                     self.guiStatus = 'disconnected'
                     ctrl.warning('GUI is disconnected!')
                     ctrl.warning(e)
-                await asyncio.sleep(1)
+                await asyncio.sleep(5)
                 
     @wamp.subscribe('com.prepbot.prothandler.send-param-controller')
     async def update_param(self, paramDict):
@@ -400,6 +400,7 @@ class Component(ApplicationSession):
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
         #Check if machine is connected and homed
+        await asyncio.sleep(5)
         await self.connectNHome()
         casLogs[cas].info('Engage {}...'.format(cas))
         try:
@@ -425,6 +426,7 @@ class Component(ApplicationSession):
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
         #Check if machine is connected and homed
+        await asyncio.sleep(5)
         await self.connectNHome()
         casLogs[cas].info('Disengage {}...'.format(cas))
         try:

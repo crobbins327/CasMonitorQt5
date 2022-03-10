@@ -354,3 +354,18 @@
 2022-03-07 02:45:35 ctrl.opTimes INFO     Shutdown Time: 17.16s
 2022-03-07 02:45:42 ctrl.opTimes INFO     FINISHED LOADING FRESH BABB to CAS1, Time: 7.04s
 2022-03-07 02:45:57 ctrl.opTimes INFO     Clean Time: 14.63s
+2022-03-10 12:06:04 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 1.00s
+2022-03-10 12:06:05 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 1.00s
+2022-03-10 12:06:05 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 1.00s
+2022-03-10 12:06:06 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 1.00s
+2022-03-10 12:06:06 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 1.00s
+2022-03-10 12:06:06 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 3.01s
+2022-03-10 12:06:09 ctrl.opTimes INFO     Purge, 0.5 mL, 400 purgeInSpeed, 50 purgeOutSpeed, Time: 3.01s
+2022-03-10 12:06:09 ctrl.opTimes INFO     Purge, 0.5 mL, 400 purgeInSpeed, 50 purgeOutSpeed, Time: 3.01s
+2022-03-10 12:06:09 ctrl.opTimes INFO     FINISHED WASHING SYRINGE, Time: 0.00s
+2022-03-10 12:06:09 ctrl.opTimes INFO     FINISHED WASHING SYRINGE, Time: 0.00s
+2022-03-10 12:06:14 ctrl.opTimes INFO     FINISHED LOADING FRESH FORMALIN to CAS2, Time: 4.01s
+2022-03-10 12:06:14 ctrl.opTimes INFO     FINISHED LOADING FRESH FORMALIN to CAS2, Time: 4.01s
+2022-03-10 12:06:30 ctrl.opTimes INFO     Clean Time: 14.60s
+2022-03-10 12:06:30 ctrl.opTimes INFO     Shutdown Time: 16.17s
+2022-03-10 12:06:30 ctrl.opTimes INFO     Shutdown Time: 16.17s

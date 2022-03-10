@@ -9,7 +9,7 @@ import "./Icons/"
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 1
+    property int stackIndex: 0
     property double runProgVal: 0
     property string firstRunTime : "01:31:55"
     property int firstRunSecs : get_sec(root.firstRunTime)
@@ -31,6 +31,8 @@ Item {
     property int endlog: 0
     property int currentEnd: 0
     property bool isLogRefreshed: false
+
+    property string sampleName: ''
 
     signal reSetupProt(string casNum, variant progS, variant stepTimes, string runtime, string samplen, string protocoln)
     signal reStartedProt(int casNum, string logChunk, int start, int currentEnd)
@@ -66,7 +68,7 @@ Item {
     }
 
     width: 195
-    height: 250
+    height: 300
 
     Connections {
         target: root
@@ -374,7 +376,7 @@ Item {
                     if (root.casNumber==casNum){
                         root.stackIndex = 1
                         engageCasB.enabled = true
-                        engageCasB.checked = false
+//                        engageCasB.checked = false
 //                        console.log('Engaged Cas', casNumber)
                     }
         }
@@ -383,7 +385,7 @@ Item {
                     if (root.casNumber==casNum){
                         root.stackIndex = 0
                         engageCasB.enabled = true
-                        engageCasB.checked = false
+//                        engageCasB.checked = false
 //                        console.log('Disengaged Cas', casNumber)
                     }
         }
@@ -395,7 +397,7 @@ Item {
             stopRunB.enabled = false
             nextRunB.enabled = false
             setupRunB.enabled = false
-            defRunB.enabled = false
+//            defRunB.enabled = false
         }
         function onReJoinController() {
 //            root.isHanging = false
@@ -404,7 +406,7 @@ Item {
             stopRunB.enabled = true
             nextRunB.enabled = true
             setupRunB.enabled = true
-            defRunB.enabled = true
+//            defRunB.enabled = true
         }
     }
 
@@ -453,7 +455,7 @@ Item {
                 Button {
                     id: engageCasB
                     Layout.preferredHeight: 50
-                    Layout.minimumHeight: 30
+                    Layout.minimumHeight: 40
                     text: qsTr("Engage")
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     font.pointSize: 11
@@ -468,7 +470,7 @@ Item {
                     onClicked: {
                         WAMPHandler.engageCas(root.casNumber)
                         engageCasB.enabled = false
-                        engageCasB.checked = true
+//                        engageCasB.checked = true
                     }
                 }
            }
@@ -522,7 +524,63 @@ Item {
                         root.stackIndex = 0
                         WAMPHandler.disengageCas(root.casNumber)
                         engageCasB.enabled = false
-                        engageCasB.checked = true
+//                        engageCasB.checked = false
+                    }
+                }
+
+                Rectangle {
+                    id: sampRec
+                    y: 48
+                    width: parent.width
+                    height: 31
+                    color: "#808080"
+
+                    TextInput {
+                        id: sampInput
+                        property string placeholderText: "Enter Sample Name..."
+                        font.capitalization: Font.MixedCase
+                        color: "#ffffff"
+                        leftPadding: 5
+                        anchors.rightMargin: 0
+                        anchors.bottomMargin: 0
+                        anchors.leftMargin: 0
+                        anchors.topMargin: 0
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignLeft
+                        anchors.fill: parent
+                        font.pointSize: 10
+                        selectionColor: "#040450"
+
+                        text: activeFocus ? sampleName : ''
+                        clip: true
+
+                        onEditingFinished: {
+                            sampleName = sampInput.text
+//                                console.log(sampleName)
+                        }
+
+                        Text {
+                            id: placeholderTxt
+                            anchors.fill: parent
+                            text: sampInput.placeholderText
+                            leftPadding: 5
+                            verticalAlignment: Text.AlignVCenter
+                            color: "#aaa"
+                            font: sampInput.font
+                            visible: !sampleName && !sampInput.activeFocus
+                        }
+
+                        Text {
+                            id: shortTxt
+                            anchors.fill: parent
+                            text: sampleName
+                            elide: Text.ElideMiddle
+                            leftPadding: 5
+                            verticalAlignment: Text.AlignVCenter
+                            color: "#ffffff"
+                            font: sampInput.font
+                            visible: sampInput.activeFocus ? false : true
+                        }
                     }
                 }
 
@@ -538,7 +596,7 @@ Item {
                     model: ["Full Process", "No Stain", "No Fixation", "Custom"]
 
                     font.pointSize: 11
-                    Layout.topMargin: 40
+                    Layout.topMargin: 10
                     Layout.preferredWidth: colLayout.width/1.1
                     Layout.preferredHeight: 50
                     Layout.minimumHeight: 30
@@ -557,9 +615,29 @@ Item {
                     Material.theme: Material.Light
 
                     onClicked: {
-                        console.log("Setup run: ", casNumber)
-                        //                        push protocol selector screen and populate with casNumber info
-                        mainStack.push("ProtocolSelector.qml", {casNumber: casNumber})
+                        console.log(comboProt.currentValue)
+                        if (comboProt.currentValue=='Custom'){
+                            //push protocol selector screen and populate with casNumber info
+                            mainStack.push("ProtocolSelector.qml", {casNumber: root.casNumber, sampleName: root.sampleName})
+                        } else {
+                            // Check if sample name exists, if not push warning popup
+                            if (!/\S/.test(root.sampleName)){
+                                sampleNameDi.open()
+                            //Check if model data is empty
+                            } else {
+                                // Start protocol with sample name depending on combobox choice
+                                if (comboProt.currentValue=='Full Process'){
+                                    var savedPath = 'F:/Torres/CasMonitorQt5/Protocols/all_operations_new.json'
+                                    WAMPHandler.startProtocol(root.casNumber, savedPath, 'undefined', root.sampleName, 'Full Process')
+                                } else if (comboProt.currentValue=='No Stain'){
+                                    var savedPath = ''
+                                    WAMPHandler.startProtocol(root.casNumber, savedPath, 'undefined', root.sampleName, 'No Stain')
+                                } else if (comboProt.currentValue=='No Fixation'){
+                                    var savedPath = ''
+                                    WAMPHandler.startProtocol(root.casNumber, savedPath, 'undefined', root.sampleName, 'No Fixation')
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -883,6 +961,16 @@ Item {
     }
 
     MessageDialog {
+        id: sampleNameDi
+        standardButtons: StandardButton.Ok
+        icon: StandardIcon.Critical
+        text: "Enter a sample name to start the run on Cassette "+root.casNumber.toString()+"."
+        title: "Sample name is missing."
+        modality: Qt.WindowModal
+        onAccepted: {}
+    }
+
+    MessageDialog {
         id: stopDialog
         standardButtons: StandardButton.Cancel | StandardButton.Yes
         icon: StandardIcon.Warning
@@ -930,14 +1018,3 @@ Item {
     }
 }
 
-
-
-
-
-
-
-/*##^##
-Designer {
-    D{i:0;formeditorZoom:2}
-}
-##^##*/

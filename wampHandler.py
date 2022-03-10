@@ -4,6 +4,7 @@ import jsonHelper as jh
 import json
 import jsonschema
 from time import sleep
+import datetime
 import numpy as np
 import pandas as pd
 # pd.set_option('display.max_rows', None)
@@ -156,9 +157,9 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                 guilog.warning('Controller disconnected...')
                 if self.controllerStatus == 'connected':
                     self.controllerStatus = 'disconnected'
-                    guilog.warning('Sending disconnect to GUI!')
-                    await self.conDCed()
-            await asyncio.sleep(1)
+                guilog.warning('Sending disconnect to GUI!')
+                await self.conDCed()
+            await asyncio.sleep(30)
         
     async def onJoin(self, details):
         guilog.info('Registering GUI functions...')
@@ -196,7 +197,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             guilog.info("Getting controller task dataframe...")
             taskDFJSON = await self.call('com.prepbot.prothandler.controller-tasks')
             self.toWaitPopup.emit('Repopulating GUI with tasks...')
-            await self.set_tasks_repopulate_all(taskDFJSON)
+            self.set_tasks_repopulate_all(taskDFJSON)
         except Exception as e:
             guilog.warning("Waiting until controller is connected...")
             guilog.warning(e)
@@ -268,6 +269,14 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         #Start progress bar and track steps completed in protocol for current sample...
         #Setup run by sending info to progress bar and sending protStrings
         # self.publish('com.prepbot.prothandler.setup-protocol', casNumber, progStrings, stepTimes, runtime, sampleName, protocolName)
+        print(runtime)
+        if runtime == 'undefined':
+        	#Calculate runtime from stepTimes in seconds
+        	totalSecs = sum(stepTimes)
+        	runtime = str(datetime.timedelta(seconds=totalSecs))
+        	print(runtime)
+
+
         self.setupProt.emit(casNumber, progStrings, stepTimes, runtime, sampleName, protocolName)
         #update taskDF
         self.taskDF.loc[cas] = np.array(['running', 0, np.nan, 'unk', 0, True, protStrings, progStrings,
@@ -407,6 +416,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             # self.casInsertError.emit(casNumber)
             self.taskDF.loc[cas, 'engaged'] = False
             guilog.warning('{} is not inserted!'.format(cas))
+            self.casDisengaged.emit(casNumber)
         else:
             self.casDisengaged.emit(casNumber)
             self.taskDF.loc[cas, 'engaged'] = False
@@ -478,7 +488,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     
     
     @wamp.subscribe('com.prepbot.prothandler.tasks-to-gui')
-    async def set_tasks_repopulate_all(self, taskDFJSON):
+    def set_tasks_repopulate_all(self, taskDFJSON):
         cTasks = pd.read_json(taskDFJSON, typ='frame', dtype=object)
         if cTasks.equals(self.taskDF):
             guilog.info('Controller has same taskDF as GUI')
