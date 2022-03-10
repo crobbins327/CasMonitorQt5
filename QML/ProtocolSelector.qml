@@ -253,7 +253,15 @@ Item {
                                 //read file i/o
                                 var path = fileURL.toString();
                                 // remove prefixed "file:///"
-                                path = path.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
+                                if (rootApWin.operatingSystem == 'Windows'){
+                                    //IF WINDOWS
+                                    // remove prefixed "file:///"
+                                    path = path.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
+                                } else {
+                                    //IF LINUX OR OTHER
+                                    // remove prefixed "file://"  only 2 /'s
+                                    path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+                                }
                                 // unescape html codes like '%23' for '#'
                                 var cleanPath = decodeURIComponent(path);
                                 
