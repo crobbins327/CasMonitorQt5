@@ -252,7 +252,7 @@ class Component(ApplicationSession):
         # After connecting to router, make sure machine is connected and check if it should be homed
         # Need to release the lock to reset the pump homing file when the controller is first opened
         try:
-            machine.release()
+            machine.connect()
             time.sleep(1)
             machine.acquire()
             ctrl.info('Checking if machine is homed...')
@@ -314,7 +314,7 @@ class Component(ApplicationSession):
         ctrl.info('Checking if machine is homed....')
         if self.halted or not self.homed:
             try:
-                machine.release()
+                machine.connect()
                 time.sleep(1)
                 machine.acquire()
                 self.homed = machine.pump_is_homed()

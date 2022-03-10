@@ -107,10 +107,16 @@ def release():
     logger.info('releasing hardware control')
     # for p in s.values():
     #     p.close()
-    # os.remove('/run/shm/prepbot.lock')
-    # os.remove('F:/Torres/CasMonitorQt5/prepbot.lock')
-    os.remove('/run/shm/pump_homed')
-    # os.remove('F:/Torres/CasMonitorQt5/pump_homed')
+    try:
+        # os.remove('/run/shm/prepbot.lock')
+        # os.remove('F:/Torres/CasMonitorQt5/prepbot.lock')
+    except Exception as e:
+        logger.warning(e)
+    try:
+        os.remove('/run/shm/pump_homed')
+        # os.remove('F:/Torres/CasMonitorQt5/pump_homed')
+    except Exception as e:
+        logger.warning(e)
 
 def pump_home():
     logger.info('homing pump')
