@@ -1,6 +1,7 @@
 #!/home/jackr/anaconda/envs/QML36/bin/python
 import sys
 import os
+import platform
 from pathlib import Path
 import logging
 import logging.config
@@ -11,7 +12,6 @@ import jsonHelper as jh
 import wampHandler as wh
 from PySide2 import QtCore, QtGui, QtQml, QtQuick, QtWidgets
 from PySide2.QtQuickControls2 import QQuickStyle
-import sys
 # insert at 1, 0 is the script path (or '' in REPL)
 sys.path.insert(1, './prepbot')
 
@@ -44,6 +44,7 @@ if __name__ == '__main__':
 
     #Setup QML application with asynchronous event loop
 #    app = QtWidgets.QApplication(sys.argv)
+
     app = QtGui.QGuiApplication(sys.argv)
 
     asyncio_loop = QEventLoop(app)

@@ -24,6 +24,7 @@ Item {
     property string runTime: estRunTime(rootSel.stepModel)
     property string defPath: rootApWin.defPath
     property string defProtName: rootApWin.defProtName
+    property string operatingSystem: rootApWin.operatingSystem
 
     signal reNextModel(string jsondata, string protName, string pathSaved)
     Component.onCompleted: {

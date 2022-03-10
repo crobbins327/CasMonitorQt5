@@ -18,6 +18,7 @@ ApplicationWindow {
     property bool isDisconnected: true
     property bool guiJoined: false
     property string waitPopupTxt: 'Connecting....'
+    property string operatingSystem: WAMPHandler.OS
     signal exit()
     signal reGUIJoined()
     signal reDCController()
@@ -32,6 +33,7 @@ ApplicationWindow {
         WAMPHandler.controllerDCed.connect(reDCController)
         WAMPHandler.controllerJoined.connect(reJoinController)
         WAMPHandler.toWaitPopup.connect(rePopupTxt)
+        console.debug(operatingSystem)
         waitPopup.open()
     }
     Connections {
