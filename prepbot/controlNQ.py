@@ -182,6 +182,7 @@ class Component(ApplicationSession):
                     self.guiStatus = 'disconnected'
                     ctrl.warning('GUI is disconnected!')
                     ctrl.warning(e)
+                self.publish('com.prepbot.prothandler.controller-dced')
                 await asyncio.sleep(5)
                 
     @wamp.subscribe('com.prepbot.prothandler.send-param-controller')
