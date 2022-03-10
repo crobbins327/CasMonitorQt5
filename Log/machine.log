@@ -1,0 +1,463 @@
+2022-03-10 15:50:09 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 15:50:09 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 15:50:09 ctrl.machine INFO     hardware locked, waiting
+2022-03-10 15:50:09 ctrl.machine INFO     hardware locked, waiting
+2022-03-10 15:51:08 ctrl.machine INFO     got hardware
+2022-03-10 15:51:08 ctrl.machine INFO     got hardware
+2022-03-10 15:51:08 ctrl.machine INFO     connect to pump
+2022-03-10 15:51:08 ctrl.machine INFO     connect to pump
+2022-03-10 15:51:11 ctrl.machine INFO     connect to mux
+2022-03-10 15:51:11 ctrl.machine INFO     connect to mux
+2022-03-10 15:51:11 ctrl.machine INFO     connect to casettes
+2022-03-10 15:51:11 ctrl.machine INFO     connect to casettes
+2022-03-10 15:51:11 ctrl.machine INFO     homing pump
+2022-03-10 15:51:11 ctrl.machine INFO     homing pump
+2022-03-10 15:51:11 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:11 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:11 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:11 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:11 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:11 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:11 ctrl.machine DEBUG    MUX TO WASTE
+2022-03-10 15:51:11 ctrl.machine DEBUG    MUX TO WASTE
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g01 z150 f2000
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g01 z150 f2000
+2022-03-10 15:51:12 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:12 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:12 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:12 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g92 z0
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g92 z0
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g01 z-2 f500
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g01 z-2 f500
+2022-03-10 15:51:12 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:12 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:12 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:12 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g92 z0
+2022-03-10 15:51:12 ctrl.machine DEBUG    send message to PUMP: g92 z0
+2022-03-10 15:51:17 ctrl.machine DEBUG    Ejecting cassette CAS3
+2022-03-10 15:51:17 ctrl.machine DEBUG    Ejecting cassette CAS2
+2022-03-10 15:51:17 ctrl.machine DEBUG    Ejecting cassette CAS1
+2022-03-10 15:51:25 ctrl.machine DEBUG    Move cassette CAS3 to contact heater
+2022-03-10 15:51:25 ctrl.machine DEBUG    Move cassette CAS2 to contact heater
+2022-03-10 15:51:25 ctrl.machine DEBUG    Move cassette CAS1 to contact heater
+2022-03-10 15:51:39 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:51:40 ctrl.machine INFO     CURRENT_PUMP: 0
+2022-03-10 15:51:40 ctrl.machine INFO     trying to pump to -0.1, speed=500
+2022-03-10 15:51:40 ctrl.machine DEBUG    send message to PUMP: g01 z-3.0 f500
+2022-03-10 15:51:40 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:40 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:40 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:41 ctrl.machine INFO     CURRENT_PUMP: -0.1
+2022-03-10 15:51:41 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:51:41 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f50
+2022-03-10 15:51:41 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:41 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:41 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:41 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:51:41 ctrl.machine INFO     trying to pump to -0.1, speed=500
+2022-03-10 15:51:41 ctrl.machine DEBUG    send message to PUMP: g01 z-3.0 f500
+2022-03-10 15:51:41 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:41 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:41 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:42 ctrl.machine INFO     CURRENT_PUMP: -0.1
+2022-03-10 15:51:42 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:51:42 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f50
+2022-03-10 15:51:42 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:42 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:42 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:42 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:51:42 ctrl.machine INFO     trying to pump to -0.1, speed=500
+2022-03-10 15:51:42 ctrl.machine DEBUG    send message to PUMP: g01 z-3.0 f500
+2022-03-10 15:51:42 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:42 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:42 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:43 ctrl.machine INFO     CURRENT_PUMP: -0.1
+2022-03-10 15:51:43 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:51:43 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f50
+2022-03-10 15:51:43 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:43 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:43 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:44 ctrl.machine DEBUG    MUX TO AIR
+2022-03-10 15:51:45 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:51:45 ctrl.machine INFO     trying to pump to -1.5, speed=400
+2022-03-10 15:51:45 ctrl.machine DEBUG    send message to PUMP: g01 z-45.0 f400
+2022-03-10 15:51:45 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:45 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:45 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:45 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:51:47 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:51:47 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:51:47 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f50
+2022-03-10 15:51:47 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:47 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:47 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:47 ctrl.machine DEBUG    MUX TO FORMALIN
+2022-03-10 15:51:48 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:51:48 ctrl.machine INFO     trying to pump to -1.5, speed=500
+2022-03-10 15:51:48 ctrl.machine DEBUG    send message to PUMP: g01 z-45.0 f500
+2022-03-10 15:51:48 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:48 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:48 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:49 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:51:51 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:51:51 ctrl.machine INFO     trying to pump to -0.5, speed=400
+2022-03-10 15:51:51 ctrl.machine DEBUG    send message to PUMP: g01 z-15.0 f400
+2022-03-10 15:51:51 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:51 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:51 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:51 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:51:51 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:51:51 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f50
+2022-03-10 15:51:51 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:51 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:51 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:51 ctrl.machine DEBUG    MUX TO AIR
+2022-03-10 15:51:53 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:51:53 ctrl.machine INFO     trying to pump to -1.5, speed=400
+2022-03-10 15:51:53 ctrl.machine DEBUG    send message to PUMP: g01 z-45.0 f400
+2022-03-10 15:51:53 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:53 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:53 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:53 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:51:54 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:51:54 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:51:54 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f50
+2022-03-10 15:51:54 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:54 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:54 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:54 ctrl.machine DEBUG    MUX TO MEOH
+2022-03-10 15:51:56 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:51:56 ctrl.machine INFO     trying to pump to -1.5, speed=500
+2022-03-10 15:51:56 ctrl.machine DEBUG    send message to PUMP: g01 z-45.0 f500
+2022-03-10 15:51:56 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:56 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:56 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:56 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:51:57 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:51:57 ctrl.machine INFO     trying to pump to -0.5, speed=200
+2022-03-10 15:51:57 ctrl.machine DEBUG    send message to PUMP: g01 z-15.0 f200
+2022-03-10 15:51:57 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:57 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:57 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:57 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:51:57 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:51:57 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f50
+2022-03-10 15:51:57 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:57 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:57 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:58 ctrl.machine DEBUG    MUX TO AIR
+2022-03-10 15:51:59 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:51:59 ctrl.machine INFO     trying to pump to -1.5, speed=400
+2022-03-10 15:51:59 ctrl.machine DEBUG    send message to PUMP: g01 z-45.0 f400
+2022-03-10 15:51:59 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:51:59 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:51:59 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:51:59 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:52:01 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:52:01 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:52:01 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f50
+2022-03-10 15:52:01 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:01 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:01 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:01 ctrl.machine DEBUG    MUX TO AIR
+2022-03-10 15:52:02 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:52:02 ctrl.machine INFO     trying to pump to -2.2, speed=500
+2022-03-10 15:52:02 ctrl.machine DEBUG    send message to PUMP: g01 z-66.0 f500
+2022-03-10 15:52:02 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:02 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:02 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:02 ctrl.machine DEBUG    MUX TO DYE
+2022-03-10 15:52:04 ctrl.machine INFO     CURRENT_PUMP: -2.2
+2022-03-10 15:52:04 ctrl.machine INFO     trying to pump to -1.0000000000000002, speed=200
+2022-03-10 15:52:04 ctrl.machine DEBUG    send message to PUMP: g01 z-30.000000000000007 f200
+2022-03-10 15:52:04 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:04 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:04 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:04 ctrl.machine INFO     CURRENT_PUMP: -1.0000000000000002
+2022-03-10 15:52:04 ctrl.machine INFO     trying to pump to -2.2, speed=200
+2022-03-10 15:52:04 ctrl.machine DEBUG    send message to PUMP: g01 z-66.0 f200
+2022-03-10 15:52:04 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:04 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:04 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:06 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:52:07 ctrl.machine INFO     CURRENT_PUMP: -2.2
+2022-03-10 15:52:07 ctrl.machine INFO     trying to pump to -1.2000000000000002, speed=200
+2022-03-10 15:52:07 ctrl.machine DEBUG    send message to PUMP: g01 z-36.00000000000001 f200
+2022-03-10 15:52:07 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:07 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:07 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:07 ctrl.machine INFO     CURRENT_PUMP: -1.2000000000000002
+2022-03-10 15:52:07 ctrl.machine INFO     trying to pump to -1.0000000000000002, speed=50
+2022-03-10 15:52:07 ctrl.machine DEBUG    send message to PUMP: g01 z-30.000000000000007 f50
+2022-03-10 15:52:07 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:07 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:07 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:08 ctrl.machine DEBUG    MUX TO WASTE
+2022-03-10 15:52:10 ctrl.machine INFO     CURRENT_PUMP: -1.0000000000000002
+2022-03-10 15:52:10 ctrl.machine INFO     trying to pump to 0, speed=200
+2022-03-10 15:52:10 ctrl.machine DEBUG    send message to PUMP: g01 z0 f200
+2022-03-10 15:52:10 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:10 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:10 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:10 ctrl.machine DEBUG    MUX TO AIR
+2022-03-10 15:52:12 ctrl.machine INFO     CURRENT_PUMP: 0
+2022-03-10 15:52:12 ctrl.machine INFO     trying to pump to -1.5, speed=400
+2022-03-10 15:52:12 ctrl.machine DEBUG    send message to PUMP: g01 z-45.0 f400
+2022-03-10 15:52:12 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:12 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:12 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:12 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:52:13 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:52:13 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:52:13 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f50
+2022-03-10 15:52:13 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:13 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:13 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:13 ctrl.machine DEBUG    MUX TO BABB
+2022-03-10 15:52:15 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:52:15 ctrl.machine INFO     trying to pump to -1.5, speed=200
+2022-03-10 15:52:15 ctrl.machine DEBUG    send message to PUMP: g01 z-45.0 f200
+2022-03-10 15:52:15 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:15 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:15 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:19 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:52:20 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:52:20 ctrl.machine INFO     trying to pump to -0.5, speed=200
+2022-03-10 15:52:20 ctrl.machine DEBUG    send message to PUMP: g01 z-15.0 f200
+2022-03-10 15:52:20 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:20 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:20 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:20 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:52:20 ctrl.machine INFO     trying to pump to 0.0, speed=25
+2022-03-10 15:52:20 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f25
+2022-03-10 15:52:20 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:20 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:20 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:20 ctrl.machine DEBUG    Ejecting cassette CAS2
+2022-03-10 15:52:20 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:52:22 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:52:22 ctrl.machine INFO     trying to pump to -1.0, speed=200
+2022-03-10 15:52:22 ctrl.machine DEBUG    send message to PUMP: g01 z-30.0 f200
+2022-03-10 15:52:22 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:22 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:22 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:24 ctrl.machine DEBUG    MUX TO WASTE
+2022-03-10 15:52:25 ctrl.machine INFO     CURRENT_PUMP: -1.0
+2022-03-10 15:52:25 ctrl.machine INFO     trying to pump to 0.0, speed=500
+2022-03-10 15:52:25 ctrl.machine DEBUG    send message to PUMP: g01 z0.0 f500
+2022-03-10 15:52:25 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:25 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:25 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:25 ctrl.machine DEBUG    MUX TO MEOH
+2022-03-10 15:52:27 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:52:27 ctrl.machine INFO     trying to pump to -1.5, speed=500
+2022-03-10 15:52:27 ctrl.machine DEBUG    send message to PUMP: g01 z-45.0 f500
+2022-03-10 15:52:27 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:27 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:27 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:27 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:52:28 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:52:28 ctrl.machine INFO     trying to pump to -0.5, speed=50
+2022-03-10 15:52:28 ctrl.machine DEBUG    send message to PUMP: g01 z-15.0 f50
+2022-03-10 15:52:28 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:28 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:28 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:28 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:52:28 ctrl.machine INFO     trying to pump to -3.0, speed=200
+2022-03-10 15:52:28 ctrl.machine DEBUG    send message to PUMP: g01 z-90.0 f200
+2022-03-10 15:52:28 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:28 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:28 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:28 ctrl.machine DEBUG    MUX TO WASTE
+2022-03-10 15:52:30 ctrl.machine INFO     CURRENT_PUMP: -3.0
+2022-03-10 15:52:30 ctrl.machine INFO     trying to pump to -0.5, speed=500
+2022-03-10 15:52:30 ctrl.machine DEBUG    send message to PUMP: g01 z-15.0 f500
+2022-03-10 15:52:30 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:30 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:30 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:32 ctrl.machine DEBUG    MUX TO CAS2
+2022-03-10 15:52:33 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:52:33 ctrl.machine INFO     trying to pump to -1.5, speed=200
+2022-03-10 15:52:33 ctrl.machine DEBUG    send message to PUMP: g01 z-45.0 f200
+2022-03-10 15:52:33 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:33 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:33 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:52:33 ctrl.machine DEBUG    MUX TO WASTE
+2022-03-10 15:52:35 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:52:35 ctrl.machine INFO     trying to pump to -0.5, speed=500
+2022-03-10 15:52:35 ctrl.machine DEBUG    send message to PUMP: g01 z-15.0 f500
+2022-03-10 15:52:35 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:52:35 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:52:35 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:55:48 ctrl.machine INFO     releasing hardware control
+2022-03-10 15:55:53 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 15:55:53 ctrl.machine INFO     hardware locked, waiting
+2022-03-10 15:56:02 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 15:56:02 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 15:56:02 ctrl.machine INFO     hardware locked, waiting
+2022-03-10 15:56:02 ctrl.machine INFO     hardware locked, waiting
+2022-03-10 15:56:16 ctrl.machine INFO     got hardware
+2022-03-10 15:56:16 ctrl.machine INFO     connect to pump
+2022-03-10 15:56:19 ctrl.machine INFO     connect to mux
+2022-03-10 15:56:19 ctrl.machine INFO     connect to casettes
+2022-03-10 15:56:19 ctrl.machine INFO     homing pump
+2022-03-10 15:56:19 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:56:19 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:56:19 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:56:19 ctrl.machine DEBUG    MUX TO WASTE
+2022-03-10 15:56:20 ctrl.machine DEBUG    send message to PUMP: g01 z150 f2000
+2022-03-10 15:56:20 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:56:20 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:56:20 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:56:20 ctrl.machine DEBUG    send message to PUMP: g92 z0
+2022-03-10 15:56:20 ctrl.machine DEBUG    send message to PUMP: g01 z-2 f500
+2022-03-10 15:56:20 ctrl.machine DEBUG    waiting for move to complete
+2022-03-10 15:56:20 ctrl.machine DEBUG    send message to PUMP: g4 p0
+2022-03-10 15:56:20 ctrl.machine DEBUG    waiting for message: ok
+2022-03-10 15:56:20 ctrl.machine DEBUG    send message to PUMP: g92 z0
+2022-03-10 15:56:20 ctrl.machine INFO     releasing hardware control
+2022-03-10 15:56:20 ctrl.machine INFO     got hardware
+2022-03-10 15:56:20 ctrl.machine INFO     got hardware
+2022-03-10 15:56:20 ctrl.machine INFO     connect to pump
+2022-03-10 15:56:20 ctrl.machine INFO     connect to pump
+2022-03-10 15:56:23 ctrl.machine INFO     connect to mux
+2022-03-10 15:56:23 ctrl.machine INFO     connect to mux
+2022-03-10 15:56:23 ctrl.machine INFO     connect to casettes
+2022-03-10 15:56:23 ctrl.machine INFO     connect to casettes
+2022-03-10 15:56:23 ctrl.machine INFO     homing pump
+2022-03-10 15:56:23 ctrl.machine INFO     homing pump
+2022-03-10 15:57:20 ctrl.machine INFO     releasing hardware control
+2022-03-10 15:57:20 ctrl.machine WARNING  [Errno 2] No such file or directory: '/run/shm/prepbot.lock'
+2022-03-10 15:57:20 ctrl.machine WARNING  [Errno 2] No such file or directory: '/run/shm/pump_homed'
+2022-03-10 15:57:21 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 15:57:21 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 15:57:21 ctrl.machine INFO     got hardware
+2022-03-10 15:57:21 ctrl.machine INFO     got hardware
+2022-03-10 15:57:21 ctrl.machine INFO     connect to pump
+2022-03-10 15:57:21 ctrl.machine INFO     connect to pump
+2022-03-10 15:57:24 ctrl.machine INFO     connect to mux
+2022-03-10 15:57:24 ctrl.machine INFO     connect to mux
+2022-03-10 15:57:24 ctrl.machine INFO     connect to casettes
+2022-03-10 15:57:24 ctrl.machine INFO     connect to casettes
+2022-03-10 15:57:24 ctrl.machine INFO     homing pump
+2022-03-10 15:57:24 ctrl.machine INFO     homing pump
+2022-03-10 15:58:09 ctrl.machine INFO     CURRENT_PUMP: 0
+2022-03-10 15:58:09 ctrl.machine INFO     trying to pump to -0.1, speed=500
+2022-03-10 15:58:10 ctrl.machine INFO     CURRENT_PUMP: -0.1
+2022-03-10 15:58:10 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:58:10 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:10 ctrl.machine INFO     trying to pump to -0.1, speed=500
+2022-03-10 15:58:11 ctrl.machine INFO     CURRENT_PUMP: -0.1
+2022-03-10 15:58:11 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:58:11 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:11 ctrl.machine INFO     trying to pump to -0.1, speed=500
+2022-03-10 15:58:12 ctrl.machine INFO     CURRENT_PUMP: -0.1
+2022-03-10 15:58:12 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:58:14 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:14 ctrl.machine INFO     trying to pump to -1.5, speed=400
+2022-03-10 15:58:16 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:58:16 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:58:17 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:17 ctrl.machine INFO     trying to pump to -1.5, speed=500
+2022-03-10 15:58:20 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:58:20 ctrl.machine INFO     trying to pump to -0.5, speed=400
+2022-03-10 15:58:20 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:58:20 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:58:22 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:22 ctrl.machine INFO     trying to pump to -1.5, speed=400
+2022-03-10 15:58:23 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:58:23 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:58:25 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:25 ctrl.machine INFO     trying to pump to -1.5, speed=500
+2022-03-10 15:58:26 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:58:26 ctrl.machine INFO     trying to pump to -0.5, speed=200
+2022-03-10 15:58:26 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:58:26 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:58:28 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:28 ctrl.machine INFO     trying to pump to -1.5, speed=400
+2022-03-10 15:58:30 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:58:30 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:58:31 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:31 ctrl.machine INFO     trying to pump to -2.2, speed=500
+2022-03-10 15:58:33 ctrl.machine INFO     CURRENT_PUMP: -2.2
+2022-03-10 15:58:33 ctrl.machine INFO     trying to pump to -1.0000000000000002, speed=200
+2022-03-10 15:58:33 ctrl.machine INFO     CURRENT_PUMP: -1.0000000000000002
+2022-03-10 15:58:33 ctrl.machine INFO     trying to pump to -2.2, speed=200
+2022-03-10 15:58:36 ctrl.machine INFO     CURRENT_PUMP: -2.2
+2022-03-10 15:58:36 ctrl.machine INFO     trying to pump to -1.2000000000000002, speed=200
+2022-03-10 15:58:36 ctrl.machine INFO     CURRENT_PUMP: -1.2000000000000002
+2022-03-10 15:58:36 ctrl.machine INFO     trying to pump to -1.0000000000000002, speed=50
+2022-03-10 15:58:39 ctrl.machine INFO     CURRENT_PUMP: -1.0000000000000002
+2022-03-10 15:58:39 ctrl.machine INFO     trying to pump to 0, speed=200
+2022-03-10 15:58:41 ctrl.machine INFO     CURRENT_PUMP: 0
+2022-03-10 15:58:41 ctrl.machine INFO     trying to pump to -1.5, speed=400
+2022-03-10 15:58:42 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:58:42 ctrl.machine INFO     trying to pump to 0.0, speed=50
+2022-03-10 15:58:44 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:44 ctrl.machine INFO     trying to pump to -1.5, speed=200
+2022-03-10 15:58:49 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:58:49 ctrl.machine INFO     trying to pump to -0.5, speed=200
+2022-03-10 15:58:49 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:58:49 ctrl.machine INFO     trying to pump to 0.0, speed=25
+2022-03-10 15:58:51 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:51 ctrl.machine INFO     trying to pump to -1.0, speed=200
+2022-03-10 15:58:54 ctrl.machine INFO     CURRENT_PUMP: -1.0
+2022-03-10 15:58:54 ctrl.machine INFO     trying to pump to 0.0, speed=500
+2022-03-10 15:58:56 ctrl.machine INFO     CURRENT_PUMP: 0.0
+2022-03-10 15:58:56 ctrl.machine INFO     trying to pump to -1.5, speed=500
+2022-03-10 15:58:57 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:58:57 ctrl.machine INFO     trying to pump to -0.5, speed=50
+2022-03-10 15:58:57 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:58:57 ctrl.machine INFO     trying to pump to -3.0, speed=200
+2022-03-10 15:58:59 ctrl.machine INFO     CURRENT_PUMP: -3.0
+2022-03-10 15:58:59 ctrl.machine INFO     trying to pump to -0.5, speed=500
+2022-03-10 15:59:02 ctrl.machine INFO     CURRENT_PUMP: -0.5
+2022-03-10 15:59:02 ctrl.machine INFO     trying to pump to -1.5, speed=200
+2022-03-10 15:59:04 ctrl.machine INFO     CURRENT_PUMP: -1.5
+2022-03-10 15:59:04 ctrl.machine INFO     trying to pump to -0.5, speed=500
+2022-03-10 15:59:22 ctrl.machine INFO     releasing hardware control
+2022-03-10 16:01:16 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 16:01:16 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 16:01:16 ctrl.machine INFO     got hardware
+2022-03-10 16:01:16 ctrl.machine INFO     got hardware
+2022-03-10 16:01:16 ctrl.machine INFO     connect to pump
+2022-03-10 16:01:16 ctrl.machine INFO     connect to pump
+2022-03-10 16:01:19 ctrl.machine INFO     connect to mux
+2022-03-10 16:01:19 ctrl.machine INFO     connect to mux
+2022-03-10 16:01:19 ctrl.machine INFO     connect to casettes
+2022-03-10 16:01:19 ctrl.machine INFO     connect to casettes
+2022-03-10 16:01:19 ctrl.machine INFO     homing pump
+2022-03-10 16:01:19 ctrl.machine INFO     homing pump
+2022-03-10 16:04:08 ctrl.machine INFO     releasing hardware control
+2022-03-10 16:04:13 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 16:04:13 ctrl.machine INFO     got hardware
+2022-03-10 16:04:13 ctrl.machine INFO     connect to pump
+2022-03-10 16:04:16 ctrl.machine INFO     connect to mux
+2022-03-10 16:04:16 ctrl.machine INFO     connect to casettes
+2022-03-10 16:04:16 ctrl.machine INFO     homing pump
+2022-03-10 16:04:20 ctrl.machine INFO     releasing hardware control
+2022-03-10 16:04:22 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 16:04:22 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 16:04:22 ctrl.machine INFO     got hardware
+2022-03-10 16:04:22 ctrl.machine INFO     got hardware
+2022-03-10 16:04:22 ctrl.machine INFO     connect to pump
+2022-03-10 16:04:22 ctrl.machine INFO     connect to pump
+2022-03-10 16:04:25 ctrl.machine INFO     connect to mux
+2022-03-10 16:04:25 ctrl.machine INFO     connect to mux
+2022-03-10 16:04:25 ctrl.machine INFO     connect to casettes
+2022-03-10 16:04:25 ctrl.machine INFO     connect to casettes
+2022-03-10 16:04:25 ctrl.machine INFO     homing pump
+2022-03-10 16:04:25 ctrl.machine INFO     homing pump
+2022-03-10 16:21:55 ctrl.machine INFO     releasing hardware control
+2022-03-10 16:22:00 ctrl.machine INFO     trying to acquire hardware control
+2022-03-10 16:22:00 ctrl.machine INFO     got hardware
+2022-03-10 16:22:00 ctrl.machine INFO     connect to pump
+2022-03-10 16:22:03 ctrl.machine INFO     connect to mux
+2022-03-10 16:22:03 ctrl.machine INFO     connect to casettes
+2022-03-10 16:22:03 ctrl.machine INFO     homing pump
