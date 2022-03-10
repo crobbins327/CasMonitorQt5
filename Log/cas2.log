@@ -3178,3 +3178,55 @@ Name: CAS2, dtype: object
 2022-03-10 13:07:55 ctrl.cas2    INFO     Disengage CAS2...
 2022-03-10 13:08:39 ctrl.cas2    INFO     Engage CAS2...
 2022-03-10 13:08:39 ctrl.cas2    INFO     Engage CAS2...
+2022-03-10 13:36:10 ctrl.cas2    INFO     
+
+
+
+2022-03-10 13:36:10 ctrl.cas2    INFO     Starting Run!
+sampleName                                            rr
+protocolName                                          t2
+protocolPath    /home/pi/CasMonitorQt5/Protocols/t2.json
+startlog                                            3183
+Name: CAS2, dtype: object
+2022-03-10 13:36:10 ctrl.cas2    INFO     Starting task on CAS2
+2022-03-10 13:36:10 ctrl.cas2    INFO     ['CAS2']
+2022-03-10 13:36:10 ctrl.cas2    DEBUG    ['self.incubate(cas="CAS2",incTime=0,mixAfter=0,mixVol=0.1,extraVolOut=0.0)', 'self.mix(cas="CAS2", numCycles=3, volume=0.1)', 'self.purge(cas="CAS2")', 'self.loadReagent(cas="CAS2",reagent="FORMALIN",ml=0.5,inSpeed=500,chamberSpeed=50,lineSpeed=400,washSyr="auto",washSyrReagent="MEOH")', 'self.loadReagent(cas="CAS2",reagent="MEOH",ml=0.5,inSpeed=500,chamberSpeed=50,lineSpeed=200,washSyr="auto",washSyrReagent="MEOH")', 'self.loadReagent(cas="CAS2",reagent="DYE",ml=0.2,inSpeed=200,chamberSpeed=50,lineSpeed=200,washSyr="auto",washSyrReagent="MEOH")']
+2022-03-10 13:36:10 ctrl.cas2    DEBUG    ['Incubation', 'Mixing', 'Purge', 'Load Formalin', 'Load Dehydrant', 'Load Stain']
+2022-03-10 13:36:10 ctrl.cas2    DEBUG    1
+2022-03-10 13:36:10 ctrl.cas2    INFO     CAS2: Evaluating step 0
+2022-03-10 13:36:10 ctrl.cas2    INFO     ['self.incubate(cas="CAS2",incTime=0,mixAfter=0,mixVol=0.1,extraVolOut=0.0)']
+2022-03-10 13:36:10 ctrl.cas2    WARNING  Inc. time not > 0: 0
+2022-03-10 13:36:10 ctrl.cas2    WARNING  Skipping incubation...
+2022-03-10 13:36:10 ctrl.cas2    INFO     Updating progress on CAS2...
+2022-03-10 13:36:10 ctrl.cas2    INFO     CAS2: Evaluating step 1
+2022-03-10 13:36:10 ctrl.cas2    INFO     ['self.mix(cas="CAS2", numCycles=3, volume=0.1)']
+2022-03-10 13:36:10 ctrl.cas2    INFO     MIXING CAS2, 3 TIMES, 0.1 VOLUME
+2022-03-10 13:36:12 ctrl.cas2    INFO     Mixing CAS2, #1 of 3 cycles...
+2022-03-10 13:36:13 ctrl.cas2    INFO     Mixing CAS2, #2 of 3 cycles...
+2022-03-10 13:36:14 ctrl.cas2    INFO     Mixing CAS2, #3 of 3 cycles...
+2022-03-10 13:36:15 ctrl.cas2    INFO     Updating progress on CAS2...
+2022-03-10 13:36:15 ctrl.cas2    INFO     CAS2: Evaluating step 2
+2022-03-10 13:36:15 ctrl.cas2    INFO     ['self.purge(cas="CAS2")']
+2022-03-10 13:36:15 ctrl.cas2    INFO     PURGING CHAMBER, CAS2
+2022-03-10 13:36:18 ctrl.cas2    INFO     Updating progress on CAS2...
+2022-03-10 13:36:18 ctrl.cas2    INFO     CAS2: Evaluating step 3
+2022-03-10 13:36:18 ctrl.cas2    INFO     ['self.loadReagent(cas="CAS2",reagent="FORMALIN",ml=0.5,inSpeed=500,chamberSpeed=50,lineSpeed=400,washSyr="auto",washSyrReagent="MEOH")']
+2022-03-10 13:36:18 ctrl.cas2    INFO     ADDING FORMALIN to CAS2
+2022-03-10 13:36:22 ctrl.cas2    INFO     Updating progress on CAS2...
+2022-03-10 13:36:23 ctrl.cas2    INFO     CAS2: Evaluating step 4
+2022-03-10 13:36:23 ctrl.cas2    INFO     ['self.loadReagent(cas="CAS2",reagent="MEOH",ml=0.5,inSpeed=500,chamberSpeed=50,lineSpeed=200,washSyr="auto",washSyrReagent="MEOH")']
+2022-03-10 13:36:23 ctrl.cas2    INFO     CAS2 LINE has FORMALIN, not MEOH
+2022-03-10 13:36:23 ctrl.cas2    INFO     PURGING CHAMBER, CAS2
+2022-03-10 13:36:26 ctrl.cas2    INFO     ADDING MEOH to CAS2
+2022-03-10 13:36:29 ctrl.cas2    INFO     Updating progress on CAS2...
+2022-03-10 13:36:29 ctrl.cas2    INFO     CAS2: Evaluating step 5
+2022-03-10 13:36:29 ctrl.cas2    INFO     ['self.loadReagent(cas="CAS2",reagent="DYE",ml=0.2,inSpeed=200,chamberSpeed=50,lineSpeed=200,washSyr="auto",washSyrReagent="MEOH")']
+2022-03-10 13:36:29 ctrl.cas2    INFO     CAS2 LINE has MEOH, not DYE
+2022-03-10 13:36:29 ctrl.cas2    INFO     PURGING CHAMBER, CAS2
+2022-03-10 13:36:32 ctrl.cas2    INFO     ADDING DYE to CAS2
+2022-03-10 13:36:41 ctrl.cas2    INFO     Finished all steps, starting to clean CAS2...
+2022-03-10 13:36:41 ctrl.cas2    INFO     Cleaning CAS2
+2022-03-10 13:36:41 ctrl.cas2    INFO     Disengage CAS2...
+2022-03-10 13:36:41 ctrl.cas2    INFO     CLEANING_PREP
+2022-03-10 13:36:46 ctrl.cas2    INFO     WASHING LINE
+2022-03-10 13:36:56 ctrl.cas2    INFO     Finished CAS2 task!

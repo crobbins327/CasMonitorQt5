@@ -369,3 +369,15 @@
 2022-03-10 12:06:30 ctrl.opTimes INFO     Clean Time: 14.60s
 2022-03-10 12:06:30 ctrl.opTimes INFO     Shutdown Time: 16.17s
 2022-03-10 12:06:30 ctrl.opTimes INFO     Shutdown Time: 16.17s
+2022-03-10 13:36:13 ctrl.opTimes INFO     Mix cycle 1 of 3 Time: 1.00s
+2022-03-10 13:36:14 ctrl.opTimes INFO     Mix cycle 2 of 3 Time: 1.00s
+2022-03-10 13:36:15 ctrl.opTimes INFO     Mix cycle 3 of 3 Time: 1.00s
+2022-03-10 13:36:15 ctrl.opTimes INFO     Mix Finished, 3 cycles Time: 3.01s
+2022-03-10 13:36:18 ctrl.opTimes INFO     Purge, 0.5 mL, 400 purgeInSpeed, 50 purgeOutSpeed, Time: 3.01s
+2022-03-10 13:36:18 ctrl.opTimes INFO     FINISHED WASHING SYRINGE, Time: 0.00s
+2022-03-10 13:36:22 ctrl.opTimes INFO     FINISHED LOADING FRESH FORMALIN to CAS2, Time: 4.01s
+2022-03-10 13:36:23 ctrl.opTimes INFO     FINISHED WASHING SYRINGE, Time: 0.00s
+2022-03-10 13:36:29 ctrl.opTimes INFO     FINISHED LOADING FRESH MEOH to CAS2, Time: 3.01s
+2022-03-10 13:36:29 ctrl.opTimes INFO     FINISHED WASHING SYRINGE, Time: 0.00s
+2022-03-10 13:36:41 ctrl.opTimes INFO     FINISHED LOADING FRESH DYE to CAS2, Time: 9.01s
+2022-03-10 13:36:56 ctrl.opTimes INFO     Clean Time: 14.58s

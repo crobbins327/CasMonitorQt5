@@ -82,19 +82,5 @@
 		"washSyr": "auto",
 		"washReagent": "Dehydrant",
 		"loadType": "Stain"
-	},
-	{
-		"opName": "Load BABB",
-		"opTime": "00:01:30",
-		"mixAfterSecs": 0,
-		"volume": "500uL",
-		"extraVolOut": "undefined",
-		"inSpeed": 200,
-		"chamberSpeed": 25,
-		"lineSpeed": 200,
-		"numCycles": 0,
-		"washSyr": "auto",
-		"washReagent": "Dehydrant",
-		"loadType": "BABB"
 	}
 ]

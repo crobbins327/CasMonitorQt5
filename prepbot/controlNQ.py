@@ -1,8 +1,8 @@
 #!/home/jackr/anaconda/envs/QML36/bin/python
 import os
 import sys
-# sys.path.append('/home/pi/CasMonitorQt5/')
-sys.path.append('F:/Torres/CasMonitorQt5/')
+sys.path.append('/home/pi/CasMonitorQt5/')
+# sys.path.append('F:/Torres/CasMonitorQt5/')
 import asyncio
 from autobahn.asyncio.wamp import ApplicationSession
 from autobahn_autoreconnect import ApplicationRunner
@@ -270,6 +270,7 @@ class Component(ApplicationSession):
             ctrl.critical('Could not acquire machine lock!')
             ctrl.critical(e)
             self.writeDCstate = False
+            await asyncio.sleep(5)
             self.leave()
             self.disconnect()
 
