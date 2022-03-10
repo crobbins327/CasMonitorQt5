@@ -20,6 +20,7 @@ Item {
     property string protocolName: 'Protocol Name'
     property string savedPath: ''
     property string runTime: estRunTime(rootEd.stepModel)
+    property string operatingSystem: rootApWin.operatingSystem
 
     signal reNextModel(string jsondata, string protName, string pathSaved)
     Component.onCompleted: JSONHelper.nextModel.connect(reNextModel)
@@ -813,19 +814,29 @@ Item {
             for (var i = 0; i < stepListModDel.model.count; ++i) datamodel.push(stepListModDel.model.get(i))
             var datastring = JSON.stringify(datamodel, null, "\t");
             var path = saveDialog.fileUrl.toString();
+            var folder = saveDialog.folder.toString();
 //            console.log(path)
-            // remove prefixed "file:///"
-            path = path.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
-            path = path.replace(/^(file:)|(qrc:)|(http:)/,"");
+
+            if (rootApWin.operatingSystem == 'Windows'){
+                //IF WINDOWS
+                // remove prefixed "file:///"
+                path = path.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
+                folder = folder.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
+            } else {
+                //IF LINUX OR OTHER
+                // remove prefixed "file://"  only 2 /'s
+                path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+                folder = folder.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+            }
 
             // if path is not actually a path but just a name
             // make it a path by appending it to folder
 //            console.log("Slash? ", path.includes("/"))
             if(!path.includes("/")){
-                var folder = saveDialog.folder.toString();
-                folder = folder.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
                 path = folder + "/" + path
             }
+
+            path = path.replace(/^(file:)|(qrc:)|(http:)/,"");
 
             // unescape html codes like '%23' for '#'
             var cleanPath = decodeURIComponent(path);
@@ -858,8 +869,16 @@ Item {
         modality: Qt.WindowModal
         onAccepted: {
             var path = openDialog.fileUrl.toString();
-            // remove prefixed "file:///"
-            path = path.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
+            if (rootApWin.operatingSystem == 'Windows'){
+                //IF WINDOWS
+                // remove prefixed "file:///"
+                path = path.replace(/^(file:\/{3})|(qrc:\/{3})|(http:\/{3})/,"");
+            } else {
+                //IF LINUX OR OTHER
+                // remove prefixed "file://"  only 2 /'s
+                path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+            }
+
             // unescape html codes like '%23' for '#'
             var cleanPath = decodeURIComponent(path);
 
@@ -875,9 +894,3 @@ Item {
 
     }
 }
-
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
-##^##*/

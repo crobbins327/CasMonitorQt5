@@ -15,6 +15,7 @@ import logging
 import logging.config
 from colorlog import ColoredFormatter
 import asyncio
+import platform
 
 from autobahn.asyncio.wamp import ApplicationRunner, ApplicationSession
 from autobahn.wamp.types import PublishOptions
@@ -46,7 +47,7 @@ guilog.handlers[0].setFormatter(colorFormat)
 
 class wampHandler(ApplicationSession, QtCore.QObject):
     
-    #Globals...
+    #Self Globals...
     jHelper = jh.JSONHelper()
     #Remove cas letter conversions
     convCas = {1:'CAS1', 2:'CAS2', 3:'CAS3', 4:'CAS4', 5:'CAS5', 6:'CAS6'}
@@ -76,6 +77,21 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     cleanDone = QtCore.Signal(int)
     
     recParam = QtCore.Signal('QVariantMap')
+
+    def getOS(self):
+        if platform.system() == 'Windows':
+            return 'Windows'
+        elif platform.system() == 'Linux':
+            return 'Linux'
+        else:
+            return 'Other'
+
+    #Don't really need to change the OS once it has been set
+    @QtCore.Signal
+    def sendOS(self):
+        pass
+
+    OS = QtCore.Property(str, getOS, notify=sendOS)
     
     def __init__(self, config=None):
         QtCore.QObject.__init__(self)
@@ -92,6 +108,10 @@ class wampHandler(ApplicationSession, QtCore.QObject):
                         'BABB': 'BABB',
                         'Formalin': 'FORMALIN',
                         'Stain': 'DYE'}
+        print(platform.uname())
+
+
+            #signal to gui
         # self.machineHalted = True
         # self.logsOpen = pd.DataFrame(columns = ['isLogOpen'] ,
         #                            index=['casA','casB','casC','casD','casE','casF','ctrl','machine'], dtype=object)
