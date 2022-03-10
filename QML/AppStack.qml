@@ -10,7 +10,7 @@ import QtQuick.Controls.Material 2.12
 
 ApplicationWindow {
     id: rootApWin
-    property string mainDir: './Protocols/'
+    property string mainDir: '../Protocols/'
     property string visMode: 'Windowed'
     property string otherMode: 'FullScreen'
     property string defPath: ''

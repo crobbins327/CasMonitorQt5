@@ -551,7 +551,7 @@ Item {
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignLeft
                         anchors.fill: parent
-                        font.pointSize: 10
+                        font.pointSize: 11
                         selectionColor: "#040450"
 
                         text: activeFocus ? sampleName : ''
@@ -598,7 +598,7 @@ Item {
 
                     model: ["Full Process", "No Stain", "No Fixation", "Custom"]
 
-                    font.pointSize: 11
+                    font.pointSize: 10
                     Layout.topMargin: 10
                     Layout.preferredWidth: colLayout.width/1.1
                     Layout.preferredHeight: 50

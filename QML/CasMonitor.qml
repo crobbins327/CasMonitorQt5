@@ -135,46 +135,46 @@ Item {
                 font.pointSize: 16
             }
 
-            Button {
-                id: debugB
-                x: 2
-                y: 7
-                width: 60
-                height: 60
-                anchors.right: settingsB.left
-                anchors.rightMargin: 30
-                anchors.verticalCenter: parent.verticalCenter
-                opacity: debugB.down || debugB.checked || debugB.highlighted ? 0.5 : 1
-                display: AbstractButton.IconOnly
-                flat: true
+//            Button {
+//                id: debugB
+//                x: 2
+//                y: 7
+//                width: 60
+//                height: 60
+//                anchors.right: settingsB.left
+//                anchors.rightMargin: 30
+//                anchors.verticalCenter: parent.verticalCenter
+//                opacity: debugB.down || debugB.checked || debugB.highlighted ? 0.5 : 1
+//                display: AbstractButton.IconOnly
+//                flat: true
 
-//                background: Rectangle {
-//                    color: "#00000000"
-//                    radius: 30
-//                    border.width: 0
-//                    implicitWidth: 50
-//                    border.color: "#ffffff"
-//                    implicitHeight: 50
+////                background: Rectangle {
+////                    color: "#00000000"
+////                    radius: 30
+////                    border.width: 0
+////                    implicitWidth: 50
+////                    border.color: "#ffffff"
+////                    implicitHeight: 50
+////                }
+//                Image {
+//                    id: debugImage
+//                    source: "Icons/debug-mode.png"
+//                    anchors.horizontalCenter: debugB.horizontalCenter
+//                    anchors.verticalCenter: debugB.verticalCenter
+//                    width: 45
+//                    height: 45
+//                    fillMode: Image.PreserveAspectFit
 //                }
-                Image {
-                    id: debugImage
-                    source: "Icons/debug-mode.png"
-                    anchors.horizontalCenter: debugB.horizontalCenter
-                    anchors.verticalCenter: debugB.verticalCenter
-                    width: 45
-                    height: 45
-                    fillMode: Image.PreserveAspectFit
-                }
-                ColorOverlay {
-                    anchors.fill: debugImage
-                    source: debugImage
-                    color: "#ffffff"
-                }
+//                ColorOverlay {
+//                    anchors.fill: debugImage
+//                    source: debugImage
+//                    color: "#ffffff"
+//                }
 
-                onClicked: {mainStack.push("DebugMode.qml", {visMode, otherMode})}
+//                onClicked: {mainStack.push("DebugMode.qml", {visMode, otherMode})}
 
 
-            }
+//            }
 
 
 

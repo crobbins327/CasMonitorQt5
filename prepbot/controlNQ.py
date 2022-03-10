@@ -402,7 +402,7 @@ class Component(ApplicationSession):
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
         #Check if machine is connected and homed
-        await asyncio.sleep(5)
+        # await asyncio.sleep(5)
         await self.connectNHome()
         casLogs[cas].info('Engage {}...'.format(cas))
         try:
@@ -428,7 +428,7 @@ class Component(ApplicationSession):
         modHdl.close()
         modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
         #Check if machine is connected and homed
-        await asyncio.sleep(5)
+        # await asyncio.sleep(5)
         await self.connectNHome()
         casLogs[cas].info('Disengage {}...'.format(cas))
         try:
