@@ -247,7 +247,7 @@ Item {
                     stopRunB.visible = true
                     nextRunB.visible = false
                     stopRunB.enabled = false
-                    stopRunB.checked = true
+//                    stopRunB.checked = true
 //                    engageCasB.enabled = false
                 } else if (status == 'cleaning'){
                     //setup run
@@ -317,7 +317,7 @@ Item {
                     root.isHanging = true
                     stopRunB.visible = false
                     stopRunB.enabled = true
-                    stopRunB.checked = false
+//                    stopRunB.checked = false
                     nextRunB.visible = true
                     engageCasB.enabled = true
                 }
@@ -339,7 +339,7 @@ Item {
                 root.isRunning = false
                 stopRunB.visible = false
                 stopRunB.enabled = true
-                stopRunB.checked = false
+//                stopRunB.checked = false
                 nextRunB.visible = true
 //                engageCasB.enabled = true
             }
@@ -354,7 +354,7 @@ Item {
                 stopRunB.visible = true
                 nextRunB.visible = false
                 stopRunB.enabled = false
-                stopRunB.checked = true
+//                stopRunB.checked = true
 
 
             }
@@ -366,7 +366,7 @@ Item {
                 root.isRunning = false
                 stopRunB.visible = false
                 stopRunB.enabled = true
-                stopRunB.checked = false
+//                stopRunB.checked = false
                 nextRunB.visible = true
 //                engageCasB.enabled = true
             }
@@ -627,7 +627,7 @@ Item {
                             } else {
                                 // Start protocol with sample name depending on combobox choice
                                 if (comboProt.currentValue=='Full Process'){
-                                    var savedPath = 'F:/Torres/CasMonitorQt5/Protocols/all_operations_new.json'
+                                    var savedPath = './Protocols/all_operations_new.json'
                                     WAMPHandler.startProtocol(root.casNumber, savedPath, 'undefined', root.sampleName, 'Full Process')
                                 } else if (comboProt.currentValue=='No Stain'){
                                     var savedPath = ''
@@ -905,7 +905,7 @@ Item {
                     root.isHanging = false
                     stopRunB.visible = true
                     stopRunB.enabled = true
-                    stopRunB.checked = false
+//                    stopRunB.checked = false
                     nextRunB.visible = false
                     WAMPHandler.nextProtocol(root.casNumber)
 
@@ -988,7 +988,7 @@ Item {
         }
         onRejected: {
 //            console.log("Canceled.")
-            stopRunB.checked = false
+//            stopRunB.checked = false
             this.close
         }
     }
@@ -1016,10 +1016,3 @@ Item {
         return(s)
     }
 }
-
-
-/*##^##
-Designer {
-    D{i:0;formeditorZoom:1.66}
-}
-##^##*/

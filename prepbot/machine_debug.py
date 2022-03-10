@@ -107,7 +107,7 @@ def release():
     # logger.info('releasing hardware control')
     # for p in s.values():
     #     p.close()
-    os.remove('/run/shm/prepbot.lock')
+    # os.remove('/run/shm/prepbot.lock')
     os.remove('F:/Torres/CasMonitorQt5/prepbot.lock')
 
 def pump_home():
