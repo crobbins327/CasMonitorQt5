@@ -1,15 +1,15 @@
 #!/home/jackr/anaconda/envs/QML36/bin/python
 import os
 import sys
-#sys.path.append('/home/pi/CasMonitorQt5/')
-sys.path.append('F:/Torres/CasMonitorQt5/')
+sys.path.append('/home/pi/CasMonitorQt5/')
+#sys.path.append('F:/Torres/CasMonitorQt5/')
 import asyncio
 from autobahn.asyncio.wamp import ApplicationSession
 from autobahn_autoreconnect import ApplicationRunner
 from autobahn import wamp
 import time
 import datetime
-import machine_debug as machine
+import machine_debug_pi as machine
 import itertools
 import namedTask as nTask
 # import confuse
@@ -40,7 +40,7 @@ cas4log = logging.getLogger('ctrl.cas4')
 cas5log = logging.getLogger('ctrl.cas5')
 cas6log = logging.getLogger('ctrl.cas6')
 machinelog = logging.getLogger('ctrl.machine')
-# machinelog.setLevel(logging.INFO)
+machinelog.setLevel(logging.INFO)
 opTimeslog = logging.getLogger('ctrl.opTimes')
 rootlog = logging.getLogger('')
 

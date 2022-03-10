@@ -1,0 +1,7 @@
+
+CasMonitorQt5.pyproject.user
+Log/gui.log
+Log/opTimes.log
+*.log
+Log/disconnect/disconnect-state.pkl
+Log/disconnect/disconnect-state.pkl

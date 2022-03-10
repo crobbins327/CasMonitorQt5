@@ -149,8 +149,8 @@ def pump_to(z, speed=200):
 
 def pump_to_ml(ml, speed=200):
     global CURRENT_PUMP
-    logger.info('CURRENT_PUMP: {}'.format(CURRENT_PUMP))
-    logger.info('trying to pump to {}, speed={}'.format(ml, speed))
+    logger.debug('CURRENT_PUMP: {}'.format(CURRENT_PUMP))
+    logger.debug('trying to pump to {}, speed={}'.format(ml, speed))
     pump_to(ml * PUMP_Z_PER_ML, speed)
     #Set what the current pump is at
     CURRENT_PUMP = ml
