@@ -9,7 +9,7 @@ import "./Icons/"
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 0
+    property int stackIndex: 1
     property double runProgVal: 0
     property string firstRunTime : "01:31:55"
     property int firstRunSecs : get_sec(root.firstRunTime)
@@ -530,9 +530,9 @@ Item {
 
                 Rectangle {
                     id: sampRec
-                    y: 48
-                    width: parent.width
-                    height: 31
+                    Layout.preferredWidth: colLayout.width
+                    Layout.preferredHeight: 31
+                    Layout.minimumHeight: 25
                     color: "#808080"
 
                     TextInput {
@@ -640,7 +640,6 @@ Item {
                         }
                     }
                 }
-
             }
 
         }
@@ -1018,3 +1017,9 @@ Item {
     }
 }
 
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:1.66}
+}
+##^##*/
