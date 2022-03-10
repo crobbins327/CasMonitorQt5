@@ -84,14 +84,14 @@ def connect():
 def acquire():
     logger.info('trying to acquire hardware control')
 
-    if os.path.isfile('/run/shm/prepbot.lock'):
-    # if os.path.isfile('F:/Torres/CasMonitorQt5/prepbot.lock'):
+    # if os.path.isfile('/run/shm/prepbot.lock'):
+    if os.path.isfile('F:/Torres/CasMonitorQt5/prepbot.lock'):
         logger.info('hardware locked, waiting')
 
     while True:
         try:
-            open('/run/shm/prepbot.lock', 'x')
-            # open('F:/Torres/CasMonitorQt5/prepbot.lock', 'x')
+            # open('/run/shm/prepbot.lock', 'x')
+            open('F:/Torres/CasMonitorQt5/prepbot.lock', 'x')
             break
         except FileExistsError:
             continue
@@ -104,11 +104,11 @@ def acquire():
 
 #When shut down controller
 def release():
-    logger.info('releasing hardware control')
+    # logger.info('releasing hardware control')
     # for p in s.values():
     #     p.close()
     os.remove('/run/shm/prepbot.lock')
-    # os.remove('F:/Torres/CasMonitorQt5/prepbot.lock')
+    os.remove('F:/Torres/CasMonitorQt5/prepbot.lock')
 
 def pump_home():
     logger.info('homing pump')
@@ -126,12 +126,12 @@ def pump_home():
     global CURRENT_PUMP
     CURRENT_PUMP = 0
 
-    open('/run/shm/pump_homed', 'w')
-    # open('F:/Torres/CasMonitorQt5/pump_homed', 'w')
+    # open('/run/shm/pump_homed', 'w')
+    open('F:/Torres/CasMonitorQt5/pump_homed', 'w')
 
 def pump_is_homed():
-    return os.path.isfile('/run/shm/pump_homed')
-    # return os.path.isfile('F:/Torres/CasMonitorQt5/pump_homed')
+    # return os.path.isfile('/run/shm/pump_homed')
+    return os.path.isfile('F:/Torres/CasMonitorQt5/pump_homed')
 
 def pump_to(z, speed=200):
     send('PUMP', 'g01 z{} f{}'.format(z, speed))
