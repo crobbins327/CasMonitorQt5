@@ -133,17 +133,18 @@ ApplicationWindow {
         id: exitDialog
         standardButtons: StandardButton.Cancel | StandardButton.Yes
         icon: StandardIcon.Critical
-        text: "Are you sure you want to exit? This will disconnect controller and stop any ongoing runs."
+        text: "Are you sure you want to exit? This WILL NOT shutdown the controller nor stop any ongoing runs."
         title: "Exit Application"
         modality: Qt.WindowModal
         onYes: {
             closeStatus = true
             //sends another close signal, this time with closeStatus = true
-//            WAMPHandler.closeApp()
+            //WAMPHandler.closeApp()
 //            delay(5, function() {
 //                console.log("print")
 //            })
             rootApWin.close()
+            Qt.quit()
         }
         onRejected: {
     //            console.log("Canceled Exit.")

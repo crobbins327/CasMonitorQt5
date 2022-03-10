@@ -51,6 +51,7 @@ if __name__ == '__main__':
     asyncio.set_event_loop(asyncio_loop)
 
     engine = QtQml.QQmlApplicationEngine()
+    engine.quit.connect(app.quit)
     #My context properties that signal-slot between python and QML
     json_helper = jh.JSONHelper()
     wHandler = wh.wampHandler()
@@ -60,6 +61,7 @@ if __name__ == '__main__':
     #Load the first QML file onto the engine
 #    engine.load(QtCore.QUrl('QML/CasMonitor.qml'))
     engine.load(os.fspath(Path(__file__).resolve().parent / "QML/AppStack.qml"))
+    
     
     # #The WAMP handler will make the WAMP connection so that it can subscribe and send commands through it....
     runner = ApplicationRunner(url="ws://127.0.0.1:8080/ws", realm="realm1")

@@ -44,10 +44,27 @@ if __name__ == '__main__':
     runRunning, runPID = checkPIDFile(pidfile)
     guiRunning, guiPID = checkPIDFile(guipidf)
     ctrlRunning, ctrlPID = checkPIDFile(ctrlpidf)
-    if runRunning or guiRunning or ctrlRunning:
-        print('SampleMonitor with PID {},{},{} is still running. Use task manager to terminate runApp.py, controlNQ.py, and setupGUI.py processes'.format(runPID, ctrlPID, guiPID))
+    guiOnly = False
+    if ctrlRunning:
         while True:
-            terminate = input("Do you wish to terminate existing process? yes|no    ")
+            restartGUI = input('Controller is still running. Do you wish to restart GUI and keep controller active? yes|no    ')
+            if restartGUI == "yes" or restartGUI == "y":
+                try:
+                    guiOnly = True
+                    if runPID is not None:
+                        psutil.Process(runPID).terminate()
+                    if guiPID is not None:
+                        psutil.Process(guiPID).terminate()
+                except Exception as e:
+                    print(e)
+                break
+            elif terminate == "no" or terminate == "n":
+                break
+                
+    elif runRunning or guiRunning or ctrlRunning:
+        print('SampleMonitor with PID {} (runApp),{} (controlNQ),{} (setupGUI) is still running. Use task manager to terminate runApp.py, controlNQ.py, and setupGUI.py processes'.format(runPID, ctrlPID, guiPID))
+        while True:
+            terminate = input("Do you wish to terminate all existing processes? yes|no    ")
             if terminate == "yes" or terminate == "y":
                 try:
                     if runPID is not None:
@@ -68,31 +85,31 @@ if __name__ == '__main__':
     
     try:
         processes = []
-
-        ctrl = subprocess.Popen(['python3', 'prepbot/controlNQ.py'])
-        # ctrl = subprocess.Popen([sys.executable, 'prepbot/controlNQ.py'])
-        open(ctrlpidf,'w').write(str(ctrl.pid))
-        time.sleep(1)
+        if not guiOnly:
+            ctrl = subprocess.Popen(['python3', 'prepbot/controlNQ.py'])
+            # ctrl = subprocess.Popen([sys.executable, 'prepbot/controlNQ.py'])
+            open(ctrlpidf,'w').write(str(ctrl.pid))
+            processes.append(ctrl)
+            time.sleep(1)
         gui = subprocess.Popen(['python3', 'setupGUI.py'])
         # gui = subprocess.Popen([sys.executable, 'setupGUI.py'])
         open(guipidf,'w').write(str(gui.pid))
         processes.append(gui)
-        processes.append(ctrl)
-    
         
         while True:
             if any(p.poll() == 0 for p in processes):
                 break
             time.sleep(10)
-#            for p in processes:
-#                print(p)
-#                print(p.poll())
+            for p in processes:
+                print(p)
+                print(p.poll())
             continue
-    
-        processes[0].terminate()
-        print('Controller poll: {}'.format(processes[0].poll()))
-        processes[1].terminate()
-        print('GUI poll: {}'.format(processes[1].poll()))
-     
+            
+        for p in processes:
+            p.terminate()
+            print('Process poll: {}'.format(p.poll()))
+            
     finally:
         os.unlink(pidfile)
+        os.unlink(guipidf)
+        os.unlink(ctrlpidf)
