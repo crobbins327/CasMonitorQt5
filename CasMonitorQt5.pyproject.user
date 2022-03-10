@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 6.82.0, 2022-03-07T02:48:55. -->
+<!-- Written by QtCreator 6.82.0, 2022-03-10T13:51:41. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -139,7 +139,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">F:/Torres/CasMonitorQt5/setupGUI.py</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.F:/Torres/CasMonitorQt5/setupGUI.py</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">F:/Torres/CasMonitorQt5/setupGUI.py</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{0cc222c1-d940-4c2a-8e67-3f3cdffd04c4}</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{7350e02b-f447-4bc4-bedc-86fa27ee149b}</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">F:\Torres\CasMonitorQt5\setupGUI.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
