@@ -831,7 +831,7 @@ Item {
 
             // if path is not actually a path but just a name
             // make it a path by appending it to folder
-//            console.log("Slash? ", path.includes("/"))
+            console.log("Slash? ", path.includes("/"))
             if(!path.includes("/")){
                 path = folder + "/" + path
             }

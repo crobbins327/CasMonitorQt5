@@ -7018,3 +7018,129 @@ CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
 CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
 
 [6 rows x 14 columns]
+2022-03-10 10:39:54 gui          INFO     Registering GUI functions...
+2022-03-10 10:39:54 gui          INFO     Registered all procedures!
+2022-03-10 10:39:54 gui          INFO     Subscribing to procedures...
+2022-03-10 10:39:55 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-10 10:39:55 gui          INFO     Connecting to controller...
+2022-03-10 10:39:55 gui          INFO     Checking if machine is homed...
+2022-03-10 10:39:55 gui          WARNING  Waiting until controller is connected...
+2022-03-10 10:39:55 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.gui-get-machine-homed>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-03-10 10:40:00 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-10 10:40:00 gui          INFO     Finished reconnecting loggers!
+2022-03-10 10:40:00 gui          INFO     FINISHED JOIN!
+2022-03-10 10:40:00 gui          WARNING  Attempt to send on a closed protocol
+2022-03-10 10:40:00 gui          WARNING  Controller disconnected...
+2022-03-10 10:40:00 gui          INFO     Disconnected GUI
+2022-03-10 10:40:00 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-10 10:40:00 gui          INFO     Registering GUI functions...
+2022-03-10 10:40:00 gui          INFO     Registered all procedures!
+2022-03-10 10:40:00 gui          INFO     Subscribing to procedures...
+2022-03-10 10:40:00 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-10 10:40:00 gui          INFO     Connecting to controller...
+2022-03-10 10:40:00 gui          INFO     Checking if machine is homed...
+2022-03-10 10:40:00 gui          WARNING  Waiting until controller is connected...
+2022-03-10 10:40:00 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.gui-get-machine-homed>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-03-10 10:40:01 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-03-10 10:40:01 gui          WARNING  Controller disconnected...
+2022-03-10 10:40:02 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-03-10 10:40:02 gui          WARNING  Controller disconnected...
+2022-03-10 10:40:03 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-03-10 10:40:03 gui          WARNING  Controller disconnected...
+2022-03-10 10:40:04 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-03-10 10:40:04 gui          WARNING  Controller disconnected...
+2022-03-10 10:40:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.heartbeat-ctrl>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-03-10 10:40:05 gui          WARNING  Controller disconnected...
+2022-03-10 10:40:05 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-10 10:40:05 gui          INFO     Finished reconnecting loggers!
+2022-03-10 10:40:05 gui          INFO     FINISHED JOIN!
+2022-03-10 10:40:05 gui          WARNING  Attempt to send on a closed protocol
+2022-03-10 10:40:05 gui          WARNING  Controller disconnected...
+2022-03-10 10:40:05 gui          INFO     Disconnected GUI
+2022-03-10 10:40:05 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-10 10:40:05 gui          INFO     Registering GUI functions...
+2022-03-10 10:40:05 gui          INFO     Registered all procedures!
+2022-03-10 10:40:05 gui          INFO     Subscribing to procedures...
+2022-03-10 10:40:05 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-10 10:40:05 gui          INFO     Connecting to controller...
+2022-03-10 10:40:05 gui          INFO     Checking if machine is homed...
+2022-03-10 10:40:05 gui          WARNING  Waiting until controller is connected...
+2022-03-10 10:40:05 gui          WARNING  ApplicationError(error=<wamp.error.no_such_procedure>, args=['no callee registered for procedure <com.prepbot.prothandler.gui-get-machine-homed>'], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-03-10 10:40:06 gui          WARNING  ApplicationError(error=<wamp.close.normal>, args=[None], kwargs={}, enc_algo=None, callee=None, callee_authid=None, callee_authrole=None, forward_for=None)
+2022-03-10 10:40:06 gui          WARNING  Controller disconnected...
+2022-03-10 10:40:06 gui          INFO     Disconnected GUI
+2022-03-10 10:40:06 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-10 10:40:44 gui          INFO     Registering GUI functions...
+2022-03-10 10:40:44 gui          INFO     Registered all procedures!
+2022-03-10 10:40:44 gui          INFO     Subscribing to procedures...
+2022-03-10 10:40:44 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-10 10:40:44 gui          INFO     Connecting to controller...
+2022-03-10 10:40:44 gui          INFO     Checking if machine is homed...
+2022-03-10 10:40:46 gui          INFO     Machine is homed? : True
+2022-03-10 10:40:46 gui          INFO     Getting controller parameters..
+2022-03-10 10:40:46 gui          INFO     Getting controller task dataframe...
+2022-03-10 10:40:47 gui          INFO     Controller has same taskDF as GUI
+2022-03-10 10:40:47 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-10 10:40:47 gui          INFO     Finished reconnecting loggers!
+2022-03-10 10:40:47 gui          INFO     FINISHED JOIN!
+2022-03-10 10:40:53 gui          INFO     CAS2 disengage complete
+2022-03-10 10:40:54 gui          INFO     CAS2 engage complete
+2022-03-10 10:42:09 gui          INFO     Disconnected GUI
+2022-03-10 10:42:09 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-10 10:43:20 gui          INFO     Registering GUI functions...
+2022-03-10 10:43:20 gui          INFO     Registered all procedures!
+2022-03-10 10:43:20 gui          INFO     Subscribing to procedures...
+2022-03-10 10:43:20 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-10 10:43:20 gui          INFO     Connecting to controller...
+2022-03-10 10:43:20 gui          INFO     Checking if machine is homed...
+2022-03-10 10:43:20 gui          INFO     Machine is homed? : True
+2022-03-10 10:43:20 gui          INFO     Getting controller parameters..
+2022-03-10 10:43:20 gui          INFO     Getting controller task dataframe...
+2022-03-10 10:43:20 gui          INFO     Repopulating GUI with controller procedures!
+2022-03-10 10:43:20 gui          INFO     Emitting engages! CAS2
+2022-03-10 10:43:20 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-10 10:43:20 gui          INFO     Finished reconnecting loggers!
+2022-03-10 10:43:20 gui          INFO     FINISHED JOIN!
+2022-03-10 10:43:20 gui          INFO     Sending controller joined to GUI!
+2022-03-10 10:45:06 gui          INFO     Disconnected GUI
+2022-03-10 10:45:06 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1   None    None          None  ...         None     None   None
+CAS2   None    None          None  ...         None     None   None
+CAS3   None    None          None  ...         None     None   None
+CAS4   None    None          None  ...         None     None   None
+CAS5   None    None          None  ...         None     None   None
+CAS6   None    None          None  ...         None     None   None
+
+[6 rows x 14 columns]
