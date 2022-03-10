@@ -35,17 +35,29 @@ if __name__ == '__main__':
     #Check if SampleMonitor is running...
     pid = str(os.getpid())
     pidfile = '/tmp/SampleMonitor.pid'
+    #Saving gui and ctrl subprocess PIDs to also kill if running
+    guipidf = '/tmp/SampleMonitor_GUI.pid'
+    ctrlpidf = '/tmp/SampleMonitor_Controller.pid'
 #     pidfile = 'F:/Torres/CasMonitorQt5/SampleMonitor.pid'
     #If it is running, warn the user and do not start the app
     #Could also terminate the active processes and give the user an option to do that
-    isRunning, runningPID = checkPIDFile(pidfile)
-    if isRunning:
-        print('SampleMonitor with PID {} is still running. Use task manager to terminate runApp.py, controlNQ.py, and setupGUI.py processes'.format(runningPID))
+    runRunning, runPID = checkPIDFile(pidfile)
+    guiRunning, guiPID = checkPIDFile(guipidf)
+    ctrlRunning, ctrlPID = checkPIDFile(ctrlpidf)
+    if runRunning or guiRunning or ctrlRunning:
+        print('SampleMonitor with PID {},{},{} is still running. Use task manager to terminate runApp.py, controlNQ.py, and setupGUI.py processes'.format(runPID, ctrlPID, guiPID))
         while True:
             terminate = input("Do you wish to terminate existing process? yes|no    ")
             if terminate == "yes" or terminate == "y":
-                p = psutil.Process(runningPID)
-                p.terminate()
+                try:
+                    if runPID is not None:
+                        psutil.Process(runPID).terminate()
+                    if guiPID is not None:
+                        psutil.Process(guiPID).terminate()
+                    if ctrlPID is not None:
+                        psutil.Process(ctrlPID).terminate()
+                except Exception as e:
+                    print(e)
                 break
             elif terminate == "no" or terminate == "n":
                 print('Goodbye!')
@@ -56,19 +68,14 @@ if __name__ == '__main__':
     
     try:
         processes = []
-        #Could choose to terminate active gui and ctrl processes...
-        #Saving gui and ctrl subprocess PIDs to perhaps implement this in the future
-        #guipidf = '/tmp/SampleMonitor_GUI.pid'
-        #ctrlpidf = '/tmp/SampleMonitor_Controller.pid'
-        
 
-#        ctrl = subprocess.Popen(['python3', 'prepbot/controlNQ.py'])
-        ctrl = subprocess.Popen([sys.executable, 'prepbot/controlNQ.py'])
-        #open(ctrlpidf,'w').write(str(ctrl.pid))
-#        gui = subprocess.Popen(['python3', 'setupGUI.py'])
+        ctrl = subprocess.Popen(['python3', 'prepbot/controlNQ.py'])
+        # ctrl = subprocess.Popen([sys.executable, 'prepbot/controlNQ.py'])
+        open(ctrlpidf,'w').write(str(ctrl.pid))
         time.sleep(1)
-        gui = subprocess.Popen([sys.executable, 'setupGUI.py'])
-        #open(guipidf,'w').write(str(gui.pid))
+        gui = subprocess.Popen(['python3', 'setupGUI.py'])
+        # gui = subprocess.Popen([sys.executable, 'setupGUI.py'])
+        open(guipidf,'w').write(str(gui.pid))
         processes.append(gui)
         processes.append(ctrl)
     

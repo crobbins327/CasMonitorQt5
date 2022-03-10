@@ -6688,3 +6688,333 @@ CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
 CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
 
 [6 rows x 14 columns]
+2022-03-08 04:29:54 gui          INFO     Registering GUI functions...
+2022-03-08 04:29:54 gui          INFO     Registered all procedures!
+2022-03-08 04:29:54 gui          INFO     Subscribing to procedures...
+2022-03-08 04:29:54 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 04:29:54 gui          INFO     Connecting to controller...
+2022-03-08 04:29:54 gui          INFO     Checking if machine is homed...
+2022-03-08 04:29:54 gui          INFO     Machine is homed? : False
+2022-03-08 04:29:54 gui          INFO     Getting controller parameters..
+2022-03-08 04:29:55 gui          INFO     Getting controller task dataframe...
+2022-03-08 04:29:55 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 04:29:55 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 04:29:55 gui          INFO     Finished reconnecting loggers!
+2022-03-08 04:29:55 gui          INFO     FINISHED JOIN!
+2022-03-08 04:29:56 gui          INFO     CAS2 disengage complete
+2022-03-08 04:29:56 gui          INFO     CAS2 disengage complete
+2022-03-08 04:29:56 gui          INFO     CAS2 disengage complete
+2022-03-08 04:29:57 gui          INFO     CAS2 engage complete
+2022-03-08 04:29:57 gui          INFO     CAS2 engage complete
+2022-03-08 04:29:57 gui          INFO     CAS2 engage complete
+2022-03-08 04:29:58 gui          INFO     CAS1 disengage complete
+2022-03-08 04:29:58 gui          INFO     CAS1 disengage complete
+2022-03-08 04:29:58 gui          INFO     CAS1 disengage complete
+2022-03-08 04:29:59 gui          INFO     CAS1 engage complete
+2022-03-08 04:29:59 gui          INFO     CAS1 engage complete
+2022-03-08 04:29:59 gui          INFO     CAS1 engage complete
+2022-03-08 04:30:07 gui          INFO     CAS2 disengage complete
+2022-03-08 04:30:07 gui          INFO     CAS2 disengage complete
+2022-03-08 04:30:07 gui          INFO     CAS2 disengage complete
+2022-03-08 04:30:08 gui          INFO     CAS2 engage complete
+2022-03-08 04:30:08 gui          INFO     CAS2 engage complete
+2022-03-08 04:30:08 gui          INFO     CAS2 engage complete
+2022-03-08 04:30:09 gui          INFO     CAS1 disengage complete
+2022-03-08 04:30:09 gui          INFO     CAS1 disengage complete
+2022-03-08 04:30:09 gui          INFO     CAS1 disengage complete
+2022-03-08 04:30:10 gui          INFO     CAS1 engage complete
+2022-03-08 04:30:10 gui          INFO     CAS1 engage complete
+2022-03-08 04:30:10 gui          INFO     CAS1 engage complete
+2022-03-08 04:31:47 gui          INFO     CAS3 disengage complete
+2022-03-08 04:31:47 gui          INFO     CAS3 disengage complete
+2022-03-08 04:31:47 gui          INFO     CAS3 disengage complete
+2022-03-08 04:31:47 gui          INFO     CAS2 disengage complete
+2022-03-08 04:31:47 gui          INFO     CAS2 disengage complete
+2022-03-08 04:31:47 gui          INFO     CAS2 disengage complete
+2022-03-08 04:31:48 gui          INFO     CAS1 disengage complete
+2022-03-08 04:31:48 gui          INFO     CAS1 disengage complete
+2022-03-08 04:31:48 gui          INFO     CAS1 disengage complete
+2022-03-08 04:31:49 gui          INFO     CAS2 engage complete
+2022-03-08 04:31:49 gui          INFO     CAS2 engage complete
+2022-03-08 04:31:49 gui          INFO     CAS2 engage complete
+2022-03-08 04:31:50 gui          INFO     CAS3 engage complete
+2022-03-08 04:31:50 gui          INFO     CAS3 engage complete
+2022-03-08 04:31:50 gui          INFO     CAS3 engage complete
+2022-03-08 04:31:50 gui          INFO     CAS1 engage complete
+2022-03-08 04:31:50 gui          INFO     CAS1 engage complete
+2022-03-08 04:31:50 gui          INFO     CAS1 engage complete
+2022-03-08 04:31:56 gui          INFO     Disconnected GUI
+2022-03-08 04:31:56 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 04:48:13 gui          INFO     Registering GUI functions...
+2022-03-08 04:48:13 gui          INFO     Registered all procedures!
+2022-03-08 04:48:13 gui          INFO     Subscribing to procedures...
+2022-03-08 04:48:14 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 04:48:14 gui          INFO     Connecting to controller...
+2022-03-08 04:48:14 gui          INFO     Checking if machine is homed...
+2022-03-08 04:48:14 gui          INFO     Machine is homed? : False
+2022-03-08 04:48:14 gui          INFO     Getting controller parameters..
+2022-03-08 04:48:14 gui          INFO     Getting controller task dataframe...
+2022-03-08 04:48:14 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 04:48:14 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 04:48:14 gui          INFO     Finished reconnecting loggers!
+2022-03-08 04:48:14 gui          INFO     FINISHED JOIN!
+2022-03-08 04:48:14 gui          INFO     Sending controller joined to GUI!
+2022-03-08 04:48:17 gui          INFO     Disconnected GUI
+2022-03-08 04:48:17 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 04:51:16 gui          INFO     Registering GUI functions...
+2022-03-08 04:51:16 gui          INFO     Registered all procedures!
+2022-03-08 04:51:16 gui          INFO     Subscribing to procedures...
+2022-03-08 04:51:16 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 04:51:16 gui          INFO     Connecting to controller...
+2022-03-08 04:51:16 gui          INFO     Checking if machine is homed...
+2022-03-08 04:51:16 gui          INFO     Machine is homed? : False
+2022-03-08 04:51:16 gui          INFO     Getting controller parameters..
+2022-03-08 04:51:16 gui          INFO     Getting controller task dataframe...
+2022-03-08 04:51:16 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 04:51:16 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 04:51:16 gui          INFO     Finished reconnecting loggers!
+2022-03-08 04:51:16 gui          INFO     FINISHED JOIN!
+2022-03-08 04:51:19 gui          INFO     Disconnected GUI
+2022-03-08 04:51:19 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 04:51:19 gui          WARNING  
+2022-03-08 04:51:19 gui          WARNING  Controller disconnected...
+2022-03-08 04:51:19 gui          WARNING  Sending disconnect to GUI!
+2022-03-08 04:51:47 gui          INFO     Registering GUI functions...
+2022-03-08 04:51:47 gui          INFO     Registered all procedures!
+2022-03-08 04:51:47 gui          INFO     Subscribing to procedures...
+2022-03-08 04:51:47 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 04:51:47 gui          INFO     Connecting to controller...
+2022-03-08 04:51:47 gui          INFO     Checking if machine is homed...
+2022-03-08 04:51:47 gui          INFO     Machine is homed? : False
+2022-03-08 04:51:47 gui          INFO     Getting controller parameters..
+2022-03-08 04:51:47 gui          INFO     Getting controller task dataframe...
+2022-03-08 04:51:47 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 04:51:48 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 04:51:48 gui          INFO     Finished reconnecting loggers!
+2022-03-08 04:51:48 gui          INFO     FINISHED JOIN!
+2022-03-08 04:51:48 gui          INFO     Sending controller joined to GUI!
+2022-03-08 04:52:49 gui          INFO     Disconnected GUI
+2022-03-08 04:52:49 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 04:53:35 gui          INFO     Registering GUI functions...
+2022-03-08 04:53:35 gui          INFO     Registered all procedures!
+2022-03-08 04:53:35 gui          INFO     Subscribing to procedures...
+2022-03-08 04:53:35 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 04:53:35 gui          INFO     Connecting to controller...
+2022-03-08 04:53:35 gui          INFO     Checking if machine is homed...
+2022-03-08 04:53:35 gui          INFO     Machine is homed? : False
+2022-03-08 04:53:35 gui          INFO     Getting controller parameters..
+2022-03-08 04:53:36 gui          INFO     Getting controller task dataframe...
+2022-03-08 04:53:36 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 04:53:36 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 04:53:36 gui          INFO     Finished reconnecting loggers!
+2022-03-08 04:53:36 gui          INFO     FINISHED JOIN!
+2022-03-08 04:53:39 gui          INFO     Disconnected GUI
+2022-03-08 04:53:39 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 04:53:53 gui          INFO     Registering GUI functions...
+2022-03-08 04:53:53 gui          INFO     Registered all procedures!
+2022-03-08 04:53:53 gui          INFO     Subscribing to procedures...
+2022-03-08 04:53:54 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 04:53:54 gui          INFO     Connecting to controller...
+2022-03-08 04:53:54 gui          INFO     Checking if machine is homed...
+2022-03-08 04:53:54 gui          INFO     Machine is homed? : False
+2022-03-08 04:53:54 gui          INFO     Getting controller parameters..
+2022-03-08 04:53:54 gui          INFO     Getting controller task dataframe...
+2022-03-08 04:53:54 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 04:53:54 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 04:53:54 gui          INFO     Finished reconnecting loggers!
+2022-03-08 04:53:54 gui          INFO     FINISHED JOIN!
+2022-03-08 04:53:54 gui          INFO     Sending controller joined to GUI!
+2022-03-08 04:55:19 gui          INFO     Disconnected GUI
+2022-03-08 04:55:19 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 04:55:51 gui          INFO     Registering GUI functions...
+2022-03-08 04:55:51 gui          INFO     Registered all procedures!
+2022-03-08 04:55:51 gui          INFO     Subscribing to procedures...
+2022-03-08 04:55:51 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 04:55:51 gui          INFO     Connecting to controller...
+2022-03-08 04:55:51 gui          INFO     Checking if machine is homed...
+2022-03-08 04:55:51 gui          INFO     Machine is homed? : False
+2022-03-08 04:55:51 gui          INFO     Getting controller parameters..
+2022-03-08 04:55:51 gui          INFO     Getting controller task dataframe...
+2022-03-08 04:55:51 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 04:55:51 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 04:55:51 gui          INFO     Finished reconnecting loggers!
+2022-03-08 04:55:51 gui          INFO     FINISHED JOIN!
+2022-03-08 04:56:23 gui          INFO     Disconnected GUI
+2022-03-08 04:56:23 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 05:02:24 gui          INFO     Registering GUI functions...
+2022-03-08 05:02:24 gui          INFO     Registered all procedures!
+2022-03-08 05:02:24 gui          INFO     Subscribing to procedures...
+2022-03-08 05:02:24 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 05:02:24 gui          INFO     Connecting to controller...
+2022-03-08 05:02:24 gui          INFO     Checking if machine is homed...
+2022-03-08 05:02:24 gui          INFO     Machine is homed? : False
+2022-03-08 05:02:24 gui          INFO     Getting controller parameters..
+2022-03-08 05:02:24 gui          INFO     Getting controller task dataframe...
+2022-03-08 05:02:24 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 05:02:24 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 05:02:24 gui          INFO     Finished reconnecting loggers!
+2022-03-08 05:02:24 gui          INFO     FINISHED JOIN!
+2022-03-08 05:02:24 gui          INFO     Sending controller joined to GUI!
+2022-03-08 05:02:27 gui          INFO     Disconnected GUI
+2022-03-08 05:02:27 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 05:02:42 gui          INFO     Registering GUI functions...
+2022-03-08 05:02:42 gui          INFO     Registered all procedures!
+2022-03-08 05:02:42 gui          INFO     Subscribing to procedures...
+2022-03-08 05:02:42 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 05:02:42 gui          INFO     Connecting to controller...
+2022-03-08 05:02:42 gui          INFO     Checking if machine is homed...
+2022-03-08 05:02:42 gui          INFO     Machine is homed? : False
+2022-03-08 05:02:42 gui          INFO     Getting controller parameters..
+2022-03-08 05:02:42 gui          INFO     Getting controller task dataframe...
+2022-03-08 05:02:42 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 05:02:42 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 05:02:42 gui          INFO     Finished reconnecting loggers!
+2022-03-08 05:02:42 gui          INFO     FINISHED JOIN!
+2022-03-08 05:03:00 gui          INFO     Disconnected GUI
+2022-03-08 05:03:00 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 05:03:35 gui          INFO     Registering GUI functions...
+2022-03-08 05:03:35 gui          INFO     Registered all procedures!
+2022-03-08 05:03:35 gui          INFO     Subscribing to procedures...
+2022-03-08 05:03:36 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 05:03:36 gui          INFO     Connecting to controller...
+2022-03-08 05:03:36 gui          INFO     Checking if machine is homed...
+2022-03-08 05:03:36 gui          INFO     Machine is homed? : False
+2022-03-08 05:03:36 gui          INFO     Getting controller parameters..
+2022-03-08 05:03:36 gui          INFO     Getting controller task dataframe...
+2022-03-08 05:03:36 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 05:03:36 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 05:03:36 gui          INFO     Finished reconnecting loggers!
+2022-03-08 05:03:36 gui          INFO     FINISHED JOIN!
+2022-03-08 05:03:36 gui          INFO     Sending controller joined to GUI!
+2022-03-08 05:04:02 gui          INFO     Disconnected GUI
+2022-03-08 05:04:02 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 05:04:06 gui          INFO     Registering GUI functions...
+2022-03-08 05:04:06 gui          INFO     Registered all procedures!
+2022-03-08 05:04:06 gui          INFO     Subscribing to procedures...
+2022-03-08 05:04:06 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 05:04:06 gui          INFO     Connecting to controller...
+2022-03-08 05:04:06 gui          INFO     Checking if machine is homed...
+2022-03-08 05:04:06 gui          INFO     Machine is homed? : False
+2022-03-08 05:04:06 gui          INFO     Getting controller parameters..
+2022-03-08 05:04:06 gui          INFO     Getting controller task dataframe...
+2022-03-08 05:04:06 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 05:04:06 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 05:04:06 gui          INFO     Finished reconnecting loggers!
+2022-03-08 05:04:06 gui          INFO     FINISHED JOIN!
+2022-03-08 05:04:06 gui          INFO     Sending controller joined to GUI!
+2022-03-08 05:05:14 gui          INFO     CAS2 disengage complete
+2022-03-08 05:05:15 gui          INFO     CAS2 engage complete
+2022-03-08 05:05:38 gui          INFO     Disconnected GUI
+2022-03-08 05:05:38 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
+2022-03-08 05:05:52 gui          INFO     Registering GUI functions...
+2022-03-08 05:05:52 gui          INFO     Registered all procedures!
+2022-03-08 05:05:52 gui          INFO     Subscribing to procedures...
+2022-03-08 05:05:53 gui          INFO     Subscribed to 14 procedure(s)
+2022-03-08 05:05:53 gui          INFO     Connecting to controller...
+2022-03-08 05:05:53 gui          INFO     Checking if machine is homed...
+2022-03-08 05:05:53 gui          INFO     Machine is homed? : False
+2022-03-08 05:05:53 gui          INFO     Getting controller parameters..
+2022-03-08 05:05:53 gui          INFO     Getting controller task dataframe...
+2022-03-08 05:05:53 gui          INFO     Controller has same taskDF as GUI
+2022-03-08 05:05:53 gui          INFO     Finished setting tasks and repopulating GUI!
+2022-03-08 05:05:53 gui          INFO     Finished reconnecting loggers!
+2022-03-08 05:05:53 gui          INFO     FINISHED JOIN!
+2022-03-08 05:05:53 gui          INFO     Sending controller joined to GUI!
+2022-03-08 05:05:58 gui          INFO     Disconnected GUI
+2022-03-08 05:05:58 gui          INFO          status stepNum secsRemaining  ... protocolName startlog endlog
+CAS1    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS2    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS3    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS4    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS5    NaN     NaN           NaN  ...          NaN      NaN    NaN
+CAS6    NaN     NaN           NaN  ...          NaN      NaN    NaN
+
+[6 rows x 14 columns]
