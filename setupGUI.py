@@ -43,9 +43,9 @@ if __name__ == '__main__':
         QQuickStyle.setStyle("Material")
 
     #Setup QML application with asynchronous event loop
-#    app = QtWidgets.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
 
-    app = QtGui.QGuiApplication(sys.argv)
+    #app = QtGui.QGuiApplication(sys.argv)
 
     asyncio_loop = QEventLoop(app)
     asyncio.set_event_loop(asyncio_loop)

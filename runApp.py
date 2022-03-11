@@ -45,8 +45,9 @@ if __name__ == '__main__':
     guiRunning, guiPID = checkPIDFile(guipidf)
     ctrlRunning, ctrlPID = checkPIDFile(ctrlpidf)
     guiOnly = False
+    input_empty = True
     if ctrlRunning:
-        while True:
+        while input_empty:
             restartGUI = input('Controller is still running. Do you wish to restart GUI and keep controller active? yes|no    ')
             if restartGUI == "yes" or restartGUI == "y":
                 try:
@@ -58,9 +59,27 @@ if __name__ == '__main__':
                 except Exception as e:
                     print(e)
                 break
-            elif terminate == "no" or terminate == "n":
-                break
-                
+            elif restartGUI == "no" or restartGUI == "n":
+                input_empty = False
+                print('SampleMonitor with PID {} (runApp),{} (controlNQ),{} (setupGUI) is still running. Use task manager to terminate runApp.py, controlNQ.py, and setupGUI.py processes'.format(runPID, ctrlPID, guiPID))
+                while True:
+                    terminate = input("Do you wish to terminate all existing processes? yes|no    ")
+                    if terminate == "yes" or terminate == "y":
+                        try:
+                            if runPID is not None:
+                                psutil.Process(runPID).terminate()
+                            if guiPID is not None:
+                                psutil.Process(guiPID).terminate()
+                            if ctrlPID is not None:
+                                psutil.Process(ctrlPID).terminate()
+                        except Exception as e:
+                            print(e)
+                        break
+                    elif terminate == "no" or terminate == "n":
+                        print('Goodbye!')
+                        time.sleep(5)
+                        sys.exit()
+                    
     elif runRunning or guiRunning or ctrlRunning:
         print('SampleMonitor with PID {} (runApp),{} (controlNQ),{} (setupGUI) is still running. Use task manager to terminate runApp.py, controlNQ.py, and setupGUI.py processes'.format(runPID, ctrlPID, guiPID))
         while True:
@@ -100,9 +119,9 @@ if __name__ == '__main__':
             if any(p.poll() == 0 for p in processes):
                 break
             time.sleep(10)
-            for p in processes:
-                print(p)
-                print(p.poll())
+            #for p in processes:
+            #    print(p)
+            #    print(p.poll())
             continue
             
         for p in processes:
