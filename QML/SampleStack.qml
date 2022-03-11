@@ -540,7 +540,7 @@ Item {
 
                     TextInput {
                         id: sampInput
-                        property string placeholderText: "Enter Sample Name..."
+                        property string placeholderText: "Enter Sample Name"
                         font.capitalization: Font.MixedCase
                         color: "#ffffff"
                         leftPadding: 5
@@ -598,9 +598,9 @@ Item {
 
                     model: ["Full Process", "No Stain", "No Fixation", "Custom"]
 
-                    font.pointSize: 10
+                    font.pointSize: 11
                     Layout.topMargin: 10
-                    Layout.preferredWidth: colLayout.width/1.1
+                    Layout.preferredWidth: colLayout.width
                     Layout.preferredHeight: 50
                     Layout.minimumHeight: 30
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -739,11 +739,11 @@ Item {
                 text: runStep
                 style: Text.Normal
                 fontSizeMode: Text.VerticalFit
-                anchors.left: runProgBar.left
+                anchors.left: parent.left
                 anchors.bottom: runProgBar.top
                 anchors.bottomMargin: 5
                 anchors.leftMargin: 0
-                font.pointSize: 9
+                font.pointSize: 10
                 font.weight: Font.Thin
                 minimumPointSize: 10
             }
@@ -754,11 +754,11 @@ Item {
                 height: 19
                 text: runTime
                 fontSizeMode: Text.VerticalFit
-                anchors.right: runProgBar.right
+                anchors.right: parent.right
                 horizontalAlignment: Text.AlignRight
                 anchors.rightMargin: 0
                 anchors.verticalCenter: runStepL.verticalCenter
-                font.pointSize: 9
+                font.pointSize: 10
                 font.weight: Font.Normal
                 minimumPointSize: 10
             }
@@ -809,7 +809,7 @@ Item {
                 style: Text.Normal
                 minimumPointSize: 10
                 font.weight: Font.Normal
-                font.pointSize: 8
+                font.pointSize: 9
                 anchors.verticalCenterOffset: 0
                 anchors.verticalCenter: runProgBar.verticalCenter
                 fontSizeMode: Text.VerticalFit
