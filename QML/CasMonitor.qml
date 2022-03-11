@@ -15,7 +15,7 @@ Item {
     id: casMonitor
 //    width: 776
 //    height: 400
-    property int numberOfCassettes: 6
+    property int numberOfCassettes: 1
 
     Rectangle {
         id: rootBG

@@ -28,6 +28,20 @@
 		"loadType": "undefined"
 	},
 	{
+		"opName": "Load Stain",
+		"opTime": "00:01:30",
+		"mixAfterSecs": 0,
+		"volume": "200uL",
+		"extraVolOut": "undefined",
+		"inSpeed": 200,
+		"chamberSpeed": 50,
+		"lineSpeed": 200,
+		"numCycles": 0,
+		"washSyr": "auto",
+		"washReagent": "Dehydrant",
+		"loadType": "Stain"
+	},
+	{
 		"opName": "Purge",
 		"opTime": "00:05:00",
 		"mixAfterSecs": 0,
@@ -68,20 +82,6 @@
 		"washSyr": "auto",
 		"washReagent": "Dehydrant",
 		"loadType": "Dehydrant"
-	},
-	{
-		"opName": "Load Stain",
-		"opTime": "00:01:30",
-		"mixAfterSecs": 0,
-		"volume": "200uL",
-		"extraVolOut": "undefined",
-		"inSpeed": 200,
-		"chamberSpeed": 50,
-		"lineSpeed": 200,
-		"numCycles": 0,
-		"washSyr": "auto",
-		"washReagent": "Dehydrant",
-		"loadType": "Stain"
 	},
 	{
 		"opName": "Load BABB",
