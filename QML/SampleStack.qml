@@ -712,7 +712,7 @@ Item {
                     style: Text.Normal
                     font.weight: Font.Normal
                     font.pointSize: 12
-                    minimumPointSize: 11
+                    minimumPointSize: 12
                     Layout.maximumWidth: parent.width-40
                 }
 
@@ -728,7 +728,7 @@ Item {
                     style: Text.Normal
                     font.weight: Font.Normal
                     font.pointSize: 12
-                    minimumPointSize: 11
+                    minimumPointSize: 12
                     Layout.maximumWidth: parent.width-40
                 }
 
@@ -745,7 +745,7 @@ Item {
                 anchors.leftMargin: 0
                 font.pointSize: 11
                 font.weight: Font.Thin
-                minimumPointSize: 10
+                minimumPointSize: 11
             }
 
             Text {
@@ -760,7 +760,7 @@ Item {
                 anchors.verticalCenter: runStepL.verticalCenter
                 font.pointSize: 11
                 font.weight: Font.Normal
-                minimumPointSize: 10
+                minimumPointSize: 11
             }
 
             ProgressBar {
@@ -809,7 +809,7 @@ Item {
                 style: Text.Normal
                 minimumPointSize: 10
                 font.weight: Font.Normal
-                font.pointSize: 10
+                font.pointSize: 11
                 anchors.verticalCenterOffset: 0
                 anchors.verticalCenter: runProgBar.verticalCenter
                 fontSizeMode: Text.VerticalFit
