@@ -134,7 +134,7 @@ ApplicationWindow {
         id: exitDialog
         standardButtons: StandardButton.Cancel | StandardButton.Yes
         icon: StandardIcon.Critical
-        text: "Are you sure you want to exit? This WILL NOT shutdown the controller nor stop any ongoing runs."
+        text: "Are you sure you want to exit?<br>This <b>WILL NOT</b> shutdown the controller nor stop any ongoing runs."
         title: "Exit Application"
         modality: Qt.WindowModal
         onYes: {

@@ -711,7 +711,7 @@ Item {
                     fontSizeMode: Text.Fit
                     style: Text.Normal
                     font.weight: Font.Normal
-                    font.pointSize: 11
+                    font.pointSize: 12
                     minimumPointSize: 11
                     Layout.maximumWidth: parent.width-40
                 }
@@ -727,7 +727,7 @@ Item {
                     //                    anchors.bottomMargin: 10
                     style: Text.Normal
                     font.weight: Font.Normal
-                    font.pointSize: 11
+                    font.pointSize: 12
                     minimumPointSize: 11
                     Layout.maximumWidth: parent.width-40
                 }
@@ -743,7 +743,7 @@ Item {
                 anchors.bottom: runProgBar.top
                 anchors.bottomMargin: 5
                 anchors.leftMargin: 0
-                font.pointSize: 10
+                font.pointSize: 11
                 font.weight: Font.Thin
                 minimumPointSize: 10
             }
@@ -758,7 +758,7 @@ Item {
                 horizontalAlignment: Text.AlignRight
                 anchors.rightMargin: 0
                 anchors.verticalCenter: runStepL.verticalCenter
-                font.pointSize: 10
+                font.pointSize: 11
                 font.weight: Font.Normal
                 minimumPointSize: 10
             }
@@ -809,7 +809,7 @@ Item {
                 style: Text.Normal
                 minimumPointSize: 10
                 font.weight: Font.Normal
-                font.pointSize: 9
+                font.pointSize: 10
                 anchors.verticalCenterOffset: 0
                 anchors.verticalCenter: runProgBar.verticalCenter
                 fontSizeMode: Text.VerticalFit
