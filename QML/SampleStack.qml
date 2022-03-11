@@ -743,9 +743,9 @@ Item {
                 anchors.bottom: runProgBar.top
                 anchors.bottomMargin: 5
                 anchors.leftMargin: 0
-                font.pointSize: 11
+                font.pointSize: 10
                 font.weight: Font.Thin
-                minimumPointSize: 11
+                minimumPointSize: 10
             }
 
             Text {

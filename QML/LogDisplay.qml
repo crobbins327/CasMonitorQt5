@@ -102,7 +102,7 @@ Item{
                         selectByMouse: false
                         selectByKeyboard: true
                         text: logText
-                        font.pointSize: 9
+                        font.pointSize: 11
                         wrapMode: Text.WordWrap
                         anchors.fill: parent
                     }
