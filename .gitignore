@@ -5,3 +5,4 @@ Log/opTimes.log
 *.log
 Log/disconnect/disconnect-state.pkl
 Log/disconnect/disconnect-state.pkl
+*.log

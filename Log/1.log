@@ -1,4 +1,0 @@
-2022-03-10 15:57:20 ctrl.machine INFO     releasing hardware control
-2022-03-10 15:57:20 ctrl.machine WARNING  [Errno 2] No such file or directory: '/run/shm/prepbot.lock'
-2022-03-10 15:57:20 ctrl.machine WARNING  [Errno 2] No such file or directory: '/run/shm/pump_homed'
-2022-03-10 16:04:20 ctrl.machine INFO     releasing hardware control
