@@ -139,7 +139,7 @@ ApplicationWindow {
         onYes: {
             closeStatus = true
             //sends another close signal, this time with closeStatus = true
-            WAMPHandler.closeApp()
+//            WAMPHandler.closeApp()
 //            delay(5, function() {
 //                console.log("print")
 //            })

@@ -83,7 +83,10 @@ if __name__ == '__main__':
         while True:
             if any(p.poll() == 0 for p in processes):
                 break
-            time.sleep(0.5)
+            time.sleep(10)
+#            for p in processes:
+#                print(p)
+#                print(p.poll())
             continue
     
         processes[0].terminate()

@@ -14,6 +14,7 @@ Item {
     id: casMonitor
 //    width: 776
 //    height: 400
+    property int numberOfCassettes: 6
 
     Rectangle {
         id: rootBG
@@ -202,7 +203,7 @@ Item {
 
                 Repeater {
                     id: casRepeater
-                    model: 3
+                    model: casMonitor.numberOfCassettes
                     delegate: Item {
                         width: cas.width
                         height: casScroll.height-5

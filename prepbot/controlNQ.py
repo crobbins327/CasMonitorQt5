@@ -1,15 +1,15 @@
 #!/home/jackr/anaconda/envs/QML36/bin/python
 import os
 import sys
-sys.path.append('/home/pi/CasMonitorQt5/')
-#sys.path.append('F:/Torres/CasMonitorQt5/')
+#sys.path.append('/home/pi/CasMonitorQt5/')
+sys.path.append('F:/Torres/CasMonitorQt5/')
 import asyncio
 from autobahn.asyncio.wamp import ApplicationSession
 from autobahn_autoreconnect import ApplicationRunner
 from autobahn import wamp
 import time
 import datetime
-import machine_debug_pi as machine
+import machine_debug as machine
 import itertools
 import namedTask as nTask
 # import confuse
@@ -180,9 +180,10 @@ class Component(ApplicationSession):
                     await self.stopTermTasks()
                 if self.guiStatus == 'connected':
                     self.guiStatus = 'disconnected'
-                    ctrl.warning('GUI is disconnected!')
-                    ctrl.warning(e)
+                ctrl.warning('GUI is disconnected!')
+                ctrl.warning(e)
                 self.publish('com.prepbot.prothandler.controller-dced')
+                #Shutdown all runs and disconnect controller?
                 await asyncio.sleep(5)
                 
     @wamp.subscribe('com.prepbot.prothandler.send-param-controller')
@@ -551,7 +552,7 @@ class Component(ApplicationSession):
             #Break up blocks of code, exec cannot be used because it does not return values
             #Eval() has poor security!!!! Should at least filter protStrings before evaluating...
             toEval = protStrings[i].split('\n')
-            casLogs[cas].info('{}: Evaluating step {}'.format(cas,i))
+            casLogs[cas].info('{}: Evaluating step {}'.format(cas,i+1))
             casLogs[cas].info(toEval)
             # if len(toEval) > 1:
             #     #Need to gather functions so that the protocol step is completed synchronously

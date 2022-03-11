@@ -9,7 +9,7 @@ import "./Icons/"
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 1
+    property int stackIndex: 0
     property double runProgVal: 0
     property string firstRunTime : "01:31:55"
     property int firstRunSecs : get_sec(root.firstRunTime)
@@ -33,6 +33,9 @@ Item {
     property bool isLogRefreshed: false
 
     property string sampleName: ''
+    property string fullProcessProt: './Protocols/default/Full Process.json'
+    property string noStainProt: './Protocols/default/No Stain.json'
+    property string noFormProt: './Protocols/default/No Fixative.json'
 
     signal reSetupProt(string casNum, variant progS, variant stepTimes, string runtime, string samplen, string protocoln)
     signal reStartedProt(int casNum, string logChunk, int start, int currentEnd)
@@ -627,14 +630,11 @@ Item {
                             } else {
                                 // Start protocol with sample name depending on combobox choice
                                 if (comboProt.currentValue=='Full Process'){
-                                    var savedPath = './Protocols/all_operations_new.json'
-                                    WAMPHandler.startProtocol(root.casNumber, savedPath, 'undefined', root.sampleName, 'Full Process')
+                                    WAMPHandler.startProtocol(root.casNumber, root.fullProcessProt, 'undefined', root.sampleName, 'Full Process')
                                 } else if (comboProt.currentValue=='No Stain'){
-                                    var savedPath = ''
-                                    WAMPHandler.startProtocol(root.casNumber, savedPath, 'undefined', root.sampleName, 'No Stain')
+                                    WAMPHandler.startProtocol(root.casNumber, root.noStainProt, 'undefined', root.sampleName, 'No Stain')
                                 } else if (comboProt.currentValue=='No Fixation'){
-                                    var savedPath = ''
-                                    WAMPHandler.startProtocol(root.casNumber, savedPath, 'undefined', root.sampleName, 'No Fixation')
+                                    WAMPHandler.startProtocol(root.casNumber, root.noFormProt, 'undefined', root.sampleName, 'No Fixation')
                                 }
                             }
                         }
@@ -911,6 +911,8 @@ Item {
 
                     //switch index
                     stackIndex = 0
+                    //reset sample name
+                    sampleName = ''
                 }
             }
 
