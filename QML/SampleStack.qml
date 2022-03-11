@@ -743,9 +743,9 @@ Item {
                 anchors.bottom: runProgBar.top
                 anchors.bottomMargin: 5
                 anchors.leftMargin: 0
-                font.pointSize: 10
+                font.pointSize: 11
                 font.weight: Font.Thin
-                minimumPointSize: 10
+                minimumPointSize: 11
             }
 
             Text {
@@ -759,7 +759,7 @@ Item {
                 anchors.rightMargin: 0
                 anchors.verticalCenter: runStepL.verticalCenter
                 font.pointSize: 11
-                font.weight: Font.Normal
+                font.weight: Font.Thin
                 minimumPointSize: 11
             }
 
