@@ -461,7 +461,7 @@ Item {
                     Layout.minimumHeight: 40
                     text: qsTr("Engage")
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                    font.pointSize: 11
+                    font.pointSize: 12
                     font.capitalization: Font.MixedCase
 //                    palette {
 //                        button: 'green'
@@ -513,7 +513,7 @@ Item {
                     Layout.preferredHeight: 50
                     Layout.minimumHeight: 30
                     text: qsTr("Disengage")
-                    font.pointSize: 11
+                    font.pointSize: 12
                     font.capitalization: Font.MixedCase
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 //                    palette {
@@ -594,7 +594,7 @@ Item {
 //                    Material.primary: 'silver'
                     Material.elevation: 5
 //                    popup.Material.background: '#999999'
-                    popup.font.pointSize: 10
+                    popup.font.pointSize: 11
 
                     model: ["Full Process", "No Stain", "No Fixation", "Custom"]
 
@@ -610,7 +610,7 @@ Item {
                     id: setupRunB
                     Layout.preferredWidth: colLayout.width/2
                     text: qsTr("Start")
-                    font.pointSize: 11
+                    font.pointSize: 12
                     font.capitalization: Font.MixedCase
                     Layout.preferredHeight: 50
                     Layout.minimumHeight: 30
@@ -824,7 +824,7 @@ Item {
                 Layout.minimumHeight: 30
 
                 text: qsTr("Stop")
-                font.pointSize: 11
+                font.pointSize: 12
                 font.capitalization: Font.MixedCase
                 anchors.left: parent.left
                 anchors.leftMargin: 10
@@ -849,7 +849,7 @@ Item {
                 Layout.preferredHeight: 50
                 Layout.minimumHeight: 30
                 text: qsTr("Log")
-                font.pointSize: 11
+                font.pointSize: 12
                 font.capitalization: Font.MixedCase
                 anchors.right: parent.right
                 anchors.rightMargin: 10
@@ -878,7 +878,7 @@ Item {
                 Layout.minimumHeight: 30
                 text: qsTr("Next")
                 anchors.bottom: parent.bottom
-                font.pointSize: 11
+                font.pointSize: 12
                 font.capitalization: Font.MixedCase
                 anchors.leftMargin: 10
                 anchors.left: parent.left
