@@ -3,6 +3,7 @@ import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQml.Models 2.12
+import Qt.labs.platform 1.1 as Platform
 import QtQuick.Dialogs 1.3
 import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.12
@@ -89,23 +90,23 @@ Item {
 
                 Menu {
                         id: settingsMenu
-                        y: settingsB.height+3
+//                        y: settingsB.height+3
 
                         MenuItem {
                             text: "Goto Protocol Editor"
-                            onClicked: {
+                            onTriggered: {
                                 mainStack.push("ProtocolEditor.qml", {casNumber: 0})
                             }
                         }
                         MenuItem {
                             text: "Set Default Protocol"
-                            onClicked: {
+                            onTriggered: {
                                 defProtSelector.open()
                             }
                         }
                         MenuItem {
                             text: otherMode + " mode"
-                            onClicked: {
+                            onTriggered: {
                                 if(otherMode=='FullScreen'){
                                     visMode = 'FullScreen'
                                     otherMode = 'Windowed'
@@ -117,7 +118,7 @@ Item {
                         }
                         MenuItem {
                             text: "Exit"
-                            onClicked: {
+                            onTriggered: {
                                 exitDialog.open()
                             }
                         }
@@ -306,9 +307,10 @@ Item {
 
     }
 
-    FileDialog {
+    Platform.FileDialog {
         id:defProtSelector
-        selectExisting: true
+        fileMode: Platform.FileDialog.OpenFile
+//        selectExisting: true
         folder: mainDir
         nameFilters: [ "Protocol Files (*.json)", "All files (*)" ]
         //nameFilters: [ "*.json", "All files (*)" ]

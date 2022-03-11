@@ -2,8 +2,8 @@ import QtQuick 2.14
 import QtQuick.Controls 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQml.Models 2.12
-//import Qt.labs.platform 1.1
-import QtQuick.Dialogs 1.3
+import Qt.labs.platform 1.1 as Platform
+import QtQuick.Dialogs 1.3 as DiagLib
 import Qt.labs.folderlistmodel 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
@@ -150,17 +150,17 @@ Item {
 
                 Menu {
                         id: settingsMenu
-                        y: settingsB.height+3
+//                        y: settingsB.height+3
 
                         MenuItem {
                             text: "Set Default Protocol"
-                            onClicked: {
+                            onTriggered: {
                                 defProtSelector.open()
                             }
                         }
                         MenuItem {
                             text: rootApWin.otherMode + " mode"
-                            onClicked: {
+                            onTriggered: {
                                 if(rootApWin.otherMode==='FullScreen'){
                                     rootApWin.visMode = 'FullScreen'
                                     rootApWin.otherMode = 'Windowed'
@@ -172,7 +172,7 @@ Item {
                         }
                         MenuItem {
                             text: "Exit"
-                            onClicked: {
+                            onTriggered: {
                                 exitDialog.open()
                             }
                         }
@@ -723,28 +723,29 @@ Item {
         return tally
     }
 
-    MessageDialog {
+    DiagLib.MessageDialog {
         id: sampleNameDi
-        standardButtons: StandardButton.Ok
-        icon: StandardIcon.Critical
+        standardButtons: DiagLib.StandardButton.Ok
+        icon: DiagLib.StandardIcon.Critical
         text: "Enter a sample name to start the run."
         title: "Sample name is missing."
         modality: Qt.WindowModal
         onAccepted: {}
     }
-    MessageDialog {
+    DiagLib.MessageDialog {
         id: dataDi
-        standardButtons: StandardButton.Ok
-        icon: StandardIcon.Critical
+        standardButtons: DiagLib.StandardButton.Ok
+        icon: DiagLib.StandardIcon.Critical
         text: "Model data from protocol is empty. Enter or open a valid protocol!"
         title: "Protocol empty."
         modality: Qt.WindowModal
         onAccepted: {}
     }
 
-    FileDialog {
+    Platform.FileDialog {
         id: openDialog
-        selectFolder: false
+        fileMode: Platform.FileDialog.OpenFile
+//        selectFolder: false
         folder: mainDir
         nameFilters: ["Protocol Files (*.json)", "All files (*)"]
         modality: Qt.WindowModal
@@ -753,7 +754,7 @@ Item {
             folderListModel.folder = openDialog.folder
 
             //open protocol
-            var path = openDialog.fileUrl.toString();
+            var path = openDialog.file.toString();
             if (rootApWin.operatingSystem == 'Windows'){
                 //IF WINDOWS
                 // remove prefixed "file:///"

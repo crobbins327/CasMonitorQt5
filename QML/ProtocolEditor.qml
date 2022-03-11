@@ -2,8 +2,8 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import Qt.labs.qmlmodels 1.0
 import QtQml.Models 2.12
-import Qt.labs.platform 1.1
-import QtQuick.Dialogs 1.3
+import Qt.labs.platform 1.1 as Platform
+import QtQuick.Dialogs 1.3 as DiagLib
 import QtGraphicalEffects 1.12
 import QtQuick.Controls.Material 2.12
 
@@ -15,7 +15,7 @@ Item {
 //    height: 400
     property int casNumber: 0
     property variant stepModel: ListModel{}
-    property string mainDir: ''
+    property string mainDir: rootApWin.mainDir
     property string sampleName: ''
     property string protocolName: 'Protocol Name'
     property string savedPath: ''
@@ -141,17 +141,17 @@ Item {
 
                 Menu {
                         id: settingsMenu
-                        y: settingsB.height+3
+//                        y: settingsB.height+3
 
                         MenuItem {
                             text: "Set Default Protocol"
-                            onClicked: {
+                            onTriggered: {
                                 defProtSelector.open()
                             }
                         }
                         MenuItem {
                             text: rootApWin.otherMode + " mode"
-                            onClicked: {
+                            onTriggered: {
                                 if(rootApWin.otherMode==='FullScreen'){
                                     rootApWin.visMode = 'FullScreen'
                                     rootApWin.otherMode = 'Windowed'
@@ -163,7 +163,7 @@ Item {
                         }
                         MenuItem {
                             text: "Exit"
-                            onClicked: {
+                            onTriggered: {
                                 exitDialog.open()
                             }
                         }
@@ -766,29 +766,29 @@ Item {
         return tally
     }
     
-    MessageDialog {
+    DiagLib.MessageDialog {
         id: sampleNameDi
-        standardButtons: StandardButton.Ok
-        icon: StandardIcon.Critical
+        standardButtons: DiagLib.StandardButton.Ok
+        icon: DiagLib.StandardIcon.Critical
         text: "Enter a sample name to start the run."
         title: "Sample name is missing."
         modality: Qt.WindowModal
         onAccepted: {}
     }
-    MessageDialog {
+    DiagLib.MessageDialog {
         id: dataDi
-        standardButtons: StandardButton.Ok
-        icon: StandardIcon.Critical
+        standardButtons: DiagLib.StandardButton.Ok
+        icon: DiagLib.StandardIcon.Critical
         text: "Model data from protocol is empty. Enter or open a valid protocol!"
         title: "Protocol empty."
         modality: Qt.WindowModal
         onAccepted: {}
     }
     
-    MessageDialog {
+    DiagLib.MessageDialog {
         id: saveDi
-        standardButtons: StandardButton.No | StandardButton.Yes
-        icon: StandardIcon.Warning
+        standardButtons: DiagLib.StandardButton.No | DiagLib.StandardButton.Yes
+        icon: DiagLib.StandardIcon.Warning
         text: "Do you want to save protocol before starting run?"
         title: "Saved protocol path empty."
         modality: Qt.WindowModal
@@ -801,9 +801,10 @@ Item {
             }
     }
     
-    FileDialog {
+    Platform.FileDialog {
         id:saveDialog
-        selectExisting: false
+        fileMode: Platform.FileDialog.SaveFile
+//        selectExisting: false
         folder: mainDir
         nameFilters: [ "Protocol Files (*.json)", "All files (*)" ]
         //nameFilters: [ "*.json", "All files (*)" ]
@@ -813,9 +814,9 @@ Item {
             var datamodel = []
             for (var i = 0; i < stepListModDel.model.count; ++i) datamodel.push(stepListModDel.model.get(i))
             var datastring = JSON.stringify(datamodel, null, "\t");
-            var path = saveDialog.fileUrl.toString();
+            var path = saveDialog.file.toString();
             var folder = saveDialog.folder.toString();
-//            console.log(path)
+            console.log(path)
 
             if (rootApWin.operatingSystem == 'Windows'){
                 //IF WINDOWS
@@ -859,16 +860,17 @@ Item {
 
     }
 
-    FileDialog {
+    Platform.FileDialog {
         id:openDialog
-        selectExisting: true
+        fileMode: Platform.FileDialog.OpenFile
+//        selectExisting: true
         folder: mainDir
         nameFilters: [ "Protocol Files (*.json)", "All files (*)" ]
         //nameFilters: [ "*.json", "All files (*)" ]
         defaultSuffix: ".json"
         modality: Qt.WindowModal
         onAccepted: {
-            var path = openDialog.fileUrl.toString();
+            var path = openDialog.file.toString();
             if (rootApWin.operatingSystem == 'Windows'){
                 //IF WINDOWS
                 // remove prefixed "file:///"
