@@ -12,9 +12,9 @@ if __name__ == '__main__':
     while True:
         time.sleep(10)
 #        print(processes)
-        for p in processes:
-            print(p)
-            print(p.poll())
+#        for p in processes:
+#            print(p)
+#            print(p.poll())
         if any(p.poll() != None for p in processes):
             break
         continue

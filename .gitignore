@@ -1,5 +1,3 @@
-
-CasMonitorQt5.pyproject.user
 *.log
 Log/disconnect/disconnect-state.pkl
 

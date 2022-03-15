@@ -15,21 +15,12 @@ Item {
     id: casMonitor
 //    width: 776
 //    height: 400
-    property int numberOfCassettes: 1
+    property int numberOfCassettes: rootApWin.availableCasNum
 
     Rectangle {
         id: rootBG
         anchors.fill: parent
-//        anchors.right: parent.right
-//        anchors.rightMargin: 0
-//        anchors.left: parent.left
-//        anchors.leftMargin: 0
-//        anchors.bottom: parent.bottom
-//        anchors.bottomMargin: 0
-//        anchors.top: parent.top
-//        anchors.topMargin: 0
 
-//        color: "dimgray"
         Material.theme: Material.Dark
         Material.accent: Material.Blue
         color: Material.background
@@ -66,8 +57,6 @@ Item {
                 anchors.rightMargin: 20
                 anchors.verticalCenter: parent.verticalCenter
 
-
-//                opacity: settingsB.down || settingsB.checked || settingsB.highlighted ? 0.5 : 1
                 flat: true
 
                 icon.source: "Icons/settings-icon.png"
@@ -75,14 +64,6 @@ Item {
                 icon.height: 60
                 icon.width: 60
 
-//                background: Rectangle {
-//                    implicitWidth: 50
-//                    implicitHeight: 50
-//                    border.width: settingsB.down || settingsB.checked || settingsB.highlighted ? 4 : 3
-//                    border.color: "white"
-//                    radius: 30
-//                    color: "transparent"
-//                }
 
                 onClicked: {
                     settingsMenu.open()
@@ -90,7 +71,16 @@ Item {
 
                 Menu {
                         id: settingsMenu
-//                        y: settingsB.height+3
+
+                        MenuItem {
+                            text: "Cassette Temperatures"
+                            onTriggered: {
+                                tempWin.close()
+                                tempWin.show()
+                                tempWin.raise()
+                                tempDisplay.open()
+                            }
+                        }
 
                         MenuItem {
                             text: "Goto Protocol Editor"
@@ -177,12 +167,9 @@ Item {
 
 //            }
 
-
-
         }
 
-        ScrollView
-        {
+        ScrollView {
             id: casScroll
             anchors.top: menuRect.bottom
             anchors.bottom: parent.bottom
@@ -225,112 +212,53 @@ Item {
                 }
             }
         }
-
-//        Row {
-//            id: topRow
-//            anchors.topMargin: 5
-//            anchors.rightMargin: 20
-//            anchors.leftMargin: 20
-//            anchors.bottomMargin: -30
-//            anchors.top: menuRect.bottom
-//            anchors.right: parent.right
-//            anchors.bottom: parent.verticalCenter
-//            anchors.left: parent.left
-
-//            spacing: (topRow.width - 3*cas1.width)/2
-
-
-//            SampleStack {
-//                id: cas1
-//                height: (casMonitor.height-menuRect.height)/2.1
-//                width: casMonitor.width/3.4
-//                casNumber: 1
-//                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-//            }
-
-//            SampleStack {
-//                id: cas2
-//                height: (casMonitor.height-menuRect.height)/2.1
-//                width: casMonitor.width/3.4
-//                casNumber: 2
-//                Layout.alignment: Qt.AlignLeft | Qt.AlignTop       }
-
-//            SampleStack {
-//                id: cas3
-//                height: (casMonitor.height-menuRect.height)/2.1
-//                visible: true
-//                width: casMonitor.width/3.4
-//                casNumber: 3
-//                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-//            }
-//        }
-
-//        Row {
-//            id: botRow
-//            anchors.topMargin: 5
-//            anchors.rightMargin: 20
-//            anchors.leftMargin: 20
-//            anchors.bottom: parent.bottom
-//            anchors.left: parent.left
-//            anchors.right: parent.right
-//            anchors.top: topRow.bottom
-
-//            spacing: (botRow.width - 3*cas4.width)/2
-
-//            SampleStack {
-//                id: cas4
-//                height: (casMonitor.height-menuRect.height)/2.1
-//                width: casMonitor.width/3.4
-//                casNumber: 4
-//                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-
-//            }
-
-//            SampleStack {
-//                id: cas5
-//                height: (casMonitor.height-menuRect.height)/2.1
-//                width: casMonitor.width/3.4
-//                casNumber: 5
-//                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-//            }
-
-//            SampleStack {
-//                id: cas6
-//                height: (casMonitor.height-menuRect.height)/2.1
-//                width: casMonitor.width/3.4
-//                casNumber: 6
-//                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-
-//            }
-//        }
-
-
     }
 
-    Platform.FileDialog {
-        id:defProtSelector
-        fileMode: Platform.FileDialog.OpenFile
-//        selectExisting: true
-        folder: mainDir
-        nameFilters: [ "Protocol Files (*.json)", "All files (*)" ]
-        //nameFilters: [ "*.json", "All files (*)" ]
-        defaultSuffix: ".json"
-        modality: Qt.WindowModal
-        onAccepted: {
-            var path = defProtSelector.fileUrl.toString();
-            // remove prefixed "file:///"
-            path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
-            // unescape html codes like '%23' for '#'
-            var cleanPath = decodeURIComponent(path);
+    Window {
+        id:tempWin
+        x: Math.round((Screen.width - tempWin.width) / 2)
+        y: Math.round((Screen.height - tempWin.height) / 2)
+        width: 510
+        height: 350
+        minimumWidth: 510
+        minimumHeight: 350
+        maximumHeight: 400
+        maximumWidth: 800
+        visible: false
+        title: "Cassette Temperatures"
+        flags: Qt.WindowMinimized
+        color:'silver'
 
-            //Get protocol name
-            var protName = cleanPath.split('/').pop().split('.')[0]
-
-            rootApWin.defPath = cleanPath
-            rootApWin.defProtName = protName
-
+        Component.onCompleted: {
+            tempWin.close()
         }
 
+        onClosing: {
+            tempDisplay.close()
+        }
+
+        TempDisplay {
+            id:tempDisplay
+            Timer {
+                id: refreshTime
+                // Refresh every 20 seconds
+                interval: 20000
+                running: false
+                repeat: true
+                triggeredOnStart: true
+                onTriggered: {
+                    WAMPHandler.refreshTemps(0)
+                }
+            }
+            onClose: {
+                console.log('stoping refresh temp timer')
+                refreshTime.stop()
+            }
+            onOpen: {
+                console.log('starting refresh temp timer')
+                refreshTime.start()
+            }
+        }
     }
 }
 

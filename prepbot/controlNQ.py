@@ -1,15 +1,15 @@
 #!/home/jackr/anaconda/envs/QML36/bin/python
 import os
 import sys
-sys.path.append('/home/pi/CasMonitorQt5/')
-#sys.path.append('F:/Torres/CasMonitorQt5/')
+#sys.path.append('/home/pi/CasMonitorQt5/')
+sys.path.append('F:/Torres/CasMonitorQt5/')
 import asyncio
 from autobahn.asyncio.wamp import ApplicationSession
 from autobahn_autoreconnect import ApplicationRunner
 from autobahn import wamp
 import time
 import datetime
-import machine_debug_pi as machine
+import machine_debug as machine
 import itertools
 import namedTask as nTask
 # import confuse
@@ -72,16 +72,42 @@ casLogs = {'CAS1' : cas1log,
            'CAS5' : cas5log,
            'CAS6' : cas6log
            }
-
+           # 'CAS7' : 0,
+           # 'CAS8' : 0,
+           # 'CAS9' : 0,
+           # 'CAS10' : 0,
+           # 'CAS11' : 0,
+           # 'CAS12' : 0,
+           # 'CAS13' : 0,
+           # 'CAS14' : 0,
+           # 'CAS15' : 0,
+           # 'CAS16' : 0,
+           # 'CAS17' : 0,
+           # 'CAS18' : 0,
+           # 'CAS19' : 0,
+           # 'CAS20' : 0,
+           # 'CAS21' : 0,
+           # 'CAS22' : 0,
+           # 'CAS23' : 0,
+           # 'CAS24' : 0,
+           # 'CAS25' : 0
+           
+#Get available CAS
+available_cas = [c for c in machine.PORTS.keys() if 'CAS' in c]
+# available_cas = [c for c in casLogs.keys() if 'CAS' in c]
+casTemp = {k: 25 for k in available_cas}
+ctrl.debug(machine.PORTS)
+ctrl.info('Available CAS: {}'.format(available_cas))
+ctrl.debug('CAS temp: {}'.format(casTemp))
 # Make the modifiable file handler for the machinelog
-modHdl = logging.FileHandler('./Log/machine.log', mode='a')
-modHdl.setLevel(logging.DEBUG)
-textFormatter = logging.Formatter('%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
-                                  datefmt='%Y-%m-%d %H:%M:%S')
-modHdl.setFormatter(textFormatter)
-machinelog.addHandler(modHdl)
-# close file and do not write anything until needed
-modHdl.close()
+# modHdl = logging.FileHandler('./Log/machine.log', mode='a')
+# modHdl.setLevel(logging.DEBUG)
+# textFormatter = logging.Formatter('%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+#                                   datefmt='%Y-%m-%d %H:%M:%S')
+# modHdl.setFormatter(textFormatter)
+# machinelog.addHandler(modHdl)
+# # close file and do not write anything until needed
+# modHdl.close()
 
 # open YAML file with parameters....
 def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
@@ -118,8 +144,8 @@ loadParam = confY['load']
 reagParam = confY['reagents']
 # specifies where reagent settings are from
 # config or protocol
-reagSettings = 'config'
-# reagSettings = 'protocol'
+# reagSettings = 'config'
+reagSettings = 'protocol'
 casParam = confY['cassettes']
 
 # Define application session class for controller
@@ -155,8 +181,11 @@ class Component(ApplicationSession):
     #     self.halted = True
     #     self.homed = False
 
-    def send_mStatus(self):
+    def send_homeStatus(self):
         return self.homed
+
+    def send_availCas(self):
+        return available_cas
     
     
     async def update(self):
@@ -220,7 +249,8 @@ class Component(ApplicationSession):
             self.register(self.get_tasks, 'com.prepbot.prothandler.controller-tasks')
             self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-ctrl')
             self.register(self.get_caslogchunk, 'com.prepbot.prothandler.caslog-chunk')
-            self.register(self.send_mStatus, 'com.prepbot.prothandler.gui-get-machine-homed')
+            self.register(self.send_homeStatus, 'com.prepbot.prothandler.gui-get-machine-homed')
+            self.register(self.send_availCas, 'com.prepbot.prothandler.gui-get-available-cas')
             self.register(self.send_param, 'com.prepbot.prothandler.gui-get-param')
             self.register(self.leaveNDC, 'com.prepbot.prothandler.discconnect-ctrl')
             ctrl.info('Registered all procedures!')
@@ -304,13 +334,13 @@ class Component(ApplicationSession):
             #Write the last state of the controller taskDF to a file
             ctrl.info('Writing disconnect-state to file...')
             self.taskDF.to_pickle('./Log/disconnect/disconnect-state.pkl')
-            try:
-                machine.release()
-                ctrl.info('Releasing machine hardware lock...')
-                time.sleep(5)
-            except Exception as e:
-                ctrl.critical('Could not release machine!')
-                ctrl.critical(e)
+        try:
+            machine.release()
+            ctrl.info('Releasing machine hardware lock...')
+            time.sleep(5)
+        except Exception as e:
+            ctrl.critical('Could not release machine!')
+            ctrl.critical(e)
 
     async def connectNHome(self):
         ctrl.info('Checking if machine is homed....')
@@ -399,8 +429,8 @@ class Component(ApplicationSession):
     @wamp.subscribe('com.prepbot.prothandler.engage')
     async def engage(self, cas):
         #How to check if cassette is inserted to be engaged?
-        modHdl.close()
-        modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
+        # modHdl.close()
+        # modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
         #Check if machine is connected and homed
         # await asyncio.sleep(5)
         await self.connectNHome()
@@ -425,8 +455,8 @@ class Component(ApplicationSession):
             
     @wamp.subscribe('com.prepbot.prothandler.disengage')
     async def disengage(self, cas):
-        modHdl.close()
-        modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
+        # modHdl.close()
+        # modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
         #Check if machine is connected and homed
         # await asyncio.sleep(5)
         await self.connectNHome()
@@ -453,8 +483,8 @@ class Component(ApplicationSession):
         
     @wamp.subscribe('com.prepbot.prothandler.start')
     async def startProtocol(self, cas, taskJSON, restart=False):
-        modHdl.close()
-        modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas))
+        # modHdl.close()
+        # modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas))
         #Check if a task with that Cas name already exists
         self.activeTasks = [task.get_name() for task in nTask.namedTask.all_tasks() if not task.done()]
         #Create task with Cas as the name
@@ -579,7 +609,7 @@ class Component(ApplicationSession):
                 self.taskDF.loc[cas, 'endlog'] = currentEnd
                 #wampHandler will send a corresponding signal to QML to update the progress bar, GUI taskDF, and cassette log
                 self.publish('com.prepbot.prothandler.progress', cas, self.taskDF.loc[cas].to_json())
-                casLogs[cas].info('Updating progress on {}...'.format(cas))
+                casLogs[cas].debug('Updating progress on {}...'.format(cas))
                 await asyncio.sleep(0.05)
                 # i+= 1
             else:
@@ -769,7 +799,7 @@ class Component(ApplicationSession):
     
     
     async def shutdown(self, cas):
-        await asyncio.sleep(0.1)
+        await asyncio.sleep(0.05)
         #Basic shutdown procedures when stopping a run before finishing.....
         casLogs[cas].info('SHUTDOWN {}'.format(cas))
         try:
@@ -848,7 +878,7 @@ class Component(ApplicationSession):
                 # await self.stopTermTasks()
 
 
-    async def incubate(self, cas, incTime, mixAfter=None, mixVol=0.1, extraVolOut=0, earlyStopping=False, incSleep=10):
+    async def incubate(self, cas, incTime, mixAfter=None, mixVol=0.1, extraVolOut=0, earlyStopping=False, incSleep=30):
         # Get start time
         start = datetime.datetime.now()
         fn = casLogs[cas].handlers[0].baseFilename
@@ -895,18 +925,18 @@ class Component(ApplicationSession):
             if exceedInc:
                 break
             for j in range(waitI):
-                # Sleep for incSleep=10
+                # Sleep for incSleep=30
                 await asyncio.sleep(incSleep)
                 diff = (datetime.datetime.now() - start).total_seconds()
                 if earlyStopping and diff >= incTime:
                     exceedInc = True
                     break
-                ctrl.debug("{} Incubation Seconds remaining: {}".format(cas, int(incTime - diff)))
+                casLogs[cas].debug("{} Incubation Seconds remaining: {}".format(cas, int(incTime - diff)))
                 self.taskDF.loc[cas, 'secsRemaining'] = int(incTime - diff)
                 # This interupts the processes on the wampHandler by publishing every second
-                # Send a publish every 30 seconds?
-                if diff > 30 * p:
-                    casLogs[cas].info('{} publishing secs-remaining and new task DF!'.format(cas))
+                # Send a publish every 120 seconds?
+                if diff > 120 * p:
+                    casLogs[cas].debug('{} publishing secs-remaining and new task DF!'.format(cas))
                     self.taskDF.loc[cas, 'endlog'] = await self.get_lastline(fn)
                     self.taskDF.loc[cas, 'secsRemaining'] = int(incTime - diff)
                     self.publish('com.prepbot.prothandler.update-taskdf', cas, self.taskDF.loc[cas].to_json())
@@ -917,9 +947,9 @@ class Component(ApplicationSession):
                 casLogs[cas].info('FINISHED INCUBATION of {} for {}s'.format(cas, diff))
                 return
             else:
-                await asyncio.sleep(0.1)
-                modHdl.close()
-                modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
+                await asyncio.sleep(0.05)
+                # modHdl.close()
+                # modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
                 casLogs[cas].info('Mixing {}...'.format(cas))
                 t0 = time.time()
                 try:
@@ -956,9 +986,9 @@ class Component(ApplicationSession):
         return
         
     async def mix(self, cas, numCycles, volume):
-        await asyncio.sleep(0.1)
-        modHdl.close()
-        modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
+        await asyncio.sleep(0.05)
+        # modHdl.close()
+        # modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
         casLogs[cas].info("MIXING {}, {} TIMES, {} VOLUME".format(cas, numCycles, volume))
         try:
             machine.mux_to(cas)
@@ -978,9 +1008,9 @@ class Component(ApplicationSession):
             # await self.stopProtocol(cas)
 
     async def purge(self, cas):
-        await asyncio.sleep(0.1)
-        modHdl.close()
-        modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
+        await asyncio.sleep(0.05)
+        # modHdl.close()
+        # modHdl.baseFilename = os.path.abspath('./Log/{}.log'.format(cas.lower()))
         casLogs[cas].info('PURGING CHAMBER, {}'.format(cas))
         try:
             t0 = time.time()
@@ -1018,6 +1048,7 @@ class Component(ApplicationSession):
     def washSyringeLogic(self, reagent, washSyr='auto', washSyrReagent='MEOH'):
         if reagent not in ['FORMALIN', 'MEOH', 'DYE', 'BABB']:
             # stop protocol
+            ctrl.critical('CANNOT LOAD {}....'.format(reagent))
             raise ValueError('CANNOT LOAD {}....'.format(reagent))
 
         ctrl.info('syringeFluid before: {}'.format(self.syringeFluid))
@@ -1048,6 +1079,7 @@ class Component(ApplicationSession):
     def reuseOrPurgeLine(self, cas, reagent, ml, inSpeed, chamberSpeed):
         if reagent not in ['FORMALIN', 'MEOH', 'DYE', 'BABB']:
             # stop protocol
+            ctrl.critical('CANNOT LOAD {}....'.format(reagent))
             raise ValueError('CANNOT LOAD {}....'.format(reagent))
 
         # Reuse linevol if it is reagent and has sufficient volInLine for pumping
@@ -1092,6 +1124,7 @@ class Component(ApplicationSession):
     def loadFreshReagent(self, cas, reagent, ml, inSpeed, chamberSpeed, lineSpeed, pumpInWait='auto'):
         if reagent not in ['FORMALIN', 'MEOH', 'DYE', 'BABB']:
             # stop protocol
+            ctrl.critical('CANNOT LOAD {}....'.format(reagent))
             raise ValueError('CANNOT LOAD {}....'.format(reagent))
         if pumpInWait is None or pumpInWait == 'auto':
             # Get parameter from dictionary
@@ -1136,6 +1169,7 @@ class Component(ApplicationSession):
             machine.pump_out(linevol, speed=lineSpeed)
             machine.pump_out(ml, speed=chamberSpeed)
         else:
+            ctrl.critical('{} loading is not implemented...'.format(reagent))
             raise ValueError('{} loading is not implemented...'.format(reagent))
 
         # Update globals and taskDF
@@ -1149,20 +1183,29 @@ class Component(ApplicationSession):
     ####################################################################################################################
 
     async def loadReagent(self, cas, reagent, ml, inSpeed=None, chamberSpeed=None, lineSpeed=None, washSyr='auto', washSyrReagent='MEOH'):
-        await asyncio.sleep(0.1)
+        await asyncio.sleep(0.05)
         #Setting reagent parameters according to config file or protocol
         if inSpeed is None or inSpeed == 'undefined' or reagSettings == 'config':
             inSpeed = reagParam[reagent]['inSpeed']
+        elif inSpeed <= loadParam['minInSpeed']:
+            inSpeed = loadParam['minInSpeed']
+
         if chamberSpeed is None or chamberSpeed == 'undefined' or reagSettings == 'config':
             chamberSpeed = reagParam[reagent]['chamberSpeed']
+        elif chamberSpeed <= loadParam['minChamberSpeed']:
+            chamberSpeed = loadParam['minChamberSpeed']
+
         if lineSpeed is None or lineSpeed == 'undefined' or reagSettings == 'config':
             lineSpeed = reagParam[reagent]['lineSpeed']
+        elif lineSpeed <= loadParam['minLineSpeed']:
+            lineSpeed = loadParam['minLineSpeed']
+
 
         try:
             t0 = time.time()
             self.washSyringeLogic(reagent=reagent, washSyr=washSyr, washSyrReagent=washSyrReagent)
             opTimeslog.info('FINISHED WASHING SYRINGE, Time: {:0.2f}s'.format(time.time() - t0))
-            await asyncio.sleep(0.1)
+            await asyncio.sleep(0.05)
             t0 = time.time()
             completed = self.reuseOrPurgeLine(cas=cas, reagent=reagent, ml=ml, inSpeed=inSpeed, chamberSpeed=chamberSpeed)
             if completed:
@@ -1170,7 +1213,7 @@ class Component(ApplicationSession):
                 opTimeslog.info('FINISHED REUSING {} in {}, Time: {:0.2f}s'.format(reagent, cas, time.time() - t0))
                 return
             else:
-                await asyncio.sleep(0.1)
+                await asyncio.sleep(0.05)
                 t0 = time.time()
                 self.loadFreshReagent(cas=cas, reagent=reagent, ml=ml, inSpeed=inSpeed,
                                       chamberSpeed=chamberSpeed, lineSpeed=lineSpeed,

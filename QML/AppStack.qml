@@ -3,8 +3,8 @@ import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 //import Qt.labs.qmlmodels 1.0
 //import QtQml.Models 2.12
-//import Qt.labs.platform 1.1
-import QtQuick.Dialogs 1.3
+import Qt.labs.platform 1.1 as Platform
+import QtQuick.Dialogs 1.3 as DiagLib
 import QtQuick.Layouts 1.12
 //import QtGraphicalEffects 1.12
 import QtQuick.Controls.Material 2.12
@@ -20,6 +20,7 @@ ApplicationWindow {
     property bool guiJoined: false
     property string waitPopupTxt: 'Connecting....'
     property string operatingSystem: WAMPHandler.OS
+    property int availableCasNum: WAMPHandler.availCasNum
     signal exit()
     signal reGUIJoined()
     signal reDCController()
@@ -129,11 +130,11 @@ ApplicationWindow {
         anchors.fill: parent
     }
 
-    MessageDialog {
+    DiagLib.MessageDialog {
         property bool closeStatus: false
         id: exitDialog
-        standardButtons: StandardButton.Cancel | StandardButton.Yes
-        icon: StandardIcon.Critical
+        standardButtons: DiagLib.StandardButton.Cancel | DiagLib.StandardButton.Yes
+        icon: DiagLib.StandardIcon.Critical
         text: "Are you sure you want to exit?<br>This <b>WILL NOT</b> shutdown the controller nor stop any ongoing runs."
         title: "Exit Application"
         modality: Qt.WindowModal
@@ -151,6 +152,32 @@ ApplicationWindow {
     //            console.log("Canceled Exit.")
             this.close
         }
+    }
+
+    Platform.FileDialog {
+        id:defProtSelector
+        fileMode: Platform.FileDialog.OpenFile
+//        selectExisting: true
+        folder: mainDir
+        nameFilters: [ "Protocol Files (*.json)", "All files (*)" ]
+        //nameFilters: [ "*.json", "All files (*)" ]
+        defaultSuffix: ".json"
+        modality: Qt.WindowModal
+        onAccepted: {
+            var path = defProtSelector.fileUrl.toString();
+            // remove prefixed "file:///"
+            path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
+            // unescape html codes like '%23' for '#'
+            var cleanPath = decodeURIComponent(path);
+
+            //Get protocol name
+            var protName = cleanPath.split('/').pop().split('.')[0]
+
+            rootApWin.defPath = cleanPath
+            rootApWin.defProtName = protName
+
+        }
+
     }
 
     function delay(delayTime, cb) {

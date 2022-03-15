@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import "./Icons/"
+import QtQuick.Controls.Material 2.12
 
 Item{
     property string logText: '>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n'
@@ -91,7 +92,7 @@ Item{
     //            height: parent.height
                 anchors.fill: parent
                 clip: true
-                ScrollBar.horizontal.policy: ScrollBar.AlwaysOn
+                ScrollBar.horizontal.policy: ScrollBar.AsNeeded
                 ScrollBar.vertical.policy: ScrollBar.AlwaysOn
 //                ScrollBar.horizontal.interactive: true
 //                ScrollBar.vertical.interactive: true
@@ -109,19 +110,22 @@ Item{
             }
         }
 
-        BevButton{
+        Button{
             id: refreshB
             width: 45
-            height: 40
+            height: 45
             anchors.top: txClrRect.bottom
-            anchors.topMargin: 5
+            anchors.topMargin: 2.5
             anchors.left: parent.left
             anchors.leftMargin: 20
 //            text: qsTr("Refresh")
 
             icon.source: "Icons/icons8-refresh-104.png"
             icon.color: "black"
-            icon.height:20
+            icon.height: 25
+
+            Material.theme: Material.Light
+            Material.foreground: "black"
 
             font.pointSize: 12
             onClicked: {
@@ -130,26 +134,21 @@ Item{
 
         }
 
-        BevButton {
+        Button {
             id: saveB
             anchors.top: txClrRect.bottom
-            anchors.topMargin: 5
+            anchors.topMargin: 2.5
             anchors.left: refreshB.right
             anchors.leftMargin: 30
             text: qsTr("Save Log")
             font.pointSize: 12
+            font.capitalization: Font.MixedCase
+            height: 45
+            Material.theme: Material.Light
+            Material.foreground: "black"
+
         }
 
     }
 }
 
-
-
-
-
-
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:10;anchors_x:20;anchors_y:252}D{i:11;anchors_x:126;anchors_y:252}
-}
-##^##*/

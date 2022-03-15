@@ -15,6 +15,9 @@ load:
   stainAirInSpeed: 500
   stainAirOutSpeed: 200
   stainAirVol: 1
+  minInSpeed: 5
+  minChamberSpeed: 5
+  minLineSpeed: 5
 cassettes:
   CAS1:
     linevol: 1
