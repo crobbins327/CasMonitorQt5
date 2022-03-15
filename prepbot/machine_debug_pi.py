@@ -226,12 +226,12 @@ def mux_to(p):
     # s['MUX'].write('GO{}\n'.format(POS[p]).encode())
     time.sleep(1.5)
 
+#Only for debugging
 casTemp = {'CAS1': 25,
            'CAS2': 25,
            'CAS3': 25}
 
 def set_heater(c, T):
-    global casTemp
     logger.info('Setting heater {} to {}C'.format(c, T))
     casTemp[c] = T
     # s[c].write('T{}'.format(T).encode())

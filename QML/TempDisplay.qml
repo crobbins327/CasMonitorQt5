@@ -7,7 +7,6 @@ import QtQuick.Controls.Material 2.12
 Item{
     signal open()
     signal close()
-    property bool isTempRefreshed: false
 
     id:logDisplay
     anchors.fill: parent

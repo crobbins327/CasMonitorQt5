@@ -67,6 +67,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
     updateProg = QtCore.Signal(int)
     upLogChunk = QtCore.Signal(int, str, int)
     reqLogChunk = QtCore.Signal(int, str, int)
+    updateCasTemps = QtCore.Signal(int, float, int)
     #Send shutdown is started
     shutdownStart = QtCore.Signal(int)
     #Send shutdown is finished
@@ -122,6 +123,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         #Used to initiallize GUI but will be replaced OnJoin()
         self.convCas = {1:'CAS1', 2:'CAS2', 3:'CAS3', 4:'CAS4', 5:'CAS5', 6:'CAS6'}
         self._availCasNum = 6
+        self.casTemps = {k: {'current': 25.0, 'set': 47} for k in self.convCas.values()}
         guilog.debug(platform.uname())
 
 
@@ -203,12 +205,16 @@ class wampHandler(ApplicationSession, QtCore.QObject):
             guilog.info("Getting hardware lock and homing...")
             self.machineHomed = await self.call('com.prepbot.prothandler.gui-get-machine-homed')
             guilog.info('Machine is homed? : {}'.format(self.machineHomed))
-            self.toWaitPopup.emit('Getting available cassettes... updating...')
+            self.toWaitPopup.emit('Getting available cassettes... updating GUI...')
+            guilog.info("Getting available cassettes..")
             availCas = await self.call('com.prepbot.prothandler.gui-get-available-cas')
             self._availCasNum = len(availCas)
             self.sendAvailCasNum.emit(self._availCasNum)
             self.convCas = {k+1: v for k, v in enumerate(availCas)}
             guilog.info('convCas: {}'.format(self.convCas))
+            self.toWaitPopup.emit('Getting cassette temperatures... updating GUI...')
+            guilog.info("Getting cassette temperatures..")
+            self.casTemps = await self.call('com.prepbot.prothandler.gui-refresh-cas-temps')
             self.toWaitPopup.emit('Getting controller parameters...')
             guilog.info("Getting controller parameters..")
             await self.call('com.prepbot.prothandler.gui-get-param')
@@ -276,6 +282,7 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         self.paramDict = paramDict
         guilog.debug(paramDict)
         # self.recParam.emit(paramDict)
+
         
     @QtCore.Slot()
     def stopExecTerminal(self):
@@ -345,19 +352,39 @@ class wampHandler(ApplicationSession, QtCore.QObject):
         # asyncio.ensure_future(self.updateLogChunk(cas, start=currentEnd+1, end=0))
         asyncio.ensure_future(self.requestLogChunk(cas, start=start, end=end))
 
+    @wamp.subscribe('com.prepbot.prothandler.refresh-cas-temps-gui')
+    async def receiveCasTemps(self, newCasTemps):
+        for c in newCasTemps.keys():
+            nCurrT = round(newCasTemps[c]['current'], 1)
+            currT = round(self.casTemps[c]['current'], 1)
+            nSetT = int(newCasTemps[c]['set'])
+            setT = int(self.casTemps[c]['set'])
+
+            if nSetT != setT or nCurrT != currT:
+                casNumber = self.__get_key(c, self.convCas)
+                newCasTemps[c]['current'] = nCurrT
+                newCasTemps[c]['set'] = nSetT
+                self.updateCasTemps.emit(casNumber, nCurrT, nSetT)
+
+        self.casTemps = newCasTemps
+        guilog.info(self.casTemps)
+
+
     @QtCore.Slot(int)
     def refreshTemps(self, casNumber=0):
         if casNumber == 0:
             guilog.info('refeshing all temps')
             #call a funciton to fetch current temps
+            self.call('com.prepbot.prothandler.gui-refresh-cas-temps')
         else:
             guilog.info('refreshing temp of CAS {}'.format(casNumber))
+            guilog.warn('currently not implemented!')
 
     @QtCore.Slot(int, int)
     def setCasTemp(self, casNumber, setTemp):
-        guilog.info('setting temp of CAS {} to {} C'.format(casNumber, setTemp))
-
-        
+        cas = self.convCas[int(casNumber)]
+        guilog.info('requesting to set temp of {} to {} C'.format(cas, setTemp))
+        self.call('com.prepbot.prothandler.gui-set-one-cas-temp', cas, setTemp)
     
     async def requestLogChunk(self, cas, start, end):
         samplelog, currentEnd = await self.call('com.prepbot.prothandler.caslog-chunk', cas, start, end)

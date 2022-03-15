@@ -40,7 +40,7 @@ cas4log = logging.getLogger('ctrl.cas4')
 cas5log = logging.getLogger('ctrl.cas5')
 cas6log = logging.getLogger('ctrl.cas6')
 machinelog = logging.getLogger('ctrl.machine')
-machinelog.setLevel(logging.INFO)
+# machinelog.setLevel(logging.INFO)
 opTimeslog = logging.getLogger('ctrl.opTimes')
 rootlog = logging.getLogger('')
 
@@ -95,10 +95,10 @@ casLogs = {'CAS1' : cas1log,
 #Get available CAS
 available_cas = [c for c in machine.PORTS.keys() if 'CAS' in c]
 # available_cas = [c for c in casLogs.keys() if 'CAS' in c]
-casTemp = {k: 25 for k in available_cas}
+casTemps = {k: {'current': 25.0, 'set': 47.5} for k in available_cas}
 ctrl.debug(machine.PORTS)
 ctrl.info('Available CAS: {}'.format(available_cas))
-ctrl.debug('CAS temp: {}'.format(casTemp))
+ctrl.debug('CAS temp: {}'.format(casTemps))
 # Make the modifiable file handler for the machinelog
 # modHdl = logging.FileHandler('./Log/machine.log', mode='a')
 # modHdl.setLevel(logging.DEBUG)
@@ -180,13 +180,6 @@ class Component(ApplicationSession):
     #     machine.send('M112', read_response=False)
     #     self.halted = True
     #     self.homed = False
-
-    def send_homeStatus(self):
-        return self.homed
-
-    def send_availCas(self):
-        return available_cas
-    
     
     async def update(self):
         while True:
@@ -238,19 +231,126 @@ class Component(ApplicationSession):
         loadParam = confY['load']
         reagParam = confY['reagents']
         casParam = confY['cassettes']
-            
+
+
+    #Request by one client, publish to all
+    #Could also be completely subscribe/publish instead of a mix of register/call sub/pub
+    #However, register/call is blocking which can be useful
     def send_param(self):
         self.publish('com.prepbot.prothandler.send-param-gui', confY)
 
+    def set_one_casTemp(self, cas, newSetTemp):
+        global casTemps
+        try:
+            casTemps[cas]['set'] = newSetTemp
+            machine.set_heater(cas, int(newSetTemp))
+        except Exception as e:
+            ctrl.critical('Could not set casTemp of {} to {} C'.format(cas, newSetTemp))
+            ctrl.critical(e)
+
+    def set_casTemps(self, newCasTemps):
+        global casTemps
+        try:
+            #newCasTemps is a JSON ~ dictionary
+            for c in newCasTemps.keys():
+                #Update set temp if set != newSet
+                if int(casTemps[c]['set']) != int(newCasTemps[c]['set']):
+                    casTemps[c]['set'] = newCasTemps[c]['set']
+                    machine.set_heater(c, newCasTemps[c]['set'])
+                #else, the temp had already been set at the current setpoint and is waiting.
+        except Exception as e:
+            ctrl.critical('Could not set casTemps!')
+            ctrl.critical(e)
+
+    #Could completely use publish/subscribe instead of mix
+    #However register/call is useful for blocking
+    def refresh_casTemps(self):
+        global casTemps
+        try:
+            for c in casTemps.keys():
+                #Update casTemps if current != set
+                # if int(casTemps[c]['current']) != int(casTemps[c]['set']):
+                    #Check what the current temp is now
+                #Get all temps for small numbers of cassettes
+                casTemps[c]['current'] = machine.cassette_temp(c)
+                #else, all the casTemps should be the same and do not need to be refreshed
+            self.publish('com.prepbot.prothandler.refresh-cas-temps-gui', casTemps)
+            return casTemps
+        except Exception as e:
+            ctrl.critical('Could not refresh casTemps!')
+            ctrl.critical(e)
+
+    ###############################################################################################################################
+    #Register/call these because they are only called on by one GUI client when needed, are functions, or called only on init/onJoin()
+    ###############################################################################################################################
+    def leaveNDC(self):
+        self.leave()
+        self.disconnect()
+
+    def send_homeStatus(self):
+        return self.homed
+
+    def send_availCas(self):
+        return available_cas
+        
+    def get_tasks(self):
+        return(self.taskDF.to_json())
+    
+    def get_caslogchunk(self, cas, start, end=0, limit=10000):
+        #Get log filename from handler
+        fn = casLogs[cas].handlers[0].baseFilename
+        linesToSend = []
+        if start <= end:
+            with open(fn, 'r') as logfile:
+                for i, line in enumerate(logfile):
+                    if i >= start and i <= end:
+                        linesToSend.append(line)
+                    elif i > end:
+                        break
+        else:
+            with open(fn, 'r') as logfile:
+                for i, line in enumerate(logfile):
+                    if i >= start and i <= start + limit:
+                        linesToSend.append(line)
+                        end = i
+                    elif i > start+limit:
+                        break
+                    
+        #Make a string that can be displayed/written to file
+        linesToSend = ''.join(linesToSend)
+        return(linesToSend, end)
+        
+    
+    # def update_caslogchunk(self, cas):
+    #     #Send updated log
+    #     start = self.taskDF.loc[cas, 'endlog'] + 1
+    #     linesToSend, currentEnd = self.get_caslogchunk(cas, start, end=0)
+    #     if len(linesToSend) > 0:
+    #         self.publish('com.prepbot.prothandler.update-cas-log', cas, linesToSend, currentEnd)
+    #     #Update end line number of log
+    #     self.taskDF.loc[cas, 'endlog'] = currentEnd
+                    
+    async def get_lastline(self, fn):
+        with open(fn, 'r') as logfile:
+                for i, line in enumerate(logfile):
+                    pass
+                last_line_num = i
+        return(last_line_num)
+
+    ###############################################################################################################################
                 
     async def onJoin(self, details):
         # Register so that GUI can get_tasks when reconnecting/joining
         try:
+            #Register/call because only one client is requesting these functions
             self.register(self.get_tasks, 'com.prepbot.prothandler.controller-tasks')
             self.register(self.heartbeat, 'com.prepbot.prothandler.heartbeat-ctrl')
             self.register(self.get_caslogchunk, 'com.prepbot.prothandler.caslog-chunk')
             self.register(self.send_homeStatus, 'com.prepbot.prothandler.gui-get-machine-homed')
             self.register(self.send_availCas, 'com.prepbot.prothandler.gui-get-available-cas')
+            self.register(self.refresh_casTemps, 'com.prepbot.prothandler.gui-refresh-cas-temps')
+            self.register(self.set_casTemps, 'com.prepbot.prothandler.gui-set-cas-temps')
+            self.register(self.set_one_casTemp, 'com.prepbot.prothandler.gui-set-one-cas-temp')
             self.register(self.send_param, 'com.prepbot.prothandler.gui-get-param')
             self.register(self.leaveNDC, 'com.prepbot.prothandler.discconnect-ctrl')
             ctrl.info('Registered all procedures!')
@@ -296,6 +396,15 @@ class Component(ApplicationSession):
             except Exception as e:
                 ctrl.warning('GUI may not be connected! Machine has been homed.')
                 ctrl.warning(e)
+            #Setting temps for available cassettes
+            try:
+                for c in casTemps.keys():
+                    ctrl.info('Setting {} heater temp. to {} C'.format(c, casTemps[c]['set']))
+                    machine.set_heater(c, casTemps[c]['set'])
+            except Exception as e:
+                ctrl.warning('Could not set heater temp for {}!'.format(c))
+                ctrl.warning(e)
+
         except Exception as e:
             ctrl.critical('Could not acquire machine lock!')
             ctrl.critical(e)
@@ -324,16 +433,19 @@ class Component(ApplicationSession):
         else:
             ctrl.info('No dcTask file was found, starting controller in null state.')
             
-    def leaveNDC(self):
-        self.leave()
-        self.disconnect()
-
     def onDisconnect(self):
         ctrl.warning("Disconnected, {}".format(self.activeTasks))
         if self.writeDCstate == True:
             #Write the last state of the controller taskDF to a file
             ctrl.info('Writing disconnect-state to file...')
             self.taskDF.to_pickle('./Log/disconnect/disconnect-state.pkl')
+        try:
+            for c in casTemps.keys():
+                ctrl.info('Setting {} heater temp. to {} C'.format(c, 22))
+                machine.set_heater(c, 22)
+        except Exception as e:
+            ctrl.warning('Could not turn off heater!')
+            ctrl.warning(e)
         try:
             machine.release()
             ctrl.info('Releasing machine hardware lock...')
@@ -361,52 +473,7 @@ class Component(ApplicationSession):
             except Exception as e:
                 ctrl.critical(e)
 
-
-    def get_tasks(self):
-        return(self.taskDF.to_json())
-    
-    def get_caslogchunk(self, cas, start, end=0, limit=10000):
-        #Get log filename from handler
-        fn = casLogs[cas].handlers[0].baseFilename
-        linesToSend = []
-        if start <= end:
-            with open(fn, 'r') as logfile:
-                for i, line in enumerate(logfile):
-                    if i >= start and i <= end:
-                        linesToSend.append(line)
-                    elif i > end:
-                        break
-        else:
-            with open(fn, 'r') as logfile:
-                for i, line in enumerate(logfile):
-                    if i >= start and i <= start + limit:
-                        linesToSend.append(line)
-                        end = i
-                    elif i > start+limit:
-                        break
                     
-        #Make a string that can be displayed/written to file
-        linesToSend = ''.join(linesToSend)
-        return(linesToSend, end)
-        
-    
-    # def update_caslogchunk(self, cas):
-    #     #Send updated log
-    #     start = self.taskDF.loc[cas, 'endlog'] + 1
-    #     linesToSend, currentEnd = self.get_caslogchunk(cas, start, end=0)
-    #     if len(linesToSend) > 0:
-    #         self.publish('com.prepbot.prothandler.update-cas-log', cas, linesToSend, currentEnd)
-    #     #Update end line number of log
-    #     self.taskDF.loc[cas, 'endlog'] = currentEnd
-                    
-    async def get_lastline(self, fn):
-        with open(fn, 'r') as logfile:
-                for i, line in enumerate(logfile):
-                    pass
-                last_line_num = i
-        return(last_line_num)
-                    
-    
     async def repopulateController(self):
         running = self.taskDF[self.taskDF.status.isin(['running'])].index
         cleanStop = self.taskDF[self.taskDF.status.isin(['cleaning', 'stopping'])].index

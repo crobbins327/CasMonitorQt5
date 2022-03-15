@@ -26,7 +26,7 @@ import math
 # logger.setLevel(logging.DEBUG)
 
 logger = logging.getLogger('ctrl.machine')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 PUMP_Z_PER_ML = 30
 
@@ -226,6 +226,7 @@ def mux_to(p):
     # s['MUX'].write('GO{}\n'.format(POS[p]).encode())
     time.sleep(1.5)
 
+#Only for debugging
 casTemp = {'CAS1': 25,
            'CAS2': 25,
            'CAS3': 25}

@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
@@ -6,9 +6,24 @@ import QtQuick.Controls.Material 2.12
 Item {
     id: root
     property int casNumber: 0
-    property int currentTemp: 25
+    property double currentTemp: 25.0
     property int setTemp: 47
-    signal refresh()
+    signal reUpdateCasTemps(int casNum, double newCurTemp, int newSetTemp)
+
+    Component.onCompleted: {
+        WAMPHandler.updateCasTemps.connect(reUpdateCasTemps)
+    }
+
+    Connections {
+        target: root
+        function onReUpdateCasTemps(casNum, newCurTemp, newSetTemp) {
+            if (root.casNumber == casNum){
+                root.currentTemp = newCurTemp
+                root.setTemp = newSetTemp
+            }
+        }
+    }
+
     Rectangle {
         id: rootRect
         Material.elevation: 9
@@ -33,7 +48,7 @@ Item {
 
             Text {
                 id: currentTempText
-                text: currentTemp + ' \xB0 C'
+                text: currentTemp.toString() + ' \xB0 C'
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 //                anchors.bottom: tempSpin.top
 //                anchors.bottomMargin: 7
@@ -71,8 +86,8 @@ Item {
 
 Timer {
         id: delayTimer
-        //Wait 1 seconds before sending a set temp signal
-        interval: 1000
+        //Wait 3 seconds before sending a set temp signal
+        interval: 3000
         onTriggered: {
             console.log('set temp of CAS'+casNumber)
             WAMPHandler.setCasTemp(casNumber, setTemp)
