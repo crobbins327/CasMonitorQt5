@@ -43,7 +43,8 @@ Item {
                 id: casLab
                 text: 'Cas '+casNumber
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                font.pointSize: 12
+                font.pointSize: 13
+                font.weight: Font.Bold
             }
 
             Text {
@@ -53,7 +54,7 @@ Item {
 //                anchors.bottom: tempSpin.top
 //                anchors.bottomMargin: 7
 //                anchors.horizontalCenter: parent.horizontalCenter
-                font.pointSize: 11
+                font.pointSize: 12
             }
 
             SpinBox {
@@ -70,9 +71,8 @@ Item {
                 to: 60
                 stepSize: 1
                 value: setTemp
-                font.pointSize: 11
+                font.pointSize: 12
                 onValueModified: {
-                    console.log(tempSpin.value)
                     setTemp = tempSpin.value
                     delayTimer.start()
                 }

@@ -9,7 +9,7 @@ import "./Icons/"
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 0
+    property int stackIndex: 2
     property double runProgVal: 0
     property string firstRunTime : "01:31:55"
     property int firstRunSecs : get_sec(root.firstRunTime)
@@ -436,11 +436,11 @@ Item {
 
             Text {
                 id: casNum0
-                text: casNumber
+                text: 'Cas ' + casNumber
                 anchors.top: parent.top
                 anchors.topMargin: 30
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.weight: Font.Medium
+                font.weight: Font.Bold
                 font.pointSize: 18
             }
 
@@ -486,11 +486,11 @@ Item {
 
             Text {
                 id: casNum1
-                text: casNumber
+                text: 'Cas ' + casNumber
                 anchors.top: parent.top
                 anchors.topMargin: 15
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.weight: Font.Medium
+                font.weight: Font.Bold
                 font.pointSize: 18
             }
 
@@ -692,11 +692,11 @@ Item {
 
                 Text {
                     id: casNum2
-                    text: casNumber
+                    text: 'Cas ' + casNumber
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     fontSizeMode: Text.Fit
                     //                    anchors.horizontalCenter: parent.horizontalCenter
-                    font.weight: Font.Medium
+                    font.weight: Font.Bold
                     font.pointSize: 18
                     minimumPointSize: 16
                 }
@@ -710,8 +710,8 @@ Item {
                     elide: Text.ElideMiddle
                     fontSizeMode: Text.Fit
                     style: Text.Normal
-                    font.weight: Font.Normal
-                    font.pointSize: 12
+                    font.weight: Font.Medium
+                    font.pointSize: 13
                     minimumPointSize: 12
                     Layout.maximumWidth: parent.width-40
                 }
@@ -726,8 +726,8 @@ Item {
                     //                    anchors.bottom: runStepL.top
                     //                    anchors.bottomMargin: 10
                     style: Text.Normal
-                    font.weight: Font.Normal
-                    font.pointSize: 12
+                    font.weight: Font.Medium
+                    font.pointSize: 13
                     minimumPointSize: 12
                     Layout.maximumWidth: parent.width-40
                 }

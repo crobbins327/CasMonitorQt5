@@ -164,7 +164,7 @@ ApplicationWindow {
         defaultSuffix: ".json"
         modality: Qt.WindowModal
         onAccepted: {
-            var path = defProtSelector.fileUrl.toString();
+            var path = defProtSelector.file.toString();
             // remove prefixed "file:///"
             path = path.replace(/^(file:\/{2})|(qrc:\/{2})|(http:\/{2})/,"");
             // unescape html codes like '%23' for '#'

@@ -26,7 +26,7 @@ import math
 # logger.setLevel(logging.DEBUG)
 
 logger = logging.getLogger('ctrl.machine')
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 
 PUMP_Z_PER_ML = 30
 

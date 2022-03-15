@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="337fc151-9f50-4409-b5a2-edd7ccc4260b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QML/TempContent.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/TempContent.qml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QML/TempContent.qml.autosave" beforeDir="false" afterPath="$PROJECT_DIR$/QML/TempContent.qml.autosave" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QML/TempDisplay.qml" beforeDir="false" afterPath="$PROJECT_DIR$/QML/TempDisplay.qml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prepbot/controlNQ.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/controlNQ.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prepbot/machine.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/machine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prepbot/machine_debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/machine_debug.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prepbot/machine_debug_pi.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepbot/machine_debug_pi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wampHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/wampHandler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
