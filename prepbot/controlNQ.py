@@ -8,8 +8,8 @@ from autobahn_autoreconnect import ApplicationRunner
 from autobahn import wamp
 import time
 import datetime
-import machine_debug_pi as machine
-#import machine
+# import machine_debug_pi as machine
+import machine
 import itertools
 import namedTask as nTask
 # import confuse
@@ -95,7 +95,7 @@ casLogs = {'CAS1' : cas1log,
 #Get available CAS
 available_cas = [c for c in machine.PORTS.keys() if 'CAS' in c]
 # available_cas = [c for c in casLogs.keys() if 'CAS' in c]
-casTemps = {k: {'current': 25.0, 'set': 47.5} for k in available_cas}
+casTemps = {k: {'current': 25.0, 'set': 47} for k in available_cas}
 ctrl.debug(machine.PORTS)
 ctrl.info('Available CAS: {}'.format(available_cas))
 ctrl.debug('CAS temp: {}'.format(casTemps))

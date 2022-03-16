@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 6.82.0, 2022-03-14T19:10:35. -->
+<!-- Written by QtCreator 6.82.0, 2022-03-15T20:55:30. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -751,6 +751,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">F:/Torres/CasMonitorQt5/Log/gui.log</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.F:/Torres/CasMonitorQt5/Log/gui.log</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">F:/Torres/CasMonitorQt5/Log/gui.log</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{7350e02b-f447-4bc4-bedc-86fa27ee149b}</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">F:\Torres\CasMonitorQt5\Log\gui.log</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
@@ -768,6 +769,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">F:/Torres/CasMonitorQt5/Log/ctrl.log</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.F:/Torres/CasMonitorQt5/Log/ctrl.log</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">F:/Torres/CasMonitorQt5/Log/ctrl.log</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{7350e02b-f447-4bc4-bedc-86fa27ee149b}</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">F:\Torres\CasMonitorQt5\Log\ctrl.log</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
@@ -785,6 +787,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">F:/Torres/CasMonitorQt5/Log/opTimes.log</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.F:/Torres/CasMonitorQt5/Log/opTimes.log</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">F:/Torres/CasMonitorQt5/Log/opTimes.log</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{7350e02b-f447-4bc4-bedc-86fa27ee149b}</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">F:\Torres\CasMonitorQt5\Log\opTimes.log</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
@@ -802,6 +805,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">F:/Torres/CasMonitorQt5/Log/machine.log</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.F:/Torres/CasMonitorQt5/Log/machine.log</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">F:/Torres/CasMonitorQt5/Log/machine.log</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{7350e02b-f447-4bc4-bedc-86fa27ee149b}</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">F:\Torres\CasMonitorQt5\Log\machine.log</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
@@ -819,6 +823,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">F:/Torres/CasMonitorQt5/prepbot/machine_debug_pi.py</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.F:/Torres/CasMonitorQt5/prepbot/machine_debug_pi.py</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">F:/Torres/CasMonitorQt5/prepbot/machine_debug_pi.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{7350e02b-f447-4bc4-bedc-86fa27ee149b}</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">F:\Torres\CasMonitorQt5\prepbot\machine_debug_pi.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
