@@ -1,14 +1,15 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Window 2.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Window 2.15
 //import Qt.labs.qmlmodels 1.0
-//import QtQml.Models 2.12
+//import QtQml.Models 2.15
 import Qt.labs.platform 1.1 as Platform
 import QtQuick.Dialogs 1.3 as DiagLib
-import QtQuick.Layouts 1.12
-//import QtGraphicalEffects 1.12
-import QtQuick.Controls.Material 2.12
+import QtQuick.Layouts 1.15
+//import QtGraphicalEffects 1.15
+import QtQuick.Controls.Material 2.15
 import QtQuick.VirtualKeyboard 2.15
+//import QtQuick.VirtualKeyboard.Styles 2.15
 
 ApplicationWindow {
     id: rootApWin
@@ -78,17 +79,20 @@ ApplicationWindow {
         close.accepted = exitDialog.closeStatus
         exitDialog.open()
     }
-
+    /*
     InputPanel {
            id: keyboard
            // position the top of the keyboard to the bottom of the screen/display
 //           y: Screen.height
-           width: 550
-           height: rootApWin.height/4
-
+           //height: rootApWin.height/4
+           width: rootApWin.height*3/2
+           z: 1
+           parent: Overlay.overlay
+           focus: true
+           
            anchors.horizontalCenter: parent.horizontalCenter
            anchors.bottom: parent.bottom
-           anchors.bottomMargin: -200
+           anchors.bottomMargin: -rootApWin.height
 
            states: State {
                name: "visible";
@@ -97,7 +101,7 @@ ApplicationWindow {
                    target: keyboard;
                    // position the top of the keyboard to the bottom of the text input field
 //                   y: casMonitor.height-rootApWin.height/4
-                   anchors.bottomMargin: 0
+                   anchors.bottomMargin: -20
 
                }
            }
@@ -108,12 +112,13 @@ ApplicationWindow {
                ParallelAnimation {
                    NumberAnimation {
                        properties: "y";
-                       duration: 800;
-                       easing.type: Easing.InOutElastic;
+                       duration: 150;
+                       easing.type: Easing.OutQuad;
                    }
                }
            }
     }
+    */
 
     Popup {
         id: waitPopup
@@ -193,13 +198,15 @@ ApplicationWindow {
 
     Platform.FileDialog {
         id:defProtSelector
+        //flags: Qt.Dialog
+        //parentWindow: rootApWin
         fileMode: Platform.FileDialog.OpenFile
 //        selectExisting: true
         folder: mainDir
         nameFilters: [ "Protocol Files (*.json)", "All files (*)" ]
         //nameFilters: [ "*.json", "All files (*)" ]
         defaultSuffix: ".json"
-        modality: Qt.WindowModal
+        modality: Qt.NonModal
         onAccepted: {
             var path = defProtSelector.file.toString();
             // remove prefixed "file:///"

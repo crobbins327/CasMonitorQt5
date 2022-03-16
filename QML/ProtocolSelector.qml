@@ -1,13 +1,13 @@
-import QtQuick 2.14
-import QtQuick.Controls 2.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import Qt.labs.qmlmodels 1.0
-import QtQml.Models 2.12
+import QtQml.Models 2.15
 import Qt.labs.platform 1.1 as Platform
 import QtQuick.Dialogs 1.3 as DiagLib
-import Qt.labs.folderlistmodel 2.12
-import QtQuick.Layouts 1.12
-import QtQuick.Controls.Material 2.12
-//import QtQuick.VirtualKeyboard 2.12
+import Qt.labs.folderlistmodel 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls.Material 2.15
+//import QtQuick.VirtualKeyboard 2.15
 
 import "./Icons/"
 

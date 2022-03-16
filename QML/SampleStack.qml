@@ -1,10 +1,10 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Layouts 1.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 import QtQuick.Dialogs 1.3
-import QtQuick.Window 2.12
-import QtQuick.Controls.Material 2.12
-import QtQuick.VirtualKeyboard 2.15
+import QtQuick.Window 2.15
+import QtQuick.Controls.Material 2.15
+//import QtQuick.VirtualKeyboard 2.15
 import "./Icons/"
 
 Item {
@@ -504,34 +504,10 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
                 anchors.margins: 10
-                spacing: 10
+                spacing: 7
 //                flow:  parent.width > parent.height ? GridLayout.LeftToRight : GridLayout.TopToBottom
 //                flow: GridLayout.TopToBottom
-
-                Button {
-                    id: disengageCasB
-                    Layout.preferredWidth: colLayout.width/1.5
-                    Layout.preferredHeight: 50
-                    Layout.minimumHeight: 30
-                    text: qsTr("Disengage")
-                    font.pointSize: 12
-                    font.capitalization: Font.MixedCase
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-//                    palette {
-//                        button: 'darkred'
-//                        buttonText: 'white'
-//                    }
-                    Material.background: 'darkred'
-                    Material.foreground: 'white'
-
-                    onClicked: {
-                        root.stackIndex = 0
-                        WAMPHandler.disengageCas(root.casNumber)
-                        engageCasB.enabled = false
-//                        engageCasB.checked = false
-                    }
-                }
-
+                
                 Rectangle {
                     id: sampRec
                     Layout.preferredWidth: colLayout.width
@@ -588,7 +564,7 @@ Item {
                     }
 
                 }
-
+                
                 ComboBox {
                     id: comboProt
                     Material.accent: Material.Blue
@@ -642,9 +618,34 @@ Item {
                         }
                     }
                 }
-            }
 
+                Button {
+                    id: disengageCasB
+                    Layout.preferredWidth: colLayout.width/1.5
+                    Layout.preferredHeight: 50
+                    Layout.minimumHeight: 30
+                    Layout.topMargin: 12
+                    text: qsTr("Disengage")
+                    font.pointSize: 12
+                    font.capitalization: Font.MixedCase
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+//                    palette {
+//                        button: 'darkred'
+//                        buttonText: 'white'
+//                    }
+                    Material.background: 'darkred'
+                    Material.foreground: 'white'
+
+                    onClicked: {
+                        root.stackIndex = 0
+                        WAMPHandler.disengageCas(root.casNumber)
+                        engageCasB.enabled = false
+//                        engageCasB.checked = false
+                    }
+                }
+            }
         }
+        
         RoundPane {
             id: runInProg
             Material.elevation: 9

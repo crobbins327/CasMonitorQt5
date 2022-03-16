@@ -1,14 +1,14 @@
 import os
 import sys
-# sys.path.append('/home/pi/CasMonitorQt5/')
-sys.path.append('F:/Torres/CasMonitorQt5/')
+sys.path.append('/home/pi/CasMonitorQt5/')
+#sys.path.append('F:/Torres/CasMonitorQt5/')
 import asyncio
 from autobahn.asyncio.wamp import ApplicationSession
 from autobahn_autoreconnect import ApplicationRunner
 from autobahn import wamp
 import time
 import datetime
-import machine_debug as machine
+import machine_debug_pi as machine
 # import machine
 import itertools
 import namedTask as nTask

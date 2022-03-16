@@ -1,8 +1,8 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Layouts 1.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 import "./Icons/"
-import QtQuick.Controls.Material 2.12
+import QtQuick.Controls.Material 2.15
 
 Item{
     property string logText: '>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:05 ctrl.casA    INFO     Starting run!!\n>2020-09-09 18:43:10 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:11 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:12 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:13 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:14 ctrl.casA    INFO     doing stuff\n>2020-09-09 18:43:15 ctrl.casA    INFO     doing stuff\n'

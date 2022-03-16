@@ -7,7 +7,9 @@ import logging
 import logging.config
 from colorlog import ColoredFormatter
 # os.chdir("/home/eben/CasQML")
+
 os.environ["QT_IM_MODULE"] = "qtvirtualkeyboard"
+
 import jsonHelper as jh
 import wampHandler as wh
 from PySide2 import QtCore, QtGui, QtQml, QtQuick, QtWidgets

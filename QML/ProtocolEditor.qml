@@ -1,11 +1,11 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.12
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import Qt.labs.qmlmodels 1.0
-import QtQml.Models 2.12
+import QtQml.Models 2.15
 import Qt.labs.platform 1.1 as Platform
 import QtQuick.Dialogs 1.3 as DiagLib
-import QtGraphicalEffects 1.12
-import QtQuick.Controls.Material 2.12
+import QtGraphicalEffects 1.15
+import QtQuick.Controls.Material 2.15
 
 import "./Icons/"
 
