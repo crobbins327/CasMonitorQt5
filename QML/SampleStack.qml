@@ -4,12 +4,13 @@ import QtQuick.Layouts 1.12
 import QtQuick.Dialogs 1.3
 import QtQuick.Window 2.12
 import QtQuick.Controls.Material 2.12
+//import QtQuick.VirtualKeyboard 2.15
 import "./Icons/"
 
 Item {
     id: root
     property int casNumber: 0
-    property int stackIndex: 2
+    property int stackIndex: 0
     property double runProgVal: 0
     property string firstRunTime : "01:31:55"
     property int firstRunSecs : get_sec(root.firstRunTime)

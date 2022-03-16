@@ -8,6 +8,7 @@ import QtQuick.Dialogs 1.3 as DiagLib
 import QtQuick.Layouts 1.12
 //import QtGraphicalEffects 1.12
 import QtQuick.Controls.Material 2.12
+import QtQuick.VirtualKeyboard 2.15
 
 ApplicationWindow {
     id: rootApWin
