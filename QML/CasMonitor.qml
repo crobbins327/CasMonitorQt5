@@ -217,7 +217,7 @@ Item {
     Window {
         id:tempWin
         x: Math.round((Screen.width - tempWin.width) / 2)
-        y: Math.round((Screen.height - tempWin.height) / 2)
+        y: Math.round((Screen.height - tempWin.height) / 2 + 50)
         width: 510
         height: 350
         minimumWidth: 510

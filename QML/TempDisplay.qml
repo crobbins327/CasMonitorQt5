@@ -102,7 +102,7 @@ Item{
                     Repeater {
                         id: casTempRepeater
                         model: rootApWin.availableCasNum
-//                        model: 4
+                        //model: 20
                         delegate: Item {
                             width: casTempContent.width
                             height: casTempScroll.height/2
