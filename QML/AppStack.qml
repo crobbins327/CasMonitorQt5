@@ -79,6 +79,42 @@ ApplicationWindow {
         exitDialog.open()
     }
 
+    InputPanel {
+           id: keyboard
+           // position the top of the keyboard to the bottom of the screen/display
+//           y: Screen.height
+           width: 550
+           height: rootApWin.height/4
+
+           anchors.horizontalCenter: parent.horizontalCenter
+           anchors.bottom: parent.bottom
+           anchors.bottomMargin: -200
+
+           states: State {
+               name: "visible";
+               when: keyboard.active;
+               PropertyChanges {
+                   target: keyboard;
+                   // position the top of the keyboard to the bottom of the text input field
+//                   y: casMonitor.height-rootApWin.height/4
+                   anchors.bottomMargin: 0
+
+               }
+           }
+           transitions: Transition {
+               from: ""; // default initial state
+               to: "visible";
+               reversible: true; // toggle visibility with reversible: true;
+               ParallelAnimation {
+                   NumberAnimation {
+                       properties: "y";
+                       duration: 800;
+                       easing.type: Easing.InOutElastic;
+                   }
+               }
+           }
+    }
+
     Popup {
         id: waitPopup
         parent: Overlay.overlay

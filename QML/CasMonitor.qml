@@ -8,6 +8,7 @@ import QtQuick.Dialogs 1.3
 import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.12
 import QtQuick.Controls.Material 2.12
+import QtQuick.VirtualKeyboard 2.15
 
 import "./Icons/"
 
@@ -262,3 +263,9 @@ Item {
     }
 }
 
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/

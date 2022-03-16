@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.12
 import QtQuick.Dialogs 1.3
 import QtQuick.Window 2.12
 import QtQuick.Controls.Material 2.12
-//import QtQuick.VirtualKeyboard 2.15
+import QtQuick.VirtualKeyboard 2.15
 import "./Icons/"
 
 Item {
@@ -586,6 +586,7 @@ Item {
                             visible: sampInput.activeFocus ? false : true
                         }
                     }
+
                 }
 
                 ComboBox {
