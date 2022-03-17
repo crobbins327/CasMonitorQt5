@@ -30,7 +30,6 @@ def checkPIDFile(pidfile):
         return False, None
 
 
-
 if __name__ == '__main__':
     #Check if SampleMonitor is running...
     pid = str(os.getpid())
