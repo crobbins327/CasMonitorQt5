@@ -26,6 +26,15 @@ __3)__ Open another terminal or use the docker terminal to open the gui.
     source activate base
     python setupGUI.py
     
+    
+### Version 0.03 UI Demonstration:
+![](examples/1cas.mp4)
+![](examples/testing_multipleProt.mp4)
+![](examples/SampleMontior-SwipeLayout.mp4)
+![](examples/TempMonitor-GridSwipeLayout.mp4)
+![](examples/TemperatureMonitor.mp4)
+![](examples/VrtualKeyboard.mp4)
+    
 
 #### Version 0.0.2 UI Demonstration:
 ![](examples/ProgressGIFs/10-07-UI-demonstration.gif)
