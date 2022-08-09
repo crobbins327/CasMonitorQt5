@@ -28,13 +28,31 @@ __3)__ Open another terminal or use the docker terminal to open the gui.
     
     
 ### Version 0.03 UI Demonstration:
-![](examples/1cas.mp4)
-![](examples/testing_multipleProt.mp4)
-![](examples/SampleMontior-SwipeLayout.mp4)
-![](examples/TempMonitor-GridSwipeLayout.mp4)
-![](examples/TemperatureMonitor.mp4)
-![](examples/VrtualKeyboard.mp4)
-    
+Virtual keyboard demo
+
+https://user-images.githubusercontent.com/28576964/183572020-357977ba-63bd-4c1e-ae71-2e55f5be016e.mp4
+
+Temperature monitor
+
+https://user-images.githubusercontent.com/28576964/183571838-403fcd68-21bb-4856-9eed-2fd87507e0a3.mp4
+
+Tempterature monitor, grid swipe layout
+
+https://user-images.githubusercontent.com/28576964/183571850-fc1c497b-1b5a-414f-a62e-01ef3f0ef64b.mp4
+
+Testing multiple protocols
+
+https://user-images.githubusercontent.com/28576964/183571984-76f1e3d2-41c0-42bb-90aa-c0eae710e6b7.mp4
+
+1 Cassette
+
+https://user-images.githubusercontent.com/28576964/183571662-a9f6303e-338c-4350-85f1-7ed05f10fe6e.mp4
+
+Sample monitor swipe layout
+
+https://user-images.githubusercontent.com/28576964/183571825-68eb6af4-fb38-41f2-88db-d5399dbf4ea3.mp4
+
+
 
 #### Version 0.0.2 UI Demonstration:
 ![](examples/ProgressGIFs/10-07-UI-demonstration.gif)
